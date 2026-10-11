@@ -1,0 +1,607 @@
+{
+  "schema_version": 1,
+  "task_id": "c76fb125-2eb5-4d3a-804d-75b165b0db3c",
+  "decision": "READY_FOR_PASSIVE_OBSERVER_DESIGN",
+  "decision_scope": "Design only: bounded unattributed canonical-function path/phase events; ignore all four callback payloads.",
+  "runtime_observer_implementation_ready": false,
+  "owned_Deathtrap_lifecycle_ready": false,
+  "native_effect_ready": false,
+  "accepted_base": "d441147a0311acb12c4ac7a44ffa79874810afad",
+  "branch": "codex/jake-v0214-schema-readiness",
+  "inputs": [
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "bytes": 37500,
+      "sha256": "d147e79ece6e894a6bee6fa8bbb97c1c3f0885e1f2c7d9d165dde3b0565cd84c"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_capture_manifest.json",
+      "bytes": 33196,
+      "sha256": "44b6d4d21d960e4e3c3dc3785eb029c7afc6ea43bc34cf862ecb01e344ca597d"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 178655,
+      "sha256": "e752f31c6ace648c52536bcf3810630368ce26d3cc10379bb292b609b57455ba"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "bytes": 84,
+      "sha256": "614a06a15652a4b8865331a1d6a8e74443d48d29b1fbdc3bc855ccf45f190794"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+      "bytes": 3523,
+      "sha256": "70e8efda8c1df265cc46e9d484e63b0b4b053257cc0db029ba92da3731994349"
+    },
+    {
+      "path": "scripts/review_deathtrap_metadata_log.py",
+      "bytes": 22820,
+      "sha256": "7cf38488f2604a6481504d5298262d03b73a709deae197a55d36416815f26c78"
+    },
+    {
+      "path": "docs/overclock_identity_cleanup_contract.md",
+      "bytes": 10711,
+      "sha256": "3abd5f388ec5bf9bf501790ed8798c688945a8ca8874333b2031340bfd198cdc"
+    },
+    {
+      "path": "design/overclock_effect_contract_model.py",
+      "bytes": 9234,
+      "sha256": "fbe8e20524616cb5a9aaa608ca0780d03a141cdcc261643a1551c1a929ffbafc"
+    },
+    {
+      "path": "tests/test_overclock_effect_contract_model.py",
+      "bytes": 14113,
+      "sha256": "9639ae7a2f76e21488cf6bffb2f50589c6b46be8fc9537ba8bee5366dd8c36af"
+    },
+    {
+      "path": "tests/test_deathtrap_readiness.py",
+      "bytes": 32599,
+      "sha256": "b907e526fbde65b2b12951156fff5c68b2f422172fe5b815c567924d030fa354"
+    },
+    {
+      "path": "evidence/deathtrap_lifecycle_readiness_result.md",
+      "bytes": 8741,
+      "sha256": "6de7471eaa74b25f0d9f39c27984aaaf519a7a6c89509769998a55fe28b21042"
+    },
+    {
+      "path": "evidence/deathtrap_lifecycle_readiness_checks.json",
+      "bytes": 13485,
+      "sha256": "fb1d884c35c24ca77bbaf16942791d811e480a9ac43ed60aadc41cf7cdfd82c2"
+    },
+    {
+      "path": "docs/deathtrap_parameter_metadata_design.md",
+      "bytes": 12571,
+      "sha256": "726a60033de13ccf466e98b23f504a3a7c082bc0c9cd88da1754631d6497a0d5"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_implementation_checks.json",
+      "bytes": 14681,
+      "sha256": "69f8b686a6f171fed86be1d6017dc333cee322ec17d94ea5b638a00894e30c98"
+    }
+  ],
+  "parsed_function_metadata": [
+    {
+      "coverage": "COMPLETE",
+      "flags": 132097,
+      "kind": "FUNCTION",
+      "name": "GetSkillManager",
+      "num_params": 1,
+      "parameter_classes_coverage": "COMPLETE",
+      "params_size": 4,
+      "path": "WillowGame.WillowPlayerController:GetSkillManager",
+      "properties": [
+        {
+          "declared_class": "WillowGame.SkillEffectManager",
+          "declared_class_coverage": "COMPLETE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 1408,
+          "name": "ReturnValue",
+          "offset": 0,
+          "type": "ZObjectProperty"
+        }
+      ],
+      "return_offset": 0,
+      "signature": "NOT_ESTABLISHED"
+    },
+    {
+      "coverage": "COMPLETE",
+      "flags": 149506,
+      "kind": "FUNCTION",
+      "name": "ActivateSkill",
+      "num_params": 6,
+      "parameter_classes_coverage": "COMPLETE",
+      "params_size": 32,
+      "path": "WillowGame.SkillEffectManager:ActivateSkill",
+      "properties": [
+        {
+          "declared_class": "Engine.Controller",
+          "declared_class_coverage": "COMPLETE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 128,
+          "name": "SkillInstigator",
+          "offset": 0,
+          "type": "ZObjectProperty"
+        },
+        {
+          "declared_class": "WillowGame.SkillDefinition",
+          "declared_class_coverage": "COMPLETE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 128,
+          "name": "Definition",
+          "offset": 4,
+          "type": "ZObjectProperty"
+        },
+        {
+          "declared_class": "Core.Object",
+          "declared_class_coverage": "COMPLETE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 144,
+          "name": "AdditionalSkillTarget",
+          "offset": 8,
+          "type": "ZObjectProperty"
+        },
+        {
+          "declared_class": "NOT_APPLICABLE",
+          "declared_class_coverage": "NOT_APPLICABLE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 144,
+          "name": "SkillGrade",
+          "offset": 12,
+          "type": "ZIntProperty"
+        },
+        {
+          "declared_class": "NOT_APPLICABLE",
+          "declared_class_coverage": "NOT_APPLICABLE",
+          "dimension": 1,
+          "element_size": 12,
+          "flags": 4194448,
+          "name": "StateChangeDelegate",
+          "offset": 16,
+          "type": "ZDelegateProperty"
+        },
+        {
+          "declared_class": "NOT_APPLICABLE",
+          "declared_class_coverage": "NOT_APPLICABLE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 1408,
+          "name": "ReturnValue",
+          "offset": 28,
+          "type": "ZBoolProperty"
+        }
+      ],
+      "return_offset": 28,
+      "signature": "NOT_ESTABLISHED"
+    },
+    {
+      "coverage": "COMPLETE",
+      "flags": 149506,
+      "kind": "FUNCTION",
+      "name": "DeactivateSkill",
+      "num_params": 3,
+      "parameter_classes_coverage": "COMPLETE",
+      "params_size": 12,
+      "path": "WillowGame.SkillEffectManager:DeactivateSkill",
+      "properties": [
+        {
+          "declared_class": "Engine.Controller",
+          "declared_class_coverage": "COMPLETE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 128,
+          "name": "SkillInstigator",
+          "offset": 0,
+          "type": "ZObjectProperty"
+        },
+        {
+          "declared_class": "WillowGame.SkillDefinition",
+          "declared_class_coverage": "COMPLETE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 128,
+          "name": "Definition",
+          "offset": 4,
+          "type": "ZObjectProperty"
+        },
+        {
+          "declared_class": "NOT_APPLICABLE",
+          "declared_class_coverage": "NOT_APPLICABLE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 144,
+          "name": "bIgnoreSkillInstigator",
+          "offset": 8,
+          "type": "ZBoolProperty"
+        }
+      ],
+      "return_offset": 65535,
+      "signature": "NOT_ESTABLISHED"
+    }
+  ],
+  "source_ranges": {
+    "signature": {
+      "line": 41,
+      "end_line": 43,
+      "called_names": [
+        "name",
+        "read"
+      ]
+    },
+    "find_live": {
+      "line": 46,
+      "end_line": 79,
+      "called_names": [
+        "get_pc",
+        "len",
+        "log",
+        "min",
+        "name",
+        "range",
+        "read",
+        "type"
+      ]
+    },
+    "apply": {
+      "line": 116,
+      "end_line": 166,
+      "called_names": [
+        "_modifier_count",
+        "display",
+        "find_live",
+        "float",
+        "log",
+        "near",
+        "read",
+        "signature",
+        "str",
+        "type"
+      ]
+    },
+    "restore": {
+      "line": 169,
+      "end_line": 197,
+      "called_names": [
+        "find_live",
+        "log",
+        "near",
+        "read",
+        "signature",
+        "str",
+        "type"
+      ]
+    },
+    "cancel_init_node": {
+      "line": 1379,
+      "end_line": 1391,
+      "called_names": [
+        "_init_remove_hooks",
+        "_init_rollback",
+        "log",
+        "stop_skillstate_trace",
+        "stop_ui_trace",
+        "stop_upgrade_trace"
+      ]
+    },
+    "_upgrade_state": {
+      "line": 1636,
+      "end_line": 1700,
+      "called_names": [
+        "ValueError",
+        "_node_has_exact_contents",
+        "any",
+        "get_pc",
+        "getattr",
+        "isinstance",
+        "len",
+        "list",
+        "name",
+        "read",
+        "tuple",
+        "type"
+      ]
+    },
+    "_deathtrap_property": {
+      "line": 3053,
+      "end_line": 3085,
+      "called_names": [
+        "LookupError",
+        "ValueError",
+        "_deathtrap_int",
+        "_deathtrap_label",
+        "any",
+        "isinstance",
+        "type"
+      ]
+    },
+    "_deathtrap_function": {
+      "line": 3141,
+      "end_line": 3189,
+      "called_names": [
+        "LookupError",
+        "ValueError",
+        "_deathtrap_check",
+        "_deathtrap_function_header",
+        "_deathtrap_property",
+        "_deathtrap_session",
+        "any",
+        "enumerate",
+        "isinstance",
+        "iter",
+        "len",
+        "next",
+        "range"
+      ]
+    },
+    "inspect_deathtrap_readiness": {
+      "line": 3192,
+      "end_line": 3352,
+      "called_names": [
+        "ValueError",
+        "_deathtrap_chain",
+        "_deathtrap_check",
+        "_deathtrap_class",
+        "_deathtrap_field_snapshot",
+        "_deathtrap_function",
+        "_deathtrap_session",
+        "any",
+        "capture_function",
+        "dict",
+        "get_pc",
+        "isinstance",
+        "len",
+        "log",
+        "next",
+        "parameter_class_snapshot",
+        "read",
+        "target",
+        "tuple"
+      ]
+    },
+    "shutdown": {
+      "line": 3355,
+      "end_line": 3357,
+      "called_names": [
+        "cancel_init_node",
+        "stop_tree_trace"
+      ]
+    }
+  },
+  "actual_checks": {
+    "baseline_Git_blobs_unchanged": 171,
+    "parser_exit": 0,
+    "report_manifest_equal": true,
+    "calls": 2,
+    "rows_per_call": 15,
+    "snapshot_zip_source_equal": true,
+    "original_zip_crc_layout": true,
+    "original_versioned_archives": [
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+        "bytes": 32742,
+        "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+        "bytes": 34433,
+        "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+        "bytes": 36736,
+        "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+        "bytes": 37087,
+        "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+        "bytes": 37809,
+        "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+        "bytes": 19467,
+        "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+        "bytes": 20457,
+        "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+        "bytes": 21349,
+        "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+        "bytes": 24437,
+        "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+        "bytes": 26428,
+        "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+        "bytes": 26629,
+        "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+        "bytes": 28884,
+        "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+        "bytes": 30016,
+        "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+        "bytes": 31335,
+        "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160"
+      }
+    ],
+    "immutable_inventory": {
+      "verified_files": 53,
+      "verified_archives": 12,
+      "relationships": 5,
+      "errors": [],
+      "status": "PASS"
+    },
+    "targeted_suites": [
+      {
+        "pattern": "test_overclock_effect_contract_model.py",
+        "tests_run": 36,
+        "exit_code": 0,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "elapsed_seconds": 0.219
+      },
+      {
+        "pattern": "test_deathtrap_readiness.py",
+        "tests_run": 61,
+        "exit_code": 0,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "elapsed_seconds": 4.843
+      }
+    ],
+    "targeted_tests_total": 97,
+    "runtime_syntax_pass": true,
+    "model_SDK_free_import_AST": true,
+    "grade_zero_gate_preserved": true,
+    "cancel_disable_manual_restore_separate": true
+  },
+  "sdk_stubs": [
+    {
+      "sdk_relative_path": "unrealsdk/hooks/__init__.pyi",
+      "bytes": 6284,
+      "sha256": "21589d306dc34fe61ce5f7b0b47b62167a6e8f767d3c84283c4757fc27312ab7",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_bound_function.pyi",
+      "bytes": 1635,
+      "sha256": "aede5345048c0b32b7e0bc0ccd57fca5fa29c1227113f0a4ee7f30d469d64546",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_uobject.pyi",
+      "bytes": 4546,
+      "sha256": "a73e55d17aa605ee20540d542a68b817d84614aaeb4c47aa5804e435f58b12b3",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_uobject_children.pyi",
+      "bytes": 9904,
+      "sha256": "c868cda153981b5d779d7873572db131edc3990696d719c8646f114cd56f1887",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    }
+  ],
+  "pinned_public_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.h",
+      "bytes": 6473,
+      "sha256": "6290b5012a492504b14c987527a93e4d08350297cd81fed1a2c49315b91b570e",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp",
+      "bytes": 14513,
+      "sha256": "77d60d79d8845b9914284963fd5a049300b91e96cbd0bcf0430e477a47e4a48b",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+      "bytes": 10594,
+      "sha256": "219bc8470aebf4e839f51686eb839a301911da6cac6bb7ec58d0a3ca7afd4142",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/uobject_children.cpp",
+      "bytes": 27186,
+      "sha256": "28624b87860aec2b37af221ea5a54bf63eb1ca0d2e91d11d06a2f5c00d7a5ac1",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    }
+  ],
+  "SDK_contract_findings": [
+    "PRE precedes execution; POST occurs only when execution allowed; POST_UNCONDITIONAL can follow blocked execution. Intra-phase order unspecified.",
+    "Callback receives obj,args,ret,func. Arguments are a mutable copy, not a means of editing native call arguments.",
+    "ret reflects the proxy, including another pre-hook override; args.ReturnValue is not authoritative. The binding converts a set ret before invoking the Python callback.",
+    "Exact None callback return does not block or override in the inspected binding; tuples/Block and native BoundFunction calls are excluded.",
+    "Bool FieldMask and delegate Signature exist in the SDK API, but were not captured. NOT_APPLICABLE class coverage does not verify these properties.",
+    "Debug address/InternalIndex/path/class do not establish native liveness/generation or retained-wrapper lifetime. Installed native binary matching the pinned source commits was not verified."
+  ],
+  "required_design_gates": [
+    "Only fixed verified canonical manager function paths; closed literal path/phase labels from registration, no callback object/argument/return/function attribute, repr, conversion, retention or call.",
+    "Label every event UNATTRIBUTED_MANAGER_EVENT. No owned manager/skill/Deathtrap or successful activation claim; no PRE/POST pairing, lifecycle generation or lifespan/clock inference.",
+    "Review automatic SDK argument/return marshalling and PRE pre-overrides before deciding phases. Prefer PRE-only initially; POST requires separately justified adapter handling. No zero-native-read claim.",
+    "Specify manual opt-in, existing grade-zero/sole-player/current-context guards, overlap refusal, disabled-before-removal cleanup, unique identifiers, bounded event/attempt/time policy and retained inert cleanup failures.",
+    "Specify mock acceptance with poisonous callback payloads and cleanup failures, integration preservation, exact file scopes and a separately reviewed implementation. Another game test requires explicit exact-build/protocol approval."
+  ],
+  "unresolved": [
+    "Natural callbacks were not captured; broad AdditionalSkillTarget Core.Object cannot identify a summon.",
+    "No exact native callback manager/instigator/definition ownership or payload/schema/return/delegate interpretation proof.",
+    "No native liveness/reference lifetime/address-reuse safety or generation source; model uses supplied opaque facts.",
+    "No ActivatedTime clock units, Duration/base/modifier payloads or safe effect consumption/write/readback interval.",
+    "No exact current rank-one Overclock gate, duration cleanup adapter or measured lifespan; rank-zero diagnostic and array/observer cleanup remain separate."
+  ],
+  "capture_limits": {
+    "exact_statement": "cancel 3 completed, fully exited",
+    "cancel_and_full_exit_explicitly_confirmed": true,
+    "preceding_test_scope": "Owner explicitly approved the exact reviewed v0.2.14 eight-step main-menu/in-map protocol.",
+    "completion_context": "Statement follows those instructions; metadata/initialization/restoration are separately verified from the log. No additional UI or exact click-count observation by agent.",
+    "separate_visible_failure_report": "NOT_REPORTED",
+    "ui_title": "Exact title check included in approved protocol; not independently observed by agent.",
+    "before_test_machine_observation": "NOT_CHECKED",
+    "authorization_scope": "Preserve/review this completed metadata run. No additional game test/native action."
+  },
+  "deviations": [
+    "Two inspections despite requested one",
+    "Second ARM refused as already armed",
+    "Repeated CANCEL found no patch"
+  ],
+  "not_run": [
+    "Full unchanged448-test suite and hostedCI for v14",
+    "Installed native SDK import/execution or native binary/source commit matching",
+    "Any new game test, native hook registration/callback invocation/payload reads/BoundFunction invocation/Duration writes",
+    "Purchase/rank-one/save/private-backup/persistence/co-op/merge/release checks"
+  ]
+}
