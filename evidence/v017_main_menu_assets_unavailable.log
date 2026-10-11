@@ -1,0 +1,38 @@
+date       time          thread                                           location@line    v|
+2026-10-10 00:09:05.872Z   618c                                    unrealsdk::init@59   INFO| unrealsdk v3.2.0 (b1852aa4)
+2026-10-10 00:09:05.872Z   618c                                    unrealsdk::init@60   INFO| ===========================
+2026-10-10 00:09:05.872Z   618c   ~ game::`anonymous-namespace'::find_correct_hook@51   INFO| Using Borderlands 2 hook
+2026-10-10 00:09:06.050Z   618c                   unrealsdk::memory::get_exe_range@34   MISC| Executable memory range: 00d50000-02886000
+2026-10-10 00:09:06.155Z   618c                          unrealsdk::memory::detour@107  MISC| Detoured ProcessEvent at 0xee2bd0
+2026-10-10 00:09:06.245Z   618c                          unrealsdk::memory::detour@107  MISC| Detoured CallFunction at 0xee26e0
+2026-10-10 00:09:06.245Z   618c            unrealsdk::game::BL2Hook::find_gobjects@31   MISC| GObjects: 0x23d2bd0
+2026-10-10 00:09:06.246Z   618c              unrealsdk::game::BL2Hook::find_gnames@53   MISC| GNames: 0x23907f4
+2026-10-10 00:09:06.246Z   618c          unrealsdk::game::BL2Hook::find_fname_init@68   MISC| FName::Init: 0xde0b70
+2026-10-10 00:09:06.248Z   618c         unrealsdk::game::BL2Hook::find_fframe_step@100  MISC| FFrame::Step: 0xed3770
+2026-10-10 00:09:06.248Z   618c             unrealsdk::game::BL2Hook::find_gmalloc@49   MISC| GMalloc: 0x5d27ac0
+2026-10-10 00:09:06.248Z   618c    unrealsdk::game::BL2Hook::find_construct_object@61   MISC| StaticConstructObject: 0xe1a5f0
+2026-10-10 00:09:06.249Z   618c       unrealsdk::game::BL2Hook::find_get_path_name@115  MISC| GetPathName: 0xdfda80
+2026-10-10 00:09:06.249Z   618c  unrealsdk::game::BL2Hook::find_static_find_object@165  MISC| StaticFindObject: 0xe07500
+2026-10-10 00:09:06.250Z   618c        unrealsdk::game::BL2Hook::find_load_package@205  MISC| LoadPackage: 0xe1d190
+2026-10-10 00:09:06.255Z   618c      unrealsdk::game::BL2Hook::hexedit_set_command@47   MISC| Set Command: 0x1180181
+2026-10-10 00:09:06.256Z   618c      unrealsdk::game::BL2Hook::hexedit_array_limit@62   MISC| Array Limit: 0xe19ab4
+2026-10-10 00:09:06.256Z   618c       ~ game::BL2Hook::hexedit_array_limit_message@76   MISC| Array Limit Message: 0xe19b6f
+2026-10-10 00:09:06.256Z   6ba4                                  pyunrealsdk::init@63   INFO| pyunrealsdk v1.10.0 (c72c5558) loaded
+2026-10-10 00:09:24.193Z   493c ~ game::`anonymous-namespace'::inject_console_hook@280  MISC| Set console key to 'Tilde'
+2026-10-10 00:09:24.517Z   6ba4                     ~ console_mod_menu\__init__.py@28   INFO| Console Mod Menu loaded. Type 'mods' to get started.
+2026-10-10 00:10:40.861Z   493c                                    _py_warnings.py@147  DWRN| C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\sdk_mods\legacy_compat.sdkmod\legacy_compat\unrealsdk\__init__.py:210: DeprecationWarning: Using deprecated legacy import compatibility.
+2026-10-10 00:12:51.435Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] BEGIN v0.1.7 EARLY MENU node insertion (NO POINT SPENDING)
+2026-10-10 00:12:51.435Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] Menu preflight: controller=WillowPlayerController_3 class=<none> pawn=<none>
+2026-10-10 00:12:51.435Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] load_package completed; returned <none> (None is not necessarily failure)
+2026-10-10 00:12:51.437Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] Gaige skill assets unavailable at main menu or unexpected layout; no changes made.
+2026-10-10 00:12:51.437Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] END
+2026-10-10 00:12:54.178Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] BEGIN v0.1.7 EARLY MENU node insertion (NO POINT SPENDING)
+2026-10-10 00:12:54.178Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] Menu preflight: controller=WillowPlayerController_3 class=<none> pawn=<none>
+2026-10-10 00:12:54.178Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] load_package completed; returned <none> (None is not necessarily failure)
+2026-10-10 00:12:54.179Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] Gaige skill assets unavailable at main menu or unexpected layout; no changes made.
+2026-10-10 00:12:54.179Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] END
+2026-10-10 00:13:53.856Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] BEGIN v0.1.7 EARLY MENU node insertion (NO POINT SPENDING)
+2026-10-10 00:13:53.856Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] Menu preflight: controller=WillowPlayerController_3 class=<none> pawn=<none>
+2026-10-10 00:13:53.857Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] load_package completed; returned <none> (None is not necessarily failure)
+2026-10-10 00:13:53.857Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] Gaige skill assets unavailable at main menu or unexpected layout; no changes made.
+2026-10-10 00:13:53.857Z   493c    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] END
