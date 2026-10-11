@@ -1,0 +1,36 @@
+date       time          thread                                           location@line    v|
+2026-10-09 16:13:32.886Z   a59c                                    unrealsdk::init@59   INFO| unrealsdk v3.2.0 (b1852aa4)
+2026-10-09 16:13:32.886Z   a59c                                    unrealsdk::init@60   INFO| ===========================
+2026-10-09 16:13:32.886Z   a59c   ~ game::`anonymous-namespace'::find_correct_hook@51   INFO| Using Borderlands 2 hook
+2026-10-09 16:13:33.057Z   a59c                   unrealsdk::memory::get_exe_range@34   MISC| Executable memory range: 00f50000-02a86000
+2026-10-09 16:13:33.150Z   a59c                          unrealsdk::memory::detour@107  MISC| Detoured ProcessEvent at 0x10e2bd0
+2026-10-09 16:13:33.255Z   a59c                          unrealsdk::memory::detour@107  MISC| Detoured CallFunction at 0x10e26e0
+2026-10-09 16:13:33.255Z   a59c            unrealsdk::game::BL2Hook::find_gobjects@31   MISC| GObjects: 0x25d2bd0
+2026-10-09 16:13:33.256Z   a59c              unrealsdk::game::BL2Hook::find_gnames@53   MISC| GNames: 0x25907f4
+2026-10-09 16:13:33.256Z   a59c          unrealsdk::game::BL2Hook::find_fname_init@68   MISC| FName::Init: 0xfe0b70
+2026-10-09 16:13:33.258Z   a59c         unrealsdk::game::BL2Hook::find_fframe_step@100  MISC| FFrame::Step: 0x10d3770
+2026-10-09 16:13:33.258Z   a59c             unrealsdk::game::BL2Hook::find_gmalloc@49   MISC| GMalloc: 0x59d7ac0
+2026-10-09 16:13:33.259Z   a59c    unrealsdk::game::BL2Hook::find_construct_object@61   MISC| StaticConstructObject: 0x101a5f0
+2026-10-09 16:13:33.260Z   a59c       unrealsdk::game::BL2Hook::find_get_path_name@115  MISC| GetPathName: 0xffda80
+2026-10-09 16:13:33.260Z   a59c  unrealsdk::game::BL2Hook::find_static_find_object@165  MISC| StaticFindObject: 0x1007500
+2026-10-09 16:13:33.261Z   a59c        unrealsdk::game::BL2Hook::find_load_package@205  MISC| LoadPackage: 0x101d190
+2026-10-09 16:13:33.265Z   a59c      unrealsdk::game::BL2Hook::hexedit_set_command@47   MISC| Set Command: 0x1380181
+2026-10-09 16:13:33.266Z   a59c      unrealsdk::game::BL2Hook::hexedit_array_limit@62   MISC| Array Limit: 0x1019ab4
+2026-10-09 16:13:33.266Z   a59c       ~ game::BL2Hook::hexedit_array_limit_message@76   MISC| Array Limit Message: 0x1019b6f
+2026-10-09 16:13:33.267Z   8e70                                  pyunrealsdk::init@63   INFO| pyunrealsdk v1.10.0 (c72c5558) loaded
+2026-10-09 16:13:52.488Z   8dec ~ game::`anonymous-namespace'::inject_console_hook@280  MISC| Set console key to 'Tilde'
+2026-10-09 16:13:52.798Z   8e70                     ~ console_mod_menu\__init__.py@28   INFO| Console Mod Menu loaded. Type 'mods' to get started.
+2026-10-09 16:14:13.047Z   8dec                                    _py_warnings.py@147  DWRN| C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\sdk_mods\legacy_compat.sdkmod\legacy_compat\unrealsdk\__init__.py:210: DeprecationWarning: Using deprecated legacy import compatibility.
+2026-10-09 16:14:46.344Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] BEGIN experimental +15 seconds (live skill instance only)
+2026-10-09 16:14:46.344Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] Deathtrap is not summoned. Summon first.
+2026-10-09 16:14:46.344Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] END apply
+2026-10-09 16:14:54.389Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] BEGIN experimental +15 seconds (live skill instance only)
+2026-10-09 16:14:54.390Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] Skill=Skill_2 | Grade=1 | Duration=60.0 | Base=60.0 | ActivatedTime=50.95637893676758 | modifiers=0
+2026-10-09 16:14:54.773Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] WRITE VERIFIED: live Skill_DeathTrap.Duration 60.0 -> 75.0
+2026-10-09 16:14:54.773Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] DurationBaseValue left unchanged. A successful write does not yet prove longer in-game lifespan.
+2026-10-09 16:14:54.773Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] No shared definitions, tree points, cooldown pools or saves changed.
+2026-10-09 16:14:54.773Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] END apply
+2026-10-09 16:14:55.693Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] BEGIN experimental +15 seconds (live skill instance only)
+2026-10-09 16:14:55.694Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] NOT APPLIED: Already tested on this summon; prevents stacking.
+2026-10-09 16:14:55.694Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] Skill=Skill_2 | Grade=1 | Duration=75.0 | Base=60.0 | ActivatedTime=50.95637893676758 | modifiers=0
+2026-10-09 16:14:55.694Z   8dec    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] END apply
