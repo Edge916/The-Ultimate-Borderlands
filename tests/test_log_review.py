@@ -111,6 +111,60 @@ class LogReviewTests(unittest.TestCase):
         self.assertEqual(result['calls'][0]['ancestry']['declared_relation'], 'NO')
         self.assertEqual(result['calls'][0]['outcome'], 'COMPLETE_METADATA')
 
+    def test_exact_claim_rejects_different_declared_actual_labels(self):
+        consistent = snapshot(relation='EXACT').replace('DerivedAttribute', 'AttributeDefinition')
+        for changed in (
+                consistent.replace("CLASS role=DECLARED name='AttributeDefinition'",
+                                   "CLASS role=DECLARED name='OtherName'"),
+                consistent.replace("CLASS role=DECLARED name='AttributeDefinition' path='Core.AttributeDefinition'",
+                                   "CLASS role=DECLARED name='AttributeDefinition' path='Other.AttributeDefinition'"),
+                snapshot(relation='EXACT')):
+            with self.subTest(record=changed):
+                self.assert_invalid(changed + cleanup())
+
+    def test_exact_consistent_labels_preserve_logged_claim(self):
+        text = snapshot(relation='EXACT').replace('DerivedAttribute', 'AttributeDefinition')
+        result = report(text + cleanup())
+        self.assertTrue(result['log_evidence_acceptable'])
+        self.assertEqual(result['calls'][0]['ancestry']['declared_relation'], 'EXACT')
+        self.assertEqual(result['separate_checks']['capture_origin_authenticity'], 'NOT_CHECKED')
+
+    def test_derived_claim_requires_matching_declared_ancestor_labels(self):
+        for coverage in ('COMPLETE', 'CAPPED'):
+            for name, path in (('Other', 'Core.AttributeDefinition'),
+                               ('AttributeDefinition', 'Other.AttributeDefinition'),
+                               ('Other', 'Other.AttributeDefinition')):
+                text = snapshot(coverage, 'DERIVED').replace(
+                    "ANCESTOR depth=1 name='AttributeDefinition' path='Core.AttributeDefinition'",
+                    f'ANCESTOR depth=1 name={name!r} path={path!r}')
+                with self.subTest(coverage=coverage, name=name, path=path):
+                    self.assert_invalid(text + cleanup())
+
+    def test_runtime_observer_removal_errors_survive_zero_retry(self):
+        for family, path in (('UVH-STATE', 'WillowGame.PlayerSkillTree.GetSkillState'),
+                             ('UVH-UI', 'WillowGame.SkillTreeGFxObject.UpdateInfoBox'),
+                             ('UVH-UPGRADE', 'WillowGame.SkillTreeSkill.Upgrade'),
+                             ('UVH-TRACE', 'WillowGame.PlayerSkillTree.Initialize')):
+            with self.subTest(family=family):
+                result = self.assert_invalid(snapshot() + event(
+                    family, f'Removal ERROR {path}: RuntimeError') + cleanup())
+                self.assertEqual(result['cleanup']['error_records'][0]['family'], family)
+
+    def test_runtime_rollback_failure_invalidates_successful_restore(self):
+        result = self.assert_invalid(snapshot() + cleanup() + event(
+            'UVH-INITNODE', 'Rollback failed; snapshot retained. Do not continue playing; restart BL2.'))
+        self.assertEqual(result['cleanup']['error_records'][0]['family'], 'UVH-INITNODE')
+
+    def test_runtime_native_node_removal_failure_invalidates_restore(self):
+        result = self.assert_invalid(snapshot() + event(
+            'UVH-NEWNODE', 'Removal ERROR RuntimeError: failed') + cleanup())
+        self.assertEqual(result['cleanup']['error_records'][0]['family'], 'UVH-NEWNODE')
+
+    def test_runtime_init_hook_failure_survives_zero_retry(self):
+        result = self.assert_invalid(snapshot() + event(
+            'UVH-INITNODE', 'Hook removal ERROR RuntimeError') + cleanup())
+        self.assertEqual(result['cleanup']['error_records'][0]['family'], 'UVH-INITNODE')
+
     def test_getter_abort_is_reported_without_fabricated_final(self):
         text = event('UVH-CLASS', 'BEGIN v0.2.11 combined metadata snapshot (READ ONLY; DO NOT BUY)')
         text += event('UVH-CLASS', 'BASELINE points=(1, 0) ranks=(0, 0, 0)')

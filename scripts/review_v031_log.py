@@ -131,6 +131,16 @@ def _finish(call):
     labels = call['classes']
     if labels and set(labels) != {'DECLARED', 'ACTUAL'}:
         issues.append('missing declared/actual class labels')
+    # Identity claims come from the runtime, never from these text labels.
+    # Stable labels are necessary for the logged claim to be consistent, but
+    # matching labels cannot establish identity or prove any parent link.
+    if relation == 'EXACT' and ('DECLARED' not in labels or
+            labels.get('DECLARED') != labels.get('ACTUAL')):
+        issues.append('EXACT claim contradicts declared/actual class labels')
+    if relation == 'DERIVED' and ('DECLARED' not in labels or not any(
+            {k: row[k] for k in ('name', 'path')} == labels['DECLARED']
+            for row in call['ancestors'])):
+        issues.append('DERIVED claim lacks matching declared ancestor labels')
     if call['ancestors'] and ('ACTUAL' not in labels or
             {k: call['ancestors'][0][k] for k in ('name', 'path')} != labels['ACTUAL']):
         issues.append('first ancestry label differs from recorded actual class')
@@ -193,6 +203,7 @@ def review_bytes(raw):
             if match:
                 report['cleanup']['observer_records'].append(dict(line=line_number, family=tag, remaining=int(match[1])))
             elif payload.startswith(('STOP remaining=', 'Observers remaining=', 'Hook removal ERROR',
+                                     'Removal ERROR', 'Rollback failed;',
                                      'Native arrays changed independently;', 'Cannot verify rollback ownership;')):
                 report['cleanup']['error_records'].append(dict(line=line_number, family=tag, reason='malformed or failed cleanup'))
             if report['calls'] and payload.startswith(('START ', 'Active observers=', 'ARMED.')):
@@ -200,6 +211,9 @@ def review_bytes(raw):
         if tag == 'UVH-NEWNODE' and payload.startswith('RESTORE result='):
             expected = re.fullmatch(r"RESTORE result=True skills=\['MorePep', 'Myelin'\] cells=\[True, False, True\] \(methods (?:assign|slice|clear\+extend), (?:assign|slice|clear\+extend)\)", payload)
             report['cleanup']['restoration_records'].append(dict(line=line_number, verified=bool(expected)))
+        if tag == 'UVH-NEWNODE' and payload.startswith('Removal ERROR'):
+            report['cleanup']['error_records'].append(dict(
+                line=line_number, family=tag, reason='failed native node removal'))
         if tag != 'UVH-CLASS':
             continue  # SCHEMA rechecks and other diagnostic families are not snapshots.
         begin = BEGIN.fullmatch(payload)
