@@ -1,0 +1,58 @@
+[
+  {
+    "id": "character_selection",
+    "host_hook": "character_select_menu",
+    "protocol": "game_specific_adapter",
+    "behavior": "All 26 roster entries require verified actor, animations, voice and action-skill graphs",
+    "status": "blocked_no_owned_game_data"
+  },
+  {
+    "id": "action_skills",
+    "host_hook": "action_skill_activation",
+    "protocol": "native_asset_dispatch",
+    "behavior": "Run original skills from player-owned games with cross-engine shims",
+    "status": "blocked_no_game_build"
+  },
+  {
+    "id": "skill_branches",
+    "host_hook": "stats_and_skill_tree",
+    "protocol": "data_driven_modifiers",
+    "behavior": "Expanded passive branch stat modifiers unlocked over 300 levels",
+    "status": "logic_only"
+  },
+  {
+    "id": "coop",
+    "host_hook": "player_join_and_authoritative_state",
+    "protocol": "host_authoritative",
+    "behavior": "Host validates roster IDs, owned content, schema and skill state; no fabricated player cap",
+    "status": "logic_only"
+  },
+  {
+    "id": "saves",
+    "host_hook": "game_save_write_and_load",
+    "protocol": "versioned_atomic_sidecar",
+    "behavior": "Save branch state without overwriting native saves; full equipment import not yet supported",
+    "status": "logic_only"
+  },
+  {
+    "id": "gear",
+    "host_hook": "loot_generate_and_inventory",
+    "protocol": "owned_content_resolver",
+    "behavior": "Scale loot with hard cap 300 and preserve equipment references",
+    "status": "logic_only"
+  },
+  {
+    "id": "fast_travel",
+    "host_hook": "fast_travel_map",
+    "protocol": "campaign_gates",
+    "behavior": "Visit discovered areas in cleared campaigns and gate later campaigns",
+    "status": "logic_only"
+  },
+  {
+    "id": "o2_kits",
+    "host_hook": "oxygen_equipment_slot",
+    "protocol": "universal_oz_kit",
+    "behavior": "Use TPS oxygen equipment with any character in TPS areas",
+    "status": "not_implemented"
+  }
+]
