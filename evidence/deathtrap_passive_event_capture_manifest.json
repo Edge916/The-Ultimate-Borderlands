@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "project_id": "e4e722af-5c33-4a37-b08c-3ddb15408ccd",
+  "task_id": "df1bf739-2d80-4995-8a20-affcee802c9e",
+  "captured_at_utc": "2026-10-11T08:35:41.005126+00:00",
+  "baseline_commit": "c8dbb53b926326f904736dc81415d0ea5793cdd0",
+  "runtime_implementation_commit": "e197266ebb88e71f5cbf855289dcea283f8f93ea",
+  "branch": "codex/jake-v0215-capture",
+  "operator_confirmation": {
+    "exact_statement": "STOP 21, CANCEL 3 and full exit completed",
+    "stop21_cancel3_full_exit_explicitly_confirmed": true,
+    "preceding_approval": "Yes, begin this v0.2.15 test",
+    "approved_protocol": "Already-backed-up solo Offline Gaige; main-menu title/ARM1 once; Continue fully load MAP; START20 once/stay about20s; STOP21 then CANCEL3 MAP; fully exit desktop before relaunch.",
+    "excluded_actions": "No buying,respec,travel,summon,manualboost,metadata4 or other trace.",
+    "separate_visible_failure_report": "NOT_REPORTED",
+    "observation_limit": "Agent did not observe title/UI/operator clicks, waiting interval, before-test process, save state or in-game visible outcome.",
+    "authorization_scope": "Preserve and review this completed owner diagnostic; no new game run or native action."
+  },
+  "log": {
+    "source": "Owner BL2 unrealsdk.log, read-only",
+    "preserved_path": "evidence/deathtrap_passive_event_user_test.log",
+    "bytes": 17205,
+    "sha256": "3c1de714692827194df6881ebb01ecfcf3273a02e9cd825b420efc6210b3c402",
+    "mtime_ns": 1791707412508046500,
+    "mtime_utc": "2026-10-11T08:30:12.508046+00:00",
+    "stable_double_read": true,
+    "source_reread_after_copy": {
+      "bytes": 17205,
+      "sha256": "3c1de714692827194df6881ebb01ecfcf3273a02e9cd825b420efc6210b3c402",
+      "mtime_ns": 1791707412508046500,
+      "mtime_utc": "2026-10-11T08:30:12.508046+00:00",
+      "stable_double_read": true
+    },
+    "copy_equals_source_before_and_after": true,
+    "lines": 97,
+    "ends_with_newline": true,
+    "created_exclusively": true
+  },
+  "installed_mod": {
+    "expected_name": "UVH v0.2.15 - PASSIVE MANAGER EVENTS",
+    "version": "0.2.15",
+    "expected_title_present_in_source": true,
+    "expected_title_present_in_pyproject": true,
+    "title_seen_by_agent": "NOT_CHECKED",
+    "syntax_only": "PASS; compile only, no runtime import or execution"
+  },
+  "versioned_zip": {
+    "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+    "bytes": 41032,
+    "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b",
+    "mtime_ns": 1791706682367815200,
+    "mtime_utc": "2026-10-11T08:18:02.367815+00:00",
+    "stable_double_read": true,
+    "integrity_checked": true,
+    "exact_three_file_layout": true
+  },
+  "installed_snapshot": [
+    {
+      "file": "__init__.py",
+      "snapshot_path": "archive/tested_runtime/v0.2.15/__init__.py",
+      "source_path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "archive_entry": "UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 195214,
+      "sha256": "a1ef33d3571de36fe89e269fae632d96cb8029bfa08ed9ec728d1bf1bf4b27bf",
+      "mtime_ns": 1791704422000000000,
+      "mtime_utc": "2026-10-11T07:40:22+00:00",
+      "stable_double_read": true,
+      "installed_equals_original_versioned_zip": true,
+      "installed_equals_accepted_source": true,
+      "created_exclusively": true,
+      "source_reread_after_copy": {
+        "bytes": 195214,
+        "sha256": "a1ef33d3571de36fe89e269fae632d96cb8029bfa08ed9ec728d1bf1bf4b27bf",
+        "mtime_ns": 1791704422000000000,
+        "mtime_utc": "2026-10-11T07:40:22+00:00",
+        "stable_double_read": true
+      },
+      "copy_equals_source_before_and_after": true
+    },
+    {
+      "file": "pyproject.toml",
+      "snapshot_path": "archive/tested_runtime/v0.2.15/pyproject.toml",
+      "source_path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "archive_entry": "UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "bytes": 79,
+      "sha256": "4c4d9fc9178f629f791069017b93fcbf4876c1e39b9de1973b22fc06edaada82",
+      "mtime_ns": 1791703930000000000,
+      "mtime_utc": "2026-10-11T07:32:10+00:00",
+      "stable_double_read": true,
+      "installed_equals_original_versioned_zip": true,
+      "installed_equals_accepted_source": true,
+      "created_exclusively": true,
+      "source_reread_after_copy": {
+        "bytes": 79,
+        "sha256": "4c4d9fc9178f629f791069017b93fcbf4876c1e39b9de1973b22fc06edaada82",
+        "mtime_ns": 1791703930000000000,
+        "mtime_utc": "2026-10-11T07:32:10+00:00",
+        "stable_double_read": true
+      },
+      "copy_equals_source_before_and_after": true
+    },
+    {
+      "file": "README.txt",
+      "snapshot_path": "archive/tested_runtime/v0.2.15/README.txt",
+      "source_path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+      "archive_entry": "UltimateVaultHunterDeathtrapBoost/README.txt",
+      "bytes": 4221,
+      "sha256": "7effa43ee2f9928b5d844066ff7676fbd9bd4461b4d49d49ef4e27d2011da840",
+      "mtime_ns": 1791704562000000000,
+      "mtime_utc": "2026-10-11T07:42:42+00:00",
+      "stable_double_read": true,
+      "installed_equals_original_versioned_zip": true,
+      "installed_equals_accepted_source": true,
+      "created_exclusively": true,
+      "source_reread_after_copy": {
+        "bytes": 4221,
+        "sha256": "7effa43ee2f9928b5d844066ff7676fbd9bd4461b4d49d49ef4e27d2011da840",
+        "mtime_ns": 1791704562000000000,
+        "mtime_utc": "2026-10-11T07:42:42+00:00",
+        "stable_double_read": true
+      },
+      "copy_equals_source_before_and_after": true
+    }
+  ],
+  "process_exit": {
+    "before_capture": {
+      "game_process_count": 0,
+      "checked_utc": "2026-10-11T08:35:39.9598634Z"
+    },
+    "after_capture": {
+      "game_process_count": 0,
+      "checked_utc": "2026-10-11T08:35:40.6790983Z"
+    },
+    "game_process_count_zero": true,
+    "method": "Read-only Get-Process -Name Borderlands2 before/after preservation; not before owner test."
+  },
+  "preservation": {
+    "accepted_baseline_files": 182,
+    "all_baseline_raw_bytes_equal_accepted_Git_blobs_before_capture": true,
+    "all_182_baseline_fingerprints_unchanged_after_capture": true,
+    "exclusive_new_log_and_three_file_snapshot": true,
+    "save_private_backup_access": "NONE",
+    "installed_game_SDK_file_writes": "NONE"
+  },
+  "diagnostic": {
+    "requested_accepting_starts": 1,
+    "actual_accepting_starts": 1,
+    "protocol_deviations": [
+      "A second ARM was refused because already armed (log27-28); cause unestablished.",
+      "TIME was reported at the first STOP (log67). SDK wrapper timestamps START65 to LIMIT67 differ by44.228 seconds; protocol requested about20seconds. Agent did not observe the waiting interval and wrapper time is not engine timing proof."
+    ],
+    "offline_review": {
+      "schema_version": 1,
+      "status": "COMPLETE_LOG_TEXT",
+      "log_text_acceptable": true,
+      "log_text_consistent": true,
+      "observer_sections_complete": true,
+      "input": {
+        "bytes": 17205,
+        "sha256": "3c1de714692827194df6881ebb01ecfcf3273a02e9cd825b420efc6210b3c402"
+      },
+      "records": 14,
+      "runs": [
+        {
+          "line": 65,
+          "started": true,
+          "orphan": false,
+          "baseline": {
+            "points": [
+              1,
+              0
+            ],
+            "ranks": [
+              0,
+              0,
+              0
+            ]
+          },
+          "events": 0,
+          "limit": "TIME",
+          "abort": null,
+          "not_started": null,
+          "final": "VERIFIED",
+          "stops": [
+            {
+              "line": 69,
+              "remaining": 0,
+              "captured": 0,
+              "attempts": 0,
+              "reentrant": 0,
+              "uncertain": 0,
+              "cleanup_failures": 0,
+              "outcome": "NOT_OBSERVED"
+            },
+            {
+              "line": 71,
+              "remaining": 0,
+              "captured": 0,
+              "attempts": 0,
+              "reentrant": 0,
+              "uncertain": 0,
+              "cleanup_failures": 0,
+              "outcome": "NOT_OBSERVED"
+            }
+          ],
+          "overlap_refusals": 0,
+          "removal_errors": 0,
+          "refused": false,
+          "ended": true
+        }
+      ],
+      "unattached_control_refusals": 0,
+      "issues": [],
+      "issue_count": 0,
+      "issues_truncated": false,
+      "cleanup": {
+        "observer_handles_resolved": true,
+        "prior_refusal_preserved": false,
+        "old_families_zero_after_last_activity": {
+          "UVH-STATE": true,
+          "UVH-UI": true,
+          "UVH-UPGRADE": true,
+          "UVH-INITNODE": true
+        },
+        "native_arrays_restored_after_last_activity": true,
+        "process_exit": "NOT_ESTABLISHED",
+        "duration_restore": "NOT_ESTABLISHED"
+      },
+      "event_meaning": "UNATTRIBUTED_MANAGER_EVENT; attempted entry only",
+      "attribution": "NONE",
+      "authenticity": "NOT_ESTABLISHED",
+      "engine_behavior": "NOT_ESTABLISHED",
+      "native_owned_lifecycle_ready": false,
+      "native_effect_ready": false,
+      "missing_calls_or_silence": "No absence, deactivation, ownership, timing or lifespan inference"
+    },
+    "offline_review_cli_exit": 0,
+    "offline_review_script_sha256": "db9e6a41dcb3b7c53c7edb5ef46da42aae76fd3ff357958545800cb1622692f8",
+    "no_fabricated_baseline": true,
+    "native_owned_lifecycle_ready": false,
+    "native_effect_ready": false,
+    "wrapper_time_observation": {
+      "start_line": 65,
+      "first_limit_line": 67,
+      "elapsed_seconds": 44.228,
+      "source": "SDK log header timestamps only; not verified engine clock, callback latency or owner wait duration"
+    }
+  },
+  "checks_not_run": [
+    "No agent game launch/install/control, native SDK import/execution or native callback invocation.",
+    "No before-test process/UI/title/click-count observation; separate owner visible-failure report not supplied.",
+    "No independent native SDK identity/callback attribution/deactivation success or source-to-installed-binary match.",
+    "No manager/summon payload, owned lifecycle/lifetime/generation/engine clock/write interval/rank-one/effect/save audit.",
+    "Accepted596-test offline suite/hostedCI not repeated for capture-only work."
+  ],
+  "metadata_revision_before_publication": {
+    "initial_manifest": {
+      "bytes": 9946,
+      "sha256": "db9e96f84f6447e8deecc42b53f409a913be42df55247d9b3c61c74c90e4cbaf"
+    },
+    "reason": "Initial local summary counter searched START version= instead of actual START v0.2.15. Corrected from preserved raw log and independent strict reviewer; added actual TIME/protocol timing observation.",
+    "raw_log_and_three_installed_snapshot_bytes_unchanged": true,
+    "previous_baseline_artifacts_unchanged": true
+  }
+}
