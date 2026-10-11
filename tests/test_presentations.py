@@ -83,8 +83,8 @@ class PresentationTests(unittest.TestCase):
         options = self.h.mod_options['options']
         option = next(option for option in options if option['display_name'].startswith('4 -'))
         self.assertIs(option['on_press'].__wrapped__, self.h.scope['inspect_deathtrap_readiness'])
-        self.assertEqual(len(options), 21)
-        self.assertEqual(self.h.mod_options['version'], '0.2.15')
+        self.assertEqual(len(options), 23)
+        self.assertEqual(self.h.mod_options['version'], '0.2.16')
 
     def test_unverified_session_tree_rank_points_or_inertness_refuses_before_metadata(self):
         changes = [lambda: setattr(self.h.pc, 'PlayerSkillTree', Obj('ForeignTree')),

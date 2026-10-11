@@ -1,65 +1,56 @@
-Ultimate Vault Hunters v0.2.15 - PASSIVE MANAGER EVENTS.
+Ultimate Vault Hunters v0.2.16 - CALLBACK-LOCAL DEATHTRAP READER.
 
-PREPARED BUILD: OFFLINE VALIDATION ONLY; NO v0.2.15 GAME RESULT YET.
-Items20/21 manually start/stop one bounded PRE observer at the verified
-WillowGame.SkillEffectManager:DeactivateSkill path. Every event is unattributed:
-it may relate to another skill/controller and does not prove successful native
-deactivation, a Deathtrap, duration or an effect. No activation or POST hook.
-All four callback payloads remain untouched/unretained; the callback returns
-None and never blocks, overrides or invokes the native function.
+PREPARED BUILD: OFFLINE VALIDATION ONLY; NOT TESTED IN GAME.
+The latest game-tested diagnostic remains v0.2.15. Its complete preserved log
+records one passive observer START with zero callbacks: NOT_OBSERVED.
+The v0.2.13/v0.2.14 captures verify metadata, not an ownership/effect adapter.
 
-START requires the existing owned inert grade-zero node, loaded solo Offline
-Gaige, known unchanged points/ranks/indices, sole player rosters and exact
-loaded class/function/property metadata. The callback rechecks that diagnostic
-context and metadata without reading callback objects or manager/skill fields.
-Limits:1hook,24events,64attempts,30seconds checked on calls/explicit controls;
-no background timer. Native getters can take time. Use STOP even if no events.
-Events are fixed primitive tokens/counters, max256UTF8bytes per line. Python
-monotonic limits do not measure an engine clock or summon lifespan.
+New controls22/23 start/stop a standalone read-only DeactivateSkill PRE reader.
+NO ARM or node insertion is needed. START refuses an armed/recorded node,
+manual duration record, other active observers or uncertain cleanup. It does
+not access player objects or metadata from the mod-option handler. Fresh
+classes/schema/player facts are obtained only inside a natural callback.
+An accepting callback validates the manager/function/argument/property schema
+before reading SkillInstigator, and reads Definition only for a fresh matching
+local-controller wrapper in a verified sole-player Gaige session.
 
-While registration/observation or unresolved handles are pending, conflicting
-project controls refuse. STOP21 and CANCEL3 remain available. STOP makes
-callbacks inert before removal. Failed owned removals retain inert handles
-for explicit retry and block new START; failure history remains reported.
-Ambiguous registration is never removed as owned; unresolved uncertainty
-stays inert and blocked. Silence reports NOT_OBSERVED; any unresolved cleanup
-or refusal reports REFUSED. Zero hooks and native-array rollback are separate
-from manual duration restoration, refunds, saves and player/UI cache cleanup.
+Output is fixed primitive classifications: SAME_WRAPPER,DEATHTRAP_NAME,
+null/foreign/name alternatives or refusal. No game reference is stored by this
+reader, no supplied name/object path/exception text is printed, and ret and the
+Boolean argument remain unread. Every callback returns exact None. PRE means
+attempted entry, even if another mod blocks native execution. A wrapper/name
+match does not prove manager ownership,exact asset,unique active summon,
+native generation,deactivation success or duration/effect safety.
 
-HISTORICAL EVIDENCE:
-The accepted v0.2.14 game test captured two identical complete15-row metadata
-collections, including actual argument declared classes: instigator Controller,
-definition SkillDefinition and broad Core.Object additional target. CANCEL
-restored arrays and all four older observer families were zero; installed
-project files matched source/original ZIP, with process zero at preservation.
-Two inspections despite one requested, refused secondARM and repeatedCANCEL
-are recorded. Those logs/snapshots/manifests and14 original ZIPs are preserved.
-Metadata item4 keeps the reviewed v14 schema/BEGIN label unchanged; that label
-identifies its frozen collection grammar, not the installed v15 build.
+Limits: one PRE hook,64 attempts,24 classified records,120 seconds checked on
+callbacks/controls,256 counted reader SDK operations in four64-operation
+stages and384UTF8 bytes per complete project log line. No background timer.
+SDK internal conversion/helper operations are outside that explicit budget.
+The SDK helper owns existing ENGINE/descriptor globals; this reader adds none.
+Hook-time GC guidance does not verify native binary/build identity,arbitrary
+destruction or already-invalid SDK inputs before Python conversion.
 
-PACKAGE / PROPOSED LATER OWNER TEST:
-Exactly one folder with __init__.py, pyproject.toml and README.txt. The original
-19controls plus START20/STOP21; import starts no new observer. After exact build
-review and explicit owner approval, the proposed steps are:
-1. Install the exact reviewed project ZIP; start fresh BL2 and stay at main menu.
-2. At the main menu, set Offline and select already-backed-up Gaige.
-3. In MODS, verify UVH v0.2.15 - PASSIVE MANAGER EVENTS.
-4. Still at the main menu, select ARM item1 once.
-5. Select Continue and wait until Gaige is fully loaded into the map.
-6. In the map, select START item20 once; stay in place for about20seconds.
-7. Still in the map, select STOP/REPORT item21, then CANCEL/RESTORE item3.
-8. Fully exit to desktop; report STOP, CANCEL/full exit and any visible failure
-   before relaunching. Preserve the full stable log and installed project files.
-This is a proposal, not a request to install or run the new build now. No
-purchase,respec,travel,summon,manual boost,metadata inspection or other trace.
-Zero callbacks is a complete honest result; no repeat to chase positive events.
+Other project controls refuse while the reader or unresolved cleanup is active.
+STOP23 and CANCEL3 remain available; disable also stops the reader. STOP makes
+the callback inert before removing its owned hook. Busy cleanup is deferred;
+failed owned removal retains its fixed tuple for retry. Uncertain registration
+is never removed as owned. A successful retry cannot erase failure history.
+STOP needs no saved game reference. No new Duration/point/rank/save/flag write
+or native engine function is performed. Historical manual boost/restore remains
+separate from CANCEL/disable and blocked while this reader is active.
 
-RECOVERY / LIMITS:
-Native-array restoration cannot undo points/saves or clear cached trees.
-Fully restart after an armed experiment before normal play. Manual duration
-restore is separate and is not invoked by node CANCEL/disable. The SDK still
-constructs/copies callback wrappers; its native binary/source commit match
-and this target's in-game cleanup/callback behavior remain unverified.
-Owned Deathtrap lifecycle,lifetime,generation,clock,rank-one gating and the
-automatic duration effect remain NOT_READY. No save/private-backup operation,
-co-op,merge or release here.
+PACKAGE AND LATER OWNER TEST:
+Exactly one folder with __init__.py,pyproject.toml,README.txt. All21 prior
+controls remain plus22 START CALLBACK-LOCAL DEATHTRAP READER (NO ARM) and
+23 STOP/REPORT CALLBACK-LOCAL READER. Import installs no new hook.
+No v16 game test is requested now. First review this exact build and its strict
+offline log reviewer, then obtain separate owner approval of a meaningful
+natural-event protocol on already-backed-up solo Offline Gaige. Instructions
+must specify the main menu,fully loaded map,exact controls and full exit.
+Any ordinary Deathtrap use must be explicitly included in that later approval.
+Do not repeat the old stay-still run,force native calls or use purchases,
+respec,travel,manual boost or other traces to manufacture observations.
+
+Preserve all original logs/manifests/tested snapshots and15 original versioned
+ZIPs. Zero events remains NOT_OBSERVED; no repeat to chase success. No automatic
+duration effect,co-op,save/private-backup action,merge or release here.
