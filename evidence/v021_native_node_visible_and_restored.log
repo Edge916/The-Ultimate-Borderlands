@@ -1,0 +1,132 @@
+date       time          thread                                           location@line    v|
+2026-10-10 01:11:36.485Z   6864                                    unrealsdk::init@59   INFO| unrealsdk v3.2.0 (b1852aa4)
+2026-10-10 01:11:36.485Z   6864                                    unrealsdk::init@60   INFO| ===========================
+2026-10-10 01:11:36.485Z   6864   ~ game::`anonymous-namespace'::find_correct_hook@51   INFO| Using Borderlands 2 hook
+2026-10-10 01:11:36.659Z   6864                   unrealsdk::memory::get_exe_range@34   MISC| Executable memory range: 00d50000-02886000
+2026-10-10 01:11:36.743Z   6864                          unrealsdk::memory::detour@107  MISC| Detoured ProcessEvent at 0xee2bd0
+2026-10-10 01:11:36.858Z   6864                          unrealsdk::memory::detour@107  MISC| Detoured CallFunction at 0xee26e0
+2026-10-10 01:11:36.859Z   6864            unrealsdk::game::BL2Hook::find_gobjects@31   MISC| GObjects: 0x23d2bd0
+2026-10-10 01:11:36.859Z   6864              unrealsdk::game::BL2Hook::find_gnames@53   MISC| GNames: 0x23907f4
+2026-10-10 01:11:36.860Z   6864          unrealsdk::game::BL2Hook::find_fname_init@68   MISC| FName::Init: 0xde0b70
+2026-10-10 01:11:36.862Z   6864         unrealsdk::game::BL2Hook::find_fframe_step@100  MISC| FFrame::Step: 0xed3770
+2026-10-10 01:11:36.862Z   6864             unrealsdk::game::BL2Hook::find_gmalloc@49   MISC| GMalloc: 0x5a37ac0
+2026-10-10 01:11:36.863Z   6864    unrealsdk::game::BL2Hook::find_construct_object@61   MISC| StaticConstructObject: 0xe1a5f0
+2026-10-10 01:11:36.864Z   6864       unrealsdk::game::BL2Hook::find_get_path_name@115  MISC| GetPathName: 0xdfda80
+2026-10-10 01:11:36.865Z   6864  unrealsdk::game::BL2Hook::find_static_find_object@165  MISC| StaticFindObject: 0xe07500
+2026-10-10 01:11:36.867Z   6864        unrealsdk::game::BL2Hook::find_load_package@205  MISC| LoadPackage: 0xe1d190
+2026-10-10 01:11:36.873Z   6864      unrealsdk::game::BL2Hook::hexedit_set_command@47   MISC| Set Command: 0x1180181
+2026-10-10 01:11:36.874Z   6864      unrealsdk::game::BL2Hook::hexedit_array_limit@62   MISC| Array Limit: 0xe19ab4
+2026-10-10 01:11:36.875Z   6864       ~ game::BL2Hook::hexedit_array_limit_message@76   MISC| Array Limit Message: 0xe19b6f
+2026-10-10 01:11:36.875Z   66ac                                  pyunrealsdk::init@63   INFO| pyunrealsdk v1.10.0 (c72c5558) loaded
+2026-10-10 01:11:54.912Z   9584 ~ game::`anonymous-namespace'::inject_console_hook@280  MISC| Set console key to 'Tilde'
+2026-10-10 01:11:55.223Z   66ac                     ~ console_mod_menu\__init__.py@28   INFO| Console Mod Menu loaded. Type 'mods' to get started.
+2026-10-10 01:12:35.934Z   9584                                    _py_warnings.py@147  DWRN| C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\sdk_mods\legacy_compat.sdkmod\legacy_compat\unrealsdk\__init__.py:210: DeprecationWarning: Using deprecated legacy import compatibility.
+2026-10-10 01:12:50.341Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] BEGIN arm ONE inert Gaige initialization experiment
+2026-10-10 01:12:50.341Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] ARMED. Continue as backed-up Gaige SOLO; inspect Skills, never buy the node.
+2026-10-10 01:12:50.341Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] No assets modified while arming. Native arrays and player cache require rollback/restart after test.
+2026-10-10 01:12:51.420Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] BEGIN arm ONE inert Gaige initialization experiment
+2026-10-10 01:12:51.420Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Already armed or observers need removal; use CANCEL.
+2026-10-10 01:12:56.828Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] PRE Gaige initialization: net_mode=2 pawn=<none>
+2026-10-10 01:12:56.828Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] SESSION role=listen_host local_players=1 roster_players=1 local_matches=True roster_matches=True
+2026-10-10 01:12:56.829Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] NEW SkillDefinition created: UVH_DeathtrapOverclock [SkillDefinition] | SkillDefinition'GD_Tulip_Mechromancer_Skills.LittleBigTrouble.UVH_DeathtrapOverclock' | max rank=1 | effects=0
+2026-10-10 01:12:56.830Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] PRE INSERT VERIFIED before native PlayerSkillTree.Initialize; node is inert, grade 0.
+2026-10-10 01:12:56.831Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] BEGIN current result (READ ONLY)
+2026-10-10 01:12:56.831Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] armed=False consumed=True hooks=2
+2026-10-10 01:12:56.831Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] SESSION role=listen_host local_players=1 roster_players=1 local_matches=True roster_matches=True
+2026-10-10 01:12:56.832Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] RESULT native=True runtime_node_count=1 original_skills_present=True total_runtime_skills=39
+2026-10-10 01:12:56.832Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry object=<WrappedStruct> | {Definition: SkillDefinition'GD_Tulip_Mechromancer_Skills.LittleBigTrouble.UVH_DeathtrapOverclock', Index: 14, PrevSkillIndex: 13, NextSkillIndex: 15, ParentTierIndex: 7, PrevSkillTypeIndex: fields=Definition, NextSkillIndex, NextSkillTypeIndex, ParentTierIndex, PrevSkillIndex, PrevSkillTypeIndex, Grade, Index, Owner
+2026-10-10 01:12:56.832Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Definition = UVH_DeathtrapOverclock [SkillDefinition] | SkillDefinition'GD_Tulip_Mechromancer_Skills.LittleBigTrouble.UVH_DeathtrapOverclock'
+2026-10-10 01:12:56.832Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Definition asset/type reference=GD_Tulip_Mechromancer_Skills.LittleBigTrouble.UVH_DeathtrapOverclock
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.NextSkillIndex = 15 | 15
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.NextSkillTypeIndex = 15 | 15
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.ParentTierIndex = 7 | 7
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.PrevSkillIndex = 13 | 13
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.PrevSkillTypeIndex = 13 | 13
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Grade = 0 | 0
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Index = 14 | 14
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Owner = PlayerSkillTree_0 [PlayerSkillTree] | PlayerSkillTree'Loader.TheWorld:PersistentLevel.WillowPlayerController_2.PlayerSkillTree_0'
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0 object=<WrappedStruct> | {SkillIndices: [13, 14, 15], BranchPointsToUnlockTier: 0, Index: 7, PrevTierIndex: -1, NextTierIndex: 8, ParentBranchIndex: 2, TierNumber: 0, bUnlocked: False, Owner: PlayerSkillTree'Loader. fields=BranchPointsToUnlockTier, NextTierIndex, ParentBranchIndex, PrevTierIndex, SkillIndices, TierNumber, Index, Owner, bUnlocked
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.BranchPointsToUnlockTier = 0 | 0
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.NextTierIndex = 8 | 8
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.ParentBranchIndex = 2 | 2
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.PrevTierIndex = -1 | -1
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices = <WrappedArray len=3> | [13, 14, 15]
+2026-10-10 01:12:56.833Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices count=3
+2026-10-10 01:12:56.834Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices[0] = 13 | 13
+2026-10-10 01:12:56.834Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices[1] = 14 | 14
+2026-10-10 01:12:56.834Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices[2] = 15 | 15
+2026-10-10 01:12:56.834Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.TierNumber = 0 | 0
+2026-10-10 01:12:56.834Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.Index = 7 | 7
+2026-10-10 01:12:56.834Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.Owner = PlayerSkillTree_0 [PlayerSkillTree] | PlayerSkillTree'Loader.TheWorld:PersistentLevel.WillowPlayerController_2.PlayerSkillTree_0'
+2026-10-10 01:12:56.834Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.bUnlocked = False | False
+2026-10-10 01:12:56.834Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Data readback is not proof of visibility. Inspect Little Big Trouble; DO NOT BUY NODE.
+2026-10-10 01:12:56.834Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] END current result
+2026-10-10 01:12:56.834Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Observers remaining=0
+2026-10-10 01:13:39.980Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] BEGIN current result (READ ONLY)
+2026-10-10 01:13:39.980Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] armed=False consumed=True hooks=0
+2026-10-10 01:13:39.981Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] SESSION role=listen_host local_players=1 roster_players=1 local_matches=True roster_matches=True
+2026-10-10 01:13:39.981Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] RESULT native=True runtime_node_count=1 original_skills_present=True total_runtime_skills=39
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry object=<WrappedStruct> | {Definition: SkillDefinition'GD_Tulip_Mechromancer_Skills.LittleBigTrouble.UVH_DeathtrapOverclock', Index: 14, PrevSkillIndex: 13, NextSkillIndex: 15, ParentTierIndex: 7, PrevSkillTypeIndex: fields=Definition, NextSkillIndex, NextSkillTypeIndex, ParentTierIndex, PrevSkillIndex, PrevSkillTypeIndex, Grade, Index, Owner
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Definition = UVH_DeathtrapOverclock [SkillDefinition] | SkillDefinition'GD_Tulip_Mechromancer_Skills.LittleBigTrouble.UVH_DeathtrapOverclock'
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Definition asset/type reference=GD_Tulip_Mechromancer_Skills.LittleBigTrouble.UVH_DeathtrapOverclock
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.NextSkillIndex = 15 | 15
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.NextSkillTypeIndex = 15 | 15
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.ParentTierIndex = 7 | 7
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.PrevSkillIndex = 13 | 13
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.PrevSkillTypeIndex = 13 | 13
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Grade = 0 | 0
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Index = 14 | 14
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Owner = PlayerSkillTree_0 [PlayerSkillTree] | PlayerSkillTree'Loader.TheWorld:PersistentLevel.WillowPlayerController_2.PlayerSkillTree_0'
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0 object=<WrappedStruct> | {SkillIndices: [13, 14, 15], BranchPointsToUnlockTier: 0, Index: 7, PrevTierIndex: -1, NextTierIndex: 8, ParentBranchIndex: 2, TierNumber: 0, bUnlocked: True, Owner: PlayerSkillTree'Loader.T fields=BranchPointsToUnlockTier, NextTierIndex, ParentBranchIndex, PrevTierIndex, SkillIndices, TierNumber, Index, Owner, bUnlocked
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.BranchPointsToUnlockTier = 0 | 0
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.NextTierIndex = 8 | 8
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.ParentBranchIndex = 2 | 2
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.PrevTierIndex = -1 | -1
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices = <WrappedArray len=3> | [13, 14, 15]
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices count=3
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices[0] = 13 | 13
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices[1] = 14 | 14
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices[2] = 15 | 15
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.TierNumber = 0 | 0
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.Index = 7 | 7
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.Owner = PlayerSkillTree_0 [PlayerSkillTree] | PlayerSkillTree'Loader.TheWorld:PersistentLevel.WillowPlayerController_2.PlayerSkillTree_0'
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.bUnlocked = True | True
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Data readback is not proof of visibility. Inspect Little Big Trouble; DO NOT BUY NODE.
+2026-10-10 01:13:39.982Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] END current result
+2026-10-10 01:13:41.108Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] BEGIN current result (READ ONLY)
+2026-10-10 01:13:41.108Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] armed=False consumed=True hooks=0
+2026-10-10 01:13:41.109Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] SESSION role=listen_host local_players=1 roster_players=1 local_matches=True roster_matches=True
+2026-10-10 01:13:41.109Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] RESULT native=True runtime_node_count=1 original_skills_present=True total_runtime_skills=39
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry object=<WrappedStruct> | {Definition: SkillDefinition'GD_Tulip_Mechromancer_Skills.LittleBigTrouble.UVH_DeathtrapOverclock', Index: 14, PrevSkillIndex: 13, NextSkillIndex: 15, ParentTierIndex: 7, PrevSkillTypeIndex: fields=Definition, NextSkillIndex, NextSkillTypeIndex, ParentTierIndex, PrevSkillIndex, PrevSkillTypeIndex, Grade, Index, Owner
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Definition = UVH_DeathtrapOverclock [SkillDefinition] | SkillDefinition'GD_Tulip_Mechromancer_Skills.LittleBigTrouble.UVH_DeathtrapOverclock'
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Definition asset/type reference=GD_Tulip_Mechromancer_Skills.LittleBigTrouble.UVH_DeathtrapOverclock
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.NextSkillIndex = 15 | 15
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.NextSkillTypeIndex = 15 | 15
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.ParentTierIndex = 7 | 7
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.PrevSkillIndex = 13 | 13
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.PrevSkillTypeIndex = 13 | 13
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Grade = 0 | 0
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Index = 14 | 14
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] OverclockRuntimeEntry.Owner = PlayerSkillTree_0 [PlayerSkillTree] | PlayerSkillTree'Loader.TheWorld:PersistentLevel.WillowPlayerController_2.PlayerSkillTree_0'
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0 object=<WrappedStruct> | {SkillIndices: [13, 14, 15], BranchPointsToUnlockTier: 0, Index: 7, PrevTierIndex: -1, NextTierIndex: 8, ParentBranchIndex: 2, TierNumber: 0, bUnlocked: True, Owner: PlayerSkillTree'Loader.T fields=BranchPointsToUnlockTier, NextTierIndex, ParentBranchIndex, PrevTierIndex, SkillIndices, TierNumber, Index, Owner, bUnlocked
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.BranchPointsToUnlockTier = 0 | 0
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.NextTierIndex = 8 | 8
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.ParentBranchIndex = 2 | 2
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.PrevTierIndex = -1 | -1
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices = <WrappedArray len=3> | [13, 14, 15]
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices count=3
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices[0] = 13 | 13
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices[1] = 14 | 14
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.SkillIndices[2] = 15 | 15
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.TierNumber = 0 | 0
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.Index = 7 | 7
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.Owner = PlayerSkillTree_0 [PlayerSkillTree] | PlayerSkillTree'Loader.TheWorld:PersistentLevel.WillowPlayerController_2.PlayerSkillTree_0'
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] TroubleRuntimeTier0.bUnlocked = True | True
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Data readback is not proof of visibility. Inspect Little Big Trouble; DO NOT BUY NODE.
+2026-10-10 01:13:41.110Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] END current result
+2026-10-10 01:13:42.159Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Observers remaining=0
+2026-10-10 01:13:42.159Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] RESTORE result=True skills=['MorePep', 'Myelin'] cells=[True, False, True] (methods assign, assign)
+2026-10-10 01:13:42.159Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] NATIVE ARRAYS RESTORED. Restart BL2 to clear any player/UI cache.
+2026-10-10 01:13:42.159Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Restart BL2 now to discard the cached prototype tree. Do not buy the node.
+2026-10-10 01:13:43.577Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Observers remaining=0
+2026-10-10 01:13:43.577Z   9584    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] DISARMED; no initialization patch to restore.
