@@ -1378,6 +1378,7 @@ def arm_init_node(_option=None):
 
 def cancel_init_node(_option=None):
     global _init_armed
+    stop_deathtrap_events()
     stop_skillstate_trace()
     stop_ui_trace()
     stop_upgrade_trace()
@@ -3352,39 +3353,419 @@ def inspect_deathtrap_readiness(_option=None):
         return False
 
 
+_DT_EVENT_PATH = 'WillowGame.SkillEffectManager:DeactivateSkill'
+_DT_EVENT_IDENT = 'UVH_DT_EVENT_V15_DEACTIVATE_PRE'
+_DT_EVENT_INTEGER_MAX = 2147483647
+_dt_event_context = None
+_dt_event_closing_context = None
+_dt_event_handles = []
+_dt_event_uncertain = []
+_dt_event_epoch = 0
+_dt_event_busy = False
+_dt_event_starting = False
+_dt_event_stop_requested = False
+_dt_event_stats = None
+
+
+class _DTEventRefusal(Exception):
+    def __init__(self, reason):
+        self.reason = reason
+
+
+class _DTEventChecks(list):
+    def append(self, value):
+        if len(self) >= 32:
+            raise _DTEventRefusal('METADATA')
+        super().append(value)
+
+
+def _dt_event_emit(payload):
+    prefix = '[UVH-DT-EVENT] '
+    if type(payload) is not str or len((prefix + payload).encode('utf-8')) > 256:
+        return False
+    try:
+        log(prefix + payload)
+        return True
+    except Exception:
+        return False
+
+
+def _dt_event_integer(value):
+    if type(value) is not int or not 0 <= value <= _DT_EVENT_INTEGER_MAX:
+        raise _DTEventRefusal('STATE')
+    return value
+
+
+def _dt_event_clock(context=None):
+    import math
+    import time
+    now = time.monotonic()
+    if type(now) is not float or not math.isfinite(now) or now < 0:
+        raise _DTEventRefusal('CLOCK')
+    if context is not None:
+        elapsed = now - context['started']
+        if now < context['last_time'] or not math.isfinite(elapsed) or elapsed < 0:
+            raise _DTEventRefusal('CLOCK')
+        context['last_time'] = now
+    return now
+
+
+def _dt_event_guard(context):
+    try:
+        state = _deathtrap_session(context)
+    except Exception:
+        raise _DTEventRefusal('STATE') from None
+    for value in (*state[0], *state[1], *state[2], state[3]):
+        _dt_event_integer(value)
+    return state
+
+
+def _dt_event_metadata(context):
+    checks = _DTEventChecks()
+    try:
+        controller = context['pc'].Class
+        captured = _deathtrap_class(controller)
+        checks.append((lambda: _deathtrap_class(context['pc'].Class), captured))
+        chain, coverage = _deathtrap_chain(context, checks, controller)
+        if coverage != 'COMPLETE' or chain[0][2] != 'WillowGame.WillowPlayerController':
+            raise ValueError()
+        owners = tuple(item[0] for item in chain)
+        header, props, coverage, ret = _deathtrap_function(context, checks, controller, 'GetSkillManager', owners)
+        if (coverage != 'COMPLETE' or header[3] != 'WillowGame.WillowPlayerController:GetSkillManager'
+                or header[4][:4] != (132097, 1, 4, 0) or len(props) != 1 or ret is None):
+            raise ValueError()
+        p = props[0]
+        if (p[1:3] != ('ReturnValue', 'ZObjectProperty') or p[4:8] != (1408, 0, 1, 4)
+                or p[0] != ret[0]):
+            raise ValueError()
+        manager = p[9]
+        chain, coverage = _deathtrap_chain(context, checks, manager)
+        if coverage != 'COMPLETE' or chain[0][2] != 'WillowGame.SkillEffectManager':
+            raise ValueError()
+        manager_owners = tuple(item[0] for item in chain)
+        header, props, coverage, ret = _deathtrap_function(context, checks, manager, 'DeactivateSkill', manager_owners)
+        if (coverage != 'COMPLETE' or header[3] != _DT_EVENT_PATH
+                or header[4][:4] != (149506, 3, 12, 65535) or ret is not None or len(props) != 3):
+            raise ValueError()
+        specs = (('SkillInstigator', 'ZObjectProperty', 128, 0, 'Engine.Controller'),
+                 ('Definition', 'ZObjectProperty', 128, 4, 'WillowGame.SkillDefinition'),
+                 ('bIgnoreSkillInstigator', 'ZBoolProperty', 144, 8, None))
+        for p, spec in zip(props, specs):
+            label, kind, flags, offset, declared_path = spec
+            if p[1:3] != (label, kind) or p[4:8] != (flags, offset, 1, 4):
+                raise ValueError()
+            if declared_path is not None:
+                captured = _deathtrap_class(p[9])
+                if captured[2] != declared_path:
+                    raise ValueError()
+                if label == 'SkillInstigator' and not any(p[9] == item for item in owners):
+                    raise ValueError()
+                checks.append((lambda cls=p[9]: _deathtrap_class(cls), captured))
+                if label == 'Definition':
+                    for definition in context['definitions']:
+                        captured = _deathtrap_class(definition.Class)
+                        if captured[0] != p[9] or captured[2] != declared_path:
+                            raise ValueError()
+                        checks.append((lambda obj=definition: _deathtrap_class(obj.Class), captured))
+        _deathtrap_check(context, checks)
+        return checks
+    except _DTEventRefusal:
+        raise
+    except Exception:
+        raise _DTEventRefusal('METADATA') from None
+
+
+def _dt_event_revalidate(context, active=False):
+    def stopped():
+        return active and (_dt_event_context is not context or _dt_event_stop_requested)
+    if stopped():
+        return False
+    _dt_event_guard(context)
+    for getter, expected in context['checks']:
+        if stopped():
+            return False
+        try:
+            current = getter()
+        except Exception:
+            raise _DTEventRefusal('METADATA') from None
+        if stopped():
+            return False
+        if current != expected:
+            raise _DTEventRefusal('METADATA')
+        _dt_event_guard(context)
+    return not stopped()
+
+
+def _dt_event_locked():
+    return (_dt_event_context is not None or _dt_event_closing_context is not None
+            or bool(_dt_event_handles) or bool(_dt_event_uncertain) or _dt_event_busy or _dt_event_starting)
+
+
+def _dt_event_option_gate(handler):
+    from functools import wraps
+    @wraps(handler)
+    def dispatch(option=None):
+        if _dt_event_locked():
+            _dt_event_emit('NOT_STARTED reason=OVERLAP')
+            return False
+        return handler(option)
+    return dispatch
+
+
+def _dt_event_finish(reason, limit=False):
+    global _dt_event_context, _dt_event_closing_context, _dt_event_stop_requested
+    if _dt_event_context is not None:
+        _dt_event_closing_context = _dt_event_context
+    _dt_event_context = None
+    _dt_event_stop_requested = True
+    if _dt_event_stats is not None:
+        if limit:
+            _dt_event_stats['limit'] = reason
+        else:
+            _dt_event_stats['refused'] = True
+    _dt_event_emit(('LIMIT reason=' if limit else 'ABORT reason=') + reason)
+
+
+def stop_deathtrap_events(_option=None):
+    global _dt_event_context, _dt_event_closing_context, _dt_event_handles
+    global _dt_event_uncertain, _dt_event_epoch, _dt_event_stop_requested
+    if not _dt_event_locked() and _dt_event_stats is None:
+        return True
+    context = _dt_event_context if _dt_event_context is not None else _dt_event_closing_context
+    _dt_event_context = None
+    _dt_event_closing_context = None
+    _dt_event_epoch = min(_DT_EVENT_INTEGER_MAX, _dt_event_epoch + 1)
+    if _dt_event_busy:
+        _dt_event_closing_context = context
+        _dt_event_stop_requested = True
+        return False
+    _dt_event_stop_requested = False
+    stats = _dt_event_stats
+    if context is not None:
+        try:
+            state = _dt_event_guard(context)
+            now = _dt_event_clock(context)
+            if now - context['started'] >= 30.0 and stats['limit'] is None:
+                stats['limit'] = 'TIME'
+                _dt_event_emit('LIMIT reason=TIME')
+            if not _dt_event_emit('FINAL points={} ranks={} unchanged=True'.format(state[0], state[1])):
+                stats['refused'] = True
+        except Exception:
+            stats['refused'] = True
+            _dt_event_emit('FINAL UNVERIFIED reason=STATE')
+    try:
+        import unrealsdk
+        phase = unrealsdk.hooks.Type.PRE
+    except Exception:
+        if stats is not None:
+            stats['refused'] = True
+        return False
+    pending = []
+    for path, ident in _dt_event_handles:
+        failed = False
+        try:
+            removed = unrealsdk.hooks.remove_hook(path, phase, ident)
+            absent = unrealsdk.hooks.has_hook(path, phase, ident)
+            failed = type(removed) is not bool or type(absent) is not bool or absent
+        except Exception:
+            failed = True
+        if failed:
+            pending.append((path, ident))
+            if stats is not None:
+                stats['failures'] = min(_DT_EVENT_INTEGER_MAX, stats['failures'] + 1)
+                stats['refused'] = True
+            _dt_event_emit('REMOVAL_ERROR remaining=1')
+    _dt_event_handles = pending
+    uncertain = []
+    for path, ident in _dt_event_uncertain:
+        try:
+            present = unrealsdk.hooks.has_hook(path, phase, ident)
+            if type(present) is not bool or present:
+                uncertain.append((path, ident))
+        except Exception:
+            uncertain.append((path, ident))
+    _dt_event_uncertain = uncertain
+    if stats is not None:
+        if uncertain:
+            stats['refused'] = True
+        _dt_event_emit('STOP remaining={} captured={} attempts={} reentrant={} uncertain={} cleanup_failures={}'.format(
+            len(pending) + len(uncertain), stats['captured'], stats['attempts'], stats['reentrant'], len(uncertain), stats['failures']))
+        outcome = ('REFUSED' if stats['refused'] or pending or uncertain else
+                   'OBSERVED_UNATTRIBUTED' if stats['captured'] else 'NOT_OBSERVED')
+        _dt_event_emit('OUTCOME value=' + outcome)
+    return not pending and not uncertain
+
+
+def _dt_event_callback(epoch):
+    def observe(obj, args, ret, func):
+        global _dt_event_busy
+        context = _dt_event_context
+        if context is None or context['epoch'] != epoch or _dt_event_epoch != epoch:
+            return None
+        stats = _dt_event_stats
+        stats['attempts'] = min(_DT_EVENT_INTEGER_MAX, stats['attempts'] + 1)
+        if _dt_event_busy:
+            stats['reentrant'] = min(_DT_EVENT_INTEGER_MAX, stats['reentrant'] + 1)
+            if stats['attempts'] >= 64:
+                _dt_event_finish('ATTEMPTS', limit=True)
+            return None
+        _dt_event_busy = True
+        try:
+            if stats['attempts'] >= 64:
+                _dt_event_finish('ATTEMPTS', limit=True)
+                return None
+            if _dt_event_clock(context) - context['started'] >= 30.0:
+                _dt_event_finish('TIME', limit=True)
+                return None
+            if not _dt_event_revalidate(context, active=True):
+                return None
+            _dt_event_guard(context)
+            if _dt_event_clock(context) - context['started'] >= 30.0:
+                _dt_event_finish('TIME', limit=True)
+                return None
+            if _dt_event_context is not context or _dt_event_stop_requested:
+                return None
+            ordinal = stats['captured'] + 1
+            if not _dt_event_emit('EVENT ordinal={} target=DeactivateSkill phase=PRE attribution=NONE'.format(ordinal)):
+                raise _DTEventRefusal('INTERNAL')
+            stats['captured'] = ordinal
+            if ordinal >= 24:
+                _dt_event_finish('EVENTS', limit=True)
+        except _DTEventRefusal as refusal:
+            _dt_event_finish(refusal.reason)
+        except Exception:
+            _dt_event_finish('INTERNAL')
+        finally:
+            _dt_event_busy = False
+            if _dt_event_stop_requested:
+                stop_deathtrap_events()
+        return None
+    return observe
+
+
+def start_deathtrap_events(_option=None):
+    global _dt_event_context, _dt_event_epoch, _dt_event_stats, _dt_event_stop_requested
+    global _dt_event_starting
+    if _dt_event_locked():
+        _dt_event_emit('NOT_STARTED reason=OVERLAP')
+        return False
+    _dt_event_stats = dict(captured=0, attempts=0, reentrant=0, failures=0, refused=False, limit=None)
+    _dt_event_stop_requested = False
+    _dt_event_starting = True
+    try:
+        import unrealsdk
+        if _dt_event_epoch >= _DT_EVENT_INTEGER_MAX:
+            raise _DTEventRefusal('INTERNAL')
+        _dt_event_epoch += 1
+        try:
+            pc, record = get_pc(possibly_loading=True), _uvh_node_state
+            if not isinstance(pc, unrealsdk.unreal.UObject) or record is None or 'init_tree' not in record or len(record['skills']) != 2:
+                raise ValueError()
+            modes = unrealsdk.find_enum('ENetMode')
+            context = dict(pc=pc, tree=record['init_tree'], record=record, pawn=read(pc, 'Pawn'),
+                world=read(pc, 'WorldInfo'), pri=read(pc, 'PlayerReplicationInfo'),
+                modes=(modes.NM_Standalone, modes.NM_ListenServer),
+                definitions=(record['node'], record['skills'][0], record['skills'][1]), epoch=_dt_event_epoch)
+            for value in (pc, context['tree'], context['pawn'], context['world'], context['pri'], *context['definitions']):
+                if not isinstance(value, unrealsdk.unreal.UObject):
+                    raise ValueError()
+            context['baseline'] = _dt_event_guard(context)
+        except Exception:
+            raise _DTEventRefusal('STATE') from None
+        started = _dt_event_clock()
+        context['started'] = context['last_time'] = started
+        context['checks'] = _dt_event_metadata(context)
+        phase = unrealsdk.hooks.Type.PRE
+        try:
+            present = unrealsdk.hooks.has_hook(_DT_EVENT_PATH, phase, _DT_EVENT_IDENT)
+        except Exception:
+            raise _DTEventRefusal('IDENTIFIER') from None
+        if type(present) is not bool or present:
+            raise _DTEventRefusal('IDENTIFIER')
+        callback = _dt_event_callback(context['epoch'])
+        try:
+            added = unrealsdk.hooks.add_hook(_DT_EVENT_PATH, phase, _DT_EVENT_IDENT, callback)
+        except Exception:
+            _dt_event_uncertain.append((_DT_EVENT_PATH, _DT_EVENT_IDENT))
+            raise _DTEventRefusal('REGISTRATION') from None
+        if type(added) is not bool:
+            _dt_event_uncertain.append((_DT_EVENT_PATH, _DT_EVENT_IDENT))
+            raise _DTEventRefusal('REGISTRATION')
+        if not added:
+            raise _DTEventRefusal('REGISTRATION')
+        _dt_event_handles.append((_DT_EVENT_PATH, _DT_EVENT_IDENT))
+        try:
+            present = unrealsdk.hooks.has_hook(_DT_EVENT_PATH, phase, _DT_EVENT_IDENT)
+        except Exception:
+            raise _DTEventRefusal('REGISTRATION') from None
+        if type(present) is not bool or not present:
+            raise _DTEventRefusal('REGISTRATION')
+        _dt_event_guard(context)
+        try:
+            _deathtrap_check(context, context['checks'])
+        except Exception:
+            raise _DTEventRefusal('METADATA') from None
+        if _dt_event_clock(context) - started >= 30.0:
+            raise _DTEventRefusal('CLOCK')
+        if not _dt_event_emit('START v0.2.15 target=DeactivateSkill phase=PRE attribution=NONE hooks=1'):
+            raise _DTEventRefusal('INTERNAL')
+        if not _dt_event_emit('BASELINE points={} ranks={}'.format(context['baseline'][0], context['baseline'][1])):
+            raise _DTEventRefusal('INTERNAL')
+        _dt_event_revalidate(context)
+        if _dt_event_epoch != context['epoch'] or _dt_event_stop_requested:
+            raise _DTEventRefusal('REGISTRATION')
+        _dt_event_starting = False
+        _dt_event_context = context
+        return True
+    except _DTEventRefusal as refusal:
+        reason = refusal.reason
+    except Exception:
+        reason = 'INTERNAL'
+    _dt_event_starting = False
+    _dt_event_stats['refused'] = True
+    if reason not in ('OVERLAP', 'STATE', 'METADATA', 'IDENTIFIER', 'REGISTRATION', 'CLOCK'):
+        reason = 'REGISTRATION'
+    _dt_event_emit('NOT_STARTED reason=' + reason)
+    if _dt_event_handles or _dt_event_uncertain:
+        stop_deathtrap_events()
+    return False
+
+
 def shutdown():
     stop_tree_trace()
     cancel_init_node()
 
 
 build_mod(
-    name='UVH v0.2.14 - DEATHTRAP PARAMETER CLASSES',
+    name='UVH v0.2.15 - PASSIVE MANAGER EVENTS',
     author='Borderlands Ultimate prototype',
-    description=('Bounded loaded Deathtrap class and function metadata checks with the inert insertion test; no native calls. '
+    description=('Manually enabled bounded PRE manager-entry events; callback payloads untouched and events unattributed. '
                  'Explicitly arm on backed-up solo Gaige; no point spending. Restore and restart after test.'),
-    version='0.2.14',
+    version='0.2.15',
     supported_games=Game.BL2,
     coop_support=CoopSupport.ClientSide,
     options=[
-        ButtonOption('uvh_init_node_arm', display_name='1 - ARM ONE GAIGE INIT NODE TEST (SOLO / INERT)', on_press=arm_init_node),
-        ButtonOption('uvh_init_node_check', display_name='2 - CHECK INIT NODE RESULT (READ ONLY)', on_press=inspect_init_node),
+        ButtonOption('uvh_init_node_arm', display_name='1 - ARM ONE GAIGE INIT NODE TEST (SOLO / INERT)', on_press=_dt_event_option_gate(arm_init_node)),
+        ButtonOption('uvh_init_node_check', display_name='2 - CHECK INIT NODE RESULT (READ ONLY)', on_press=_dt_event_option_gate(inspect_init_node)),
         ButtonOption('uvh_init_node_cancel', display_name='3 - CANCEL / RESTORE NATIVE ARRAYS (THEN RESTART)', on_press=cancel_init_node),
-        ButtonOption('uvh_purchase_snapshot', display_name='4 - INSPECT DEATHTRAP PARAMETER CLASSES (READ ONLY)', on_press=inspect_deathtrap_readiness),
-        ButtonOption('uvh_upgrade_start', display_name='5 - START UPGRADE OBSERVERS (READ ONLY; DO NOT BUY)', on_press=start_upgrade_trace),
-        ButtonOption('uvh_upgrade_stop', display_name='6 - STOP / REPORT UPGRADE OBSERVERS', on_press=stop_upgrade_trace),
-        ButtonOption('uvh_ui_start', display_name='7 - START CORE SKILL UI TRACE (READ ONLY; DO NOT BUY)', on_press=start_ui_trace),
-        ButtonOption('uvh_ui_stop', display_name='8 - STOP / REPORT UI TRACE + SNAPSHOT (READ ONLY)', on_press=stop_ui_trace),
-        ButtonOption('uvh_state_start', display_name='9 - START FOCUSED STATE TRACE (READ ONLY; DO NOT BUY)', on_press=start_skillstate_trace),
-        ButtonOption('uvh_state_stop', display_name='10 - STOP / REPORT FOCUSED STATE TRACE', on_press=stop_skillstate_trace),
-        ButtonOption('uvh_loading_snapshot', display_name='Diagnostic - SNAPSHOT TREE LOADING (READ ONLY)', on_press=inspect_tree_loading),
-        ButtonOption('uvh_loading_trace_start', display_name='Diagnostic - START TREE INIT TRACE (READ ONLY)', on_press=start_tree_trace),
-        ButtonOption('uvh_loading_trace_stop', display_name='Diagnostic - STOP TREE INIT TRACE', on_press=stop_tree_trace),
-        ButtonOption('uvh_insert_node_early', display_name='Legacy - INSERT INERT NODE AT MAIN MENU', on_press=add_overclock_node),
-        ButtonOption('uvh_verify_node_early', display_name='Legacy - CHECK CURRENT NODE STATE (READ ONLY)', on_press=check_overclock_preload),
-        ButtonOption('uvh_remove_node_early', display_name='Legacy - REMOVE NODE (if not purchased)', on_press=remove_overclock_node),
-        ButtonOption('uvh_boost_inspect', display_name='Inspect live Deathtrap duration', on_press=inspect),
-        ButtonOption('uvh_boost_apply', display_name='Apply +15s (working manual prototype)', on_press=apply),
-        ButtonOption('uvh_boost_restore', display_name='Restore original duration', on_press=restore),
+        ButtonOption('uvh_purchase_snapshot', display_name='4 - INSPECT DEATHTRAP PARAMETER CLASSES (READ ONLY)', on_press=_dt_event_option_gate(inspect_deathtrap_readiness)),
+        ButtonOption('uvh_upgrade_start', display_name='5 - START UPGRADE OBSERVERS (READ ONLY; DO NOT BUY)', on_press=_dt_event_option_gate(start_upgrade_trace)),
+        ButtonOption('uvh_upgrade_stop', display_name='6 - STOP / REPORT UPGRADE OBSERVERS', on_press=_dt_event_option_gate(stop_upgrade_trace)),
+        ButtonOption('uvh_ui_start', display_name='7 - START CORE SKILL UI TRACE (READ ONLY; DO NOT BUY)', on_press=_dt_event_option_gate(start_ui_trace)),
+        ButtonOption('uvh_ui_stop', display_name='8 - STOP / REPORT UI TRACE + SNAPSHOT (READ ONLY)', on_press=_dt_event_option_gate(stop_ui_trace)),
+        ButtonOption('uvh_state_start', display_name='9 - START FOCUSED STATE TRACE (READ ONLY; DO NOT BUY)', on_press=_dt_event_option_gate(start_skillstate_trace)),
+        ButtonOption('uvh_state_stop', display_name='10 - STOP / REPORT FOCUSED STATE TRACE', on_press=_dt_event_option_gate(stop_skillstate_trace)),
+        ButtonOption('uvh_loading_snapshot', display_name='Diagnostic - SNAPSHOT TREE LOADING (READ ONLY)', on_press=_dt_event_option_gate(inspect_tree_loading)),
+        ButtonOption('uvh_loading_trace_start', display_name='Diagnostic - START TREE INIT TRACE (READ ONLY)', on_press=_dt_event_option_gate(start_tree_trace)),
+        ButtonOption('uvh_loading_trace_stop', display_name='Diagnostic - STOP TREE INIT TRACE', on_press=_dt_event_option_gate(stop_tree_trace)),
+        ButtonOption('uvh_insert_node_early', display_name='Legacy - INSERT INERT NODE AT MAIN MENU', on_press=_dt_event_option_gate(add_overclock_node)),
+        ButtonOption('uvh_verify_node_early', display_name='Legacy - CHECK CURRENT NODE STATE (READ ONLY)', on_press=_dt_event_option_gate(check_overclock_preload)),
+        ButtonOption('uvh_remove_node_early', display_name='Legacy - REMOVE NODE (if not purchased)', on_press=_dt_event_option_gate(remove_overclock_node)),
+        ButtonOption('uvh_boost_inspect', display_name='Inspect live Deathtrap duration', on_press=_dt_event_option_gate(inspect)),
+        ButtonOption('uvh_boost_apply', display_name='Apply +15s (working manual prototype)', on_press=_dt_event_option_gate(apply)),
+        ButtonOption('uvh_boost_restore', display_name='Restore original duration', on_press=_dt_event_option_gate(restore)),
+        ButtonOption('uvh_dt_event_start', display_name='20 - START PASSIVE MANAGER ENTRY OBSERVER (READ ONLY)', on_press=start_deathtrap_events),
+        ButtonOption('uvh_dt_event_stop', display_name='21 - STOP / REPORT PASSIVE MANAGER ENTRY OBSERVER', on_press=stop_deathtrap_events),
     ],
     auto_enable=True,
     on_disable=shutdown,

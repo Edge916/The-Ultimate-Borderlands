@@ -418,7 +418,7 @@ class DeathtrapReadinessTests(unittest.TestCase):
         metadata = config['tool']['sdkmod']
         self.assertEqual(metadata['name'], self.h.mod_options['name'])
         self.assertEqual(metadata['version'], self.h.mod_options['version'])
-        self.assertEqual(metadata['name'], 'UVH v0.2.14 - DEATHTRAP PARAMETER CLASSES')
+        self.assertEqual(metadata['name'], 'UVH v0.2.15 - PASSIVE MANAGER EVENTS')
 
     def metadata_rows(self):
         import json

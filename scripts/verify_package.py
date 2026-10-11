@@ -32,7 +32,7 @@ runpy.run_path(sys.argv[1])
 assert len(registered) == 1
 assert registered[0]['version'] == sys.argv[2]
 assert registered[0]['on_disable'].__name__ == 'shutdown'
-assert len(registered[0]['options']) == 19
+assert len(registered[0]['options']) == 21
 print('PASS: isolated packaged runtime import; no game access or scaffolding')
 '''
 

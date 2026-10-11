@@ -1,69 +1,80 @@
-# Review the prepared parameter-class metadata build
+# Review the prepared passive manager-entry build
 
-Prepared version: **v0.2.14 - DEATHTRAP PARAMETER CLASSES**. The accepted
-[design](deathtrap_parameter_metadata_design.md) is commit `1b5efce` /
-[PR #19](https://github.com/Edge916/The-Ultimate-Borderlands/pull/19). Read its
-[checks](../evidence/deathtrap_parameter_metadata_design_checks.json) and the
-[implementation checks](../evidence/deathtrap_parameter_metadata_implementation_checks.json)
-against the actual source and package. V14 has offline checks only; no new
-game log or installed-file confirmation exists. The accepted
-[v13 capture](../evidence/deathtrap_manager_metadata_capture_manifest.json) and
-[readiness review](../evidence/deathtrap_lifecycle_readiness_result.md) remain
-the latest live evidence.
+Prepared version: **v0.2.15 - PASSIVE MANAGER EVENTS**. Accepted
+[design](deathtrap_passive_event_observer_design.md): `c43a0d8` /
+[PR #23](https://github.com/Edge916/The-Ultimate-Borderlands/pull/23).
+Read the [implementation checks](../evidence/deathtrap_passive_event_implementation_checks.json)
+against actual source and the original v15 ZIP. This build has offline checks
+only; v14 [capture](../evidence/deathtrap_parameter_metadata_capture_manifest.json)
+and [readiness](../evidence/deathtrap_parameter_schema_readiness_result.md)
+remain the latest actual game evidence.
 
-Item 4 emits actual declared UClass paths for supported object properties of
-the three already selected descriptors. Each property has `declared_class`
-and `declared_class_coverage`; each available FUNCTION has
-`parameter_classes_coverage`. Supported nonobject types say NOT_APPLICABLE.
-Initial permitted class-header getter failures stay UNAVAILABLE and are
-rechecked; invalid metadata or unavailable-to-available/reference/schema drift
-aborts. CAPPED enumeration takes precedence. Actual GetSkillManager return
-class must agree with manager discovery. There is no guessed argument class,
-Boolean-mask/delegate traversal, manager instance, payload, native call or new
-hook/write. The grade-zero guard and all manual/initialization/cleanup helpers
-are unchanged.
+START20 manually registers exactly one canonical DeactivateSkill PRE observer.
+STOP21 reports bounded primitive unattributed events and cleanup. No callback
+obj/args/ret/func is read, compared, converted, formatted, retained or called;
+all paths return exact None. No activation/POST, manager/skill payload,
+Duration write, native invocation or owned-Deathtrap claim. The SDK still
+constructs wrappers; source/descriptor reasoning is not native callback proof.
 
-Four roots, eight ancestry nodes per root, three functions, seven fields,
-sixteen properties plus one cap lookahead per function, fifteen output rows
-and at most 142 captured checks bound selection. Revalidation repeats getters
-and does not promise a hard SDK deadline. FINAL compares with an internal
-unlogged baseline. Separate strict v12/v13/v14 reviewer contracts preserve
-the complete frozen reports: v12 PARTIAL / exit 1; v13 COMPLETE_LOG_TEXT /
-exit 0. Text consistency is not native identity, callability, capture origin,
-installation, exit or lifetime verification.
+Preflight and callbacks keep the existing `_deathtrap_session`/`_upgrade_state`
+grade-zero/sole-player/current context and per-start points/ranks/indices guard.
+Require the exact loaded void-return descriptor and fixed parameter classes;
+maximum2roots/8ancestry each/2functions/4selectedproperties/32captured checks.
+Control dispatch locks conflicting project actions during registration, active
+observation and unresolved handles. Original helper bodies stay unchanged
+except STOP added first to CANCEL. In idle state wrappers forward the original
+handler argument/result. Metadata item4 retains v14's frozen schema/BEGIN label.
 
-Verify the full unique offline suite, syntax, limited AST/raw-byte preservation,
-exact three-file ZIP source/CRC/layout and isolated inert nineteen-option import
-before implementation review. All thirteen original versioned ZIPs and frozen
-evidence remain unchanged. The immutable inventory is still historical; its
-explicit current check flags intentional prepared-e32 fingerprint drift.
-Verify the new current package separately rather than rewriting old hashes.
+Limits:24events,64callback attempts,30seconds checked on calls/explicit controls,
+256-byte closed log lines,31-bit primitive counters. No background timer or
+hard SDK getter deadline. Reentrant/stale callbacks stay inert; a bound reached
+while busy disables acceptance and defers removal to the outer finally block.
+START publishes acceptance last and cannot survive a STOP during registration.
+Current controller-class and selected descriptor references are revalidated.
 
-After deliberate review, refine capture task
-`cc1ccb8a-e594-4294-9fa3-512ad8d139c2`, preserving its implementation dependency.
-Pin the exact reviewed commit, runtime/package hashes and title, then obtain
-explicit owner approval of that build and protocol before claiming capture.
-Capture only the authentic full stable log, manifest and three installed v14
-snapshot files, before any relaunch. The proposed later owner steps are:
+ExactTrue registration establishes ownership. Collision/False never claims a
+foreign hook; a thrown/non-bool registration keeps uncertain inert state until
+verified absence, never removes it as owned. Failed owned cleanup stays inert,
+retains a bounded primitive handle and blocks START; explicit STOP retries once
+and preserves failure history. CANCEL calls STOP before original array rollback.
+Neither zero hooks nor array restore proves Duration, point or save recovery.
 
-1. Start a fresh BL2 process and remain at the main menu.
+Review actual unique full suite, meaningful poison/weak-reference/state/schema/
+registration/reentrant/limit/cleanup/dispatch cases, syntax,94-of95old AST/raw
+body preservation and the single STOP delta in CANCEL. Preserve every prior
+test behavior except justified title/version/factory expectations, all prior
+raw evidence/snapshots and14 original ZIPs. The package verifier's only change
+is its exact current option count19to21, added to the refined claimed scope
+after source inspection. Verify exclusivev15/default source equality, CRC,
+exactthree-file layout and isolated inert21-option import; no SDK stub inclusion.
+Frozen v12/v13/v14 reviewer JSON and manifests stay unchanged; inventory remains
+historical and newer packages are checked separately rather than rewriting pins.
+
+After deliberate implementation review, separately scope a strict event-log
+reviewer and authentic capture before relying on natural event text. Refine
+exactbuild hashes/title and obtain explicit owner approval before claiming a
+new game test. Proposed later location-specific owner steps:
+
+1. Install the exact reviewed project ZIP; start fresh BL2 and stay at main menu.
 2. At the main menu, set Offline and select the already backed-up Gaige.
-3. Open MODS and verify **UVH v0.2.14 - DEATHTRAP PARAMETER CLASSES**.
-4. While still at the main menu, select **ARM (item 1)** once.
+3. Open MODS and verify **UVH v0.2.15 - PASSIVE MANAGER EVENTS**.
+4. Still at the main menu, select **ARM item1** once.
 5. Select Continue and wait until Gaige is fully loaded into the map.
-6. In the map, open the mod options and select **INSPECT (item 4)** once.
-7. Still in the map, select **CANCEL / RESTORE (item 3)**.
-8. Fully exit BL2 to the desktop and report completion before any relaunch.
+6. In the map, select **START item20** once; stay in place for about20seconds.
+7. Still in the map, select **STOP/REPORT item21**, then **CANCEL/RESTORE item3**.
+8. Fully exit to desktop and report STOP,CANCEL/full exit and any visible failure
+   before relaunching. Then preserve full stable log/installed files and check
+   process zero independently under the separately claimed capture scope.
 
-This is a future proposal, **not a request to run a new test now**. No purchase,
-respec, travel, summon, manual boost or other trace. Partial/refused/capped is
-an honest result; no repeat to force COMPLETE. The agent does not install the
-build, control BL2 or access saves/private backups. Native-array rollback cannot
-refund points, undo saves or clear caches; manual duration restore is separate.
+These are future instructions, **not a request to run a new test now**. No
+purchase,respec,travel,summon,manual boost,metadata inspection or another trace.
+Silence is NOT_OBSERVED, not failure or absence of native skills; do not force
+callbacks or repeat the same run to chase a positive result. Events show
+unattributed attempted entries; another PRE hook might block the native call.
 
-After authentic new evidence is preserved and reviewed, task
-`c76fb125-2eb5-4d3a-804d-75b165b0db3c` assesses readiness for a passive observer
-**design**. Native lifecycle/callback semantics/payload ownership/lifetime/
-generation/clock/write interval/rank-one gate/duration cleanup and automatic
-+15-second effect remain NOT_READY. No SDK execution/import/package, gameplay
-write, co-op, merge or release is authorized by this implementation.
+Owned lifecycle/lifetime/generation/clock/rank-one effects remain NOT_READY.
+The original effect task is still gated. No game/nativeSDK execution/import,
+agent install/control,save/private-backup,purchase,summon,effect,co-op,merge or
+release belongs to implementation validation. Native-array rollback cannot
+refund points,undo saves or clear player/UI caches; manual duration restore
+is separate. A restarted process cannot prove earlier Duration restoration.
