@@ -1,73 +1,76 @@
-# Pending v0.2.11 combined metadata test
+# Next work after the completed v0.2.11 metadata test
 
-Current source: **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**.
-179 unique local mocks, runtime syntax and AST proof passed. Package validation
-and artifact hashes are recorded in evidence/v031_attribute_class_plan.md.
-Last live baseline is v0.2.10; no v0.2.11 game result exists yet.
+Current tested runtime is v0.2.11 - OVERCLOCK ATTRIBUTE CLASS. Read the
+[reviewed result](../evidence/v031_live_attribute_class_result.md), actual log,
+capture manifest and exact snapshot before building on it. Two complete calls
+verified actual ResourcePoolAttributeDefinition and a five-class COMPLETE chain
+through declared AttributeDefinition; runtime identity/link checks report DERIVED.
+Sampled points/ranks stayed unchanged, arrays restored, observer families zero
+and independent capture queries found BL2 exited. The repeated call/ARM/CANCEL
+details are preserved. No repeat of this completed test is needed.
 
-The user asked for more tests per run. One explicit item4 collects three related
-checks together: refused Myelin Attribute wrapper status, actual loaded UClass
-identity and bounded metadata ancestry. Do not rerun completed native flags,
-text or identities, combine old observers, or relax the old exact-class guard.
+## Proposed next diagnostic, pending research review
 
-## Manual test already prepared
+Independent [readiness research PR#4](https://github.com/Edge916/The-Ultimate-Borderlands/pull/4)
+at `f8aa2fe28bf71199e801fc94a447506aa41eb000` is published for different-user
+peer review. Inspect its actual two evidence files and reproduce its inert
+checks before adopting the proposal. This documentation references research;
+it does not mark that research accepted or implement a new runtime.
 
-1. Fully close BL2 and manually replace only the project mod from
-   dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip.
-2. Fresh process; already backed-up Gaige alone Offline. At MAIN MENU verify
-   UVH v0.2.11 - OVERCLOCK ATTRIBUTE CLASS. Select item1 ARM before Continue.
-3. In map select item4 INSPECT ATTRIBUTE CLASS + ANCESTRY (READ ONLY) once.
-   No hovering required. Numbers are mod menu options, not keyboard keys.
-4. Select item3 CANCEL/RESTORE, fully exit and report done. Keep the game closed
-   until the complete log is preserved. No points/respec/travel/boost/other traces.
+The concrete next design is one explicit synchronous **metadata-only Deathtrap
+readiness diagnostic**. Discover already-loaded actual SDK UClass/UFunction
+metadata for the observed live-duration fields and GetSkillManager descriptor;
+resolve real typed owners and return descriptors rather than guessing paths.
+Existing v019 ActivateSkill/DeactivateSkill/GetSkillManager hits are controller
+field inventories, not validated signatures or lifecycle timing. No method
+invocation, observer or actual summon is included in this first diagnostic.
 
-## When the user reports done
+Retain existing `_upgrade_state` unchanged as the owned solo Gaige/tree/PRI/
+pawn/world/native-patch/inert-grade-zero entry and final guard. Preserve manual
+helpers, old exact-class Attribute guard and tested insertion/rollback/cleanup.
+The grade-zero diagnostic guard is not a purchased-rank effect gate. Unknown,
+conflicting, capped or drifting metadata must remain explicit refusal/partial
+outcomes; no inferred absence, callable signature, eligible effect or repair.
 
-Preserve the current unrealsdk.log exclusively as evidence/v031_user_test.log
-before any relaunch. Check source stability while copying and hash the result.
-Verify installed __init__.py/pyproject.toml/README.txt against the original new
-ZIP; preserve an exact three-file tested snapshot under archive/tested_runtime/
-v0.2.11 after matching. Read the log, distinguish installed version and actual
-item4 calls from user observation. Check BASELINE/FINAL points/ranks unchanged,
-wrapper and actual UClass identity, every ancestry record and its COMPLETE/
-CAPPED/CYCLE/UNAVAILABLE coverage, exact declared_relation, zero new observers,
-CANCEL restoration and full process exit. Getter/schema errors are not absence.
-Do not infer a subclass from names; SDK UClass identity/verified parent links
-are required. Partial data is a valid diagnostic result, not a purchase defect.
+Proposed limits, to be confirmed in the separately claimed runtime task: at most
+four verified target classes, eight allowlisted fields, sixteen descriptors plus
+one cap-detection read per selected function, four selected function descriptors
+and 30,000 loaded functions scanned. Revalidate SDK class/owner/path/schema/link/
+state before logging, one explicit result per call and no retained observer state.
+Exact fields/bounds and discovery roots require review before implementation.
 
-The new code uses unchanged state/ownership/solo/inert grade0 guards and exact
-current Myelin index1 observed path. Validates Attribute descriptor owner/name/
-ObjectProperty/flags3/offset64/dimension1/actual declared UClass before payload.
-Unknown wrappers/classes are never coerced/repr'd/traversed. None is known
-absence. Only real SDK UClass Name/path and documented SuperField metadata;
-never Attribute object path or values. Names<=96, paths<=384, eight classes
-maximum, cycle detection and link/label revalidation. Field/schema/class/current
-presentation path/state rechecked around reads. Changes/unknown state abort
-without repair/refund. No queries/formatters/overrides/copies/loads/new hooks/
-gameplay writes. Current19 options and old insertion/rollback/manual/cleanup
-remain intact;73 old functions unchanged, seven label-only, four new helpers.
+## Acceptance for that future scoped implementation
 
-Do not decide a gameplay replacement from the new mock results or identity
-alone. First review the live evidence, document exact limits and preserve
-tested originals. Any follow-up runtime needs a concrete scoped design,
-meaningful mocks, syntax, AST scope proof and inert isolated package checks.
+- Typed loaded metadata only; distinguish COMPLETE/CAPPED/UNAVAILABLE/REFUSED.
+- Poison native call wrappers, including GetSkillManager/activation queries,
+  must never execute. No construct/load/hook/Duration/point-grade-save operations.
+- Refuse rank1, unknown points, foreign/replaced ownership, extra roster/local
+  players, overlapping failed observers, bad schema/counts/labels or drift.
+- Final state matches the start; unknown/capped signatures cannot authorize calls.
+- Meaningful offline boundary/drift/poison tests, syntax and AST scope proof;
+  exact three-file package and isolated inert import. Preserve all originals.
+- Publish an own branch and tested handoff for peer review before preparing any
+  new manual game test. No new build/test is currently prepared by this doc task.
 
-## Prior evidence and preservation
+Later natural lifecycle timing/ownership observation and an automatic duration
+effect require separate reviewed designs. Manual `find_live` invokes GetSkillManager,
+uses names and unchecked activation time, picks the first match, and has no
+purchased-node/solo guard. Manual restore is separate; shutdown/cancel do not
+call it. Research probes expose synthetic cases, not game-observed failures.
+Do not silently replace or extend the preserved manual path.
 
-v0.2.10 completed four23/24-field comparisons with all18 flags/five identities,
-unchanged sampled state, arrays restored/hooks0/exited. Refused Myelin wrapper/
-class/ancestry unobserved. See evidence/v030_live_presentation_display_result.md.
+## Evidence and preservation
 
-Separate user-reported prior purchase to Overclock1/1 is positive UI evidence;
-retained restarted log has one point/grade0 and no transaction/grade1 capture.
-No save audit or proof of Alt+F4 save behavior. Do not repeat purchase for missing
-data. Later purchases/point-grade-save writes/automatic effects still need
-separate scope/recovery. Node effect remains inactive; manual +15s independent.
+Capture 88a904e and reviewer 44ad64c are independently accepted dependencies. The
+corrected tool's236 unique passing tests validate log consistency; it cannot
+verify capture origin/install/process exit or prove SDK identity from names.
+Manifest machine queries and source identity/link guards supply separate evidence.
+Sampled state equality is not an intermediate-state/save audit.
 
-Keep all ten original ZIPs and four tested snapshots/logs/PNG unchanged.
-v031_preserved_baseline.json records44 protected files. Preserve v0.2.11's new
-versioned ZIP too. Only docs/default ZIP may rebuild during its later review;
-runtime/pyproject freeze after the game test. No game/SDK/save installation or
-writes by Codex. Backups stay outside the project, never parse/restore/package.
-SDK stubs docs only. Native rollback cannot refund points/grades/save data or
-clear caches. Restart after every armed test; no co-op/release/persistence here.
+Keep all 44 prior protected files, original v0.2.11 ZIP and captured snapshot/
+log/manifest hash-identical. Current README/default ZIP can differ in documentation
+only; runtime/pyproject freeze. SDK stubs are read-only documentation, never
+execute/import/package. Private backups are never parsed/restored/packaged.
+Earlier reported purchase1/1 is separate UI evidence, not captured transaction/
+persistence/effect proof; do not repeat purchase to recover missing data. No
+automatic effects, point/grade/save writes, guard relaxation, co-op or release.

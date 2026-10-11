@@ -277,7 +277,7 @@ UClass/name AttributeDefinition required before getter; exact bool payloads,
 no mask guesses. None Attribute is verified absence; otherwise actual SDK
 UObject/Class identical to declared class before bounded escaped SDK path.
 Unknown subclasses/same-name different classes/values refuse without repr/
-conversion. Loaded descriptor owners and all18 native bools passed in engine;
+conversion. Loaded descriptor owners and all 18 native bools passed in engine;
 five of six Attribute identities passed. The second Myelin payload refused
 the exact-class check; actual wrapper/class/ancestry/path remain unobserved.
 
@@ -308,7 +308,7 @@ New tests cover schema/owner/type/class refusal, strict bool/known absence,
 bounded identity paths/samples, no attribute traversal or game writes/calls,
 state/reference changes including typed Attribute schema/identity at path,
 failed overlap and preserved CANCEL/disable restoration. The live run completed
-four calls with23/24 fields each, all18 flags and five identities. MorePep
+four calls with23/24 fields each, all 18 flags and five identities. MorePep
 flags12/12/Attributes4/4; Myelin flags6/6/Attributes1/2 PARTIAL. Overclock
 count0 is NOT_APPLICABLE. Each BASELINE/FINAL points=(1,0)/ranks=(0,0,0)
 unchanged, observers_added0. CANCEL restored arrays/cells with all hooks0;
@@ -322,48 +322,53 @@ only in this review. Never install over SDK/core mods.
 The user separately reports a one-point Overclock purchase to1/1 in an earlier
 process, then Alt+F4/restart to follow the read-only steps. This is positive
 user-observed UI purchase/rank evidence, not a purchase failure. The retained
-restarted log has one unspent point/grade0; no first-run transaction or grade1
+restarted log has one unspent point/grade 0; no first-run transaction or grade 1
 capture/save audit. Reset state after restart is observed; save behavior,
 cost/transaction verification and duration effect remain unverified. No point
 repair/backup restore/save writes. Do not repeat the purchase for missing data.
 The report does not authorize further purchases or automatic effects/point/
 grade/save writes; later controlled tests still need explicit scope/recovery.
 
-## v0.2.11 current diagnostic (awaiting live test)
+## v0.2.11 tested baseline (combined class metadata and restoration passed)
 
-The user requested more tests per run. Item4 now combines three related
-read-only checks: refused Myelin Attribute wrapper status, actual loaded UClass
-identity and bounded class ancestry. One fresh session/one inspection/one
-restoration. No repeated flags/text/identities or combined old observers.
-Last live baseline remains v0.2.10; current source advances for this authorized
-diagnostic while every tested original/snapshot stays frozen.
+Current runtime is v0.2.11 - OVERCLOCK ATTRIBUTE CLASS, now game-tested.
+Read evidence/v031_live_attribute_class_result.md, v031_user_test.log and
+v031_capture_manifest.json. Two complete calls 65-212/214-361 captured Myelin
+index 1 SDK_UOBJECT/SDK_UCLASS and actual WillowGame.ResourcePoolAttributeDefinition.
+Its five-class COMPLETE chain passes through declared Engine.AttributeDefinition;
+logged DERIVED is actual runtime SDK identity/revalidated-link evidence, not
+name inference. Sampled points=(1,0)/ranks=(0,0,0) stay unchanged, END observers0.
+Solo listen-host sole-owned-player records30/35, one inert registered node36,
+native RESTORE385-386 and four-family zero cleanup after the last call are
+preserved. Separate capture machine queries found process count0 before/after.
+One inspection was requested, two occurred; second ARM refused, CANCEL repeated.
+Keep these deviations explicit. No repeat of this completed diagnostic needed.
 
-Require current Myelin index1's exact observed shield-capacity presentation
-path, loaded array/count2..256/member/class, exact Attribute descriptor owner/
-name/ObjectProperty/flags3/offset64/dimension1/declared actual SDK UClass before
-getter. Reuse _upgrade_state and _presentation_text_reference unchanged with
-baseline/current owned solo Gaige/tree/session/points/ranks/inert grade0 patch
-and overlap refusal. The old exact-class Attribute guard stays unchanged.
-None is known absence; unknown wrappers/classes never converted/repr'd or
-traversed. Only actual SDK UClass metadata Name/path/SuperField, never Attribute
-object paths or values. SDK docs read before selecting SuperField; stubs never
-executed/imported/packaged. Names<=96, paths<=384, eight classes with cycle
-detection/complete/capped/unavailable coverage. Exact loaded parent identities
-establish relationship, not names. Recheck schema/field/Class/presentation path/
-state around metadata; revalidate captured labels/links before logging. Changes
-abort without repair/refund. At most39 Attribute getter reads of this one field.
-No native queries/formatters, enumeration, copies, overrides, loads, hooks or
-gameplay writes. Insertion/rollback/manual duration/old observers/cleanup intact.
+The old exact-class Attribute guard, _upgrade_state and presentation reference
+checks remain unchanged. Do not evaluate/traverse the derived Attribute or
+infer gameplay authorization from the new class result. No new hooks/native
+queries/writes in item4. Runtime/pyproject freeze at tested hashes 59f99db2 and
+759a6892. Exact tested three files are in archive/tested_runtime/v0.2.11.
+Keep all 44 prior protected files, original v0.2.11 ZIP and immutable capture/log/
+manifest/snapshot unchanged. Current docs/default ZIP may differ only in README;
+never rebuild any versioned ZIP or edit historical evidence to update status.
 
-179 unique mocks (151 established plus28 new), syntax and AST proof passed:
-73 of80 old functions AST-identical, seven version labels only, four new helpers/
-inspector, factory still19 options. Package checks/hashes recorded in
-evidence/v031_attribute_class_plan.md. No v0.2.11 game result yet. One manual
-fresh backed-up Gaige Offline session: exact title, item1 ARM before Continue,
-in map item4 once, item3 CANCEL/RESTORE/full exit/report done. Numbers are options,
-not keys; no hover/points/respec/travel/boost/other diagnostics. Preserve log
-before relaunch. Preserve all ten previous original ZIPs/four snapshots/logs/PNG
-(44 hashes in v031_preserved_baseline.json), and the distinct new ZIP unchanged.
+179 runtime mocks and syntax/AST proof apply to unchanged runtime. The corrected
+standard-library offline reviewer at 44ad64c passed 236 unique tests (57+179) in
+independent peer review, with no failures/errors/skips. It rejects contradictory
+class labels and actual runtime removal/rollback failures, including retries.
+Parser success does not verify SDK identity, machine exit/install equality or
+log origin. Read actual capture/manifest and unchanged guards as separate inputs.
+
+Next: review the separately published readiness research in PR#4 at f8aa2fe,
+then separately scope a bounded metadata-only Deathtrap diagnostic. Do not
+invoke GetSkillManager or activation/deactivation functions from inventory
+names, install observers, change Duration or reuse grade-zero _upgrade_state
+as a rank-one effect gate. Current manual duration path is independent: its
+signature uses names/time; shutdown/cancel do not call manual restore. Research
+counterexamples are inert mocks, not observed engine incidents. No automatic
+effect, point/rank/save writes, guard relaxation, purchase/co-op/release here.
+See docs/NEXT_CODEX_TASK.md for the concrete proposed scope and review gate.
 
 ## Guardrails
 
@@ -376,16 +381,12 @@ before relaunch. Preserve all ten previous original ZIPs/four snapshots/logs/PNG
 
 ## First action
 
-Read docs/NEXT_CODEX_TASK.md and evidence/v031_attribute_class_plan.md.
-v0.2.11 is prepared for one combined read-only game test; no live result yet.
-When the user reports done, preserve the new log exclusively before relaunch,
-verify installed files against the versioned ZIP, inspect class metadata and
-coverage/BASELINE/FINAL/restoration, confirm process exit and record the result.
-Do not repeat known flags/identities or relax the old exact-class guard. Unknown
-metadata refuses; no subclass inference from a name/error, Attribute values/
-evaluation, formatters, copies, overrides, new hooks or gameplay writes.
-Keep the user-reported first purchase separate from the restarted log data;
-do not claim verified saves/effects or repeat purchasing to recover evidence.
-Preserve all ten tested ZIPs, four snapshots, logs/PNG and the new v0.2.11 ZIP.
-No purchases/point-grade-save edits/automatic effects/co-op/release without
-separate scope/recovery. Native rollback cannot refund points or undo saves.
+Read docs/NEXT_CODEX_TASK.md and evidence/v031_live_attribute_class_result.md.
+The prepared v0.2.11 test and capture/reviewer peer reviews are complete; no
+repeat game run is pending. Read shared updates and actual commits before
+claiming new work. Review research PR#4 before adopting its proposed diagnostic.
+No lifecycle function signature/timing is established by old field inventories.
+Preserve tested runtime, all originals and immutable capture. Keep the prior
+user-reported purchase separate from transaction/save/effect proof. No purchases,
+automatic effects, point/grade/save edits, co-op or release without separate scope.
+Native-array rollback cannot refund points, undo saves or clear player/UI caches.

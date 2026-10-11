@@ -2,18 +2,22 @@
 
 This project is a **Borderlands 2 PythonSDK gameplay-mod prototype**, with a separate early design-oriented codebase for a much larger multi-game Borderlands project.
 
-**Current diagnostic build:** **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**, awaiting
-a game test. The user asked for more tests per session; one item4 now collects
-the refused Myelin Attribute's wrapper status, loaded class identity and bounded
-class ancestry together. **179 unique local mocks, syntax and AST proof passed.**
-No Attribute values, object paths, formatting calls, new hooks or game writes.
-The existing insertion/rollback/manual duration/observer cleanup stays intact.
+**Current game-tested build:** **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**.
+Two complete read-only calls captured Myelin's previously refused Attribute as
+SDK_UOBJECT with actual UClass ResourcePoolAttributeDefinition and a five-class
+COMPLETE ancestry through declared AttributeDefinition. Runtime identity/link
+checks report DERIVED; names alone do not establish that relationship.
+Sampled points/ranks stayed unchanged, CANCEL restored arrays, observer families
+reported zero and separate capture process queries found BL2 exited.
 
-Last live baseline is v0.2.10: four snapshots verified23/24 fields each,
-including all18 native flags and five Attribute identities. Myelin's second
-Attribute refused exact-class validation; its actual wrapper/class/ancestry
-remain unobserved pending the new test. Sampled state stayed unchanged,
-restoration passed, hooks0 and BL2 exited. The old exact-class guard remains.
+The prepared metadata test is complete. One call was requested; two were logged,
+with a second ARM refusal and repeated CANCEL. These details are preserved in
+[the reviewed live result](evidence/v031_live_attribute_class_result.md) and
+[the immutable capture manifest](evidence/v031_capture_manifest.json).
+No repeat of completed flags/text/classes is needed. The old exact-class guard
+stays unchanged; this result does not authorize Attribute evaluation or effects.
+179 unique runtime mocks remain relevant; the peer-reviewed offline reviewer
+passed all 236 unique tests (57 reviewer+179 runtime).
 
 The user separately reports spending one point in Overclock and seeing1/1,
 then Alt+F4/restarting. The restarted log shows one unspent point and Overclock0.
@@ -21,15 +25,15 @@ This is positive user-observed purchase/rank evidence; the first transaction,
 save behavior and node effect were not independently captured. Do not repeat
 the purchase to recover missing evidence.
 
-v0.2.9's completed live run verified all24 native text fields in each of two
+v0.2.9's completed live run verified all 24 native text fields in each of two
 snapshots, including the scalar-owner guard. Overclock has no entries; native
 Description strings use $NUMBER$ templates and the other strings are empty.
 Points/ranks stayed unchanged in both calls, arrays restored, hooks0 and BL2
-fully exited. v0.2.10 now compares display flags and attribute identities.
+fully exited. v0.2.10 compared display flags and attribute identities.
 
 The tested v0.2.8 retry verified presentation counts Overclock=0, MorePep=4
 and Myelin=2, all six references, unchanged sampled FINAL state and restoration.
-Its raw class metadata was capped at16 properties; instance text was unread.
+Its raw class metadata was capped at 16 properties; instance text was unread.
 The empty candidate array and prior empty grade-preview return are consistent
 with missing display data, but do not prove causation or eligibility.
 The first screenshot's [Enter] Spend Point hint is separate evidence.
@@ -37,12 +41,13 @@ The first screenshot's [Enter] Spend Point hint is separate evidence.
 See [the live text result](evidence/v029_live_presentation_text_result.md),
 [the next task](docs/NEXT_CODEX_TASK.md) and
 [the live display result](evidence/v030_live_presentation_display_result.md).
-Preserve all ten original tested versioned ZIPs and four exact tested snapshots/
-prior evidence unchanged. The new v0.2.11 ZIP has a distinct filename too.
+Preserve all eleven original versioned ZIPs, five exact tested snapshots and
+prior evidence unchanged. Current docs/default ZIP may differ in README only;
+the exact v0.2.11 tested README is frozen in its snapshot/original ZIP.
 
 **Verified on user's real game (BL2): v0.2.1 now shows Deathtrap Overclock in Gaige's native tree.** The user reported "done it worked!" after the visibility test. The log verifies one inert runtime node at grade 0, both original first-tier skills present, all observers removed and original native arrays restored on cancellation. The separate manual v0.1.1 prototype changed active Deathtrap duration from **60.0 to 75.0**, and the user reported it stayed out longer. **The visible node does not apply that effect. A purchase to1/1 is now user-reported; captured transaction/save behavior and persistence remain unverified.** See [the visibility evidence](evidence/v021_visibility_confirmation.md).
 
-Read `AGENTS.md` and `docs/STATE_AND_HISTORY.md` before changing any code. The initial visibility goal is met in one successful solo test. Keep v0.2.1 as the working baseline. The eventual goal is a safe **one-rank Deathtrap Overclock node** which, if purchased, grants +15 seconds to Deathtrap. Keep the user-reported purchase separate from log-verified state; do not claim captured transaction, persistence or duration-effect success without the relevant evidence.
+Read `AGENTS.md` and `docs/STATE_AND_HISTORY.md` before changing any code. The initial visibility goal is met in one successful solo test. Preserve v0.2.1 as the first confirmed visibility baseline; current tested runtime is v0.2.11. The eventual goal is a safe **one-rank Deathtrap Overclock node** which, if purchased, grants +15 seconds to Deathtrap. Keep the user-reported purchase separate from log-verified state; do not claim captured transaction, persistence or duration-effect success without the relevant evidence.
 
 ## Run local tests
 
@@ -224,30 +229,18 @@ no further game steps are needed for this review. Neither
 flags nor reference names prove formatting semantics, eligibility or effects.
 Preserve all ten tested ZIPs, snapshots/logs/PNG; each version has its own file.
 
-## Pending v0.2.11 combined session
+## Completed v0.2.11 metadata milestone and proposed follow-up
 
-Fully close BL2 and replace only the project mod folder using
-`dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip`.
-Launch already backed-up Gaige alone Offline. At MAIN MENU verify
-**UVH v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**, select item1 ARM before Continue.
-In map select **4 - INSPECT ATTRIBUTE CLASS + ANCESTRY (READ ONLY)** once,
-then **3 - CANCEL/RESTORE**, fully exit and report done. Keep the game closed
-until the new log is preserved. Numbers are menu options, not keyboard keys;
-no highlighting/points/respec/travel/boost/other traces.
+Read [the live result](evidence/v031_live_attribute_class_result.md),
+[the actual log](evidence/v031_user_test.log), [capture manifest](evidence/v031_capture_manifest.json)
+and [offline reviewer](evidence/v031_log_review_tool.md). They distinguish raw
+metadata/state/cleanup from separately checked installation and process exit.
+Current runtime/pyproject are identical to the original v0.2.11 ZIP and snapshot.
+Only current README documentation changes in the default install ZIP.
 
-One read-only pass checks the exact current Myelin index1 presentation path,
-loaded schema and Attribute wrapper, actual SDK UClass Name/path, and at most
-eight documented SuperField links. Classes/names/paths/links are validated and
-rechecked; cycles, cap, unknowns and a complete root are separate. Names<=96,
-paths<=384, escaped. None is known absence; unknown wrappers are not converted/
-repr'd/traversed. No Attribute object path/value/resolver/evaluation. Relationship
-uses exact loaded identities, never names. Changes abort without repair/refund.
-No gameplay effects or point spending are part of this session.
-
-179 unique mocks (151 established plus28 new) passed in18.428 seconds.
-73 of80 prior functions AST-identical, seven version-label-only changes, four
-new helpers/inspector;19 options. State/session/reference and old compatibility
-guards unchanged. See [the build plan](evidence/v031_attribute_class_plan.md)
-and [pending review instructions](docs/NEXT_CODEX_TASK.md). No live result yet.
-The user-reported earlier purchase remains separate from the restarted log;
-transaction/save behavior/persistence and the node effect are still unverified.
+The node effect remains inactive; the separate manual +15s prototype is preserved.
+[Readiness research PR#4](https://github.com/Edge916/The-Ultimate-Borderlands/pull/4)
+proposes a bounded metadata-only Deathtrap diagnostic and remains subject to
+independent peer review. No lifecycle implementation or new game test is prepared.
+See [the next task](docs/NEXT_CODEX_TASK.md). Do not invoke native methods from
+inventory names, relax diagnostic guards, spend points or add automatic effects.

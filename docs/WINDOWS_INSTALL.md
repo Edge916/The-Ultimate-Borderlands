@@ -1,44 +1,50 @@
 # Windows workspace and mod installation
 
-Current build: **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**, awaiting game test.
-179 unique local mocks, runtime syntax and AST proof passed. One option combines
-wrapper status, loaded class identity and bounded inheritance metadata for the
-refused Myelin Attribute. Last live baseline is v0.2.10; its four snapshots
-verified23/24 fields each, unchanged state, restoration/hooks0/process exit.
-See evidence/v031_attribute_class_plan.md and docs/NEXT_CODEX_TASK.md.
+Current tested build: **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**. Its prepared
+metadata test is complete; no new game run is pending. Two complete calls found
+actual ResourcePoolAttributeDefinition, five-class COMPLETE/DERIVED ancestry,
+unchanged sampled state and native restoration. Capture process queries found
+BL2 fully exited. Read evidence/v031_live_attribute_class_result.md and
+v031_capture_manifest.json for preserved log/source/install evidence and limits.
 
-Keep workspace outside the game. Codex does not install or edit game/SDK/save
-files. Preserve all ten older original ZIPs/four tested snapshots/logs/PNG,
-and the distinct new ZIP too. Keep dist; never overwrite a versioned original.
+## Package and installation reference
 
-## Pending v0.2.11 combined test
+Keep the workspace outside the game. Preserve all eleven original versioned
+ZIPs and five exact tested snapshots/logs/PNG, including the immutable v0.2.11
+capture manifest. Never overwrite a versioned original. Current default ZIP
+may update README only; runtime/pyproject still match the original v0.2.11 ZIP.
+Its historical tested README is preserved in archive/tested_runtime/v0.2.11.
 
-1. Fully close BL2.
-2. Extract dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip.
-   Replace only UltimateVaultHunterDeathtrapBoost under
-   C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\sdk_mods.
-   Keep three files directly inside without nesting, one project mod and all
-   SDK/core mods.
-3. Launch already backed-up Gaige alone Offline in a fresh BL2 process.
-4. At MAIN MENU verify UVH v0.2.11 - OVERCLOCK ATTRIBUTE CLASS.
-   Select item1 ARM before Continue; then Continue.
-5. In map open this mod's options and select item4
-   INSPECT ATTRIBUTE CLASS + ANCESTRY (READ ONLY) once.
-6. Select item3 CANCEL/RESTORE, fully exit and report done.
-   Keep game closed until its log is preserved under a distinct new filename.
+For a separately authorized future installation, fully close BL2 first and
+manually replace only the UltimateVaultHunterDeathtrapBoost folder under
+C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\sdk_mods.
+A valid package has exactly __init__.py, pyproject.toml and README.txt directly
+inside that one folder. Keep one project mod and all SDK/core mods. Codex does
+not install or change game/SDK/save files. Installing this documentation update
+is unnecessary for the already reviewed result.
 
-Numbers label mod menu options, not keyboard keys. No hovering required.
-No points/respec/travel/boost/other diagnostics. Partial/refusal is useful data,
-not absence or purchase failure; never force reads or loosen guards. Restart
-before normal play. Native rollback cannot refund points/grades/save data or
-clear player/UI caches. If restoration fails, fully exit and report.
+The completed historical protocol was backed-up Gaige alone Offline, fresh
+process, verify exact title, item1 ARM before Continue, in-map item4 once,
+item3 CANCEL/RESTORE and full exit. Actual log has two calls, second ARM refusal
+and repeated CANCEL. Numbers label mod options, not keys. Do not repeat this
+protocol merely to reconfirm the class result. Any future test must have its
+own reviewed scope/build and preserve the full log before relaunch.
 
-The node's effect stays inactive; manual +15s is a separate verified prototype.
-Earlier user-reported purchase1/1 is separate from restarted grade0 log; no
-save/transaction/effect audit. Do not repeat purchasing to recover missing data.
-Further purchases/automatic effects/point-grade-save writes need separate scope
-and recovery. Backups stay outside the project, never parse/restore/package.
+The node effect remains inactive; manual +15s is independent. Its manual restore
+option is separate from node CANCEL/disable cleanup; neither calls that duration
+restore. Native-array rollback cannot refund points/grades, undo saves or clear
+player/UI caches. Fully restart after an armed experiment before normal play;
+failed restoration requires full exit and review. Unknown metadata never justifies
+forcing reads or loosening guards.
 
-Before shipping a runtime: meaningful mocks, py_compile, AST proof, package_mod.py
-and verify_package.py (inert isolated19-option import, exact single-folder/
-three-file layout/integrity/source match). No SDK/game assets/saves/scaffolding.
+Earlier reported purchase1/1 is separate UI evidence from restarted grade 0 log;
+no transaction/save/persistence/effect audit. Do not repeat purchases for missing
+data. Private backups stay outside the project; never parse/restore/package.
+SDK stubs are text documentation only. No automatic effects, point-grade-save
+writes, guard relaxation, co-op or release in this handoff.
+
+Before shipping a runtime, run meaningful mocks, syntax/AST scope proof and
+scripts/package_mod.py plus scripts/verify_package.py. The verifier checks exact
+single-folder/three-file layout, integrity/current-source match and isolated
+inert19-option import. No SDK/game assets/saves/scaffolding belong in the ZIP.
+See docs/NEXT_CODEX_TASK.md for the separately proposed metadata-only follow-up.

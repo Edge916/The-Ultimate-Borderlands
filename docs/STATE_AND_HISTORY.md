@@ -33,10 +33,10 @@ Long-term ambition: a Borderlands Ultimate Vault Hunter Collection spanning main
 | **v0.2.5** | Opt-in discovered UI navigation/refresh PRE/POST_ANY trace and bounded owned selection snapshots; unchanged state/session guard and cleanup | **71 mocks plus 14 live events verifying owned node/original selection, unchanged sampled points/ranks, hook cleanup and native-array restoration; eligibility/cost unverified** |
 | **v0.2.6** | Core UI priority verified: all six helpers captured; MorePep/Overclock and node info update observed, cap stopped before Myelin | **74 mocks plus live 48 events/51 callbacks, unchanged sampled FINAL points/ranks, event-limit cleanup and native-array restoration** |
 | **v0.2.7 (focused trace baseline)** | All nine function/skill buckets observed; Overclock grade-one description empty while native skills returned text; final points/ranks unchanged, hooks removed and arrays restored | **90 mocks plus live 16 results/110 callbacks, exact installed/source/ZIP match and verified cleanup; eligibility/rendered prompt/effect unverified** |
-| **v0.2.8 (presentation baseline)** | Fresh retry verified presentation counts Overclock0/MorePep4/Myelin2, all six references, capped raw metadata, unchanged sampled FINAL state and restoration | **108 mocks plus two live snapshots, installed/ZIP byte match, arrays3/3 and cleanup; cause/eligibility/effect unverified** |
-| **v0.2.9 (text baseline)** | Two snapshots accepted scalar schemas/owners and verified all24 native text fields; Overclock has no entries, native descriptions use $NUMBER$ templates | **127 mocks plus live24/24 fields per call, installed/ZIP byte match, sampled FINAL state unchanged, hooks0, arrays restored and process closed; cause/eligibility/effect unverified** |
+| **v0.2.8 (presentation baseline)** | Fresh retry verified presentation counts Overclock0/MorePep4/Myelin2, all six references, capped raw metadata, unchanged sampled FINAL state and restoration | **108 mocks plus two live snapshots, installed/ZIP byte match, arrays 3/3 and cleanup; cause/eligibility/effect unverified** |
+| **v0.2.9 (text baseline)** | Two snapshots accepted scalar schemas/owners and verified all 24 native text fields; Overclock has no entries, native descriptions use $NUMBER$ templates | **127 mocks plus live24/24 fields per call, installed/ZIP byte match, sampled FINAL state unchanged, hooks0, arrays restored and process closed; cause/eligibility/effect unverified** |
 | **v0.2.10 (current tested source)** | Four live snapshots verified18 native flags and five of six Attribute identities each; second Myelin Attribute refused exact-class validation | **151 mocks plus live23/24 fields/call, sampled FINAL state unchanged, restored/hooks0/exited; separate user report of first-run one-point purchase to1/1, transaction/save/effect unverified** |
-| **v0.2.11 (current diagnostic; awaiting live test)** | One item4 combines refused Myelin Attribute wrapper, loaded class identity and bounded class ancestry metadata | **179 unique mocks, syntax/AST proof; no live result yet; established insertion/rollback/manual duration and guards unchanged** |
+| **v0.2.11 (current game-tested baseline)** | Two combined Myelin wrapper/UClass/ancestry calls | **SDK_UOBJECT; ResourcePoolAttributeDefinition; five-class COMPLETE/DERIVED; sampled state unchanged; restoration/hooks0/independent exit checks; runtime frozen** |
 
 ## Relevant exact data
 
@@ -44,7 +44,7 @@ Long-term ambition: a Borderlands Ultimate Vault Hunter Collection spanning main
 - Layout: `SkillTreeBranchLayoutDefinition'GD_Tulip_Mechromancer_Skills.SkillTrees.Layout_LittleBigTrouble'`
 - First tier before insertion: `Skills=[MorePep,Myelin]`, `bCellIsOccupied=[True,False,True]`.
 - First tier after v0.1.6 insertion: `Skills=[MorePep,UVH_DeathtrapOverclock,Myelin]`, `bCellIsOccupied=[True,True,True]`.
-- Current custom `SkillDefinition` prototype is intentionally inert: max rank1, effects empty. The user now reports a one-point UI purchase to1/1 in an earlier v0.2.10 test process; the retained restarted log is grade0/one point. No captured purchase transaction, save audit/persistence or node effect verification. Manual +15s is an independent button.
+- Current custom `SkillDefinition` prototype is intentionally inert: max rank1, effects empty. The user now reports a one-point UI purchase to1/1 in an earlier v0.2.10 test process; the retained restarted log is grade 0/one point. No captured purchase transaction, save audit/persistence or node effect verification. Manual +15s is an independent button.
 - User said the v0.1.6 node was not present visually following in-world insertion. v0.2.1 pre-initialization insertion is now a demonstrated working approach; UI caching as the exact earlier failure cause remains an inference, not proven.
 - `GD_Tulip_Mechro_Streaming.SkillTree.SkillTree_Mechromancer` was inaccessible from previous lookups; could be streaming/another lookup behavior.
 
@@ -197,7 +197,7 @@ release remain outside this diagnostic milestone.
 The first v0.2.8 live run is preserved in evidence/v028_user_test.log and
 v028_overclock_user_screenshot.png; review is in v028_live_presentation_result.md.
 All three installed files matched the original ZIP. Owned listen-host solo
-insertion built one inert grade0 node at index14/tier7 among39 skills and kept
+insertion built one inert grade 0 node at index 14/tier 7 among 39 skills and kept
 both originals. The screenshot confirms Overclock0/1, one skill point, inactive
 prototype description and a rendered [Enter] Spend Point hint, without orange
 bonus text. That hint is not proof of eligibility/cost/purchase and differs
@@ -224,7 +224,7 @@ loaded ArrayProperty/ObjectProperty-inner/AttributePresentationDefinition
 metadata and verified counts Overclock0, MorePep4 and Myelin2, covering all
 six references. Raw class metadata was capped after16 properties, with later
 fields unobserved; no instance scalar/text values or Attribute traversal.
-Each call sampled FINAL points=(1,0)/ranks=(0,0,0) unchanged and arrays3/3,
+Each call sampled FINAL points=(1,0)/ranks=(0,0,0) unchanged and arrays 3/3,
 observers_added=0. CANCEL restored original arrays/cells with all hooks0;
 repeat cancellation found no patch, process closed. No ERROR/Traceback,
 UNAVAILABLE or ABORT. The empty candidate array is now verified, not assumed.
@@ -260,7 +260,7 @@ and v029_user_test.log (94,218 bytes, SHA-256
 All three installed files matched workspace/original ZIP before doc edits;
 exact tested files are under archive/tested_runtime/v0.2.9. The fresh solo
 listen-host initialization retained both originals and registered one inert
-grade0 node index14/tier7 among39 skills. Two synchronous inspections accepted
+grade 0 node index 14/tier 7 among 39 skills. Two synchronous inspections accepted
 all allowlisted scalar schemas including the newly checked declaring owner.
 Each verified MorePep16/16 and Myelin8/8 fields, all six references; Overclock
 count0/fields0/0 text=NOT_APPLICABLE. Native Description strings contain
@@ -322,9 +322,9 @@ SHA-256 88a79e741abb6b217f8f8a23c42e14578c11c75f2686abcfecc13d2c74e294fb)
 and reviewed in evidence/v030_live_presentation_display_result.md. Installed
 three files matched the original ZIP/source before doc edits; exact tested
 files are under archive/tested_runtime/v0.2.10. Fresh solo listen-host
-initialization registered one inert grade0 node14/tier7 among39 skills,
+initialization registered one inert grade 0 node14/tier 7 among 39 skills,
 keeping originals and removing observers. Four synchronous calls verified
-all18 native flags (False/True/True) and five AttributeDefinition identities
+all 18 native flags (False/True/True) and five AttributeDefinition identities
 each. Myelin's second presentation Attribute refused exact declared-class
 validation: actual wrapper/class/ancestry/path unobserved, not None or a
 known subclass. MorePep flags12/12/Attributes4/4; Myelin flags6/6/Attributes1/2
@@ -339,7 +339,7 @@ Existing151 mock results apply to unchanged code; no repeat suite needed.
 The user reports spending a point in Overclock and seeing1/1 in an earlier
 process, then Alt+F4/restarting for the documented read-only run. Record this
 as positive user-observed UI purchase/rank evidence. The retained restarted
-log has no transaction or grade1 capture; one unspent point and node grade0
+log has no transaction or grade 1 capture; one unspent point and node grade 0
 were sampled in every comparison. Reset state after restart is observed,
 not a save audit or proof Alt+F4 prevents saves. No save parsing/edit/backup
 restore/point repair in this review. Do not repeat purchasing for missing
@@ -353,16 +353,17 @@ exact-class checks, guess a subclass or evaluate/traverse Attribute values.
 No next build/test exists in this review; no repeat of completed flags/
 identities merely to reconfirm them.
 
-## Current v0.2.11 combined metadata diagnostic
+## v0.2.11 build and completed metadata diagnostic
 
 The user requested the next step, then asked to do more tests at once. One new
 item4 combines the refused Myelin Attribute's wrapper, actual loaded UClass
 identity and bounded metadata ancestry in one game session. No repeated native
 flags/text/identities, combined old observers, purchases or effects. The current
 source advances to11 for this authorized diagnostic; frozen v0.2.10 original
-ZIP/tested snapshot remain unchanged. No v0.2.11 live result yet.
+ZIP/tested snapshot remain unchanged. At build time the live result was pending;
+the completed capture is recorded below.
 
-Inspect only current Myelin index1's exact observed shield-capacity presentation
+Inspect only current Myelin index 1's exact observed shield-capacity presentation
 path, actual SDK WrappedArray count2..256, loaded array/member/class and exact
 Attribute descriptor owner/name/ObjectProperty/flags3/offset64/dimension1/
 declared SDK UClass. None is known absence. Unknown wrapper/class never coerced/
@@ -386,13 +387,42 @@ unchanged. New mock checks cover schema/type/unknown metadata, bounds/cycles,
 loaded identity relationships, no unrelated payload/attribute traversal/calls/
 writes, changing field/descriptor/class/presentation/path/state and restoration.
 
-One pending manual fresh-process backed-up Gaige Offline test: exact title,
-item1 ARM before Continue; in map item4 once; item3 CANCEL/RESTORE/full exit/
-report done. No hover/points/respec/travel/boost/other traces. Numbers are menu
-options, not keys. Preserve log exclusively before relaunch; review metadata
-coverage, BASELINE/FINAL and restoration. See evidence/v031_attribute_class_plan.md
-and docs/NEXT_CODEX_TASK.md for package checks/hashes and pending review.
-44 prior ZIP/snapshot/log/PNG hashes captured in v031_preserved_baseline.json;
-keep all ten original ZIPs, four snapshots/evidence and the new versioned ZIP
-unchanged. No SDK/game/save install or writes. User-reported earlier purchase
-stays separate; no transaction/save/effect/persistence claims or repeat purchase.
+## Completed v0.2.11 live result and current follow-up
+
+The user performed the prepared diagnostic and answered done to CANCEL/full exit.
+The raw v031_user_test.log is 93,722 bytes/410 lines, SHA7339178b278e7e4c63a8ec4272a692c199840c82c99017be2198901f1a1f3b00.
+Capture manifest and exact three tested files are immutable at 88a904e, reviewed
+independently by Justin. Two calls 65-212/214-361, rather than requested one,
+verify SDK_UOBJECT/SDK_UCLASS actual WillowGame.ResourcePoolAttributeDefinition.
+Both five-class COMPLETE chains include declared Engine.AttributeDefinition,
+followed by Engine.AttributeDefinitionBase, Engine.GBXDefinition and Core.Object.
+DERIVED comes from the unchanged SDK identity/link guards, not string names.
+BASELINE/FINAL points=(1,0)/ranks=(0,0,0) match; END observers_added0.
+
+ARM25; repeated ARM refused28. Owned solo listen-host rosters30/35 and one inert
+registered node36 keep originals; grade 0/index 14/tier 7 logged. CANCEL restores
+original MorePep/Myelin and cells385, confirmed386. Four observer families zero
+after last call363/374/376/384; repeated CANCEL410 finds no patch after zero
+cleanup388/399/401/409. Capture machine checks independently find process0
+before/after preservation, not inferred from log silence. No repeat test needed.
+
+The corrected standard-library reviewer 44ad64c is also independently accepted:
+236 unique tests 0failure/error/skip. It rejects contradictory relation labels
+and actual removal/rollback failures even after a retry. Parser success cannot
+establish SDK identity, process exit/install equality or log authenticity.
+See evidence/v031_live_attribute_class_result.md for exact provenance/hashes,
+raw records, package checks and limits. Runtime/pyproject and all 45 original
+protected artifacts remain frozen; fifth exact snapshot includes historical
+README. Current docs/default ZIP may update README only.
+
+Earlier user-reported purchase1/1 remains separate UI evidence; captured restarted
+state has one point/grade 0. No captured cost/transaction/save/persistence/effect
+proof, no purchase failure claim and no repeat purchase to recover missing data.
+Node +15s remains inactive; manual prototype remains independent and unchanged.
+
+Independent readiness research PR#4 at f8aa2fe is published for peer review. It
+identifies synthetic ownership/signature/lifecycle/cleanup gaps and proposes
+one bounded metadata-only Deathtrap diagnostic, without native GetSkillManager
+calls, hooks/writes/purchases or grade-zero guard relaxation. It is a proposal,
+not an accepted implementation or observed engine failure. Review it before
+separately scoping runtime work; docs/NEXT_CODEX_TASK.md carries the next design.

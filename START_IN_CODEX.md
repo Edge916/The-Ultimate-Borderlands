@@ -1,63 +1,41 @@
 # Continue in Codex
 
-Read AGENTS.md, docs/STATE_AND_HISTORY.md and docs/NEXT_CODEX_TASK.md first.
+Read AGENTS.md, docs/STATE_AND_HISTORY.md, docs/NEXT_CODEX_TASK.md and
+evidence/v031_live_attribute_class_result.md first.
 
-Current build: **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**, awaiting a live test.
-Last game-tested baseline: v0.2.10 - OVERCLOCK PRESENTATION DISPLAY.
-The user requested more tests per session. Item4 now bundles wrapper status,
-actual loaded class identity and bounded class ancestry for the previously
-refused Myelin shield-capacity Attribute. One fresh session, one inspection,
-one restoration. Do not combine old observers or repeat completed fields.
+Current game-tested runtime: **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**.
+The prepared combined metadata run is complete, with two complete calls rather
+than the requested one. Actual class is WillowGame.ResourcePoolAttributeDefinition;
+the verified five-class SDK chain includes declared Engine.AttributeDefinition,
+coverage COMPLETE and relation DERIVED. Both sampled points=(1,0)/ranks=(0,0,0)
+are unchanged; END observers_added0. Native arrays restored385-386, four-family
+cleanup zero after the last call, second CANCEL410 found no patch. Second ARM
+refused27-28. Separate capture queries found BL2 process count0.
 
-179 unique local mocks (151 established plus28 new), runtime syntax and AST
-scope proof passed.73 of80 prior functions are AST-identical; seven change only
-diagnostic version labels. Four new helpers/inspector; factory still19 options.
-Insertion/rollback/manual duration, _upgrade_state, _presentation_text_reference,
-the old exact-class Attribute guard and observer cleanup are unchanged.
+Read actual log/manifest and immutable three-file v0.2.11 snapshot. The corrected
+offline reviewer passed 236 unique tests (57+179) and received peer acceptance,
+as did the capture. It validates log consistency only; process exit/install
+checks and actual SDK identity/link guards are separately reviewed evidence.
+Current documentation/default ZIP may update README, while tested runtime,
+pyproject, original ZIPs/snapshots/logs/manifest stay hash-identical.
 
-The diagnostic validates the exact current Myelin index1 presentation path,
-fresh loaded array/count/membership/class and Attribute owner/name/type/flags3/
-offset64/dimension1/declared actual SDK UClass before getter access. Unknown
-wrapper never converted/repr'd/traversed. None is known absence. Actual class
-must be a real SDK UClass before metadata reads. Read only class Name/path and
-documented SuperField, never Attribute object path or values. Names<=96,
-paths<=384; eight classes maximum with cycles/cap/unavailable/root distinguished.
-Relationship uses exact loaded class identities in verified parent links,
-not names. Recheck field/schema/class/presentation path/state around metadata
-and verify captured labels/links before logging. Changes abort without repair.
-No hooks, loads, native queries/formatters, copies, overrides or gameplay writes.
+No additional game test is pending. Next, independently review research PR#4
+at f8aa2fe28bf71199e801fc94a447506aa41eb000 before adopting its bounded metadata-only
+Deathtrap diagnostic proposal. Do not invoke GetSkillManager or guessed lifecycle
+methods, add hooks, change Duration, relax the grade-zero/solo guard or purchase.
+Read shared updates, claim a dependency-ready scoped task on your own branch,
+and inspect actual commits before implementing. The proposal is research,
+not already implemented behavior or an automatic-effect specification.
 
-The sole pending game test: manually install the distinct v0.2.11 ZIP, fully
-restart, already backed-up Gaige alone Offline. Verify title at MAIN MENU,
-select item1 ARM before Continue; in map select item4 INSPECT ATTRIBUTE CLASS +
-ANCESTRY once; select item3 CANCEL/RESTORE, fully exit and report done.
-Numbers are mod menu options, not keyboard keys. No hover/points/respec/travel/
-boost/other diagnostics. Preserve the next log before relaunch, then review
-[UVH-CLASS] wrapper/class/ancestry coverage, BASELINE/FINAL and restoration.
-Partial or unavailable metadata is evidence; never force reads or loosen guards.
+The visible node stays inert. Manual Deathtrap60->75 remains separate; its
+shutdown handler does not call manual restore. Inert readiness probes are
+synthetic code findings, not observed real-game incidents. The earlier user
+reported Overclock purchase1/1 in another process; restarted retained log is
+rank0/one point, without captured transaction/save/persistence/effect proof.
+Do not repeat purchasing for missing evidence or parse/restore private backups.
 
-v0.2.10's four snapshots verified23/24 fields each: all18 native flags and five
-AttributeDefinition identities. Myelin's second Attribute failed exact-class
-validation; actual wrapper/class/ancestry remain unobserved until the new test.
-Every captured BASELINE/FINAL points=(1,0)/ranks=(0,0,0) unchanged, arrays restored,
-hooks0 and process exited. See evidence/v030_live_presentation_display_result.md.
-v0.2.9 verified24 native string fields; Overclock has no presentations.
-
-The user separately reported a one-point Overclock purchase to1/1 in an earlier
-process, then Alt+F4/restart for the read-only run. Positive user-observed UI
-evidence, not a purchase failure. Retained log is the restarted grade0/one-point
-run; transaction/cost/save behavior/persistence/effect were not captured. Do not
-repeat purchasing to recover data. No save audit/refund/restore occurred.
-Further purchases, point/grade/save writes and automatic effects need separate
-scope/recovery. The node is visible since v0.2.1 but its effect stays inactive;
-manual Deathtrap60->75 is a separate verified prototype.
-
-Preserve all ten original v0.2.1-v0.2.10 ZIPs, four tested snapshots and prior
-logs/PNG unchanged (44 protected hashes in v031_preserved_baseline.json).
-Keep the new versioned v0.2.11 ZIP unchanged after packaging too. Current source
-advanced only for the authorized new diagnostic; v0.2.10 snapshot/original ZIP
-remain frozen. Docs/default ZIP may update after a live review. No game/SDK/save
-writes or installation by Codex. Private backups remain outside the project;
-do not parse/restore/package them. SDK stubs are documentation only; never
-execute/import/package them. Native rollback cannot refund points/grades/saves
-or clear caches. No automatic effects/persistence/co-op/release tests here.
+Preserve44 prior protected artifacts plus original v0.2.11 ZIP and its captured
+snapshot/log/manifest. Never rebuild versioned originals or package SDK stubs,
+game assets or saves. No game/SDK/save writes or installation by Codex. Native
+rollback cannot refund points, undo saves or clear player/UI caches. No automatic
+effects/point-grade-save edits/persistence/co-op/release without separate scope.
