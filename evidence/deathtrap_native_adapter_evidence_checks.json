@@ -1,0 +1,587 @@
+{
+  "schema_version": 1,
+  "task_id": "9da1c8ac-bf12-4783-bbe6-ed4b725ed7b7",
+  "accepted_base": "f1c9021c5948805dfad7ac05228af4692e2752be",
+  "branch": "codex/jake-native-adapter-research",
+  "decision": "NOT_READY_FOR_NATIVE_ADAPTER_IMPLEMENTATION",
+  "native_owned_lifecycle_ready": false,
+  "native_effect_ready": false,
+  "observed_versions": {
+    "unrealsdk": "3.2.0",
+    "unrealsdk_short_commit": "b1852aa4",
+    "pyunrealsdk": "1.10.0",
+    "pyunrealsdk_short_commit": "c72c5558",
+    "source": "Preserved v15 rawlog2/20 self-report; binary/source build match NOT_VERIFIED"
+  },
+  "SDK_primary_sources": [
+    {
+      "repo": "pyunrealsdk",
+      "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/unreal_bindings/bindings.h",
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bindings.h",
+      "bytes": 1980,
+      "sha256": "5728a9e05b9ccb27c629158efac681e920e83c3bed0d7ee2630176b50ef83fc3",
+      "executed": false
+    },
+    {
+      "repo": "pyunrealsdk",
+      "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/unreal_bindings/uobject.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/uobject.cpp",
+      "bytes": 13426,
+      "sha256": "21cf273fb1a9286b38916bf1bd48e268ec247b6083891de3862daf1f8cc9ea2f",
+      "executed": false
+    },
+    {
+      "repo": "pyunrealsdk",
+      "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/unreal_bindings/uobject.h",
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/uobject.h",
+      "bytes": 408,
+      "sha256": "99bb81c1a40293f140673146b20c7b41a79b20ac431b7c46c6b54bccda7699f7",
+      "executed": false
+    },
+    {
+      "repo": "pyunrealsdk",
+      "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/unreal_bindings/weak_pointer.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/weak_pointer.cpp",
+      "bytes": 4280,
+      "sha256": "1103bdcc0a0ec6be0a7b9d9f87f31785b6782b8336eefd39acca34c7bee82940",
+      "executed": false
+    },
+    {
+      "repo": "pyunrealsdk",
+      "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/unreal_bindings/weak_pointer.h",
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/weak_pointer.h",
+      "bytes": 435,
+      "sha256": "d10d41e81d5e28b0b60d5903f2ec56a0d0a638f254a549a5bbf3225b5e848d8c",
+      "executed": false
+    },
+    {
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/classes/uobject.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/classes/uobject.cpp",
+      "bytes": 4462,
+      "sha256": "41c2d82cac266a652f4070f4ccedd100f8425a157e94b46d0eb89b7b101f214f",
+      "executed": false
+    },
+    {
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/classes/uobject.h",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/classes/uobject.h",
+      "bytes": 5952,
+      "sha256": "c4ca0a740b2d270b781e5ed457ac87688d058154ee579acad5344015ded243fa",
+      "executed": false
+    },
+    {
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/wrappers/weak_pointer.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/weak_pointer.cpp",
+      "bytes": 2648,
+      "sha256": "567072bce576d64b87d8f402e3bca70568c7f6176ab4c39ce262326f1496ba99",
+      "executed": false
+    },
+    {
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/wrappers/weak_pointer.h",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/weak_pointer.h",
+      "bytes": 3682,
+      "sha256": "de2694b3d8c08d2f8eab525cd01d4e3a2fe12f3b5da82cb61a8e3d246555c701",
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.h",
+      "bytes": 6473,
+      "sha256": "6290b5012a492504b14c987527a93e4d08350297cd81fed1a2c49315b91b570e",
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp",
+      "bytes": 14513,
+      "sha256": "77d60d79d8845b9914284963fd5a049300b91e96cbd0bcf0430e477a47e4a48b",
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+      "bytes": 10594,
+      "sha256": "219bc8470aebf4e839f51686eb839a301911da6cac6bb7ec58d0a3ca7afd4142",
+      "executed": false
+    }
+  ],
+  "source_marker_lines": {
+    "unrealsdk_weak_pointer.h": {
+      "Under Unreal 3": [
+        19
+      ],
+      "different object": [
+        20
+      ],
+      "strong reference": [
+        23
+      ],
+      "*should* be safe": [
+        25
+      ],
+      "size_t index": [
+        36
+      ],
+      "FWeakObjectPtr ptr": [
+        55
+      ]
+    },
+    "unrealsdk_weak_pointer.cpp": {
+      "WeakPointer& WeakPointer::operator=": [
+        14,
+        55
+      ],
+      "UObject* WeakPointer::operator*(void) const": [
+        27,
+        60
+      ],
+      "gobjects.obj_at": [
+        35
+      ],
+      "this->outer_addr !=": [
+        40
+      ],
+      "if (ret == nullptr)": [
+        74
+      ]
+    },
+    "pyunrealsdk_weak_pointer.cpp": {
+      "py::init<const UObject*>()": [
+        32
+      ],
+      "METHOD(\"__call__\"": [
+        41
+      ],
+      "no way to get a strong reference": [
+        47
+      ],
+      "should*": [
+        49
+      ]
+    },
+    "pyunrealsdk_bindings.h": {
+      "class PY_OBJECT_VISIBILITY PyUEClass": [
+        26
+      ],
+      "std::unique_ptr<T, py::nodelete>": [
+        27,
+        29
+      ]
+    },
+    "pyunrealsdk_uobject.cpp": {
+      "METHOD(\"__getattr__\"": [
+        88
+      ],
+      "METHOD(\"_get_field\"": [
+        103
+      ],
+      "This does not get validated": [
+        116,
+        188
+      ],
+      "METHOD(\"_get_address\"": [
+        201
+      ]
+    },
+    "bound_function.cpp": {
+      "METHOD(\"__call__\"": [
+        214
+      ],
+      "py::gil_scoped_release": [
+        228
+      ],
+      "self.call<void>(info.params)": [
+        229
+      ]
+    },
+    "hook.cpp": {
+      "if (hook.ret.has_value())": [
+        51
+      ],
+      "auto py_ret = callback(hook.obj, hook.args, ret_arg, hook.func);": [
+        60
+      ]
+    },
+    "hook_manager.h": {
+      "enum class Type": [
+        21
+      ],
+      "struct Details": [
+        28
+      ],
+      "*not* modify the actual function arguments": [
+        33
+      ]
+    }
+  },
+  "installed_stubs": [
+    {
+      "API_path": "unrealsdk/unreal/_weak_pointer.pyi",
+      "bytes": 1925,
+      "sha256": "c62b7163d66d6b571cfbea0c2c66a0b32e6ebb7e4b3981e1409ce719872e2b9c",
+      "stable_double_read": true,
+      "executed": false,
+      "imported": false,
+      "compiled": false,
+      "packaged": false
+    },
+    {
+      "API_path": "unrealsdk/unreal/_uobject.pyi",
+      "bytes": 4546,
+      "sha256": "a73e55d17aa605ee20540d542a68b817d84614aaeb4c47aa5804e435f58b12b3",
+      "stable_double_read": true,
+      "executed": false,
+      "imported": false,
+      "compiled": false,
+      "packaged": false
+    },
+    {
+      "API_path": "unrealsdk/unreal/__init__.pyi",
+      "bytes": 4643,
+      "sha256": "e5695ad50c14b0cf6f79fa1a74eb8ffd7d0630321f2b53e9f31ac64088c856ed",
+      "stable_double_read": true,
+      "executed": false,
+      "imported": false,
+      "compiled": false,
+      "packaged": false
+    },
+    {
+      "API_path": "unrealsdk/unreal/_wrapped_struct.pyi",
+      "bytes": 3742,
+      "sha256": "0e3e36ee151d8c656df37a082bd3797faf6f68c35664b0819304924a6eee7718",
+      "stable_double_read": true,
+      "executed": false,
+      "imported": false,
+      "compiled": false,
+      "packaged": false
+    },
+    {
+      "API_path": "unrealsdk/unreal/_bound_function.pyi",
+      "bytes": 1635,
+      "sha256": "aede5345048c0b32b7e0bc0ccd57fca5fa29c1227113f0a4ee7f30d469d64546",
+      "stable_double_read": true,
+      "executed": false,
+      "imported": false,
+      "compiled": false,
+      "packaged": false
+    },
+    {
+      "API_path": "unrealsdk/hooks/__init__.pyi",
+      "bytes": 6284,
+      "sha256": "21589d306dc34fe61ce5f7b0b47b62167a6e8f767d3c84283c4757fc27312ab7",
+      "stable_double_read": true,
+      "executed": false,
+      "imported": false,
+      "compiled": false,
+      "packaged": false
+    }
+  ],
+  "actual_checks": {
+    "all189baseblobs_equal": true,
+    "fresh_v15_CLI_exit": 0,
+    "full_CLI_manifest_equal": true,
+    "offline_review": {
+      "schema_version": 1,
+      "status": "COMPLETE_LOG_TEXT",
+      "log_text_acceptable": true,
+      "log_text_consistent": true,
+      "observer_sections_complete": true,
+      "input": {
+        "bytes": 17205,
+        "sha256": "3c1de714692827194df6881ebb01ecfcf3273a02e9cd825b420efc6210b3c402"
+      },
+      "records": 14,
+      "runs": [
+        {
+          "line": 65,
+          "started": true,
+          "orphan": false,
+          "baseline": {
+            "points": [
+              1,
+              0
+            ],
+            "ranks": [
+              0,
+              0,
+              0
+            ]
+          },
+          "events": 0,
+          "limit": "TIME",
+          "abort": null,
+          "not_started": null,
+          "final": "VERIFIED",
+          "stops": [
+            {
+              "line": 69,
+              "remaining": 0,
+              "captured": 0,
+              "attempts": 0,
+              "reentrant": 0,
+              "uncertain": 0,
+              "cleanup_failures": 0,
+              "outcome": "NOT_OBSERVED"
+            },
+            {
+              "line": 71,
+              "remaining": 0,
+              "captured": 0,
+              "attempts": 0,
+              "reentrant": 0,
+              "uncertain": 0,
+              "cleanup_failures": 0,
+              "outcome": "NOT_OBSERVED"
+            }
+          ],
+          "overlap_refusals": 0,
+          "removal_errors": 0,
+          "refused": false,
+          "ended": true
+        }
+      ],
+      "unattached_control_refusals": 0,
+      "issues": [],
+      "issue_count": 0,
+      "issues_truncated": false,
+      "cleanup": {
+        "observer_handles_resolved": true,
+        "prior_refusal_preserved": false,
+        "old_families_zero_after_last_activity": {
+          "UVH-STATE": true,
+          "UVH-UI": true,
+          "UVH-UPGRADE": true,
+          "UVH-INITNODE": true
+        },
+        "native_arrays_restored_after_last_activity": true,
+        "process_exit": "NOT_ESTABLISHED",
+        "duration_restore": "NOT_ESTABLISHED"
+      },
+      "event_meaning": "UNATTRIBUTED_MANAGER_EVENT; attempted entry only",
+      "attribution": "NONE",
+      "authenticity": "NOT_ESTABLISHED",
+      "engine_behavior": "NOT_ESTABLISHED",
+      "native_owned_lifecycle_ready": false,
+      "native_effect_ready": false,
+      "missing_calls_or_silence": "No absence, deactivation, ownership, timing or lifespan inference"
+    },
+    "emulated_weak_reference_checked_fields": [
+      "GObjects index",
+      "object address",
+      "outer address",
+      "vftable address",
+      "class address",
+      "FName"
+    ],
+    "emulated_allocation_serial": false,
+    "emulated_replacement_ambiguity_documented": true,
+    "no_strong_native_reference_documented": true,
+    "pyUEClass_native_holder": "std::unique_ptr<T, py::nodelete>",
+    "selected_UObject_binding_custom_eq_hash": false,
+    "equality_scope": "No generic pybind11 cache/native generation guarantee inferred from selected binding definitions",
+    "field_descriptor_membership_not_validated_warning": true,
+    "BoundFunction_call_crosses_native_boundary_and_releases_GIL": true,
+    "hook_return_conversion_precedes_Python_callback": true,
+    "source_logic_collision": "Two hypothetical lifetimes reusing every emulated checked field cannot be distinguished. Not an engine incident or measured probability.",
+    "installed_source_binary_match": "NOT_VERIFIED",
+    "no_native_WeakPointer_created_or_called": true,
+    "runtime_syntax_AST_payload_unused_gradezero_manualRestoreSeparation": "PASS",
+    "original15ZIPs": [
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+        "bytes": 32742,
+        "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+        "bytes": 34433,
+        "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+        "bytes": 36736,
+        "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+        "bytes": 37087,
+        "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+        "bytes": 37809,
+        "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+        "bytes": 41032,
+        "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+        "bytes": 19467,
+        "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+        "bytes": 20457,
+        "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+        "bytes": 21349,
+        "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+        "bytes": 24437,
+        "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+        "bytes": 26428,
+        "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+        "bytes": 26629,
+        "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+        "bytes": 28884,
+        "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+        "bytes": 30016,
+        "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+        "bytes": 31335,
+        "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160"
+      }
+    ],
+    "immutable_inventory": {
+      "verified_files": 53,
+      "verified_archives": 12,
+      "relationships": 5,
+      "errors": [],
+      "status": "PASS"
+    },
+    "frozen": [
+      {
+        "log": "v032_user_test.log",
+        "exit_code": 1,
+        "full_report_and_snapshot_originalZIP_equal": true
+      },
+      {
+        "log": "deathtrap_manager_metadata_user_test.log",
+        "exit_code": 0,
+        "full_report_and_snapshot_originalZIP_equal": true
+      },
+      {
+        "log": "deathtrap_parameter_metadata_user_test.log",
+        "exit_code": 0,
+        "full_report_and_snapshot_originalZIP_equal": true
+      }
+    ],
+    "current_source_snapshot_originalZIP_equal": true
+  },
+  "inputs": [
+    {
+      "path": "evidence/deathtrap_native_adapter_evidence_research.md",
+      "bytes": 11993,
+      "sha256": "1a8567c7ce3578c4f2a86b4354457d79f8832c4b0b38fbb4e318895b3c5aebbb"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_user_test.log",
+      "bytes": 17205,
+      "sha256": "3c1de714692827194df6881ebb01ecfcf3273a02e9cd825b420efc6210b3c402"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_capture_manifest.json",
+      "bytes": 10865,
+      "sha256": "58a52b3250422420386864de58278b3ff8b086f0fae26d5656c15be8839f1dfc"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 195214,
+      "sha256": "a1ef33d3571de36fe89e269fae632d96cb8029bfa08ed9ec728d1bf1bf4b27bf"
+    },
+    {
+      "path": "scripts/review_deathtrap_passive_event_log.py",
+      "bytes": 15017,
+      "sha256": "db9e6a41dcb3b7c53c7edb5ef46da42aae76fd3ff357958545800cb1622692f8"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_live_readiness_result.md",
+      "bytes": 10538,
+      "sha256": "79c97ba4b3344e2d73b22c9f160bb9ee5e027cb4a2119baaab30661eb0a211e0"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_live_readiness_checks.json",
+      "bytes": 14440,
+      "sha256": "e51f2360c209857a98edca3fba9802f6db615ed279f9ed0a982a61ffb62dcf64"
+    },
+    {
+      "path": "docs/overclock_identity_cleanup_contract.md",
+      "bytes": 10711,
+      "sha256": "3abd5f388ec5bf9bf501790ed8798c688945a8ca8874333b2031340bfd198cdc"
+    },
+    {
+      "path": "design/overclock_effect_contract_model.py",
+      "bytes": 9234,
+      "sha256": "fbe8e20524616cb5a9aaa608ca0780d03a141cdcc261643a1551c1a929ffbafc"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_schema_readiness_result.md",
+      "bytes": 10589,
+      "sha256": "a0b03b3b2152c87dce59288f836add1e3b2fe17b6b9c6af7da36028df4d15406"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b"
+    }
+  ],
+  "protocol_deviations": [
+    "A second ARM was refused because already armed (log27-28); cause unestablished.",
+    "TIME was reported at the first STOP (log67). SDK wrapper timestamps START65 to LIMIT67 differ by44.228 seconds; protocol requested about20seconds. Agent did not observe the waiting interval and wrapper time is not engine timing proof."
+  ],
+  "owner_UI_visiblefailure_limits": {
+    "exact_statement": "STOP 21, CANCEL 3 and full exit completed",
+    "stop21_cancel3_full_exit_explicitly_confirmed": true,
+    "preceding_approval": "Yes, begin this v0.2.15 test",
+    "approved_protocol": "Already-backed-up solo Offline Gaige; main-menu title/ARM1 once; Continue fully load MAP; START20 once/stay about20s; STOP21 then CANCEL3 MAP; fully exit desktop before relaunch.",
+    "excluded_actions": "No buying,respec,travel,summon,manualboost,metadata4 or other trace.",
+    "separate_visible_failure_report": "NOT_REPORTED",
+    "observation_limit": "Agent did not observe title/UI/operator clicks, waiting interval, before-test process, save state or in-game visible outcome.",
+    "authorization_scope": "Preserve and review this completed owner diagnostic; no new game run or native action."
+  },
+  "missing_facts": [
+    "Exact-original lifetime/generation across callbacks/cleanup",
+    "Validated hook-time liveness and comparison/read interval",
+    "Current manager/instigator/definition and bounded unique active Deathtrap ownership",
+    "Natural callback delivery and successful lifecycle semantics",
+    "Engine clock,Duration consumption and safe write/readback/cleanup interval",
+    "Separate purchased-node rank-one gate"
+  ],
+  "checks_not_run": [
+    "Accepted596-test suite and hostedCI not repeated for research files",
+    "SDK/stub execution/import/compilation or packaging",
+    "Native binary/source match,WeakPointer creation/call,native reference/lifetime/equality behavior or engine incident reproduction",
+    "New game/process capture,hook/instancepayload/nativeinvocation/gameplaywrite/install/control/purchase/respec/travel/summon/manualboost",
+    "Save/privatebackup/effect/co-op/merge/release"
+  ]
+}

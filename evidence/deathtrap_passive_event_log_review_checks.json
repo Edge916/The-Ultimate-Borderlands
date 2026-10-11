@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "task_id": "b213c271-4665-44cf-b9f0-7e2d898bc3c3",
+  "decision": "OFFLINE_REVIEWER_CHECKS_PASS",
+  "accepted_base": "e197266ebb88e71f5cbf855289dcea283f8f93ea",
+  "branch": "codex/jake-passive-event-log-reviewer",
+  "runtime_PR": "https://github.com/Edge916/The-Ultimate-Borderlands/pull/24",
+  "actual_game_capture": false,
+  "native_owned_lifecycle_ready": false,
+  "native_effect_ready": false,
+  "interface": {
+    "cli": "scripts/review_deathtrap_passive_event_log.py",
+    "API": "review_bytes(exact bytes) -> closed JSON-compatible dict",
+    "output": "stdout JSON only; no arbitrary input text/path/exception message",
+    "bounds": {
+      "input_bytes": 16777216,
+      "lines": 100000,
+      "raw_line_bytes": 16384,
+      "passive_line_bytes": 256,
+      "records": 4096,
+      "runs": 128,
+      "reported_issues": 128,
+      "integer_max": 2147483647
+    },
+    "outcomes": [
+      "COMPLETE_LOG_TEXT",
+      "REFUSED_LOG_TEXT",
+      "PARTIAL_LOG_TEXT",
+      "INVALID_LOG_TEXT",
+      "NO_OBSERVER_TEXT",
+      "INPUT_ERROR"
+    ],
+    "exit_codes": {
+      "complete_log_text": 0,
+      "refused_partial_invalid_absent": 1,
+      "input_error": 2
+    },
+    "semantics": "Unattributed attempted entry only. Silence is NOT_OBSERVED; retry cannot erase REFUSED history. No authenticity/native/lifespan/process/effect inference."
+  },
+  "actual_checks": {
+    "full_offline_validation": {
+      "schema_version": 1,
+      "python": "3.12.14",
+      "scope": "offline repository checks",
+      "engine_behavior": "NOT_ESTABLISHED",
+      "hosted_CI": "NOT_CHECKED",
+      "syntax": {
+        "compiled_files": 25,
+        "errors": [],
+        "status": "PASS"
+      },
+      "tests": {
+        "status": "PASS",
+        "unique_tests": 596,
+        "tests_run": 596,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "unexpected_successes": 0,
+        "expected_failures": 0,
+        "all_discovered_run": true
+      },
+      "package": {
+        "status": "PASS",
+        "exit_code": 0,
+        "stdout": "PASS: isolated packaged runtime import; no game access or scaffolding\nPASS: ZIP integrity, exact single-folder layout and source match\n",
+        "stderr": ""
+      },
+      "seconds": 57.234,
+      "status": "PASS"
+    },
+    "new_unique_tests": 94,
+    "all_prior502_test_ids_preserved": true,
+    "all178_base_blobs_equal": true,
+    "syntax_files": 25,
+    "script_imports": [
+      "argparse",
+      "hashlib",
+      "json",
+      "pathlib",
+      "re"
+    ],
+    "no_eval_exec_dynamic_import_or_file_mutation_AST": true,
+    "immutable_inventory": {
+      "verified_files": 53,
+      "verified_archives": 12,
+      "relationships": 5,
+      "errors": [],
+      "status": "PASS"
+    },
+    "versioned_archives": [
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+        "bytes": 32742,
+        "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+        "bytes": 34433,
+        "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+        "bytes": 36736,
+        "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+        "bytes": 37087,
+        "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+        "bytes": 37809,
+        "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+        "bytes": 41032,
+        "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+        "bytes": 19467,
+        "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+        "bytes": 20457,
+        "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+        "bytes": 21349,
+        "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+        "bytes": 24437,
+        "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+        "bytes": 26428,
+        "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+        "bytes": 26629,
+        "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+        "bytes": 28884,
+        "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+        "bytes": 30016,
+        "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+        "bytes": 31335,
+        "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160"
+      }
+    ],
+    "frozen_full_reports": [
+      {
+        "log": "evidence/v032_user_test.log",
+        "manifest": "evidence/v032_capture_manifest.json",
+        "exit_code": 1,
+        "status": "PARTIAL",
+        "full_report_manifest_equal": true,
+        "snapshot_originalZIP_equal": true
+      },
+      {
+        "log": "evidence/deathtrap_manager_metadata_user_test.log",
+        "manifest": "evidence/deathtrap_manager_metadata_capture_manifest.json",
+        "exit_code": 0,
+        "status": "COMPLETE_LOG_TEXT",
+        "full_report_manifest_equal": true,
+        "snapshot_originalZIP_equal": true
+      },
+      {
+        "log": "evidence/deathtrap_parameter_metadata_user_test.log",
+        "manifest": "evidence/deathtrap_parameter_metadata_capture_manifest.json",
+        "exit_code": 0,
+        "status": "COMPLETE_LOG_TEXT",
+        "full_report_manifest_equal": true,
+        "snapshot_originalZIP_equal": true
+      }
+    ],
+    "runtime_and_packages_unchanged": true,
+    "package_CRC_layout_source_inert21_import": "PASS",
+    "realistic_transcripts": "Three accepted-v15 inert fixture transcripts: silence+STOP+CANCEL; entry+STOP+CANCEL; failed owned removal+retry+CANCEL. Synthetic only, never real game evidence."
+  },
+  "inputs": [
+    {
+      "path": "scripts/review_deathtrap_passive_event_log.py",
+      "bytes": 15017,
+      "sha256": "db9e6a41dcb3b7c53c7edb5ef46da42aae76fd3ff357958545800cb1622692f8"
+    },
+    {
+      "path": "tests/test_deathtrap_passive_event_log_review.py",
+      "bytes": 20066,
+      "sha256": "de6fbf4f721833ff4cd9de047b90614203180dc5101b4c562a82f2ae133fe78a"
+    },
+    {
+      "path": "docs/deathtrap_passive_event_log_review.md",
+      "bytes": 6918,
+      "sha256": "313a2d1ebb38f017ef8ef3153766d6af82f741d6597c046e268f5d7c09bcac63"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 195214,
+      "sha256": "a1ef33d3571de36fe89e269fae632d96cb8029bfa08ed9ec728d1bf1bf4b27bf"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b"
+    },
+    {
+      "path": "scripts/review_deathtrap_metadata_log.py",
+      "bytes": 22820,
+      "sha256": "7cf38488f2604a6481504d5298262d03b73a709deae197a55d36416815f26c78"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_implementation_checks.json",
+      "bytes": 17948,
+      "sha256": "c7b129936c755e4d460c8c57e22d0c305e515d8ac86ba4aa4b06ec67bd66d6d8"
+    }
+  ],
+  "required_later_capture_checks": [
+    "Separately reviewed exact original v15 ZIP/title/hash, explicit owner location-specific protocol approval",
+    "Full stable raw log and installed snapshots, independent zero process count before/after preservation, no relaunch before capture",
+    "Text report plus separate source/package/process/protocol provenance, actual deviations and all refusal/failure outcomes preserved"
+  ],
+  "not_run": [
+    "Actual v15 game/native callback/hook/installed SDK or source-binary match",
+    "Hosted CI",
+    "New raw-log capture, installation, Duration effect/purchase/respec/travel/summon/manual boost",
+    "Save/private backup/persistence/co-op/merge/release"
+  ]
+}
