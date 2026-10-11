@@ -420,9 +420,10 @@ state has one point/grade 0. No captured cost/transaction/save/persistence/effec
 proof, no purchase failure claim and no repeat purchase to recover missing data.
 Node +15s remains inactive; manual prototype remains independent and unchanged.
 
-Independent readiness research PR#4 at f8aa2fe is published for peer review. It
+Independent readiness research PR#4 at f8aa2fe passed peer review (sequence71),
+including independent reproduction of eleven inert probes and the manual test. It
 identifies synthetic ownership/signature/lifecycle/cleanup gaps and proposes
 one bounded metadata-only Deathtrap diagnostic, without native GetSkillManager
 calls, hooks/writes/purchases or grade-zero guard relaxation. It is a proposal,
-not an accepted implementation or observed engine failure. Review it before
+not an implemented diagnostic or observed engine failure. Read it before
 separately scoping runtime work; docs/NEXT_CODEX_TASK.md carries the next design.

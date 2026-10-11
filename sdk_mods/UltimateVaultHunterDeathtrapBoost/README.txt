@@ -48,8 +48,9 @@ USER REPORT / NEXT DESIGN:
 Earlier one-point Overclock purchase1/1 is positive user-observed UI evidence in
 another process. Retained restarted capture is rank0/one point, without captured
 cost/transaction/save/persistence/effect proof. Do not repeat purchases for data.
-The next proposal is a bounded metadata-only Deathtrap diagnostic after independent
-research review, without GetSkillManager calls, hooks/writes or grade-zero guard
+Independent readiness research passed peer review. Its next proposal is a
+bounded metadata-only Deathtrap diagnostic for separately scoped implementation,
+without GetSkillManager calls, hooks/writes or grade-zero guard
 relaxation. It is a proposal, not implemented behavior. See the full project's
 evidence/v031_live_attribute_class_result.md and docs/NEXT_CODEX_TASK.md.
 

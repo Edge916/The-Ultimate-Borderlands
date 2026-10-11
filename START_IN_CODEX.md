@@ -19,9 +19,10 @@ checks and actual SDK identity/link guards are separately reviewed evidence.
 Current documentation/default ZIP may update README, while tested runtime,
 pyproject, original ZIPs/snapshots/logs/manifest stay hash-identical.
 
-No additional game test is pending. Next, independently review research PR#4
-at f8aa2fe28bf71199e801fc94a447506aa41eb000 before adopting its bounded metadata-only
-Deathtrap diagnostic proposal. Do not invoke GetSkillManager or guessed lifecycle
+No additional game test is pending. Research PR#4 at
+f8aa2fe28bf71199e801fc94a447506aa41eb000 has independent peer acceptance, including
+reproduction of all eleven inert probes. Read it before separately scoping its
+bounded metadata-only Deathtrap diagnostic proposal. Do not invoke GetSkillManager or guessed lifecycle
 methods, add hooks, change Duration, relax the grade-zero/solo guard or purchase.
 Read shared updates, claim a dependency-ready scoped task on your own branch,
 and inspect actual commits before implementing. The proposal is research,

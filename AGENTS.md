@@ -360,8 +360,8 @@ class labels and actual runtime removal/rollback failures, including retries.
 Parser success does not verify SDK identity, machine exit/install equality or
 log origin. Read actual capture/manifest and unchanged guards as separate inputs.
 
-Next: review the separately published readiness research in PR#4 at f8aa2fe,
-then separately scope a bounded metadata-only Deathtrap diagnostic. Do not
+Readiness research PR#4 at f8aa2fe received independent acceptance (sequence71).
+Read its actual findings, then separately scope a bounded metadata-only Deathtrap diagnostic. Do not
 invoke GetSkillManager or activation/deactivation functions from inventory
 names, install observers, change Duration or reuse grade-zero _upgrade_state
 as a rank-one effect gate. Current manual duration path is independent: its
@@ -384,7 +384,8 @@ See docs/NEXT_CODEX_TASK.md for the concrete proposed scope and review gate.
 Read docs/NEXT_CODEX_TASK.md and evidence/v031_live_attribute_class_result.md.
 The prepared v0.2.11 test and capture/reviewer peer reviews are complete; no
 repeat game run is pending. Read shared updates and actual commits before
-claiming new work. Review research PR#4 before adopting its proposed diagnostic.
+claiming new work. Research PR#4 is independently accepted; read its actual
+findings before separately scoping the proposed diagnostic.
 No lifecycle function signature/timing is established by old field inventories.
 Preserve tested runtime, all originals and immutable capture. Keep the prior
 user-reported purchase separate from transaction/save/effect proof. No purchases,

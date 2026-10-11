@@ -9,13 +9,15 @@ Sampled points/ranks stayed unchanged, arrays restored, observer families zero
 and independent capture queries found BL2 exited. The repeated call/ARM/CANCEL
 details are preserved. No repeat of this completed test is needed.
 
-## Proposed next diagnostic, pending research review
+## Proposed next diagnostic from independently accepted research
 
 Independent [readiness research PR#4](https://github.com/Edge916/The-Ultimate-Borderlands/pull/4)
-at `f8aa2fe28bf71199e801fc94a447506aa41eb000` is published for different-user
-peer review. Inspect its actual two evidence files and reproduce its inert
-checks before adopting the proposal. This documentation references research;
-it does not mark that research accepted or implement a new runtime.
+at `f8aa2fe28bf71199e801fc94a447506aa41eb000` received different-user acceptance
+(sequence71). Justin independently reproduced all eleven inert probes and the
+established manual-duration unittest, verified unchanged baseline files and
+pinned official SDK sources. Read its actual two evidence files before scoping
+the proposal. Research acceptance does not implement a runtime or establish
+engine lifecycle/effect behavior.
 
 The concrete next design is one explicit synchronous **metadata-only Deathtrap
 readiness diagnostic**. Discover already-loaded actual SDK UClass/UFunction

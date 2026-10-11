@@ -240,7 +240,7 @@ Only current README documentation changes in the default install ZIP.
 
 The node effect remains inactive; the separate manual +15s prototype is preserved.
 [Readiness research PR#4](https://github.com/Edge916/The-Ultimate-Borderlands/pull/4)
-proposes a bounded metadata-only Deathtrap diagnostic and remains subject to
-independent peer review. No lifecycle implementation or new game test is prepared.
+passed independent peer review and proposes a bounded metadata-only Deathtrap
+diagnostic for separately scoped implementation. No lifecycle implementation or new game test is prepared.
 See [the next task](docs/NEXT_CODEX_TASK.md). Do not invoke native methods from
 inventory names, relax diagnostic guards, spend points or add automatic effects.
