@@ -1,0 +1,2 @@
+# Preserve retained handoff bytes across Git checkouts.
+* -text

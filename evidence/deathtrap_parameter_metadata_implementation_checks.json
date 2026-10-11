@@ -1,0 +1,368 @@
+{
+  "schema_version": 1,
+  "project_id": "e4e722af-5c33-4a37-b08c-3ddb15408ccd",
+  "task_id": "78df9fea-d295-4ba1-b4b4-38508b990e28",
+  "checked_at_utc": "2026-10-11T06:32:32.439031+00:00",
+  "base_commit": "1b5efceaa12540bedea14762d148e37f575b71f5",
+  "branch": "codex/jake-v0214-parameter-metadata",
+  "version": "0.2.14",
+  "title": "UVH v0.2.14 - DEATHTRAP PARAMETER CLASSES",
+  "readiness": "PREPARED_METADATA_ONLY; NOT_GAME_TESTED; NATIVE_LIFECYCLE_AND_EFFECT_NOT_READY",
+  "scope": [
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+    "tests/test_deathtrap_readiness.py",
+    "tests/test_runtime_mock.py",
+    "tests/test_presentations.py",
+    "scripts/review_deathtrap_metadata_log.py",
+    "tests/test_deathtrap_metadata_log_review.py",
+    "evidence/deathtrap_parameter_metadata_implementation_checks.json",
+    "docs/NEXT_CODEX_TASK.md",
+    "dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+    "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip"
+  ],
+  "actual_checks": {
+    "offline_validation": {
+      "schema_version": 1,
+      "python": "3.12.14",
+      "scope": "offline repository checks",
+      "engine_behavior": "NOT_ESTABLISHED",
+      "hosted_CI": "NOT_CHECKED",
+      "syntax": {
+        "compiled_files": 22,
+        "errors": [],
+        "status": "PASS"
+      },
+      "tests": {
+        "status": "PASS",
+        "unique_tests": 448,
+        "tests_run": 448,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "unexpected_successes": 0,
+        "expected_failures": 0,
+        "all_discovered_run": true
+      },
+      "package": {
+        "status": "PASS",
+        "exit_code": 0,
+        "stdout": "PASS: isolated packaged runtime import; no game access or scaffolding\nPASS: ZIP integrity, exact single-folder layout and source match\n",
+        "stderr": ""
+      },
+      "seconds": 23.735,
+      "status": "PASS"
+    },
+    "AST_and_raw_function_preservation": {
+      "top_level_functions": 95,
+      "changed_functions": [
+        "inspect_deathtrap_readiness"
+      ],
+      "AST_and_raw_bytes_identical_functions": 94,
+      "ten_metadata_helpers_identical": true,
+      "factory_changed_keys": [
+        "name",
+        "version",
+        "options"
+      ],
+      "options_count": 19,
+      "only_changed_option_index": 3,
+      "all_option_callbacks_identical": true,
+      "other_top_level_AST_identical": true
+    },
+    "baseline_preservation": {
+      "base_tracked_paths": 164,
+      "outside_scope_paths": 154,
+      "all_outside_scope_raw_equal_Git_blobs": true,
+      "historical_versioned_ZIPs_unchanged": 13
+    },
+    "frozen_CLI_reports": {
+      "0.2.12": {
+        "status": "PARTIAL",
+        "exit_code": 1,
+        "entire_JSON_equals_base_and_capture_manifest": true,
+        "calls": 2,
+        "source": {
+          "bytes": 32788,
+          "sha256": "8ddbb6aeae5d96be14879adf69fd21c6a7a1fcdbd3e55ec5f4199b2f943f520a"
+        }
+      },
+      "0.2.13": {
+        "status": "COMPLETE_LOG_TEXT",
+        "exit_code": 0,
+        "entire_JSON_equals_base_and_capture_manifest": true,
+        "calls": 2,
+        "source": {
+          "bytes": 35616,
+          "sha256": "f3a6397839fdb7aecb97b117e23e28bcad4d42c5e0c6bf8fe6c5c384c6dd8e95"
+        }
+      }
+    },
+    "prior_test_preservation": [
+      {
+        "path": "tests/test_deathtrap_readiness.py",
+        "old_cases": 47,
+        "unchanged_AST_cases": 46,
+        "version_title_assertion_updates_only": [
+          "DeathtrapReadinessTests.test_package_title_and_version_match_runtime_registration"
+        ],
+        "new_cases": 14
+      },
+      {
+        "path": "tests/test_runtime_mock.py",
+        "old_cases": 41,
+        "unchanged_AST_cases": 40,
+        "version_title_assertion_updates_only": [
+          "RuntimeTests.test_import_never_installs_observers_or_mutates"
+        ],
+        "new_cases": 0
+      },
+      {
+        "path": "tests/test_presentations.py",
+        "old_cases": 18,
+        "unchanged_AST_cases": 17,
+        "version_title_assertion_updates_only": [
+          "PresentationTests.test_factory_routes_button_four_to_focused_snapshot_and_keeps_nineteen_options"
+        ],
+        "new_cases": 0
+      },
+      {
+        "path": "tests/test_deathtrap_metadata_log_review.py",
+        "old_cases": 57,
+        "unchanged_AST_cases": 57,
+        "version_title_assertion_updates_only": [],
+        "new_cases": 14
+      }
+    ],
+    "immutable_inventory": {
+      "verified_files": 53,
+      "verified_archives": 12,
+      "relationships": 5,
+      "errors": [],
+      "status": "PASS"
+    },
+    "explicit_historical_current_check": {
+      "schema_version": 1,
+      "reference_commit": "1720b62a254d03bbf4e71bc334c60be93e8c8f33",
+      "manifest_origin": "NOT_CHECKED_BY_TOOL",
+      "game_behavior": "NOT_ESTABLISHED",
+      "immutable": {
+        "verified_files": 53,
+        "verified_archives": 12,
+        "relationships": 5,
+        "errors": [],
+        "status": "PASS"
+      },
+      "current": {
+        "status": "FAIL",
+        "verified_files": 0,
+        "verified_archives": 0,
+        "relationships": 0,
+        "errors": [
+          {
+            "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+            "error": "byte size differs"
+          },
+          {
+            "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+            "error": "byte size differs"
+          },
+          {
+            "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+            "error": "byte size differs"
+          },
+          {
+            "path": "dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+            "error": "byte size differs"
+          },
+          {
+            "relationship": "dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+            "error": "'dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip'"
+          }
+        ]
+      },
+      "unlisted_artifact_paths": [
+        "archive/tested_runtime/v0.2.12/README.txt",
+        "archive/tested_runtime/v0.2.12/__init__.py",
+        "archive/tested_runtime/v0.2.12/pyproject.toml",
+        "archive/tested_runtime/v0.2.13/README.txt",
+        "archive/tested_runtime/v0.2.13/__init__.py",
+        "archive/tested_runtime/v0.2.13/pyproject.toml",
+        "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+        "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+        "evidence/deathtrap_lifecycle_design_checks.json",
+        "evidence/deathtrap_lifecycle_diagnostic_design.md",
+        "evidence/deathtrap_lifecycle_readiness_checks.json",
+        "evidence/deathtrap_lifecycle_readiness_result.md",
+        "evidence/deathtrap_manager_metadata_capture_manifest.json",
+        "evidence/deathtrap_manager_metadata_implementation_checks.json",
+        "evidence/deathtrap_manager_metadata_user_test.log",
+        "evidence/deathtrap_metadata_diagnostic_checks.json",
+        "evidence/deathtrap_metadata_diagnostic_plan.md",
+        "evidence/deathtrap_metadata_log_review_tool.md",
+        "evidence/deathtrap_parameter_metadata_design_checks.json",
+        "evidence/deathtrap_parameter_metadata_implementation_checks.json",
+        "evidence/overclock_effect_contract_model_checks.json",
+        "evidence/overclock_identity_cleanup_design_checks.json",
+        "evidence/pair_baseline_checks.json",
+        "evidence/v021_visibility_confirmation.md",
+        "evidence/v022_purchase_diagnostic_result.md",
+        "evidence/v022_repeat_rank_preview_clarification.md",
+        "evidence/v023_diagnostic_plan.md",
+        "evidence/v023_live_diagnostic_result.md",
+        "evidence/v024_live_observer_result.md",
+        "evidence/v024_observer_plan.md",
+        "evidence/v025_live_ui_trace_result.md",
+        "evidence/v025_ui_trace_plan.md",
+        "evidence/v026_core_ui_trace_plan.md",
+        "evidence/v026_live_core_ui_result.md",
+        "evidence/v027_focused_state_plan.md",
+        "evidence/v027_live_focused_state_result.md",
+        "evidence/v028_live_presentation_result.md",
+        "evidence/v028_live_presentation_retry_result.md",
+        "evidence/v028_presentation_snapshot_plan.md",
+        "evidence/v029_live_presentation_text_result.md",
+        "evidence/v029_presentation_text_plan.md",
+        "evidence/v030_live_presentation_display_result.md",
+        "evidence/v030_presentation_display_plan.md",
+        "evidence/v031_ast_scope_proof.json",
+        "evidence/v031_attribute_class_plan.md",
+        "evidence/v031_build_result.json",
+        "evidence/v031_live_attribute_class_result.md",
+        "evidence/v031_log_review_tool.md",
+        "evidence/v031_preserved_baseline.json",
+        "evidence/v032_capture_manifest.json",
+        "evidence/v032_live_deathtrap_metadata_result.md",
+        "evidence/v032_protocol_checks.json",
+        "evidence/v032_user_test.log"
+      ],
+      "unlisted_policy": "reported only; no original fingerprint or acceptance inferred",
+      "status": "FAIL"
+    },
+    "new_versioned_package": {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823",
+      "created_exclusively": true,
+      "equals_current_default": true,
+      "CRC": "PASS",
+      "layout": "one folder; exact three files",
+      "source_equality": "PASS",
+      "syntax": "PASS",
+      "isolated_inert_import": "PASS via identical default bytes; one registration/19 options/no game access"
+    },
+    "accepted_fixed_type_tags_equal_runtime_and_reviewer": true,
+    "output_and_selection_bounds": {
+      "root_targets": 4,
+      "ancestry_per_root": 8,
+      "functions": 3,
+      "fields": 7,
+      "properties_per_function": 16,
+      "lookahead_per_function": 1,
+      "rows": 15,
+      "prior_captured_checks": 94,
+      "max_new_class_checks": 48,
+      "total_captured_checks_upper_bound": 142,
+      "conservative_function_row_chars": 11455,
+      "prefix_allowance": 512,
+      "parser_line_limit": 16384,
+      "bound_fixture": "Independent field maxima bound output; not a jointly valid metadata fixture.",
+      "raw_getter_count_or_deadline": "NOT_ESTABLISHED; revalidation repeats getters"
+    }
+  },
+  "payload_fingerprints": [
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 178655,
+      "sha256": "e752f31c6ace648c52536bcf3810630368ce26d3cc10379bb292b609b57455ba"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "bytes": 84,
+      "sha256": "614a06a15652a4b8865331a1d6a8e74443d48d29b1fbdc3bc855ccf45f190794"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+      "bytes": 3523,
+      "sha256": "70e8efda8c1df265cc46e9d484e63b0b4b053257cc0db029ba92da3731994349"
+    },
+    {
+      "path": "tests/test_deathtrap_readiness.py",
+      "bytes": 32599,
+      "sha256": "b907e526fbde65b2b12951156fff5c68b2f422172fe5b815c567924d030fa354"
+    },
+    {
+      "path": "tests/test_runtime_mock.py",
+      "bytes": 43784,
+      "sha256": "fce61d51564c7bddb6584242730c5512de715c89e7e2cf7866c9464b35eda15f"
+    },
+    {
+      "path": "tests/test_presentations.py",
+      "bytes": 18896,
+      "sha256": "537e70dec34be4638174e19b12f8e45a4834c94a0d510178f18c7ae9520336cf"
+    },
+    {
+      "path": "scripts/review_deathtrap_metadata_log.py",
+      "bytes": 22820,
+      "sha256": "7cf38488f2604a6481504d5298262d03b73a709deae197a55d36416815f26c78"
+    },
+    {
+      "path": "tests/test_deathtrap_metadata_log_review.py",
+      "bytes": 32611,
+      "sha256": "be124bc66e97925cf1c5eaa10c2cde759b1624b9980c0fdcaa9f8529f407dbbe"
+    },
+    {
+      "path": "docs/NEXT_CODEX_TASK.md",
+      "bytes": 4396,
+      "sha256": "f5199efff5fbd28457d77309aaef940b948f5368332673c9728d78c04f690821"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823"
+    }
+  ],
+  "new_meaningful_cases": {
+    "runtime": 14,
+    "offline_reviewer": 14,
+    "total": 28,
+    "coverage": [
+      "actual three function parameter groups and class paths",
+      "nonobject scalar/Boolean/delegate without payload traversal",
+      "supported object subclasses and unsupported tag refusal",
+      "unavailable class header and unavailable-to-available abort",
+      "invalid class metadata and schema/identity drift",
+      "state change at header read and emission",
+      "cap precedence and independent repeated collections",
+      "rank-one refusal before new reads",
+      "strict v14 schema/hash/sentinel/class coverage",
+      "mixed versions and old contracts",
+      "return/discovery equality",
+      "actual emitted complete/partial cross-parser",
+      "cleanup failure history after retry"
+    ]
+  },
+  "resolved_check_issues": [
+    "First targeted run failed one new invalid-name fixture because its fake path getter also failed. Fixed the fixture to return an independent valid path so it tests an invalid value; runtime validator unchanged.",
+    "First full run executed448 tests and failed8 parser cases because initial METADATA row validation still defaulted to v12. Pass the call version in that check; old schema defaults stay unchanged. Final full run passes448.",
+    "After the passing suite, restored original mixed line endings outside the new metadata test cases. Complete test-file AST equality and fresh syntax prove this whitespace-only cleanup preserves the tested code.",
+    "Expected duplicate-ZIP negative-test warning is not a validation failure."
+  ],
+  "limits": {
+    "SDK_execution": "NONE; inert fake SDK types only",
+    "new_game_install_run_capture": "NOT_PERFORMED",
+    "last_game_tested_version": "0.2.13",
+    "native_instance_payload_invocation_hooks_gameplay_writes": "NONE_ADDED",
+    "signature_native_lifetime_payload_ownership_clock_rank_one_gate_effect": "NOT_READY",
+    "internal_initial_baseline": "UNLOGGED; FINAL is runtime assertion",
+    "parser": "Text consistency only; no SDK identity/signature/origin/install/exit/lifetime proof",
+    "hosted_CI": "NOT_CHECKED",
+    "save_private_backup_purchase_summon_effect_coop_merge_release": "NOT_PERFORMED"
+  }
+}
