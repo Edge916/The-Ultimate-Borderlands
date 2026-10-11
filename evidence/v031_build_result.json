@@ -1,0 +1,19 @@
+{
+  "version": "0.2.11",
+  "zip": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+  "bytes": 34433,
+  "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4",
+  "files": {
+    "__init__.py": "59f99db241b3e7a1ebe117a3304988960a3b333ac051c487884e53091f83c1f8",
+    "pyproject.toml": "759a68929c1baff4141bc4d40ba69c5a2669fd9b89cb807b3f3937c6a0b15dad",
+    "README.txt": "39bad5a23849bbe57bbd707135221f4e2959a702a8aab53be47cd85a446ffc91"
+  },
+  "unique_mocks": 179,
+  "new_mocks": 28,
+  "full_suite_seconds": 18.428,
+  "syntax": "PASS",
+  "ast_scope": "PASS:73 identical/seven labels only/four new functions/module unchanged except factory",
+  "package": "PASS: isolated inert19-option import, integrity, exact layout/source match",
+  "protected_originals_unchanged": 44,
+  "live_test": "AWAITING"
+}
