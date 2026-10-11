@@ -1,5 +1,15 @@
 # Borderlands: Ultimate Vault Hunter Collection — Codex handoff
 
+**Current prepared build: v0.2.12 - DEATHTRAP METADATA (offline only).**
+Button4 collects bounded loaded metadata without native calls, summon payload
+reads, observers or gameplay writes. All84 previous functions/guards remain
+AST-identical;19 options remain. See [the plan](evidence/deathtrap_metadata_diagnostic_plan.md)
+and [actual checks](evidence/deathtrap_metadata_diagnostic_checks.json).
+Last game-tested remains v0.2.11. The new build has not been installed or run
+in-game; review it before a separately authorized manual test. Node duration
+effect and natural lifecycle behavior remain unimplemented/unverified.
+
+
 This project is a **Borderlands 2 PythonSDK gameplay-mod prototype**, with a separate early design-oriented codebase for a much larger multi-game Borderlands project.
 
 **Current game-tested build:** **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**.
@@ -235,12 +245,12 @@ Read [the live result](evidence/v031_live_attribute_class_result.md),
 [the actual log](evidence/v031_user_test.log), [capture manifest](evidence/v031_capture_manifest.json)
 and [offline reviewer](evidence/v031_log_review_tool.md). They distinguish raw
 metadata/state/cleanup from separately checked installation and process exit.
-Current runtime/pyproject are identical to the original v0.2.11 ZIP and snapshot.
-Only current README documentation changes in the default install ZIP.
+Preserved v0.2.11 files remain identical to the original ZIP and snapshot.
+Current v0.2.12 source adds only the bounded metadata diagnostic described above.
 
 The node effect remains inactive; the separate manual +15s prototype is preserved.
 [Readiness research PR#4](https://github.com/Edge916/The-Ultimate-Borderlands/pull/4)
 passed independent peer review and proposes a bounded metadata-only Deathtrap
-diagnostic for separately scoped implementation. No lifecycle implementation or new game test is prepared.
+diagnostic for separately scoped implementation. No lifecycle implementation or game test has occurred; v0.2.12 prepares metadata only.
 See [the next task](docs/NEXT_CODEX_TASK.md). Do not invoke native methods from
 inventory names, relax diagnostic guards, spend points or add automatic effects.

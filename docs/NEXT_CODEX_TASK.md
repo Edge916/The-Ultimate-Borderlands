@@ -1,78 +1,51 @@
-# Next work after the completed v0.2.11 metadata test
+# Review the prepared v0.2.12 metadata diagnostic
 
-Current tested runtime is v0.2.11 - OVERCLOCK ATTRIBUTE CLASS. Read the
-[reviewed result](../evidence/v031_live_attribute_class_result.md), actual log,
-capture manifest and exact snapshot before building on it. Two complete calls
-verified actual ResourcePoolAttributeDefinition and a five-class COMPLETE chain
-through declared AttributeDefinition; runtime identity/link checks report DERIVED.
-Sampled points/ranks stayed unchanged, arrays restored, observer families zero
-and independent capture queries found BL2 exited. The repeated call/ARM/CANCEL
-details are preserved. No repeat of this completed test is needed.
+Current prepared build is v0.2.12 - DEATHTRAP METADATA. Last game-tested build
+remains v0.2.11. The new diagnostic has not been installed or run in the game.
+Read the [implementation plan](../evidence/deathtrap_metadata_diagnostic_plan.md)
+and [actual checks](../evidence/deathtrap_metadata_diagnostic_checks.json), actual
+runtime/tests and shared review notes before accepting the submitted task.
 
-## Proposed next diagnostic from independently accepted research
+Button4 performs one synchronous collection of loaded metadata. The guarded
+controller's actual UClass supplies typed GetSkillManager/ActivateSkill/
+DeactivateSkill descriptors. A typed return class and ActiveSkills array-inner
+descriptor can supply manager and skill class roots; Definition's declared
+class is compared with the owned definitions. No manager/active-skill instance
+or payload is read. All84 old functions and their guards remain AST-identical.
 
-Independent [readiness research PR#4](https://github.com/Edge916/The-Ultimate-Borderlands/pull/4)
-at `f8aa2fe28bf71199e801fc94a447506aa41eb000` received different-user acceptance
-(sequence71). Justin independently reproduced all eleven inert probes and the
-established manual-duration unittest, verified unchanged baseline files and
-pinned official SDK sources. Read its actual two evidence files before scoping
-the proposal. Research acceptance does not implement a runtime or establish
-engine lifecycle/effect behavior.
+Hard bounds: four target class roots, seven allowlisted fields, three selected
+functions, 16 property descriptors plus one cap read per function and eight
+ancestry nodes per target; zero global function enumeration. Capture/recheck
+real SDK types, owner/class/parent/property links, lookup identity, bounded
+numeric metadata, canonical names/paths and unchanged current state before END.
+COMPLETE means selected metadata coverage only. CAPPED/UNAVAILABLE remain
+partial; REFUSED reports invalid or drifting state/schema. No callable
+signature, parameter semantics, natural lifecycle timing or effect is proven.
 
-The concrete next design is one explicit synchronous **metadata-only Deathtrap
-readiness diagnostic**. Discover already-loaded actual SDK UClass/UFunction
-metadata for the observed live-duration fields and GetSkillManager descriptor;
-resolve real typed owners and return descriptors rather than guessing paths.
-Existing v019 ActivateSkill/DeactivateSkill/GetSkillManager hits are controller
-field inventories, not validated signatures or lifecycle timing. No method
-invocation, observer or actual summon is included in this first diagnostic.
+Review task659a5e78 using actual code and checks after submission. Any authorized
+participant may review, including a separately labeled self-review. Every
+completion needs a current version and review note; dependencies and scope
+reservations remain intact. Review is separate from writing/testing the patch.
 
-Retain existing `_upgrade_state` unchanged as the owned solo Gaige/tree/PRI/
-pawn/world/native-patch/inert-grade-zero entry and final guard. Preserve manual
-helpers, old exact-class Attribute guard and tested insertion/rollback/cleanup.
-The grade-zero diagnostic guard is not a purchased-rank effect gate. Unknown,
-conflicting, capped or drifting metadata must remain explicit refusal/partial
-outcomes; no inferred absence, callable signature, eligible effect or repair.
+Only after review and separate manual-test authorization should a new bounded
+test/capture task be claimed. Prepare an exact build/title/protocol and preserve
+the actual complete log and installed snapshot under new exclusive paths.
+Do not install or launch the game in this implementation task. Unknown engine
+metadata should guide the next bounded investigation; do not guess classes or
+loosen guards to make the diagnostic complete. Lifecycle observation/effects
+still require their own evidence and design.
 
-Proposed limits, to be confirmed in the separately claimed runtime task: at most
-four verified target classes, eight allowlisted fields, sixteen descriptors plus
-one cap-detection read per selected function, four selected function descriptors
-and 30,000 loaded functions scanned. Revalidate SDK class/owner/path/schema/link/
-state before logging, one explicit result per call and no retained observer state.
-Exact fields/bounds and discovery roots require review before implementation.
+The [v0.2.11 result](../evidence/v031_live_attribute_class_result.md),
+[log](../evidence/v031_user_test.log) and
+[manifest](../evidence/v031_capture_manifest.json) remain immutable. Two calls,
+second ARM refusal and repeated CANCEL are documented honestly. SDK identity
+comes from runtime class/link checks; parser success supplies text consistency.
+Machine installation/exit observations are separate. No repeat is needed.
 
-## Acceptance for that future scoped implementation
-
-- Typed loaded metadata only; distinguish COMPLETE/CAPPED/UNAVAILABLE/REFUSED.
-- Poison native call wrappers, including GetSkillManager/activation queries,
-  must never execute. No construct/load/hook/Duration/point-grade-save operations.
-- Refuse rank1, unknown points, foreign/replaced ownership, extra roster/local
-  players, overlapping failed observers, bad schema/counts/labels or drift.
-- Final state matches the start; unknown/capped signatures cannot authorize calls.
-- Meaningful offline boundary/drift/poison tests, syntax and AST scope proof;
-  exact three-file package and isolated inert import. Preserve all originals.
-- Publish an own branch and tested handoff for peer review before preparing any
-  new manual game test. No new build/test is currently prepared by this doc task.
-
-Later natural lifecycle timing/ownership observation and an automatic duration
-effect require separate reviewed designs. Manual `find_live` invokes GetSkillManager,
-uses names and unchecked activation time, picks the first match, and has no
-purchased-node/solo guard. Manual restore is separate; shutdown/cancel do not
-call it. Research probes expose synthetic cases, not game-observed failures.
-Do not silently replace or extend the preserved manual path.
-
-## Evidence and preservation
-
-Capture 88a904e and reviewer 44ad64c are independently accepted dependencies. The
-corrected tool's236 unique passing tests validate log consistency; it cannot
-verify capture origin/install/process exit or prove SDK identity from names.
-Manifest machine queries and source identity/link guards supply separate evidence.
-Sampled state equality is not an intermediate-state/save audit.
-
-Keep all 44 prior protected files, original v0.2.11 ZIP and captured snapshot/
-log/manifest hash-identical. Current README/default ZIP can differ in documentation
-only; runtime/pyproject freeze. SDK stubs are read-only documentation, never
-execute/import/package. Private backups are never parsed/restored/packaged.
-Earlier reported purchase1/1 is separate UI evidence, not captured transaction/
-persistence/effect proof; do not repeat purchase to recover missing data. No
-automatic effects, point/grade/save writes, guard relaxation, co-op or release.
+The accepted [readiness research](../evidence/overclock_effect_readiness_research.md)
+and its checks remain unchanged. Manual duration helpers remain independent;
+cancel/disable does not call manual restore. Earlier reported purchase1/1 is
+separate UI evidence, not a transaction/save/effect audit. Preserve44 prior
+protected files, original v0.2.11 ZIP, capture5files and research2files. No
+private-backup operations, purchases, points/grades/saves, automatic effects,
+co-op, release or upstream merge.

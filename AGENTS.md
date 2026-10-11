@@ -1,5 +1,25 @@
 # Codex instructions for the Ultimate Vault Hunter Collection
 
+## Current prepared v0.2.12 - DEATHTRAP METADATA
+
+Task659a5e78 prepares button4 as one synchronous typed loaded-metadata
+collection. Read evidence/deathtrap_metadata_diagnostic_plan.md and its checks
+JSON. Last game-tested remains v0.2.11; no v0.2.12 installation/game/native SDK
+run has occurred. Historical frozen versions below remain preserved originals.
+All84 prior functions/labels, _upgrade_state, exact Attribute guard and manual/
+insertion/rollback/cleanup are AST-identical. Only new metadata helpers/constants
+and factory version/route change;19 options remain. Four roots, seven fields,
+three functions,16 properties+one cap read per function, eight ancestry nodes
+per root; zero global enumeration. Recheck typed references/links/schema and
+current state before END. COMPLETE means metadata coverage, never a callable
+signature or effect; CAPPED/UNAVAILABLE/REFUSED remain explicit. Review the
+submitted exact code in a separate verification step; any participant may
+review, including a labeled self-review. Resolve findings before completion.
+Review precedes any separately authorized bounded manual test. Preserve every
+original package/capture/snapshot/log/PNG and accepted research byte. No game/
+SDK/save/private-backup operations, purchases/effects, co-op/release/merge.
+
+
 ## Goals and priorities
 
 1. Focus on a reliable **Borderlands 2 / Gaige skill-tree extension**, not the enormous cross-game vision yet.
@@ -331,7 +351,7 @@ grade/save writes; later controlled tests still need explicit scope/recovery.
 
 ## v0.2.11 tested baseline (combined class metadata and restoration passed)
 
-Current runtime is v0.2.11 - OVERCLOCK ATTRIBUTE CLASS, now game-tested.
+Last game-tested runtime is v0.2.11 - OVERCLOCK ATTRIBUTE CLASS.
 Read evidence/v031_live_attribute_class_result.md, v031_user_test.log and
 v031_capture_manifest.json. Two complete calls 65-212/214-361 captured Myelin
 index 1 SDK_UOBJECT/SDK_UCLASS and actual WillowGame.ResourcePoolAttributeDefinition.
@@ -347,7 +367,7 @@ Keep these deviations explicit. No repeat of this completed diagnostic needed.
 The old exact-class Attribute guard, _upgrade_state and presentation reference
 checks remain unchanged. Do not evaluate/traverse the derived Attribute or
 infer gameplay authorization from the new class result. No new hooks/native
-queries/writes in item4. Runtime/pyproject freeze at tested hashes 59f99db2 and
+queries/writes in item4. Preserved v0.2.11 runtime/pyproject retain tested hashes 59f99db2 and
 759a6892. Exact tested three files are in archive/tested_runtime/v0.2.11.
 Keep all 44 prior protected files, original v0.2.11 ZIP and immutable capture/log/
 manifest/snapshot unchanged. Current docs/default ZIP may differ only in README;

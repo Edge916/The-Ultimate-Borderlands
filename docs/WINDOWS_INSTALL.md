@@ -1,6 +1,17 @@
 # Windows workspace and mod installation
 
-Current tested build: **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**. Its prepared
+## Prepared v0.2.12 package - not installed or game-tested
+
+Title: UVH v0.2.12 - DEATHTRAP METADATA. Item4 inspects loaded metadata under
+the unchanged solo/inert-grade0 guard. The exact new versioned ZIP is created
+exclusively; default ZIP contains the same three current files. Read the plan
+and checks in ../evidence before review and a separately authorized test/capture.
+No install/game/native SDK run was performed here. Do not use a purchase,
+summon, manual boost or traces to force metadata. The historical installation
+reference below applies only after explicit authorization for a reviewed build.
+
+
+Last game-tested build: **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**. Its prepared
 metadata test is complete; no new game run is pending. Two complete calls found
 actual ResourcePoolAttributeDefinition, five-class COMPLETE/DERIVED ancestry,
 unchanged sampled state and native restoration. Capture process queries found
@@ -12,7 +23,8 @@ v031_capture_manifest.json for preserved log/source/install evidence and limits.
 Keep the workspace outside the game. Preserve all eleven original versioned
 ZIPs and five exact tested snapshots/logs/PNG, including the immutable v0.2.11
 capture manifest. Never overwrite a versioned original. Current default ZIP
-may update README only; runtime/pyproject still match the original v0.2.11 ZIP.
+now contains the prepared v0.2.12 diagnostic. Preserved v0.2.11 files still
+match their original versioned ZIP.
 Its historical tested README is preserved in archive/tested_runtime/v0.2.11.
 
 For a separately authorized future installation, fully close BL2 first and
@@ -20,8 +32,8 @@ manually replace only the UltimateVaultHunterDeathtrapBoost folder under
 C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\sdk_mods.
 A valid package has exactly __init__.py, pyproject.toml and README.txt directly
 inside that one folder. Keep one project mod and all SDK/core mods. Codex does
-not install or change game/SDK/save files. Installing this documentation update
-is unnecessary for the already reviewed result.
+not install or change game/SDK/save files. The prepared v0.2.12 build requires review and separate manual-test
+authorization before installation; the v0.2.11 result needs no repeat.
 
 The completed historical protocol was backed-up Gaige alone Offline, fresh
 process, verify exact title, item1 ARM before Continue, in-map item4 once,
@@ -47,4 +59,4 @@ Before shipping a runtime, run meaningful mocks, syntax/AST scope proof and
 scripts/package_mod.py plus scripts/verify_package.py. The verifier checks exact
 single-folder/three-file layout, integrity/current-source match and isolated
 inert19-option import. No SDK/game assets/saves/scaffolding belong in the ZIP.
-See docs/NEXT_CODEX_TASK.md for the separately proposed metadata-only follow-up.
+See docs/NEXT_CODEX_TASK.md for review of the prepared metadata-only diagnostic.

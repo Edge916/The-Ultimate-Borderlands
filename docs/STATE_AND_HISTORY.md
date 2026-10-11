@@ -1,5 +1,16 @@
 # Project state and development history
 
+## Current prepared source: v0.2.12 (offline only)
+
+Button4 now collects typed loaded class/function/field descriptors with bounded
+identity/link/schema/state rechecks. All84 old functions remain AST-identical;
+19 options remain. No native invocation, active-skill payload, new observer or
+gameplay write. COMPLETE refers only to metadata; partial/refused states remain
+explicit. Read ../evidence/deathtrap_metadata_diagnostic_plan.md and its checks.
+No v0.2.12 installation/game run occurred. Last game-tested remains v0.2.11;
+its original ZIP/capture and all historical evidence/research stay unchanged.
+
+
 ## What the user wants
 
 Long-term ambition: a Borderlands Ultimate Vault Hunter Collection spanning main Borderlands games with persistent progression, a broad roster, expanded skill systems and co-op. Immediate priority is to establish reliably working BL2 mod systems; selected feature is a real **new Gaige skill-tree node** called **Deathtrap Overclock**, ultimately allowing a skill-point purchase that adds 15 seconds to summoned Deathtrap. They prefer incremental downloadable ZIPs and short install instructions. They requested a move to Codex for direct ongoing code development.
@@ -35,7 +46,7 @@ Long-term ambition: a Borderlands Ultimate Vault Hunter Collection spanning main
 | **v0.2.7 (focused trace baseline)** | All nine function/skill buckets observed; Overclock grade-one description empty while native skills returned text; final points/ranks unchanged, hooks removed and arrays restored | **90 mocks plus live 16 results/110 callbacks, exact installed/source/ZIP match and verified cleanup; eligibility/rendered prompt/effect unverified** |
 | **v0.2.8 (presentation baseline)** | Fresh retry verified presentation counts Overclock0/MorePep4/Myelin2, all six references, capped raw metadata, unchanged sampled FINAL state and restoration | **108 mocks plus two live snapshots, installed/ZIP byte match, arrays 3/3 and cleanup; cause/eligibility/effect unverified** |
 | **v0.2.9 (text baseline)** | Two snapshots accepted scalar schemas/owners and verified all 24 native text fields; Overclock has no entries, native descriptions use $NUMBER$ templates | **127 mocks plus live24/24 fields per call, installed/ZIP byte match, sampled FINAL state unchanged, hooks0, arrays restored and process closed; cause/eligibility/effect unverified** |
-| **v0.2.10 (current tested source)** | Four live snapshots verified18 native flags and five of six Attribute identities each; second Myelin Attribute refused exact-class validation | **151 mocks plus live23/24 fields/call, sampled FINAL state unchanged, restored/hooks0/exited; separate user report of first-run one-point purchase to1/1, transaction/save/effect unverified** |
+| **v0.2.10 (previous tested source)** | Four live snapshots verified18 native flags and five of six Attribute identities each; second Myelin Attribute refused exact-class validation | **151 mocks plus live23/24 fields/call, sampled FINAL state unchanged, restored/hooks0/exited; separate user report of first-run one-point purchase to1/1, transaction/save/effect unverified** |
 | **v0.2.11 (current game-tested baseline)** | Two combined Myelin wrapper/UClass/ancestry calls | **SDK_UOBJECT; ResourcePoolAttributeDefinition; five-class COMPLETE/DERIVED; sampled state unchanged; restoration/hooks0/independent exit checks; runtime frozen** |
 
 ## Relevant exact data

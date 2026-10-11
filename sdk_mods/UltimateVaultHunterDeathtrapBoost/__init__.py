@@ -2971,24 +2971,370 @@ def inspect_overclock_attribute_class(_option=None):
         return False
 
 
+_DEATHTRAP_FIELDS = (
+    ('Duration', 'ZFloatProperty'), ('DurationBaseValue', 'ZFloatProperty'),
+    ('ActivatedTime', 'ZFloatProperty'), ('SkillInstigator', 'ZObjectProperty'),
+    ('Definition', 'ZObjectProperty'), ('DurationModifierStack', 'ZArrayProperty'),
+)
+
+
+def _deathtrap_int(value, maximum, minimum=0):
+    if type(value) is not int or not minimum <= value <= maximum:
+        raise ValueError('invalid numeric metadata')
+    return value
+
+
+def _deathtrap_label(value, path=False):
+    import re
+    limit = 384 if path else 96
+    pattern = r'[A-Za-z_][A-Za-z0-9_.:]*' if path else r'[A-Za-z_][A-Za-z0-9_]*'
+    if type(value) is not str or not 0 < len(value) <= limit or re.fullmatch(pattern, value) is None:
+        raise ValueError('invalid metadata label')
+    return value
+
+
+def _deathtrap_class(cls):
+    import unrealsdk
+    if not isinstance(cls, unrealsdk.unreal.UClass):
+        raise ValueError('not an SDK UClass')
+    try:
+        label, path, parent, size = cls.Name, cls._path_name(), cls.SuperField, cls.PropertySize
+    except Exception:
+        raise LookupError('class metadata unavailable') from None
+    _deathtrap_label(label)
+    _deathtrap_label(path, True)
+    if not path.endswith('.' + label) or (parent is not None and not isinstance(parent, unrealsdk.unreal.UClass)):
+        raise ValueError('noncanonical class or untyped parent')
+    return cls, label, path, parent, _deathtrap_int(size, 1048576)
+
+
+def _deathtrap_session(context):
+    import unrealsdk
+    current = get_pc(possibly_loading=True)
+    if not isinstance(current, unrealsdk.unreal.UObject):
+        raise ValueError('untyped current controller')
+    _deathtrap_class(context['pc'].Class)
+    if (_init_armed or _init_hooks or _trace_hooks or _upgrade_context is not None or _upgrade_hooks
+            or _ui_context is not None or _ui_hooks or _skillstate_context is not None or _skillstate_hooks):
+        raise ValueError('initialization or observers overlap')
+    return _upgrade_state(context)
+
+
+def _deathtrap_check(context, checks):
+    _deathtrap_session(context)
+    for getter, expected in checks:
+        try:
+            current = getter()
+        except Exception:
+            raise ValueError('captured metadata became unavailable or invalid') from None
+        if current != expected:
+            raise ValueError('captured metadata changed')
+        _deathtrap_session(context)
+
+
+def _deathtrap_chain(context, checks, cls):
+    nodes, cursor, coverage = [], cls, 'CAPPED'
+    for _ in range(8):
+        _deathtrap_session(context)
+        current = _deathtrap_class(cursor)
+        if any(current[0] == old[0] for old in nodes):
+            raise ValueError('cyclic class metadata')
+        nodes.append(current)
+        checks.append((lambda item=cursor: _deathtrap_class(item), current))
+        if current[3] is None:
+            coverage = 'COMPLETE'
+            break
+        if any(current[3] == old[0] for old in nodes):
+            raise ValueError('cyclic class metadata')
+        cursor = current[3]
+    return nodes, coverage
+
+
+def _deathtrap_property(prop, owners, class_field=False):
+    import unrealsdk
+    sdk = unrealsdk.unreal
+    if not isinstance(prop, sdk.ZProperty):
+        raise ValueError('not an SDK property')
+    try:
+        values = (prop.Name, prop.Outer, prop.PropertyFlags, prop.Offset_Internal,
+                  prop.ArrayDim, prop.ElementSize, prop.PropertyLinkNext)
+        declared = prop.PropertyClass if isinstance(prop, sdk.ZObjectProperty) else None
+        inner = prop.Inner if isinstance(prop, sdk.ZArrayProperty) else None
+    except Exception:
+        raise LookupError('property metadata unavailable') from None
+    label, owner, flags, offset, dim, element, next_prop = values
+    _deathtrap_label(label)
+    if not isinstance(owner, (sdk.UClass, sdk.UFunction, sdk.ZProperty)) or not any(owner == item for item in owners):
+        raise ValueError('property declaring owner is not verified')
+    _deathtrap_int(flags, 2 ** 64 - 1)
+    _deathtrap_int(offset, 1048576)
+    _deathtrap_int(dim, 1 if class_field else 64, 1)
+    _deathtrap_int(element, 65536, 1)
+    if offset + dim * element > 1048576 or (class_field and flags & 0x580):
+        raise ValueError('invalid field bounds or parameter flags')
+    if next_prop is not None and not isinstance(next_prop, sdk.ZProperty):
+        raise ValueError('untyped property link')
+    if next_prop is not None and next_prop == prop:
+        raise ValueError('cyclic property link')
+    if isinstance(prop, sdk.ZObjectProperty) and not isinstance(declared, sdk.UClass):
+        raise ValueError('untyped declared object class')
+    if isinstance(prop, sdk.ZArrayProperty) and not isinstance(inner, sdk.ZProperty):
+        raise ValueError('untyped array inner')
+    if inner is not None and inner == prop:
+        raise ValueError('cyclic array inner')
+    return prop, label, _deathtrap_label(type(prop).__name__), owner, flags, offset, dim, element, next_prop, declared, inner
+
+
+def _deathtrap_field_snapshot(cls, field, kind, owners):
+    import unrealsdk
+    try:
+        prop = cls._find_prop(field)
+    except Exception:
+        raise LookupError('field lookup unavailable') from None
+    if not isinstance(prop, getattr(unrealsdk.unreal, kind)):
+        raise ValueError('field has unexpected SDK property type')
+    data = _deathtrap_property(prop, owners, True)
+    if data[1] != field:
+        raise ValueError('field lookup name mismatch')
+    inner_data = None
+    if data[10] is not None:
+        inner_data = _deathtrap_property(data[10], (prop, data[3]), True)
+    return data, inner_data
+
+
+def _deathtrap_function_header(cls, method, owners):
+    import unrealsdk
+    sdk = unrealsdk.unreal
+    try:
+        func = cls._find(method)
+    except Exception:
+        raise LookupError('function lookup unavailable') from None
+    if not isinstance(func, sdk.UFunction):
+        raise ValueError('lookup is not an SDK UFunction')
+    try:
+        label, owner, path = func.Name, func.Outer, func._path_name()
+        numbers = (func.FunctionFlags, func.NumParams, func.ParamsSize, func.ReturnValueOffset, func.PropertySize)
+        links = (func.SuperField, func.Children, func.PropertyLink)
+        ret = func._find_return_param()
+    except Exception:
+        raise LookupError('function metadata unavailable') from None
+    _deathtrap_label(label)
+    _deathtrap_label(path, True)
+    if label != method or not isinstance(owner, sdk.UClass) or not any(owner == item for item in owners):
+        raise ValueError('function declaring owner or name mismatch')
+    owner_path = _deathtrap_class(owner)[2]
+    if path not in (owner_path + ':' + method, owner_path + '.' + method):
+        raise ValueError('function path does not match its owner')
+    for number, maximum in zip(numbers, (2 ** 32 - 1, 255, 65535, 65535, 1048576)):
+        _deathtrap_int(number, maximum)
+    if links[0] is not None:
+        raise LookupError('inherited function metadata is not supported')
+    if links[1] is not None and not isinstance(links[1], sdk.UField):
+        raise ValueError('untyped function child')
+    if links[2] is not None and not isinstance(links[2], sdk.ZProperty):
+        raise ValueError('untyped function property link')
+    if ret is not None and not isinstance(ret, sdk.ZProperty):
+        raise ValueError('untyped function return descriptor')
+    return func, label, owner, path, numbers, links, ret
+
+
+def _deathtrap_function(context, checks, cls, method, owners):
+    import unrealsdk
+    header = _deathtrap_function_header(cls, method, owners)
+    checks.append((lambda: _deathtrap_function_header(cls, method, owners), header))
+    func, _, _, _, numbers, links, ret = header
+    props, coverage, extra = [], 'COMPLETE', None
+    try:
+        iterator = iter(func._properties())
+        for index in range(17):
+            _deathtrap_session(context)
+            try:
+                prop = next(iterator)
+            except StopIteration:
+                break
+            if index == 16:
+                if not isinstance(prop, unrealsdk.unreal.ZProperty):
+                    raise ValueError('untyped capped property link')
+                extra, coverage = prop, 'CAPPED'
+                break
+            data = _deathtrap_property(prop, (func,))
+            if any(data[1] == old[1] or data[0] == old[0] for old in props):
+                raise ValueError('duplicate or cyclic function property')
+            if data[5] + data[6] * data[7] > numbers[4]:
+                raise ValueError('function property outside metadata size')
+            props.append(data)
+            checks.append((lambda item=prop: _deathtrap_property(item, (func,)), data))
+    except (ValueError, LookupError):
+        raise
+    except Exception:
+        raise LookupError('function property enumeration unavailable') from None
+    if links[2] != (props[0][0] if props else None):
+        raise ValueError('function property root disagrees with enumeration')
+    for index, data in enumerate(props):
+        expected_next = props[index + 1][0] if index + 1 < len(props) else extra
+        if data[8] != expected_next:
+            raise ValueError('function property links disagree with enumeration')
+    marked = [data for data in props if data[4] & 0x400]
+    selected_return = next((data for data in props if ret is not None and data[0] == ret), None)
+    if len(marked) > 1 or (ret is None and marked):
+        raise ValueError('ambiguous return metadata')
+    if selected_return is not None:
+        if not selected_return[4] & 0x400 or selected_return[5] != numbers[3]:
+            raise ValueError('return flag/offset mismatch')
+    elif ret is not None and coverage == 'COMPLETE':
+        raise ValueError('return descriptor outside complete enumeration')
+    if marked and marked[0][0] != ret:
+        raise ValueError('return descriptor disagreement')
+    _deathtrap_check(context, checks)
+    return header, props, coverage, selected_return
+
+
+def inspect_deathtrap_readiness(_option=None):
+    """One bounded synchronous loaded-metadata collection; no gameplay calls."""
+    import json
+    import unrealsdk
+    prefix = '[UVH-DEATHTRAP]'
+    log(prefix + ' BEGIN v0.2.12 metadata_only=True')
+    rows, checks, roots, statuses, class_paths = [], [], [], [], []
+    try:
+        pc, record = get_pc(possibly_loading=True), _uvh_node_state
+        if record is None or 'init_tree' not in record or len(record['skills']) != 2:
+            raise ValueError('owned inert initialization record unavailable')
+        if not isinstance(pc, unrealsdk.unreal.UObject):
+            raise ValueError('untyped controller before state reads')
+        modes = unrealsdk.find_enum('ENetMode')
+        context = dict(pc=pc, tree=record['init_tree'], record=record, pawn=read(pc, 'Pawn'),
+                       world=read(pc, 'WorldInfo'), pri=read(pc, 'PlayerReplicationInfo'),
+                       modes=(modes.NM_Standalone, modes.NM_ListenServer),
+                       definitions=(record['node'], record['skills'][0], record['skills'][1]))
+        for value in (pc, context['tree'], context['pawn'], context['world'], context['pri'], *context['definitions']):
+            if not isinstance(value, unrealsdk.unreal.UObject):
+                raise ValueError('untyped current session object')
+        controller = pc.Class
+        controller_data = _deathtrap_class(controller)
+        context['baseline'] = _deathtrap_session(context)
+        checks.append((lambda: _deathtrap_class(pc.Class), controller_data))
+
+        def target(cls, label):
+            if len(roots) >= 4 or any(cls == item for item in roots):
+                raise ValueError('ambiguous or excessive target classes')
+            chain, coverage = _deathtrap_chain(context, checks, cls)
+            roots.append(cls)
+            class_paths.extend((item[0], item[2]) for item in chain)
+            statuses.append(coverage)
+            rows.append(dict(kind='CLASS', target=label, path=chain[0][2], coverage=coverage,
+                             ancestry=[dict(name=item[1], path=item[2]) for item in chain]))
+            return tuple(item[0] for item in chain)
+
+        owners = target(controller, 'controller')
+        primary = None
+        for method in ('GetSkillManager', 'ActivateSkill', 'DeactivateSkill'):
+            try:
+                header, props, coverage, ret = _deathtrap_function(context, checks, controller, method, owners)
+            except LookupError:
+                _deathtrap_check(context, checks)
+                statuses.append('UNAVAILABLE')
+                rows.append(dict(kind='FUNCTION', name=method, coverage='UNAVAILABLE'))
+                continue
+            statuses.append(coverage)
+            rows.append(dict(kind='FUNCTION', name=method, path=header[3], coverage=coverage,
+                             flags=header[4][0], num_params=header[4][1], params_size=header[4][2],
+                             return_offset=header[4][3], signature='NOT_ESTABLISHED',
+                             properties=[dict(name=p[1], type=p[2], flags=p[4], offset=p[5],
+                                              dimension=p[6], element_size=p[7]) for p in props]))
+            if method == 'GetSkillManager':
+                primary = ret
+        if primary is None:
+            statuses.append('UNAVAILABLE')
+            rows.append(dict(kind='DISCOVERY', target='manager', coverage='UNAVAILABLE'))
+        else:
+            if not isinstance(primary[0], unrealsdk.unreal.ZObjectProperty):
+                raise ValueError('manager return is not a typed object descriptor')
+            manager = primary[9]
+            manager_owners = target(manager, 'manager')
+            rows.append(dict(kind='DISCOVERY', source_function='GetSkillManager', return_property=primary[1],
+                             return_class=next(path for item, path in class_paths if item == manager)))
+            try:
+                field = _deathtrap_field_snapshot(manager, 'ActiveSkills', 'ZArrayProperty', manager_owners)
+            except LookupError:
+                _deathtrap_check(context, checks)
+                statuses.append('UNAVAILABLE')
+                rows.append(dict(kind='FIELD', name='ActiveSkills', coverage='UNAVAILABLE'))
+            else:
+                checks.append((lambda: _deathtrap_field_snapshot(manager, 'ActiveSkills', 'ZArrayProperty', manager_owners), field))
+                data, inner = field
+                if inner is None or not isinstance(inner[0], unrealsdk.unreal.ZObjectProperty):
+                    raise ValueError('ActiveSkills inner is not a typed object descriptor')
+                skill = inner[9]
+                skill_owners = target(skill, 'active_skill_class')
+                rows.append(dict(kind='FIELD', name='ActiveSkills', type=data[2], flags=data[4], offset=data[5],
+                                 dimension=data[6], element_size=data[7], inner_type=inner[2], coverage='COMPLETE',
+                                 owner=next(path for item, path in class_paths if item == data[3]),
+                                 element_class=next(path for item, path in class_paths if item == skill)))
+                for field_name, kind in _DEATHTRAP_FIELDS:
+                    try:
+                        captured = _deathtrap_field_snapshot(skill, field_name, kind, skill_owners)
+                    except LookupError:
+                        _deathtrap_check(context, checks)
+                        statuses.append('UNAVAILABLE')
+                        rows.append(dict(kind='FIELD', name=field_name, coverage='UNAVAILABLE'))
+                        continue
+                    checks.append((lambda field_name=field_name, kind=kind:
+                                   _deathtrap_field_snapshot(skill, field_name, kind, skill_owners), captured))
+                    data, inner_data = captured
+                    if field_name == 'SkillInstigator' and not any(data[9] == item for item in owners):
+                        raise ValueError('instigator descriptor class is outside controller ancestry')
+                    if field_name == 'Definition':
+                        definition_class = data[9]
+                        for definition in context['definitions']:
+                            current = _deathtrap_class(definition.Class)
+                            if current[0] != definition_class:
+                                raise ValueError('definition descriptor class differs from owned definitions')
+                            checks.append((lambda item=definition: _deathtrap_class(item.Class), current))
+                        target(definition_class, 'definition_class')
+                    rows.append(dict(kind='FIELD', name=field_name, type=data[2], flags=data[4], offset=data[5],
+                                     dimension=data[6], element_size=data[7], coverage='COMPLETE',
+                                     inner_type=inner_data[2] if inner_data is not None else 'NOT_APPLICABLE',
+                                     owner=next(path for item, path in class_paths if item == data[3]),
+                                     declared_class=(next(path for item, path in class_paths if item == data[9])
+                                                     if data[9] is not None else 'NOT_APPLICABLE')))
+        _deathtrap_check(context, checks)
+        status = 'CAPPED' if 'CAPPED' in statuses else ('UNAVAILABLE' if 'UNAVAILABLE' in statuses else 'COMPLETE')
+        state = _deathtrap_session(context)
+        for row in rows:
+            _deathtrap_check(context, checks)
+            log(prefix + ' METADATA ' + json.dumps(row, sort_keys=True))
+        _deathtrap_check(context, checks)
+        log(prefix + ' FINAL points={} ranks={} unchanged_from_start=True'.format(state[0], state[1]))
+        _deathtrap_check(context, checks)
+        log(prefix + ' END coverage={} observers_added=0 native_calls=0 writes=0 signature=NOT_ESTABLISHED'.format(status))
+        return status == 'COMPLETE'
+    except LookupError:
+        log(prefix + ' UNAVAILABLE metadata collection incomplete; no signature or absence inferred')
+        return False
+    except Exception:
+        log(prefix + ' ABORT coverage=REFUSED; invalid/unavailable/drifting state or metadata; no repair')
+        return False
+
+
 def shutdown():
     stop_tree_trace()
     cancel_init_node()
 
 
 build_mod(
-    name='UVH v0.2.11 - OVERCLOCK ATTRIBUTE CLASS',
+    name='UVH v0.2.12 - DEATHTRAP METADATA',
     author='Borderlands Ultimate prototype',
-    description=('Combined read-only Myelin Attribute wrapper, loaded class and bounded ancestry checks with the inert insertion test. '
+    description=('Bounded loaded Deathtrap class and function metadata checks with the inert insertion test; no native calls. '
                  'Explicitly arm on backed-up solo Gaige; no point spending. Restore and restart after test.'),
-    version='0.2.11',
+    version='0.2.12',
     supported_games=Game.BL2,
     coop_support=CoopSupport.ClientSide,
     options=[
         ButtonOption('uvh_init_node_arm', display_name='1 - ARM ONE GAIGE INIT NODE TEST (SOLO / INERT)', on_press=arm_init_node),
         ButtonOption('uvh_init_node_check', display_name='2 - CHECK INIT NODE RESULT (READ ONLY)', on_press=inspect_init_node),
         ButtonOption('uvh_init_node_cancel', display_name='3 - CANCEL / RESTORE NATIVE ARRAYS (THEN RESTART)', on_press=cancel_init_node),
-        ButtonOption('uvh_purchase_snapshot', display_name='4 - INSPECT ATTRIBUTE CLASS + ANCESTRY (READ ONLY)', on_press=inspect_overclock_attribute_class),
+        ButtonOption('uvh_purchase_snapshot', display_name='4 - INSPECT DEATHTRAP METADATA (READ ONLY)', on_press=inspect_deathtrap_readiness),
         ButtonOption('uvh_upgrade_start', display_name='5 - START UPGRADE OBSERVERS (READ ONLY; DO NOT BUY)', on_press=start_upgrade_trace),
         ButtonOption('uvh_upgrade_stop', display_name='6 - STOP / REPORT UPGRADE OBSERVERS', on_press=stop_upgrade_trace),
         ButtonOption('uvh_ui_start', display_name='7 - START CORE SKILL UI TRACE (READ ONLY; DO NOT BUY)', on_press=start_ui_trace),
