@@ -1,0 +1,68 @@
+{
+  "task_id": "35cc03c9-46b4-4f89-912c-ab92dc57f784",
+  "checked_at_utc": "2026-10-10T23:48:50.168992+00:00",
+  "source_handoff_sha256": "65e31d555c38160463e53228be2a57a16f886279ec79fc5d0a43a80a5bff4937",
+  "original_files": 109,
+  "original_files_and_handoff_match_source": true,
+  "protected_original_hashes_verified": 44,
+  "original_zip_integrity_layout_compile_checks": [
+    "UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+    "UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+    "UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+    "UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+    "UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+    "UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+    "UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+    "UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+    "UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+    "UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+    "UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+    "UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip"
+  ],
+  "current_default_and_versioned_zip_source_equal": true,
+  "in_memory_syntax_files": 11,
+  "ast_comparison_to_v0210": {
+    "old_functions": 80,
+    "identical": 73,
+    "version_label_only": [
+      "inspect_overclock_presentation_display",
+      "inspect_overclock_presentation_text",
+      "inspect_overclock_presentations",
+      "inspect_overclock_purchase",
+      "start_skillstate_trace",
+      "start_ui_trace",
+      "start_upgrade_trace"
+    ],
+    "new_functions": [
+      "_attribute_class_ancestry",
+      "_attribute_class_identity",
+      "_attribute_class_reference",
+      "inspect_overclock_attribute_class"
+    ]
+  },
+  "isolated_packaged_imports": {
+    "packages": 2,
+    "registrations_per_import": 1,
+    "options": 19,
+    "game_access": false,
+    "on_disable": "shutdown"
+  },
+  "mocks": {
+    "run": 179,
+    "unique": 179,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 19.156
+  },
+  "all_originals_unchanged_after_checks": true,
+  "excluded": "Only original manifest paths plus complete handoff imported; parent backups, saves, caches, credentials, SDK and game assets/binaries not copied",
+  "not_performed": [
+    "new game session",
+    "game installation",
+    "save or private backup parsing",
+    "archive rebuild",
+    "merge or release"
+  ],
+  "checks_method": "Original sizes and raw SHA256 from complete handoff; compile in memory; isolated packaged bytes imported via stdin with SDK mocks; unittest discovery with bytecode disabled"
+}
