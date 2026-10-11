@@ -1,0 +1,60 @@
+{
+  "task_id": "18b7d9a8-4ef0-4487-8117-3a0193925867",
+  "accepted_base": "e32cfb16914ee1fe6e55519f5526494100a1fd0e",
+  "source_title": "UVH v0.2.12 - DEATHTRAP METADATA",
+  "prepared_version": "0.2.12",
+  "last_game_tested_version": "0.2.11",
+  "scope_paths": [
+    "docs/v032_manual_test_protocol.md",
+    "evidence/v032_protocol_checks.json"
+  ],
+  "baseline_files_byte_identical": 127,
+  "protected_original_hashes_verified": 44,
+  "source_hashes": {
+    "__init__.py": "41fd2dd9e22bcfa64fbddfc19b881f6950362656e047b212b00eb86f33a01f73",
+    "pyproject.toml": "fa8acf733ef82a19371fc89b6d0cfb37e690ce2aca704ec1479cf01a9efae40e",
+    "README.txt": "5e0b3441243818c4bf161c889f643ec09132ae1e6acbf2addb5162b8b8edec7f"
+  },
+  "versioned_zip": {
+    "bytes": 36736,
+    "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6",
+    "CRC_exact_three_files_source_syntax_pass": true,
+    "default_bytes_equal": true
+  },
+  "factory_options": 19,
+  "actual_routes": [
+    {
+      "label": "1 - ARM ONE GAIGE INIT NODE TEST (SOLO / INERT)",
+      "callback": "arm_init_node"
+    },
+    {
+      "label": "2 - CHECK INIT NODE RESULT (READ ONLY)",
+      "callback": "inspect_init_node"
+    },
+    {
+      "label": "3 - CANCEL / RESTORE NATIVE ARRAYS (THEN RESTART)",
+      "callback": "cancel_init_node"
+    },
+    {
+      "label": "4 - INSPECT DEATHTRAP METADATA (READ ONLY)",
+      "callback": "inspect_deathtrap_readiness"
+    }
+  ],
+  "diagnostic_baseline": "internal only; no BASELINE line emitted",
+  "outcomes": "COMPLETE/CAPPED/UNAVAILABLE/REFUSED plus incomplete missing FINAL/END distinguished",
+  "relative_links_verified": [
+    "../evidence/v031_live_attribute_class_result.md",
+    "../dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+    "../evidence/deathtrap_metadata_diagnostic_plan.md",
+    "../evidence/deathtrap_metadata_diagnostic_checks.json",
+    "../evidence/v031_capture_manifest.json"
+  ],
+  "protocol_sha256": "440f9c8ee27cb15444a88ec2b7f3d7c62ea8cc5854e9ccd3b2388ea75dd16f10",
+  "checks_not_run": [
+    "full mock suite not repeated for two documentation-only additions; exact accepted runtime/tests bytes unchanged",
+    "no hosted CI",
+    "no game install/run, installed-file access, SDK execution, save/private-backup access or new log capture"
+  ],
+  "test_authorization": "not requested or inferred; required separately before owner-run capture",
+  "review": "separate deliberate review after submission required; labeled self-review allowed"
+}

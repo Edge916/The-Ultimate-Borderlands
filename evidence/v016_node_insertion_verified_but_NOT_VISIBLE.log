@@ -1,0 +1,33 @@
+date       time          thread                                           location@line    v|
+2026-10-09 23:42:37.874Z   8cc8                                    unrealsdk::init@59   INFO| unrealsdk v3.2.0 (b1852aa4)
+2026-10-09 23:42:37.874Z   8cc8                                    unrealsdk::init@60   INFO| ===========================
+2026-10-09 23:42:37.874Z   8cc8   ~ game::`anonymous-namespace'::find_correct_hook@51   INFO| Using Borderlands 2 hook
+2026-10-09 23:42:38.042Z   8cc8                   unrealsdk::memory::get_exe_range@34   MISC| Executable memory range: 00f50000-02a86000
+2026-10-09 23:42:38.123Z   8cc8                          unrealsdk::memory::detour@107  MISC| Detoured ProcessEvent at 0x10e2bd0
+2026-10-09 23:42:38.195Z   8cc8                          unrealsdk::memory::detour@107  MISC| Detoured CallFunction at 0x10e26e0
+2026-10-09 23:42:38.196Z   8cc8            unrealsdk::game::BL2Hook::find_gobjects@31   MISC| GObjects: 0x25d2bd0
+2026-10-09 23:42:38.196Z   8cc8              unrealsdk::game::BL2Hook::find_gnames@53   MISC| GNames: 0x25907f4
+2026-10-09 23:42:38.197Z   8cc8          unrealsdk::game::BL2Hook::find_fname_init@68   MISC| FName::Init: 0xfe0b70
+2026-10-09 23:42:38.198Z   8cc8         unrealsdk::game::BL2Hook::find_fframe_step@100  MISC| FFrame::Step: 0x10d3770
+2026-10-09 23:42:38.198Z   8cc8             unrealsdk::game::BL2Hook::find_gmalloc@49   MISC| GMalloc: 0x6427ac0
+2026-10-09 23:42:38.199Z   8cc8    unrealsdk::game::BL2Hook::find_construct_object@61   MISC| StaticConstructObject: 0x101a5f0
+2026-10-09 23:42:38.199Z   8cc8       unrealsdk::game::BL2Hook::find_get_path_name@115  MISC| GetPathName: 0xffda80
+2026-10-09 23:42:38.200Z   8cc8  unrealsdk::game::BL2Hook::find_static_find_object@165  MISC| StaticFindObject: 0x1007500
+2026-10-09 23:42:38.201Z   8cc8        unrealsdk::game::BL2Hook::find_load_package@205  MISC| LoadPackage: 0x101d190
+2026-10-09 23:42:38.205Z   8cc8      unrealsdk::game::BL2Hook::hexedit_set_command@47   MISC| Set Command: 0x1380181
+2026-10-09 23:42:38.206Z   8cc8      unrealsdk::game::BL2Hook::hexedit_array_limit@62   MISC| Array Limit: 0x1019ab4
+2026-10-09 23:42:38.206Z   8cc8       ~ game::BL2Hook::hexedit_array_limit_message@76   MISC| Array Limit Message: 0x1019b6f
+2026-10-09 23:42:38.206Z   363c                                  pyunrealsdk::init@63   INFO| pyunrealsdk v1.10.0 (c72c5558) loaded
+2026-10-09 23:42:56.537Z   3350 ~ game::`anonymous-namespace'::inject_console_hook@280  MISC| Set console key to 'Tilde'
+2026-10-09 23:42:56.848Z   363c                     ~ console_mod_menu\__init__.py@28   INFO| Console Mod Menu loaded. Type 'mods' to get started.
+2026-10-09 23:43:49.317Z   3350                                    _py_warnings.py@147  DWRN| C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\sdk_mods\legacy_compat.sdkmod\legacy_compat\unrealsdk\__init__.py:210: DeprecationWarning: Using deprecated legacy import compatibility.
+2026-10-09 23:47:32.088Z   3350    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] BEGIN v0.1.6 EXPERIMENTAL node insertion (NO POINT SPENDING)
+2026-10-09 23:47:32.089Z   3350    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] NEW SkillDefinition created: UVH_DeathtrapOverclock [SkillDefinition] | SkillDefinition'GD_Tulip_Mechromancer_Skills.LittleBigTrouble.UVH_DeathtrapOverclock' | max rank=1 | effects=0
+2026-10-09 23:47:32.089Z   3350    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] INSERT VERIFIED: Tier0=[MorePep, DeathtrapOverclock, Myelin]
+2026-10-09 23:47:32.089Z   3350    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] Layout.Tier0=[True, True, True] (methods assign, assign)
+2026-10-09 23:47:32.089Z   3350    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] Visual test only! DO NOT BUY the new node. 15s bonus still via manual button.
+2026-10-09 23:47:32.089Z   3350    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] Close MODS, open Skills tab and report whether new node appears.
+2026-10-09 23:47:32.090Z   3350    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] END
+2026-10-09 23:47:34.120Z   3350    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] BEGIN v0.1.6 EXPERIMENTAL node insertion (NO POINT SPENDING)
+2026-10-09 23:47:34.120Z   3350    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] Already inserted this session; will not stack.
+2026-10-09 23:47:34.120Z   3350    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-NEWNODE] END
