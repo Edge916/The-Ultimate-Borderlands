@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "task_id": "bf4d02a9-aae9-4697-8fac-33707ddda820",
+  "accepted_base": "d69904a7c74b763d88326a40c0611cd6fc0c3ba9",
+  "branch": "codex/jake-passive-manager-event-design",
+  "decision": "READY_FOR_PASSIVE_EVENT_IMPLEMENTATION",
+  "decision_scope": "Exactly one manual DeactivateSkill PRE observer, unattributed primitive events, no callback payload access.",
+  "runtime_implemented": false,
+  "owned_Deathtrap_lifecycle_ready": false,
+  "native_effect_ready": false,
+  "inputs": [
+    {
+      "path": "evidence/deathtrap_parameter_schema_readiness_result.md",
+      "bytes": 10589,
+      "sha256": "a0b03b3b2152c87dce59288f836add1e3b2fe17b6b9c6af7da36028df4d15406"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_schema_readiness_checks.json",
+      "bytes": 21087,
+      "sha256": "5ef3da99adae19d048e15d6a0fde60bea6379e0487e22d3ae3dc4a51d41aa58b"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "bytes": 37500,
+      "sha256": "d147e79ece6e894a6bee6fa8bbb97c1c3f0885e1f2c7d9d165dde3b0565cd84c"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_capture_manifest.json",
+      "bytes": 33196,
+      "sha256": "44b6d4d21d960e4e3c3dc3785eb029c7afc6ea43bc34cf862ecb01e344ca597d"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 178655,
+      "sha256": "e752f31c6ace648c52536bcf3810630368ce26d3cc10379bb292b609b57455ba"
+    },
+    {
+      "path": "scripts/review_deathtrap_metadata_log.py",
+      "bytes": 22820,
+      "sha256": "7cf38488f2604a6481504d5298262d03b73a709deae197a55d36416815f26c78"
+    },
+    {
+      "path": "docs/overclock_identity_cleanup_contract.md",
+      "bytes": 10711,
+      "sha256": "3abd5f388ec5bf9bf501790ed8798c688945a8ca8874333b2031340bfd198cdc"
+    },
+    {
+      "path": "design/overclock_effect_contract_model.py",
+      "bytes": 9234,
+      "sha256": "fbe8e20524616cb5a9aaa608ca0780d03a141cdcc261643a1551c1a929ffbafc"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_implementation_checks.json",
+      "bytes": 14681,
+      "sha256": "69f8b686a6f171fed86be1d6017dc333cee322ec17d94ea5b638a00894e30c98"
+    }
+  ],
+  "design": {
+    "path": "docs/deathtrap_passive_event_observer_design.md",
+    "bytes": 19412,
+    "sha256": "c18c4e0641500b9cf2e0fb93e3506dd30f28f80bcdf06769c90a32a6952b6dc1"
+  },
+  "selected_target_metadata": {
+    "coverage": "COMPLETE",
+    "flags": 149506,
+    "kind": "FUNCTION",
+    "name": "DeactivateSkill",
+    "num_params": 3,
+    "parameter_classes_coverage": "COMPLETE",
+    "params_size": 12,
+    "path": "WillowGame.SkillEffectManager:DeactivateSkill",
+    "properties": [
+      {
+        "declared_class": "Engine.Controller",
+        "declared_class_coverage": "COMPLETE",
+        "dimension": 1,
+        "element_size": 4,
+        "flags": 128,
+        "name": "SkillInstigator",
+        "offset": 0,
+        "type": "ZObjectProperty"
+      },
+      {
+        "declared_class": "WillowGame.SkillDefinition",
+        "declared_class_coverage": "COMPLETE",
+        "dimension": 1,
+        "element_size": 4,
+        "flags": 128,
+        "name": "Definition",
+        "offset": 4,
+        "type": "ZObjectProperty"
+      },
+      {
+        "declared_class": "NOT_APPLICABLE",
+        "declared_class_coverage": "NOT_APPLICABLE",
+        "dimension": 1,
+        "element_size": 4,
+        "flags": 144,
+        "name": "bIgnoreSkillInstigator",
+        "offset": 8,
+        "type": "ZBoolProperty"
+      }
+    ],
+    "return_offset": 65535,
+    "signature": "NOT_ESTABLISHED"
+  },
+  "source_ranges": {
+    "apply": {
+      "line": 116,
+      "end_line": 166,
+      "AST_sha256": "80bfe3fbb5ad60a0e430d2ac28fd2ae89c640ebe572931e0c1db1ef14cc6f999"
+    },
+    "restore": {
+      "line": 169,
+      "end_line": 197,
+      "AST_sha256": "5b96b42d7f0fdcb5bed444af843ec43fc24298a3947d4b43973ea76bc0bcfe30"
+    },
+    "arm_init_node": {
+      "line": 1347,
+      "end_line": 1376,
+      "AST_sha256": "2aa8047356fb896f9c584ae7a00e8e95434b6e358a0e1aa87900c87f4c526381"
+    },
+    "cancel_init_node": {
+      "line": 1379,
+      "end_line": 1391,
+      "AST_sha256": "c2333f50a2345ef5ea80f52420d4fde7bef1d07d94e2d5cbb227a87666f7bdb8"
+    },
+    "_upgrade_state": {
+      "line": 1636,
+      "end_line": 1700,
+      "AST_sha256": "076900538b6cdee4309967a8e8aaea3d350be897cf7ac420c4226f70462a580b"
+    },
+    "stop_upgrade_trace": {
+      "line": 1703,
+      "end_line": 1733,
+      "AST_sha256": "14fe12de235c00b7ee5574fafb99b97c9d12527d0b5cfca095d8d7316a161341"
+    },
+    "start_upgrade_trace": {
+      "line": 1805,
+      "end_line": 1848,
+      "AST_sha256": "2046cf62ffe0de494fab1b427b1ee358dad02f4a1b237b0d5fa6e73fd3028c03"
+    },
+    "_deathtrap_class": {
+      "line": 2996,
+      "end_line": 3008,
+      "AST_sha256": "b8ccbe734ed4f2b6332aff174af285c63dd9aae86c5d2041325105b1f8671eef"
+    },
+    "_deathtrap_session": {
+      "line": 3011,
+      "end_line": 3020,
+      "AST_sha256": "641f4e3542ef27e37f84c513b2f249e459c0849ac7541fff20b3a39e03978288"
+    },
+    "_deathtrap_check": {
+      "line": 3023,
+      "end_line": 3032,
+      "AST_sha256": "00b33fbbe06604297a7c6005c3573d66e47e753d27fc1c5fec2810c4123246b7"
+    },
+    "_deathtrap_function_header": {
+      "line": 3105,
+      "end_line": 3138,
+      "AST_sha256": "6bda95e38cd9bbb72ff2deb8d72b79fb908d89befe85419141ba081206763b18"
+    },
+    "_deathtrap_function": {
+      "line": 3141,
+      "end_line": 3189,
+      "AST_sha256": "91db8efe29bb8b1a619e851685adeb9a39b0a24b63e857902d29a8b2f51c8068"
+    },
+    "inspect_deathtrap_readiness": {
+      "line": 3192,
+      "end_line": 3352,
+      "AST_sha256": "d5eebd1342e2e93103681448815e8f8d828159dcbef6bbfbf1626eec8a682c22"
+    },
+    "shutdown": {
+      "line": 3355,
+      "end_line": 3357,
+      "AST_sha256": "9cfb81d36e8428d4bd665542cab53f8c27479241793dd70978421b39c38b34da"
+    }
+  },
+  "interface": {
+    "target": "WillowGame.SkillEffectManager:DeactivateSkill",
+    "phase": "PRE",
+    "identifier": "UVH_DT_EVENT_V15_DEACTIVATE_PRE",
+    "event_label": "UNATTRIBUTED_MANAGER_EVENT",
+    "callback_result": "exact None",
+    "read_callback_payloads": false,
+    "retain_callback_payloads": false,
+    "event_limit": 24,
+    "callback_attempt_limit": 64,
+    "seconds_limit": 30.0,
+    "max_log_line_UTF8_bytes": 256,
+    "background_timer": false,
+    "class_root_limit": 2,
+    "ancestry_limit_per_root": 8,
+    "function_limit": 2,
+    "selected_property_limit": 4,
+    "descriptor_check_limit": 32,
+    "proposed_version": "0.2.15",
+    "proposed_option_count": 21,
+    "start_item": 20,
+    "stop_item": 21,
+    "primitive_integer_max": 2147483647,
+    "monotonic_provider": "exact finite nonnegative float, nondecreasing; finite nonnegative elapsed"
+  },
+  "required_mock_groups": [
+    "Nominal / silence",
+    "Payload poison",
+    "State refusal / drift",
+    "Metadata refusal / drift",
+    "Registration",
+    "Bounds / reentry",
+    "Cleanup",
+    "Controls / preservation",
+    "Output / packaging"
+  ],
+  "required_mocks_run": false,
+  "exact_future_scopes": [
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+    "tests/test_deathtrap_passive_events.py",
+    "tests/test_runtime_mock.py",
+    "tests/test_presentations.py",
+    "tests/test_deathtrap_readiness.py",
+    "evidence/deathtrap_passive_event_implementation_checks.json",
+    "docs/NEXT_CODEX_TASK.md",
+    "dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+    "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip"
+  ],
+  "actual_checks": {
+    "baseline_Git_blobs_unchanged": 173,
+    "parser_exit": 0,
+    "report_manifest_equal": true,
+    "parser_status": "COMPLETE_LOG_TEXT",
+    "source_snapshot_original_v14_ZIP_equal": true,
+    "original_versioned_archive_count": 14,
+    "all_original_ZIP_CRC_three_file_layout": true,
+    "immutable_inventory": {
+      "verified_files": 53,
+      "verified_archives": 12,
+      "relationships": 5,
+      "errors": [],
+      "status": "PASS"
+    },
+    "runtime_syntax_pass": true,
+    "runtime_functions_unchanged": 95,
+    "model_SDK_free_import_AST": true,
+    "SDK_API_source_text_assertions": true,
+    "design_UTF8_local_links_pass": true
+  },
+  "sdk_stubs": [
+    {
+      "sdk_relative_path": "unrealsdk/hooks/__init__.pyi",
+      "bytes": 6284,
+      "sha256": "21589d306dc34fe61ce5f7b0b47b62167a6e8f767d3c84283c4757fc27312ab7",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_bound_function.pyi",
+      "bytes": 1635,
+      "sha256": "aede5345048c0b32b7e0bc0ccd57fca5fa29c1227113f0a4ee7f30d469d64546",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_uobject.pyi",
+      "bytes": 4546,
+      "sha256": "a73e55d17aa605ee20540d542a68b817d84614aaeb4c47aa5804e435f58b12b3",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_uobject_children.pyi",
+      "bytes": 9904,
+      "sha256": "c868cda153981b5d779d7873572db131edc3990696d719c8646f114cd56f1887",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    }
+  ],
+  "pinned_public_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.h",
+      "bytes": 6473,
+      "sha256": "6290b5012a492504b14c987527a93e4d08350297cd81fed1a2c49315b91b570e",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp",
+      "bytes": 14513,
+      "sha256": "77d60d79d8845b9914284963fd5a049300b91e96cbd0bcf0430e477a47e4a48b",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+      "bytes": 10594,
+      "sha256": "219bc8470aebf4e839f51686eb839a301911da6cac6bb7ec58d0a3ca7afd4142",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/uobject_children.cpp",
+      "bytes": 27186,
+      "sha256": "28624b87860aec2b37af221ea5a54bf63eb1ca0d2e91d11d06a2f5c00d7a5ac1",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    }
+  ],
+  "SDK_trust_boundary": "Installed stubs/text hashes match inspected contract; installed native binary matching pinned commits not verified. SDK wrapper/copy/hook API behavior remains framework dependency, untested for this target. No zero-native-read or complete-lifetime proof.",
+  "phase_reason": "Verified void-return DeactivateSkill PRE has no selected return property. Inspected binding ignores overriding a nonexistent return; activation Boolean-return and all POST phases omitted. Inference from source/descriptor text, not observed callbacks.",
+  "cleanup_policy": "Acceptance inert during registration and before removal; only exact True registration establishes owned handle. False/collision foreign handles not removed. Ambiguous registration retains inert uncertain marker until verified absence. Failed owned removals retain primitive handle, block start, retry bounded, history survives.",
+  "historical_tests_not_rerun": {
+    "readiness_targeted_tests": 97,
+    "implementation_full_unique_tests": 448
+  },
+  "not_run": [
+    "All mock cases specified in this document (no new runtime/test code)",
+    "Unchanged97/448 suites and hostedCI",
+    "Native SDK execution/import/installed nativebinary source matching",
+    "Native observer registration/automatic marshalling/natural callbacks/ownership/lifetime/clock/Duration/effect",
+    "New game/install/save/privatebackup/purchase/summon/co-op/merge/release work"
+  ]
+}
