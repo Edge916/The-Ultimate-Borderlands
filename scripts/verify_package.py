@@ -28,11 +28,14 @@ sdk.logging = types.SimpleNamespace(info=forbidden)
 sdk.find_object = sdk.find_all = sdk.find_enum = sdk.load_package = sdk.construct_object = forbidden
 sys.modules['mods_base'] = base
 sys.modules['unrealsdk'] = sdk
-runpy.run_path(sys.argv[1])
+scope = runpy.run_path(sys.argv[1])
 assert len(registered) == 1
 assert registered[0]['version'] == sys.argv[2]
 assert registered[0]['on_disable'].__name__ == 'shutdown'
 assert len(registered[0]['options']) == 23
+assert registered[0]['name'] == 'UVH v0.2.17 - CALLBACK DEFINITION NAMES'
+assert scope['_CR_IDENT'] == 'UVH_CALLBACK_NAME_V17_DEACTIVATE_PRE'
+assert '[UVH-CALLBACK-NAME] ' in scope['_cr_emit'].__code__.co_consts
 print('PASS: isolated packaged runtime import; no game access or scaffolding')
 '''
 

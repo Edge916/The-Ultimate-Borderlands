@@ -128,9 +128,12 @@ class WrappedArray:
 
 
 class CallbackLocalReaderTests(unittest.TestCase):
+    fixture_source = None
+    reader_prefix = '[UVH-CALLBACK-NAME] '
+
     def setUp(self):
         Poison.touched = []
-        self.h = runtime.Harness()
+        self.h = runtime.Harness(source=self.fixture_source)
         self.sdk = self.h.sdk
         self.sdk.unreal = types.SimpleNamespace(UObject=UObject, UClass=UClass,
             UFunction=UFunction, ZObjectProperty=ZObjectProperty, ZBoolProperty=ZBoolProperty,
@@ -217,13 +220,13 @@ class CallbackLocalReaderTests(unittest.TestCase):
             self.assertIsNone(callback(*values))
 
     def has(self, text):
-        return any('[UVH-CALLBACK-READ] ' + text in line for line in self.h.logs)
+        return any(self.reader_prefix + text in line for line in self.h.logs)
 
     def event(self):
-        return next(line for line in self.h.logs if '[UVH-CALLBACK-READ] EVENT ' in line)
+        return next(line for line in self.h.logs if self.reader_prefix + 'EVENT ' in line)
 
     def test_import_inert_standalone_options_and_no_start_native_reads(self):
-        self.assertEqual(self.h.mod_options['version'],'0.2.16')
+        self.assertEqual(self.h.mod_options['version'],'0.2.17')
         self.assertEqual(len(self.h.mod_options['options']),23)
         self.h.base.get_pc = lambda **kw: (_ for _ in ()).throw(AssertionError('START player read'))
         self.h.scope['get_pc'] = self.h.base.get_pc
@@ -237,7 +240,7 @@ class CallbackLocalReaderTests(unittest.TestCase):
     def test_useful_event_fits_every_stage_and_reports_narrow_classification(self):
         self.start(); self.fire()
         event = self.event()
-        self.assertIn('controller=SAME_WRAPPER definition=DEATHTRAP_NAME ownership=UNESTABLISHED',event)
+        self.assertIn('controller=SAME_WRAPPER definition=DEATHTRAP_NAME name=Skill_DeathTrap ownership=UNESTABLISHED',event)
         stages = tuple(map(int,event.split('stages=')[1].split(',')))
         self.assertTrue(all(0 < n <= 64 for n in stages))
         self.assertLessEqual(sum(stages),256)

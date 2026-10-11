@@ -3737,7 +3737,7 @@ def start_deathtrap_events(_option=None):
 
 # New reader state contains primitives and one fixed registration tuple only.
 _CR_PATH = 'WillowGame.SkillEffectManager:DeactivateSkill'
-_CR_IDENT = 'UVH_CALLBACK_READ_V16_DEACTIVATE_PRE'
+_CR_IDENT = 'UVH_CALLBACK_NAME_V17_DEACTIVATE_PRE'
 _cr_epoch = 0
 _cr_accepting = False
 _cr_starting = False
@@ -3755,7 +3755,7 @@ class _CRRefusal(Exception):
 def _cr_emit(payload):
     if type(payload) is not str:
         return False
-    message = '[UVH-CALLBACK-READ] ' + payload
+    message = '[UVH-CALLBACK-NAME] ' + payload
     if len((TAG + ' ' + message).encode('utf-8')) > 384:
         return False
     try:
@@ -3961,25 +3961,26 @@ def _cr_inspect(epoch, obj, args, func):
         instigator = budget.get(args, 'SkillInstigator')
         _cr_member(budget, sdk, obj, args, func, manager, function, props[0], specs[0])
         if instigator is None:
-            return 'EVENT', 'NULL_INSTIGATOR', 'NOT_READ', tuple(budget.counts)
+            return 'EVENT', 'NULL_INSTIGATOR', 'NOT_READ', '-', tuple(budget.counts)
         _cr_require(type(instigator) is sdk.UObject, 'PARAMETER')
         cls = budget.get(instigator, 'Class')
         _cr_require(type(cls) is sdk.UClass, 'PARAMETER')
         if cls is not controller:
-            return 'EVENT', 'OTHER_CONTROLLER_CLASS', 'NOT_READ', tuple(budget.counts)
+            return 'EVENT', 'OTHER_CONTROLLER_CLASS', 'NOT_READ', '-', tuple(budget.counts)
 
         budget.stage = 2
         budget.tick()
         pc = get_pc(possibly_loading=True)
         _cr_require(type(pc) is sdk.UObject, 'PLAYER')
         if pc is not instigator:
-            return 'EVENT', 'OTHER_WRAPPER', 'NOT_READ', tuple(budget.counts)
+            return 'EVENT', 'OTHER_WRAPPER', 'NOT_READ', '-', tuple(budget.counts)
         initial = _cr_solo(budget, sdk, mods_base, pc, controller)
 
         budget.stage = 3
         _cr_member(budget, sdk, obj, args, func, manager, function, props[1], specs[1])
         definition = budget.get(args, 'Definition')
         _cr_member(budget, sdk, obj, args, func, manager, function, props[1], specs[1])
+        name = '-'
         if definition is None:
             result = 'NULL_DEFINITION'
         else:
@@ -3990,6 +3991,7 @@ def _cr_inspect(epoch, obj, args, func):
             _cr_require(all(c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_'
                             for c in label), 'PARAMETER')
             result = 'DEATHTRAP_NAME' if label == 'Skill_DeathTrap' else 'OTHER_NAME'
+            name = label  # Validated primitive only; no additional SDK getter.
         _cr_require(budget.get(obj, 'Class') is manager)
 
         budget.stage = 2
@@ -4003,16 +4005,16 @@ def _cr_inspect(epoch, obj, args, func):
             raise _CRRefusal('STOPPED')
         if _cr_clock() - _cr_stats['started'] >= 120.0:
             raise _CRRefusal('TIME')
-        return 'EVENT', 'SAME_WRAPPER', result, tuple(budget.counts)
+        return 'EVENT', 'SAME_WRAPPER', result, name, tuple(budget.counts)
     except _CRRefusal as exc:
         reason = 'INTERNAL'
         if type(exc) is _CRRefusal and len(exc.args) == 1 and type(exc.args[0]) is str:
             candidate = exc.args[0]
             if candidate in ('SCHEMA', 'PLAYER', 'PARAMETER', 'CLOCK', 'TIME', 'BUDGET', 'STOPPED'):
                 reason = candidate
-        return 'REFUSED', reason, 'NOT_READ', tuple(budget.counts)
+        return 'REFUSED', reason, 'NOT_READ', '-', tuple(budget.counts)
     except Exception:
-        return 'ERROR', 'INTERNAL', 'NOT_READ', tuple(budget.counts)
+        return 'ERROR', 'INTERNAL', 'NOT_READ', '-', tuple(budget.counts)
 
 
 def _cr_option_gate(handler):
@@ -4092,25 +4094,25 @@ def _cr_callback(epoch):
         if stats['attempts'] >= 64 or stats['classified'] >= 24:
             return None
         _cr_busy = True
-        kind, controller, definition, counts = 'REFUSED', 'STOPPED', 'NOT_READ', (0, 0, 0, 0)
+        kind, controller, definition, name, counts = 'REFUSED', 'STOPPED', 'NOT_READ', '-', (0, 0, 0, 0)
         try:
             stats['attempts'] += 1
-            kind, controller, definition, counts = _cr_inspect(epoch, obj, args, func)
+            kind, controller, definition, name, counts = _cr_inspect(epoch, obj, args, func)
             # The inspection frame is gone. Drop the SDK callback's payload locals too.
             obj = args = func = ret = None
             if not _cr_accepting or _cr_epoch != epoch or _cr_stop_requested:
-                kind, controller, definition = 'REFUSED', 'STOPPED', 'NOT_READ'
+                kind, controller, definition, name = 'REFUSED', 'STOPPED', 'NOT_READ', '-'
             elif kind == 'EVENT':
                 try:
                     if _cr_clock() - stats['started'] >= 120.0:
-                        kind, controller, definition = 'REFUSED', 'TIME', 'NOT_READ'
+                        kind, controller, definition, name = 'REFUSED', 'TIME', 'NOT_READ', '-'
                 except Exception:
-                    kind, controller, definition = 'REFUSED', 'CLOCK', 'NOT_READ'
+                    kind, controller, definition, name = 'REFUSED', 'CLOCK', 'NOT_READ', '-'
             if kind == 'EVENT':
                 ordinal = stats['classified'] + 1
-                payload = ('EVENT epoch={} ordinal={} attempt={} schema=VALID controller={} definition={} '
+                payload = ('EVENT epoch={} ordinal={} attempt={} schema=VALID controller={} definition={} name={} '
                            'ownership=UNESTABLISHED ops={} stages={},{},{},{}').format(
-                    epoch, ordinal, stats['attempts'], controller, definition, sum(counts), *counts)
+                    epoch, ordinal, stats['attempts'], controller, definition, name, sum(counts), *counts)
                 if not _cr_emit(payload):
                     kind, controller = 'ERROR', 'LOGGING'
                 else:
@@ -4120,6 +4122,7 @@ def _cr_callback(epoch):
                     elif controller == 'NULL_INSTIGATOR' or definition == 'NULL_DEFINITION':
                         stats['nulls'] += 1
             if kind != 'EVENT':
+                name = '-'
                 key = 'errors' if kind == 'ERROR' else 'refusals'
                 stats[key] = min(2147483647, stats[key] + 1)
                 if controller == 'TIME':
@@ -4135,12 +4138,14 @@ def _cr_callback(epoch):
                 _cr_stop_requested = True
         except Exception:
             obj = args = func = ret = None
+            name = '-'
             stats['errors'] = min(2147483647, stats['errors'] + 1)
             _cr_accepting = False
             _cr_stop_requested = True
             _cr_emit('ERROR epoch={} reason=INTERNAL'.format(epoch))
         finally:
             obj = args = func = ret = None
+            name = '-'
             _cr_busy = False
             if _cr_stop_requested:
                 stop_callback_local_reader()
@@ -4188,7 +4193,7 @@ def start_callback_local_reader(_option=None):
         if _cr_clock() - started >= 120.0:
             reason = 'CLOCK'
             raise ValueError()
-        if not _cr_emit('START version=0.2.16 epoch={} target=DeactivateSkill phase=PRE hooks=1 mode=STANDALONE_READER'.format(_cr_epoch)):
+        if not _cr_emit('START version=0.2.17 epoch={} target=DeactivateSkill phase=PRE hooks=1 mode=STANDALONE_READER'.format(_cr_epoch)):
             raise ValueError()
         if _cr_stop_requested:
             raise ValueError()
@@ -4209,11 +4214,11 @@ def shutdown():
 
 
 build_mod(
-    name='UVH v0.2.16 - CALLBACK-LOCAL DEATHTRAP READER',
+    name='UVH v0.2.17 - CALLBACK DEFINITION NAMES',
     author='Borderlands Ultimate prototype',
-    description=('Standalone callback-local PRE reader; fixed controller/name observations, ownership unestablished. '
-                 'New reader22/23 needs no ARM or node. Latest game-tested baseline remains v15; this build is untested in game.'),
-    version='0.2.16',
+    description=('Standalone PRE reader; bounded definition names, ownership unestablished. '
+                 'Reader22/23 needs no ARM or node. V16 observed a filtered event; v17 is untested in game.'),
+    version='0.2.17',
     supported_games=Game.BL2,
     coop_support=CoopSupport.ClientSide,
     options=[
@@ -4238,8 +4243,8 @@ build_mod(
         ButtonOption('uvh_boost_restore', display_name='Restore original duration', on_press=_dt_event_option_gate(restore)),
         ButtonOption('uvh_dt_event_start', display_name='20 - START PASSIVE MANAGER ENTRY OBSERVER (READ ONLY)', on_press=_cr_option_gate(start_deathtrap_events)),
         ButtonOption('uvh_dt_event_stop', display_name='21 - STOP / REPORT PASSIVE MANAGER ENTRY OBSERVER', on_press=_cr_option_gate(stop_deathtrap_events)),
-        ButtonOption('uvh_callback_read_start', display_name='22 - START CALLBACK-LOCAL DEATHTRAP READER (NO ARM)', on_press=start_callback_local_reader),
-        ButtonOption('uvh_callback_read_stop', display_name='23 - STOP / REPORT CALLBACK-LOCAL READER', on_press=stop_callback_local_reader),
+        ButtonOption('uvh_callback_read_start', display_name='22 - START CALLBACK DEFINITION NAMES (NO ARM)', on_press=start_callback_local_reader),
+        ButtonOption('uvh_callback_read_stop', display_name='23 - STOP / REPORT CALLBACK DEFINITION NAMES', on_press=stop_callback_local_reader),
     ],
     auto_enable=True,
     on_disable=shutdown,

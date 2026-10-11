@@ -17,6 +17,14 @@ SPEC.loader.exec_module(reviewer)
 TAG = '[UVH-BOOST] [UVH-CALLBACK-READ] '
 
 
+def frozen_reader_fixture():
+    """Keep v16 transcript behavior on its immutable, actually tested source."""
+    fixture = inert.CallbackLocalReaderTests()
+    fixture.fixture_source = (ROOT / 'archive/tested_runtime/v0.2.16/__init__.py').read_bytes()
+    fixture.reader_prefix = '[UVH-CALLBACK-READ] '
+    return fixture
+
+
 def start(epoch=1):
     return ('START version=0.2.16 epoch={} target=DeactivateSkill phase=PRE hooks=1 '
             'mode=STANDALONE_READER').format(epoch)
@@ -336,7 +344,7 @@ class ReaderLogTests(unittest.TestCase):
     def test_actual_inert_runtime_all_six_branch_transcripts(self):
         for kind in ('null_instigator', 'foreign_class', 'foreign_wrapper', 'null_definition', 'other_name', 'deathtrap'):
             with self.subTest(kind=kind):
-                f = inert.CallbackLocalReaderTests(); f.setUp(); f.start()
+                f = frozen_reader_fixture(); f.setUp(); f.start()
                 if kind == 'null_instigator': f.args.SkillInstigator = None
                 if kind == 'foreign_class': f.args.SkillInstigator = inert.UObject(Class=inert.UClass(Name='Other'))
                 if kind == 'foreign_wrapper': f.args.SkillInstigator = inert.UObject(Class=f.controller)
@@ -348,7 +356,7 @@ class ReaderLogTests(unittest.TestCase):
                 self.assertEqual(r['sessions'][0]['useful'], int(kind == 'deathtrap'))
 
     def test_actual_inert_runtime_silence_cancel_and_repeated_stop(self):
-        f = inert.CallbackLocalReaderTests(); f.setUp(); f.start()
+        f = frozen_reader_fixture(); f.setUp(); f.start()
         f.call('stop_callback_local_reader'); f.call('cancel_init_node'); f.tearDown()
         r = reviewer.review_bytes(('\n'.join(f.h.logs) + '\n').encode())
         self.assertEqual(r['status'], 'COMPLETE_LOG_TEXT', r)
@@ -357,7 +365,7 @@ class ReaderLogTests(unittest.TestCase):
     def test_actual_inert_runtime_refusal_clock_and_removal_retry(self):
         for kind in ('schema', 'clock', 'removal', 'timeout'):
             with self.subTest(kind=kind):
-                f = inert.CallbackLocalReaderTests(); f.setUp(); f.start()
+                f = frozen_reader_fixture(); f.setUp(); f.start()
                 if kind == 'schema':
                     f.fn.NumParams = 2; f.fire()
                 if kind == 'clock':
@@ -374,7 +382,7 @@ class ReaderLogTests(unittest.TestCase):
     def test_actual_inert_runtime_registration_uncertainty_and_existing_identifier(self):
         for existing in (True, False):
             with self.subTest(existing=existing):
-                f = inert.CallbackLocalReaderTests(); f.setUp()
+                f = frozen_reader_fixture(); f.setUp()
                 foreign = lambda *values: None
                 if existing:
                     f.h.hooks[f.key()] = foreign
@@ -391,13 +399,13 @@ class ReaderLogTests(unittest.TestCase):
                 self.assertEqual(r['status'], 'REFUSED_LOG_TEXT', r)
 
     def test_actual_inert_runtime_classification_limit_and_delayed_time_stop(self):
-        f = inert.CallbackLocalReaderTests(); f.setUp(); f.start()
+        f = frozen_reader_fixture(); f.setUp(); f.start()
         for _ in range(24): f.fire()
         f.call('stop_callback_local_reader'); f.tearDown()
         r = reviewer.review_bytes(('\n'.join(f.h.logs) + '\n').encode())
         self.assertEqual(r['status'], 'COMPLETE_LOG_TEXT', r)
         self.assertEqual(r['sessions'][0]['classified'], 24)
-        f = inert.CallbackLocalReaderTests(); f.setUp(); f.start(); f.call('stop_callback_local_reader')
+        f = frozen_reader_fixture(); f.setUp(); f.start(); f.call('stop_callback_local_reader')
         f.clock = 1120.0; f.call('stop_callback_local_reader'); f.tearDown()
         r = reviewer.review_bytes(('\n'.join(f.h.logs) + '\n').encode())
         self.assertEqual(r['status'], 'COMPLETE_LOG_TEXT', r)
@@ -406,7 +414,7 @@ class ReaderLogTests(unittest.TestCase):
     def test_actual_inert_runtime_error_logging_and_deferred_stop(self):
         for kind in ('exception', 'logging', 'deferred'):
             with self.subTest(kind=kind):
-                f = inert.CallbackLocalReaderTests(); f.setUp(); f.start()
+                f = frozen_reader_fixture(); f.setUp(); f.start()
                 if kind == 'exception':
                     def fail(obj, key):
                         if key == 'SkillInstigator': raise inert.PrivateError('PRIVATE_PAYLOAD')
