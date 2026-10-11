@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "task_id": "8476ab3a-9d19-463d-9194-4eac15864fe2",
+  "status": "PASS",
+  "decision": "READY_FOR_REVIEWER_PUBLICATION_AND_ACCEPTANCE_REVIEW",
+  "accepted_parent": "b51f91ff28ece47fc28ca91eef6f12cc305f8c8b",
+  "accepted_runtime_PR": "https://github.com/Edge916/The-Ultimate-Borderlands/pull/32",
+  "branch": "codex/jake-v16-reader-log-reviewer",
+  "exact_file_scope": [
+    "scripts/review_deathtrap_callback_local_reader_log.py",
+    "tests/test_deathtrap_callback_local_reader_log_review.py",
+    "docs/deathtrap_callback_local_reader_log_review.md",
+    "evidence/deathtrap_callback_local_reader_log_review_checks.json"
+  ],
+  "new_reviewer_tests": 41,
+  "offline_validation": {
+    "schema_version": 1,
+    "python": "3.12.14",
+    "scope": "offline repository checks",
+    "engine_behavior": "NOT_ESTABLISHED",
+    "hosted_CI": "NOT_CHECKED",
+    "syntax": {
+      "compiled_files": 28,
+      "errors": [],
+      "status": "PASS"
+    },
+    "tests": {
+      "status": "PASS",
+      "unique_tests": 680,
+      "tests_run": 680,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "unexpected_successes": 0,
+      "expected_failures": 0,
+      "all_discovered_run": true
+    },
+    "package": {
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "PASS: isolated packaged runtime import; no game access or scaffolding\nPASS: ZIP integrity, exact single-folder layout and source match\n",
+      "stderr": ""
+    },
+    "status": "PASS"
+  },
+  "source_files": [
+    {
+      "path": "scripts/review_deathtrap_callback_local_reader_log.py",
+      "bytes": 18205,
+      "sha256": "37fa0202ac9c6197a0f5fb8ccaa938db90ec40717ece1fc1c615be03dd923c95"
+    },
+    {
+      "path": "tests/test_deathtrap_callback_local_reader_log_review.py",
+      "bytes": 24114,
+      "sha256": "5026022d0850eb265340f4456c33dd9bc4b34081c17c126eb0de4142da637c07"
+    },
+    {
+      "path": "docs/deathtrap_callback_local_reader_log_review.md",
+      "bytes": 8607,
+      "sha256": "75d524e6966fa767b9244d1b2ddb9614dd2fa67d021308904cb3879e73eccc93"
+    }
+  ],
+  "base_files_preserved": 199,
+  "preserved_aggregate_sha256": "36ccfe4c9ba09e22b272854671cda0e40f439b944593cbbb3a86af56eaabde5c",
+  "runtime": {
+    "bytes": 216082,
+    "sha256": "1d6524fa483705384951d60a6e48fc92209f21cfb62e5390c65db295924c2548"
+  },
+  "default_package": {
+    "bytes": 44901,
+    "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85"
+  },
+  "original_versioned_packages": [
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+      "bytes": 32742,
+      "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+      "bytes": 34433,
+      "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+      "bytes": 36736,
+      "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip",
+      "bytes": 44901,
+      "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+      "bytes": 19467,
+      "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+      "bytes": 20457,
+      "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+      "bytes": 21349,
+      "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+      "bytes": 24437,
+      "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+      "bytes": 26428,
+      "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+      "bytes": 26629,
+      "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+      "bytes": 28884,
+      "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+      "bytes": 30016,
+      "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+      "bytes": 31335,
+      "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160",
+      "preserved": true,
+      "CRC_layout": "PASS"
+    }
+  ],
+  "immutable_inventory": {
+    "verified_files": 53,
+    "verified_archives": 12,
+    "relationships": 5,
+    "errors": [],
+    "status": "PASS"
+  },
+  "frozen_full_reports": [
+    {
+      "log": "evidence/v032_user_test.log",
+      "status": "PARTIAL",
+      "exit": 1,
+      "full_manifest_equal": true,
+      "snapshot_original_ZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_manager_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit": 0,
+      "full_manifest_equal": true,
+      "snapshot_original_ZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit": 0,
+      "full_manifest_equal": true,
+      "snapshot_original_ZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_passive_event_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit": 0,
+      "full_manifest_equal": true,
+      "snapshot_original_ZIP_equal": true
+    }
+  ],
+  "actual_inert_runtime_transcript_checks": [
+    {
+      "branch": "null_instigator",
+      "bytes": 568,
+      "sha256": "507f57cc8487f8738f8b8557fd744b202827d348e1b03a1873c09a4e42327cd4",
+      "reader_operations": 107,
+      "status": "COMPLETE_LOG_TEXT",
+      "useful": 0
+    },
+    {
+      "branch": "foreign_class",
+      "bytes": 575,
+      "sha256": "aa4b5664f2897ef6f44beda68b256702b94976b3dfc5f8199874f89bbb6aa64e",
+      "reader_operations": 108,
+      "status": "COMPLETE_LOG_TEXT",
+      "useful": 0
+    },
+    {
+      "branch": "foreign_wrapper",
+      "bytes": 566,
+      "sha256": "18e1c8a3b6afb73bdcef1961ff72cd4b8180358c37ffb8baf6c7fff11710f5cd",
+      "reader_operations": 109,
+      "status": "COMPLETE_LOG_TEXT",
+      "useful": 0
+    },
+    {
+      "branch": "null_definition",
+      "bytes": 574,
+      "sha256": "83a49bb3e3491d435444a0f7b13c9b7dacfb725e5a16eb5db4055323ff550228",
+      "reader_operations": 194,
+      "status": "COMPLETE_LOG_TEXT",
+      "useful": 0
+    },
+    {
+      "branch": "other_name",
+      "bytes": 569,
+      "sha256": "5f24e41eb3e7f9266f36c9808bd8c84649a280b0a179cbab69a9e4d9ca7fedd5",
+      "reader_operations": 196,
+      "status": "COMPLETE_LOG_TEXT",
+      "useful": 0
+    },
+    {
+      "branch": "deathtrap",
+      "bytes": 574,
+      "sha256": "b5d3c645425a2a625e15b22cee28d16bc6c15f7edfde9a03c8839b623cf98d47",
+      "reader_operations": 196,
+      "status": "COMPLETE_LOG_TEXT",
+      "useful": 1
+    }
+  ],
+  "local_links": [
+    "../scripts/review_deathtrap_callback_local_reader_log.py",
+    "../sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+    "../tests/test_deathtrap_callback_local_reader_log_review.py",
+    "../evidence/deathtrap_callback_local_reader_log_review_checks.json"
+  ],
+  "parser_imports": [
+    "argparse",
+    "hashlib",
+    "json",
+    "pathlib",
+    "re"
+  ],
+  "grammar": "Exact bounded v0.2.16; primitive labels only",
+  "checks": [
+    "Full suite with unique test IDs and zero failures/errors/skips",
+    "All six valid branches from actual inert runtime and independently counted SDK operations",
+    "Actual inert silence/CANCEL, limit, timeout, schema/clock/deferred refusal, logging/error, registration and removal retry transcripts",
+    "Synthetic framing/version/epoch/sequence/branch/budget/count/limit/ownership/cleanup contradictions",
+    "Bounded bytes/UTF8/NUL/lines/records/sessions/integers/issues and CLI exits",
+    "All accepted source/evidence/packages unchanged; full frozen reports and snapshots equal",
+    "UTF8, JSON, local links, whitespace, scope and known secret/private-path scan"
+  ],
+  "native_ownership": "NOT_ESTABLISHED",
+  "engine_behavior": "NOT_ESTABLISHED",
+  "native_effect_ready": false,
+  "hosted_CI": "NOT_RUN",
+  "not_run": [
+    "real SDK import/execution/stub compilation",
+    "game installation/test",
+    "new raw game capture",
+    "native behavior/binary/lifetime/generation/effect checks",
+    "save/private-backup access",
+    "public export before separate four-file approval",
+    "merge or release"
+  ]
+}
