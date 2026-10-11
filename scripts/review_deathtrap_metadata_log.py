@@ -1,4 +1,4 @@
-"""Read-only v0.2.12 log text consistency; never SDK identity or game proof."""
+"""Read-only v0.2.12/v0.2.13 log text consistency; never SDK identity or game proof."""
 import argparse
 import ast
 import hashlib
@@ -8,6 +8,7 @@ import re
 
 VERSION = '0.2.12'
 RUNTIME_SHA256 = '41fd2dd9e22bcfa64fbddfc19b881f6950362656e047b212b00eb86f33a01f73'
+RUNTIME_HASHES = {VERSION: RUNTIME_SHA256, '0.2.13': 'a457bb544814e627a5909bb5bea844a1f6643c64a1b2eef6f2a85ae3c96c4cf8'}
 MAX_BYTES = 16 * 1024 * 1024
 MAX_LINE = 16384
 TAG = 'UVH-DEATHTRAP'
@@ -120,7 +121,7 @@ def scalar_schema(row, class_field):
     require(not class_field or not row['flags'] & 0x580, 'class field has parameter flags')
 
 
-def validate_rows(rows):
+def validate_rows(rows, version=VERSION):
     """Exact emitted sequence/observable relations; no native subtype inference."""
     require(len(rows) <= 15, 'metadata row bound')
     for row in rows: row_schema(row)
@@ -134,12 +135,16 @@ def validate_rows(rows):
         return row
     controller = take('CLASS','controller')
     owners = {n['path'] for n in controller['ancestry']}
-    functions = [take('FUNCTION',name) for name in METHODS]
-    for function in functions:
+    require(version in RUNTIME_HASHES, 'unsupported metadata version')
+    def function_owner(function, ancestry):
         if function['coverage'] != 'UNAVAILABLE':
-            require(any(function['path'] in (owner+':'+function['name'],owner+'.'+function['name']) for owner in owners),
-                    'function path is outside controller ancestry')
-    marked = [p for p in functions[0].get('properties',[]) if p['flags'] & 0x400]
+            require(any(function['path'] in (owner+':'+function['name'],owner+'.'+function['name']) for owner in ancestry),
+                    'function path is outside selected ancestry')
+    primary = take('FUNCTION','GetSkillManager')
+    function_owner(primary, owners)
+    if version == VERSION:
+        for name in METHODS[1:]: function_owner(take('FUNCTION',name), owners)
+    marked = [p for p in primary.get('properties',[]) if p['flags'] & 0x400]
     if index < len(rows) and rows[index]['kind'] == 'DISCOVERY':
         discovery = take('DISCOVERY')
         require(discovery.get('coverage') == 'UNAVAILABLE' and not marked, 'contradictory unavailable discovery')
@@ -148,6 +153,8 @@ def validate_rows(rows):
         require(discovery.get('return_class') == manager['path'] and len(marked) == 1
                 and discovery.get('return_property') == marked[0]['name'], 'return/manager discovery mismatch')
         manager_owners = {n['path'] for n in manager['ancestry']}
+        if version == '0.2.13':
+            for name in METHODS[1:]: function_owner(take('FUNCTION',name), manager_owners)
         if index < len(rows) and rows[index]['kind'] == 'FIELD':
             array = take('FIELD','ActiveSkills')
             require(array['coverage'] == 'UNAVAILABLE', 'missing active skill root')
@@ -206,7 +213,7 @@ def review_bytes(raw):
     except (ValueError,UnicodeError) as exc:
         report.update(status='INPUT_ERROR',log_text_acceptable=False,input_error=str(exc)); return report
     if not text.endswith('\n'): report['issues'].append('missing final newline; possible truncation')
-    current, versions = None, set()
+    current, versions, call_version = None, set(), VERSION
     for number, line in enumerate(lines,1):
         event = EVENT.fullmatch(line)
         if not event:
@@ -247,7 +254,9 @@ def review_bytes(raw):
             current = {'begin_line':number,'last_line':number,'rows':[],'final':None,'coverage':None,
                        'terminal':None,'issues':[]}
             report['calls'].append(current)
-            if payload != 'BEGIN v0.2.12 metadata_only=True': current['issues'].append('unsupported/malformed BEGIN')
+            begin = re.fullmatch(r'BEGIN v(0\.2\.12|0\.2\.13) metadata_only=True',payload)
+            call_version = begin[1] if begin else VERSION
+            if begin is None: current['issues'].append('unsupported/malformed BEGIN')
             continue
         if current is None:
             report['issues'].append(f'line {number}: diagnostic record without BEGIN'); continue
@@ -266,7 +275,7 @@ def review_bytes(raw):
             elif payload.startswith('END '):
                 match = END.fullmatch(payload);require(match is not None and current['final'] is not None,'malformed END or missing FINAL')
                 current['coverage'] = match[1]
-                require(validate_rows(current['rows']) == match[1],'END coverage contradicts metadata')
+                require(validate_rows(current['rows'],call_version) == match[1],'END coverage contradicts metadata')
                 current['terminal'] = 'END'; current = None
             elif payload == ABORT:
                 current.update(terminal='ABORT',coverage='REFUSED');current = None
@@ -281,7 +290,11 @@ def review_bytes(raw):
                            else 'INCOMPLETE_UNAVAILABLE' if call['terminal'] == 'UNAVAILABLE'
                            else 'INCOMPLETE' if call['terminal'] is None else call['coverage'])
     report['versions'] = sorted(versions)
-    if versions and versions != {VERSION}: report['issues'].append('mixed/unsupported versions')
+    if versions and (len(versions) != 1 or not versions <= set(RUNTIME_HASHES)):
+        report['issues'].append('mixed/unsupported versions')
+    elif versions:
+        version = next(iter(versions))
+        report['grammar'] = {'version':version,'runtime_sha256':RUNTIME_HASHES[version]}
     last = max((call['last_line'] for call in report['calls']),default=0)
     cleanup = report['cleanup']
     restorations = [r for r in cleanup['restorations'] if r['line'] > last]

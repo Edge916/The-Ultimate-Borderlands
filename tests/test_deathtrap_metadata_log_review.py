@@ -312,9 +312,94 @@ class DeathtrapMetadataLogReviewTests(unittest.TestCase):
         fixture=fixtures.DeathtrapReadinessTests();fixture.setUp();fixture.run_diagnostic()
         report=self.check(fixture.h.logs+cleanup())
         self.assertEqual(report['calls'][0]['outcome'],'COMPLETE')
-        fixture.setUp();func=fixture.controller.functions['ActivateSkill']
+        fixture.setUp();func=fixture.manager.functions['ActivateSkill']
         func.props=[fixtures.ZProperty('P'+str(i),func,Offset_Internal=4*i) for i in range(17)]
         func.link();fixture.run_diagnostic()
         report=self.check(fixture.h.logs+cleanup())
         self.assertEqual(report['calls'][0]['outcome'],'CAPPED')
         self.assertFalse(report['log_text_acceptable'])
+
+
+def manager_rows():
+    rows = synthetic_rows()
+    rows[2]['path'] = 'Test.Manager:ActivateSkill'
+    rows[3]['path'] = 'Test.Manager:DeactivateSkill'
+    return rows[:2]+rows[4:6]+rows[2:4]+rows[6:]
+
+
+def manager_call(rows=None,coverage='COMPLETE'):
+    lines = call(manager_rows() if rows is None else rows,coverage)
+    lines[0] = '[UVH-DEATHTRAP] BEGIN v0.2.13 metadata_only=True'
+    return lines
+
+
+class ManagerMetadataLogReviewTests(unittest.TestCase):
+    def review(self,rows=None,coverage='COMPLETE'):
+        return tool.review_bytes(raw(manager_call(rows,coverage)+cleanup()))
+
+    def test_manager_version_contract_and_runtime_hash_are_explicit(self):
+        report = self.review()
+        self.assertEqual(report['status'],'COMPLETE_LOG_TEXT')
+        self.assertEqual(report['grammar'],{'version':'0.2.13','runtime_sha256':tool.RUNTIME_HASHES['0.2.13']})
+        self.assertTrue(all(v=='NOT_CHECKED' for v in report['separate_checks'].values()))
+
+    def test_controller_or_foreign_candidates_cannot_pass_manager_owner_contract(self):
+        for owner in ('Controller','Foreign'):
+            for index in (4,5):
+                rows = manager_rows();rows[index]['path']='Test.'+owner+':'+rows[index]['name']
+                self.assertEqual(self.review(rows)['status'],'REFUSED')
+
+    def test_v12_order_or_v13_order_with_wrong_version_refuses(self):
+        self.assertEqual(self.review(synthetic_rows())['status'],'REFUSED')
+        self.assertEqual(tool.review_bytes(raw(call(manager_rows())+cleanup()))['status'],'REFUSED')
+
+    def test_mixed_v12_v13_calls_refuse_even_if_each_sequence_is_valid(self):
+        report = tool.review_bytes(raw(call()+manager_call()+cleanup()))
+        self.assertEqual(report['status'],'REFUSED')
+        self.assertIn('mixed/unsupported versions',report['issues'])
+
+    def test_missing_primary_discovery_has_no_unattempted_candidate_rows(self):
+        rows = manager_rows()[:2]
+        rows[1] = {'kind':'FUNCTION','name':'GetSkillManager','coverage':'UNAVAILABLE'}
+        rows.append({'kind':'DISCOVERY','target':'manager','coverage':'UNAVAILABLE'})
+        self.assertEqual(self.review(rows,'UNAVAILABLE')['status'],'PARTIAL')
+        rows.append({'kind':'FUNCTION','name':'ActivateSkill','coverage':'UNAVAILABLE'})
+        self.assertEqual(self.review(rows,'UNAVAILABLE')['status'],'REFUSED')
+
+    def test_missing_manager_candidate_keeps_fields_partial(self):
+        rows = manager_rows();rows[4]={'kind':'FUNCTION','name':'ActivateSkill','coverage':'UNAVAILABLE'}
+        self.assertEqual(self.review(rows,'UNAVAILABLE')['calls'][0]['outcome'],'UNAVAILABLE')
+        self.assertEqual(self.review(rows,'COMPLETE')['status'],'REFUSED')
+
+    def test_manager_ancestor_owner_is_accepted_only_in_declared_chain(self):
+        rows = manager_rows();rows[2]['ancestry'].append({'name':'Parent','path':'Test.Parent'})
+        rows[4]['path']='Test.Parent:ActivateSkill'
+        self.assertEqual(self.review(rows)['status'],'COMPLETE_LOG_TEXT')
+        rows[2]['ancestry'].pop()
+        self.assertEqual(self.review(rows)['status'],'REFUSED')
+
+    def test_manager_return_discovery_mismatch_and_unavailable_contradiction_refuse(self):
+        for change in ('class','unavailable'):
+            rows = manager_rows()
+            if change == 'class': rows[3]['return_class']='Test.Foreign'
+            else: rows[3]={'kind':'DISCOVERY','target':'manager','coverage':'UNAVAILABLE'}
+            self.assertEqual(self.review(rows)['status'],'REFUSED')
+
+    def test_manager_properties_cap_and_missing_array_remain_partial(self):
+        rows=manager_rows();rows[4]['coverage']='CAPPED'
+        rows[4]['properties']=[prop('P'+str(i),offset=8*i) for i in range(16)]
+        self.assertEqual(self.review(rows,'CAPPED')['status'],'PARTIAL')
+        rows=manager_rows()[:6]+[{'kind':'FIELD','name':'ActiveSkills','coverage':'UNAVAILABLE'}]
+        self.assertEqual(self.review(rows,'UNAVAILABLE')['status'],'PARTIAL')
+
+    def test_manager_cleanup_failure_history_is_not_erased_by_successful_retry(self):
+        lines=manager_call()+['[UVH-STATE] STOP remaining=1 captured=0 callbacks=0 skipped=0']+cleanup()
+        report=tool.review_bytes(raw(lines))
+        self.assertEqual(report['status'],'REFUSED')
+        self.assertTrue(report['cleanup']['errors'])
+
+    def test_manager_abort_and_unknown_output_do_not_claim_complete(self):
+        lines=manager_call()[:3]+['[UVH-DEATHTRAP] '+tool.ABORT]+cleanup()
+        self.assertEqual(tool.review_bytes(raw(lines))['status'],'REFUSED')
+        lines=manager_call();lines.insert(-1,'[UVH-DEATHTRAP] BASELINE points=(1, 0) ranks=(0, 0, 0)')
+        self.assertEqual(tool.review_bytes(raw(lines+cleanup()))['status'],'REFUSED')

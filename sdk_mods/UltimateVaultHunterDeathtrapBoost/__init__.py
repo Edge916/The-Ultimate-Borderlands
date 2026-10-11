@@ -3194,7 +3194,7 @@ def inspect_deathtrap_readiness(_option=None):
     import json
     import unrealsdk
     prefix = '[UVH-DEATHTRAP]'
-    log(prefix + ' BEGIN v0.2.12 metadata_only=True')
+    log(prefix + ' BEGIN v0.2.13 metadata_only=True')
     rows, checks, roots, statuses, class_paths = [], [], [], [], []
     try:
         pc, record = get_pc(possibly_loading=True), _uvh_node_state
@@ -3227,23 +3227,24 @@ def inspect_deathtrap_readiness(_option=None):
             return tuple(item[0] for item in chain)
 
         owners = target(controller, 'controller')
-        primary = None
-        for method in ('GetSkillManager', 'ActivateSkill', 'DeactivateSkill'):
+
+        def capture_function(cls, method, selected_owners):
             try:
-                header, props, coverage, ret = _deathtrap_function(context, checks, controller, method, owners)
+                header, props, coverage, ret = _deathtrap_function(context, checks, cls, method, selected_owners)
             except LookupError:
                 _deathtrap_check(context, checks)
                 statuses.append('UNAVAILABLE')
                 rows.append(dict(kind='FUNCTION', name=method, coverage='UNAVAILABLE'))
-                continue
+                return None
             statuses.append(coverage)
             rows.append(dict(kind='FUNCTION', name=method, path=header[3], coverage=coverage,
                              flags=header[4][0], num_params=header[4][1], params_size=header[4][2],
                              return_offset=header[4][3], signature='NOT_ESTABLISHED',
                              properties=[dict(name=p[1], type=p[2], flags=p[4], offset=p[5],
                                               dimension=p[6], element_size=p[7]) for p in props]))
-            if method == 'GetSkillManager':
-                primary = ret
+            return ret
+
+        primary = capture_function(controller, 'GetSkillManager', owners)
         if primary is None:
             statuses.append('UNAVAILABLE')
             rows.append(dict(kind='DISCOVERY', target='manager', coverage='UNAVAILABLE'))
@@ -3254,6 +3255,8 @@ def inspect_deathtrap_readiness(_option=None):
             manager_owners = target(manager, 'manager')
             rows.append(dict(kind='DISCOVERY', source_function='GetSkillManager', return_property=primary[1],
                              return_class=next(path for item, path in class_paths if item == manager)))
+            for method in ('ActivateSkill', 'DeactivateSkill'):
+                capture_function(manager, method, manager_owners)
             try:
                 field = _deathtrap_field_snapshot(manager, 'ActiveSkills', 'ZArrayProperty', manager_owners)
             except LookupError:
@@ -3323,18 +3326,18 @@ def shutdown():
 
 
 build_mod(
-    name='UVH v0.2.12 - DEATHTRAP METADATA',
+    name='UVH v0.2.13 - DEATHTRAP MANAGER METADATA',
     author='Borderlands Ultimate prototype',
     description=('Bounded loaded Deathtrap class and function metadata checks with the inert insertion test; no native calls. '
                  'Explicitly arm on backed-up solo Gaige; no point spending. Restore and restart after test.'),
-    version='0.2.12',
+    version='0.2.13',
     supported_games=Game.BL2,
     coop_support=CoopSupport.ClientSide,
     options=[
         ButtonOption('uvh_init_node_arm', display_name='1 - ARM ONE GAIGE INIT NODE TEST (SOLO / INERT)', on_press=arm_init_node),
         ButtonOption('uvh_init_node_check', display_name='2 - CHECK INIT NODE RESULT (READ ONLY)', on_press=inspect_init_node),
         ButtonOption('uvh_init_node_cancel', display_name='3 - CANCEL / RESTORE NATIVE ARRAYS (THEN RESTART)', on_press=cancel_init_node),
-        ButtonOption('uvh_purchase_snapshot', display_name='4 - INSPECT DEATHTRAP METADATA (READ ONLY)', on_press=inspect_deathtrap_readiness),
+        ButtonOption('uvh_purchase_snapshot', display_name='4 - INSPECT DEATHTRAP MANAGER METADATA (READ ONLY)', on_press=inspect_deathtrap_readiness),
         ButtonOption('uvh_upgrade_start', display_name='5 - START UPGRADE OBSERVERS (READ ONLY; DO NOT BUY)', on_press=start_upgrade_trace),
         ButtonOption('uvh_upgrade_stop', display_name='6 - STOP / REPORT UPGRADE OBSERVERS', on_press=stop_upgrade_trace),
         ButtonOption('uvh_ui_start', display_name='7 - START CORE SKILL UI TRACE (READ ONLY; DO NOT BUY)', on_press=start_ui_trace),

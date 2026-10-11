@@ -127,10 +127,10 @@ class DeathtrapReadinessTests(unittest.TestCase):
         self.primary.props, self.primary.ret = [self.ret], self.ret
         self.primary.NumParams, self.primary.ParamsSize, self.primary.ReturnValueOffset = 1, 8, 0
         self.primary.link()
-        self.controller.functions = {
-            'GetSkillManager': self.primary,
-            'ActivateSkill': UFunction(self.controller, 'ActivateSkill'),
-            'DeactivateSkill': UFunction(self.controller, 'DeactivateSkill'),
+        self.controller.functions = {'GetSkillManager': self.primary}
+        self.manager.functions = {
+            'ActivateSkill': UFunction(self.manager, 'ActivateSkill'),
+            'DeactivateSkill': UFunction(self.manager, 'DeactivateSkill'),
         }
         self.array = ZArrayProperty('ActiveSkills', self.manager, ElementSize=12)
         self.array.Inner = ZObjectProperty('ActiveSkills', self.array, PropertyClass=self.skill, ElementSize=8)
@@ -194,7 +194,7 @@ class DeathtrapReadinessTests(unittest.TestCase):
         self.assertTrue(self.has('END coverage=UNAVAILABLE'))
 
     def test_missing_optional_lifecycle_descriptor_is_not_a_zero_call_claim(self):
-        del self.controller.functions['ActivateSkill']
+        del self.manager.functions['ActivateSkill']
         self.assertFalse(self.run_diagnostic())
         self.assertTrue(self.has('END coverage=UNAVAILABLE'))
         self.assertTrue(self.has('signature=NOT_ESTABLISHED'))
@@ -402,4 +402,84 @@ class DeathtrapReadinessTests(unittest.TestCase):
         metadata = config['tool']['sdkmod']
         self.assertEqual(metadata['name'], self.h.mod_options['name'])
         self.assertEqual(metadata['version'], self.h.mod_options['version'])
-        self.assertEqual(metadata['name'], 'UVH v0.2.12 - DEATHTRAP METADATA')
+        self.assertEqual(metadata['name'], 'UVH v0.2.13 - DEATHTRAP MANAGER METADATA')
+
+    def metadata_rows(self):
+        import json
+        return [json.loads(line.split(' METADATA ',1)[1]) for line in self.h.logs if ' METADATA ' in line]
+
+    def test_manager_candidates_use_return_class_and_never_controller_fallback(self):
+        selected = {'controller':[], 'manager':[]}
+        def controller_lookup(name):
+            selected['controller'].append(name)
+            if name != 'GetSkillManager': raise AssertionError('controller fallback attempted')
+        self.controller.on_lookup = controller_lookup
+        self.manager.on_lookup = lambda name: selected['manager'].append(name)
+        self.controller.functions['ActivateSkill'] = Poison()
+        self.controller.functions['DeactivateSkill'] = Poison()
+        self.assertTrue(self.run_diagnostic())
+        self.assertEqual(set(selected['controller']), {'GetSkillManager'})
+        self.assertEqual(set(selected['manager']), {'ActivateSkill','DeactivateSkill','ActiveSkills'})
+        rows = self.metadata_rows()
+        self.assertEqual([r.get('name',r.get('target')) for r in rows[:6]],
+                         ['controller','GetSkillManager','manager',None,'ActivateSkill','DeactivateSkill'])
+        self.assertEqual(rows[4]['path'],'Test.SkillManager:ActivateSkill')
+        self.assertEqual(rows[5]['path'],'Test.SkillManager:DeactivateSkill')
+
+    def test_controller_candidates_cannot_substitute_for_missing_manager_candidates(self):
+        self.manager.functions.clear()
+        for name in ('ActivateSkill','DeactivateSkill'):
+            self.controller.functions[name] = UFunction(self.controller,name)
+        self.assertFalse(self.run_diagnostic())
+        rows = self.metadata_rows()
+        for name in ('ActivateSkill','DeactivateSkill'):
+            self.assertEqual(next(r for r in rows if r.get('name')==name)['coverage'],'UNAVAILABLE')
+        self.assertTrue(any(r.get('name')=='DurationModifierStack' for r in rows))
+        self.assertTrue(self.has('END coverage=UNAVAILABLE'))
+
+    def test_missing_primary_never_probes_manager_or_fabricates_candidate_rows(self):
+        del self.controller.functions['GetSkillManager']
+        accesses = []
+        self.manager.on_lookup = lambda name: accesses.append(name)
+        self.assertFalse(self.run_diagnostic())
+        self.assertEqual(accesses,[])
+        rows = self.metadata_rows()
+        self.assertEqual(len(rows),3)
+        self.assertEqual(rows[-1],{'kind':'DISCOVERY','target':'manager','coverage':'UNAVAILABLE'})
+        self.assertEqual([r['name'] for r in rows if r['kind']=='FUNCTION'],['GetSkillManager'])
+
+    def test_manager_candidate_declaring_ancestor_requires_actual_captured_owner(self):
+        parent = UClass('ManagerParent')
+        self.manager.SuperField = parent
+        self.manager.functions['ActivateSkill'] = UFunction(parent,'ActivateSkill')
+        self.assertTrue(self.run_diagnostic())
+        self.assertEqual(next(r for r in self.metadata_rows() if r.get('name')=='ActivateSkill')['path'],
+                         'Test.ManagerParent:ActivateSkill')
+
+    def test_same_name_foreign_manager_function_owner_refuses(self):
+        self.manager.functions['ActivateSkill'].Outer = UClass('SkillManager')
+        self.refused()
+
+    def test_manager_header_and_return_class_drift_abort_before_output(self):
+        for change in ('header','return_class'):
+            with self.subTest(change=change):
+                self.setUp()
+                def drift(name):
+                    if name == 'DeactivateSkill':
+                        if change == 'header': self.manager.functions['ActivateSkill'].FunctionFlags += 1
+                        else: self.ret.PropertyClass = UClass('SkillManager')
+                self.manager.on_lookup = drift
+                self.refused()
+                self.assertEqual(self.metadata_rows(),[])
+
+    def test_missing_active_array_has_no_invented_skill_root_or_fields(self):
+        del self.manager.props['ActiveSkills']
+        self.assertFalse(self.run_diagnostic())
+        rows = self.metadata_rows()
+        self.assertEqual(len(rows),7)
+        self.assertEqual(rows[-1],{'kind':'FIELD','name':'ActiveSkills','coverage':'UNAVAILABLE'})
+        self.assertFalse(any(r.get('target')=='active_skill_class' for r in rows))
+
+    def test_unknown_manager_candidate_is_refused_without_unknown_conversion(self):
+        self.manager.functions['ActivateSkill'] = Poison()
+        self.refused()
