@@ -1,0 +1,505 @@
+{
+  "task_id": "68bca0be-cbf1-4c13-bc4d-e7b772f7f930",
+  "baseline_commit": "3af92a893cce1a4db6850e1270be3d2c78244497",
+  "scope": "two new research artifacts only",
+  "game_or_native_sdk_access": false,
+  "probe_kind": "synthetic Python objects and actual repository mock Harness; no engine proof",
+  "probe_source": "from pathlib import Path\nimport importlib.util,types,unittest\nspec=importlib.util.spec_from_file_location('readiness_runtime_fixture',Path('tests/test_runtime_mock.py'))\nm=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)\nresults=[]\ndef setup(*,foreign=False,activation=12.,modifiers=None):\n h=m.Harness();h.pc.Pawn=m.Obj('Pawn_0',MyActionSkill=m.Obj('Action','DeathtrapActionSkill'))\n skill=m.Obj('LiveDeathtrap',Definition=m.Obj('Skill_DeathTrap'),SkillInstigator=m.Obj(h.pc.Name) if foreign else h.pc,Duration=60.,DurationBaseValue=60.,ActivatedTime=activation,DurationModifierStack=[] if modifiers is None else modifiers)\n holder=[skill];calls=[]\n def manager():calls.append('GetSkillManager');return types.SimpleNamespace(ActiveSkills=m.WrappedArray(holder))\n h.pc.GetSkillManager=manager\n return h,skill,holder,calls\nh,s,holder,calls=setup();h.call('apply');h.call('apply');assert s.Duration==75. and s.DurationBaseValue==60.;h.call('restore');assert s.Duration==60.\nresults.append(dict(case='normal_apply_repeat_restore',duration=s.Duration,base=s.DurationBaseValue,stub_GetSkillManager_calls=len(calls)))\nh,s,holder,calls=setup(foreign=True);h.call('apply');assert s.Duration==75. and s.SkillInstigator is not h.pc\nresults.append(dict(case='different_instigator_same_name',duration=s.Duration,instigator_is_pc=False))\nh,s,holder,calls=setup(activation=None);h.call('apply');assert s.Duration==75.\nresults.append(dict(case='missing_activation_time',duration=s.Duration,signature=list(h.scope['_record']['sig'])))\nh,s,holder,calls=setup();h.call('apply');h.call('shutdown');assert s.Duration==75. and h.scope['_record'] is not None\nresults.append(dict(case='shutdown_after_manual_apply',duration=s.Duration,record_retained=True))\nh,old,holder,calls=setup();h.call('apply');new=m.Obj(old.Name,Definition=m.Obj('Skill_DeathTrap'),SkillInstigator=h.pc,Duration=75.,DurationBaseValue=60.,ActivatedTime=12.,DurationModifierStack=[]);holder[:]=[new];h.call('restore');assert old.Duration==75. and new.Duration==60.\nresults.append(dict(case='replacement_reuses_signature',old_duration=old.Duration,replacement_duration=new.Duration,distinct_object=old is not new))\nh,first,holder,calls=setup();second=m.Obj('SecondDeathtrap',Definition=m.Obj('Skill_DeathTrap'),SkillInstigator=h.pc,Duration=60.,DurationBaseValue=60.,ActivatedTime=13.,DurationModifierStack=[]);holder.append(second);h.call('apply');assert first.Duration==75. and second.Duration==60.\nresults.append(dict(case='two_matching_active_skills',first_duration=first.Duration,second_duration=second.Duration))\nh,s,holder,calls=setup(modifiers=['other_modifier']);h.call('apply');assert s.Duration==60.\nresults.append(dict(case='nonempty_modifier_stack_refused',duration=s.Duration))\nh,s,holder,calls=setup();s.Duration=True;h.call('apply');assert s.Duration is True\nresults.append(dict(case='boolean_duration_refused',duration=s.Duration))\nh,s,holder,calls=setup();h.call('apply');s.Duration=76.;h.call('restore');assert s.Duration==76. and h.scope['_record'] is None\nresults.append(dict(case='independent_duration_change_preserved',duration=s.Duration,record_cleared=True))\nh,s,holder,calls=setup();h.call('apply');h.scope['_record']=None;h.call('apply');assert s.Duration==75.\nresults.append(dict(case='lost_record_does_not_stack',duration=s.Duration,record_is_none=h.scope['_record'] is None))\nh,s,holder,calls=setup();assert h.scope['_uvh_node_state'] is None;h.call('apply');assert s.Duration==75.\nresults.append(dict(case='manual_apply_independent_of_node',duration=s.Duration,node_state_is_none=True))\nsuite=unittest.TestSuite([m.RuntimeTests('test_manual_duration_boost_remains_75_nonstacking_and_restorable')])\nr=unittest.TextTestRunner(verbosity=1).run(suite);assert r.wasSuccessful() and r.testsRun==1 and not r.skipped\n",
+  "probe_results": [
+    {
+      "case": "normal_apply_repeat_restore",
+      "duration": 60.0,
+      "base": 60.0,
+      "stub_GetSkillManager_calls": 3
+    },
+    {
+      "case": "different_instigator_same_name",
+      "duration": 75.0,
+      "instigator_is_pc": false
+    },
+    {
+      "case": "missing_activation_time",
+      "duration": 75.0,
+      "signature": [
+        "LiveDeathtrap",
+        null,
+        "Controller_0"
+      ]
+    },
+    {
+      "case": "shutdown_after_manual_apply",
+      "duration": 75.0,
+      "record_retained": true
+    },
+    {
+      "case": "replacement_reuses_signature",
+      "old_duration": 75.0,
+      "replacement_duration": 60.0,
+      "distinct_object": true
+    },
+    {
+      "case": "two_matching_active_skills",
+      "first_duration": 75.0,
+      "second_duration": 60.0
+    },
+    {
+      "case": "nonempty_modifier_stack_refused",
+      "duration": 60.0
+    },
+    {
+      "case": "boolean_duration_refused",
+      "duration": true
+    },
+    {
+      "case": "independent_duration_change_preserved",
+      "duration": 76.0,
+      "record_cleared": true
+    },
+    {
+      "case": "lost_record_does_not_stack",
+      "duration": 75.0,
+      "record_is_none": true
+    },
+    {
+      "case": "manual_apply_independent_of_node",
+      "duration": 75.0,
+      "node_state_is_none": true
+    }
+  ],
+  "probe_count": 11,
+  "established_manual_test": {
+    "run": 1,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "source_hashes": {
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py": "59f99db241b3e7a1ebe117a3304988960a3b333ac051c487884e53091f83c1f8",
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml": "759a68929c1baff4141bc4d40ba69c5a2669fd9b89cb807b3f3937c6a0b15dad",
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt": "39bad5a23849bbe57bbd707135221f4e2959a702a8aab53be47cd85a446ffc91",
+    "tests/test_runtime_mock.py": "61e5851d6306555546ce5a24e8e4793b78a2fc72cb30020fa69bba8d089ad28c",
+    "evidence/v011_duration_write_verified.log": "220156804885f48c683d0aa437d7287a10e90d26814601a6e7ef2f989c7644ab",
+    "evidence/v019_live_tree_and_init_trace.log": "505cc62b6c2b65cde9e24bda49b9c9b0cf6a4d80286f0633fb2ece2a6ffc8ca3"
+  },
+  "runtime_function_ranges": {
+    "log": [
+      18,
+      19
+    ],
+    "read": [
+      22,
+      26
+    ],
+    "name": [
+      29,
+      30
+    ],
+    "finite_num": [
+      33,
+      34
+    ],
+    "near": [
+      37,
+      38
+    ],
+    "signature": [
+      41,
+      43
+    ],
+    "find_live": [
+      46,
+      79
+    ],
+    "display": [
+      82,
+      86
+    ],
+    "_modifier_count": [
+      89,
+      96
+    ],
+    "inspect": [
+      99,
+      113
+    ],
+    "apply": [
+      116,
+      166
+    ],
+    "restore": [
+      169,
+      197
+    ],
+    "_tree_info": [
+      202,
+      214
+    ],
+    "_tree_fields": [
+      217,
+      242
+    ],
+    "inspect_native_tree": [
+      245,
+      282
+    ],
+    "_find_native": [
+      288,
+      297
+    ],
+    "_native_describe": [
+      300,
+      306
+    ],
+    "_read_tiers": [
+      309,
+      344
+    ],
+    "inspect_native_branch_assets": [
+      347,
+      404
+    ],
+    "inspect_node_blueprint": [
+      410,
+      507
+    ],
+    "_node_first_tier": [
+      517,
+      538
+    ],
+    "_node_has_exact_contents": [
+      541,
+      549
+    ],
+    "_node_set_array": [
+      552,
+      577
+    ],
+    "_node_restore_snapshot": [
+      580,
+      598
+    ],
+    "_node_make_candidate": [
+      601,
+      660
+    ],
+    "add_overclock_node": [
+      663,
+      728
+    ],
+    "remove_overclock_node": [
+      731,
+      751
+    ],
+    "check_overclock_preload": [
+      754,
+      796
+    ],
+    "_diag_path": [
+      818,
+      822
+    ],
+    "_diag_refs": [
+      825,
+      852
+    ],
+    "_diag_state": [
+      855,
+      876
+    ],
+    "_diag_dump_live": [
+      879,
+      941
+    ],
+    "_diag_player_tree": [
+      944,
+      953
+    ],
+    "inspect_tree_loading": [
+      956,
+      990
+    ],
+    "_trace_hook_path": [
+      993,
+      1002
+    ],
+    "_trace_candidates": [
+      1005,
+      1028
+    ],
+    "stop_tree_trace": [
+      1031,
+      1050
+    ],
+    "_trace_callback": [
+      1053,
+      1078
+    ],
+    "start_tree_trace": [
+      1081,
+      1110
+    ],
+    "_init_remove_hooks": [
+      1123,
+      1138
+    ],
+    "_init_rollback": [
+      1141,
+      1164
+    ],
+    "_init_solo_session": [
+      1167,
+      1203
+    ],
+    "_init_pre": [
+      1206,
+      1272
+    ],
+    "inspect_init_node": [
+      1275,
+      1326
+    ],
+    "_init_post": [
+      1329,
+      1344
+    ],
+    "arm_init_node": [
+      1347,
+      1376
+    ],
+    "cancel_init_node": [
+      1379,
+      1391
+    ],
+    "_purchase_scalar": [
+      1394,
+      1399
+    ],
+    "_purchase_constraint_details": [
+      1402,
+      1440
+    ],
+    "_purchase_function_metadata": [
+      1443,
+      1493
+    ],
+    "inspect_overclock_purchase": [
+      1496,
+      1576
+    ],
+    "_upgrade_metadata": [
+      1593,
+      1633
+    ],
+    "_upgrade_state": [
+      1636,
+      1700
+    ],
+    "stop_upgrade_trace": [
+      1703,
+      1733
+    ],
+    "_upgrade_callback": [
+      1736,
+      1802
+    ],
+    "start_upgrade_trace": [
+      1805,
+      1848
+    ],
+    "_ui_candidates": [
+      1864,
+      1913
+    ],
+    "_ui_view": [
+      1916,
+      1945
+    ],
+    "_ui_inventory": [
+      1948,
+      1964
+    ],
+    "stop_ui_trace": [
+      1967,
+      1996
+    ],
+    "_ui_callback": [
+      1999,
+      2037
+    ],
+    "start_ui_trace": [
+      2040,
+      2083
+    ],
+    "_skillstate_metadata": [
+      2102,
+      2161
+    ],
+    "stop_skillstate_trace": [
+      2164,
+      2194
+    ],
+    "_skillstate_emit": [
+      2197,
+      2211
+    ],
+    "_skillstate_callback": [
+      2214,
+      2280
+    ],
+    "start_skillstate_trace": [
+      2283,
+      2323
+    ],
+    "_presentation_metadata": [
+      2326,
+      2347
+    ],
+    "_presentation_class_fields": [
+      2350,
+      2371
+    ],
+    "_presentation_details": [
+      2374,
+      2412
+    ],
+    "inspect_overclock_presentations": [
+      2415,
+      2455
+    ],
+    "_presentation_text_property": [
+      2463,
+      2478
+    ],
+    "_presentation_text_reference": [
+      2481,
+      2498
+    ],
+    "_presentation_text_details": [
+      2501,
+      2554
+    ],
+    "inspect_overclock_presentation_text": [
+      2557,
+      2602
+    ],
+    "_presentation_display_property": [
+      2608,
+      2629
+    ],
+    "_presentation_attribute_reference": [
+      2632,
+      2647
+    ],
+    "_presentation_display_details": [
+      2650,
+      2735
+    ],
+    "inspect_overclock_presentation_display": [
+      2738,
+      2784
+    ],
+    "_attribute_class_identity": [
+      2787,
+      2798
+    ],
+    "_attribute_class_reference": [
+      2801,
+      2831
+    ],
+    "_attribute_class_ancestry": [
+      2834,
+      2878
+    ],
+    "inspect_overclock_attribute_class": [
+      2881,
+      2971
+    ],
+    "shutdown": [
+      2974,
+      2976
+    ]
+  },
+  "baseline_files_unchanged": 112,
+  "existing_log_scan": {
+    "files": 21,
+    "exact_keywords": [
+      "ActivateSkill",
+      "DeactivateSkill",
+      "GetSkillManager"
+    ],
+    "hits": [
+      {
+        "file": "evidence/v019_live_tree_and_init_trace.log",
+        "line": 313,
+        "text": "2026-10-10 00:36:29.223Z   b808    ~ UltimateVaultHunterDeathtrapBoost\\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] PlayerSkillTree.SkillTreeListeners[0] object=WillowPlayerController_2 [WillowPlayerController] | WillowPlayerController'Loader.TheWorld:PersistentLevel.WillowPlayerController_2' fields=AIShowNodeReservation, ActionSkillCallback, ActionSkillCooldownComplete, ActionSkillTime, ApplyAwesomeSkillSaveGameData, ApplySkillSaveGameData, Behavior_ActivateSkill, Behavior_DeactivateSkill, Behavior_GetSkillInstigatorController, Behavior_RegisterStationDefinition, Behavior_ResetActionSkillCooldown, Behavior_UpgradeSkill, CachedVSSUIDefinition, CachedVSSVehicleCustomizationDefinition, CanKillSkillIconsBeDisplayedFromVehicles, CanPerformMeleeSkill, CanPerformThrowGrenadeSkill, CanResetActionSkill, CheckSkillActivation, ClientPurchaseSkillTreeResetFailed, ClientReceiveInteractiveObjectDefinition_HACK, ClientResetSkillTree, ClientSetSkillGrade, ConditionalResetInterruptedActionSkill, CurrentActionSkillTarget, DebugActionSkill, DebugMeleeSkill, DisplayDebugProficiencySkills, DisplaySkillPointsPrompt, DurationOfLastKillSkillActivation, DynamicFlagDefinitions, EInstinctSkillActions, FindTravelStationByDefinition, FireSkillPointsChangedDelegates, ForceKillSkillsOff, GetActionSkillDuration, GetBadassSkillActualValue, GetBadassSkillPresentedValue, GetCharacterDefaultNameFromClassDefinition, GetClassDefinition, GetClassDefinition, GetCurrentProjectileDefinition, GetInjuredDefinition, GetMeleeSkillCooldownTime, GetMeleeSkillCooldownTimeRemaining, GetPipelineImpactDefinition, GetResourcePoolForResourceDefinition, GetSkillCooldownTime, GetSkillCooldownTimeRemaining, GetSkillGrade, GetSkillGradeByDef, GetSkillManager, GetSkillTreeResetCost, GetSkillUpgradeCost, HandleBadassSkillActivation, HandleSkillTreeReset, HandleTrainingEventDefinition, HasPlayerEarnedAnySkillPoints, HighJumpNodeCostModifier, InUseNodeCostMultiplier, InitPlayerSkillTree, InstigatedSkillDamageModifier, InstigatedSkillDamageModifierBaseValue, InstigatedSkillDamageModifierModifierStack, InstigatedSkillHealingMo"
+      },
+      {
+        "file": "evidence/v019_live_tree_and_init_trace.log",
+        "line": 513,
+        "text": "2026-10-10 00:36:30.865Z   b808    ~ UltimateVaultHunterDeathtrapBoost\\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] PlayerSkillTree.SkillTreeListeners[0] object=WillowPlayerController_2 [WillowPlayerController] | WillowPlayerController'Loader.TheWorld:PersistentLevel.WillowPlayerController_2' fields=AIShowNodeReservation, ActionSkillCallback, ActionSkillCooldownComplete, ActionSkillTime, ApplyAwesomeSkillSaveGameData, ApplySkillSaveGameData, Behavior_ActivateSkill, Behavior_DeactivateSkill, Behavior_GetSkillInstigatorController, Behavior_RegisterStationDefinition, Behavior_ResetActionSkillCooldown, Behavior_UpgradeSkill, CachedVSSUIDefinition, CachedVSSVehicleCustomizationDefinition, CanKillSkillIconsBeDisplayedFromVehicles, CanPerformMeleeSkill, CanPerformThrowGrenadeSkill, CanResetActionSkill, CheckSkillActivation, ClientPurchaseSkillTreeResetFailed, ClientReceiveInteractiveObjectDefinition_HACK, ClientResetSkillTree, ClientSetSkillGrade, ConditionalResetInterruptedActionSkill, CurrentActionSkillTarget, DebugActionSkill, DebugMeleeSkill, DisplayDebugProficiencySkills, DisplaySkillPointsPrompt, DurationOfLastKillSkillActivation, DynamicFlagDefinitions, EInstinctSkillActions, FindTravelStationByDefinition, FireSkillPointsChangedDelegates, ForceKillSkillsOff, GetActionSkillDuration, GetBadassSkillActualValue, GetBadassSkillPresentedValue, GetCharacterDefaultNameFromClassDefinition, GetClassDefinition, GetClassDefinition, GetCurrentProjectileDefinition, GetInjuredDefinition, GetMeleeSkillCooldownTime, GetMeleeSkillCooldownTimeRemaining, GetPipelineImpactDefinition, GetResourcePoolForResourceDefinition, GetSkillCooldownTime, GetSkillCooldownTimeRemaining, GetSkillGrade, GetSkillGradeByDef, GetSkillManager, GetSkillTreeResetCost, GetSkillUpgradeCost, HandleBadassSkillActivation, HandleSkillTreeReset, HandleTrainingEventDefinition, HasPlayerEarnedAnySkillPoints, HighJumpNodeCostModifier, InUseNodeCostMultiplier, InitPlayerSkillTree, InstigatedSkillDamageModifier, InstigatedSkillDamageModifierBaseValue, InstigatedSkillDamageModifierModifierStack, InstigatedSkillHealingMo"
+      },
+      {
+        "file": "evidence/v019_live_tree_and_init_trace.log",
+        "line": 1061,
+        "text": "2026-10-10 00:36:50.293Z   b808    ~ UltimateVaultHunterDeathtrapBoost\\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] PlayerSkillTree.SkillTreeListeners[0] object=WillowPlayerController_2 [WillowPlayerController] | WillowPlayerController'Loader.TheWorld:PersistentLevel.WillowPlayerController_2' fields=AIShowNodeReservation, ActionSkillCallback, ActionSkillCooldownComplete, ActionSkillTime, ApplyAwesomeSkillSaveGameData, ApplySkillSaveGameData, Behavior_ActivateSkill, Behavior_DeactivateSkill, Behavior_GetSkillInstigatorController, Behavior_RegisterStationDefinition, Behavior_ResetActionSkillCooldown, Behavior_UpgradeSkill, CachedVSSUIDefinition, CachedVSSVehicleCustomizationDefinition, CanKillSkillIconsBeDisplayedFromVehicles, CanPerformMeleeSkill, CanPerformThrowGrenadeSkill, CanResetActionSkill, CheckSkillActivation, ClientPurchaseSkillTreeResetFailed, ClientReceiveInteractiveObjectDefinition_HACK, ClientResetSkillTree, ClientSetSkillGrade, ConditionalResetInterruptedActionSkill, CurrentActionSkillTarget, DebugActionSkill, DebugMeleeSkill, DisplayDebugProficiencySkills, DisplaySkillPointsPrompt, DurationOfLastKillSkillActivation, DynamicFlagDefinitions, EInstinctSkillActions, FindTravelStationByDefinition, FireSkillPointsChangedDelegates, ForceKillSkillsOff, GetActionSkillDuration, GetBadassSkillActualValue, GetBadassSkillPresentedValue, GetCharacterDefaultNameFromClassDefinition, GetClassDefinition, GetClassDefinition, GetCurrentProjectileDefinition, GetInjuredDefinition, GetMeleeSkillCooldownTime, GetMeleeSkillCooldownTimeRemaining, GetPipelineImpactDefinition, GetResourcePoolForResourceDefinition, GetSkillCooldownTime, GetSkillCooldownTimeRemaining, GetSkillGrade, GetSkillGradeByDef, GetSkillManager, GetSkillTreeResetCost, GetSkillUpgradeCost, HandleBadassSkillActivation, HandleSkillTreeReset, HandleTrainingEventDefinition, HasPlayerEarnedAnySkillPoints, HighJumpNodeCostModifier, InUseNodeCostMultiplier, InitPlayerSkillTree, InstigatedSkillDamageModifier, InstigatedSkillDamageModifierBaseValue, InstigatedSkillDamageModifierModifierStack, InstigatedSkillHealingMo"
+      },
+      {
+        "file": "evidence/v019_live_tree_and_init_trace.log",
+        "line": 1261,
+        "text": "2026-10-10 00:36:51.468Z   b808    ~ UltimateVaultHunterDeathtrapBoost\\__init__.py@19   INFO| [UVH-BOOST] [UVH-LIVE] PlayerSkillTree.SkillTreeListeners[0] object=WillowPlayerController_2 [WillowPlayerController] | WillowPlayerController'Loader.TheWorld:PersistentLevel.WillowPlayerController_2' fields=AIShowNodeReservation, ActionSkillCallback, ActionSkillCooldownComplete, ActionSkillTime, ApplyAwesomeSkillSaveGameData, ApplySkillSaveGameData, Behavior_ActivateSkill, Behavior_DeactivateSkill, Behavior_GetSkillInstigatorController, Behavior_RegisterStationDefinition, Behavior_ResetActionSkillCooldown, Behavior_UpgradeSkill, CachedVSSUIDefinition, CachedVSSVehicleCustomizationDefinition, CanKillSkillIconsBeDisplayedFromVehicles, CanPerformMeleeSkill, CanPerformThrowGrenadeSkill, CanResetActionSkill, CheckSkillActivation, ClientPurchaseSkillTreeResetFailed, ClientReceiveInteractiveObjectDefinition_HACK, ClientResetSkillTree, ClientSetSkillGrade, ConditionalResetInterruptedActionSkill, CurrentActionSkillTarget, DebugActionSkill, DebugMeleeSkill, DisplayDebugProficiencySkills, DisplaySkillPointsPrompt, DurationOfLastKillSkillActivation, DynamicFlagDefinitions, EInstinctSkillActions, FindTravelStationByDefinition, FireSkillPointsChangedDelegates, ForceKillSkillsOff, GetActionSkillDuration, GetBadassSkillActualValue, GetBadassSkillPresentedValue, GetCharacterDefaultNameFromClassDefinition, GetClassDefinition, GetClassDefinition, GetCurrentProjectileDefinition, GetInjuredDefinition, GetMeleeSkillCooldownTime, GetMeleeSkillCooldownTimeRemaining, GetPipelineImpactDefinition, GetResourcePoolForResourceDefinition, GetSkillCooldownTime, GetSkillCooldownTimeRemaining, GetSkillGrade, GetSkillGradeByDef, GetSkillManager, GetSkillTreeResetCost, GetSkillUpgradeCost, HandleBadassSkillActivation, HandleSkillTreeReset, HandleTrainingEventDefinition, HasPlayerEarnedAnySkillPoints, HighJumpNodeCostModifier, InUseNodeCostMultiplier, InitPlayerSkillTree, InstigatedSkillDamageModifier, InstigatedSkillDamageModifierBaseValue, InstigatedSkillDamageModifierModifierStack, InstigatedSkillHealingMo"
+      }
+    ]
+  },
+  "local_sdk_documentation": [
+    {
+      "relative_sdk_stub_path": "unrealsdk/hooks/__init__.pyi",
+      "bytes": 6284,
+      "sha256": "21589d306dc34fe61ce5f7b0b47b62167a6e8f767d3c84283c4757fc27312ab7",
+      "read_only_documentation": true,
+      "executed": false
+    },
+    {
+      "relative_sdk_stub_path": "unrealsdk/unreal/_bound_function.pyi",
+      "bytes": 1635,
+      "sha256": "aede5345048c0b32b7e0bc0ccd57fca5fa29c1227113f0a4ee7f30d469d64546",
+      "read_only_documentation": true,
+      "executed": false
+    },
+    {
+      "relative_sdk_stub_path": "unrealsdk/unreal/_uobject.pyi",
+      "bytes": 4546,
+      "sha256": "a73e55d17aa605ee20540d542a68b817d84614aaeb4c47aa5804e435f58b12b3",
+      "read_only_documentation": true,
+      "executed": false
+    },
+    {
+      "relative_sdk_stub_path": "unrealsdk/unreal/_uobject_children.pyi",
+      "bytes": 9904,
+      "sha256": "c868cda153981b5d779d7873572db131edc3990696d719c8646f114cd56f1887",
+      "read_only_documentation": true,
+      "executed": false
+    }
+  ],
+  "primary_sdk_sources": [
+    {
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.h",
+      "bytes": 6473,
+      "sha256": "6290b5012a492504b14c987527a93e4d08350297cd81fed1a2c49315b91b570e"
+    },
+    {
+      "url": "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp",
+      "bytes": 14513,
+      "sha256": "77d60d79d8845b9914284963fd5a049300b91e96cbd0bcf0430e477a47e4a48b"
+    },
+    {
+      "url": "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+      "bytes": 10594,
+      "sha256": "219bc8470aebf4e839f51686eb839a301911da6cac6bb7ec58d0a3ca7afd4142"
+    }
+  ],
+  "separately_reviewed_capture": {
+    "commit": "88a904e83babc1d85566d47f382cc32dfda89a8b",
+    "log_sha256": "7339178b278e7e4c63a8ec4272a692c199840c82c99017be2198901f1a1f3b00",
+    "pair_status": "done after independent Justin review; no new game test requested by this research"
+  }
+}
