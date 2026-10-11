@@ -1,18 +1,27 @@
 # Borderlands: Ultimate Vault Hunter Collection — Codex handoff
 
-**Current prepared build: v0.2.12 - DEATHTRAP METADATA (offline only).**
-Button4 collects bounded loaded metadata without native calls, summon payload
-reads, observers or gameplay writes. All84 previous functions/guards remain
-AST-identical;19 options remain. See [the plan](evidence/deathtrap_metadata_diagnostic_plan.md)
-and [actual checks](evidence/deathtrap_metadata_diagnostic_checks.json).
-Last game-tested remains v0.2.11. The new build has not been installed or run
-in-game; review it before a separately authorized manual test. Node duration
-effect and natural lifecycle behavior remain unimplemented/unverified.
+**Current game-tested build: v0.2.12 - DEATHTRAP METADATA. Result: PARTIAL.**
+The owner completed the reviewed run and confirmed CANCEL/full exit. Both
+logged inspections captured manager/skill/definition classes and all seven
+selected fields; ActivateSkill/DeactivateSkill were UNAVAILABLE on the selected
+controller. Points/ranks stayed unchanged by runtime assertion, arrays restored,
+all observer families0 and independent capture process queries0. Actual installed
+files matched original ZIP/source; the raw log, manifest and testedREADME are
+frozen. Two calls instead of requestedone/secondARM refusal/repeatedCANCEL are
+recorded in [the live result](evidence/v032_live_deathtrap_metadata_result.md)
+and [manifest](evidence/v032_capture_manifest.json).
 
+No repeat is needed to force full coverage. Next is a bounded metadata-owner
+design using the actual returned SkillEffectManager class. No callable signature,
+natural lifecycle timing, native lifetime or node duration effect is established.
+Item4 makes no native function calls, active-skill payload reads, new hooks or
+gameplay writes; established ARM/insertion is a separate operation. See
+[the next task](docs/NEXT_CODEX_TASK.md). All84 pre-v12 functions/guards remain
+AST-identical and19 options remain. Preserve all originals.
 
 This project is a **Borderlands 2 PythonSDK gameplay-mod prototype**, with a separate early design-oriented codebase for a much larger multi-game Borderlands project.
 
-**Current game-tested build:** **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**.
+**Previous game-tested build:** **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**.
 Two complete read-only calls captured Myelin's previously refused Attribute as
 SDK_UOBJECT with actual UClass ResourcePoolAttributeDefinition and a five-class
 COMPLETE ancestry through declared AttributeDefinition. Runtime identity/link
@@ -20,7 +29,7 @@ checks report DERIVED; names alone do not establish that relationship.
 Sampled points/ranks stayed unchanged, CANCEL restored arrays, observer families
 reported zero and separate capture process queries found BL2 exited.
 
-The prepared metadata test is complete. One call was requested; two were logged,
+The previous v0.2.11 metadata test is complete. One call was requested; two were logged,
 with a second ARM refusal and repeated CANCEL. These details are preserved in
 [the reviewed live result](evidence/v031_live_attribute_class_result.md) and
 [the immutable capture manifest](evidence/v031_capture_manifest.json).
@@ -51,30 +60,30 @@ The first screenshot's [Enter] Spend Point hint is separate evidence.
 See [the live text result](evidence/v029_live_presentation_text_result.md),
 [the next task](docs/NEXT_CODEX_TASK.md) and
 [the live display result](evidence/v030_live_presentation_display_result.md).
-Preserve all eleven original versioned ZIPs, five exact tested snapshots and
+Preserve all twelve original versioned ZIPs, six exact tested snapshots and
 prior evidence unchanged. Current docs/default ZIP may differ in README only;
-the exact v0.2.11 tested README is frozen in its snapshot/original ZIP.
+the exact v0.2.11/v0.2.12 tested READMEs are frozen in their snapshots/original ZIPs.
 
 **Verified on user's real game (BL2): v0.2.1 now shows Deathtrap Overclock in Gaige's native tree.** The user reported "done it worked!" after the visibility test. The log verifies one inert runtime node at grade 0, both original first-tier skills present, all observers removed and original native arrays restored on cancellation. The separate manual v0.1.1 prototype changed active Deathtrap duration from **60.0 to 75.0**, and the user reported it stayed out longer. **The visible node does not apply that effect. A purchase to1/1 is now user-reported; captured transaction/save behavior and persistence remain unverified.** See [the visibility evidence](evidence/v021_visibility_confirmation.md).
 
-Read `AGENTS.md` and `docs/STATE_AND_HISTORY.md` before changing any code. The initial visibility goal is met in one successful solo test. Preserve v0.2.1 as the first confirmed visibility baseline; current tested runtime is v0.2.11. The eventual goal is a safe **one-rank Deathtrap Overclock node** which, if purchased, grants +15 seconds to Deathtrap. Keep the user-reported purchase separate from log-verified state; do not claim captured transaction, persistence or duration-effect success without the relevant evidence.
+Read `AGENTS.md` and `docs/STATE_AND_HISTORY.md` before changing any code. The initial visibility goal is met in one successful solo test. Preserve v0.2.1 as the first confirmed visibility baseline; current tested runtime is v0.2.12 with partial metadata coverage. The eventual goal is a safe **one-rank Deathtrap Overclock node** which, if purchased, grants +15 seconds to Deathtrap. Keep the user-reported purchase separate from log-verified state; do not claim captured transaction, persistence or duration-effect success without the relevant evidence.
 
 ## Run local tests
 
 From project root (Python 3.10+):
 
 ```powershell
-python -m unittest discover -s tests -v
-python -m py_compile sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py
-python scripts/package_mod.py
-python scripts/verify_package.py
+python -B scripts/run_offline_validation.py
+python -B scripts/verify_artifact_inventory.py
+python -B scripts/review_deathtrap_metadata_log.py evidence/v032_user_test.log
+# PARTIAL / exit 1 is expected for this preserved v0.2.12 capture.
 ```
 
 Run the generated ZIP's `UltimateVaultHunterDeathtrapBoost` folder inside `Borderlands 2\sdk_mods` only after backing up the save and reviewing the experiment's risk. **Local mock tests cannot run Borderlands 2 or confirm HUD/skill-tree behavior.**
 
 ## Layout
 
-- `sdk_mods/UltimateVaultHunterDeathtrapBoost/` — current v0.2.11 runtime, with a combined read-only Attribute class diagnostic, existing opt-in observers, established armed insertion and preserved manual duration prototype.
+- `sdk_mods/UltimateVaultHunterDeathtrapBoost/` — current v0.2.12 runtime, with the bounded read-only Deathtrap metadata diagnostic, existing opt-in observers, established armed insertion and preserved manual duration prototype.
 - `tests/` — isolated mock-based regressions for diagnostics, hook cleanup, missing assets, insertion rollback and the manual duration prototype.
 - `scripts/package_mod.py` — package the SDK installable ZIP.
 - `docs/` — handoff, next task, Windows installation notes.
@@ -254,3 +263,9 @@ passed independent peer review and proposes a bounded metadata-only Deathtrap
 diagnostic for separately scoped implementation. No lifecycle implementation or game test has occurred; v0.2.12 prepares metadata only.
 See [the next task](docs/NEXT_CODEX_TASK.md). Do not invoke native methods from
 inventory names, relax diagnostic guards, spend points or add automatic effects.
+
+The static artifact inventory pins the earlier prepared-e32 current files.
+After this README-only documentation update, its immutable check still passes;
+`--check-current` reports exactly the intentional README/defaultZIP drift.
+Current package/source equality is checked separately by `verify_package.py`.
+The versioned v12 ZIP and exact tested three-file snapshot remain untouched.

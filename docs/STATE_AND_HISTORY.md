@@ -1,15 +1,36 @@
 # Project state and development history
 
-## Current prepared source: v0.2.12 (offline only)
+## Reviewed v0.2.12 - DEATHTRAP METADATA: partial live result
 
-Button4 now collects typed loaded class/function/field descriptors with bounded
-identity/link/schema/state rechecks. All84 old functions remain AST-identical;
-19 options remain. No native invocation, active-skill payload, new observer or
-gameplay write. COMPLETE refers only to metadata; partial/refused states remain
-explicit. Read ../evidence/deathtrap_metadata_diagnostic_plan.md and its checks.
-No v0.2.12 installation/game run occurred. Last game-tested remains v0.2.11;
-its original ZIP/capture and all historical evidence/research stay unchanged.
+Last game-tested runtime is v0.2.12. Read
+evidence/v032_live_deathtrap_metadata_result.md, v032_user_test.log and
+v032_capture_manifest.json. The owner confirmed the full protocol, CANCEL3
+and full exit. Two calls65-82/83-100 captured identical15 rows: four class roots
+and seven fields COMPLETE; controller ActivateSkill/DeactivateSkill UNAVAILABLE.
+FINAL points=(1,0)/ranks=(0,0,0) unchanged is a runtime assertion; the internal
+start baseline is not logged. END is UNAVAILABLE, not full coverage or effect
+readiness. No manager instance, active-skill payload or native invocation in item4.
+Runtime restore123/124 and all four observer families0 after the last call;
+independent process queries0 before/after capture and installed/source/original
+ZIP equality. Two inspections vs requestedone, refused secondARM and repeated
+CANCEL are documented. No repeat to force COMPLETE.
 
+Next: design a bounded metadata-owner correction using the actual typed return
+class WillowGame.SkillEffectManager. v12 only queried activation/deactivation
+names on the controller. A missing lookup does not prove absence elsewhere;
+no guessed function/hook path or callable signature. Native lifecycle, lifetime,
+timing and effect remain NOT_READY. Keep _upgrade_state at gradezero and preserve
+all historical/manual functions. Manual restore remains separate from CANCEL.
+
+Freeze runtime41fd2dd9, pyprojectfa8acf73, originalv12ZIP4f49bad1, immutable
+capture/snapshot/testedREADME and all earlier evidence/research. Only current
+documentation/default ZIP README may differ. Static artifact inventory records
+prepared-e32 current hashes: immutable check must pass; explicit --check-current
+reports intentional README/defaultZIP drift, checked separately by package
+source/CRC/layout/syntax/inert-import verification. Do not rewrite old hashes.
+Recorded review is required after submission, including labeled self-review;
+resolve shared findings before completion. No new game/nativeSDK/install/save/
+private-backup/purchase/summon/boost/co-op/merge/release action in this review.
 
 ## What the user wants
 
@@ -47,7 +68,8 @@ Long-term ambition: a Borderlands Ultimate Vault Hunter Collection spanning main
 | **v0.2.8 (presentation baseline)** | Fresh retry verified presentation counts Overclock0/MorePep4/Myelin2, all six references, capped raw metadata, unchanged sampled FINAL state and restoration | **108 mocks plus two live snapshots, installed/ZIP byte match, arrays 3/3 and cleanup; cause/eligibility/effect unverified** |
 | **v0.2.9 (text baseline)** | Two snapshots accepted scalar schemas/owners and verified all 24 native text fields; Overclock has no entries, native descriptions use $NUMBER$ templates | **127 mocks plus live24/24 fields per call, installed/ZIP byte match, sampled FINAL state unchanged, hooks0, arrays restored and process closed; cause/eligibility/effect unverified** |
 | **v0.2.10 (previous tested source)** | Four live snapshots verified18 native flags and five of six Attribute identities each; second Myelin Attribute refused exact-class validation | **151 mocks plus live23/24 fields/call, sampled FINAL state unchanged, restored/hooks0/exited; separate user report of first-run one-point purchase to1/1, transaction/save/effect unverified** |
-| **v0.2.11 (current game-tested baseline)** | Two combined Myelin wrapper/UClass/ancestry calls | **SDK_UOBJECT; ResourcePoolAttributeDefinition; five-class COMPLETE/DERIVED; sampled state unchanged; restoration/hooks0/independent exit checks; runtime frozen** |
+| **v0.2.11 (previous game-tested baseline)** | Two combined Myelin wrapper/UClass/ancestry calls | **SDK_UOBJECT; ResourcePoolAttributeDefinition; five-class COMPLETE/DERIVED; sampled state unchanged; restoration/hooks0/independent exit checks; runtime frozen** |
+| **v0.2.12 (current game-tested source)** | Two bounded Deathtrap metadata calls; four roots/seven fields COMPLETE, controller lifecycle names UNAVAILABLE | **Partial coverage; FINAL unchanged assertion, restoration/four-family cleanup, independent exit and installed/ZIP equality; no summon payload/lifecycle/effect proof** |
 
 ## Relevant exact data
 
@@ -398,7 +420,7 @@ unchanged. New mock checks cover schema/type/unknown metadata, bounds/cycles,
 loaded identity relationships, no unrelated payload/attribute traversal/calls/
 writes, changing field/descriptor/class/presentation/path/state and restoration.
 
-## Completed v0.2.11 live result and current follow-up
+## Completed v0.2.11 live result and its historical follow-up
 
 The user performed the prepared diagnostic and answered done to CANCEL/full exit.
 The raw v031_user_test.log is 93,722 bytes/410 lines, SHA7339178b278e7e4c63a8ec4272a692c199840c82c99017be2198901f1a1f3b00.
@@ -438,3 +460,11 @@ one bounded metadata-only Deathtrap diagnostic, without native GetSkillManager
 calls, hooks/writes/purchases or grade-zero guard relaxation. It is a proposal,
 not an implemented diagnostic or observed engine failure. Read it before
 separately scoping runtime work; docs/NEXT_CODEX_TASK.md carries the next design.
+
+## Completed v0.2.12 live metadata capture
+
+See [the reviewed result](../evidence/v032_live_deathtrap_metadata_result.md),
+[manifest](../evidence/v032_capture_manifest.json) and immutable log/snapshot.
+Original versionedZIP and testedREADME remain unchanged; current defaultZIP
+README reflects the reviewed partial result. The next task is metadata-owner
+design; no lifecycle observer or effect readiness is established by this run.

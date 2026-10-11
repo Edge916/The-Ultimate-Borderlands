@@ -1,62 +1,53 @@
 # Windows workspace and mod installation
 
-## Prepared v0.2.12 package - not installed or game-tested
+## Reviewed v0.2.12 package: partial metadata evidence
 
-Title: UVH v0.2.12 - DEATHTRAP METADATA. Item4 inspects loaded metadata under
-the unchanged solo/inert-grade0 guard. The exact new versioned ZIP is created
-exclusively; default ZIP contains the same three current files. Read the plan
-and checks in ../evidence before review and a separately authorized test/capture.
-No install/game/native SDK run was performed here. Do not use a purchase,
-summon, manual boost or traces to force metadata. The historical installation
-reference below applies only after explicit authorization for a reviewed build.
+Title: UVH v0.2.12 - DEATHTRAP METADATA. The owner completed the reviewed
+protocol and confirmed CANCEL3/full exit. Both logged calls captured four roots
+and seven fields but controller ActivateSkill/DeactivateSkill were UNAVAILABLE.
+No repeat test is pending. Read [the result](../evidence/v032_live_deathtrap_metadata_result.md)
+and [manifest](../evidence/v032_capture_manifest.json) before new work.
 
+Installed three files matched original versionedZIP/source, complete stable log
+preserved before relaunch, arrays restored, all four families0 and independent
+process queries0 before/after capture. FINAL1/0 and0/0/0 unchanged is a runtime
+assertion with an unlogged internal baseline. Two calls instead of requestedone,
+refused secondARM and repeatedCANCEL are recorded. Partial metadata is valid
+evidence, not absence/signature/natural lifecycle/clock/lifetime/effect proof.
 
-Last game-tested build: **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**. Its prepared
-metadata test is complete; no new game run is pending. Two complete calls found
-actual ResourcePoolAttributeDefinition, five-class COMPLETE/DERIVED ancestry,
-unchanged sampled state and native restoration. Capture process queries found
-BL2 fully exited. Read evidence/v031_live_attribute_class_result.md and
-v031_capture_manifest.json for preserved log/source/install evidence and limits.
+## Package and historical installation reference
 
-## Package and installation reference
+Keep the workspace outside the game. Preserve all twelve original versionedZIPs,
+six exact tested snapshots, logs/manifests/PNG and accepted research. Never
+overwrite an original. The v12 versionedZIP/testedREADME remain exact; current
+defaultZIP differs only in its documentation README. Runtime/pyproject frozen.
+Static inventory --check-current pins earlier prepared bytes and intentionally
+flags that README/defaultZIP difference. Immutable verification and current
+package/source/CRC/layout/syntax/inert import are checked separately.
 
-Keep the workspace outside the game. Preserve all eleven original versioned
-ZIPs and five exact tested snapshots/logs/PNG, including the immutable v0.2.11
-capture manifest. Never overwrite a versioned original. Current default ZIP
-now contains the prepared v0.2.12 diagnostic. Preserved v0.2.11 files still
-match their original versioned ZIP.
-Its historical tested README is preserved in archive/tested_runtime/v0.2.11.
-
-For a separately authorized future installation, fully close BL2 first and
-manually replace only the UltimateVaultHunterDeathtrapBoost folder under
+Any separately authorized future installation must start with BL2 fully closed.
+The owner manually replaces only UltimateVaultHunterDeathtrapBoost under
 C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\sdk_mods.
-A valid package has exactly __init__.py, pyproject.toml and README.txt directly
-inside that one folder. Keep one project mod and all SDK/core mods. Codex does
-not install or change game/SDK/save files. The prepared v0.2.12 build requires review and separate manual-test
-authorization before installation; the v0.2.11 result needs no repeat.
+Exactly __init__.py, pyproject.toml and README.txt belong directly inside that
+folder. Keep one project mod and all SDK/core mods. Codex does not change game/
+SDK/save files. A future exact build/test needs its own reviewed protocol and
+explicit owner authorization; queued tasks are not installation permission.
 
-The completed historical protocol was backed-up Gaige alone Offline, fresh
-process, verify exact title, item1 ARM before Continue, in-map item4 once,
-item3 CANCEL/RESTORE and full exit. Actual log has two calls, second ARM refusal
-and repeated CANCEL. Numbers label mod options, not keys. Do not repeat this
-protocol merely to reconfirm the class result. Any future test must have its
-own reviewed scope/build and preserve the full log before relaunch.
+The completed historical v12 protocol used already-backed-up Gaige alone Offline,
+verify expected title, item1 ARM before Continue, item4 once in-map, item3
+CANCEL/RESTORE and full exit. Numbers label mod options, not keys. Actual two
+calls remain documented. Do not buy/respec/travel/summon/boost/trace to force
+metadata, or repeat this completed test merely to make missing functions appear.
+Preserve every fresh raw log and exact installed snapshot before relaunch.
 
-The node effect remains inactive; manual +15s is independent. Its manual restore
-option is separate from node CANCEL/disable cleanup; neither calls that duration
-restore. Native-array rollback cannot refund points/grades, undo saves or clear
-player/UI caches. Fully restart after an armed experiment before normal play;
-failed restoration requires full exit and review. Unknown metadata never justifies
-forcing reads or loosening guards.
+The node effect remains inactive; manual+15s is independent. Its restore option
+is separate from node CANCEL/disable, which does not call manual duration restore.
+Native-array rollback cannot refund points/grades, undo saves or clear engine/UI
+caches. Full restart is required after an armed experiment before normal play;
+failed restoration requires exit and review. Never loosen unknown-state guards.
 
-Earlier reported purchase1/1 is separate UI evidence from restarted grade 0 log;
-no transaction/save/persistence/effect audit. Do not repeat purchases for missing
-data. Private backups stay outside the project; never parse/restore/package.
-SDK stubs are text documentation only. No automatic effects, point-grade-save
-writes, guard relaxation, co-op or release in this handoff.
-
-Before shipping a runtime, run meaningful mocks, syntax/AST scope proof and
-scripts/package_mod.py plus scripts/verify_package.py. The verifier checks exact
-single-folder/three-file layout, integrity/current-source match and isolated
-inert19-option import. No SDK/game assets/saves/scaffolding belong in the ZIP.
-See docs/NEXT_CODEX_TASK.md for review of the prepared metadata-only diagnostic.
+Prior purchase1/1 is separate UI evidence; transaction/save/persistence/effect
+remain unverified. Private backups stay outside the project; never parse/restore/
+package them. SDK stubs are read-only text documentation, never executed/imported.
+No new game/nativeSDK/save/purchase/summon/effect/co-op/merge/release action here.
+See [the next task](NEXT_CODEX_TASK.md) for bounded metadata-owner design.

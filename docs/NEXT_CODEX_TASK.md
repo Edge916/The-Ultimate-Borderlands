@@ -1,51 +1,56 @@
-# Review the prepared v0.2.12 metadata diagnostic
+# Design the bounded metadata-owner correction
 
-Current prepared build is v0.2.12 - DEATHTRAP METADATA. Last game-tested build
-remains v0.2.11. The new diagnostic has not been installed or run in the game.
-Read the [implementation plan](../evidence/deathtrap_metadata_diagnostic_plan.md)
-and [actual checks](../evidence/deathtrap_metadata_diagnostic_checks.json), actual
-runtime/tests and shared review notes before accepting the submitted task.
+Reviewed game-tested source is v0.2.12 - DEATHTRAP METADATA. Its
+[live result](../evidence/v032_live_deathtrap_metadata_result.md),
+[raw log](../evidence/v032_user_test.log), [manifest](../evidence/v032_capture_manifest.json)
+and exact tested three-file snapshot remain immutable. Accepted capture is
+65e3f5f / PR13. Reproduce the offline parser: PARTIAL / exit1 is expected.
 
-Button4 performs one synchronous collection of loaded metadata. The guarded
-controller's actual UClass supplies typed GetSkillManager/ActivateSkill/
-DeactivateSkill descriptors. A typed return class and ActiveSkills array-inner
-descriptor can supply manager and skill class roots; Definition's declared
-class is compared with the owned definitions. No manager/active-skill instance
-or payload is read. All84 old functions and their guards remain AST-identical.
+Two identical15-row calls captured all four class roots and seven selected
+fields. GetSkillManager on WillowPlayerController has a typed return descriptor
+declaring SkillEffectManager; ActiveSkills' object-array inner declares Skill.
+ActivateSkill and DeactivateSkill were unavailable on the controller. The
+current implementation queries all three selected names on that controller;
+the manager's activation/deactivation descriptors have not been inspected.
+This is a lookup-scope limitation, not proof of absent methods or hook ownership.
 
-Hard bounds: four target class roots, seven allowlisted fields, three selected
-functions, 16 property descriptors plus one cap read per function and eight
-ancestry nodes per target; zero global function enumeration. Capture/recheck
-real SDK types, owner/class/parent/property links, lookup identity, bounded
-numeric metadata, canonical names/paths and unchanged current state before END.
-COMPLETE means selected metadata coverage only. CAPPED/UNAVAILABLE remain
-partial; REFUSED reports invalid or drifting state/schema. No callable
-signature, parameter semantics, natural lifecycle timing or effect is proven.
+Design task26f23ca8 should inspect actual SDK source/documentation and the runtime
+typed metadata helpers. Decide whether it can specify a bounded synchronous
+lookup of those two candidate names on the already-observed manager class,
+without obtaining a manager instance, global function discovery, guessed native
+paths, native invocation, payload reads, hooks, timers or writes. Require actual
+UClass/UFunction owner/path/lookup/property identity and bounded flags/offsets/
+schema/link rechecks. Missing/refused/capped data stays explicit; no fallback
+to controller behaviors or same-name functions on unrelated objects.
 
-Review task659a5e78 using actual code and checks after submission. Any authorized
-participant may review, including a separately labeled self-review. Every
-completion needs a current version and review note; dependencies and scope
-reservations remain intact. Review is separate from writing/testing the patch.
+Keep the owned solo Gaige/tree/session/points/ranks/inert-gradezero guard,
+manual prototype, insertion/rollback/cleanup and all original evidence intact.
+At most four roots, three selected function lookups, seven fields,16 properties
+plus one cap read per function and eight ancestry nodes per root; final state
+comparison and overlap refusal remain required. Complete metadata supplies no
+callable signature or permission to install lifecycle observers.
 
-Only after review and separate manual-test authorization should a new bounded
-test/capture task be claimed. Prepare an exact build/title/protocol and preserve
-the actual complete log and installed snapshot under new exclusive paths.
-Do not install or launch the game in this implementation task. Unknown engine
-metadata should guide the next bounded investigation; do not guess classes or
-loosen guards to make the diagnostic complete. Lifecycle observation/effects
-still require their own evidence and design.
+Before coding: reviewed design must state exact new version, runtime/test/parser/
+documentation/defaultZIP and exclusively created versionedZIP scopes. Refine
+the ready implementation task accordingly; preserve dependencies and claim a
+separate branch. A NOT_READY design is valid and leaves coding unclaimed until
+named prerequisites exist. No future owner test starts solely from queued status.
 
-The [v0.2.11 result](../evidence/v031_live_attribute_class_result.md),
-[log](../evidence/v031_user_test.log) and
-[manifest](../evidence/v031_capture_manifest.json) remain immutable. Two calls,
-second ARM refusal and repeated CANCEL are documented honestly. SDK identity
-comes from runtime class/link checks; parser success supplies text consistency.
-Machine installation/exit observations are separate. No repeat is needed.
+The completed owner run had two inspections instead of requestedone, a refused
+secondARM and repeatedCANCEL. FINAL1/0 and0/0/0 unchanged assertion, native
+RESTORE123/124 and all four zero-observer families passed. Independent process
+queries0 and installed/originalZIP/source equality are separate capture checks.
+Internal start baseline/native SDK checks are not reconstructed by the parser.
 
-The accepted [readiness research](../evidence/overclock_effect_readiness_research.md)
-and its checks remain unchanged. Manual duration helpers remain independent;
-cancel/disable does not call manual restore. Earlier reported purchase1/1 is
-separate UI evidence, not a transaction/save/effect audit. Preserve44 prior
-protected files, original v0.2.11 ZIP, capture5files and research2files. No
-private-backup operations, purchases, points/grades/saves, automatic effects,
-co-op, release or upstream merge.
+Preserve all twelve versioned ZIPs, six tested snapshots, logs/manifest/PNG and
+accepted research/model/reviewer artifacts. Current docs/default ZIP README may
+change only after exact testedREADME preservation. The accepted static inventory
+pins prepared-e32 current bytes; immutable checks pass and explicit current check
+flags intentional README/defaultZIP drift. Verify current package/source/CRC/
+syntax/inert import separately rather than replacing old hashes to force pass.
+
+Any participant may deliberately review submitted actual work, including labeled
+self-review; every completion requires findings and resolved shared defects.
+Native lifecycle/lifetime/clock/write timing and a rankone effect gate remain
+NOT_READY. No game launch/install/nativeSDK import, private-backup/save access,
+purchase/respec/travel/summon/manualboost/othertrace, effect, co-op, merge or release.

@@ -1,24 +1,36 @@
 # Codex instructions for the Ultimate Vault Hunter Collection
 
-## Current prepared v0.2.12 - DEATHTRAP METADATA
+## Reviewed v0.2.12 - DEATHTRAP METADATA: partial live result
 
-Task659a5e78 prepares button4 as one synchronous typed loaded-metadata
-collection. Read evidence/deathtrap_metadata_diagnostic_plan.md and its checks
-JSON. Last game-tested remains v0.2.11; no v0.2.12 installation/game/native SDK
-run has occurred. Historical frozen versions below remain preserved originals.
-All84 prior functions/labels, _upgrade_state, exact Attribute guard and manual/
-insertion/rollback/cleanup are AST-identical. Only new metadata helpers/constants
-and factory version/route change;19 options remain. Four roots, seven fields,
-three functions,16 properties+one cap read per function, eight ancestry nodes
-per root; zero global enumeration. Recheck typed references/links/schema and
-current state before END. COMPLETE means metadata coverage, never a callable
-signature or effect; CAPPED/UNAVAILABLE/REFUSED remain explicit. Review the
-submitted exact code in a separate verification step; any participant may
-review, including a labeled self-review. Resolve findings before completion.
-Review precedes any separately authorized bounded manual test. Preserve every
-original package/capture/snapshot/log/PNG and accepted research byte. No game/
-SDK/save/private-backup operations, purchases/effects, co-op/release/merge.
+Last game-tested runtime is v0.2.12. Read
+evidence/v032_live_deathtrap_metadata_result.md, v032_user_test.log and
+v032_capture_manifest.json. The owner confirmed the full protocol, CANCEL3
+and full exit. Two calls65-82/83-100 captured identical15 rows: four class roots
+and seven fields COMPLETE; controller ActivateSkill/DeactivateSkill UNAVAILABLE.
+FINAL points=(1,0)/ranks=(0,0,0) unchanged is a runtime assertion; the internal
+start baseline is not logged. END is UNAVAILABLE, not full coverage or effect
+readiness. No manager instance, active-skill payload or native invocation in item4.
+Runtime restore123/124 and all four observer families0 after the last call;
+independent process queries0 before/after capture and installed/source/original
+ZIP equality. Two inspections vs requestedone, refused secondARM and repeated
+CANCEL are documented. No repeat to force COMPLETE.
 
+Next: design a bounded metadata-owner correction using the actual typed return
+class WillowGame.SkillEffectManager. v12 only queried activation/deactivation
+names on the controller. A missing lookup does not prove absence elsewhere;
+no guessed function/hook path or callable signature. Native lifecycle, lifetime,
+timing and effect remain NOT_READY. Keep _upgrade_state at gradezero and preserve
+all historical/manual functions. Manual restore remains separate from CANCEL.
+
+Freeze runtime41fd2dd9, pyprojectfa8acf73, originalv12ZIP4f49bad1, immutable
+capture/snapshot/testedREADME and all earlier evidence/research. Only current
+documentation/default ZIP README may differ. Static artifact inventory records
+prepared-e32 current hashes: immutable check must pass; explicit --check-current
+reports intentional README/defaultZIP drift, checked separately by package
+source/CRC/layout/syntax/inert-import verification. Do not rewrite old hashes.
+Recorded review is required after submission, including labeled self-review;
+resolve shared findings before completion. No new game/nativeSDK/install/save/
+private-backup/purchase/summon/boost/co-op/merge/release action in this review.
 
 ## Goals and priorities
 
@@ -351,7 +363,7 @@ grade/save writes; later controlled tests still need explicit scope/recovery.
 
 ## v0.2.11 tested baseline (combined class metadata and restoration passed)
 
-Last game-tested runtime is v0.2.11 - OVERCLOCK ATTRIBUTE CLASS.
+Previous game-tested runtime was v0.2.11 - OVERCLOCK ATTRIBUTE CLASS.
 Read evidence/v031_live_attribute_class_result.md, v031_user_test.log and
 v031_capture_manifest.json. Two complete calls 65-212/214-361 captured Myelin
 index 1 SDK_UOBJECT/SDK_UCLASS and actual WillowGame.ResourcePoolAttributeDefinition.
@@ -401,13 +413,12 @@ See docs/NEXT_CODEX_TASK.md for the concrete proposed scope and review gate.
 
 ## First action
 
-Read docs/NEXT_CODEX_TASK.md and evidence/v031_live_attribute_class_result.md.
-The prepared v0.2.11 test and capture/reviewer peer reviews are complete; no
-repeat game run is pending. Read shared updates and actual commits before
-claiming new work. Research PR#4 is independently accepted; read its actual
-findings before separately scoping the proposed diagnostic.
-No lifecycle function signature/timing is established by old field inventories.
-Preserve tested runtime, all originals and immutable capture. Keep the prior
-user-reported purchase separate from transaction/save/effect proof. No purchases,
-automatic effects, point/grade/save edits, co-op or release without separate scope.
-Native-array rollback cannot refund points, undo saves or clear player/UI caches.
+Read docs/NEXT_CODEX_TASK.md and evidence/v032_live_deathtrap_metadata_result.md,
+then the actual capture/manifest/snapshot and shared results. Reproduce the
+read-only parser; PARTIAL/exit1 is the expected v12 result. Claim separate
+bounded scopes before changing code. Next design concerns loaded function
+owner metadata, not passive lifecycle hooks or an effect. Inspect actual SDK
+documentation/source as text only; never execute/import/package SDK stubs.
+No repeat game test is pending. Unknown metadata cannot justify guard relaxation,
+purchase, native calls, save repair or effect authorization. Native-array
+rollback cannot refund points, undo saves or clear player/UI caches.
