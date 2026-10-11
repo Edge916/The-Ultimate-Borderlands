@@ -1,47 +1,55 @@
-Ultimate Vault Hunters v0.2.13 - DEATHTRAP MANAGER METADATA.
+Ultimate Vault Hunters v0.2.14 - DEATHTRAP PARAMETER CLASSES.
 
-PREPARED BUILD: OFFLINE VALIDATION ONLY; NO v0.2.13 GAME RESULT YET.
-Item4 keeps GetSkillManager descriptor lookup on the current controller,
-then queries ActivateSkill/DeactivateSkill on its verified typed return
-manager class. Names are search candidates, not known functions/hook paths.
-No fallback to controller behaviors or global/native discovery is allowed.
-Missing descriptors remain UNAVAILABLE and may be a valid test result.
+PREPARED BUILD: OFFLINE VALIDATION ONLY; NO v0.2.14 GAME RESULT YET.
+Item 4 adds actual declared UClass paths and coverage for supported object
+properties of the three selected function descriptors. Supported nonobject
+properties say NOT_APPLICABLE. Initial class-header getter unavailability
+remains UNAVAILABLE; invalid metadata or changing snapshots aborts.
+No argument class is guessed. Boolean masks and delegate signatures are not
+read. GetSkillManager is selected on the verified controller; activation and
+deactivation candidates are queried only on its actual typed return class.
 
-One explicit synchronous collection under the unchanged owned solo Gaige/
-inert-grade0/session guard. No native GetSkillManager/ActivateSkill/
-DeactivateSkill call, manager/summon payload read, new hook, timer or write.
-Four roots, seven fields, three distinct function targets,16 properties
-plus one cap lookahead per function and eight ancestry nodes per root.
-Revalidation repeats bounded getter calls; no hard SDK deadline is promised.
-Typed owner/link/lookup/schema/current state rechecked around reads/output.
-FINAL unchanged is a runtime assertion against an internal unlogged baseline.
-COMPLETE means descriptor coverage; CAPPED is partial; UNAVAILABLE is unknown;
-REFUSED means invalid/drifting input. None establishes a callable signature,
-lifecycle/clock/native lifetime, rank-one gate or node duration effect.
+One synchronous collection under the unchanged owned solo Gaige/tree/session/
+points/ranks/inert-grade-zero guard. Four roots, three function targets, seven
+fields, sixteen properties plus one cap lookahead per function, eight ancestry
+nodes per root and at most 142 captured checks. Revalidation repeats getters;
+finite bounds do not guarantee SDK getter latency. Class paths are descriptor
+metadata, not native lifetime, instance ownership or a callable signature.
+FINAL unchanged compares to an internal unlogged baseline. No new observer,
+timer, manager instance, summon payload, native invocation or gameplay write.
 
 HISTORICAL GAME RESULT:
-v0.2.12 was PARTIAL: two calls captured four roots/seven fields, while the
-two candidate names were unavailable on the controller. Arrays restored,
-all observer families0 and independent process queries0; installed files
-matched originalZIP/source. Requestedone call but two occurred, secondARM
-refused and CANCEL repeated. Frozen v12capture/snapshot/ZIP stay unchanged.
-The offline reviewer preserves the v12 contract and separately checks v13
-manager ownership/row order. Parser text checks do not establish SDK identity,
-origin, installation, exit, actual return behavior or gameplay readiness.
+v0.2.13 captured two identical complete fifteen-row descriptor collections,
+including manager-owned ActivateSkill/DeactivateSkill; it omitted parameter
+class paths. CANCEL restored native arrays, all four observer families were
+zero, independent process queries were zero, and installed files matched the
+original ZIP/source. Two inspections versus requested one, a refused second
+ARM and repeated CANCEL are recorded. v0.2.12 remains PARTIAL. Both frozen
+logs/manifests/snapshots and all thirteen original versioned ZIPs are unchanged.
+The separate strict v12/v13/v14 reviewer checks text consistency; it does not
+prove SDK identity, log origin, installation, exit, signature or effect readiness.
 
-PACKAGE / NEXT:
-Exactly one project folder with __init__.py, pyproject.toml and README.txt.
-19 options remain and import starts no experiment. Original versionedZIPs
-remain immutable; v13ZIP is a new exclusively created prepared artifact.
-After review, a separately approved owner protocol may use ARM1 at main
-menu, item4 once in map, CANCEL3 and full exit on backed-up solo Offline Gaige.
-Do not install/run this build solely because the task queue exists.
+PACKAGE / PROPOSED LATER OWNER TEST:
+One folder contains exactly __init__.py, pyproject.toml and README.txt. Nineteen
+options remain; import starts no experiment. v14's versioned ZIP is exclusively
+created. After implementation review and explicit approval of the exact build,
+the later owner protocol is:
+1. Start a fresh BL2 process and stay at the main menu.
+2. At the main menu, set Offline and select the already backed-up Gaige.
+3. In MODS, verify UVH v0.2.14 - DEATHTRAP PARAMETER CLASSES.
+4. While still at the main menu, select ARM (item 1) once.
+5. Select Continue and wait until Gaige is fully loaded into the map.
+6. In the map, open this mod's options and inspect item 4 once.
+7. Still in the map, select CANCEL / RESTORE (item 3).
+8. Fully exit BL2 to the desktop; report completion before any relaunch.
+These steps are a proposal, not a request to install or run this build now.
+UNAVAILABLE/REFUSED/CAPPED is valid evidence; do not repeat to force COMPLETE.
 
-RECOVERY:
-Item3 restores matching native arrays/removes owned observers. It cannot
+RECOVERY / LIMITS:
+Item 3 restores matching native arrays and removes owned observers. It cannot
 refund points, undo saves or clear player/UI caches. Manual duration restore
-is a separate option; node cancel/disable does not invoke it. Fully restart
-after an armed experiment before normal play. Do not buy/respec/travel/
-summon/boost/start other traces to force metadata. Prior purchase1/1 report
-is separate from transaction/save/persistence/effect proof. No save/private-
-backup operations, automatic effect, co-op, merge or release in this build.
+is separate; node cancel/disable does not invoke it. Fully restart after an
+armed experiment before normal play. No purchase, respec, travel, summon,
+manual boost or other trace belongs in the proposed metadata test. Native
+lifecycle/lifetime/clock/rank-one gating and automatic duration effect remain
+NOT_READY. No save/private-backup operation, co-op, merge or release here.

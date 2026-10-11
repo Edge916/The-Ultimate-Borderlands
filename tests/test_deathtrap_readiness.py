@@ -63,6 +63,22 @@ class ZArrayProperty(ZProperty):
     pass
 
 
+class ZBoolProperty(ZProperty):
+    pass
+
+
+class ZIntProperty(ZProperty):
+    pass
+
+
+class ZDelegateProperty(ZProperty):
+    pass
+
+
+class ZClassProperty(ZObjectProperty):
+    pass
+
+
 class UFunction(UField):
     def __init__(self, owner, label, props=(), ret=None):
         super().__init__(label, 'Function', Outer=owner, FunctionFlags=1024,
@@ -402,7 +418,7 @@ class DeathtrapReadinessTests(unittest.TestCase):
         metadata = config['tool']['sdkmod']
         self.assertEqual(metadata['name'], self.h.mod_options['name'])
         self.assertEqual(metadata['version'], self.h.mod_options['version'])
-        self.assertEqual(metadata['name'], 'UVH v0.2.13 - DEATHTRAP MANAGER METADATA')
+        self.assertEqual(metadata['name'], 'UVH v0.2.14 - DEATHTRAP PARAMETER CLASSES')
 
     def metadata_rows(self):
         import json
@@ -483,3 +499,169 @@ class DeathtrapReadinessTests(unittest.TestCase):
     def test_unknown_manager_candidate_is_refused_without_unknown_conversion(self):
         self.manager.functions['ActivateSkill'] = Poison()
         self.refused()
+
+    def parameter_fixture(self):
+        self.argument_target = UClass('AdditionalTarget')
+        activation = self.manager.functions['ActivateSkill']
+        activation.props = [
+            ZObjectProperty('SkillInstigator', activation, PropertyFlags=128, PropertyClass=self.controller, Offset_Internal=0, ElementSize=8),
+            ZObjectProperty('Definition', activation, PropertyFlags=128, PropertyClass=self.definition, Offset_Internal=8, ElementSize=8),
+            ZObjectProperty('AdditionalSkillTarget', activation, PropertyFlags=144, PropertyClass=self.argument_target, Offset_Internal=16, ElementSize=8),
+            ZIntProperty('SkillGrade', activation, PropertyFlags=144, Offset_Internal=24),
+            ZDelegateProperty('StateChangeDelegate', activation, PropertyFlags=4194448, Offset_Internal=28, ElementSize=12),
+            ZBoolProperty('ReturnValue', activation, PropertyFlags=0x480, Offset_Internal=40),
+        ]
+        activation.ret = activation.props[-1]
+        activation.NumParams, activation.ParamsSize, activation.ReturnValueOffset = 6, 44, 40
+        activation.link()
+        deactivation = self.manager.functions['DeactivateSkill']
+        deactivation.props = [
+            ZObjectProperty('SkillInstigator', deactivation, PropertyFlags=128, PropertyClass=self.controller, Offset_Internal=0, ElementSize=8),
+            ZObjectProperty('Definition', deactivation, PropertyFlags=128, PropertyClass=self.definition, Offset_Internal=8, ElementSize=8),
+            ZBoolProperty('bIgnoreSkillInstigator', deactivation, PropertyFlags=144, Offset_Internal=16),
+        ]
+        deactivation.NumParams, deactivation.ParamsSize = 3, 20
+        deactivation.link()
+        return activation, deactivation
+
+    def test_parameter_class_paths_cover_primary_and_both_actual_candidates(self):
+        self.parameter_fixture()
+        self.assertTrue(self.run_diagnostic())
+        rows = [row for row in self.metadata_rows() if row['kind'] == 'FUNCTION']
+        self.assertEqual([r['parameter_classes_coverage'] for r in rows], ['COMPLETE'] * 3)
+        paths = [[p['declared_class'] for p in r['properties'] if p['declared_class_coverage'] == 'COMPLETE'] for r in rows]
+        self.assertEqual(paths, [['Test.SkillManager'], ['Test.WillowPlayerController', 'Test.SkillDefinition', 'Test.AdditionalTarget'], ['Test.WillowPlayerController', 'Test.SkillDefinition']])
+        self.assertTrue(all(r['signature'] == 'NOT_ESTABLISHED' for r in rows))
+
+    def test_parameter_boolean_delegate_scalar_fields_are_not_traversed(self):
+        activation, deactivation = self.parameter_fixture()
+        activation.props[4].Signature = Poison()
+        activation.props[5].FieldMask = Poison()
+        deactivation.props[-1].FieldMask = Poison()
+        self.assertTrue(self.run_diagnostic())
+        for row in self.metadata_rows():
+            if row.get('name') in ('ActivateSkill', 'DeactivateSkill'):
+                for prop in row['properties']:
+                    if prop['type'] in ('ZIntProperty', 'ZBoolProperty', 'ZDelegateProperty'):
+                        self.assertEqual((prop['declared_class'], prop['declared_class_coverage']), ('NOT_APPLICABLE', 'NOT_APPLICABLE'))
+
+    def test_parameter_supported_object_subclass_uses_propertyclass_not_metaclass(self):
+        activation, _ = self.parameter_fixture()
+        prop = activation.props[2]
+        prop.__class__ = ZClassProperty
+        prop.MetaClass = Poison()
+        self.assertTrue(self.run_diagnostic())
+        value = next(row for row in self.metadata_rows() if row.get('name') == 'ActivateSkill')['properties'][2]
+        self.assertEqual(value['type'], 'ZClassProperty')
+        self.assertEqual(value['declared_class'], 'Test.AdditionalTarget')
+
+    def test_parameter_unsupported_object_and_nonobject_tags_refuse(self):
+        for base in (ZObjectProperty, ZProperty):
+            with self.subTest(base=base.__name__):
+                self.setUp()
+                activation, _ = self.parameter_fixture()
+                prop = activation.props[2] if base is ZObjectProperty else activation.props[3]
+                prop.__class__ = type('UnlistedProperty', (base,), {})
+                self.refused()
+
+    def test_parameter_initial_class_getter_unavailable_is_explicit_partial(self):
+        self.parameter_fixture()
+        def unavailable(): raise RuntimeError('synthetic unavailable header')
+        self.argument_target._path_name = unavailable
+        self.assertFalse(self.run_diagnostic())
+        row = next(row for row in self.metadata_rows() if row.get('name') == 'ActivateSkill')
+        self.assertEqual(row['coverage'], 'COMPLETE')
+        self.assertEqual(row['parameter_classes_coverage'], 'UNAVAILABLE')
+        self.assertEqual(row['properties'][2]['declared_class'], 'UNAVAILABLE')
+        self.assertTrue(self.has('END coverage=UNAVAILABLE'))
+
+    def test_parameter_unavailable_header_becoming_available_aborts(self):
+        self.parameter_fixture()
+        calls = []
+        def intermittent():
+            calls.append(1)
+            if len(calls) == 1: raise RuntimeError('synthetic first unavailable')
+            return 'Test.AdditionalTarget'
+        self.argument_target._path_name = intermittent
+        self.refused()
+        self.assertEqual(self.metadata_rows(), [])
+        self.assertGreaterEqual(len(calls), 2)
+
+    def test_parameter_invalid_class_metadata_refuses(self):
+        for change in ('name', 'path', 'parent', 'size'):
+            with self.subTest(change=change):
+                self.setUp(); self.parameter_fixture()
+                if change == 'name':
+                    self.argument_target.Name = Poison()
+                    self.argument_target._path_name = lambda: 'Test.AdditionalTarget'
+                elif change == 'path': self.argument_target._path_name = lambda: 'Not canonical'
+                elif change == 'parent': self.argument_target.SuperField = Poison()
+                else: self.argument_target.PropertySize = True
+                self.refused()
+
+    def test_parameter_class_schema_drift_after_capture_aborts_before_output(self):
+        self.parameter_fixture()
+        calls = []
+        def drift():
+            calls.append(1)
+            if len(calls) == 2: self.argument_target.PropertySize += 1
+        self.argument_target.on_path = drift
+        self.refused()
+        self.assertEqual(self.metadata_rows(), [])
+
+    def test_parameter_same_name_declared_class_replacement_aborts(self):
+        activation, _ = self.parameter_fixture()
+        def drift(name):
+            if name == 'DeactivateSkill': activation.props[2].PropertyClass = UClass('AdditionalTarget')
+        self.manager.on_lookup = drift
+        self.refused()
+        self.assertEqual(self.metadata_rows(), [])
+
+    def test_parameter_class_change_during_emission_prevents_final_success(self):
+        self.parameter_fixture()
+        original = self.h.scope['log']
+        def emit(line):
+            original(line)
+            if ' METADATA ' in line: self.argument_target.PropertySize += 1
+        self.h.scope['log'] = emit
+        self.refused()
+        self.assertTrue(self.metadata_rows())
+        self.assertFalse(self.has(' FINAL '))
+
+    def test_parameter_capped_enumeration_precedes_unavailable_class(self):
+        activation, _ = self.parameter_fixture()
+        for i in range(11):
+            activation.props.append(ZFloatProperty('Local' + str(i), activation, PropertyFlags=0, Offset_Internal=44 + 4*i))
+        activation.link()
+        def unavailable(): raise RuntimeError('synthetic unavailable header')
+        self.argument_target._path_name = unavailable
+        self.assertFalse(self.run_diagnostic())
+        row = next(row for row in self.metadata_rows() if row.get('name') == 'ActivateSkill')
+        self.assertEqual(len(row['properties']), 16)
+        self.assertEqual((row['coverage'], row['parameter_classes_coverage']), ('CAPPED', 'CAPPED'))
+        self.assertEqual(row['properties'][2]['declared_class_coverage'], 'UNAVAILABLE')
+        self.assertTrue(self.has('END coverage=CAPPED'))
+
+    def test_parameter_repeated_collections_do_not_retain_class_headers(self):
+        self.parameter_fixture()
+        self.assertTrue(self.run_diagnostic())
+        self.argument_target.Name = 'UpdatedTarget'
+        self.h.logs.clear()
+        self.assertTrue(self.run_diagnostic())
+        row = next(row for row in self.metadata_rows() if row.get('name') == 'ActivateSkill')
+        self.assertEqual(row['properties'][2]['declared_class'], 'Test.UpdatedTarget')
+        self.assertEqual(self.h.hooks, {})
+
+    def test_parameter_rank_one_refuses_before_new_class_reads(self):
+        self.parameter_fixture()
+        calls = []
+        self.argument_target.on_path = lambda: calls.append(1)
+        next(entry for entry in self.tree.Skills if entry.Definition == self.node).Grade = 1
+        self.refused()
+        self.assertEqual(calls, [])
+
+    def test_parameter_state_change_during_class_header_read_aborts(self):
+        self.parameter_fixture()
+        self.argument_target.on_path = lambda: setattr(self.h.pc.PlayerReplicationInfo, 'GeneralSkillPoints', 2)
+        self.refused()
+        self.assertEqual(self.metadata_rows(), [])

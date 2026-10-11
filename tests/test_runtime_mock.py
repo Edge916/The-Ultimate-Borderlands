@@ -143,7 +143,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(self.h.constructed, [])
         self.assertEqual(self.h.hooks, {})
         self.assertEqual(self.h.names(), ['MorePep', 'Myelin'])
-        self.assertEqual(self.h.mod_options['version'], '0.2.13')
+        self.assertEqual(self.h.mod_options['version'], '0.2.14')
 
     def init_fixture(self):
         self.h.branch.Tiers.extend(types.SimpleNamespace(Skills=[]) for _ in range(5))

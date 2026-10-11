@@ -403,3 +403,139 @@ class ManagerMetadataLogReviewTests(unittest.TestCase):
         self.assertEqual(tool.review_bytes(raw(lines))['status'],'REFUSED')
         lines=manager_call();lines.insert(-1,'[UVH-DEATHTRAP] BASELINE points=(1, 0) ranks=(0, 0, 0)')
         self.assertEqual(tool.review_bytes(raw(lines+cleanup()))['status'],'REFUSED')
+
+
+def parameter_rows():
+    rows = manager_rows()
+    for row in rows:
+        if row['kind'] == 'FUNCTION':
+            for p in row['properties']:
+                p.update(declared_class='Test.Manager', declared_class_coverage='COMPLETE')
+            row['parameter_classes_coverage'] = 'COMPLETE' if row['properties'] else 'NOT_APPLICABLE'
+    def object_prop(name, path, offset):
+        return dict(prop(name,128,offset), declared_class=path, declared_class_coverage='COMPLETE')
+    def nonobject_prop(name, kind, offset, flags=144, size=4):
+        return dict(prop(name,flags,offset), type=kind, element_size=size,
+                    declared_class='NOT_APPLICABLE', declared_class_coverage='NOT_APPLICABLE')
+    rows[4].update(num_params=6, params_size=44, return_offset=40, parameter_classes_coverage='COMPLETE', properties=[
+        object_prop('SkillInstigator','Test.Controller',0), object_prop('Definition','Test.Definition',8),
+        object_prop('AdditionalSkillTarget','Test.Actor',16), nonobject_prop('SkillGrade','ZIntProperty',24),
+        nonobject_prop('StateChangeDelegate','ZDelegateProperty',28,4194448,12),
+        nonobject_prop('ReturnValue','ZBoolProperty',40,0x480)])
+    rows[5].update(num_params=3, params_size=20, parameter_classes_coverage='COMPLETE', properties=[
+        object_prop('SkillInstigator','Test.Controller',0), object_prop('Definition','Test.Definition',8),
+        nonobject_prop('bIgnoreSkillInstigator','ZBoolProperty',16)])
+    return rows
+
+
+def parameter_call(rows=None, coverage='COMPLETE'):
+    lines = call(parameter_rows() if rows is None else rows, coverage)
+    lines[0] = '[UVH-DEATHTRAP] BEGIN v0.2.14 metadata_only=True'
+    return lines
+
+
+class ParameterMetadataLogReviewTests(unittest.TestCase):
+    def review(self, rows=None, coverage='COMPLETE'):
+        return tool.review_bytes(raw(parameter_call(rows, coverage) + cleanup()))
+
+    def test_parameter_version_hash_and_native_unknowns_remain_explicit(self):
+        result = self.review()
+        self.assertEqual(result['status'], 'COMPLETE_LOG_TEXT')
+        self.assertEqual(result['grammar'], {'version':'0.2.14','runtime_sha256':tool.RUNTIME_HASHES['0.2.14']})
+        self.assertTrue(all(v == 'NOT_CHECKED' for v in result['separate_checks'].values()))
+        self.assertEqual(result['game_behavior'], 'NOT_ESTABLISHED_BY_TOOL')
+
+    def test_parameter_old_versions_reject_new_keys_and_new_version_requires_them(self):
+        for version in ('0.2.12', '0.2.13'):
+            lines = parameter_call(); lines[0] = lines[0].replace('0.2.14', version)
+            self.assertEqual(tool.review_bytes(raw(lines + cleanup()))['status'], 'REFUSED')
+        self.assertEqual(self.review(manager_rows())['status'], 'REFUSED')
+
+    def test_parameter_mixed_versions_refuse(self):
+        result = tool.review_bytes(raw(manager_call() + parameter_call() + cleanup()))
+        self.assertEqual(result['status'], 'REFUSED')
+        self.assertIn('mixed/unsupported versions', result['issues'])
+
+    def test_parameter_object_sentinel_path_and_coverage_contradictions_refuse(self):
+        for values in ({'declared_class':'NOT_APPLICABLE'}, {'declared_class':'UNAVAILABLE'},
+                       {'declared_class':'Bad Path'}, {'declared_class_coverage':'NOT_APPLICABLE'},
+                       {'declared_class_coverage':'UNAVAILABLE'}, {'declared_class_coverage':True}):
+            rows = parameter_rows(); rows[4]['properties'][0].update(values)
+            self.assertEqual(self.review(rows)['status'], 'REFUSED')
+
+    def test_parameter_nonobject_types_cannot_claim_object_class(self):
+        for index in (3, 4, 5):
+            rows = parameter_rows()
+            rows[4]['properties'][index].update(declared_class='Test.Actor', declared_class_coverage='COMPLETE')
+            self.assertEqual(self.review(rows)['status'], 'REFUSED')
+
+    def test_parameter_supported_subclasses_and_unsupported_tags(self):
+        for kind in tool.OBJECT_PROPERTY_TYPES:
+            rows = parameter_rows(); rows[4]['properties'][0]['type'] = kind
+            self.assertEqual(self.review(rows)['status'], 'COMPLETE_LOG_TEXT')
+        rows = parameter_rows(); rows[4]['properties'][0]['type'] = 'UnlistedProperty'
+        self.assertEqual(self.review(rows)['status'], 'REFUSED')
+
+    def test_parameter_aggregate_coverage_cannot_hide_partial_class(self):
+        rows = parameter_rows()
+        rows[4]['properties'][2].update(declared_class='UNAVAILABLE', declared_class_coverage='UNAVAILABLE')
+        self.assertEqual(self.review(rows, 'UNAVAILABLE')['status'], 'REFUSED')
+        rows[4]['parameter_classes_coverage'] = 'UNAVAILABLE'
+        self.assertEqual(self.review(rows, 'UNAVAILABLE')['status'], 'PARTIAL')
+        self.assertEqual(self.review(rows, 'COMPLETE')['status'], 'REFUSED')
+
+    def test_parameter_partial_preserves_descriptor_completeness(self):
+        rows = parameter_rows()
+        rows[4]['properties'][2].update(declared_class='UNAVAILABLE', declared_class_coverage='UNAVAILABLE')
+        rows[4]['parameter_classes_coverage'] = 'UNAVAILABLE'
+        result = self.review(rows, 'UNAVAILABLE')
+        self.assertEqual(result['calls'][0]['rows'][4]['coverage'], 'COMPLETE')
+        self.assertEqual(result['calls'][0]['outcome'], 'UNAVAILABLE')
+
+    def test_parameter_capped_enumeration_requires_capped_class_coverage(self):
+        rows = parameter_rows(); f = rows[4]
+        f['coverage'] = 'CAPPED'; f['parameter_classes_coverage'] = 'CAPPED'
+        f['return_offset'] = 65535
+        f['properties'] = [dict(prop('P'+str(i),offset=8*i),declared_class='Test.Actor',declared_class_coverage='COMPLETE') for i in range(16)]
+        self.assertEqual(self.review(rows,'CAPPED')['status'], 'PARTIAL')
+        f['parameter_classes_coverage'] = 'COMPLETE'
+        self.assertEqual(self.review(rows,'CAPPED')['status'], 'REFUSED')
+
+    def test_parameter_primary_return_class_must_match_discovery(self):
+        for path, coverage in (('Test.Foreign','COMPLETE'), ('UNAVAILABLE','UNAVAILABLE')):
+            rows = parameter_rows()
+            rows[1]['properties'][0].update(declared_class=path,declared_class_coverage=coverage)
+            rows[1]['parameter_classes_coverage'] = coverage
+            self.assertEqual(self.review(rows,'UNAVAILABLE' if coverage=='UNAVAILABLE' else 'COMPLETE')['status'], 'REFUSED')
+
+    def test_parameter_cap_precedes_unavailable_sample_without_complete_claim(self):
+        rows = parameter_rows(); f = rows[4]
+        f.update(coverage='CAPPED', parameter_classes_coverage='CAPPED', return_offset=65535,
+                 properties=[dict(prop('P'+str(i),offset=8*i),declared_class='Test.Actor',declared_class_coverage='COMPLETE') for i in range(16)])
+        f['properties'][0].update(declared_class='UNAVAILABLE',declared_class_coverage='UNAVAILABLE')
+        self.assertEqual(self.review(rows,'CAPPED')['calls'][0]['outcome'], 'CAPPED')
+        self.assertEqual(self.review(rows,'UNAVAILABLE')['status'], 'REFUSED')
+
+    def test_parameter_cleanup_failure_history_survives_retry(self):
+        lines = parameter_call() + ['[UVH-INITNODE] Observers remaining=1'] + cleanup()
+        self.assertEqual(tool.review_bytes(raw(lines))['status'], 'REFUSED')
+
+    def test_parameter_runtime_emitted_complete_and_partial_match_parser(self):
+        import test_deathtrap_readiness as fixtures
+        fixture = fixtures.DeathtrapReadinessTests(); fixture.setUp(); fixture.parameter_fixture()
+        self.assertTrue(fixture.run_diagnostic())
+        self.assertEqual(tool.review_bytes(raw(fixture.h.logs + cleanup()))['status'], 'COMPLETE_LOG_TEXT')
+        fixture.setUp(); fixture.parameter_fixture()
+        def unavailable(): raise RuntimeError('synthetic header unavailable')
+        fixture.argument_target._path_name = unavailable
+        self.assertFalse(fixture.run_diagnostic())
+        self.assertEqual(tool.review_bytes(raw(fixture.h.logs + cleanup()))['status'], 'PARTIAL')
+
+    def test_parameter_missing_keys_and_overlong_declared_paths_refuse(self):
+        for change in ('class', 'coverage', 'function', 'length'):
+            rows = parameter_rows()
+            if change == 'class': del rows[4]['properties'][0]['declared_class']
+            elif change == 'coverage': del rows[4]['properties'][0]['declared_class_coverage']
+            elif change == 'function': del rows[4]['parameter_classes_coverage']
+            else: rows[4]['properties'][0]['declared_class'] = 'A'*385
+            self.assertEqual(self.review(rows)['status'], 'REFUSED')

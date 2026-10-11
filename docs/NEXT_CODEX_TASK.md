@@ -1,58 +1,69 @@
-# Review the prepared manager-metadata build before an owner test
+# Review the prepared parameter-class metadata build
 
-Prepared version is **v0.2.13 - DEATHTRAP MANAGER METADATA**. Read the accepted
-[design](../evidence/deathtrap_lifecycle_diagnostic_design.md), its
-[checks](../evidence/deathtrap_lifecycle_design_checks.json) and the
-[implementation checks](../evidence/deathtrap_manager_metadata_implementation_checks.json).
-The design is accepted at fec90301 / PR15. This build is offline-tested only;
-there is no v13 game log or installed-file confirmation yet.
+Prepared version: **v0.2.14 - DEATHTRAP PARAMETER CLASSES**. The accepted
+[design](deathtrap_parameter_metadata_design.md) is commit `1b5efce` /
+[PR #19](https://github.com/Edge916/The-Ultimate-Borderlands/pull/19). Read its
+[checks](../evidence/deathtrap_parameter_metadata_design_checks.json) and the
+[implementation checks](../evidence/deathtrap_parameter_metadata_implementation_checks.json)
+against the actual source and package. V14 has offline checks only; no new
+game log or installed-file confirmation exists. The accepted
+[v13 capture](../evidence/deathtrap_manager_metadata_capture_manifest.json) and
+[readiness review](../evidence/deathtrap_lifecycle_readiness_result.md) remain
+the latest live evidence.
 
-Item4 keeps GetSkillManager's descriptor lookup on the current verified
-controller. Its actual typed return PropertyClass supplies the manager root;
-only then are ActivateSkill/DeactivateSkill queried on that exact class.
-Actual owners must belong to its bounded verified ancestry. No guessed native
-path, controller fallback, global discovery, manager instance, native call,
-payload read, observer/timer or gameplay write is added. Missing manager
-descriptors remain UNAVAILABLE. Complete descriptor coverage does not prove
-callability, lifecycle order, native lifetime or effect readiness.
+Item 4 emits actual declared UClass paths for supported object properties of
+the three already selected descriptors. Each property has `declared_class`
+and `declared_class_coverage`; each available FUNCTION has
+`parameter_classes_coverage`. Supported nonobject types say NOT_APPLICABLE.
+Initial permitted class-header getter failures stay UNAVAILABLE and are
+rechecked; invalid metadata or unavailable-to-available/reference/schema drift
+aborts. CAPPED enumeration takes precedence. Actual GetSkillManager return
+class must agree with manager discovery. There is no guessed argument class,
+Boolean-mask/delegate traversal, manager instance, payload, native call or new
+hook/write. The grade-zero guard and all manual/initialization/cleanup helpers
+are unchanged.
 
-The unchanged owned solo Gaige/tree/session/points/ranks/inert-gradezero gate,
-manual prototype, insertion/rollback and observer cleanup remain intact.
-Four roots, three distinct function targets, seven fields,16+1 properties and
-eight ancestry nodes bound a collection. Metadata getters are revalidated and
-can repeat; finite loops cannot guarantee SDK getter latency. Invalid/foreign/
-drifting data aborts, unavailable/capped branches stay explicit. Unattempted
-manager descendants are never fabricated after unavailable primary discovery.
-FINAL compares with an internal unlogged baseline; the parser reports that
-limit and cannot reexecute SDK identity/link checks.
+Four roots, eight ancestry nodes per root, three functions, seven fields,
+sixteen properties plus one cap lookahead per function, fifteen output rows
+and at most 142 captured checks bound selection. Revalidation repeats getters
+and does not promise a hard SDK deadline. FINAL compares with an internal
+unlogged baseline. Separate strict v12/v13/v14 reviewer contracts preserve
+the complete frozen reports: v12 PARTIAL / exit 1; v13 COMPLETE_LOG_TEXT /
+exit 0. Text consistency is not native identity, callability, capture origin,
+installation, exit or lifetime verification.
 
-The offline reviewer supports separate strict v12/v13 row orders and owner
-relations. Frozen [v12 raw log](../evidence/v032_user_test.log),
-[manifest](../evidence/v032_capture_manifest.json),
-[result](../evidence/v032_live_deathtrap_metadata_result.md) and tested snapshot
-remain unchanged. Its reproduced PARTIAL / exit1 is expected, not a new failure.
-The original v12 runtime/pyproject/versioned ZIP and all prior artifacts stay
-frozen. Static inventory immutable checks pass; its explicit current check
-continues to flag prepared-e32 fingerprint drift. Validate this new current
-package/source/CRC/layout/syntax/inert import separately.
+Verify the full unique offline suite, syntax, limited AST/raw-byte preservation,
+exact three-file ZIP source/CRC/layout and isolated inert nineteen-option import
+before implementation review. All thirteen original versioned ZIPs and frozen
+evidence remain unchanged. The immutable inventory is still historical; its
+explicit current check flags intentional prepared-e32 fingerprint drift.
+Verify the new current package separately rather than rewriting old hashes.
 
-After deliberate implementation review, refine capture task8649d701 to the
-metadata-only v13 protocol and preserve its dependency. Exact new paths are
-`evidence/deathtrap_manager_metadata_user_test.log`,
-`evidence/deathtrap_manager_metadata_capture_manifest.json` and
-`archive/tested_runtime/v0.2.13`. This removes the queued natural-summon
-assumption; no lifecycle observer exists in v13. Obtain explicit owner
-authorization for the reviewed exact build/protocol before claiming a live
-capture or starting installation/testing.
+After deliberate review, refine capture task
+`cc1ccb8a-e594-4294-9fa3-512ad8d139c2`, preserving its implementation dependency.
+Pin the exact reviewed commit, runtime/package hashes and title, then obtain
+explicit owner approval of that build and protocol before claiming capture.
+Capture only the authentic full stable log, manifest and three installed v14
+snapshot files, before any relaunch. The proposed later owner steps are:
 
-The proposed owner sequence is ARM1 at main menu before Continue, item4 once
-in map, CANCEL3 and full exit on backed-up solo Offline Gaige. No purchase,
-respec, travel, summon, manual boost or other trace. Capture authentic full
-stable log and exact installed three-file equality before any relaunch;
-UNAVAILABLE/REFUSED/CAPPED is honest evidence, not permission to expand a test.
-The agent does not install the build, control the game or access saves/backups.
+1. Start a fresh BL2 process and remain at the main menu.
+2. At the main menu, set Offline and select the already backed-up Gaige.
+3. Open MODS and verify **UVH v0.2.14 - DEATHTRAP PARAMETER CLASSES**.
+4. While still at the main menu, select **ARM (item 1)** once.
+5. Select Continue and wait until Gaige is fully loaded into the map.
+6. In the map, open the mod options and select **INSPECT (item 4)** once.
+7. Still in the map, select **CANCEL / RESTORE (item 3)**.
+8. Fully exit BL2 to the desktop and report completion before any relaunch.
 
-Lifecycle/lifetime/clock/write timing/rank-one gating and automatic +15-second
-effect remain NOT_READY. A future effect needs new evidence, separate design
-and explicit feature/test scope. Current owner work ends at a reviewed metadata
-collection/restoration/exit; no co-op, persistence test, merge or release.
+This is a future proposal, **not a request to run a new test now**. No purchase,
+respec, travel, summon, manual boost or other trace. Partial/refused/capped is
+an honest result; no repeat to force COMPLETE. The agent does not install the
+build, control BL2 or access saves/private backups. Native-array rollback cannot
+refund points, undo saves or clear caches; manual duration restore is separate.
+
+After authentic new evidence is preserved and reviewed, task
+`c76fb125-2eb5-4d3a-804d-75b165b0db3c` assesses readiness for a passive observer
+**design**. Native lifecycle/callback semantics/payload ownership/lifetime/
+generation/clock/write interval/rank-one gate/duration cleanup and automatic
++15-second effect remain NOT_READY. No SDK execution/import/package, gameplay
+write, co-op, merge or release is authorized by this implementation.

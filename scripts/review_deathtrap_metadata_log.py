@@ -1,4 +1,4 @@
-"""Read-only v0.2.12/v0.2.13 log text consistency; never SDK identity or game proof."""
+"""Read-only v0.2.12/v0.2.13/v0.2.14 log text consistency; never SDK identity or game proof."""
 import argparse
 import ast
 import hashlib
@@ -8,7 +8,9 @@ import re
 
 VERSION = '0.2.12'
 RUNTIME_SHA256 = '41fd2dd9e22bcfa64fbddfc19b881f6950362656e047b212b00eb86f33a01f73'
-RUNTIME_HASHES = {VERSION: RUNTIME_SHA256, '0.2.13': 'a457bb544814e627a5909bb5bea844a1f6643c64a1b2eef6f2a85ae3c96c4cf8'}
+RUNTIME_HASHES = {VERSION: RUNTIME_SHA256, '0.2.13': 'a457bb544814e627a5909bb5bea844a1f6643c64a1b2eef6f2a85ae3c96c4cf8', '0.2.14': 'e752f31c6ace648c52536bcf3810630368ce26d3cc10379bb292b609b57455ba'}
+OBJECT_PROPERTY_TYPES = frozenset(('ZClassProperty', 'ZComponentProperty', 'ZLazyObjectProperty', 'ZObjectProperty', 'ZSoftClassProperty', 'ZSoftObjectProperty', 'ZWeakObjectProperty'))
+NONOBJECT_PROPERTY_TYPES = frozenset(('ZArrayProperty', 'ZBoolProperty', 'ZByteAttributeProperty', 'ZByteProperty', 'ZDelegateProperty', 'ZDoubleProperty', 'ZEnumProperty', 'ZFloatAttributeProperty', 'ZFloatProperty', 'ZGameDataHandleProperty', 'ZGbxDefPtrProperty', 'ZGbxInlineStructProperty', 'ZInt16Property', 'ZInt64Property', 'ZInt8Property', 'ZIntAttributeProperty', 'ZIntProperty', 'ZInterfaceProperty', 'ZMulticastDelegateProperty', 'ZNameProperty', 'ZProperty', 'ZStrProperty', 'ZStructProperty', 'ZTextProperty', 'ZUInt16Property', 'ZUInt32Property', 'ZUInt64Property'))
 MAX_BYTES = 16 * 1024 * 1024
 MAX_LINE = 16384
 TAG = 'UVH-DEATHTRAP'
@@ -54,7 +56,7 @@ def reject_constant(value):
     raise ValueError('nonfinite JSON scalar: ' + value)
 
 
-def row_schema(row):
+def row_schema(row, version=VERSION):
     require(type(row) is dict, 'metadata row is not an object')
     kind = row.get('kind')
     if kind == 'CLASS':
@@ -75,7 +77,8 @@ def row_schema(row):
         keys(row, 'kind name coverage')
         require(row['name'] in (METHODS if kind == 'FUNCTION' else ('ActiveSkills', *FIELDS)), 'unknown unavailable row')
     elif kind == 'FUNCTION':
-        keys(row, 'kind name path coverage flags num_params params_size return_offset signature properties')
+        keys(row, 'kind name path coverage flags num_params params_size return_offset signature properties'
+             + (' parameter_classes_coverage' if version == '0.2.14' else ''))
         require(row['name'] in METHODS and row['coverage'] in ('COMPLETE','CAPPED'), 'invalid function')
         require(row['signature'] == 'NOT_ESTABLISHED', 'signature cannot be established')
         label(row['path'], True)
@@ -86,12 +89,20 @@ def row_schema(row):
         require(row['coverage'] != 'CAPPED' or len(props) == 16, 'capped function must have sixteen properties')
         names, returns = [], []
         for prop in props:
-            keys(prop, 'name type flags offset dimension element_size')
+            keys(prop, 'name type flags offset dimension element_size'
+                 + (' declared_class declared_class_coverage' if version == '0.2.14' else ''))
             scalar_schema(prop, class_field=False)
+            if version == '0.2.14': parameter_class_schema(prop)
             names.append(prop['name'])
             if prop['flags'] & 0x400:
                 returns.append(prop)
         require(len(set(names)) == len(names) and len(returns) <= 1, 'duplicate property or ambiguous return')
+        if version == '0.2.14':
+            statuses = {prop['declared_class_coverage'] for prop in props}
+            expected = ('CAPPED' if row['coverage'] == 'CAPPED' else
+                        'UNAVAILABLE' if 'UNAVAILABLE' in statuses else
+                        'COMPLETE' if 'COMPLETE' in statuses else 'NOT_APPLICABLE')
+            require(row['parameter_classes_coverage'] == expected, 'parameter class coverage disagreement')
         if returns:
             require(returns[0]['offset'] == row['return_offset'], 'return offset disagreement')
     elif kind == 'FIELD':
@@ -113,6 +124,21 @@ def row_schema(row):
         raise ValueError('unknown metadata kind')
 
 
+def parameter_class_schema(prop):
+    """Strict stated type/class relationship; native isinstance is not reexecuted."""
+    if prop['type'] in OBJECT_PROPERTY_TYPES:
+        require(prop['declared_class_coverage'] in ('COMPLETE', 'UNAVAILABLE'), 'object class coverage')
+        if prop['declared_class_coverage'] == 'COMPLETE':
+            require(prop['declared_class'] not in ('NOT_APPLICABLE', 'UNAVAILABLE'), 'object class sentinel')
+            label(prop['declared_class'], True)
+        else:
+            require(prop['declared_class'] == 'UNAVAILABLE', 'unavailable object class sentinel')
+    else:
+        require(prop['type'] in NONOBJECT_PROPERTY_TYPES, 'unsupported property type tag')
+        require(prop['declared_class_coverage'] == 'NOT_APPLICABLE'
+                and prop['declared_class'] == 'NOT_APPLICABLE', 'nonobject class must be not applicable')
+
+
 def scalar_schema(row, class_field):
     label(row['name']); label(row['type'])
     integer(row['flags'],2**64-1); integer(row['offset'],1048576)
@@ -124,7 +150,7 @@ def scalar_schema(row, class_field):
 def validate_rows(rows, version=VERSION):
     """Exact emitted sequence/observable relations; no native subtype inference."""
     require(len(rows) <= 15, 'metadata row bound')
-    for row in rows: row_schema(row)
+    for row in rows: row_schema(row, version)
     index = 0
     def take(kind, name=None):
         nonlocal index
@@ -153,7 +179,10 @@ def validate_rows(rows, version=VERSION):
         require(discovery.get('return_class') == manager['path'] and len(marked) == 1
                 and discovery.get('return_property') == marked[0]['name'], 'return/manager discovery mismatch')
         manager_owners = {n['path'] for n in manager['ancestry']}
-        if version == '0.2.13':
+        if version == '0.2.14':
+            require(marked[0]['declared_class_coverage'] == 'COMPLETE'
+                    and marked[0]['declared_class'] == manager['path'], 'primary declared class/discovery mismatch')
+        if version in ('0.2.13', '0.2.14'):
             for name in METHODS[1:]: function_owner(take('FUNCTION',name), manager_owners)
         if index < len(rows) and rows[index]['kind'] == 'FIELD':
             array = take('FIELD','ActiveSkills')
@@ -187,6 +216,8 @@ def validate_rows(rows, version=VERSION):
     roots = [r['path'] for r in rows if r['kind'] == 'CLASS']
     require(len(roots) <= 4 and len(set(roots)) == len(roots), 'duplicate/excessive roots')
     statuses = {r.get('coverage') for r in rows}
+    if version == '0.2.14':
+        statuses.update(r.get('parameter_classes_coverage') for r in rows if r['kind'] == 'FUNCTION')
     return 'CAPPED' if 'CAPPED' in statuses else 'UNAVAILABLE' if 'UNAVAILABLE' in statuses else 'COMPLETE'
 
 
@@ -254,7 +285,7 @@ def review_bytes(raw):
             current = {'begin_line':number,'last_line':number,'rows':[],'final':None,'coverage':None,
                        'terminal':None,'issues':[]}
             report['calls'].append(current)
-            begin = re.fullmatch(r'BEGIN v(0\.2\.12|0\.2\.13) metadata_only=True',payload)
+            begin = re.fullmatch(r'BEGIN v(0\.2\.12|0\.2\.13|0\.2\.14) metadata_only=True',payload)
             call_version = begin[1] if begin else VERSION
             if begin is None: current['issues'].append('unsupported/malformed BEGIN')
             continue
@@ -265,7 +296,7 @@ def review_bytes(raw):
             if payload.startswith('METADATA '):
                 require(current['final'] is None and len(current['rows']) < 15,'metadata after FINAL or row bound')
                 row = json.loads(payload[9:],object_pairs_hook=strict_object,parse_constant=reject_constant)
-                row_schema(row);current['rows'].append(row)
+                row_schema(row, call_version);current['rows'].append(row)
             elif payload.startswith('FINAL '):
                 match = FINAL.fullmatch(payload); require(match is not None and current['final'] is None,'malformed/duplicate FINAL')
                 points,ranks = state_tuple(match[1],2),state_tuple(match[2],3)
