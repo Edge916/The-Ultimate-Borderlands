@@ -100,6 +100,22 @@ class ReaderLogTests(unittest.TestCase):
         self.assert_status([start(), 'LIMIT reason=TIME', stop(limit='TIME'), outcome()])
         self.assert_status(transcript() + ['LIMIT reason=TIME', stop(limit='TIME'), outcome()])
 
+    def test_trailing_control_activity_needs_its_own_stop_and_outcome(self):
+        for tail in ('LIMIT reason=TIME', 'ERROR reason=CLOCK', 'REMOVAL_ERROR remaining=1'):
+            with self.subTest(tail=tail):
+                records = transcript() + [tail]
+                report = self.assert_status(records, 'PARTIAL_LOG_TEXT')
+                self.assertFalse(report['reader_sections_complete'])
+                self.assertTrue(report['sessions'][0]['awaiting_stop'])
+                self.assert_status(records + [start(2), stop(2), outcome(2)], 'INVALID_LOG_TEXT')
+        self.assert_status(transcript() + ['ERROR reason=CLOCK', stop(errors=1), outcome(value='REFUSED')],
+                           'REFUSED_LOG_TEXT')
+        records = [start(), 'REMOVAL_ERROR remaining=1', stop(remaining=1, cleanup_failures=1),
+                   outcome(value='REFUSED'), 'REMOVAL_ERROR remaining=1']
+        self.assert_status(records, 'PARTIAL_LOG_TEXT')
+        self.assert_status(records + [stop(remaining=1, cleanup_failures=2), outcome(value='REFUSED')],
+                           'REFUSED_LOG_TEXT')
+
     def test_all_refusal_reasons_preserved(self):
         for reason in ('SCHEMA', 'PLAYER', 'PARAMETER', 'CLOCK', 'TIME', 'BUDGET', 'STOPPED', 'INTERNAL'):
             with self.subTest(reason=reason):

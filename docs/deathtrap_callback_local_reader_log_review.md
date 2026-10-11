@@ -91,6 +91,9 @@ clock or the owner's waiting interval.
 
 STOP reports the session epoch, remaining/uncertain handles, every counter
 and limit. It must be followed by OUTCOME before another reader record.
+Later reader activity, including an idle TIME limit, clock error or removal
+retry, requires a fresh STOP/OUTCOME. An earlier completed pair cannot certify
+a truncated later control sequence or allow a new START while it is pending.
 Intervening unrelated SDK lines are allowed. Repeated STOP/OUTCOME pairs are
 legal: event/attempt/filter/null/refusal/reentry totals stay fixed, remaining
 and uncertainty cannot increase, and clock/removal errors stay in history.

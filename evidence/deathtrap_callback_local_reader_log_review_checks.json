@@ -12,7 +12,7 @@
     "docs/deathtrap_callback_local_reader_log_review.md",
     "evidence/deathtrap_callback_local_reader_log_review_checks.json"
   ],
-  "new_reviewer_tests": 41,
+  "new_reviewer_tests": 42,
   "offline_validation": {
     "schema_version": 1,
     "python": "3.12.14",
@@ -26,8 +26,8 @@
     },
     "tests": {
       "status": "PASS",
-      "unique_tests": 680,
-      "tests_run": 680,
+      "unique_tests": 681,
+      "tests_run": 681,
       "failures": 0,
       "errors": 0,
       "skips": 0,
@@ -46,18 +46,18 @@
   "source_files": [
     {
       "path": "scripts/review_deathtrap_callback_local_reader_log.py",
-      "bytes": 18205,
-      "sha256": "37fa0202ac9c6197a0f5fb8ccaa938db90ec40717ece1fc1c615be03dd923c95"
+      "bytes": 18534,
+      "sha256": "ae74b7aee95b07fe2a9327b4baed9ecbbdef35dd601cfb8f9927f9213e6036c5"
     },
     {
       "path": "tests/test_deathtrap_callback_local_reader_log_review.py",
-      "bytes": 24114,
-      "sha256": "5026022d0850eb265340f4456c33dd9bc4b34081c17c126eb0de4142da637c07"
+      "bytes": 25220,
+      "sha256": "801ab30f450e4e537bfcd1df539764457033fe0d88d97539cea9de15e5e69139"
     },
     {
       "path": "docs/deathtrap_callback_local_reader_log_review.md",
-      "bytes": 8607,
-      "sha256": "75d524e6966fa767b9244d1b2ddb9614dd2fa67d021308904cb3879e73eccc93"
+      "bytes": 8839,
+      "sha256": "7ba341521abc3b3839275cc1dce8166ec8525f27d69111b3c52417f0098f8f13"
     }
   ],
   "base_files_preserved": 199,
@@ -285,6 +285,16 @@
     "re"
   ],
   "grammar": "Exact bounded v0.2.16; primitive labels only",
+  "resolved_self_review_finding": {
+    "prior_commit": "84e6c5d54436451f8b48d51cb4eb9db54097805e",
+    "prior_PR": "https://github.com/Edge916/The-Ultimate-Borderlands/pull/33",
+    "reproduced_prior_results": {
+      "trailing_TIME": "COMPLETE_LOG_TEXT / complete=True",
+      "trailing_CLOCK": "REFUSED_LOG_TEXT / complete=True"
+    },
+    "correction": "Track activity awaiting a new STOP; prevent earlier pairs closing later truncated controls",
+    "regression": "TIME/CLOCK/removal tails are PARTIAL and block restart until fresh STOP/OUTCOME"
+  },
   "checks": [
     "Full suite with unique test IDs and zero failures/errors/skips",
     "All six valid branches from actual inert runtime and independently counted SDK operations",

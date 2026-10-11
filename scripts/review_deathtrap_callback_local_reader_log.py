@@ -127,7 +127,7 @@ def review_bytes(raw):
                    orphan=orphan, attempts=0, classified=0, filtered=0, nulls=0,
                    useful=0, refusals=int(failed_start is not None), errors=0,
                    cleanup_failures=0, overlap_refusals=0, limit='NONE', terminal=False,
-                   removal_pending=False, stops=[], classifications={})
+                   removal_pending=False, awaiting_stop=True, stops=[], classifications={})
         sessions.append(run)
         return run
 
@@ -174,7 +174,7 @@ def review_bytes(raw):
                 issue(lineno, 'MISSING_OUTCOME')
             if kind == 'START':
                 if current is not None and (not paired(current)
-                        or current['stops'][-1]['remaining']):
+                        or current['awaiting_stop'] or current['stops'][-1]['remaining']):
                     issue(lineno, 'UNCLOSED_BEFORE_START')
                 current = session(lineno, started=True)
                 bind_epoch(current, values['epoch'], lineno)
@@ -186,7 +186,7 @@ def review_bytes(raw):
                         current['overlap_refusals'] += 1
                 else:
                     if current is not None and (not paired(current)
-                            or current['stops'][-1]['remaining']):
+                            or current['awaiting_stop'] or current['stops'][-1]['remaining']):
                         issue(lineno, 'NOT_STARTED_ORDER')
                     current = session(lineno, failed_start=values['reason'])
                     current['terminal'] = True
@@ -196,6 +196,9 @@ def review_bytes(raw):
             run = current
             if 'epoch' in values:
                 bind_epoch(run, values['epoch'], lineno)
+            if kind in ('EVENT', 'REFUSED', 'ERROR', 'INTERNAL_ERROR',
+                        'CLOCK_ERROR', 'LIMIT', 'REMOVAL_ERROR'):
+                run['awaiting_stop'] = True
             if 'ops' in values:
                 stages = tuple(values['s' + str(i)] for i in range(4))
                 if any(n > 64 for n in stages) or values['ops'] != sum(stages) or values['ops'] > 256:
@@ -286,6 +289,7 @@ def review_bytes(raw):
                         issue(lineno, 'RETRY_COUNTS')
                 run['terminal'] = True
                 run['stops'].append(dict(line=lineno, **values, outcome=None))
+                run['awaiting_stop'] = False
             elif kind == 'OUTCOME':
                 if not run['stops'] or run['stops'][-1]['outcome'] is not None:
                     issue(lineno, 'OUTCOME_ORDER')
@@ -305,7 +309,7 @@ def review_bytes(raw):
         return input_error(code if code in ('INTEGER_BOUND', 'SESSION_BOUND', 'RECORD_BOUND') else 'BOUND')
     complete = bool(sessions) and all(
         not r['orphan'] and (r['started'] or r['failed_start'] is not None)
-        and r['epoch'] is not None and bool(r['stops'])
+        and r['epoch'] is not None and bool(r['stops']) and not r['awaiting_stop']
         and all(s['outcome'] is not None for s in r['stops'])
         for r in sessions)
     resolved = bool(sessions) and all(r['stops'] and r['stops'][-1]['remaining'] == 0
