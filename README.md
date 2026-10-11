@@ -1,27 +1,73 @@
 # Borderlands: Ultimate Vault Hunter Collection — Codex handoff
 
-**Current game-tested build: v0.2.12 - DEATHTRAP METADATA. Result: PARTIAL.**
-The owner completed the reviewed run and confirmed CANCEL/full exit. Both
-logged inspections captured manager/skill/definition classes and all seven
-selected fields; ActivateSkill/DeactivateSkill were UNAVAILABLE on the selected
-controller. Points/ranks stayed unchanged by runtime assertion, arrays restored,
-all observer families0 and independent capture process queries0. Actual installed
-files matched original ZIP/source; the raw log, manifest and testedREADME are
-frozen. Two calls instead of requestedone/secondARM refusal/repeatedCANCEL are
-recorded in [the live result](evidence/v032_live_deathtrap_metadata_result.md)
-and [manifest](evidence/v032_capture_manifest.json).
+## Current reviewed diagnostic: v0.2.15 - PASSIVE MANAGER EVENTS
 
-No repeat is needed to force full coverage. Next is a bounded metadata-owner
-design using the actual returned SkillEffectManager class. No callable signature,
-natural lifecycle timing, native lifetime or node duration effect is established.
-Item4 makes no native function calls, active-skill payload reads, new hooks or
-gameplay writes; established ARM/insertion is a separate operation. See
-[the next task](docs/NEXT_CODEX_TASK.md). All84 pre-v12 functions/guards remain
-AST-identical and19 options remain. Preserve all originals.
+The latest game-tested diagnostic is v0.2.15. Read the preserved
+[capture](evidence/deathtrap_passive_event_capture_manifest.json),
+[raw log](evidence/deathtrap_passive_event_user_test.log) and
+[readiness decision](evidence/deathtrap_passive_event_live_readiness_result.md).
+The strict offline reviewer returns COMPLETE_LOG_TEXT / exit 0. One accepting
+START registered DeactivateSkill PRE, but attempts=0 and captured=0:
+NOT_OBSERVED. This verifies the captured setup/stop/cleanup text, not a natural
+callback, owned Deathtrap, lifetime, successful deactivation or duration effect.
+
+Logged BASELINE and FINAL both have points=(1,0), ranks=(0,0,0); FINAL reports
+unchanged. STOP resolves all handles and uncertainty with no cleanup failures;
+earlier observer families report zero, and native arrays/cells are restored.
+The owner reported "STOP 21, CANCEL 3 and full exit completed". Capture-time
+process queries found BL2 absent before and after preservation. A separate
+visible-failure statement was NOT_REPORTED; the agent did not observe the UI,
+clicks, waiting interval or pre-test state. Source, installed snapshots and
+the original v15 ZIP match. These are preserved capture checks, not a new run.
+
+Retain the refused second ARM, repeated STOP and TIME result. SDK header times
+from START to TIME differ by 44.228 seconds versus a requested wait of about
+20 seconds; this is not an engine clock or an independently measured owner
+wait. The 30-second observer limit is checked on calls or explicit controls,
+with no background timer. Silence does not justify repeating the test.
+
+v13 resolved manager function owners; v14 added declared object-parameter
+classes. Both metadata captures are COMPLETE, with signature=NOT_ESTABLISHED;
+neither obtained a manager instance or skill payload. Read the
+[v13 assessment](evidence/deathtrap_lifecycle_readiness_result.md) and
+[v14 assessment](evidence/deathtrap_parameter_schema_readiness_result.md).
+The v15 observer ignores obj/args/ret/func and returns exact None. The SDK's
+automatic wrapper conversion is still outside that Python payload restriction.
+
+[Native identity research](evidence/deathtrap_native_adapter_evidence_research.md)
+and the [callback access audit](docs/deathtrap_callback_access_feasibility.md)
+leave the ownership reader, native adapter and effect NOT_READY. Installed
+mods_base 1.12 documents [KEEP_ALIVE=0x4000 for Willow](https://github.com/bl-sdk/mods_base/blob/a8c0e36ec902e6e5841c8cf3d4845aa5da352ae6/__init__.py#L134)
+as preventing collection; setting it is a native write. This does not establish
+safe initial access, explicit-destruction exclusion, flag ownership/restoration
+or exact-original generation. Selected installed source matches v1.12 after
+line-ending normalization; native binary/build options remain unmatched.
+The explicitly approved [SDK documentation request #97](https://github.com/bl-sdk/pyunrealsdk/issues/97)
+is posted. Submission is not an answer or a readiness result.
+
+Current accepted cumulative code is a585965 (audit PR #29), built on
+[runtime PR #24](https://github.com/Edge916/The-Ultimate-Borderlands/pull/24),
+[reviewer PR #25](https://github.com/Edge916/The-Ultimate-Borderlands/pull/25),
+[capture PR #26](https://github.com/Edge916/The-Ultimate-Borderlands/pull/26),
+[readiness PR #27](https://github.com/Edge916/The-Ultimate-Borderlands/pull/27),
+[research PR #28](https://github.com/Edge916/The-Ultimate-Borderlands/pull/28) and
+[audit PR #29](https://github.com/Edge916/The-Ultimate-Borderlands/pull/29).
+These are accepted draft branches, not merged releases. Inspect actual files
+and current Pair Project notes before relying on a result.
+
+No new game test is pending. Preserve grade-zero diagnostic guards and the
+separate manual duration prototype; CANCEL/disable do not invoke manual
+Duration restore. Do not claim point/save/cache recovery from array rollback.
+The effect-design entry gate still requires actual READY_FOR_EFFECT_DESIGN
+native evidence; later implementation/capture dependencies stay intact.
+Preserve every raw log, manifest, tested snapshot and original versioned ZIP.
+This documentation repair changes no runtime, package README, default ZIP or
+versioned ZIP. Historical inventory pins stay unchanged; check current source
+and packages separately. Read [the next step](docs/NEXT_CODEX_TASK.md).
 
 This project is a **Borderlands 2 PythonSDK gameplay-mod prototype**, with a separate early design-oriented codebase for a much larger multi-game Borderlands project.
 
-**Previous game-tested build:** **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**.
+**Historical game-tested build:** **v0.2.11 - OVERCLOCK ATTRIBUTE CLASS**.
 Two complete read-only calls captured Myelin's previously refused Attribute as
 SDK_UOBJECT with actual UClass ResourcePoolAttributeDefinition and a five-class
 COMPLETE ancestry through declared AttributeDefinition. Runtime identity/link
@@ -60,13 +106,13 @@ The first screenshot's [Enter] Spend Point hint is separate evidence.
 See [the live text result](evidence/v029_live_presentation_text_result.md),
 [the next task](docs/NEXT_CODEX_TASK.md) and
 [the live display result](evidence/v030_live_presentation_display_result.md).
-Preserve all twelve original versioned ZIPs, six exact tested snapshots and
-prior evidence unchanged. Current docs/default ZIP may differ in README only;
+Preserve all original versioned ZIPs, exact tested snapshots and
+prior evidence unchanged. Documentation in tested packages is historical;
 the exact v0.2.11/v0.2.12 tested READMEs are frozen in their snapshots/original ZIPs.
 
 **Verified on user's real game (BL2): v0.2.1 now shows Deathtrap Overclock in Gaige's native tree.** The user reported "done it worked!" after the visibility test. The log verifies one inert runtime node at grade 0, both original first-tier skills present, all observers removed and original native arrays restored on cancellation. The separate manual v0.1.1 prototype changed active Deathtrap duration from **60.0 to 75.0**, and the user reported it stayed out longer. **The visible node does not apply that effect. A purchase to1/1 is now user-reported; captured transaction/save behavior and persistence remain unverified.** See [the visibility evidence](evidence/v021_visibility_confirmation.md).
 
-Read `AGENTS.md` and `docs/STATE_AND_HISTORY.md` before changing any code. The initial visibility goal is met in one successful solo test. Preserve v0.2.1 as the first confirmed visibility baseline; current tested runtime is v0.2.12 with partial metadata coverage. The eventual goal is a safe **one-rank Deathtrap Overclock node** which, if purchased, grants +15 seconds to Deathtrap. Keep the user-reported purchase separate from log-verified state; do not claim captured transaction, persistence or duration-effect success without the relevant evidence.
+Read `AGENTS.md` and `docs/STATE_AND_HISTORY.md` before changing any code. The initial visibility goal is met in one successful solo test. Preserve v0.2.1 as the first confirmed visibility baseline; current tested diagnostic is v0.2.15 with NOT_OBSERVED passive-event evidence. The eventual goal is a safe **one-rank Deathtrap Overclock node** which, if purchased, grants +15 seconds to Deathtrap. Keep the user-reported purchase separate from log-verified state; do not claim captured transaction, persistence or duration-effect success without the relevant evidence.
 
 ## Run local tests
 
@@ -75,15 +121,17 @@ From project root (Python 3.10+):
 ```powershell
 python -B scripts/run_offline_validation.py
 python -B scripts/verify_artifact_inventory.py
+python -B scripts/review_deathtrap_passive_event_log.py evidence/deathtrap_passive_event_user_test.log
+# COMPLETE_LOG_TEXT / exit 0; zero attempts still means NOT_OBSERVED.
 python -B scripts/review_deathtrap_metadata_log.py evidence/v032_user_test.log
 # PARTIAL / exit 1 is expected for this preserved v0.2.12 capture.
 ```
 
-Run the generated ZIP's `UltimateVaultHunterDeathtrapBoost` folder inside `Borderlands 2\sdk_mods` only after backing up the save and reviewing the experiment's risk. **Local mock tests cannot run Borderlands 2 or confirm HUD/skill-tree behavior.**
+Installation and any new game protocol require a separately reviewed exact build and explicit owner approval. No new installation or test is requested here. **Local mock tests cannot run Borderlands 2 or confirm HUD/skill-tree behavior.**
 
 ## Layout
 
-- `sdk_mods/UltimateVaultHunterDeathtrapBoost/` — current v0.2.12 runtime, with the bounded read-only Deathtrap metadata diagnostic, existing opt-in observers, established armed insertion and preserved manual duration prototype.
+- `sdk_mods/UltimateVaultHunterDeathtrapBoost/` — current v0.2.15 runtime, with manually enabled passive manager-entry counters, bounded metadata inspection, existing opt-in observers, established armed insertion and preserved manual duration prototype.
 - `tests/` — isolated mock-based regressions for diagnostics, hook cleanup, missing assets, insertion rollback and the manual duration prototype.
 - `scripts/package_mod.py` — package the SDK installable ZIP.
 - `docs/` — handoff, next task, Windows installation notes.
@@ -91,6 +139,12 @@ Run the generated ZIP's `UltimateVaultHunterDeathtrapBoost` folder inside `Borde
 - `archive/early_design_source/` — **older independent data-model prototype** for the long-term cross-game vision. Not integrated into the current runtime; do not mistake it for playable gameplay functionality.
 
 No game binaries, copyrighted game assets, save files, or PythonSDK loader are included.
+
+## Historical diagnostics through v0.2.12
+
+The following version-specific steps and archive counts describe completed
+experiments at their recorded milestones. They are not current test requests.
+The current result and next-step gate are above.
 
 The v0.2.2 diagnostic run is complete: four snapshots kept PRI points 1/0 and
 Overclock rank 0/1, metadata reflection worked and CANCEL restored original
@@ -255,17 +309,19 @@ Read [the live result](evidence/v031_live_attribute_class_result.md),
 and [offline reviewer](evidence/v031_log_review_tool.md). They distinguish raw
 metadata/state/cleanup from separately checked installation and process exit.
 Preserved v0.2.11 files remain identical to the original ZIP and snapshot.
-Current v0.2.12 source adds only the bounded metadata diagnostic described above.
+At that milestone, v0.2.12 source added only the bounded metadata diagnostic.
 
 The node effect remains inactive; the separate manual +15s prototype is preserved.
 [Readiness research PR#4](https://github.com/Edge916/The-Ultimate-Borderlands/pull/4)
 passed independent peer review and proposes a bounded metadata-only Deathtrap
-diagnostic for separately scoped implementation. No lifecycle implementation or game test has occurred; v0.2.12 prepares metadata only.
+diagnostic for separately scoped implementation. At that review no lifecycle implementation or game test had occurred; v0.2.12 prepared metadata only. Later metadata and the completed v15 passive capture are described above.
 See [the next task](docs/NEXT_CODEX_TASK.md). Do not invoke native methods from
 inventory names, relax diagnostic guards, spend points or add automatic effects.
 
-The static artifact inventory pins the earlier prepared-e32 current files.
-After this README-only documentation update, its immutable check still passes;
-`--check-current` reports exactly the intentional README/defaultZIP drift.
-Current package/source equality is checked separately by `verify_package.py`.
-The versioned v12 ZIP and exact tested three-file snapshot remain untouched.
+The static artifact inventory pins earlier prepared-e32 current files.
+Its immutable check remains applicable; --check-current compares historical
+prepared fingerprints and will report later version drift. Do not rewrite
+those fingerprints. Current package/source equality is checked separately.
+This six-document repair leaves the default ZIP, package README and every
+versioned ZIP byte-identical. Frozen tested READMEs retain their original
+pre-test descriptions; current evidence and instructions are linked above.

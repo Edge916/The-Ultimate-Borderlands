@@ -1,8 +1,73 @@
 # Project state and development history
 
-## Reviewed v0.2.12 - DEATHTRAP METADATA: partial live result
+## Current reviewed diagnostic: v0.2.15 - PASSIVE MANAGER EVENTS
 
-Last game-tested runtime is v0.2.12. Read
+The latest game-tested diagnostic is v0.2.15. Read the preserved
+[capture](../evidence/deathtrap_passive_event_capture_manifest.json),
+[raw log](../evidence/deathtrap_passive_event_user_test.log) and
+[readiness decision](../evidence/deathtrap_passive_event_live_readiness_result.md).
+The strict offline reviewer returns COMPLETE_LOG_TEXT / exit 0. One accepting
+START registered DeactivateSkill PRE, but attempts=0 and captured=0:
+NOT_OBSERVED. This verifies the captured setup/stop/cleanup text, not a natural
+callback, owned Deathtrap, lifetime, successful deactivation or duration effect.
+
+Logged BASELINE and FINAL both have points=(1,0), ranks=(0,0,0); FINAL reports
+unchanged. STOP resolves all handles and uncertainty with no cleanup failures;
+earlier observer families report zero, and native arrays/cells are restored.
+The owner reported "STOP 21, CANCEL 3 and full exit completed". Capture-time
+process queries found BL2 absent before and after preservation. A separate
+visible-failure statement was NOT_REPORTED; the agent did not observe the UI,
+clicks, waiting interval or pre-test state. Source, installed snapshots and
+the original v15 ZIP match. These are preserved capture checks, not a new run.
+
+Retain the refused second ARM, repeated STOP and TIME result. SDK header times
+from START to TIME differ by 44.228 seconds versus a requested wait of about
+20 seconds; this is not an engine clock or an independently measured owner
+wait. The 30-second observer limit is checked on calls or explicit controls,
+with no background timer. Silence does not justify repeating the test.
+
+v13 resolved manager function owners; v14 added declared object-parameter
+classes. Both metadata captures are COMPLETE, with signature=NOT_ESTABLISHED;
+neither obtained a manager instance or skill payload. Read the
+[v13 assessment](../evidence/deathtrap_lifecycle_readiness_result.md) and
+[v14 assessment](../evidence/deathtrap_parameter_schema_readiness_result.md).
+The v15 observer ignores obj/args/ret/func and returns exact None. The SDK's
+automatic wrapper conversion is still outside that Python payload restriction.
+
+[Native identity research](../evidence/deathtrap_native_adapter_evidence_research.md)
+and the [callback access audit](../docs/deathtrap_callback_access_feasibility.md)
+leave the ownership reader, native adapter and effect NOT_READY. Installed
+mods_base 1.12 documents [KEEP_ALIVE=0x4000 for Willow](https://github.com/bl-sdk/mods_base/blob/a8c0e36ec902e6e5841c8cf3d4845aa5da352ae6/__init__.py#L134)
+as preventing collection; setting it is a native write. This does not establish
+safe initial access, explicit-destruction exclusion, flag ownership/restoration
+or exact-original generation. Selected installed source matches v1.12 after
+line-ending normalization; native binary/build options remain unmatched.
+The explicitly approved [SDK documentation request #97](https://github.com/bl-sdk/pyunrealsdk/issues/97)
+is posted. Submission is not an answer or a readiness result.
+
+Current accepted cumulative code is a585965 (audit PR #29), built on
+[runtime PR #24](https://github.com/Edge916/The-Ultimate-Borderlands/pull/24),
+[reviewer PR #25](https://github.com/Edge916/The-Ultimate-Borderlands/pull/25),
+[capture PR #26](https://github.com/Edge916/The-Ultimate-Borderlands/pull/26),
+[readiness PR #27](https://github.com/Edge916/The-Ultimate-Borderlands/pull/27),
+[research PR #28](https://github.com/Edge916/The-Ultimate-Borderlands/pull/28) and
+[audit PR #29](https://github.com/Edge916/The-Ultimate-Borderlands/pull/29).
+These are accepted draft branches, not merged releases. Inspect actual files
+and current Pair Project notes before relying on a result.
+
+No new game test is pending. Preserve grade-zero diagnostic guards and the
+separate manual duration prototype; CANCEL/disable do not invoke manual
+Duration restore. Do not claim point/save/cache recovery from array rollback.
+The effect-design entry gate still requires actual READY_FOR_EFFECT_DESIGN
+native evidence; later implementation/capture dependencies stay intact.
+Preserve every raw log, manifest, tested snapshot and original versioned ZIP.
+This documentation repair changes no runtime, package README, default ZIP or
+versioned ZIP. Historical inventory pins stay unchanged; check current source
+and packages separately. Read [the next step](../docs/NEXT_CODEX_TASK.md).
+
+## Historical v0.2.12 review: partial metadata result
+
+At the v0.2.12 review, this was the latest tested runtime. Read
 evidence/v032_live_deathtrap_metadata_result.md, v032_user_test.log and
 v032_capture_manifest.json. The owner confirmed the full protocol, CANCEL3
 and full exit. Two calls65-82/83-100 captured identical15 rows: four class roots
@@ -15,7 +80,7 @@ independent process queries0 before/after capture and installed/source/original
 ZIP equality. Two inspections vs requestedone, refused secondARM and repeated
 CANCEL are documented. No repeat to force COMPLETE.
 
-Next: design a bounded metadata-owner correction using the actual typed return
+The next task at that review was a bounded metadata-owner correction using the actual typed return
 class WillowGame.SkillEffectManager. v12 only queried activation/deactivation
 names on the controller. A missing lookup does not prove absence elsewhere;
 no guessed function/hook path or callable signature. Native lifecycle, lifetime,
@@ -466,5 +531,94 @@ separately scoping runtime work; docs/NEXT_CODEX_TASK.md carries the next design
 See [the reviewed result](../evidence/v032_live_deathtrap_metadata_result.md),
 [manifest](../evidence/v032_capture_manifest.json) and immutable log/snapshot.
 Original versionedZIP and testedREADME remain unchanged; current defaultZIP
-README reflects the reviewed partial result. The next task is metadata-owner
-design; no lifecycle observer or effect readiness is established by this run.
+README then reflected the reviewed partial result. At that review the next
+task was metadata-owner design; no lifecycle observer or effect readiness is established by this run.
+
+## Completed v0.2.13 manager-owner metadata
+
+The [log](../evidence/deathtrap_manager_metadata_user_test.log),
+[manifest](../evidence/deathtrap_manager_metadata_capture_manifest.json) and
+[assessment](../evidence/deathtrap_lifecycle_readiness_result.md) preserve two
+identical COMPLETE metadata collections. GetSkillManager's return descriptor
+declares SkillEffectManager; ActivateSkill/DeactivateSkill are found on that
+manager class, resolving the v12 controller-owner gap. All selected function
+rows retain signature=NOT_ESTABLISHED. No manager instance or skill payload
+was obtained. FINAL unchanged compares an unlogged internal baseline.
+Owner protocol completion, process-zero/stable-copy/package identity and
+restoration are separate checks. Two inspections, refused second ARM and
+repeated CANCEL remain deviations; no separate visible-failure report was
+supplied. The result was NOT_READY for lifecycle/effect work, prompting
+parameter-class metadata design rather than a repeat or native invocation.
+
+## Completed v0.2.14 parameter-class metadata
+
+The [log](../evidence/deathtrap_parameter_metadata_user_test.log),
+[manifest](../evidence/deathtrap_parameter_metadata_capture_manifest.json) and
+[assessment](../evidence/deathtrap_parameter_schema_readiness_result.md) preserve
+two identical COMPLETE collections including selected declared object classes.
+DeactivateSkill is void, with SkillInstigator (Engine.Controller), Definition
+(WillowGame.SkillDefinition) and bIgnoreSkillInstigator (ZBoolProperty).
+Boolean masks, delegate semantics, actual payloads and callable signatures
+remain unverified. Owner "cancel 3 completed, fully exited", process-zero,
+stable-copy/package identity and restoration are retained separately.
+Two inspections/second ARM refusal/repeated CANCEL and NOT_REPORTED visible
+failure status remain. The result supported a bounded primitive-only passive
+event design, not an ownership reader or duration effect.
+
+## Completed v0.2.15 passive observation and offline reviewer
+
+Runtime [PR #24](https://github.com/Edge916/The-Ultimate-Borderlands/pull/24)
+registered one canonical DeactivateSkill PRE observer on explicit START20;
+STOP21 resolves handles before node CANCEL3 restores arrays. It deliberately
+ignores all four callback payloads and returns exact None. Existing grade-zero
+guards remain; the observer epoch is not a native summon generation.
+The [strict reviewer](../scripts/review_deathtrap_passive_event_log.py) arrived
+in [PR #25](https://github.com/Edge916/The-Ultimate-Borderlands/pull/25).
+The recorded offline suite reached 596 unique tests; those fixtures cannot
+verify native lifetime, ownership or an effect.
+
+Capture [PR #26](https://github.com/Edge916/The-Ultimate-Borderlands/pull/26)
+preserves 97 log lines/17,205 bytes and the three exact tested files. Full
+strict JSON equals the manifest: COMPLETE_LOG_TEXT, one START, no attempts or
+events, NOT_OBSERVED. BASELINE/FINAL points=(1,0), ranks=(0,0,0) are logged;
+STOP resolves handles/uncertainty/failures, prior observer families are zero
+and arrays restore. Owner STOP21/CANCEL3/full exit and capture process/package
+checks are separate evidence. A separate visible-failure statement was
+NOT_REPORTED. Refused second ARM, repeated STOP and TIME after 44.228 seconds
+of SDK header time are retained. The 30-second limit is checked on calls or
+explicit controls, not by a background timer. The initial manifest START
+summary counter was corrected before publication; raw log/snapshots unchanged.
+Read [the readiness assessment](../evidence/deathtrap_passive_event_live_readiness_result.md)
+([PR #27](https://github.com/Edge916/The-Ultimate-Borderlands/pull/27)):
+NOT_READY_FOR_NATIVE_EFFECT_DESIGN; useful next work was native adapter evidence.
+
+## Native access research and the public SDK request
+
+[Identity research](../evidence/deathtrap_native_adapter_evidence_research.md)
+([PR #28](https://github.com/Edge916/The-Ultimate-Borderlands/pull/28)) inspected
+installed documentation and pinned source. UE3 WeakPointer is non-owning;
+its emulation has no allocation serial and documents rare near-identical
+replacement ambiguity. This is not an observed incident in the owner's game.
+[Callback access research](deathtrap_callback_access_feasibility.md)
+([PR #29](https://github.com/Edge916/The-Ultimate-Borderlands/pull/29)) traced
+inline dispatch, prior argument evaluation, GIL conversion, optional function
+mutex, copied argument storage/raw pointees and pointer/type wrapper caching.
+The selected sources do not establish the required engine lifetime interval.
+Startup source prefixes agree; binary/build/active-lock matching is unverified.
+
+Subsequent read-only lookup shared in Pair Project verified installed
+mods_base 1.12's [KEEP_ALIVE=0x4000 Willow documentation](https://github.com/bl-sdk/mods_base/blob/a8c0e36ec902e6e5841c8cf3d4845aa5da352ae6/__init__.py#L134).
+Selected installed init/hook text matches that exact tag after line-ending
+normalization; raw bytes differ. A collection-retention capability exists,
+but flag setting is a native write and does not establish safe initial access,
+explicit-destruction exclusion, shared flag ownership/restoration or exact
+generation cleanup. No flag was written. Bounded source findings do not claim
+a universal SDK limitation or substitute UE4/5 behavior for BL2.
+
+The owner explicitly approved the exact five-question SDK documentation
+request; it was posted as [pyunrealsdk issue #97](https://github.com/bl-sdk/pyunrealsdk/issues/97).
+Public title/body/account/destination were independently verified and shared
+with deliberate self-review. Submission is not an answer or readiness proof;
+read any later response in full and verify its revision/applicability before
+scoping a reader. No repeat game test is pending. Keep native adapter/effect
+gates and later dependencies intact; accepted draft histories are unmerged.

@@ -1,8 +1,73 @@
 # Codex instructions for the Ultimate Vault Hunter Collection
 
-## Reviewed v0.2.12 - DEATHTRAP METADATA: partial live result
+## Current reviewed diagnostic: v0.2.15 - PASSIVE MANAGER EVENTS
 
-Last game-tested runtime is v0.2.12. Read
+The latest game-tested diagnostic is v0.2.15. Read the preserved
+[capture](evidence/deathtrap_passive_event_capture_manifest.json),
+[raw log](evidence/deathtrap_passive_event_user_test.log) and
+[readiness decision](evidence/deathtrap_passive_event_live_readiness_result.md).
+The strict offline reviewer returns COMPLETE_LOG_TEXT / exit 0. One accepting
+START registered DeactivateSkill PRE, but attempts=0 and captured=0:
+NOT_OBSERVED. This verifies the captured setup/stop/cleanup text, not a natural
+callback, owned Deathtrap, lifetime, successful deactivation or duration effect.
+
+Logged BASELINE and FINAL both have points=(1,0), ranks=(0,0,0); FINAL reports
+unchanged. STOP resolves all handles and uncertainty with no cleanup failures;
+earlier observer families report zero, and native arrays/cells are restored.
+The owner reported "STOP 21, CANCEL 3 and full exit completed". Capture-time
+process queries found BL2 absent before and after preservation. A separate
+visible-failure statement was NOT_REPORTED; the agent did not observe the UI,
+clicks, waiting interval or pre-test state. Source, installed snapshots and
+the original v15 ZIP match. These are preserved capture checks, not a new run.
+
+Retain the refused second ARM, repeated STOP and TIME result. SDK header times
+from START to TIME differ by 44.228 seconds versus a requested wait of about
+20 seconds; this is not an engine clock or an independently measured owner
+wait. The 30-second observer limit is checked on calls or explicit controls,
+with no background timer. Silence does not justify repeating the test.
+
+v13 resolved manager function owners; v14 added declared object-parameter
+classes. Both metadata captures are COMPLETE, with signature=NOT_ESTABLISHED;
+neither obtained a manager instance or skill payload. Read the
+[v13 assessment](evidence/deathtrap_lifecycle_readiness_result.md) and
+[v14 assessment](evidence/deathtrap_parameter_schema_readiness_result.md).
+The v15 observer ignores obj/args/ret/func and returns exact None. The SDK's
+automatic wrapper conversion is still outside that Python payload restriction.
+
+[Native identity research](evidence/deathtrap_native_adapter_evidence_research.md)
+and the [callback access audit](docs/deathtrap_callback_access_feasibility.md)
+leave the ownership reader, native adapter and effect NOT_READY. Installed
+mods_base 1.12 documents [KEEP_ALIVE=0x4000 for Willow](https://github.com/bl-sdk/mods_base/blob/a8c0e36ec902e6e5841c8cf3d4845aa5da352ae6/__init__.py#L134)
+as preventing collection; setting it is a native write. This does not establish
+safe initial access, explicit-destruction exclusion, flag ownership/restoration
+or exact-original generation. Selected installed source matches v1.12 after
+line-ending normalization; native binary/build options remain unmatched.
+The explicitly approved [SDK documentation request #97](https://github.com/bl-sdk/pyunrealsdk/issues/97)
+is posted. Submission is not an answer or a readiness result.
+
+Current accepted cumulative code is a585965 (audit PR #29), built on
+[runtime PR #24](https://github.com/Edge916/The-Ultimate-Borderlands/pull/24),
+[reviewer PR #25](https://github.com/Edge916/The-Ultimate-Borderlands/pull/25),
+[capture PR #26](https://github.com/Edge916/The-Ultimate-Borderlands/pull/26),
+[readiness PR #27](https://github.com/Edge916/The-Ultimate-Borderlands/pull/27),
+[research PR #28](https://github.com/Edge916/The-Ultimate-Borderlands/pull/28) and
+[audit PR #29](https://github.com/Edge916/The-Ultimate-Borderlands/pull/29).
+These are accepted draft branches, not merged releases. Inspect actual files
+and current Pair Project notes before relying on a result.
+
+No new game test is pending. Preserve grade-zero diagnostic guards and the
+separate manual duration prototype; CANCEL/disable do not invoke manual
+Duration restore. Do not claim point/save/cache recovery from array rollback.
+The effect-design entry gate still requires actual READY_FOR_EFFECT_DESIGN
+native evidence; later implementation/capture dependencies stay intact.
+Preserve every raw log, manifest, tested snapshot and original versioned ZIP.
+This documentation repair changes no runtime, package README, default ZIP or
+versioned ZIP. Historical inventory pins stay unchanged; check current source
+and packages separately. Read [the next step](docs/NEXT_CODEX_TASK.md).
+
+## Historical v0.2.12 review: partial metadata result
+
+At the v0.2.12 review, this was the latest tested runtime. Read
 evidence/v032_live_deathtrap_metadata_result.md, v032_user_test.log and
 v032_capture_manifest.json. The owner confirmed the full protocol, CANCEL3
 and full exit. Two calls65-82/83-100 captured identical15 rows: four class roots
@@ -15,7 +80,7 @@ independent process queries0 before/after capture and installed/source/original
 ZIP equality. Two inspections vs requestedone, refused secondARM and repeated
 CANCEL are documented. No repeat to force COMPLETE.
 
-Next: design a bounded metadata-owner correction using the actual typed return
+The next task at that review was a bounded metadata-owner correction using the actual typed return
 class WillowGame.SkillEffectManager. v12 only queried activation/deactivation
 names on the controller. A missing lookup does not prove absence elsewhere;
 no guessed function/hook path or callable signature. Native lifecycle, lifetime,
@@ -411,14 +476,22 @@ See docs/NEXT_CODEX_TASK.md for the concrete proposed scope and review gate.
 - Before shipping: run Python syntax compilation, mock test(s), inspect ZIP layout and ensure the runtime remains usable without design scaffolding files.
 - Do not include Borderlands game assets or any extracted proprietary binaries in the repo.
 
-## First action
+## First action on continuation
 
-Read docs/NEXT_CODEX_TASK.md and evidence/v032_live_deathtrap_metadata_result.md,
-then the actual capture/manifest/snapshot and shared results. Reproduce the
-read-only parser; PARTIAL/exit1 is the expected v12 result. Claim separate
-bounded scopes before changing code. Next design concerns loaded function
-owner metadata, not passive lifecycle hooks or an effect. Inspect actual SDK
-documentation/source as text only; never execute/import/package SDK stubs.
-No repeat game test is pending. Unknown metadata cannot justify guard relaxation,
-purchase, native calls, save repair or effect authorization. Native-array
-rollback cannot refund points, undo saves or clear player/UI caches.
+Read the current v15 section above, docs/NEXT_CODEX_TASK.md, actual v15
+raw log/manifest/snapshot and readiness result, then the native research and
+callback access audit. Check current Pair Project claims/results and the full
+SDK issue #97 discussion before planning new work. Reproduce the read-only
+v15 reviewer and full-manifest equality; COMPLETE_LOG_TEXT / exit 0 with
+zero attempts is expected. v12 remains PARTIAL / exit 1; v13/v14 are complete
+metadata, not an invocation recipe or native lifetime guarantee.
+
+Do not repeat the completed passive run to chase events. No new game test,
+SDK execution/import/stub compilation, native invocation/flag write, payload
+reader, installation, purchase, summon, save/private-backup or automatic
+effect action is authorized by these instructions. Inspect SDK documentation
+as inert text only. Keep grade-zero and manual restore separation unchanged.
+Evaluate any real SDK guidance against exact revisions and unresolved
+access/GIL/reentry/GC/destruction/identity/cleanup/ownership requirements;
+absence of evidence leaves native readiness NOT_READY. Refine and claim any
+subsequent bounded task before edits, with required deliberate review.
