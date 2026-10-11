@@ -1,0 +1,62 @@
+[
+  {
+    "id": "bl1",
+    "name": "Borderlands GOTY Enhanced",
+    "campaign_min_level": 1,
+    "campaign_max_level": 60,
+    "engine_family": "Willow/UE3",
+    "original_content_from_owned_install": true,
+    "melty_loader_status": "not_in_catalog_as_reported_in_create_prompt",
+    "steam_install_key": "bl1_enhanced",
+    "chronological_order": 1,
+    "completed_campaign_required": "none"
+  },
+  {
+    "id": "tps",
+    "name": "Borderlands: The Pre-Sequel",
+    "campaign_min_level": 61,
+    "campaign_max_level": 120,
+    "engine_family": "Willow/UE3",
+    "original_content_from_owned_install": true,
+    "melty_loader_status": "not_in_catalog_as_reported_in_create_prompt",
+    "steam_install_key": "pre_sequel",
+    "chronological_order": 2,
+    "completed_campaign_required": "bl1"
+  },
+  {
+    "id": "bl2",
+    "name": "Borderlands 2",
+    "campaign_min_level": 121,
+    "campaign_max_level": 180,
+    "engine_family": "Willow/UE3",
+    "original_content_from_owned_install": true,
+    "melty_loader_status": "catalog_no_auto_loader",
+    "steam_install_key": "bl2",
+    "chronological_order": 3,
+    "completed_campaign_required": "tps"
+  },
+  {
+    "id": "bl3",
+    "name": "Borderlands 3",
+    "campaign_min_level": 181,
+    "campaign_max_level": 240,
+    "engine_family": "Oak/UE4",
+    "original_content_from_owned_install": true,
+    "melty_loader_status": "catalog_no_auto_loader",
+    "steam_install_key": "bl3",
+    "chronological_order": 4,
+    "completed_campaign_required": "bl2"
+  },
+  {
+    "id": "bl4",
+    "name": "Borderlands 4",
+    "campaign_min_level": 241,
+    "campaign_max_level": 300,
+    "engine_family": "Oak2/UE5",
+    "original_content_from_owned_install": true,
+    "melty_loader_status": "unknown",
+    "steam_install_key": "bl4",
+    "chronological_order": 5,
+    "completed_campaign_required": "bl3"
+  }
+]
