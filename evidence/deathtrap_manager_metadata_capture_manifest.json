@@ -1,0 +1,904 @@
+{
+  "schema_version": 1,
+  "project_id": "e4e722af-5c33-4a37-b08c-3ddb15408ccd",
+  "task_id": "8649d701-5626-4dc3-8025-d538c1f7a99b",
+  "captured_at_utc": "2026-10-11T05:51:04.224204+00:00",
+  "baseline_commit": "ea70391413a06ef33fd2deb16a030fccd01734e0",
+  "branch": "codex/jake-v0213-capture",
+  "operator_confirmation": {
+    "report": "Owner reported completion of the preceding exact eight-step v0.2.13 protocol, which explicitly included CANCEL3 and full exit.",
+    "full_protocol_completion_reported": true,
+    "cancel_and_full_exit_confirmation_basis": "Completion report refers to the explicit eight-step instructions; log restoration and separate process checks are recorded below.",
+    "separate_visible_failure_report": "NOT_REPORTED",
+    "ui_title": "Owner protocol included checking the exact title; not independently observed by agent.",
+    "before_test_machine_observation": "NOT_CHECKED",
+    "authorization_scope": "Preserve/review this completed metadata run. No additional game run or native action."
+  },
+  "log": {
+    "source": "Owner BL2 unrealsdk.log, read-only",
+    "preserved_path": "evidence/deathtrap_manager_metadata_user_test.log",
+    "bytes": 35616,
+    "sha256": "f3a6397839fdb7aecb97b117e23e28bcad4d42c5e0c6bf8fe6c5c384c6dd8e95",
+    "mtime_utc": "2026-10-11T05:47:56.116998+00:00",
+    "stable_double_read": true,
+    "source_reread_after_copy": {
+      "bytes": 35616,
+      "sha256": "f3a6397839fdb7aecb97b117e23e28bcad4d42c5e0c6bf8fe6c5c384c6dd8e95",
+      "mtime_utc": "2026-10-11T05:47:56.116998+00:00",
+      "stable_double_read": true
+    },
+    "copy_equals_source_before_and_after": true,
+    "lines": 148,
+    "ends_with_newline": true,
+    "created_exclusively": true
+  },
+  "installed_mod": {
+    "expected_name": "UVH v0.2.13 - DEATHTRAP MANAGER METADATA",
+    "version": "0.2.13",
+    "source_title_present": true,
+    "actual_log_version": "0.2.13",
+    "title_seen_by_agent": "NOT_CHECKED"
+  },
+  "versioned_zip": {
+    "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+    "bytes": 37087,
+    "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8",
+    "mtime_utc": "2026-10-11T05:49:13.818835+00:00",
+    "stable_double_read": true,
+    "integrity_checked": true,
+    "exact_three_file_layout": true
+  },
+  "installed_snapshot": [
+    {
+      "file": "__init__.py",
+      "snapshot_path": "archive/tested_runtime/v0.2.13/__init__.py",
+      "source_path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "archive_entry": "UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 176080,
+      "sha256": "a457bb544814e627a5909bb5bea844a1f6643c64a1b2eef6f2a85ae3c96c4cf8",
+      "mtime_utc": "2026-10-11T05:35:08+00:00",
+      "stable_double_read": true,
+      "installed_equals_original_versioned_zip": true,
+      "installed_equals_accepted_source": true,
+      "created_exclusively": true,
+      "source_reread_after_copy": {
+        "bytes": 176080,
+        "sha256": "a457bb544814e627a5909bb5bea844a1f6643c64a1b2eef6f2a85ae3c96c4cf8",
+        "mtime_utc": "2026-10-11T05:35:08+00:00",
+        "stable_double_read": true
+      },
+      "copy_equals_source_before_and_after": true
+    },
+    {
+      "file": "pyproject.toml",
+      "snapshot_path": "archive/tested_runtime/v0.2.13/pyproject.toml",
+      "source_path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "archive_entry": "UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "bytes": 83,
+      "sha256": "a33278a92682c061f7cfb6f0ec29318ae6123223116c784cb0def5772c6f8ae7",
+      "mtime_utc": "2026-10-11T05:33:28+00:00",
+      "stable_double_read": true,
+      "installed_equals_original_versioned_zip": true,
+      "installed_equals_accepted_source": true,
+      "created_exclusively": true,
+      "source_reread_after_copy": {
+        "bytes": 83,
+        "sha256": "a33278a92682c061f7cfb6f0ec29318ae6123223116c784cb0def5772c6f8ae7",
+        "mtime_utc": "2026-10-11T05:33:28+00:00",
+        "stable_double_read": true
+      },
+      "copy_equals_source_before_and_after": true
+    },
+    {
+      "file": "README.txt",
+      "snapshot_path": "archive/tested_runtime/v0.2.13/README.txt",
+      "source_path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+      "archive_entry": "UltimateVaultHunterDeathtrapBoost/README.txt",
+      "bytes": 2989,
+      "sha256": "d2c9931af9bed91ce3cada0bb3e45c7781373fa8ad69a1721b4955b61965ca7a",
+      "mtime_utc": "2026-10-11T05:36:00+00:00",
+      "stable_double_read": true,
+      "installed_equals_original_versioned_zip": true,
+      "installed_equals_accepted_source": true,
+      "created_exclusively": true,
+      "source_reread_after_copy": {
+        "bytes": 2989,
+        "sha256": "d2c9931af9bed91ce3cada0bb3e45c7781373fa8ad69a1721b4955b61965ca7a",
+        "mtime_utc": "2026-10-11T05:36:00+00:00",
+        "stable_double_read": true
+      },
+      "copy_equals_source_before_and_after": true
+    }
+  ],
+  "process_exit": {
+    "before_capture": {
+      "game_process_count": 0,
+      "checked_utc": "2026-10-11T05:51:03.4877998Z"
+    },
+    "after_capture": {
+      "game_process_count": 0,
+      "checked_utc": "2026-10-11T05:51:04.0895812Z"
+    },
+    "game_process_count_zero": true,
+    "method": "Read-only Get-Process -Name Borderlands2 at preservation; not before the human test."
+  },
+  "preservation": {
+    "accepted_baseline_files": 155,
+    "all_baseline_raw_bytes_equal_accepted_checkout_before_capture": true,
+    "all_155_baseline_hashes_unchanged_after_capture": true,
+    "exclusive_new_log_and_three_file_snapshot": true,
+    "save_private_backup_access": "NONE",
+    "installed_game_SDK_file_writes": "NONE"
+  },
+  "diagnostic": {
+    "requested_calls": 1,
+    "actual_calls": 2,
+    "protocol_deviations": [
+      "Two metadata calls were logged although one was requested; reason unestablished.",
+      "Second ARM was refused because already armed.",
+      "Repeated CANCEL reported no initialization patch to restore."
+    ],
+    "coverage": "COMPLETE descriptor metadata in both calls; no lifecycle or effect proof",
+    "offline_review": {
+      "source": {
+        "bytes": 35616,
+        "sha256": "f3a6397839fdb7aecb97b117e23e28bcad4d42c5e0c6bf8fe6c5c384c6dd8e95"
+      },
+      "grammar": {
+        "version": "0.2.13",
+        "runtime_sha256": "a457bb544814e627a5909bb5bea844a1f6643c64a1b2eef6f2a85ae3c96c4cf8"
+      },
+      "calls": [
+        {
+          "begin_line": 65,
+          "last_line": 82,
+          "rows": [
+            {
+              "ancestry": [
+                {
+                  "name": "WillowPlayerController",
+                  "path": "WillowGame.WillowPlayerController"
+                },
+                {
+                  "name": "GearboxPlayerController",
+                  "path": "GearboxFramework.GearboxPlayerController"
+                },
+                {
+                  "name": "GamePlayerController",
+                  "path": "GameFramework.GamePlayerController"
+                },
+                {
+                  "name": "PlayerController",
+                  "path": "Engine.PlayerController"
+                },
+                {
+                  "name": "Controller",
+                  "path": "Engine.Controller"
+                },
+                {
+                  "name": "Actor",
+                  "path": "Engine.Actor"
+                },
+                {
+                  "name": "Object",
+                  "path": "Core.Object"
+                }
+              ],
+              "coverage": "COMPLETE",
+              "kind": "CLASS",
+              "path": "WillowGame.WillowPlayerController",
+              "target": "controller"
+            },
+            {
+              "coverage": "COMPLETE",
+              "flags": 132097,
+              "kind": "FUNCTION",
+              "name": "GetSkillManager",
+              "num_params": 1,
+              "params_size": 4,
+              "path": "WillowGame.WillowPlayerController:GetSkillManager",
+              "properties": [
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 1408,
+                  "name": "ReturnValue",
+                  "offset": 0,
+                  "type": "ZObjectProperty"
+                }
+              ],
+              "return_offset": 0,
+              "signature": "NOT_ESTABLISHED"
+            },
+            {
+              "ancestry": [
+                {
+                  "name": "SkillEffectManager",
+                  "path": "WillowGame.SkillEffectManager"
+                },
+                {
+                  "name": "Actor",
+                  "path": "Engine.Actor"
+                },
+                {
+                  "name": "Object",
+                  "path": "Core.Object"
+                }
+              ],
+              "coverage": "COMPLETE",
+              "kind": "CLASS",
+              "path": "WillowGame.SkillEffectManager",
+              "target": "manager"
+            },
+            {
+              "kind": "DISCOVERY",
+              "return_class": "WillowGame.SkillEffectManager",
+              "return_property": "ReturnValue",
+              "source_function": "GetSkillManager"
+            },
+            {
+              "coverage": "COMPLETE",
+              "flags": 149506,
+              "kind": "FUNCTION",
+              "name": "ActivateSkill",
+              "num_params": 6,
+              "params_size": 32,
+              "path": "WillowGame.SkillEffectManager:ActivateSkill",
+              "properties": [
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 128,
+                  "name": "SkillInstigator",
+                  "offset": 0,
+                  "type": "ZObjectProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 128,
+                  "name": "Definition",
+                  "offset": 4,
+                  "type": "ZObjectProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 144,
+                  "name": "AdditionalSkillTarget",
+                  "offset": 8,
+                  "type": "ZObjectProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 144,
+                  "name": "SkillGrade",
+                  "offset": 12,
+                  "type": "ZIntProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 12,
+                  "flags": 4194448,
+                  "name": "StateChangeDelegate",
+                  "offset": 16,
+                  "type": "ZDelegateProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 1408,
+                  "name": "ReturnValue",
+                  "offset": 28,
+                  "type": "ZBoolProperty"
+                }
+              ],
+              "return_offset": 28,
+              "signature": "NOT_ESTABLISHED"
+            },
+            {
+              "coverage": "COMPLETE",
+              "flags": 149506,
+              "kind": "FUNCTION",
+              "name": "DeactivateSkill",
+              "num_params": 3,
+              "params_size": 12,
+              "path": "WillowGame.SkillEffectManager:DeactivateSkill",
+              "properties": [
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 128,
+                  "name": "SkillInstigator",
+                  "offset": 0,
+                  "type": "ZObjectProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 128,
+                  "name": "Definition",
+                  "offset": 4,
+                  "type": "ZObjectProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 144,
+                  "name": "bIgnoreSkillInstigator",
+                  "offset": 8,
+                  "type": "ZBoolProperty"
+                }
+              ],
+              "return_offset": 65535,
+              "signature": "NOT_ESTABLISHED"
+            },
+            {
+              "ancestry": [
+                {
+                  "name": "Skill",
+                  "path": "WillowGame.Skill"
+                },
+                {
+                  "name": "Object",
+                  "path": "Core.Object"
+                }
+              ],
+              "coverage": "COMPLETE",
+              "kind": "CLASS",
+              "path": "WillowGame.Skill",
+              "target": "active_skill_class"
+            },
+            {
+              "coverage": "COMPLETE",
+              "dimension": 1,
+              "element_class": "WillowGame.Skill",
+              "element_size": 12,
+              "flags": 4194304,
+              "inner_type": "ZObjectProperty",
+              "kind": "FIELD",
+              "name": "ActiveSkills",
+              "offset": 408,
+              "owner": "WillowGame.SkillEffectManager",
+              "type": "ZArrayProperty"
+            },
+            {
+              "coverage": "COMPLETE",
+              "declared_class": "NOT_APPLICABLE",
+              "dimension": 1,
+              "element_size": 4,
+              "flags": 8192,
+              "inner_type": "NOT_APPLICABLE",
+              "kind": "FIELD",
+              "name": "Duration",
+              "offset": 120,
+              "owner": "WillowGame.Skill",
+              "type": "ZFloatAttributeProperty"
+            },
+            {
+              "coverage": "COMPLETE",
+              "declared_class": "NOT_APPLICABLE",
+              "dimension": 1,
+              "element_size": 4,
+              "flags": 2,
+              "inner_type": "NOT_APPLICABLE",
+              "kind": "FIELD",
+              "name": "DurationBaseValue",
+              "offset": 124,
+              "owner": "WillowGame.Skill",
+              "type": "ZFloatAttributeProperty"
+            },
+            {
+              "coverage": "COMPLETE",
+              "declared_class": "NOT_APPLICABLE",
+              "dimension": 1,
+              "element_size": 4,
+              "flags": 8192,
+              "inner_type": "NOT_APPLICABLE",
+              "kind": "FIELD",
+              "name": "ActivatedTime",
+              "offset": 164,
+              "owner": "WillowGame.Skill",
+              "type": "ZFloatProperty"
+            },
+            {
+              "coverage": "COMPLETE",
+              "declared_class": "Engine.Controller",
+              "dimension": 1,
+              "element_size": 4,
+              "flags": 0,
+              "inner_type": "NOT_APPLICABLE",
+              "kind": "FIELD",
+              "name": "SkillInstigator",
+              "offset": 180,
+              "owner": "WillowGame.Skill",
+              "type": "ZObjectProperty"
+            },
+            {
+              "ancestry": [
+                {
+                  "name": "SkillDefinition",
+                  "path": "WillowGame.SkillDefinition"
+                },
+                {
+                  "name": "GBXDefinition",
+                  "path": "Engine.GBXDefinition"
+                },
+                {
+                  "name": "Object",
+                  "path": "Core.Object"
+                }
+              ],
+              "coverage": "COMPLETE",
+              "kind": "CLASS",
+              "path": "WillowGame.SkillDefinition",
+              "target": "definition_class"
+            },
+            {
+              "coverage": "COMPLETE",
+              "declared_class": "WillowGame.SkillDefinition",
+              "dimension": 1,
+              "element_size": 4,
+              "flags": 0,
+              "inner_type": "NOT_APPLICABLE",
+              "kind": "FIELD",
+              "name": "Definition",
+              "offset": 64,
+              "owner": "WillowGame.Skill",
+              "type": "ZObjectProperty"
+            },
+            {
+              "coverage": "COMPLETE",
+              "declared_class": "NOT_APPLICABLE",
+              "dimension": 1,
+              "element_size": 12,
+              "flags": 4202498,
+              "inner_type": "ZObjectProperty",
+              "kind": "FIELD",
+              "name": "DurationModifierStack",
+              "offset": 128,
+              "owner": "WillowGame.Skill",
+              "type": "ZArrayProperty"
+            }
+          ],
+          "final": {
+            "points": [
+              1,
+              0
+            ],
+            "ranks": [
+              0,
+              0,
+              0
+            ],
+            "unchanged_assertion": true,
+            "comparison_to_start": "NOT_CHECKED; start state not logged"
+          },
+          "coverage": "COMPLETE",
+          "terminal": "END",
+          "issues": [],
+          "outcome": "COMPLETE"
+        },
+        {
+          "begin_line": 83,
+          "last_line": 100,
+          "rows": [
+            {
+              "ancestry": [
+                {
+                  "name": "WillowPlayerController",
+                  "path": "WillowGame.WillowPlayerController"
+                },
+                {
+                  "name": "GearboxPlayerController",
+                  "path": "GearboxFramework.GearboxPlayerController"
+                },
+                {
+                  "name": "GamePlayerController",
+                  "path": "GameFramework.GamePlayerController"
+                },
+                {
+                  "name": "PlayerController",
+                  "path": "Engine.PlayerController"
+                },
+                {
+                  "name": "Controller",
+                  "path": "Engine.Controller"
+                },
+                {
+                  "name": "Actor",
+                  "path": "Engine.Actor"
+                },
+                {
+                  "name": "Object",
+                  "path": "Core.Object"
+                }
+              ],
+              "coverage": "COMPLETE",
+              "kind": "CLASS",
+              "path": "WillowGame.WillowPlayerController",
+              "target": "controller"
+            },
+            {
+              "coverage": "COMPLETE",
+              "flags": 132097,
+              "kind": "FUNCTION",
+              "name": "GetSkillManager",
+              "num_params": 1,
+              "params_size": 4,
+              "path": "WillowGame.WillowPlayerController:GetSkillManager",
+              "properties": [
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 1408,
+                  "name": "ReturnValue",
+                  "offset": 0,
+                  "type": "ZObjectProperty"
+                }
+              ],
+              "return_offset": 0,
+              "signature": "NOT_ESTABLISHED"
+            },
+            {
+              "ancestry": [
+                {
+                  "name": "SkillEffectManager",
+                  "path": "WillowGame.SkillEffectManager"
+                },
+                {
+                  "name": "Actor",
+                  "path": "Engine.Actor"
+                },
+                {
+                  "name": "Object",
+                  "path": "Core.Object"
+                }
+              ],
+              "coverage": "COMPLETE",
+              "kind": "CLASS",
+              "path": "WillowGame.SkillEffectManager",
+              "target": "manager"
+            },
+            {
+              "kind": "DISCOVERY",
+              "return_class": "WillowGame.SkillEffectManager",
+              "return_property": "ReturnValue",
+              "source_function": "GetSkillManager"
+            },
+            {
+              "coverage": "COMPLETE",
+              "flags": 149506,
+              "kind": "FUNCTION",
+              "name": "ActivateSkill",
+              "num_params": 6,
+              "params_size": 32,
+              "path": "WillowGame.SkillEffectManager:ActivateSkill",
+              "properties": [
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 128,
+                  "name": "SkillInstigator",
+                  "offset": 0,
+                  "type": "ZObjectProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 128,
+                  "name": "Definition",
+                  "offset": 4,
+                  "type": "ZObjectProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 144,
+                  "name": "AdditionalSkillTarget",
+                  "offset": 8,
+                  "type": "ZObjectProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 144,
+                  "name": "SkillGrade",
+                  "offset": 12,
+                  "type": "ZIntProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 12,
+                  "flags": 4194448,
+                  "name": "StateChangeDelegate",
+                  "offset": 16,
+                  "type": "ZDelegateProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 1408,
+                  "name": "ReturnValue",
+                  "offset": 28,
+                  "type": "ZBoolProperty"
+                }
+              ],
+              "return_offset": 28,
+              "signature": "NOT_ESTABLISHED"
+            },
+            {
+              "coverage": "COMPLETE",
+              "flags": 149506,
+              "kind": "FUNCTION",
+              "name": "DeactivateSkill",
+              "num_params": 3,
+              "params_size": 12,
+              "path": "WillowGame.SkillEffectManager:DeactivateSkill",
+              "properties": [
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 128,
+                  "name": "SkillInstigator",
+                  "offset": 0,
+                  "type": "ZObjectProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 128,
+                  "name": "Definition",
+                  "offset": 4,
+                  "type": "ZObjectProperty"
+                },
+                {
+                  "dimension": 1,
+                  "element_size": 4,
+                  "flags": 144,
+                  "name": "bIgnoreSkillInstigator",
+                  "offset": 8,
+                  "type": "ZBoolProperty"
+                }
+              ],
+              "return_offset": 65535,
+              "signature": "NOT_ESTABLISHED"
+            },
+            {
+              "ancestry": [
+                {
+                  "name": "Skill",
+                  "path": "WillowGame.Skill"
+                },
+                {
+                  "name": "Object",
+                  "path": "Core.Object"
+                }
+              ],
+              "coverage": "COMPLETE",
+              "kind": "CLASS",
+              "path": "WillowGame.Skill",
+              "target": "active_skill_class"
+            },
+            {
+              "coverage": "COMPLETE",
+              "dimension": 1,
+              "element_class": "WillowGame.Skill",
+              "element_size": 12,
+              "flags": 4194304,
+              "inner_type": "ZObjectProperty",
+              "kind": "FIELD",
+              "name": "ActiveSkills",
+              "offset": 408,
+              "owner": "WillowGame.SkillEffectManager",
+              "type": "ZArrayProperty"
+            },
+            {
+              "coverage": "COMPLETE",
+              "declared_class": "NOT_APPLICABLE",
+              "dimension": 1,
+              "element_size": 4,
+              "flags": 8192,
+              "inner_type": "NOT_APPLICABLE",
+              "kind": "FIELD",
+              "name": "Duration",
+              "offset": 120,
+              "owner": "WillowGame.Skill",
+              "type": "ZFloatAttributeProperty"
+            },
+            {
+              "coverage": "COMPLETE",
+              "declared_class": "NOT_APPLICABLE",
+              "dimension": 1,
+              "element_size": 4,
+              "flags": 2,
+              "inner_type": "NOT_APPLICABLE",
+              "kind": "FIELD",
+              "name": "DurationBaseValue",
+              "offset": 124,
+              "owner": "WillowGame.Skill",
+              "type": "ZFloatAttributeProperty"
+            },
+            {
+              "coverage": "COMPLETE",
+              "declared_class": "NOT_APPLICABLE",
+              "dimension": 1,
+              "element_size": 4,
+              "flags": 8192,
+              "inner_type": "NOT_APPLICABLE",
+              "kind": "FIELD",
+              "name": "ActivatedTime",
+              "offset": 164,
+              "owner": "WillowGame.Skill",
+              "type": "ZFloatProperty"
+            },
+            {
+              "coverage": "COMPLETE",
+              "declared_class": "Engine.Controller",
+              "dimension": 1,
+              "element_size": 4,
+              "flags": 0,
+              "inner_type": "NOT_APPLICABLE",
+              "kind": "FIELD",
+              "name": "SkillInstigator",
+              "offset": 180,
+              "owner": "WillowGame.Skill",
+              "type": "ZObjectProperty"
+            },
+            {
+              "ancestry": [
+                {
+                  "name": "SkillDefinition",
+                  "path": "WillowGame.SkillDefinition"
+                },
+                {
+                  "name": "GBXDefinition",
+                  "path": "Engine.GBXDefinition"
+                },
+                {
+                  "name": "Object",
+                  "path": "Core.Object"
+                }
+              ],
+              "coverage": "COMPLETE",
+              "kind": "CLASS",
+              "path": "WillowGame.SkillDefinition",
+              "target": "definition_class"
+            },
+            {
+              "coverage": "COMPLETE",
+              "declared_class": "WillowGame.SkillDefinition",
+              "dimension": 1,
+              "element_size": 4,
+              "flags": 0,
+              "inner_type": "NOT_APPLICABLE",
+              "kind": "FIELD",
+              "name": "Definition",
+              "offset": 64,
+              "owner": "WillowGame.Skill",
+              "type": "ZObjectProperty"
+            },
+            {
+              "coverage": "COMPLETE",
+              "declared_class": "NOT_APPLICABLE",
+              "dimension": 1,
+              "element_size": 12,
+              "flags": 4202498,
+              "inner_type": "ZObjectProperty",
+              "kind": "FIELD",
+              "name": "DurationModifierStack",
+              "offset": 128,
+              "owner": "WillowGame.Skill",
+              "type": "ZArrayProperty"
+            }
+          ],
+          "final": {
+            "points": [
+              1,
+              0
+            ],
+            "ranks": [
+              0,
+              0,
+              0
+            ],
+            "unchanged_assertion": true,
+            "comparison_to_start": "NOT_CHECKED; start state not logged"
+          },
+          "coverage": "COMPLETE",
+          "terminal": "END",
+          "issues": [],
+          "outcome": "COMPLETE"
+        }
+      ],
+      "issues": [],
+      "cleanup": {
+        "restorations": [
+          {
+            "line": 123,
+            "verified": true
+          }
+        ],
+        "native_restored_lines": [
+          124
+        ],
+        "observers": [
+          {
+            "line": 64,
+            "family": "UVH-INITNODE",
+            "remaining": 0
+          },
+          {
+            "line": 101,
+            "family": "UVH-STATE",
+            "remaining": 0
+          },
+          {
+            "line": 112,
+            "family": "UVH-UI",
+            "remaining": 0
+          },
+          {
+            "line": 114,
+            "family": "UVH-UPGRADE",
+            "remaining": 0
+          },
+          {
+            "line": 122,
+            "family": "UVH-INITNODE",
+            "remaining": 0
+          },
+          {
+            "line": 126,
+            "family": "UVH-STATE",
+            "remaining": 0
+          },
+          {
+            "line": 137,
+            "family": "UVH-UI",
+            "remaining": 0
+          },
+          {
+            "line": 139,
+            "family": "UVH-UPGRADE",
+            "remaining": 0
+          },
+          {
+            "line": 147,
+            "family": "UVH-INITNODE",
+            "remaining": 0
+          }
+        ],
+        "errors": [],
+        "restoration_asserted_after_last_call": true,
+        "four_families_zero_after_last_call": true
+      },
+      "separate_checks": {
+        "installed_archive_equality": "NOT_CHECKED",
+        "process_exit": "NOT_CHECKED",
+        "capture_origin": "NOT_CHECKED",
+        "SDK_identity": "NOT_CHECKED",
+        "internal_start_state": "NOT_CHECKED",
+        "native_property_links_and_sizes": "NOT_CHECKED",
+        "native_subtype_compatibility": "NOT_CHECKED",
+        "unlogged_cap_lookahead": "NOT_CHECKED"
+      },
+      "game_behavior": "NOT_ESTABLISHED_BY_TOOL",
+      "versions": [
+        "0.2.13"
+      ],
+      "status": "COMPLETE_LOG_TEXT",
+      "log_text_acceptable": true
+    },
+    "offline_review_script_sha256": "9c6a93e9eb3eba39ac78f08c1311e9a8f8bf2f4544dbb5047eaad97abfa0e02a",
+    "no_fabricated_baseline": true
+  },
+  "checks_not_run": [
+    "No agent game launch/install, native SDK import/execution or native callback invocation.",
+    "No before-test process or independent UI title observation; no separate visible-failure report.",
+    "No independent reexecution of runtime SDK identity/link/subtype/internal-start checks; parser only validates logged text.",
+    "No manager/summon payload/lifetime/clock/effect/rank-one/transaction/persistence/save audit.",
+    "Unchanged full420test suite/hosted CI not repeated for capture-only work."
+  ]
+}
