@@ -1,0 +1,43 @@
+date       time          thread                                           location@line    v|
+2026-10-10 00:48:50.212Z   2940                                    unrealsdk::init@59   INFO| unrealsdk v3.2.0 (b1852aa4)
+2026-10-10 00:48:50.212Z   2940                                    unrealsdk::init@60   INFO| ===========================
+2026-10-10 00:48:50.212Z   2940   ~ game::`anonymous-namespace'::find_correct_hook@51   INFO| Using Borderlands 2 hook
+2026-10-10 00:48:50.398Z   2940                   unrealsdk::memory::get_exe_range@34   MISC| Executable memory range: 00d50000-02886000
+2026-10-10 00:48:50.503Z   2940                          unrealsdk::memory::detour@107  MISC| Detoured ProcessEvent at 0xee2bd0
+2026-10-10 00:48:50.595Z   2940                          unrealsdk::memory::detour@107  MISC| Detoured CallFunction at 0xee26e0
+2026-10-10 00:48:50.596Z   2940            unrealsdk::game::BL2Hook::find_gobjects@31   MISC| GObjects: 0x23d2bd0
+2026-10-10 00:48:50.596Z   2940              unrealsdk::game::BL2Hook::find_gnames@53   MISC| GNames: 0x23907f4
+2026-10-10 00:48:50.596Z   2940          unrealsdk::game::BL2Hook::find_fname_init@68   MISC| FName::Init: 0xde0b70
+2026-10-10 00:48:50.598Z   2940         unrealsdk::game::BL2Hook::find_fframe_step@100  MISC| FFrame::Step: 0xed3770
+2026-10-10 00:48:50.598Z   2940             unrealsdk::game::BL2Hook::find_gmalloc@49   MISC| GMalloc: 0x2977ac0
+2026-10-10 00:48:50.599Z   2940    unrealsdk::game::BL2Hook::find_construct_object@61   MISC| StaticConstructObject: 0xe1a5f0
+2026-10-10 00:48:50.599Z   2940       unrealsdk::game::BL2Hook::find_get_path_name@115  MISC| GetPathName: 0xdfda80
+2026-10-10 00:48:50.600Z   2940  unrealsdk::game::BL2Hook::find_static_find_object@165  MISC| StaticFindObject: 0xe07500
+2026-10-10 00:48:50.601Z   2940        unrealsdk::game::BL2Hook::find_load_package@205  MISC| LoadPackage: 0xe1d190
+2026-10-10 00:48:50.608Z   2940      unrealsdk::game::BL2Hook::hexedit_set_command@47   MISC| Set Command: 0x1180181
+2026-10-10 00:48:50.609Z   2940      unrealsdk::game::BL2Hook::hexedit_array_limit@62   MISC| Array Limit: 0xe19ab4
+2026-10-10 00:48:50.610Z   2940       ~ game::BL2Hook::hexedit_array_limit_message@76   MISC| Array Limit Message: 0xe19b6f
+2026-10-10 00:48:50.610Z   505c                                  pyunrealsdk::init@63   INFO| pyunrealsdk v1.10.0 (c72c5558) loaded
+2026-10-10 00:49:06.191Z   72f8 ~ game::`anonymous-namespace'::inject_console_hook@280  MISC| Set console key to 'Tilde'
+2026-10-10 00:49:06.609Z   505c                     ~ console_mod_menu\__init__.py@28   INFO| Console Mod Menu loaded. Type 'mods' to get started.
+2026-10-10 00:49:27.082Z   72f8                                    _py_warnings.py@147  DWRN| C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\sdk_mods\legacy_compat.sdkmod\legacy_compat\unrealsdk\__init__.py:210: DeprecationWarning: Using deprecated legacy import compatibility.
+2026-10-10 00:51:52.276Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] BEGIN arm ONE inert Gaige initialization experiment
+2026-10-10 00:51:52.276Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] ARMED. Continue as backed-up Gaige SOLO; inspect Skills, never buy the node.
+2026-10-10 00:51:52.276Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] No assets modified while arming. Native arrays and player cache require rollback/restart after test.
+2026-10-10 00:51:53.493Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] BEGIN arm ONE inert Gaige initialization experiment
+2026-10-10 00:51:53.493Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Already armed or observers need removal; use CANCEL.
+2026-10-10 00:52:04.826Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] PRE Gaige initialization: net_mode=2 pawn=<none>
+2026-10-10 00:52:04.826Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] ABORT: solo NM_Standalone=0 not verified; no writes.
+2026-10-10 00:52:04.827Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Observers remaining=0
+2026-10-10 00:52:26.565Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] BEGIN current result (READ ONLY)
+2026-10-10 00:52:26.565Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] armed=False consumed=True hooks=0
+2026-10-10 00:52:26.565Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] No initialization insertion recorded.
+2026-10-10 00:52:26.565Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] END current result
+2026-10-10 00:52:27.547Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] BEGIN current result (READ ONLY)
+2026-10-10 00:52:27.547Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] armed=False consumed=True hooks=0
+2026-10-10 00:52:27.547Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] No initialization insertion recorded.
+2026-10-10 00:52:27.547Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] END current result
+2026-10-10 00:53:28.073Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Observers remaining=0
+2026-10-10 00:53:28.073Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] DISARMED; no initialization patch to restore.
+2026-10-10 00:53:29.588Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Observers remaining=0
+2026-10-10 00:53:29.588Z   72f8    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] DISARMED; no initialization patch to restore.
