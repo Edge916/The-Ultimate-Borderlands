@@ -1,0 +1,397 @@
+{
+  "schema_version": 1,
+  "project_id": "e4e722af-5c33-4a37-b08c-3ddb15408ccd",
+  "task_id": "3be37e70-0089-47b1-af4d-899fe8801375",
+  "captured_at_utc": "2026-10-11T20:29:47.065060+00:00",
+  "baseline_commit": "9f5646d8bd5f37661a94cb6d94a0f96660dc006c",
+  "runtime_implementation_commit": "b51f91ff28ece47fc28ca91eef6f12cc305f8c8b",
+  "strict_reviewer_commit": "9f5646d8bd5f37661a94cb6d94a0f96660dc006c",
+  "branch": "codex/jake-v16-callback-reader-capture",
+  "operator_confirmation": {
+    "exact_statement": "deathtrap ended naturally and i stop 23 and cancel 3 and full exit",
+    "natural_end_stop23_cancel3_full_exit_explicitly_reported": true,
+    "preceding_approval": "Yes, begin this v0.2.16 test",
+    "approved_protocol": "Already-backed-up solo Offline Gaige; game closed for installation; MAIN MENU verify title without ARM, Continue fully load current MAP; in-map START22 once; close options and ordinary Deathtrap summon once without seeking combat/kills, natural end with at most about90seconds from START; STOP23 then CANCEL3 in-map; fully exit desktop before relaunch. Skip/stop without retry on refusal,error,unavailable skill or time bound.",
+    "approved_protocol_sha256": "ddc3c76bf3c72d36488379e721de2438b7220973f96bb8dd3ae1de7d95e984b2",
+    "excluded_actions": "No ARM1,metadata4,other traces,buying,respec,travel,manual boost,automatic effect or repeat summon.",
+    "start22_single_summon_UI_timebound_independently_observed": false,
+    "separate_visible_failure_report": "NOT_REPORTED",
+    "observation_limit": "Agent did not observe title/UI/clicks, number of summons, natural end, wait duration, before-test process or save state. Natural end and STOP/CANCEL/full exit are owner reports. Log assertions are separate.",
+    "authorization_scope": "Preserve and review this completed approved owner diagnostic only; no new game run, retry or native action. Public capture export not yet approved."
+  },
+  "log": {
+    "source": "Owner BL2 unrealsdk.log, read-only",
+    "preserved_path": "evidence/deathtrap_callback_local_reader_user_test.log",
+    "bytes": 13802,
+    "sha256": "0c16ddf9dd0c46459fec53599b9685f4f2e3f6e5c263977be99cfaddb13b5fdc",
+    "mtime_ns": 1791750380150653100,
+    "mtime_utc": "2026-10-11T20:26:20.150653+00:00",
+    "stable_double_read": true,
+    "source_reread_after_copy": {
+      "bytes": 13802,
+      "sha256": "0c16ddf9dd0c46459fec53599b9685f4f2e3f6e5c263977be99cfaddb13b5fdc",
+      "mtime_ns": 1791750380150653100,
+      "mtime_utc": "2026-10-11T20:26:20.150653+00:00",
+      "stable_double_read": true
+    },
+    "copy_equals_source_before_and_after": true,
+    "lines": 80,
+    "ends_with_newline": true,
+    "created_exclusively": true
+  },
+  "installed_mod": {
+    "expected_name": "UVH v0.2.16 - CALLBACK-LOCAL DEATHTRAP READER",
+    "version": "0.2.16",
+    "expected_title_present_in_source": true,
+    "expected_title_present_in_pyproject": true,
+    "title_seen_by_agent": "NOT_CHECKED",
+    "syntax_only": "PASS; compile only, no runtime import or execution"
+  },
+  "versioned_zip": {
+    "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip",
+    "bytes": 44901,
+    "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85",
+    "mtime_ns": 1791723294249475300,
+    "mtime_utc": "2026-10-11T12:54:54.249475+00:00",
+    "stable_double_read": true,
+    "integrity_checked": true,
+    "exact_three_file_layout": true
+  },
+  "installed_snapshot": [
+    {
+      "file": "__init__.py",
+      "snapshot_path": "archive/tested_runtime/v0.2.16/__init__.py",
+      "source_path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "archive_entry": "UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 216082,
+      "sha256": "1d6524fa483705384951d60a6e48fc92209f21cfb62e5390c65db295924c2548",
+      "mtime_ns": 1791723104000000000,
+      "mtime_utc": "2026-10-11T12:51:44+00:00",
+      "stable_double_read": true,
+      "installed_equals_original_versioned_zip": true,
+      "installed_equals_accepted_source": true,
+      "created_exclusively": true,
+      "source_reread_after_copy": {
+        "bytes": 216082,
+        "sha256": "1d6524fa483705384951d60a6e48fc92209f21cfb62e5390c65db295924c2548",
+        "mtime_ns": 1791723104000000000,
+        "mtime_utc": "2026-10-11T12:51:44+00:00",
+        "stable_double_read": true
+      },
+      "copy_equals_source_before_and_after": true
+    },
+    {
+      "file": "pyproject.toml",
+      "snapshot_path": "archive/tested_runtime/v0.2.16/pyproject.toml",
+      "source_path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "archive_entry": "UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "bytes": 88,
+      "sha256": "53fea6e6677d86125c81aac2bc6d3cdbfb02f0e0f54aac08b9dcd58f32bfa674",
+      "mtime_ns": 1791722278000000000,
+      "mtime_utc": "2026-10-11T12:37:58+00:00",
+      "stable_double_read": true,
+      "installed_equals_original_versioned_zip": true,
+      "installed_equals_accepted_source": true,
+      "created_exclusively": true,
+      "source_reread_after_copy": {
+        "bytes": 88,
+        "sha256": "53fea6e6677d86125c81aac2bc6d3cdbfb02f0e0f54aac08b9dcd58f32bfa674",
+        "mtime_ns": 1791722278000000000,
+        "mtime_utc": "2026-10-11T12:37:58+00:00",
+        "stable_double_read": true
+      },
+      "copy_equals_source_before_and_after": true
+    },
+    {
+      "file": "README.txt",
+      "snapshot_path": "archive/tested_runtime/v0.2.16/README.txt",
+      "source_path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+      "archive_entry": "UltimateVaultHunterDeathtrapBoost/README.txt",
+      "bytes": 3640,
+      "sha256": "f877406954886aef40270aca22a7bc08dc5939f0199bf31a67e3fd63e68c8972",
+      "mtime_ns": 1791722832000000000,
+      "mtime_utc": "2026-10-11T12:47:12+00:00",
+      "stable_double_read": true,
+      "installed_equals_original_versioned_zip": true,
+      "installed_equals_accepted_source": true,
+      "created_exclusively": true,
+      "source_reread_after_copy": {
+        "bytes": 3640,
+        "sha256": "f877406954886aef40270aca22a7bc08dc5939f0199bf31a67e3fd63e68c8972",
+        "mtime_ns": 1791722832000000000,
+        "mtime_utc": "2026-10-11T12:47:12+00:00",
+        "stable_double_read": true
+      },
+      "copy_equals_source_before_and_after": true
+    }
+  ],
+  "process_exit": {
+    "before_capture": {
+      "game_process_count": 0,
+      "checked_utc": "2026-10-11T20:29:46.0057500Z"
+    },
+    "after_capture": {
+      "game_process_count": 0,
+      "checked_utc": "2026-10-11T20:29:46.7503979Z"
+    },
+    "game_process_count_zero": true,
+    "method": "Read-only Get-Process -Name Borderlands2 before/after preservation; not before owner test."
+  },
+  "preservation": {
+    "accepted_baseline_files": 203,
+    "all_baseline_raw_bytes_equal_accepted_Git_blobs_before_capture": true,
+    "all_203_baseline_fingerprints_unchanged_after_capture": true,
+    "exclusive_new_log_and_three_file_snapshot": true,
+    "save_private_backup_access": "NONE",
+    "installed_game_SDK_file_writes": "NONE"
+  },
+  "diagnostic": {
+    "requested_accepting_starts": 1,
+    "actual_accepting_starts": 1,
+    "accepting_start_counter_method": "Exact actual runtime START version=0.2.16 header; not independent click counting.",
+    "offline_review": {
+      "schema_version": 1,
+      "status": "COMPLETE_LOG_TEXT",
+      "log_text_acceptable": true,
+      "log_text_consistent": true,
+      "reader_sections_complete": true,
+      "input": {
+        "bytes": 13802,
+        "sha256": "0c16ddf9dd0c46459fec53599b9685f4f2e3f6e5c263977be99cfaddb13b5fdc"
+      },
+      "records": 11,
+      "sessions": [
+        {
+          "line": 24,
+          "epoch": 1,
+          "started": true,
+          "failed_start": null,
+          "orphan": false,
+          "attempts": 1,
+          "classified": 1,
+          "filtered": 1,
+          "nulls": 0,
+          "useful": 0,
+          "refusals": 0,
+          "errors": 0,
+          "cleanup_failures": 0,
+          "overlap_refusals": 1,
+          "limit": "NONE",
+          "terminal": true,
+          "removal_pending": false,
+          "awaiting_stop": false,
+          "stops": [
+            {
+              "line": 27,
+              "epoch": 1,
+              "remaining": 0,
+              "uncertain": 0,
+              "attempts": 1,
+              "classified": 1,
+              "filtered": 1,
+              "nulls": 0,
+              "refusals": 0,
+              "errors": 0,
+              "reentry": 0,
+              "cleanup_failures": 0,
+              "limit": "NONE",
+              "outcome": "OBSERVED_FILTERED"
+            },
+            {
+              "line": 29,
+              "epoch": 1,
+              "remaining": 0,
+              "uncertain": 0,
+              "attempts": 1,
+              "classified": 1,
+              "filtered": 1,
+              "nulls": 0,
+              "refusals": 0,
+              "errors": 0,
+              "reentry": 0,
+              "cleanup_failures": 0,
+              "limit": "NONE",
+              "outcome": "OBSERVED_FILTERED"
+            },
+            {
+              "line": 31,
+              "epoch": 1,
+              "remaining": 0,
+              "uncertain": 0,
+              "attempts": 1,
+              "classified": 1,
+              "filtered": 1,
+              "nulls": 0,
+              "refusals": 0,
+              "errors": 0,
+              "reentry": 0,
+              "cleanup_failures": 0,
+              "limit": "NONE",
+              "outcome": "OBSERVED_FILTERED"
+            },
+            {
+              "line": 56,
+              "epoch": 1,
+              "remaining": 0,
+              "uncertain": 0,
+              "attempts": 1,
+              "classified": 1,
+              "filtered": 1,
+              "nulls": 0,
+              "refusals": 0,
+              "errors": 0,
+              "reentry": 0,
+              "cleanup_failures": 0,
+              "limit": "NONE",
+              "outcome": "OBSERVED_FILTERED"
+            }
+          ],
+          "classifications": {
+            "SAME_WRAPPER/OTHER_NAME": 1
+          }
+        }
+      ],
+      "overlap_refusals": 1,
+      "issues": [],
+      "issue_count": 0,
+      "issues_truncated": false,
+      "cleanup": {
+        "reader_handles_resolved": true,
+        "prior_refusal_preserved": false,
+        "other_observers": "NOT_ESTABLISHED",
+        "arrays_or_manual_duration": "NOT_ESTABLISHED",
+        "process_exit": "NOT_ESTABLISHED"
+      },
+      "event_meaning": "PRE attempted entry; fixed primitive wrapper/name observations only",
+      "schema_evidence": "ASSERTED_IN_LOG_TEXT",
+      "native_ownership": "NOT_ESTABLISHED",
+      "summon_generation": "NOT_ESTABLISHED",
+      "native_clock": "NOT_ESTABLISHED",
+      "installation": "NOT_ESTABLISHED",
+      "owner_protocol": "NOT_ESTABLISHED",
+      "authenticity": "NOT_ESTABLISHED",
+      "engine_behavior": "NOT_ESTABLISHED",
+      "native_owned_lifecycle_ready": false,
+      "native_effect_ready": false,
+      "silence": "NOT_OBSERVED never proves absence, deactivation, ownership or lifespan"
+    },
+    "offline_review_cli_exit": 0,
+    "offline_review_script_sha256": "ae74b7aee95b07fe2a9327b4baed9ecbbdef35dd601cfb8f9927f9213e6036c5",
+    "no_fabricated_baseline": true,
+    "native_owned_lifecycle_ready": false,
+    "native_effect_ready": false,
+    "capture_observations": {
+      "accepting_start_lines": [
+        24
+      ],
+      "overlap_refusal_lines": [
+        25
+      ],
+      "callback_event_lines": [
+        26
+      ],
+      "callback_classification": "SAME_WRAPPER/OTHER_NAME",
+      "deathtrap_name_event_count": 0,
+      "counted_operations": 196,
+      "stage_counts": [
+        58,
+        50,
+        36,
+        52
+      ],
+      "outcome": "OBSERVED_FILTERED",
+      "reader_stop_lines": [
+        27,
+        29,
+        31,
+        56
+      ],
+      "reader_outcome_lines": [
+        28,
+        30,
+        32,
+        57
+      ],
+      "reader_handles_resolved_in_log": true,
+      "reader_cleanup_errors_refusals_and_failures": 0,
+      "old_observer_family_zero_records": {
+        "STATE": {
+          "lines": [
+            33,
+            58
+          ],
+          "remaining_zero": true,
+          "meaning": "runtime assertion, not independent native handle inspection"
+        },
+        "UI": {
+          "lines": [
+            44,
+            69
+          ],
+          "remaining_zero": true,
+          "meaning": "runtime assertion, not independent native handle inspection"
+        },
+        "UPGRADE": {
+          "lines": [
+            46,
+            71
+          ],
+          "remaining_zero": true,
+          "meaning": "runtime assertion, not independent native handle inspection"
+        },
+        "INITNODE": {
+          "lines": [
+            54,
+            79
+          ],
+          "remaining_zero": true,
+          "meaning": "runtime assertion, not independent native handle inspection"
+        }
+      },
+      "disarmed_no_initialization_patch_lines": [
+        55,
+        80
+      ],
+      "armed_or_insertion_markers_in_capture": 0,
+      "metadata_and_passive_observer_markers_in_capture": 0,
+      "project_error_and_traceback_markers_in_capture": 0,
+      "nonproject_startup_warning": {
+        "line": 23,
+        "kind": "Deprecated legacy import compatibility warning; no runtime traceback"
+      },
+      "wrapper_time_observation": {
+        "start_line": 24,
+        "event_line": 26,
+        "first_stop_line": 27,
+        "final_stop_line": 56,
+        "start_to_event_seconds": 64.64,
+        "start_to_first_stop_seconds": 76.07,
+        "start_to_final_stop_seconds": 84.229,
+        "source": "SDK header timestamps only; not independently measured owner wait, engine clock or Deathtrap lifetime"
+      },
+      "protocol_deviations_and_limits": [
+        "One overlap refusal is logged at25; requested one START/no other controls. The triggering control is unknown: multiple guarded controls and START emit this same fixed label. Do not infer which control or number of owner clicks.",
+        "Four identical resolved STOP/OUTCOME pairs occur. CANCEL/disable also invoke STOP; raw text alone cannot attribute each pair to a particular control or prove four manual STOP clicks.",
+        "Owner reports a natural Deathtrap end, but the only observed definition label is OTHER_NAME. No DEATHTRAP_NAME event; no callback-to-summon or deactivation-success attribution established.",
+        "Header START-to-firstSTOP76.070seconds/finalSTOP84.229seconds lie within the proposedabout90second bound, but actual gameplay waiting and natural end were not independently observed.",
+        "No ARM/insertion markers; cleanup says DISARMED/no patch. No point/rank baseline or array rollback was required by the standalone protocol; no point/save/recovery conclusion.",
+        "Separate owner visible-failure statement not supplied. No additional run or repeat summon is authorized."
+      ]
+    }
+  },
+  "checks_not_run": [
+    "No agent game launch/install/control, native SDK import/execution/stub compilation or native invocation.",
+    "No before-test process/UI/title/click-count/summon-count/natural-end/wait-duration observation; separate visible-failure report not supplied.",
+    "No independent native identity/callback attribution/deactivation success or source-to-installed-native-binary match.",
+    "No manager ownership, allocation/summon generation, engine clock, Duration/write interval/exact-original cleanup/rank-one/effect/save audit.",
+    "Accepted681-test offline suite and hostedCI not repeated for capture-only unchanged-code work."
+  ],
+  "metadata_completion_before_publication": {
+    "initial_manifest": {
+      "bytes": 12023,
+      "sha256": "1b27118defd469224ce86c5bb1307b4a26c92edee3459f95ec4dac962b64dab8"
+    },
+    "purpose": "Add independently checked exact raw line references, retained overlap/repeated STOP records and header timing limits before publication; no raw data or snapshot changes.",
+    "raw_log_and_three_snapshot_bytes_unchanged": true
+  }
+}

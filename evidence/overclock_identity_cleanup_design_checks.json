@@ -1,0 +1,126 @@
+{
+  "task_id": "5408e17f-9784-48f9-acea-fc317b837f0f",
+  "base_commit": "db0adbe6379ae218146599a7069bd63c1ed05cc5",
+  "decision": "NOT_READY_FOR_NATIVE_IMPLEMENTATION",
+  "runtime_sha256": "41fd2dd9e22bcfa64fbddfc19b881f6950362656e047b212b00eb86f33a01f73",
+  "fresh_checks": {
+    "baseline_files_unchanged": 137,
+    "runtime_syntax": "PASS",
+    "functions": {
+      "signature": {
+        "start": 41,
+        "end": 43,
+        "ast_sha256": "38a87bd328ae1a046de0201221ef6c46419533f704e43910b7df415bfc252d08"
+      },
+      "find_live": {
+        "start": 46,
+        "end": 79,
+        "ast_sha256": "933ad1b7ef78165408786b9e1f3cb4a3eb3fd0944ad6d606f0f741aa0a47ea27"
+      },
+      "apply": {
+        "start": 116,
+        "end": 166,
+        "ast_sha256": "80bfe3fbb5ad60a0e430d2ac28fd2ae89c640ebe572931e0c1db1ef14cc6f999"
+      },
+      "restore": {
+        "start": 169,
+        "end": 197,
+        "ast_sha256": "5b96b42d7f0fdcb5bed444af843ec43fc24298a3947d4b43973ea76bc0bcfe30"
+      },
+      "cancel_init_node": {
+        "start": 1379,
+        "end": 1391,
+        "ast_sha256": "c2333f50a2345ef5ea80f52420d4fde7bef1d07d94e2d5cbb227a87666f7bdb8"
+      },
+      "_upgrade_state": {
+        "start": 1636,
+        "end": 1700,
+        "ast_sha256": "076900538b6cdee4309967a8e8aaea3d350be897cf7ac420c4226f70462a580b"
+      },
+      "shutdown": {
+        "start": 3320,
+        "end": 3322,
+        "ast_sha256": "9cfb81d36e8428d4bd665542cab53f8c27479241793dd70978421b39c38b34da"
+      }
+    },
+    "GetSkillManager_invocation_present": true,
+    "shutdown_and_cancel_do_not_call_manual_restore": true,
+    "diagnostic_rank_zero_guard_preserved": true
+  },
+  "accepted_historical_mock_input": {
+    "path": "evidence/overclock_effect_readiness_checks.json",
+    "sha256": "79d360bcac42d66068c71507a32d6d984bd933bfd58da622f7b531f665a5592a",
+    "probe_count": 11,
+    "results": [
+      {
+        "case": "normal_apply_repeat_restore",
+        "duration": 60.0,
+        "base": 60.0,
+        "stub_GetSkillManager_calls": 3
+      },
+      {
+        "case": "different_instigator_same_name",
+        "duration": 75.0,
+        "instigator_is_pc": false
+      },
+      {
+        "case": "missing_activation_time",
+        "duration": 75.0,
+        "signature": [
+          "LiveDeathtrap",
+          null,
+          "Controller_0"
+        ]
+      },
+      {
+        "case": "shutdown_after_manual_apply",
+        "duration": 75.0,
+        "record_retained": true
+      },
+      {
+        "case": "replacement_reuses_signature",
+        "old_duration": 75.0,
+        "replacement_duration": 60.0,
+        "distinct_object": true
+      },
+      {
+        "case": "two_matching_active_skills",
+        "first_duration": 75.0,
+        "second_duration": 60.0
+      },
+      {
+        "case": "nonempty_modifier_stack_refused",
+        "duration": 60.0
+      },
+      {
+        "case": "boolean_duration_refused",
+        "duration": true
+      },
+      {
+        "case": "independent_duration_change_preserved",
+        "duration": 76.0,
+        "record_cleared": true
+      },
+      {
+        "case": "lost_record_does_not_stack",
+        "duration": 75.0,
+        "record_is_none": true
+      },
+      {
+        "case": "manual_apply_independent_of_node",
+        "duration": 75.0,
+        "node_state_is_none": true
+      }
+    ],
+    "rerun_this_design_task": false
+  },
+  "checks_not_run": [
+    "full suite repeated for unchanged code",
+    "native SDK imports",
+    "game installation or test",
+    "lifetime/reference semantics",
+    "natural lifecycle capture",
+    "save/private backup access"
+  ],
+  "native_generation_and_identity": "hypothetical adapter facts only, not established"
+}

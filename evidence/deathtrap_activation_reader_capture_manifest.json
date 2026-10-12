@@ -1,0 +1,391 @@
+{
+  "schema_version": 1,
+  "project_id": "e4e722af-5c33-4a37-b08c-3ddb15408ccd",
+  "task_id": "ff39efa0-222e-4725-ac71-74e4be2ec9d0",
+  "captured_at_utc": "2026-10-12T08:16:56.313515+00:00",
+  "baseline_commit": "8c13d297e19ce47e986b0c650f93d79aa8bb199d",
+  "runtime_implementation_commit": "30af0d1bb8abd94e06420689a04425e047ce82b8",
+  "strict_reviewer_commit": "8c13d297e19ce47e986b0c650f93d79aa8bb199d",
+  "branch": "codex/jake-v18-activation-capture",
+  "operator_confirmation": {
+    "exact_statement": "Deathtrap ended naturally, confirm **STOP 23 / CANCEL 3 / full exit**",
+    "natural_end_stop23_cancel3_full_exit_explicitly_reported": true,
+    "preceding_approval": "Yes, begin this v0.2.18 test",
+    "approved_protocol": [
+      "Owner installs exact reviewed ZIP with BL2 fully closed, using already-backed-up solo Offline Gaige",
+      "MAIN MENU: verify Offline, Gaige and exact title; no ARM; Continue and fully load MAP",
+      "MAP: START item22 once; close options and summon Deathtrap once with normal action-skill key; stay in place without seeking combat, natural end, at most about90seconds from START",
+      "MAP: STOP item23, then CANCEL item3; fully exit to DESKTOP and wait for log preservation before relaunch",
+      "Refusal/unavailable skill/missing controls/time bound: skip or stop/exit/report without retry; no buying/respec/travel/manualboost/metadata4/othertrace"
+    ],
+    "approved_protocol_sha256": "90115be471dcfd86e442abb305d837e5b817e034145a846285e91885d03942d9",
+    "start22_single_summon_UI_timebound_independently_observed": false,
+    "separate_visible_failure_report": "NOT_REPORTED",
+    "observation_limit": "Owner natural end and STOP/CANCEL/full exit report is separate from observed log/process/provenance. No UI/click/summon count/wait/save audit.",
+    "authorization_scope": "Preserve and review completed approved run only; no retry/native action; public capture export not yet approved.",
+    "approved_protocol_source": "Complete exact owner-review text retained privately; embedded steps summarize the approved gameplay. The hash below fingerprints the original full protocol.",
+    "approved_protocol_original_bytes": 7206
+  },
+  "log": {
+    "source": "Owner BL2 unrealsdk.log, read-only",
+    "preserved_path": "evidence/deathtrap_activation_reader_user_test.log",
+    "bytes": 8847,
+    "sha256": "5e10b5e4c6687f3b6abad0175e0d6d5ff7348cac3c8a4ad225753e31838e3d2e",
+    "mtime_ns": 1791792724094455200,
+    "mtime_utc": "2026-10-12T08:12:04.094455+00:00",
+    "stable_double_read": true,
+    "source_reread_after_copy": {
+      "bytes": 8847,
+      "sha256": "5e10b5e4c6687f3b6abad0175e0d6d5ff7348cac3c8a4ad225753e31838e3d2e",
+      "mtime_ns": 1791792724094455200,
+      "mtime_utc": "2026-10-12T08:12:04.094455+00:00",
+      "stable_double_read": true
+    },
+    "copy_equals_source_before_and_after": true,
+    "lines": 53,
+    "ends_with_newline": true,
+    "created_exclusively": true
+  },
+  "installed_mod": {
+    "expected_name": "UVH v0.2.18 - CALLBACK ACTIVATION READER",
+    "version": "0.2.18",
+    "expected_title_present_in_source": true,
+    "expected_title_present_in_pyproject": true,
+    "title_seen_by_agent": "NOT_CHECKED",
+    "syntax_only": "PASS; syntax compilation only, no runtime/SDK import or execution"
+  },
+  "versioned_zip": {
+    "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.18_folder_install.zip",
+    "bytes": 45939,
+    "sha256": "1d7d2f24a45596e9a6faf36128474fd7184e524b692c8cb582bde4f5bf10c5ce",
+    "mtime_ns": 1791781304082458400,
+    "mtime_utc": "2026-10-12T05:01:44.082458+00:00",
+    "stable_double_read": true,
+    "integrity_checked": true,
+    "exact_three_file_layout": true
+  },
+  "installed_snapshot": [
+    {
+      "file": "__init__.py",
+      "snapshot_path": "archive/tested_runtime/v0.2.18/__init__.py",
+      "source_path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "archive_entry": "UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 217340,
+      "sha256": "7663f81a14ba23d44d6af3ea4add0f4309bddbf7b075c9b341b36229e59afbe0",
+      "mtime_ns": 1791776202000000000,
+      "mtime_utc": "2026-10-12T03:36:42+00:00",
+      "stable_double_read": true,
+      "installed_equals_original_versioned_zip": true,
+      "installed_equals_accepted_source": true,
+      "created_exclusively": true,
+      "source_reread_after_copy": {
+        "bytes": 217340,
+        "sha256": "7663f81a14ba23d44d6af3ea4add0f4309bddbf7b075c9b341b36229e59afbe0",
+        "mtime_ns": 1791776202000000000,
+        "mtime_utc": "2026-10-12T03:36:42+00:00",
+        "stable_double_read": true
+      },
+      "copy_equals_source_before_and_after": true
+    },
+    {
+      "file": "pyproject.toml",
+      "snapshot_path": "archive/tested_runtime/v0.2.18/pyproject.toml",
+      "source_path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "archive_entry": "UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "bytes": 83,
+      "sha256": "4275a50ddbeebc7c021edb444780e284572d9a5da63ffdb497e8697014e206bd",
+      "mtime_ns": 1791776068000000000,
+      "mtime_utc": "2026-10-12T03:34:28+00:00",
+      "stable_double_read": true,
+      "installed_equals_original_versioned_zip": true,
+      "installed_equals_accepted_source": true,
+      "created_exclusively": true,
+      "source_reread_after_copy": {
+        "bytes": 83,
+        "sha256": "4275a50ddbeebc7c021edb444780e284572d9a5da63ffdb497e8697014e206bd",
+        "mtime_ns": 1791776068000000000,
+        "mtime_utc": "2026-10-12T03:34:28+00:00",
+        "stable_double_read": true
+      },
+      "copy_equals_source_before_and_after": true
+    },
+    {
+      "file": "README.txt",
+      "snapshot_path": "archive/tested_runtime/v0.2.18/README.txt",
+      "source_path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+      "archive_entry": "UltimateVaultHunterDeathtrapBoost/README.txt",
+      "bytes": 5279,
+      "sha256": "e6fb605a4fb06055c35f445856bb345236a2805c785fe2742477558eab29152b",
+      "mtime_ns": 1791776068000000000,
+      "mtime_utc": "2026-10-12T03:34:28+00:00",
+      "stable_double_read": true,
+      "installed_equals_original_versioned_zip": true,
+      "installed_equals_accepted_source": true,
+      "created_exclusively": true,
+      "source_reread_after_copy": {
+        "bytes": 5279,
+        "sha256": "e6fb605a4fb06055c35f445856bb345236a2805c785fe2742477558eab29152b",
+        "mtime_ns": 1791776068000000000,
+        "mtime_utc": "2026-10-12T03:34:28+00:00",
+        "stable_double_read": true
+      },
+      "copy_equals_source_before_and_after": true
+    }
+  ],
+  "process_exit": {
+    "before_capture": {
+      "game_process_count": 0,
+      "checked_utc": "2026-10-12T08:16:55.0138726Z"
+    },
+    "after_capture": {
+      "game_process_count": 0,
+      "checked_utc": "2026-10-12T08:16:55.9794760Z"
+    },
+    "game_process_count_zero": true,
+    "method": "Read-only Get-Process -Name Borderlands2 before and after preservation, not before owner test."
+  },
+  "preservation": {
+    "accepted_baseline_files": 239,
+    "all_baseline_raw_bytes_equal_accepted_Git_blobs_before_capture": true,
+    "all_239_baseline_fingerprints_unchanged_after_capture": true,
+    "exclusive_new_log_and_three_file_snapshot": true,
+    "save_private_backup_access": "NONE",
+    "installed_game_SDK_file_writes": "NONE"
+  },
+  "diagnostic": {
+    "requested_accepting_starts": 1,
+    "actual_accepting_starts": 1,
+    "accepting_start_counter_method": "Exact actual START version=0.2.18 records, not independently observed clicks.",
+    "offline_review": {
+      "schema_version": 1,
+      "reader_version": "0.2.18",
+      "status": "COMPLETE_LOG_TEXT",
+      "log_text_acceptable": true,
+      "log_text_consistent": true,
+      "reader_sections_complete": true,
+      "input": {
+        "bytes": 8847,
+        "sha256": "5e10b5e4c6687f3b6abad0175e0d6d5ff7348cac3c8a4ad225753e31838e3d2e"
+      },
+      "records": 7,
+      "sessions": [
+        {
+          "line": 24,
+          "epoch": 1,
+          "started": true,
+          "failed_start": null,
+          "orphan": false,
+          "attempts": 2,
+          "classified": 2,
+          "filtered": 1,
+          "nulls": 0,
+          "useful": 1,
+          "refusals": 0,
+          "errors": 0,
+          "cleanup_failures": 0,
+          "overlap_refusals": 0,
+          "limit": "NONE",
+          "terminal": true,
+          "removal_pending": false,
+          "awaiting_stop": false,
+          "stops": [
+            {
+              "line": 27,
+              "epoch": 1,
+              "remaining": 0,
+              "uncertain": 0,
+              "attempts": 2,
+              "classified": 2,
+              "filtered": 1,
+              "nulls": 0,
+              "refusals": 0,
+              "errors": 0,
+              "reentry": 0,
+              "cleanup_failures": 0,
+              "limit": "NONE",
+              "outcome": "OBSERVED_PRIMITIVE"
+            },
+            {
+              "line": 29,
+              "epoch": 1,
+              "remaining": 0,
+              "uncertain": 0,
+              "attempts": 2,
+              "classified": 2,
+              "filtered": 1,
+              "nulls": 0,
+              "refusals": 0,
+              "errors": 0,
+              "reentry": 0,
+              "cleanup_failures": 0,
+              "limit": "NONE",
+              "outcome": "OBSERVED_PRIMITIVE"
+            }
+          ],
+          "classifications": {
+            "SAME_WRAPPER/DEATHTRAP_NAME": 1,
+            "SAME_WRAPPER/OTHER_NAME": 1
+          },
+          "events": [
+            {
+              "line": 25,
+              "epoch": 1,
+              "ordinal": 1,
+              "attempt": 1,
+              "controller": "SAME_WRAPPER",
+              "definition": "DEATHTRAP_NAME",
+              "name": "Skill_DeathTrap"
+            },
+            {
+              "line": 26,
+              "epoch": 1,
+              "ordinal": 2,
+              "attempt": 2,
+              "controller": "SAME_WRAPPER",
+              "definition": "OTHER_NAME",
+              "name": "UpshotRobot"
+            }
+          ]
+        }
+      ],
+      "overlap_refusals": 0,
+      "issues": [],
+      "issue_count": 0,
+      "issues_truncated": false,
+      "cleanup": {
+        "reader_handles_resolved": true,
+        "prior_refusal_preserved": false,
+        "other_observers": "NOT_ESTABLISHED",
+        "arrays_or_manual_duration": "NOT_ESTABLISHED",
+        "process_exit": "NOT_ESTABLISHED"
+      },
+      "event_meaning": "PRE attempted entry; validated primitive definition name only; no association or lifespan",
+      "schema_evidence": "ASSERTED_IN_LOG_TEXT",
+      "native_ownership": "NOT_ESTABLISHED",
+      "summon_generation": "NOT_ESTABLISHED",
+      "native_clock": "NOT_ESTABLISHED",
+      "installation": "NOT_ESTABLISHED",
+      "owner_protocol": "NOT_ESTABLISHED",
+      "authenticity": "NOT_ESTABLISHED",
+      "engine_behavior": "NOT_ESTABLISHED",
+      "native_owned_lifecycle_ready": false,
+      "native_effect_ready": false,
+      "silence": "NOT_OBSERVED never proves absence, activation, ownership or lifespan"
+    },
+    "offline_review_cli_exit": 0,
+    "offline_review_script_sha256": "a886f9fb275ee8eb9574afc98f00fa4f9567164fb9732563bc5771ee55d71aae",
+    "capture_observations": {
+      "accepting_start_lines": [
+        24
+      ],
+      "callback_event_lines": [
+        25,
+        26
+      ],
+      "validated_events": [
+        {
+          "line": 25,
+          "epoch": 1,
+          "ordinal": 1,
+          "attempt": 1,
+          "controller": "SAME_WRAPPER",
+          "definition": "DEATHTRAP_NAME",
+          "name": "Skill_DeathTrap"
+        },
+        {
+          "line": 26,
+          "epoch": 1,
+          "ordinal": 2,
+          "attempt": 2,
+          "controller": "SAME_WRAPPER",
+          "definition": "OTHER_NAME",
+          "name": "UpshotRobot"
+        }
+      ],
+      "reader_stop_lines": [
+        27,
+        29
+      ],
+      "reader_outcome_lines": [
+        28,
+        30
+      ],
+      "legacy_reader_marker_lines": [],
+      "overlap_refusal_lines": [],
+      "deathtrap_name_event_count": 1,
+      "observed_identifiers": [
+        "Skill_DeathTrap",
+        "UpshotRobot"
+      ],
+      "reader_handles_resolved_in_log": true,
+      "old_observer_family_zero_records": {
+        "STATE": {
+          "lines": [
+            31
+          ],
+          "all_recorded_remaining_zero": true,
+          "meaning": "Runtime assertions, not independent native handle inspection"
+        },
+        "UI": {
+          "lines": [
+            42
+          ],
+          "all_recorded_remaining_zero": true,
+          "meaning": "Runtime assertions, not independent native handle inspection"
+        },
+        "UPGRADE": {
+          "lines": [
+            44
+          ],
+          "all_recorded_remaining_zero": true,
+          "meaning": "Runtime assertions, not independent native handle inspection"
+        },
+        "INITNODE": {
+          "lines": [
+            52
+          ],
+          "all_recorded_remaining_zero": true,
+          "meaning": "Runtime assertions, not independent native handle inspection"
+        }
+      },
+      "disarmed_no_initialization_patch_lines": [
+        53
+      ],
+      "armed_or_insertion_markers_in_capture": 0,
+      "metadata_and_passive_observer_markers_in_capture": 0,
+      "project_error_and_traceback_markers_in_capture": 0,
+      "wrapper_time_observation": {
+        "start_lines": [
+          24
+        ],
+        "event_lines": [
+          25,
+          26
+        ],
+        "first_stop_line": 27,
+        "final_stop_line": 29,
+        "start_to_first_event_seconds": 5.173,
+        "start_to_first_stop_seconds": 76.746,
+        "start_to_final_stop_seconds": 82.168,
+        "source": "SDK header intervals only; not measured owner wait, engine clock or Deathtrap lifetime"
+      },
+      "attribution_and_protocol_limits": [
+        "Owner reports a natural Deathtrap end and STOP23/CANCEL3/full exit. The agent did not observe UI/key presses/summon count/START selection/wait or natural end.",
+        "Validated Name identifies the supplied definition at PRE attempted entry only. No native manager ownership, unique summon, generation or activation success follows.",
+        "Repeated STOP/OUTCOME records may also originate from CANCEL/disable; raw text cannot assign every pair to a manual click.",
+        "Header intervals include control/cleanup time and do not establish owner wait or a protocol time-bound breach.",
+        "No ARM/insertion markers or no-patch assertion, when present, do not establish purchased grade, point/save state or recovery.",
+        "Separate visible-failure statement not supplied. No additional test or repeat summon is authorized."
+      ]
+    },
+    "no_fabricated_baseline": true,
+    "native_owned_lifecycle_ready": false,
+    "native_effect_ready": false
+  },
+  "checks_not_run": [
+    "No agent installation/game launch/control or real SDK/stub execution/import/compilation/native action.",
+    "No before-test process/UI/title/key/summon-count/wait/natural-end/visible-failure observation.",
+    "No independent native identity/manager/uniqueinstance/generation/activation/clock/Duration/rank-one/exact-original write cleanup/save audit.",
+    "Accepted877 offline tests/hostedCI not repeated for capture-only unchanged code."
+  ]
+}
