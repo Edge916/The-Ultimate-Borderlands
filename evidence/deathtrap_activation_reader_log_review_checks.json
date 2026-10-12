@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "task_id": "eee9cb6e-5c61-434c-bd4f-7de2bcd99374",
+  "status": "PASS",
+  "accepted_implementation": "30af0d1bb8abd94e06420689a04425e047ce82b8",
+  "accepted_implementation_PR": "https://github.com/Edge916/The-Ultimate-Borderlands/pull/43",
+  "branch": "codex/jake-v18-activation-log-reviewer",
+  "scope": [
+    "scripts/review_deathtrap_activation_reader_log.py",
+    "tests/test_deathtrap_activation_reader_log_review.py",
+    "docs/deathtrap_activation_reader_log_review.md",
+    "evidence/deathtrap_activation_reader_log_review_checks.json"
+  ],
+  "reader_version": "0.2.18",
+  "target": "ActivateSkill",
+  "phase": "PRE",
+  "actual_validation": {
+    "status": "PASS",
+    "syntax": {
+      "compiled_files": 34,
+      "errors": [],
+      "status": "PASS"
+    },
+    "tests": {
+      "status": "PASS",
+      "unique_tests": 877,
+      "tests_run": 877,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "unexpected_successes": 0,
+      "expected_failures": 0,
+      "all_discovered_run": true
+    },
+    "package": {
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "PASS: isolated packaged runtime import; no game access or scaffolding\nPASS: ZIP integrity, exact single-folder layout and source match\n",
+      "stderr": ""
+    },
+    "seconds": 100.125
+  },
+  "accepted_tests": 806,
+  "new_tests": 71,
+  "reviewer": {
+    "path": "scripts/review_deathtrap_activation_reader_log.py",
+    "bytes": 20492,
+    "sha256": "a886f9fb275ee8eb9574afc98f00fa4f9567164fb9732563bc5771ee55d71aae",
+    "stdlib_imports": [
+      "argparse",
+      "hashlib",
+      "json",
+      "pathlib",
+      "re"
+    ],
+    "unchanged_prior_functions": [
+      "integer",
+      "decode_record",
+      "main"
+    ],
+    "recognized_marker_families": [
+      "[UVH-ACT",
+      "[UVH-CALL"
+    ],
+    "stage_caps": [
+      112,
+      80,
+      48,
+      80
+    ],
+    "total_cap": 320,
+    "bounds": {
+      "bytes": 16777216,
+      "lines": 100000,
+      "line_bytes": 16384,
+      "records": 4096,
+      "sessions": 128,
+      "issues": 128,
+      "project_record_bytes": 384,
+      "canonical_integer": 2147483647,
+      "events_per_session": 24,
+      "names_max": 3072
+    }
+  },
+  "actual_inert_branch_transcripts": [
+    {
+      "controller": "NULL_INSTIGATOR",
+      "definition": "NOT_READ",
+      "name": "-",
+      "stages": [
+        98,
+        65,
+        0,
+        0
+      ],
+      "independently_recorded_ops": 163,
+      "actual_inert_event": "EVENT epoch=1 ordinal=1 attempt=1 schema=VALID controller=NULL_INSTIGATOR definition=NOT_READ name=- ownership=UNESTABLISHED ops=163 stages=98,65,0,0",
+      "CLI_full_JSON_equal": true,
+      "CLI_exit": 0,
+      "status": "COMPLETE_LOG_TEXT"
+    },
+    {
+      "controller": "OTHER_CONTROLLER_CLASS",
+      "definition": "NOT_READ",
+      "name": "-",
+      "stages": [
+        98,
+        66,
+        0,
+        0
+      ],
+      "independently_recorded_ops": 164,
+      "actual_inert_event": "EVENT epoch=1 ordinal=1 attempt=1 schema=VALID controller=OTHER_CONTROLLER_CLASS definition=NOT_READ name=- ownership=UNESTABLISHED ops=164 stages=98,66,0,0",
+      "CLI_full_JSON_equal": true,
+      "CLI_exit": 0,
+      "status": "COMPLETE_LOG_TEXT"
+    },
+    {
+      "controller": "OTHER_WRAPPER",
+      "definition": "NOT_READ",
+      "name": "-",
+      "stages": [
+        98,
+        66,
+        1,
+        0
+      ],
+      "independently_recorded_ops": 165,
+      "actual_inert_event": "EVENT epoch=1 ordinal=1 attempt=1 schema=VALID controller=OTHER_WRAPPER definition=NOT_READ name=- ownership=UNESTABLISHED ops=165 stages=98,66,1,0",
+      "CLI_full_JSON_equal": true,
+      "CLI_exit": 0,
+      "status": "COMPLETE_LOG_TEXT"
+    },
+    {
+      "controller": "SAME_WRAPPER",
+      "definition": "NULL_DEFINITION",
+      "name": "-",
+      "stages": [
+        98,
+        66,
+        36,
+        66
+      ],
+      "independently_recorded_ops": 266,
+      "actual_inert_event": "EVENT epoch=1 ordinal=1 attempt=1 schema=VALID controller=SAME_WRAPPER definition=NULL_DEFINITION name=- ownership=UNESTABLISHED ops=266 stages=98,66,36,66",
+      "CLI_full_JSON_equal": true,
+      "CLI_exit": 0,
+      "status": "COMPLETE_LOG_TEXT"
+    },
+    {
+      "controller": "SAME_WRAPPER",
+      "definition": "OTHER_NAME",
+      "name": "Synthetic_Other_Skill",
+      "stages": [
+        98,
+        66,
+        36,
+        68
+      ],
+      "independently_recorded_ops": 268,
+      "actual_inert_event": "EVENT epoch=1 ordinal=1 attempt=1 schema=VALID controller=SAME_WRAPPER definition=OTHER_NAME name=Synthetic_Other_Skill ownership=UNESTABLISHED ops=268 stages=98,66,36,68",
+      "CLI_full_JSON_equal": true,
+      "CLI_exit": 0,
+      "status": "COMPLETE_LOG_TEXT"
+    },
+    {
+      "controller": "SAME_WRAPPER",
+      "definition": "DEATHTRAP_NAME",
+      "name": "Skill_DeathTrap",
+      "stages": [
+        98,
+        66,
+        36,
+        68
+      ],
+      "independently_recorded_ops": 268,
+      "actual_inert_event": "EVENT epoch=1 ordinal=1 attempt=1 schema=VALID controller=SAME_WRAPPER definition=DEATHTRAP_NAME name=Skill_DeathTrap ownership=UNESTABLISHED ops=268 stages=98,66,36,68",
+      "CLI_full_JSON_equal": true,
+      "CLI_exit": 0,
+      "status": "COMPLETE_LOG_TEXT"
+    }
+  ],
+  "transcript_meaning": "Trusted inert current v18 project fixture access records; no SDK binding simulation, real engine, origin, native ownership or gameplay proof",
+  "preserved_base_files": 235,
+  "preserved_aggregate_sha256": "fd02db203547e8e28cf5930b9c24f0f3aad2ef6f2acf20f4a88858afb8dce5a5",
+  "original_versioned_ZIPs": [
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+      "bytes": 32742,
+      "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+      "bytes": 34433,
+      "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+      "bytes": 36736,
+      "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip",
+      "bytes": 44901,
+      "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.17_folder_install.zip",
+      "bytes": 44658,
+      "sha256": "d46d8b3d91416920f9624161e90dfb06f685673b87afd0dbc9d70897da4a233d",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.18_folder_install.zip",
+      "bytes": 45939,
+      "sha256": "1d7d2f24a45596e9a6faf36128474fd7184e524b692c8cb582bde4f5bf10c5ce",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+      "bytes": 19467,
+      "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+      "bytes": 20457,
+      "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+      "bytes": 21349,
+      "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+      "bytes": 24437,
+      "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+      "bytes": 26428,
+      "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+      "bytes": 26629,
+      "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+      "bytes": 28884,
+      "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+      "bytes": 30016,
+      "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+      "bytes": 31335,
+      "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160",
+      "CRC": "PASS"
+    }
+  ],
+  "frozen_full_reports": [
+    {
+      "log": "evidence/v032_user_test.log",
+      "status": "PARTIAL",
+      "exit_code": 1,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_manager_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_passive_event_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_callback_local_reader_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_callback_definition_name_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    }
+  ],
+  "old_reader_evidence_rejected": [
+    {
+      "log": "evidence/deathtrap_callback_local_reader_user_test.log",
+      "records": 11,
+      "status": "INVALID_LOG_TEXT",
+      "exit_code": 1,
+      "sessions": 0,
+      "raw_private_text_exported": false
+    },
+    {
+      "log": "evidence/deathtrap_callback_definition_name_user_test.log",
+      "records": 10,
+      "status": "INVALID_LOG_TEXT",
+      "exit_code": 1,
+      "sessions": 0,
+      "raw_private_text_exported": false
+    }
+  ],
+  "immutable_inventory": {
+    "verified_files": 53,
+    "verified_archives": 12,
+    "relationships": 5,
+    "errors": [],
+    "status": "PASS"
+  },
+  "default_original_v18_source_match": true,
+  "local_and_accepted_public_links": [
+    "../sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+    "deathtrap_activation_reader_design.md",
+    "deathtrap_activation_reader_feasibility.md",
+    "../evidence/deathtrap_activation_reader_implementation_checks.json",
+    "deathtrap_activation_reader_instructions.md",
+    "../evidence/deathtrap_callback_definition_name_user_test.log",
+    "../evidence/deathtrap_callback_definition_name_capture_manifest.json",
+    "../evidence/deathtrap_activation_reader_log_review_checks.json"
+  ],
+  "independent_readonly_review": {
+    "status": "PASS",
+    "actionable_findings": 0,
+    "additional_adversarial_probes": 33,
+    "maximum_report_names": 3072,
+    "maximum_report_records": 3584,
+    "maximum_CLI_stdout_bytes": 1181285,
+    "CLI_stderr_bytes": 0,
+    "checks": "Actual new parser, v18 runtime grammar/counts and immutable v17 full report checked; all six branches, four cap exhaustion routes, old64 false refusal, mixed/nested SDK markers, bounded Name/privacy/integers, late closure, pending restart and historical refusal probes passed"
+  },
+  "targeted_new_suite": {
+    "tests_run": 71,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "seconds": 1.311,
+    "source": "Separate helper actual new reviewer suite; full root suite recorded independently above"
+  },
+  "actual_fixed_findings": [
+    "Scratch root builder literal plus produced a SyntaxError before new file creation; replacement fixed and project syntax passed",
+    "Initial new71 targeted tests had one method fail in three subcases due to shorthand issue-code assertion; corrected to exact BUDGET_REFUSAL_WITHOUT_EXHAUSTION, final71 passed with no parser change"
+  ],
+  "native_effect_ready": false,
+  "native_owned_lifecycle_ready": false,
+  "game_tested": false,
+  "publication": "Prepared exact four-file payload requires separate owner approval, verified public bytes and deliberate acceptance",
+  "checks_not_run": [
+    "Hosted CI",
+    "Real SDK/stub imports/execution/compilation or native binding simulation",
+    "Game/install/new owner protocol/capture/save/private backup/purchase/summon/native flag or Duration write",
+    "Native ownership/generation/liveness/engine clock/purchased rank-one/exact-original cleanup/effect proof",
+    "Support communication, merge or release"
+  ]
+}
