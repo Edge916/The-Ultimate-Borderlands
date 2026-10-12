@@ -1,0 +1,845 @@
+{
+  "schema_version": 1,
+  "task_id": "a54c9dc6-11c3-43a3-90a8-1e8eb4445c67",
+  "status": "PASS",
+  "accepted_parent": "ce83fcffaa12502be0ce8bdb4b97bb5df2747169",
+  "accepted_parent_PR": "https://github.com/Edge916/The-Ultimate-Borderlands/pull/40",
+  "branch": "codex/jake-activation-pre-audit",
+  "scope": [
+    "docs/deathtrap_activation_reader_feasibility.md",
+    "evidence/deathtrap_activation_reader_feasibility_checks.json"
+  ],
+  "decision": "CONDITIONAL_BOUNDED_PRIMITIVE_DESIGN_REVIEW / NATIVE_EFFECT_NOT_READY",
+  "document": {
+    "path": "docs/deathtrap_activation_reader_feasibility.md",
+    "bytes": 11454,
+    "sha256": "274a9251ca7d3217e053806382a8559d693960b62f6fc3db678d9c7fe212e9a3"
+  },
+  "assumption": "Ordinary valid SDK hook inputs; Python guards cannot protect earlier native copy/conversion or invalid pointers",
+  "native_effect_ready": false,
+  "activation_coverage": "NOT_OBSERVED",
+  "new_hook_or_owner_protocol_authorized": false,
+  "actual_metadata": {
+    "two_identical_v14_rows": true,
+    "row": {
+      "coverage": "COMPLETE",
+      "flags": 149506,
+      "kind": "FUNCTION",
+      "name": "ActivateSkill",
+      "num_params": 6,
+      "parameter_classes_coverage": "COMPLETE",
+      "params_size": 32,
+      "path": "WillowGame.SkillEffectManager:ActivateSkill",
+      "properties": [
+        {
+          "declared_class": "Engine.Controller",
+          "declared_class_coverage": "COMPLETE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 128,
+          "name": "SkillInstigator",
+          "offset": 0,
+          "type": "ZObjectProperty"
+        },
+        {
+          "declared_class": "WillowGame.SkillDefinition",
+          "declared_class_coverage": "COMPLETE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 128,
+          "name": "Definition",
+          "offset": 4,
+          "type": "ZObjectProperty"
+        },
+        {
+          "declared_class": "Core.Object",
+          "declared_class_coverage": "COMPLETE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 144,
+          "name": "AdditionalSkillTarget",
+          "offset": 8,
+          "type": "ZObjectProperty"
+        },
+        {
+          "declared_class": "NOT_APPLICABLE",
+          "declared_class_coverage": "NOT_APPLICABLE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 144,
+          "name": "SkillGrade",
+          "offset": 12,
+          "type": "ZIntProperty"
+        },
+        {
+          "declared_class": "NOT_APPLICABLE",
+          "declared_class_coverage": "NOT_APPLICABLE",
+          "dimension": 1,
+          "element_size": 12,
+          "flags": 4194448,
+          "name": "StateChangeDelegate",
+          "offset": 16,
+          "type": "ZDelegateProperty"
+        },
+        {
+          "declared_class": "NOT_APPLICABLE",
+          "declared_class_coverage": "NOT_APPLICABLE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 1408,
+          "name": "ReturnValue",
+          "offset": 28,
+          "type": "ZBoolProperty"
+        }
+      ],
+      "return_offset": 28,
+      "signature": "NOT_ESTABLISHED"
+    },
+    "signature": "NOT_ESTABLISHED"
+  },
+  "source_analysis": {
+    "method": "Static inert text assertions, exact line/control-flow fingerprints; not a compiled native test or binding simulation",
+    "source_count": 16,
+    "sources": {
+      "python_hook": {
+        "repo": "pyunrealsdk",
+        "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+        "path": "src/pyunrealsdk/hook.cpp",
+        "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp",
+        "cache_file": "python_hook.cpp",
+        "bytes": 14513,
+        "sha256": "77d60d79d8845b9914284963fd5a049300b91e96cbd0bcf0430e477a47e4a48b",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "hook_header": {
+        "repo": "unrealsdk",
+        "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+        "path": "src/unrealsdk/hook_manager.h",
+        "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.h",
+        "cache_file": "hook_header.h",
+        "bytes": 6473,
+        "sha256": "6290b5012a492504b14c987527a93e4d08350297cd81fed1a2c49315b91b570e",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "hook_manager": {
+        "repo": "unrealsdk",
+        "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+        "path": "src/unrealsdk/hook_manager.cpp",
+        "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.cpp",
+        "cache_file": "hook_manager.cpp",
+        "bytes": 22627,
+        "sha256": "3204496e219e056ad3cf11cc825e9c2f8dbaa39555aee00efc1fdc9628adec75",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "bl2_hooks": {
+        "repo": "unrealsdk",
+        "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+        "path": "src/unrealsdk/game/bl2/hooks.cpp",
+        "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/game/bl2/hooks.cpp",
+        "cache_file": "bl2_hooks.cpp",
+        "bytes": 10356,
+        "sha256": "635bd794c67aef5fe8a9451742521ded4895a88ed3f7d565a840d4a443ffc20f",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "argument_frame": {
+        "repo": "unrealsdk",
+        "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+        "path": "src/unrealsdk/unreal/structs/fframe.cpp",
+        "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/structs/fframe.cpp",
+        "cache_file": "argument_frame.cpp",
+        "bytes": 1317,
+        "sha256": "3299bb9f797dec3da24d41aafe4b47ffc52768fb2eaec37b1ea6eebf5003ee77",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "argument_copy": {
+        "repo": "unrealsdk",
+        "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+        "path": "src/unrealsdk/unreal/wrappers/wrapped_struct.cpp",
+        "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/wrapped_struct.cpp",
+        "cache_file": "argument_copy.cpp",
+        "bytes": 3752,
+        "sha256": "8d050a4e971e55fb9b05fcc64259ccd12ec5b74ec5e7369ac5c5b5aad6bb1469",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "property_proxy": {
+        "repo": "unrealsdk",
+        "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+        "path": "src/unrealsdk/unreal/wrappers/property_proxy.h",
+        "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/property_proxy.h",
+        "cache_file": "property_proxy.h",
+        "bytes": 3554,
+        "sha256": "1e7516e361699ba1f641e227424dffc97d707d1b644ac10b20254e2c1248723a",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "property_proxy_impl": {
+        "repo": "unrealsdk",
+        "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+        "path": "src/unrealsdk/unreal/wrappers/property_proxy.cpp",
+        "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/property_proxy.cpp",
+        "cache_file": "property_proxy_impl.cpp",
+        "bytes": 2344,
+        "sha256": "86a84541166ad66a1780521c8e98aab7ca948a60cd8bbe290a141d62168d428f",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "bool_header": {
+        "repo": "unrealsdk",
+        "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+        "path": "src/unrealsdk/unreal/properties/zboolproperty.h",
+        "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zboolproperty.h",
+        "cache_file": "bool_header.h",
+        "bytes": 1554,
+        "sha256": "b09fcd9d2bd4f2f0510d17deefe304b5147eb1780831282c2fd50bb41d172479",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "bool_property": {
+        "repo": "unrealsdk",
+        "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+        "path": "src/unrealsdk/unreal/properties/zboolproperty.cpp",
+        "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zboolproperty.cpp",
+        "cache_file": "bool_property.cpp",
+        "bytes": 992,
+        "sha256": "5e34e8f9ec2740152885fa0df0778cb361b0c28e5eaa2c768a75e12ce8ee5a52",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "property_header": {
+        "repo": "unrealsdk",
+        "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+        "path": "src/unrealsdk/unreal/properties/zproperty.h",
+        "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zproperty.h",
+        "cache_file": "property_header.h",
+        "bytes": 1726,
+        "sha256": "27e077e44ee1616df2f6b6f0afa352fbc3b0aef153a656e3590b4e7ceca78210",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "property_access": {
+        "repo": "pyunrealsdk",
+        "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+        "path": "src/pyunrealsdk/unreal_bindings/property_access.cpp",
+        "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/property_access.cpp",
+        "cache_file": "property_access.cpp",
+        "bytes": 12689,
+        "sha256": "811fc1101dc87f4bd4e2528d848682be1dd94e9aeb64a6d15d8e9b1e4a31540d",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "type_casters": {
+        "repo": "pyunrealsdk",
+        "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+        "path": "src/pyunrealsdk/type_casters.cpp",
+        "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/type_casters.cpp",
+        "cache_file": "type_casters.cpp",
+        "bytes": 3556,
+        "sha256": "de8bebd7eb95c4d6275c23c5e7ee4644e5abbba3cc51e7de5531d8870127a223",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "type_caster_header": {
+        "repo": "pyunrealsdk",
+        "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+        "path": "src/pyunrealsdk/type_casters.h",
+        "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/type_casters.h",
+        "cache_file": "type_caster_header.h",
+        "bytes": 3734,
+        "sha256": "9a96ffe9c77cb6e1f184e56db057965e18360cedb0d479f87309c10574723b16",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "function_lock": {
+        "repo": "unrealsdk",
+        "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+        "path": "src/unrealsdk/locks.cpp",
+        "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/locks.cpp",
+        "cache_file": "function_lock.cpp",
+        "bytes": 597,
+        "sha256": "059641b9c85c9a72bd8fc66cad614a7104207f221339da0566d63c20c46a0d16",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      },
+      "bound_function": {
+        "repo": "pyunrealsdk",
+        "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+        "path": "src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+        "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+        "cache_file": "bound_function.cpp",
+        "bytes": 10594,
+        "sha256": "219bc8470aebf4e839f51686eb839a301911da6cac6bb7ec58d0a3ca7afd4142",
+        "access": "inert text only",
+        "executed": false,
+        "compiled": false,
+        "public_SDK_copy": false
+      }
+    },
+    "line_fingerprints": [
+      {
+        "source": "python_hook",
+        "claim": "Unset/prior conversion precedes obj,args,ret,func callback; non-tuple path has no override",
+        "line_start": 49,
+        "line_end": 65,
+        "normalized_excerpt_sha256": "3df38961e84e7499aced8a770641a3b739ee5488cca099c3cd21d0900dbb27bd",
+        "URL": "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp#L49"
+      },
+      {
+        "source": "python_hook",
+        "claim": "Override processing only follows tuple branch",
+        "line_start": 67,
+        "line_end": 109,
+        "normalized_excerpt_sha256": "e7549e4ede7d214bb7065c6bc3f281d67dcc168dae933d0a8be2a0a7775bb1ed",
+        "URL": "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp#L67"
+      },
+      {
+        "source": "python_hook",
+        "claim": "Registration acquires GIL on invoking thread; exceptions log and return false",
+        "line_start": 200,
+        "line_end": 216,
+        "normalized_excerpt_sha256": "c8eb3639e6ed36914d7d93f071367829b3c04e5d171b7a04338179fa750426a8",
+        "URL": "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp#L200"
+      },
+      {
+        "source": "python_hook",
+        "claim": "Block sentinel identifies class/instance, not None",
+        "line_start": 310,
+        "line_end": 318,
+        "normalized_excerpt_sha256": "78291f3aa4fe0bd74a84b0175021e078741f03e4c901ae0935d601b5e617b752",
+        "URL": "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp#L310"
+      },
+      {
+        "source": "hook_header",
+        "claim": "Same-phase order unspecified",
+        "line_start": 16,
+        "line_end": 24,
+        "normalized_excerpt_sha256": "36370a50fdbed7f82a7ac7a7fdf2b547f53b5c97a6821d80eebb4b3181486a77",
+        "URL": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.h#L16"
+      },
+      {
+        "source": "hook_manager",
+        "claim": "All callbacks visited, block accumulated rather than short-circuited",
+        "line_start": 496,
+        "line_end": 523,
+        "normalized_excerpt_sha256": "75f46355a4e55c5ee36f0fa16821627029bfc5f1761c0bbe5084fb06d2872877",
+        "URL": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.cpp#L496"
+      },
+      {
+        "source": "property_proxy_impl",
+        "claim": "Initial proxy storage empty",
+        "line_start": 13,
+        "line_end": 15,
+        "normalized_excerpt_sha256": "266ebe909e0b8dd4ce19f42e7ba4fa635d5045b0f2876016bb87c3e2fd2aba05",
+        "URL": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/property_proxy.cpp#L13"
+      },
+      {
+        "source": "property_proxy_impl",
+        "claim": "Override presence checks storage, not native result",
+        "line_start": 37,
+        "line_end": 43,
+        "normalized_excerpt_sha256": "45db8b169110d5059a55618e3b83e5740261984cfe189b2673cf45bfc6896177",
+        "URL": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/property_proxy.cpp#L37"
+      },
+      {
+        "source": "argument_copy",
+        "claim": "Copy selects PARAM bit only and reads/writes each selected property",
+        "line_start": 76,
+        "line_end": 100,
+        "normalized_excerpt_sha256": "911431c5f9d49640bd59cc8feb89f08990697aa2e04418e7b511662f54b7af2b",
+        "URL": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/wrapped_struct.cpp#L76"
+      },
+      {
+        "source": "argument_frame",
+        "claim": "CallFunction extraction skips RETURN and steps argument expressions",
+        "line_start": 13,
+        "line_end": 41,
+        "normalized_excerpt_sha256": "d6d907e4e60abc372e4f8c774cf7532b5fd99aa2af2dccc140be2cf2d9a4c406",
+        "URL": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/structs/fframe.cpp#L13"
+      },
+      {
+        "source": "bl2_hooks",
+        "claim": "ProcessEvent copy before PRE; existing override copied to original result",
+        "line_start": 70,
+        "line_end": 108,
+        "normalized_excerpt_sha256": "50436c0df38658b8b2d262d16a2f12ce7ba4d7884dbf3c303978ae267b087f65",
+        "URL": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/game/bl2/hooks.cpp#L70"
+      },
+      {
+        "source": "bl2_hooks",
+        "claim": "CallFunction extraction before PRE; allowed original rewinds code, override applied",
+        "line_start": 183,
+        "line_end": 225,
+        "normalized_excerpt_sha256": "a8d5439e2f28d0847ae8a04c0f6e2436effb9aa137de50cadc14969b03e86259",
+        "URL": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/game/bl2/hooks.cpp#L183"
+      },
+      {
+        "source": "property_access",
+        "claim": "Getter dispatch/native read/Python conversion",
+        "line_start": 137,
+        "line_end": 176,
+        "normalized_excerpt_sha256": "c924df7ad09b2635487c6a7f60ba820c2987c2e3f9828da38fb1eb2002233790",
+        "URL": "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/property_access.cpp#L137"
+      },
+      {
+        "source": "bool_property",
+        "claim": "Boolean getter reads FieldMask bitfield",
+        "line_start": 13,
+        "line_end": 21,
+        "normalized_excerpt_sha256": "2c46c909d74d7d31743878c3482f3f9b7fb6dc766862da7e601aac9a6364edba",
+        "URL": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zboolproperty.cpp#L13"
+      },
+      {
+        "source": "property_header",
+        "claim": "Parameter and return flag constants",
+        "line_start": 24,
+        "line_end": 29,
+        "normalized_excerpt_sha256": "058f89c0ef93df3ad3410a9e4fa0c3eafa94662ed4fa191db670de8512350b99",
+        "URL": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zproperty.h#L24"
+      },
+      {
+        "source": "type_casters",
+        "claim": "Native downcast occurs during wrapping",
+        "line_start": 18,
+        "line_end": 36,
+        "normalized_excerpt_sha256": "576aa482d1ad9d392c529e828242fbc906dca1c8669600d5d82cf0968a3f971b",
+        "URL": "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/type_casters.cpp#L18"
+      },
+      {
+        "source": "type_caster_header",
+        "claim": "Pybind UObject polymorphic conversion dispatch",
+        "line_start": 70,
+        "line_end": 80,
+        "normalized_excerpt_sha256": "9b814d50ba204daf3f3c17fe73f968830b27da1f1ad866aaf28c42bd01d5e38b",
+        "URL": "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/type_casters.h#L70"
+      },
+      {
+        "source": "function_lock",
+        "claim": "Function-call locking configurable, default false",
+        "line_start": 15,
+        "line_end": 30,
+        "normalized_excerpt_sha256": "ab3241e5c1003c0eb2dfe6bc5413b1320574525936dea1aad64b3a22005dc0f1",
+        "URL": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/locks.cpp#L15"
+      },
+      {
+        "source": "bound_function",
+        "claim": "BoundFunction call releases GIL and invokes engine; prohibited route",
+        "line_start": 219,
+        "line_end": 233,
+        "normalized_excerpt_sha256": "9cceb03d887b840dab90dc545d48fb02dce0ce0cfd21bbde8d43fcb4f8480d2e",
+        "URL": "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp#L219"
+      }
+    ],
+    "prior_cache_comparisons": [
+      {
+        "source": "hook_manager",
+        "previous_hash_equal": true
+      },
+      {
+        "source": "bl2_hooks",
+        "previous_hash_equal": true
+      },
+      {
+        "source": "argument_frame",
+        "previous_hash_equal": true
+      },
+      {
+        "source": "argument_copy",
+        "previous_hash_equal": true
+      },
+      {
+        "source": "property_access",
+        "previous_hash_equal": true
+      },
+      {
+        "source": "type_casters",
+        "previous_hash_equal": true
+      },
+      {
+        "source": "type_caster_header",
+        "previous_hash_equal": true
+      },
+      {
+        "source": "function_lock",
+        "previous_hash_equal": true
+      }
+    ],
+    "callback_order": [
+      "obj",
+      "args",
+      "ret",
+      "func"
+    ],
+    "exact_non_tuple_None": {
+      "block_request": false,
+      "new_override": false,
+      "preserves_prior_override": true
+    },
+    "return_before_callback": {
+      "no_prior_override": "Unset class sentinel",
+      "prior_override": "Native property read/Boolean conversion already occurs"
+    },
+    "ProcessEvent_copy": {
+      "parameter_bit": 128,
+      "return_bit": 1024,
+      "ReturnValue_flags": 1408,
+      "return_selected": true,
+      "all_six_metadata_fields_selected": true,
+      "excludes_return": false
+    },
+    "CallFunction_extraction": {
+      "skips_return": true,
+      "steps_argument_expressions_before_PRE": true,
+      "rewinds_code_for_allowed_original": true
+    },
+    "another_hook_block_remains": true,
+    "later_override_possible": true,
+    "same_phase_order": "UNSPECIFIED",
+    "GIL": "Acquired on calling thread, not game-thread/lease/reentry proof",
+    "locking_default": false,
+    "installed_configuration": "NOT_CHECKED",
+    "source_pins_not_installed_binary_equivalence": true
+  },
+  "source_case_matrix": [
+    {
+      "case": "No earlier block/override",
+      "exact_None": "No new block/override"
+    },
+    {
+      "case": "Earlier override",
+      "exact_None": "Prior Boolean conversion occurs; existing override retained"
+    },
+    {
+      "case": "Other hook blocks",
+      "exact_None": "Cannot ensure original execution"
+    },
+    {
+      "case": "Later override",
+      "exact_None": "No order/priority guarantee"
+    }
+  ],
+  "current_SDK_discussion": {
+    "url": "https://github.com/bl-sdk/pyunrealsdk/issues/97",
+    "state": "closed",
+    "state_reason": "completed",
+    "comments": 1,
+    "all_pages_read": true,
+    "read_at_utc": "2026-10-11T23:55:46.104307+00:00",
+    "replies": [
+      {
+        "url": "https://github.com/bl-sdk/pyunrealsdk/issues/97#issuecomment-6108546422",
+        "author": "apple1417",
+        "association": "CONTRIBUTOR",
+        "bytes": 310,
+        "sha256": "f55cc66e71f433351ee5adc4f04ef4c86c6b18e83f49138b8682b6c3b0fb2643"
+      }
+    ],
+    "outgoing_message": "NONE"
+  },
+  "SDK_guidance_boundary": "Hook-time VM/GC guidance only; no post-return native ownership, generation, input/binary/thread/destruction proof",
+  "precise_blocker_for_zero_SDK_touch_requirement": "Standard binding copies/converts before Python; ignoring fields cannot meet zero prior SDK processing",
+  "next_design": {
+    "scopes": [
+      "docs/deathtrap_activation_reader_design.md",
+      "evidence/deathtrap_activation_reader_design_checks.json"
+    ],
+    "dependency": "This audit requires approved publication and deliberate acceptance first",
+    "allowed_Python_value_getters": [
+      "args.SkillInstigator",
+      "args.Definition",
+      "Definition.Name bounded exact ASCII string"
+    ],
+    "forbidden_Python_value_reads": [
+      "ret",
+      "AdditionalSkillTarget",
+      "SkillGrade",
+      "StateChangeDelegate"
+    ],
+    "derive_six_property_schema_budget": true,
+    "three_property_counts_not_presumed": true,
+    "required": "Fresh function/owner/schema/solo guards; primitive epoch/None/drop/privacy/reentry/cleanup bounds and inert tests before separate runtime/package/protocol"
+  },
+  "current_v17": {
+    "full_fresh_CLI_manifest_equal": true,
+    "status": "COMPLETE_LOG_TEXT",
+    "records": 10,
+    "events": [
+      {
+        "line": 25,
+        "epoch": 1,
+        "ordinal": 1,
+        "attempt": 1,
+        "controller": "SAME_WRAPPER",
+        "definition": "OTHER_NAME",
+        "name": "UpshotRobot"
+      }
+    ],
+    "stop_lines": [
+      26,
+      28,
+      30,
+      55
+    ],
+    "log": {
+      "path": "evidence/deathtrap_callback_definition_name_user_test.log",
+      "bytes": 13666,
+      "sha256": "3f2017cc1b700574b99a442711163ea51e47f5921e645d66cf69b6ff79187efe"
+    },
+    "source": {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 216295,
+      "sha256": "7e9c9d01df0d5631450cdf78d5838798d45846caf6a4526209ec723643dad160"
+    },
+    "manifest": {
+      "path": "evidence/deathtrap_callback_definition_name_capture_manifest.json",
+      "bytes": 19828,
+      "sha256": "5c0d95e70056af5026df0984d2bdf7911772523ceaeba0e0afb245c33bc4723b"
+    },
+    "timing_attribution_limits": {
+      "start_lines": [
+        24
+      ],
+      "event_lines": [
+        25
+      ],
+      "first_stop_line": 26,
+      "final_stop_line": 55,
+      "start_to_first_event_seconds": 64.404,
+      "start_to_first_stop_seconds": 89.706,
+      "start_to_final_stop_seconds": 96.221,
+      "source": "SDK header intervals only; not measured owner wait, engine clock or Deathtrap lifetime"
+    },
+    "owner_natural_end_independently_observed": false,
+    "ret_unread": true,
+    "epoch_only_closure": true,
+    "native_payload_drop_assignments": 3,
+    "historical_manual_grade_zero_AST_unchanged": [
+      "signature",
+      "find_live",
+      "apply",
+      "restore",
+      "_upgrade_state",
+      "cancel_init_node",
+      "shutdown"
+    ]
+  },
+  "original_effect_dependencies_unchanged": true,
+  "preserved_base_Git_blobs": 227,
+  "preserved_aggregate_sha256": "ab44472bfe058b561301f27b51db63ab423c9c850f8af0648c6028754cfe07b4",
+  "original_packages": [
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+      "bytes": 32742,
+      "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+      "bytes": 34433,
+      "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+      "bytes": 36736,
+      "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip",
+      "bytes": 44901,
+      "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.17_folder_install.zip",
+      "bytes": 44658,
+      "sha256": "d46d8b3d91416920f9624161e90dfb06f685673b87afd0dbc9d70897da4a233d",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+      "bytes": 19467,
+      "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+      "bytes": 20457,
+      "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+      "bytes": 21349,
+      "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+      "bytes": 24437,
+      "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+      "bytes": 26428,
+      "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+      "bytes": 26629,
+      "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+      "bytes": 28884,
+      "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+      "bytes": 30016,
+      "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+      "bytes": 31335,
+      "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160",
+      "CRC": "PASS"
+    }
+  ],
+  "frozen_full_reports": [
+    {
+      "log": "evidence/v032_user_test.log",
+      "status": "PARTIAL",
+      "exit_code": 1,
+      "entire_manifest_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_manager_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_passive_event_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_callback_local_reader_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_callback_definition_name_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    }
+  ],
+  "immutable_inventory": {
+    "verified_files": 53,
+    "verified_archives": 12,
+    "relationships": 5,
+    "errors": [],
+    "status": "PASS"
+  },
+  "links": [
+    "https://github.com/Edge916/The-Ultimate-Borderlands/pull/40",
+    "../evidence/deathtrap_callback_definition_name_live_readiness_result.md",
+    "../evidence/deathtrap_callback_definition_name_capture_manifest.json",
+    "../evidence/deathtrap_activation_reader_feasibility_checks.json",
+    "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp",
+    "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/property_proxy.cpp",
+    "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/property_access.cpp",
+    "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zboolproperty.cpp",
+    "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.h",
+    "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.cpp",
+    "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/game/bl2/hooks.cpp",
+    "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/wrapped_struct.cpp",
+    "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/structs/fframe.cpp",
+    "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/type_casters.cpp",
+    "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/locks.cpp",
+    "https://github.com/bl-sdk/pyunrealsdk/issues/97",
+    "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp"
+  ],
+  "checks_not_run": [
+    "Unchanged accepted760 tests and hostedCI not repeated for documentation-only work",
+    "Real SDK/stub execution/import/compilation, native binary match or simulation",
+    "New hook/game/installation/save/private-backup/purchase/summon/effect",
+    "Activation coverage or owned summon/generation/liveness/clock/Duration/rank-one/exact-original cleanup proof",
+    "Outgoing support, merge/release"
+  ],
+  "publication": "Exact two-file public approval and deliberate review required; no upload here"
+}
