@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "project_id": "e4e722af-5c33-4a37-b08c-3ddb15408ccd",
+  "task_id": "26f23ca8-5a66-460d-a129-d89dffd28531",
+  "checked_at_utc": "2026-10-11T05:29:44.145149+00:00",
+  "base_commit": "8813aef6a0a0d1f5759dcab10c582d20d081b307",
+  "branch": "codex/jake-manager-metadata-design",
+  "decision": "READY_FOR_METADATA_OWNER_CORRECTION",
+  "native_lifecycle_and_effect_readiness": "NOT_READY",
+  "design": {
+    "path": "evidence/deathtrap_lifecycle_diagnostic_design.md",
+    "bytes": 15022,
+    "sha256": "6df2c3076b285d3fb2c7a5fd9223dfe333131c78fa47519b96ebf295c34db3be"
+  },
+  "inputs": {
+    "runtime": {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 175943,
+      "sha256": "41fd2dd9e22bcfa64fbddfc19b881f6950362656e047b212b00eb86f33a01f73"
+    },
+    "log": {
+      "bytes": 32788,
+      "sha256": "8ddbb6aeae5d96be14879adf69fd21c6a7a1fcdbd3e55ec5f4199b2f943f520a"
+    },
+    "capture_manifest": {
+      "bytes": 25031,
+      "sha256": "6121c698c1beb85884c69468262c131d27017e885cb8729250c3c5344190db01"
+    }
+  },
+  "sdk_stubs": [
+    {
+      "sdk_relative_path": "unrealsdk/hooks/__init__.pyi",
+      "bytes": 6284,
+      "sha256": "21589d306dc34fe61ce5f7b0b47b62167a6e8f767d3c84283c4757fc27312ab7",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_bound_function.pyi",
+      "bytes": 1635,
+      "sha256": "aede5345048c0b32b7e0bc0ccd57fca5fa29c1227113f0a4ee7f30d469d64546",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_uobject.pyi",
+      "bytes": 4546,
+      "sha256": "a73e55d17aa605ee20540d542a68b817d84614aaeb4c47aa5804e435f58b12b3",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_uobject_children.pyi",
+      "bytes": 9904,
+      "sha256": "c868cda153981b5d779d7873572db131edc3990696d719c8646f114cd56f1887",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false
+    }
+  ],
+  "pinned_public_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.h",
+      "bytes": 6473,
+      "sha256": "6290b5012a492504b14c987527a93e4d08350297cd81fed1a2c49315b91b570e",
+      "access": "read_as_text_only",
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp",
+      "bytes": 14513,
+      "sha256": "77d60d79d8845b9914284963fd5a049300b91e96cbd0bcf0430e477a47e4a48b",
+      "access": "read_as_text_only",
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+      "bytes": 10594,
+      "sha256": "219bc8470aebf4e839f51686eb839a301911da6cac6bb7ec58d0a3ca7afd4142",
+      "access": "read_as_text_only",
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/uobject_children.cpp",
+      "bytes": 27186,
+      "sha256": "28624b87860aec2b37af221ea5a54bf63eb1ca0d2e91d11d06a2f5c00d7a5ac1",
+      "access": "read_as_text_only",
+      "executed": false
+    }
+  ],
+  "source_contract": {
+    "lookup": "UStruct._find on UClass; typed descriptor, not BoundFunction invocation",
+    "function_size_member": "ParamsSize",
+    "guessed_find_func_api": false,
+    "manager_candidate_presence": "NOT_OBSERVED_IN_GAME",
+    "installed_SDK_executed_imported_or_packaged": false
+  },
+  "actual_checks": {
+    "targeted_existing_metadata_mocks": {
+      "command": "python -B -m unittest discover -s tests -p test_deathtrap_readiness.py -v",
+      "execution": "observed tool output during this task; no rerun for report generation",
+      "tests_run": 39,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "reported_seconds": 4.064,
+      "exit_code": 0
+    },
+    "frozen_v12_cli": {
+      "command": "python -B scripts/review_deathtrap_metadata_log.py evidence/v032_user_test.log",
+      "exit_code": 1,
+      "status": "PARTIAL",
+      "calls": [
+        {
+          "begin_line": 65,
+          "last_line": 82,
+          "coverage": "UNAVAILABLE",
+          "outcome": "UNAVAILABLE"
+        },
+        {
+          "begin_line": 83,
+          "last_line": 100,
+          "coverage": "UNAVAILABLE",
+          "outcome": "UNAVAILABLE"
+        }
+      ],
+      "identical_metadata_rows": true,
+      "rows_per_call": 15,
+      "issues": [],
+      "restoration_asserted_after_last_call": true,
+      "four_families_zero_after_last_call": true,
+      "comparison_to_internal_start": "NOT_CHECKED_BY_PARSER; runtime assertion only",
+      "SDK_identity_and_game_behavior": "NOT_ESTABLISHED_BY_TOOL"
+    },
+    "immutable_inventory": {
+      "status": "PASS",
+      "immutable": {
+        "verified_files": 53,
+        "verified_archives": 12,
+        "relationships": 5,
+        "errors": [],
+        "status": "PASS"
+      },
+      "current_fingerprints": "NOT_RUN_THIS_TASK; known prepared-e32 README/default ZIP drift remains explicit"
+    },
+    "runtime_AST_inspection": {
+      "top_level_functions": 95,
+      "unchanged_helpers": 10,
+      "diagnostic_lines": [
+        3192,
+        3317
+      ],
+      "six_skill_fields": [
+        [
+          "Duration",
+          "ZFloatProperty"
+        ],
+        [
+          "DurationBaseValue",
+          "ZFloatProperty"
+        ],
+        [
+          "ActivatedTime",
+          "ZFloatProperty"
+        ],
+        [
+          "SkillInstigator",
+          "ZObjectProperty"
+        ],
+        [
+          "Definition",
+          "ZObjectProperty"
+        ],
+        [
+          "DurationModifierStack",
+          "ZArrayProperty"
+        ]
+      ],
+      "metadata_session_overlap_and_revalidation_helpers_inspected": true,
+      "current_orchestration_queries_all_three_on_controller": true,
+      "native_method_or_hook_calls_in_current_diagnostic_AST": 0
+    },
+    "baseline_preservation": {
+      "checked_tracked_paths": 151,
+      "all_equal_base_git_blobs": true,
+      "scope": [
+        "evidence/deathtrap_lifecycle_diagnostic_design.md",
+        "evidence/deathtrap_lifecycle_design_checks.json"
+      ],
+      "sdk_source_copies_in_repository": false
+    }
+  },
+  "proposed_bounds": {
+    "distinct_function_targets": 3,
+    "class_roots": 4,
+    "ancestry_nodes_per_root": 8,
+    "selected_fields": 7,
+    "accepted_properties_per_function": 16,
+    "cap_lookahead_per_function": 1,
+    "metadata_rows": 15,
+    "captured_checks_upper_bound": 94,
+    "raw_lookup_calls": "repeated by finite revalidation",
+    "observer_events": 0,
+    "observer_attempts": 0,
+    "timers": 0,
+    "hard_SDK_getter_deadline": "NOT_GUARANTEED"
+  },
+  "not_performed": [
+    "v13 implementation/package",
+    "full unchanged 401-test suite",
+    "hosted CI matrix",
+    "new game run/install",
+    "installed SDK import/execution",
+    "manager instance acquisition",
+    "lifecycle hooks/native invocation",
+    "payload reads/gameplay effects",
+    "save/private-backup access",
+    "purchase/respec/travel/summon/manual boost",
+    "merge/release"
+  ],
+  "limitations": [
+    "Offline fake SDK tests are not engine proof.",
+    "Public bindings and installed text stubs do not prove native game schemas or lifetimes.",
+    "v12 manager activation/deactivation metadata was never collected.",
+    "Source download first failed under network sandbox; read-only elevated public fetch succeeded."
+  ]
+}

@@ -1,0 +1,457 @@
+{
+  "schema_version": 1,
+  "task_id": "c4445e63-93fe-49f4-9027-733855685914",
+  "status": "PASS",
+  "accepted_capture": "a08b3e933c9794f35d44d838b0d1a5aa0b9ed9fb",
+  "accepted_capture_PR": "https://github.com/Edge916/The-Ultimate-Borderlands/pull/39",
+  "branch": "codex/jake-v17-name-readiness",
+  "scope": [
+    "evidence/deathtrap_callback_definition_name_live_readiness_result.md",
+    "evidence/deathtrap_callback_definition_name_live_readiness_checks.json"
+  ],
+  "decision": "OBSERVED_FILTERED / NOT_READY_FOR_NATIVE_EFFECT_DESIGN",
+  "native_owned_lifecycle_ready": false,
+  "native_effect_ready": false,
+  "log": {
+    "path": "evidence/deathtrap_callback_definition_name_user_test.log",
+    "bytes": 13666,
+    "sha256": "3f2017cc1b700574b99a442711163ea51e47f5921e645d66cf69b6ff79187efe"
+  },
+  "capture_manifest": {
+    "path": "evidence/deathtrap_callback_definition_name_capture_manifest.json",
+    "bytes": 19828,
+    "sha256": "5c0d95e70056af5026df0984d2bdf7911772523ceaeba0e0afb245c33bc4723b"
+  },
+  "full_fresh_strict_CLI_manifest_equal": true,
+  "report_status": "COMPLETE_LOG_TEXT",
+  "reader_records": 10,
+  "observed": {
+    "accepting_start_lines": [
+      24
+    ],
+    "callback_event_lines": [
+      25
+    ],
+    "validated_events": [
+      {
+        "line": 25,
+        "epoch": 1,
+        "ordinal": 1,
+        "attempt": 1,
+        "controller": "SAME_WRAPPER",
+        "definition": "OTHER_NAME",
+        "name": "UpshotRobot"
+      }
+    ],
+    "reader_stop_lines": [
+      26,
+      28,
+      30,
+      55
+    ],
+    "reader_outcome_lines": [
+      27,
+      29,
+      31,
+      56
+    ],
+    "overlap_refusal_lines": [],
+    "deathtrap_name_event_count": 0,
+    "observed_identifiers": [
+      "UpshotRobot"
+    ],
+    "reader_handles_resolved_in_log": true,
+    "old_observer_family_zero_records": {
+      "STATE": {
+        "lines": [
+          32,
+          57
+        ],
+        "all_recorded_remaining_zero": true,
+        "meaning": "Runtime assertions, not independent native handle inspection"
+      },
+      "UI": {
+        "lines": [
+          43,
+          68
+        ],
+        "all_recorded_remaining_zero": true,
+        "meaning": "Runtime assertions, not independent native handle inspection"
+      },
+      "UPGRADE": {
+        "lines": [
+          45,
+          70
+        ],
+        "all_recorded_remaining_zero": true,
+        "meaning": "Runtime assertions, not independent native handle inspection"
+      },
+      "INITNODE": {
+        "lines": [
+          53,
+          78
+        ],
+        "all_recorded_remaining_zero": true,
+        "meaning": "Runtime assertions, not independent native handle inspection"
+      }
+    },
+    "disarmed_no_initialization_patch_lines": [
+      54,
+      79
+    ],
+    "armed_or_insertion_markers_in_capture": 0,
+    "metadata_and_passive_observer_markers_in_capture": 0,
+    "project_error_and_traceback_markers_in_capture": 0,
+    "wrapper_time_observation": {
+      "start_lines": [
+        24
+      ],
+      "event_lines": [
+        25
+      ],
+      "first_stop_line": 26,
+      "final_stop_line": 55,
+      "start_to_first_event_seconds": 64.404,
+      "start_to_first_stop_seconds": 89.706,
+      "start_to_final_stop_seconds": 96.221,
+      "source": "SDK header intervals only; not measured owner wait, engine clock or Deathtrap lifetime"
+    },
+    "attribution_and_protocol_limits": [
+      "Owner reports a natural Deathtrap end and STOP23/CANCEL3/full exit. The agent did not observe UI/key presses/summon count/START selection/wait or natural end.",
+      "Validated Name identifies the supplied definition at PRE attempted entry only. No native manager ownership, unique summon, generation or deactivation success follows.",
+      "Repeated STOP/OUTCOME records may also originate from CANCEL/disable; raw text cannot assign every pair to a manual click.",
+      "Header intervals include control/cleanup time and do not establish owner wait or a protocol time-bound breach.",
+      "No ARM/insertion markers or no-patch assertion, when present, do not establish purchased grade, point/save state or recovery.",
+      "Separate visible-failure statement not supplied. No additional test or repeat summon is authorized."
+    ]
+  },
+  "owner_report": "STOP 23/CANCEL 3/full exit completed death trap ended naturally",
+  "owner_actions_UI_natural_end_wait_independently_observed": false,
+  "separate_visible_failure": "NOT_REPORTED",
+  "source": {
+    "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+    "bytes": 216295,
+    "sha256": "7e9c9d01df0d5631450cdf78d5838798d45846caf6a4526209ec723643dad160"
+  },
+  "source_AST": {
+    "two_parameter_getters": true,
+    "one_Name_getter": true,
+    "exact_matcher": "Skill_DeathTrap",
+    "observed_name_unequal_to_matcher": true,
+    "no_alias": true,
+    "callback_freevars": [
+      "epoch"
+    ],
+    "exact_None": true,
+    "native_payload_drop_assignments": 3,
+    "ret_read": false,
+    "forbidden_runtime_field_access": false,
+    "native_engine_call": false,
+    "historical_manual_grade_zero_nodes_unchanged": [
+      "signature",
+      "find_live",
+      "apply",
+      "restore",
+      "_upgrade_state",
+      "cancel_init_node",
+      "shutdown"
+    ],
+    "syntax_only_no_execution": true
+  },
+  "current_SDK_discussion": {
+    "read_at_utc": "2026-10-11T23:34:18.502595+00:00",
+    "url": "https://github.com/bl-sdk/pyunrealsdk/issues/97",
+    "state": "closed",
+    "state_reason": "completed",
+    "comments": 1,
+    "all_pages_read": true,
+    "replies": [
+      {
+        "url": "https://github.com/bl-sdk/pyunrealsdk/issues/97#issuecomment-6108546422",
+        "author": "apple1417",
+        "association": "CONTRIBUTOR",
+        "bytes": 310,
+        "sha256": "f55cc66e71f433351ee5adc4f04ef4c86c6b18e83f49138b8682b6c3b0fb2643"
+      }
+    ],
+    "outgoing_message": "NONE",
+    "SDK_import_execution_compilation": "NONE"
+  },
+  "SDK_guidance_boundary": "Hook-time GC guidance, not manager ownership/generation/destruction/binary/write cleanup guarantee",
+  "candidate_metadata": {
+    "source": "Preserved full v14 report, not a new observer or runtime call",
+    "two_identical_rows": true,
+    "row": {
+      "coverage": "COMPLETE",
+      "flags": 149506,
+      "kind": "FUNCTION",
+      "name": "ActivateSkill",
+      "num_params": 6,
+      "parameter_classes_coverage": "COMPLETE",
+      "params_size": 32,
+      "path": "WillowGame.SkillEffectManager:ActivateSkill",
+      "properties": [
+        {
+          "declared_class": "Engine.Controller",
+          "declared_class_coverage": "COMPLETE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 128,
+          "name": "SkillInstigator",
+          "offset": 0,
+          "type": "ZObjectProperty"
+        },
+        {
+          "declared_class": "WillowGame.SkillDefinition",
+          "declared_class_coverage": "COMPLETE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 128,
+          "name": "Definition",
+          "offset": 4,
+          "type": "ZObjectProperty"
+        },
+        {
+          "declared_class": "Core.Object",
+          "declared_class_coverage": "COMPLETE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 144,
+          "name": "AdditionalSkillTarget",
+          "offset": 8,
+          "type": "ZObjectProperty"
+        },
+        {
+          "declared_class": "NOT_APPLICABLE",
+          "declared_class_coverage": "NOT_APPLICABLE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 144,
+          "name": "SkillGrade",
+          "offset": 12,
+          "type": "ZIntProperty"
+        },
+        {
+          "declared_class": "NOT_APPLICABLE",
+          "declared_class_coverage": "NOT_APPLICABLE",
+          "dimension": 1,
+          "element_size": 12,
+          "flags": 4194448,
+          "name": "StateChangeDelegate",
+          "offset": 16,
+          "type": "ZDelegateProperty"
+        },
+        {
+          "declared_class": "NOT_APPLICABLE",
+          "declared_class_coverage": "NOT_APPLICABLE",
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 1408,
+          "name": "ReturnValue",
+          "offset": 28,
+          "type": "ZBoolProperty"
+        }
+      ],
+      "return_offset": 28,
+      "signature": "NOT_ESTABLISHED"
+    }
+  },
+  "next_bounded_proposal": {
+    "kind": "inert ActivateSkill PRE source/descriptor feasibility audit",
+    "scopes": [
+      "docs/deathtrap_activation_reader_feasibility.md",
+      "evidence/deathtrap_activation_reader_feasibility_checks.json"
+    ],
+    "required": "Inspect Boolean return conversion and exact None/PRE/access/input contract before another diagnostic design; report gaps if unsupported",
+    "new_hook_or_gameplay_authorized": false,
+    "matcher_change_authorized": false
+  },
+  "native_prerequisites": {
+    "exact_Deathtrap_association": "NOT_READY",
+    "owned_manager_unique_active_instance": "NOT_READY",
+    "native_generation_liveness": "NOT_READY",
+    "engine_clock_Duration_interval": "NOT_READY",
+    "purchased_rank_one": "NOT_READY",
+    "exact_original_write_readback_cleanup": "NOT_READY",
+    "native_effect": "NOT_READY"
+  },
+  "original_effect_dependencies_unchanged": true,
+  "original_packages": [
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+      "bytes": 32742,
+      "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+      "bytes": 34433,
+      "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+      "bytes": 36736,
+      "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip",
+      "bytes": 44901,
+      "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.17_folder_install.zip",
+      "bytes": 44658,
+      "sha256": "d46d8b3d91416920f9624161e90dfb06f685673b87afd0dbc9d70897da4a233d",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+      "bytes": 19467,
+      "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+      "bytes": 20457,
+      "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+      "bytes": 21349,
+      "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+      "bytes": 24437,
+      "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+      "bytes": 26428,
+      "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+      "bytes": 26629,
+      "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+      "bytes": 28884,
+      "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+      "bytes": 30016,
+      "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+      "bytes": 31335,
+      "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160",
+      "CRC": "PASS"
+    }
+  ],
+  "frozen_full_reports": [
+    {
+      "log": "evidence/v032_user_test.log",
+      "status": "PARTIAL",
+      "exit_code": 1,
+      "full_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_manager_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "full_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "full_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_passive_event_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "full_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_callback_local_reader_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "full_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_callback_definition_name_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "full_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    }
+  ],
+  "immutable_inventory": {
+    "verified_files": 53,
+    "verified_archives": 12,
+    "relationships": 5,
+    "errors": [],
+    "status": "PASS"
+  },
+  "preserved_base_Git_blobs": 225,
+  "preserved_aggregate_sha256": "7fc1a269502a076a6f11529fb8ba005996866c6ee990c0b50a0c16019a9b5e9c",
+  "links": [
+    "https://github.com/Edge916/The-Ultimate-Borderlands/pull/39",
+    "deathtrap_callback_definition_name_user_test.log",
+    "deathtrap_callback_definition_name_capture_manifest.json",
+    "../archive/tested_runtime/v0.2.17/__init__.py",
+    "../dist/UltimateVaultHunterDeathtrapBoost_v0.2.17_folder_install.zip",
+    "deathtrap_callback_definition_name_live_readiness_checks.json",
+    "https://github.com/bl-sdk/pyunrealsdk/issues/97",
+    "https://github.com/bl-sdk/pyunrealsdk/issues/97#issuecomment-6108546422",
+    "../docs/overclock_identity_cleanup_contract.md",
+    "deathtrap_parameter_schema_readiness_result.md"
+  ],
+  "checks_not_run": [
+    "Unchanged accepted760tests and hostedCI not repeated for evidence-only work",
+    "Real SDK/stub import/execution/compilation/native binary match",
+    "New hook/game/installation/save/private-backup/purchase/summon/effect",
+    "Native ownership/generation/deactivation/clock/Duration/rank-one/write-cleanup proof",
+    "Outgoing support",
+    "Merge/release"
+  ],
+  "publication": "Two new assessment files require separate exact owner approval and deliberate review; no upload here"
+}

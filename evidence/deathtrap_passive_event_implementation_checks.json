@@ -1,0 +1,498 @@
+{
+  "schema_version": 1,
+  "task_id": "c9c69e9b-f920-4727-aad4-d70f40debd69",
+  "decision": "IMPLEMENTED_OFFLINE_CHECKS_PASS",
+  "accepted_base": "c43a0d8a39826c87370f9807b3067aee9c5b5b48",
+  "branch": "codex/jake-v0215-passive-events",
+  "accepted_design_PR": "https://github.com/Edge916/The-Ultimate-Borderlands/pull/23",
+  "actual_game_test_run": false,
+  "owned_Deathtrap_lifecycle_ready": false,
+  "native_effect_ready": false,
+  "interface": {
+    "target": "WillowGame.SkillEffectManager:DeactivateSkill",
+    "phase": "PRE",
+    "attribution": "NONE",
+    "event_meaning": "UNATTRIBUTED_MANAGER_EVENT; attempted entry only",
+    "callback_payload_reads": false,
+    "callback_result": "exact None",
+    "limits": {
+      "events": 24,
+      "attempts": 64,
+      "seconds": 30,
+      "metadata_checks": 32,
+      "log_UTF8_bytes": 256,
+      "integer_max": 2147483647
+    },
+    "time_policy": "Checked on callback or explicit STOP; no background timer or SDK getter deadline",
+    "accepting_state": "Published last after registration/revalidation, invalidated before cleanup",
+    "uncertain_handles": "Primitive handles only; never removed as owned; START blocked until verified absent",
+    "controls": "Original 19 retained;18 conflicting handlers wrapped with original argument/result forwarding when idle; CANCEL direct; START20/STOP21 appended"
+  },
+  "actual_checks": {
+    "full_offline_validation": {
+      "schema_version": 1,
+      "python": "3.12.14",
+      "scope": "offline repository checks",
+      "engine_behavior": "NOT_ESTABLISHED",
+      "hosted_CI": "NOT_CHECKED",
+      "syntax": {
+        "compiled_files": 23,
+        "errors": [],
+        "status": "PASS"
+      },
+      "tests": {
+        "status": "PASS",
+        "unique_tests": 502,
+        "tests_run": 502,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "unexpected_successes": 0,
+        "expected_failures": 0,
+        "all_discovered_run": true
+      },
+      "package": {
+        "status": "PASS",
+        "exit_code": 0,
+        "stdout": "PASS: isolated packaged runtime import; no game access or scaffolding\nPASS: ZIP integrity, exact single-folder layout and source match\n",
+        "stderr": ""
+      },
+      "seconds": 36.562,
+      "status": "PASS"
+    },
+    "new_tests": 54,
+    "prior_unique_tests_preserved": 448,
+    "original_top_level_functions": 95,
+    "raw_and_AST_unchanged": [
+      "log",
+      "read",
+      "name",
+      "finite_num",
+      "near",
+      "signature",
+      "find_live",
+      "display",
+      "_modifier_count",
+      "inspect",
+      "apply",
+      "restore",
+      "_tree_info",
+      "_tree_fields",
+      "inspect_native_tree",
+      "_find_native",
+      "_native_describe",
+      "_read_tiers",
+      "inspect_native_branch_assets",
+      "inspect_node_blueprint",
+      "_node_first_tier",
+      "_node_has_exact_contents",
+      "_node_set_array",
+      "_node_restore_snapshot",
+      "_node_make_candidate",
+      "add_overclock_node",
+      "remove_overclock_node",
+      "check_overclock_preload",
+      "_diag_path",
+      "_diag_refs",
+      "_diag_state",
+      "_diag_dump_live",
+      "_diag_player_tree",
+      "inspect_tree_loading",
+      "_trace_hook_path",
+      "_trace_candidates",
+      "stop_tree_trace",
+      "_trace_callback",
+      "start_tree_trace",
+      "_init_remove_hooks",
+      "_init_rollback",
+      "_init_solo_session",
+      "_init_pre",
+      "inspect_init_node",
+      "_init_post",
+      "arm_init_node",
+      "_purchase_scalar",
+      "_purchase_constraint_details",
+      "_purchase_function_metadata",
+      "inspect_overclock_purchase",
+      "_upgrade_metadata",
+      "_upgrade_state",
+      "stop_upgrade_trace",
+      "_upgrade_callback",
+      "start_upgrade_trace",
+      "_ui_candidates",
+      "_ui_view",
+      "_ui_inventory",
+      "stop_ui_trace",
+      "_ui_callback",
+      "start_ui_trace",
+      "_skillstate_metadata",
+      "stop_skillstate_trace",
+      "_skillstate_emit",
+      "_skillstate_callback",
+      "start_skillstate_trace",
+      "_presentation_metadata",
+      "_presentation_class_fields",
+      "_presentation_details",
+      "inspect_overclock_presentations",
+      "_presentation_text_property",
+      "_presentation_text_reference",
+      "_presentation_text_details",
+      "inspect_overclock_presentation_text",
+      "_presentation_display_property",
+      "_presentation_attribute_reference",
+      "_presentation_display_details",
+      "inspect_overclock_presentation_display",
+      "_attribute_class_identity",
+      "_attribute_class_reference",
+      "_attribute_class_ancestry",
+      "inspect_overclock_attribute_class",
+      "_deathtrap_int",
+      "_deathtrap_label",
+      "_deathtrap_class",
+      "_deathtrap_session",
+      "_deathtrap_check",
+      "_deathtrap_chain",
+      "_deathtrap_property",
+      "_deathtrap_field_snapshot",
+      "_deathtrap_function_header",
+      "_deathtrap_function",
+      "inspect_deathtrap_readiness",
+      "shutdown"
+    ],
+    "cancel_delta": "Only stop_deathtrap_events() added as first action after global declaration",
+    "original_module_globals_imports_unchanged": true,
+    "new_top_level_functions": [
+      "_dt_event_callback",
+      "_dt_event_clock",
+      "_dt_event_emit",
+      "_dt_event_finish",
+      "_dt_event_guard",
+      "_dt_event_integer",
+      "_dt_event_locked",
+      "_dt_event_metadata",
+      "_dt_event_option_gate",
+      "_dt_event_revalidate",
+      "start_deathtrap_events",
+      "stop_deathtrap_events"
+    ],
+    "new_helpers_call_names": [
+      "ValueError",
+      "_DTEventChecks",
+      "_DTEventRefusal",
+      "_deathtrap_chain",
+      "_deathtrap_check",
+      "_deathtrap_class",
+      "_deathtrap_function",
+      "_deathtrap_session",
+      "_dt_event_callback",
+      "_dt_event_clock",
+      "_dt_event_emit",
+      "_dt_event_finish",
+      "_dt_event_guard",
+      "_dt_event_integer",
+      "_dt_event_locked",
+      "_dt_event_metadata",
+      "_dt_event_revalidate",
+      "add_hook",
+      "any",
+      "append",
+      "bool",
+      "dict",
+      "encode",
+      "find_enum",
+      "format",
+      "get_pc",
+      "getter",
+      "handler",
+      "has_hook",
+      "isfinite",
+      "isinstance",
+      "len",
+      "log",
+      "min",
+      "monotonic",
+      "read",
+      "remove_hook",
+      "stop_deathtrap_events",
+      "stopped",
+      "tuple",
+      "type",
+      "wraps",
+      "zip"
+    ],
+    "payload_parameter_AST_loads": 0,
+    "callback_all_returns_exact_None": true,
+    "exact_prior_test_expression_changes": 5,
+    "affected_prior_test_functions": 3,
+    "package_verifier_delta": "Only exact option count19 to21",
+    "untouched_accepted_base_blobs": 166,
+    "full_frozen_reports": [
+      {
+        "log": "evidence/v032_user_test.log",
+        "manifest": "evidence/v032_capture_manifest.json",
+        "exit_code": 1,
+        "status": "PARTIAL",
+        "full_report_equals_manifest": true
+      },
+      {
+        "log": "evidence/deathtrap_manager_metadata_user_test.log",
+        "manifest": "evidence/deathtrap_manager_metadata_capture_manifest.json",
+        "exit_code": 0,
+        "status": "COMPLETE_LOG_TEXT",
+        "full_report_equals_manifest": true
+      },
+      {
+        "log": "evidence/deathtrap_parameter_metadata_user_test.log",
+        "manifest": "evidence/deathtrap_parameter_metadata_capture_manifest.json",
+        "exit_code": 0,
+        "status": "COMPLETE_LOG_TEXT",
+        "full_report_equals_manifest": true
+      }
+    ],
+    "immutable_inventory": {
+      "verified_files": 53,
+      "verified_archives": 12,
+      "relationships": 5,
+      "errors": [],
+      "status": "PASS"
+    },
+    "original_versioned_archives": [
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+        "bytes": 32742,
+        "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+        "bytes": 34433,
+        "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+        "bytes": 36736,
+        "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+        "bytes": 37087,
+        "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+        "bytes": 37809,
+        "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+        "bytes": 19467,
+        "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+        "bytes": 20457,
+        "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+        "bytes": 21349,
+        "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+        "bytes": 24437,
+        "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+        "bytes": 26428,
+        "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+        "bytes": 26629,
+        "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+        "bytes": 28884,
+        "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+        "bytes": 30016,
+        "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+        "bytes": 31335,
+        "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160"
+      }
+    ],
+    "new_ZIP": {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b"
+    },
+    "default_and_v15_ZIP_equal": true,
+    "ZIP_CRC_exact_three_entries_and_source_equal": true,
+    "isolated_21_option_package_import": "PASS"
+  },
+  "implementation_inputs": [
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 195214,
+      "sha256": "a1ef33d3571de36fe89e269fae632d96cb8029bfa08ed9ec728d1bf1bf4b27bf"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "bytes": 79,
+      "sha256": "4c4d9fc9178f629f791069017b93fcbf4876c1e39b9de1973b22fc06edaada82"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+      "bytes": 4221,
+      "sha256": "7effa43ee2f9928b5d844066ff7676fbd9bd4461b4d49d49ef4e27d2011da840"
+    },
+    {
+      "path": "tests/test_deathtrap_passive_events.py",
+      "bytes": 25682,
+      "sha256": "6c6b8600ca0f5faba7883d2e3c7dd9fa7022e82d8be50a5c5d74363749a3d5b2"
+    },
+    {
+      "path": "tests/test_runtime_mock.py",
+      "bytes": 43784,
+      "sha256": "d99d2c6372a0686ade279bf904b3fe467bfa028eebbbbd04c5fd610e981d22ba"
+    },
+    {
+      "path": "tests/test_presentations.py",
+      "bytes": 18908,
+      "sha256": "cb9cdb18f965a6faf55c85337e44f60bbb549a5f99325511b7408ce932f48bf6"
+    },
+    {
+      "path": "tests/test_deathtrap_readiness.py",
+      "bytes": 32594,
+      "sha256": "56a9844320b54bcbff08aa96958a2fb1060cb4e4b0d7b6cd9d662a10cbb62bf9"
+    },
+    {
+      "path": "docs/NEXT_CODEX_TASK.md",
+      "bytes": 5339,
+      "sha256": "181de7a65d98892bfed89ffa24600e64c4a85c7c70120bc0041f24512cae2634"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b"
+    },
+    {
+      "path": "scripts/verify_package.py",
+      "bytes": 2339,
+      "sha256": "e70d42e5f039e54da09c11e7bbae1b205042bec5f50e4d0252926ed263468e25"
+    }
+  ],
+  "sdk_stubs": [
+    {
+      "sdk_relative_path": "unrealsdk/hooks/__init__.pyi",
+      "bytes": 6284,
+      "sha256": "21589d306dc34fe61ce5f7b0b47b62167a6e8f767d3c84283c4757fc27312ab7",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_bound_function.pyi",
+      "bytes": 1635,
+      "sha256": "aede5345048c0b32b7e0bc0ccd57fca5fa29c1227113f0a4ee7f30d469d64546",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_uobject.pyi",
+      "bytes": 4546,
+      "sha256": "a73e55d17aa605ee20540d542a68b817d84614aaeb4c47aa5804e435f58b12b3",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_uobject_children.pyi",
+      "bytes": 9904,
+      "sha256": "c868cda153981b5d779d7873572db131edc3990696d719c8646f114cd56f1887",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    }
+  ],
+  "pinned_public_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.h",
+      "bytes": 6473,
+      "sha256": "6290b5012a492504b14c987527a93e4d08350297cd81fed1a2c49315b91b570e",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp",
+      "bytes": 14513,
+      "sha256": "77d60d79d8845b9914284963fd5a049300b91e96cbd0bcf0430e477a47e4a48b",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+      "bytes": 10594,
+      "sha256": "219bc8470aebf4e839f51686eb839a301911da6cac6bb7ec58d0a3ca7afd4142",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/uobject_children.cpp",
+      "bytes": 27186,
+      "sha256": "28624b87860aec2b37af221ea5a54bf63eb1ca0d2e91d11d06a2f5c00d7a5ac1",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    }
+  ],
+  "covered_case_groups": [
+    "Inert import and one void-return PRE hook; poisonous four payloads/exact None/unretained/stale callbacks",
+    "Unchanged grade-zero/sole-player/session/points/ranks/indices guard and unknown/foreign refusal",
+    "Canonical typed metadata, class-reference/link/schema/return drift and descriptor cap32",
+    "Known ownership versus collisions/False/thrown/non-bool registration; no foreign/uncertain removal",
+    "Registration callbacks inert, conflicting controls locked, STOP invalidates pending START",
+    "Reentrancy, attempt/event/time/clock/31-bit epoch bounds and deferred cleanup",
+    "Failed removal/unknown presence retain inert primitive handles, block START, bounded retry/failure history",
+    "CANCEL stops acceptance before old array restore; disable and final unknown state do not repair",
+    "Exact original option argument/result forwarding while idle; closed bounded logs and logger failure"
+  ],
+  "future_protocol": "Proposal only in docs/NEXT_CODEX_TASK.md and packaged README; reviewed exact build plus explicit owner approval required after strict event-log reviewer is scoped/reviewed.",
+  "unresolved": [
+    "No actual v15 game hook/callback/setup/cleanup or installed binary/source pin match verified",
+    "SDK constructs wrappers before callback; payload avoidance does not prove absence of framework native reads",
+    "Unattributed entries do not identify a manager, skill, Deathtrap, successful deactivation or lifespan",
+    "No owned native liveness/generation/clock/write interval, current rank-one effect adapter or measured duration",
+    "Grade-zero diagnostic array rollback is separate from manual Duration restore and cannot refund points or undo saves"
+  ],
+  "not_run": [
+    "Hosted CI",
+    "Installed SDK import/execution or new game test/agent installation/control",
+    "Native payload reads/invocation/Duration writes or purchase/respec/travel/summon/manual boost",
+    "Save/private backup/persistence/co-op/merge/release checks"
+  ]
+}
