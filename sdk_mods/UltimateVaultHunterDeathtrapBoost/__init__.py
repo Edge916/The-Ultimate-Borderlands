@@ -3736,8 +3736,8 @@ def start_deathtrap_events(_option=None):
 
 
 # New reader state contains primitives and one fixed registration tuple only.
-_CR_PATH = 'WillowGame.SkillEffectManager:DeactivateSkill'
-_CR_IDENT = 'UVH_CALLBACK_NAME_V17_DEACTIVATE_PRE'
+_CR_PATH = 'WillowGame.SkillEffectManager:ActivateSkill'
+_CR_IDENT = 'UVH_ACTIVATION_READER_V18_PRE'
 _cr_epoch = 0
 _cr_accepting = False
 _cr_starting = False
@@ -3755,7 +3755,7 @@ class _CRRefusal(Exception):
 def _cr_emit(payload):
     if type(payload) is not str:
         return False
-    message = '[UVH-CALLBACK-NAME] ' + payload
+    message = '[UVH-ACTIVATION] ' + payload
     if len((TAG + ' ' + message).encode('utf-8')) > 384:
         return False
     try:
@@ -3804,7 +3804,7 @@ class _CRBudget:
             raise _CRRefusal('STOPPED')
         if _cr_clock() - _cr_stats['started'] >= 120.0:
             raise _CRRefusal('TIME')
-        if self.counts[self.stage] >= 64 or sum(self.counts) >= 256:
+        if self.counts[self.stage] >= (112, 80, 48, 80)[self.stage] or sum(self.counts) >= 320:
             raise _CRRefusal('BUDGET')
         self.counts[self.stage] += 1
 
@@ -3854,39 +3854,45 @@ def _cr_loaded(budget, sdk, lookup, path, label):
     return cls
 
 
-def _cr_link(budget, obj, args, func, manager, function):
+def _cr_link(budget, sdk, obj, args, func, manager, function, expected_return=None):
     _cr_require(budget.get(func, 'object') is obj)
     _cr_require(budget.get(func, 'func') is function)
     _cr_require(budget.get(args, '_type') is function)
-    _cr_require(budget.call(manager, '_find', 'DeactivateSkill') is function)
+    _cr_require(budget.call(manager, '_find', 'ActivateSkill') is function)
     _cr_require(budget.get(function, 'Outer') is manager)
     label = budget.get(function, 'Name')
-    _cr_require(type(label) is str and label == 'DeactivateSkill')
-    for field, value in (('FunctionFlags', 149506), ('NumParams', 3),
-                         ('ParamsSize', 12), ('ReturnValueOffset', 65535)):
+    _cr_require(type(label) is str and label == 'ActivateSkill')
+    for field, value in (('FunctionFlags', 149506), ('NumParams', 6),
+                         ('ParamsSize', 32), ('ReturnValueOffset', 28)):
         _cr_integer(budget.get(function, field), value)
     _cr_require(budget.get(function, 'SuperField') is None)
-    _cr_require(budget.call(function, '_find_return_param') is None)
+    return_prop = budget.call(function, '_find_return_param')
+    if expected_return is not None:
+        _cr_require(return_prop is expected_return)
+    _cr_prop(budget, sdk, function, return_prop, 'ReturnValue',
+             sdk.ZBoolProperty, 1408, 28, 4, None)
+    return return_prop
 
 
-def _cr_prop(budget, sdk, function, prop, label, flags, offset, declared):
-    kind = sdk.ZBoolProperty if declared is None else sdk.ZObjectProperty
+def _cr_prop(budget, sdk, function, prop, label, kind, flags, offset, element_size, declared):
     _cr_require(type(prop) is kind)
     _cr_require(budget.get(prop, 'Outer') is function)
     actual = budget.get(prop, 'Name')
     _cr_require(type(actual) is str and actual == label)
     for field, value in (('PropertyFlags', flags), ('Offset_Internal', offset),
-                         ('ArrayDim', 1), ('ElementSize', 4)):
-        _cr_integer(budget.get(prop, field), value)
+                         ('ArrayDim', 1), ('ElementSize', element_size)):
+        high = max(1048576, value) if field == 'PropertyFlags' else 1048576
+        _cr_integer(budget.get(prop, field), value, high=high)
     if declared is not None:
         _cr_require(budget.get(prop, 'PropertyClass') is declared)
+    _cr_require(offset + element_size <= 32)
     _cr_require(budget.call(function, '_find_prop', label) is prop)
 
 
-def _cr_member(budget, sdk, obj, args, func, manager, function, prop, spec):
-    _cr_link(budget, obj, args, func, manager, function)
+def _cr_member(budget, sdk, obj, args, func, manager, function, return_prop, prop, spec):
+    _cr_link(budget, sdk, obj, args, func, manager, function, return_prop)
     _cr_prop(budget, sdk, function, prop, *spec)
-    _cr_integer(budget.get(function, 'PropertySize'), low=12)
+    _cr_integer(budget.get(function, 'PropertySize'), low=32)
 
 
 def _cr_solo(budget, sdk, base, pc, controller):
@@ -3940,26 +3946,34 @@ def _cr_inspect(epoch, obj, args, func):
                                          'Engine.Controller', 'Controller')
         definition_class = _cr_loaded(budget, sdk, unrealsdk.find_class,
                                       'WillowGame.SkillDefinition', 'SkillDefinition')
+        object_class = _cr_loaded(budget, sdk, unrealsdk.find_class,
+                                  'Core.Object', 'Object')
         _cr_require(budget.get(obj, 'Class') is manager)
-        function = budget.call(manager, '_find', 'DeactivateSkill')
+        function = budget.call(manager, '_find', 'ActivateSkill')
         _cr_require(type(function) is sdk.UFunction)
-        _cr_link(budget, obj, args, func, manager, function)
-        _cr_integer(budget.get(function, 'PropertySize'), low=12)
-        specs = (('SkillInstigator', 128, 0, declared_controller),
-                 ('Definition', 128, 4, definition_class),
-                 ('bIgnoreSkillInstigator', 144, 8, None))
+        return_prop = _cr_link(budget, sdk, obj, args, func, manager, function)
+        _cr_integer(budget.get(function, 'PropertySize'), low=32)
+        specs = (('SkillInstigator', sdk.ZObjectProperty, 128, 0, 4, declared_controller),
+                 ('Definition', sdk.ZObjectProperty, 128, 4, 4, definition_class),
+                 ('AdditionalSkillTarget', sdk.ZObjectProperty, 144, 8, 4, object_class),
+                 ('SkillGrade', sdk.ZIntProperty, 144, 12, 4, None),
+                 ('StateChangeDelegate', sdk.ZDelegateProperty, 4194448, 16, 12, None),
+                 ('ReturnValue', sdk.ZBoolProperty, 1408, 28, 4, None))
         properties = budget.call(function, '_properties')
         props = []
         for spec in specs:
             prop = budget.next(properties)
             _cr_prop(budget, sdk, function, prop, *spec)
+            if spec[0] == 'ReturnValue':
+                _cr_require(prop is return_prop)
             props.append(prop)
         _cr_require(budget.next(properties) is None)
+        _cr_require(budget.call(function, '_find_return_param') is return_prop)
 
         budget.stage = 1
-        _cr_member(budget, sdk, obj, args, func, manager, function, props[0], specs[0])
+        _cr_member(budget, sdk, obj, args, func, manager, function, return_prop, props[0], specs[0])
         instigator = budget.get(args, 'SkillInstigator')
-        _cr_member(budget, sdk, obj, args, func, manager, function, props[0], specs[0])
+        _cr_member(budget, sdk, obj, args, func, manager, function, return_prop, props[0], specs[0])
         if instigator is None:
             return 'EVENT', 'NULL_INSTIGATOR', 'NOT_READ', '-', tuple(budget.counts)
         _cr_require(type(instigator) is sdk.UObject, 'PARAMETER')
@@ -3977,9 +3991,9 @@ def _cr_inspect(epoch, obj, args, func):
         initial = _cr_solo(budget, sdk, mods_base, pc, controller)
 
         budget.stage = 3
-        _cr_member(budget, sdk, obj, args, func, manager, function, props[1], specs[1])
+        _cr_member(budget, sdk, obj, args, func, manager, function, return_prop, props[1], specs[1])
         definition = budget.get(args, 'Definition')
-        _cr_member(budget, sdk, obj, args, func, manager, function, props[1], specs[1])
+        _cr_member(budget, sdk, obj, args, func, manager, function, return_prop, props[1], specs[1])
         name = '-'
         if definition is None:
             result = 'NULL_DEFINITION'
@@ -4193,7 +4207,7 @@ def start_callback_local_reader(_option=None):
         if _cr_clock() - started >= 120.0:
             reason = 'CLOCK'
             raise ValueError()
-        if not _cr_emit('START version=0.2.17 epoch={} target=DeactivateSkill phase=PRE hooks=1 mode=STANDALONE_READER'.format(_cr_epoch)):
+        if not _cr_emit('START version=0.2.18 epoch={} target=ActivateSkill phase=PRE hooks=1 mode=STANDALONE_READER'.format(_cr_epoch)):
             raise ValueError()
         if _cr_stop_requested:
             raise ValueError()
@@ -4214,11 +4228,11 @@ def shutdown():
 
 
 build_mod(
-    name='UVH v0.2.17 - CALLBACK DEFINITION NAMES',
+    name='UVH v0.2.18 - CALLBACK ACTIVATION READER',
     author='Borderlands Ultimate prototype',
     description=('Standalone PRE reader; bounded definition names, ownership unestablished. '
-                 'Reader22/23 needs no ARM or node. V16 observed a filtered event; v17 is untested in game.'),
-    version='0.2.17',
+                 'Reader22/23 needs no ARM or node. V17 observed UpshotRobot; v18 is untested in game.'),
+    version='0.2.18',
     supported_games=Game.BL2,
     coop_support=CoopSupport.ClientSide,
     options=[
@@ -4243,8 +4257,8 @@ build_mod(
         ButtonOption('uvh_boost_restore', display_name='Restore original duration', on_press=_dt_event_option_gate(restore)),
         ButtonOption('uvh_dt_event_start', display_name='20 - START PASSIVE MANAGER ENTRY OBSERVER (READ ONLY)', on_press=_cr_option_gate(start_deathtrap_events)),
         ButtonOption('uvh_dt_event_stop', display_name='21 - STOP / REPORT PASSIVE MANAGER ENTRY OBSERVER', on_press=_cr_option_gate(stop_deathtrap_events)),
-        ButtonOption('uvh_callback_read_start', display_name='22 - START CALLBACK DEFINITION NAMES (NO ARM)', on_press=start_callback_local_reader),
-        ButtonOption('uvh_callback_read_stop', display_name='23 - STOP / REPORT CALLBACK DEFINITION NAMES', on_press=stop_callback_local_reader),
+        ButtonOption('uvh_callback_read_start', display_name='22 - START CALLBACK ACTIVATION READER (NO ARM)', on_press=start_callback_local_reader),
+        ButtonOption('uvh_callback_read_stop', display_name='23 - STOP / REPORT CALLBACK ACTIVATION READER', on_press=stop_callback_local_reader),
     ],
     auto_enable=True,
     on_disable=shutdown,

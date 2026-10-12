@@ -33,9 +33,10 @@ assert len(registered) == 1
 assert registered[0]['version'] == sys.argv[2]
 assert registered[0]['on_disable'].__name__ == 'shutdown'
 assert len(registered[0]['options']) == 23
-assert registered[0]['name'] == 'UVH v0.2.17 - CALLBACK DEFINITION NAMES'
-assert scope['_CR_IDENT'] == 'UVH_CALLBACK_NAME_V17_DEACTIVATE_PRE'
-assert '[UVH-CALLBACK-NAME] ' in scope['_cr_emit'].__code__.co_consts
+assert registered[0]['name'] == 'UVH v0.2.18 - CALLBACK ACTIVATION READER'
+assert scope['_CR_PATH'] == 'WillowGame.SkillEffectManager:ActivateSkill'
+assert scope['_CR_IDENT'] == 'UVH_ACTIVATION_READER_V18_PRE'
+assert '[UVH-ACTIVATION] ' in scope['_cr_emit'].__code__.co_consts
 print('PASS: isolated packaged runtime import; no game access or scaffolding')
 '''
 

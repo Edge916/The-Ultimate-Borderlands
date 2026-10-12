@@ -128,7 +128,9 @@ class WrappedArray:
 
 
 class CallbackLocalReaderTests(unittest.TestCase):
-    fixture_source = None
+    # Preserve the accepted v17 reader scenarios as historical regressions.
+    # Current activation behavior has independent tests and an explicit source.
+    fixture_source = (runtime.ROOT / 'archive/tested_runtime/v0.2.17/__init__.py').read_bytes()
     reader_prefix = '[UVH-CALLBACK-NAME] '
 
     def setUp(self):
