@@ -1,0 +1,467 @@
+{
+  "schema_version": 1,
+  "task_id": "12ced056-3a87-40be-b78e-8d7af8bc9a55",
+  "decision": "NOT_READY",
+  "metadata_status": "COMPLETE_LOG_TEXT",
+  "passive_lifecycle_ready": false,
+  "native_effect_ready": false,
+  "accepted_base": "9a2ed31064b0a8873e1a21551e3c4d8a6df689cf",
+  "branch": "codex/jake-v0213-readiness",
+  "inputs": [
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "bytes": 35616,
+      "sha256": "f3a6397839fdb7aecb97b117e23e28bcad4d42c5e0c6bf8fe6c5c384c6dd8e95"
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_capture_manifest.json",
+      "bytes": 30373,
+      "sha256": "209284030560642501289e78a2d18cb22575634a05f232e299588522fa9b8617"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 176080,
+      "sha256": "a457bb544814e627a5909bb5bea844a1f6643c64a1b2eef6f2a85ae3c96c4cf8"
+    },
+    {
+      "path": "docs/overclock_identity_cleanup_contract.md",
+      "bytes": 10711,
+      "sha256": "3abd5f388ec5bf9bf501790ed8798c688945a8ca8874333b2031340bfd198cdc"
+    },
+    {
+      "path": "design/overclock_effect_contract_model.py",
+      "bytes": 9234,
+      "sha256": "fbe8e20524616cb5a9aaa608ca0780d03a141cdcc261643a1551c1a929ffbafc"
+    },
+    {
+      "path": "tests/test_overclock_effect_contract_model.py",
+      "bytes": 14113,
+      "sha256": "9639ae7a2f76e21488cf6bffb2f50589c6b46be8fc9537ba8bee5366dd8c36af"
+    },
+    {
+      "path": "evidence/overclock_effect_readiness_research.md",
+      "bytes": 13698,
+      "sha256": "1c0667534ae924f90aa14fc6e08bbbeb4c8403dab3120469bed868a5d07512d5"
+    },
+    {
+      "path": "evidence/deathtrap_lifecycle_diagnostic_design.md",
+      "bytes": 15022,
+      "sha256": "6df2c3076b285d3fb2c7a5fd9223dfe333131c78fa47519b96ebf295c34db3be"
+    }
+  ],
+  "source_ranges": {
+    "signature": {
+      "line": 41,
+      "end_line": 43,
+      "called_names": [
+        "name",
+        "read"
+      ]
+    },
+    "find_live": {
+      "line": 46,
+      "end_line": 79,
+      "called_names": [
+        "get_pc",
+        "len",
+        "log",
+        "min",
+        "name",
+        "range",
+        "read",
+        "type"
+      ]
+    },
+    "apply": {
+      "line": 116,
+      "end_line": 166,
+      "called_names": [
+        "_modifier_count",
+        "display",
+        "find_live",
+        "float",
+        "log",
+        "near",
+        "read",
+        "signature",
+        "str",
+        "type"
+      ]
+    },
+    "restore": {
+      "line": 169,
+      "end_line": 197,
+      "called_names": [
+        "find_live",
+        "log",
+        "near",
+        "read",
+        "signature",
+        "str",
+        "type"
+      ]
+    },
+    "cancel_init_node": {
+      "line": 1379,
+      "end_line": 1391,
+      "called_names": [
+        "_init_remove_hooks",
+        "_init_rollback",
+        "log",
+        "stop_skillstate_trace",
+        "stop_ui_trace",
+        "stop_upgrade_trace"
+      ]
+    },
+    "_upgrade_state": {
+      "line": 1636,
+      "end_line": 1700,
+      "called_names": [
+        "ValueError",
+        "_node_has_exact_contents",
+        "any",
+        "get_pc",
+        "getattr",
+        "isinstance",
+        "len",
+        "list",
+        "name",
+        "read",
+        "tuple",
+        "type"
+      ]
+    },
+    "_deathtrap_property": {
+      "line": 3053,
+      "end_line": 3085,
+      "called_names": [
+        "LookupError",
+        "ValueError",
+        "_deathtrap_int",
+        "_deathtrap_label",
+        "any",
+        "isinstance",
+        "type"
+      ]
+    },
+    "_deathtrap_function": {
+      "line": 3141,
+      "end_line": 3189,
+      "called_names": [
+        "LookupError",
+        "ValueError",
+        "_deathtrap_check",
+        "_deathtrap_function_header",
+        "_deathtrap_property",
+        "_deathtrap_session",
+        "any",
+        "enumerate",
+        "isinstance",
+        "iter",
+        "len",
+        "next",
+        "range"
+      ]
+    },
+    "inspect_deathtrap_readiness": {
+      "line": 3192,
+      "end_line": 3320,
+      "called_names": [
+        "ValueError",
+        "_deathtrap_chain",
+        "_deathtrap_check",
+        "_deathtrap_class",
+        "_deathtrap_field_snapshot",
+        "_deathtrap_function",
+        "_deathtrap_session",
+        "any",
+        "capture_function",
+        "dict",
+        "get_pc",
+        "isinstance",
+        "len",
+        "log",
+        "next",
+        "read",
+        "target",
+        "tuple"
+      ]
+    },
+    "shutdown": {
+      "line": 3323,
+      "end_line": 3325,
+      "called_names": [
+        "cancel_init_node",
+        "stop_tree_trace"
+      ]
+    }
+  },
+  "parsed_function_metadata": [
+    {
+      "coverage": "COMPLETE",
+      "flags": 132097,
+      "kind": "FUNCTION",
+      "name": "GetSkillManager",
+      "num_params": 1,
+      "params_size": 4,
+      "path": "WillowGame.WillowPlayerController:GetSkillManager",
+      "properties": [
+        {
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 1408,
+          "name": "ReturnValue",
+          "offset": 0,
+          "type": "ZObjectProperty"
+        }
+      ],
+      "return_offset": 0,
+      "signature": "NOT_ESTABLISHED"
+    },
+    {
+      "coverage": "COMPLETE",
+      "flags": 149506,
+      "kind": "FUNCTION",
+      "name": "ActivateSkill",
+      "num_params": 6,
+      "params_size": 32,
+      "path": "WillowGame.SkillEffectManager:ActivateSkill",
+      "properties": [
+        {
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 128,
+          "name": "SkillInstigator",
+          "offset": 0,
+          "type": "ZObjectProperty"
+        },
+        {
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 128,
+          "name": "Definition",
+          "offset": 4,
+          "type": "ZObjectProperty"
+        },
+        {
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 144,
+          "name": "AdditionalSkillTarget",
+          "offset": 8,
+          "type": "ZObjectProperty"
+        },
+        {
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 144,
+          "name": "SkillGrade",
+          "offset": 12,
+          "type": "ZIntProperty"
+        },
+        {
+          "dimension": 1,
+          "element_size": 12,
+          "flags": 4194448,
+          "name": "StateChangeDelegate",
+          "offset": 16,
+          "type": "ZDelegateProperty"
+        },
+        {
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 1408,
+          "name": "ReturnValue",
+          "offset": 28,
+          "type": "ZBoolProperty"
+        }
+      ],
+      "return_offset": 28,
+      "signature": "NOT_ESTABLISHED"
+    },
+    {
+      "coverage": "COMPLETE",
+      "flags": 149506,
+      "kind": "FUNCTION",
+      "name": "DeactivateSkill",
+      "num_params": 3,
+      "params_size": 12,
+      "path": "WillowGame.SkillEffectManager:DeactivateSkill",
+      "properties": [
+        {
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 128,
+          "name": "SkillInstigator",
+          "offset": 0,
+          "type": "ZObjectProperty"
+        },
+        {
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 128,
+          "name": "Definition",
+          "offset": 4,
+          "type": "ZObjectProperty"
+        },
+        {
+          "dimension": 1,
+          "element_size": 4,
+          "flags": 144,
+          "name": "bIgnoreSkillInstigator",
+          "offset": 8,
+          "type": "ZBoolProperty"
+        }
+      ],
+      "return_offset": 65535,
+      "signature": "NOT_ESTABLISHED"
+    }
+  ],
+  "unlogged_argument_declared_classes": true,
+  "unobserved_bool_masks": true,
+  "actual_checks": {
+    "baseline_Git_blobs_unchanged": 160,
+    "parser_exit": 0,
+    "report_manifest_equal": true,
+    "calls": 2,
+    "rows_per_call": 15,
+    "snapshot_zip_source_equal": true,
+    "original_zip_crc_layout": true,
+    "immutable_inventory": {
+      "verified_files": 53,
+      "verified_archives": 12,
+      "relationships": 5,
+      "errors": [],
+      "status": "PASS"
+    },
+    "targeted_suites": [
+      {
+        "pattern": "test_overclock_effect_contract_model.py",
+        "tests_run": 36,
+        "exit_code": 0,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "elapsed_seconds": 0.234
+      },
+      {
+        "pattern": "test_deathtrap_readiness.py",
+        "tests_run": 47,
+        "exit_code": 0,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "elapsed_seconds": 4.656
+      }
+    ],
+    "runtime_syntax_pass": true,
+    "model_SDK_free_import_AST": true,
+    "grade_zero_gate_preserved": true,
+    "cancel_disable_manual_restore_separate": true
+  },
+  "sdk_stubs": [
+    {
+      "sdk_relative_path": "unrealsdk/hooks/__init__.pyi",
+      "bytes": 6284,
+      "sha256": "21589d306dc34fe61ce5f7b0b47b62167a6e8f767d3c84283c4757fc27312ab7",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_bound_function.pyi",
+      "bytes": 1635,
+      "sha256": "aede5345048c0b32b7e0bc0ccd57fca5fa29c1227113f0a4ee7f30d469d64546",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_uobject.pyi",
+      "bytes": 4546,
+      "sha256": "a73e55d17aa605ee20540d542a68b817d84614aaeb4c47aa5804e435f58b12b3",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    },
+    {
+      "sdk_relative_path": "unrealsdk/unreal/_uobject_children.pyi",
+      "bytes": 9904,
+      "sha256": "c868cda153981b5d779d7873572db131edc3990696d719c8646f114cd56f1887",
+      "access": "read_as_text_only",
+      "executed": false,
+      "imported": false,
+      "packaged": false,
+      "fresh_read_only_hash_verified": true
+    }
+  ],
+  "pinned_public_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.h",
+      "bytes": 6473,
+      "sha256": "6290b5012a492504b14c987527a93e4d08350297cd81fed1a2c49315b91b570e",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp",
+      "bytes": 14513,
+      "sha256": "77d60d79d8845b9914284963fd5a049300b91e96cbd0bcf0430e477a47e4a48b",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+      "bytes": 10594,
+      "sha256": "219bc8470aebf4e839f51686eb839a301911da6cac6bb7ec58d0a3ca7afd4142",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/uobject_children.cpp",
+      "bytes": 27186,
+      "sha256": "28624b87860aec2b37af221ea5a54bf63eb1ca0d2e91d11d06a2f5c00d7a5ac1",
+      "access": "read_as_text_only",
+      "executed": false,
+      "fresh_local_hash_verified": true
+    }
+  ],
+  "unresolved": [
+    "Function argument declared class paths not emitted; no actual callback signature/payload proof.",
+    "No natural summon activation/deactivation, exact callback manager/instigator/definition membership or phase evidence.",
+    "No native live-instance equality/liveness/address-reuse/wrapper-lifetime proof or verified generation source.",
+    "No ActivatedTime clock units, Duration payload/modifier values or safe consumption/write/readback interval.",
+    "No exact current Overclock rank-one gate; captured rank is zero and active Deathtrap Grade is distinct.",
+    "Native owned-duration cleanup/retry and measured lifespan are untested; zero hooks and array rollback are separate."
+  ],
+  "capture_limits": {
+    "report": "Owner reported completion of the preceding exact eight-step v0.2.13 protocol, which explicitly included CANCEL3 and full exit.",
+    "full_protocol_completion_reported": true,
+    "cancel_and_full_exit_confirmation_basis": "Completion report refers to the explicit eight-step instructions; log restoration and separate process checks are recorded below.",
+    "separate_visible_failure_report": "NOT_REPORTED",
+    "ui_title": "Owner protocol included checking the exact title; not independently observed by agent.",
+    "before_test_machine_observation": "NOT_CHECKED",
+    "authorization_scope": "Preserve/review this completed metadata run. No additional game run or native action."
+  },
+  "deviations": [
+    "Two inspections despite requested one",
+    "Second ARM refused as already armed",
+    "Repeated CANCEL found no patch"
+  ],
+  "not_run": [
+    "Full unchanged 420-test suite",
+    "Hosted CI for v13",
+    "Installed SDK execution/import",
+    "New game test, summons, lifecycle hooks, native calls or Duration writes",
+    "Purchase/rank/save/private-backup/persistence/co-op/merge/release checks"
+  ]
+}
