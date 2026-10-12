@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "project_id": "e4e722af-5c33-4a37-b08c-3ddb15408ccd",
+  "task_id": "6c2e567d-28fa-4541-82b1-8f6a73e8b2b6",
+  "checked_at_utc": "2026-10-11T05:38:35.073266+00:00",
+  "base_commit": "fec90301d4ff4abaf529b84fdfce53f37eaf67f4",
+  "branch": "codex/jake-v0213-manager-metadata",
+  "version": "0.2.13",
+  "title": "UVH v0.2.13 - DEATHTRAP MANAGER METADATA",
+  "readiness": "PREPARED_METADATA_ONLY; NOT_GAME_TESTED; NATIVE_LIFECYCLE_AND_EFFECT_NOT_READY",
+  "scope": [
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+    "tests/test_deathtrap_readiness.py",
+    "tests/test_runtime_mock.py",
+    "tests/test_presentations.py",
+    "scripts/review_deathtrap_metadata_log.py",
+    "tests/test_deathtrap_metadata_log_review.py",
+    "evidence/deathtrap_manager_metadata_implementation_checks.json",
+    "docs/NEXT_CODEX_TASK.md",
+    "dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+    "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip"
+  ],
+  "actual_checks": {
+    "offline_validation": {
+      "schema_version": 1,
+      "python": "3.12.14",
+      "scope": "offline repository checks",
+      "engine_behavior": "NOT_ESTABLISHED",
+      "hosted_CI": "NOT_CHECKED",
+      "syntax": {
+        "compiled_files": 22,
+        "errors": [],
+        "status": "PASS"
+      },
+      "tests": {
+        "status": "PASS",
+        "unique_tests": 420,
+        "tests_run": 420,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "unexpected_successes": 0,
+        "expected_failures": 0,
+        "all_discovered_run": true
+      },
+      "package": {
+        "status": "PASS",
+        "exit_code": 0,
+        "stdout": "PASS: isolated packaged runtime import; no game access or scaffolding\nPASS: ZIP integrity, exact single-folder layout and source match\n",
+        "stderr": ""
+      },
+      "seconds": 30.031,
+      "status": "PASS"
+    },
+    "AST_and_raw_function_preservation": {
+      "top_level_functions": 95,
+      "changed_functions": [
+        "inspect_deathtrap_readiness"
+      ],
+      "AST_and_raw_bytes_identical_functions": 94,
+      "ten_metadata_helpers_identical": true,
+      "factory_changed_keys": [
+        "name",
+        "version",
+        "options"
+      ],
+      "options_count": 19,
+      "only_changed_option_index": 3,
+      "other_top_level_AST_identical": true
+    },
+    "baseline_preservation": {
+      "base_tracked_paths": 153,
+      "outside_scope_paths": 143,
+      "all_outside_scope_raw_equal_Git_blobs": true
+    },
+    "frozen_v12_CLI": {
+      "status": "PARTIAL",
+      "exit_code": 1,
+      "source": {
+        "bytes": 32788,
+        "sha256": "8ddbb6aeae5d96be14879adf69fd21c6a7a1fcdbd3e55ec5f4199b2f943f520a"
+      },
+      "entire_report_equals_preserved_v12_reviewer": true,
+      "calls": 2,
+      "issues": []
+    },
+    "v12_reviewer_tests_preserved": {
+      "cases": 46,
+      "unchanged_test_ASTs": 45,
+      "one_fixture_integration_updated": "test_runtime_emitted_complete_and_capped_mock_records_match_parser",
+      "only_change": "candidate function fixture moved from controller to manager"
+    },
+    "immutable_inventory": {
+      "verified_files": 53,
+      "verified_archives": 12,
+      "relationships": 5,
+      "errors": [],
+      "status": "PASS"
+    },
+    "new_versioned_package": {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8",
+      "created_exclusively": true,
+      "equals_current_default": true,
+      "CRC": "PASS",
+      "layout": "one folder; exact three files",
+      "source_equality": "PASS",
+      "syntax": "PASS",
+      "isolated_inert_import": "PASS via identical default bytes; one registration/19options/no game access"
+    }
+  },
+  "payload_fingerprints": [
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 176080,
+      "sha256": "a457bb544814e627a5909bb5bea844a1f6643c64a1b2eef6f2a85ae3c96c4cf8"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "bytes": 83,
+      "sha256": "a33278a92682c061f7cfb6f0ec29318ae6123223116c784cb0def5772c6f8ae7"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+      "bytes": 2989,
+      "sha256": "d2c9931af9bed91ce3cada0bb3e45c7781373fa8ad69a1721b4955b61965ca7a"
+    },
+    {
+      "path": "tests/test_deathtrap_readiness.py",
+      "bytes": 23185,
+      "sha256": "9f57f6b70cc593b8337de4ed86490cacdd6268ab3edfbfe6bcbccdc895eb73a2"
+    },
+    {
+      "path": "tests/test_runtime_mock.py",
+      "bytes": 43784,
+      "sha256": "2342e70ef58326029f7eff6757ee2bd83f3ceba090a724648b20043b5c1f685f"
+    },
+    {
+      "path": "tests/test_presentations.py",
+      "bytes": 18896,
+      "sha256": "a594ec40cef2be351d7158012dbe5148da2302809e1726bc39d496d2365337b7"
+    },
+    {
+      "path": "scripts/review_deathtrap_metadata_log.py",
+      "bytes": 20003,
+      "sha256": "9c6a93e9eb3eba39ac78f08c1311e9a8f8bf2f4544dbb5047eaad97abfa0e02a"
+    },
+    {
+      "path": "tests/test_deathtrap_metadata_log_review.py",
+      "bytes": 23946,
+      "sha256": "20821787c5c17c6bf546e1f5fcf9f1ab274f798a33fad650342e0bbaddc4edf5"
+    },
+    {
+      "path": "docs/NEXT_CODEX_TASK.md",
+      "bytes": 3783,
+      "sha256": "19258a06a14360355e144d5c8d5cea6b5c0c5fa9dad36cd06aa148be1f89e095"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8"
+    }
+  ],
+  "new_meaningful_cases": {
+    "runtime": 8,
+    "offline_reviewer": 11,
+    "total": 19,
+    "coverage": [
+      "manager-only lookup and poisoned controller fallback",
+      "missing manager candidates with continuing fields",
+      "missing primary without dependent probes/fabricated rows",
+      "manager ancestry vs same-name foreign owner",
+      "manager header/return class drift",
+      "unavailable active array without invented descendants",
+      "unknown-wrapper refusal",
+      "v12/v13 exact row order and version/hash contracts",
+      "mixed-version refusal",
+      "contradictory return discovery",
+      "capped/unavailable/refused outcomes",
+      "cleanup failure history after retry"
+    ]
+  },
+  "resolved_check_issues": [
+    "Direct parser unittest invocation hit sandbox default-temp PermissionError in an unchanged test; full repository runner uses workspace-local tempfiles and all420tests passed.",
+    "Initial edit normalized mixed runtime line endings; corrected from accepted base before packaging. All94untouched functions now raw-byte and AST-identical.",
+    "Negative duplicate-ZIP test emitted its expected zipfile warning; no validation failure.",
+    "Compatibility checker initially compared in-memory tuple state to CLI JSON lists; normalized both through JSON before the complete-report equality comparison. No parser change was needed."
+  ],
+  "limits": {
+    "current_inventory_fingerprints": "NOT_UPDATED; prepared-e32 fingerprint drift remains intentional; new current package verified separately",
+    "SDK_execution": "NONE; all tests use inert fake SDK types",
+    "metadata_candidate_presence_in_game": "NOT_OBSERVED",
+    "new_game_install_run_capture": "NOT_PERFORMED",
+    "native_manager_instance_payload_calls_hooks_writes": "NONE_ADDED",
+    "hard_SDK_getter_deadline": "NOT_GUARANTEED",
+    "internal_initial_baseline": "UNLOGGED; FINAL is runtime assertion",
+    "parser": "text consistency only; does not prove SDK identity/signature/origin/install/exit/lifetime",
+    "effect_rank_one_gate_lifecycle": "NOT_READY",
+    "hosted_CI": "NOT_CHECKED",
+    "save_private_backup_purchase_summon_effect_merge_release": "NOT_PERFORMED"
+  }
+}

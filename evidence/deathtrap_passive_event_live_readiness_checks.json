@@ -1,0 +1,412 @@
+{
+  "schema_version": 1,
+  "task_id": "b739d29d-610a-4346-b7b4-c53836d6c4dc",
+  "accepted_base": "13b030b613753da8100bdd2494fc3a16ddeb82d7",
+  "capture_PR": "https://github.com/Edge916/The-Ultimate-Borderlands/pull/26",
+  "branch": "codex/jake-v15-live-readiness",
+  "decision": "NOT_READY_FOR_NATIVE_EFFECT_DESIGN",
+  "next_read_only_scope": "READY_FOR_ADAPTER_EVIDENCE_RESEARCH",
+  "natural_manager_entry": "NOT_OBSERVED",
+  "native_owned_lifecycle_ready": false,
+  "native_effect_ready": false,
+  "actual_checks": {
+    "fresh_strict_CLI_exit": 0,
+    "full_report_manifest_equal": true,
+    "offline_review": {
+      "schema_version": 1,
+      "status": "COMPLETE_LOG_TEXT",
+      "log_text_acceptable": true,
+      "log_text_consistent": true,
+      "observer_sections_complete": true,
+      "input": {
+        "bytes": 17205,
+        "sha256": "3c1de714692827194df6881ebb01ecfcf3273a02e9cd825b420efc6210b3c402"
+      },
+      "records": 14,
+      "runs": [
+        {
+          "line": 65,
+          "started": true,
+          "orphan": false,
+          "baseline": {
+            "points": [
+              1,
+              0
+            ],
+            "ranks": [
+              0,
+              0,
+              0
+            ]
+          },
+          "events": 0,
+          "limit": "TIME",
+          "abort": null,
+          "not_started": null,
+          "final": "VERIFIED",
+          "stops": [
+            {
+              "line": 69,
+              "remaining": 0,
+              "captured": 0,
+              "attempts": 0,
+              "reentrant": 0,
+              "uncertain": 0,
+              "cleanup_failures": 0,
+              "outcome": "NOT_OBSERVED"
+            },
+            {
+              "line": 71,
+              "remaining": 0,
+              "captured": 0,
+              "attempts": 0,
+              "reentrant": 0,
+              "uncertain": 0,
+              "cleanup_failures": 0,
+              "outcome": "NOT_OBSERVED"
+            }
+          ],
+          "overlap_refusals": 0,
+          "removal_errors": 0,
+          "refused": false,
+          "ended": true
+        }
+      ],
+      "unattached_control_refusals": 0,
+      "issues": [],
+      "issue_count": 0,
+      "issues_truncated": false,
+      "cleanup": {
+        "observer_handles_resolved": true,
+        "prior_refusal_preserved": false,
+        "old_families_zero_after_last_activity": {
+          "UVH-STATE": true,
+          "UVH-UI": true,
+          "UVH-UPGRADE": true,
+          "UVH-INITNODE": true
+        },
+        "native_arrays_restored_after_last_activity": true,
+        "process_exit": "NOT_ESTABLISHED",
+        "duration_restore": "NOT_ESTABLISHED"
+      },
+      "event_meaning": "UNATTRIBUTED_MANAGER_EVENT; attempted entry only",
+      "attribution": "NONE",
+      "authenticity": "NOT_ESTABLISHED",
+      "engine_behavior": "NOT_ESTABLISHED",
+      "native_owned_lifecycle_ready": false,
+      "native_effect_ready": false,
+      "missing_calls_or_silence": "No absence, deactivation, ownership, timing or lifespan inference"
+    },
+    "all187base_blobs_equal": true,
+    "original15ZIPs": [
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+        "bytes": 32742,
+        "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+        "bytes": 34433,
+        "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+        "bytes": 36736,
+        "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+        "bytes": 37087,
+        "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+        "bytes": 37809,
+        "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+        "bytes": 41032,
+        "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+        "bytes": 19467,
+        "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+        "bytes": 20457,
+        "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+        "bytes": 21349,
+        "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+        "bytes": 24437,
+        "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+        "bytes": 26428,
+        "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+        "bytes": 26629,
+        "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+        "bytes": 28884,
+        "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+        "bytes": 30016,
+        "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2"
+      },
+      {
+        "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+        "bytes": 31335,
+        "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160"
+      }
+    ],
+    "immutable_inventory": {
+      "verified_files": 53,
+      "verified_archives": 12,
+      "relationships": 5,
+      "errors": [],
+      "status": "PASS"
+    },
+    "frozen": [
+      {
+        "log": "v032_user_test.log",
+        "exit_code": 1,
+        "full_JSON_and_snapshot_originalZIP_equal": true
+      },
+      {
+        "log": "deathtrap_manager_metadata_user_test.log",
+        "exit_code": 0,
+        "full_JSON_and_snapshot_originalZIP_equal": true
+      },
+      {
+        "log": "deathtrap_parameter_metadata_user_test.log",
+        "exit_code": 0,
+        "full_JSON_and_snapshot_originalZIP_equal": true
+      }
+    ],
+    "source_snapshot_original_v15ZIP_equal": true,
+    "runtime_syntax_only": "PASS",
+    "callback_payload_parameter_loads": 0,
+    "callback_returns_exact_None": true,
+    "selected_observer_direct_native_method_calls": 0,
+    "selected_observer_Duration_assignments": 0,
+    "actual_source_timeout": "Python monotonic,>=30 seconds checked on callback/control; STOP may emit TIME; no background timer",
+    "source_grade_zero_guard_unchanged": true,
+    "CANCEL_and_shutdown_do_not_call_manual_Duration_restore": true
+  },
+  "source_ranges": {
+    "signature": {
+      "first": 41,
+      "last": 43
+    },
+    "find_live": {
+      "first": 46,
+      "last": 79
+    },
+    "apply": {
+      "first": 116,
+      "last": 166
+    },
+    "restore": {
+      "first": 169,
+      "last": 197
+    },
+    "cancel_init_node": {
+      "first": 1379,
+      "last": 1392
+    },
+    "_upgrade_state": {
+      "first": 1637,
+      "last": 1701
+    },
+    "_deathtrap_session": {
+      "first": 3012,
+      "last": 3021
+    },
+    "_dt_event_emit": {
+      "first": 3382,
+      "last": 3390
+    },
+    "_dt_event_integer": {
+      "first": 3393,
+      "last": 3396
+    },
+    "_dt_event_clock": {
+      "first": 3399,
+      "last": 3410
+    },
+    "_dt_event_guard": {
+      "first": 3413,
+      "last": 3420
+    },
+    "_dt_event_metadata": {
+      "first": 3423,
+      "last": 3475
+    },
+    "_dt_event_revalidate": {
+      "first": 3478,
+      "last": 3496
+    },
+    "_dt_event_locked": {
+      "first": 3499,
+      "last": 3501
+    },
+    "_dt_event_option_gate": {
+      "first": 3504,
+      "last": 3512
+    },
+    "_dt_event_finish": {
+      "first": 3515,
+      "last": 3526
+    },
+    "_dt_event_callback": {
+      "first": 3599,
+      "last": 3643
+    },
+    "start_deathtrap_events": {
+      "first": 3646,
+      "last": 3731
+    },
+    "stop_deathtrap_events": {
+      "first": 3529,
+      "last": 3596
+    },
+    "shutdown": {
+      "first": 3734,
+      "last": 3736
+    }
+  },
+  "inputs": [
+    {
+      "path": "evidence/deathtrap_passive_event_live_readiness_result.md",
+      "bytes": 10538,
+      "sha256": "79c97ba4b3344e2d73b22c9f160bb9ee5e027cb4a2119baaab30661eb0a211e0"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_user_test.log",
+      "bytes": 17205,
+      "sha256": "3c1de714692827194df6881ebb01ecfcf3273a02e9cd825b420efc6210b3c402"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_capture_manifest.json",
+      "bytes": 10865,
+      "sha256": "58a52b3250422420386864de58278b3ff8b086f0fae26d5656c15be8839f1dfc"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 195214,
+      "sha256": "a1ef33d3571de36fe89e269fae632d96cb8029bfa08ed9ec728d1bf1bf4b27bf"
+    },
+    {
+      "path": "scripts/review_deathtrap_passive_event_log.py",
+      "bytes": 15017,
+      "sha256": "db9e6a41dcb3b7c53c7edb5ef46da42aae76fd3ff357958545800cb1622692f8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b"
+    },
+    {
+      "path": "docs/deathtrap_passive_event_observer_design.md",
+      "bytes": 19412,
+      "sha256": "c18c4e0641500b9cf2e0fb93e3506dd30f28f80bcdf06769c90a32a6952b6dc1"
+    },
+    {
+      "path": "docs/overclock_identity_cleanup_contract.md",
+      "bytes": 10711,
+      "sha256": "3abd5f388ec5bf9bf501790ed8798c688945a8ca8874333b2031340bfd198cdc"
+    },
+    {
+      "path": "design/overclock_effect_contract_model.py",
+      "bytes": 9234,
+      "sha256": "fbe8e20524616cb5a9aaa608ca0780d03a141cdcc261643a1551c1a929ffbafc"
+    },
+    {
+      "path": "evidence/overclock_effect_contract_model_checks.json",
+      "bytes": 3004,
+      "sha256": "5c66530ea0f56e10e57748c5f70a72a615e7f57a3e94bad343d91733eb1afed8"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_schema_readiness_result.md",
+      "bytes": 10589,
+      "sha256": "a0b03b3b2152c87dce59288f836add1e3b2fe17b6b9c6af7da36028df4d15406"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_implementation_checks.json",
+      "bytes": 17948,
+      "sha256": "c7b129936c755e4d460c8c57e22d0c305e515d8ac86ba4aa4b06ec67bd66d6d8"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_log_review_checks.json",
+      "bytes": 9216,
+      "sha256": "66736625acf83345363fb92f63f2d7ad580b78d6abeac7e23db1c9b377bb79c0"
+    }
+  ],
+  "capture_provenance": {
+    "before_capture": {
+      "game_process_count": 0,
+      "checked_utc": "2026-10-11T08:35:39.9598634Z"
+    },
+    "after_capture": {
+      "game_process_count": 0,
+      "checked_utc": "2026-10-11T08:35:40.6790983Z"
+    },
+    "game_process_count_zero": true,
+    "method": "Read-only Get-Process -Name Borderlands2 before/after preservation; not before owner test."
+  },
+  "operator_limits": {
+    "exact_statement": "STOP 21, CANCEL 3 and full exit completed",
+    "stop21_cancel3_full_exit_explicitly_confirmed": true,
+    "preceding_approval": "Yes, begin this v0.2.15 test",
+    "approved_protocol": "Already-backed-up solo Offline Gaige; main-menu title/ARM1 once; Continue fully load MAP; START20 once/stay about20s; STOP21 then CANCEL3 MAP; fully exit desktop before relaunch.",
+    "excluded_actions": "No buying,respec,travel,summon,manualboost,metadata4 or other trace.",
+    "separate_visible_failure_report": "NOT_REPORTED",
+    "observation_limit": "Agent did not observe title/UI/operator clicks, waiting interval, before-test process, save state or in-game visible outcome.",
+    "authorization_scope": "Preserve and review this completed owner diagnostic; no new game run or native action."
+  },
+  "protocol_deviations": [
+    "A second ARM was refused because already armed (log27-28); cause unestablished.",
+    "TIME was reported at the first STOP (log67). SDK wrapper timestamps START65 to LIMIT67 differ by44.228 seconds; protocol requested about20seconds. Agent did not observe the waiting interval and wrapper time is not engine timing proof."
+  ],
+  "metadata_revision": {
+    "initial_manifest": {
+      "bytes": 9946,
+      "sha256": "db9e96f84f6447e8deecc42b53f409a913be42df55247d9b3c61c74c90e4cbaf"
+    },
+    "reason": "Initial local summary counter searched START version= instead of actual START v0.2.15. Corrected from preserved raw log and independent strict reviewer; added actual TIME/protocol timing observation.",
+    "raw_log_and_three_installed_snapshot_bytes_unchanged": true,
+    "previous_baseline_artifacts_unchanged": true
+  },
+  "missing_native_facts": [
+    "Accepting natural callback delivery",
+    "Exact current manager/instigator/definition and unique skill ownership",
+    "Native reference comparison and liveness across destruction/recreation/read interval",
+    "Natural summon generation and successful lifecycle transition",
+    "ActivatedTime clock units,Duration consumption/write/readback interval",
+    "Separate rank-one purchased-node gate",
+    "Cleanup on the same original instance"
+  ],
+  "checks_not_run": [
+    "Accepted596-test suite and hostedCI not repeated for two evidence files",
+    "Native callback,SDK execution/import,installed source-binary match,wrapper lifetime or engine-clock verification",
+    "New process or installedfile queries: preserved prior capture provenance inspected instead",
+    "Game test/install/control/native payload enumeration/invocation/gameplay write/purchase/respec/travel/summon/manualboost",
+    "Save/privatebackup access,effect,co-op,merge or release"
+  ]
+}
