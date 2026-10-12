@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "reference_commit": "1720b62a254d03bbf4e71bc334c60be93e8c8f33",
+  "immutable_files": [
+    {
+      "path": "archive/tested_runtime/v0.2.10/README.txt",
+      "bytes": 5201,
+      "sha256": "4b6fb1f42297f76f737e9ebf87a517019d4b23db47c33fe1fc348752cbe82fa5",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.10/__init__.py",
+      "bytes": 149607,
+      "sha256": "4f34082483c0d14715f708c9c8c61d42bcfe9bb262c23445ce9808489bc7bdbb",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.10/pyproject.toml",
+      "bytes": 90,
+      "sha256": "cd8a2e28c91e15b30bd8d5188f64864ed7c26cea3d9017cd3483862df558ba5f",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.11/README.txt",
+      "bytes": 5241,
+      "sha256": "39bad5a23849bbe57bbd707135221f4e2959a702a8aab53be47cd85a446ffc91",
+      "provenance": "Immutable owner capture88a904e83babc1d85566d47f382cc32dfda89a8b; reviewed manifest provides separate game/install/exit evidence"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.11/__init__.py",
+      "bytes": 157326,
+      "sha256": "59f99db241b3e7a1ebe117a3304988960a3b333ac051c487884e53091f83c1f8",
+      "provenance": "Immutable owner capture88a904e83babc1d85566d47f382cc32dfda89a8b; reviewed manifest provides separate game/install/exit evidence"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.11/pyproject.toml",
+      "bytes": 82,
+      "sha256": "759a68929c1baff4141bc4d40ba69c5a2669fd9b89cb807b3f3937c6a0b15dad",
+      "provenance": "Immutable owner capture88a904e83babc1d85566d47f382cc32dfda89a8b; reviewed manifest provides separate game/install/exit evidence"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.7/README.txt",
+      "bytes": 5527,
+      "sha256": "9a0476c7c3c4ca3293554bffbe5c7175e04421d16d0ab2d5c8945e733a2e5037",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.7/__init__.py",
+      "bytes": 118343,
+      "sha256": "e8942b68dacbfe7fc841ff001ec1357eee7fea18a527c973fa4ea73ca829165e",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.7/pyproject.toml",
+      "bytes": 84,
+      "sha256": "fb0db55605a07a1e14e7abb89a3e91df558931a7bf69897f5c9b83492babff67",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.8/README.txt",
+      "bytes": 4296,
+      "sha256": "f33576f7ee07c57f0480a044a5d20db7154fdb516cdc123469f9846a98167811",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.8/__init__.py",
+      "bytes": 126549,
+      "sha256": "4dae701cc263c3d4be1fb8b602f0f5d0987ad173b2cfd477bd784a7ddeb706a5",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.8/pyproject.toml",
+      "bytes": 86,
+      "sha256": "0393dfc7317910731465da0a19aa62f5bb5b4bf777b5c8e8c4b6315de8cd12b1",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.9/README.txt",
+      "bytes": 4346,
+      "sha256": "c88222fd33b4bb69cab713e2ef57d9a34e8106824524986b08c9b0f64463d098",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.9/__init__.py",
+      "bytes": 138156,
+      "sha256": "ee65713694aef334de6f542ad2bfb90a2fe4793ae4a6ddc811a54d3c05d03897",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.9/pyproject.toml",
+      "bytes": 85,
+      "sha256": "f429391037fc73572314af319913c0b38f83a0a3e3c7cdecac3f09fb53c54b83",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+      "bytes": 32742,
+      "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+      "bytes": 34433,
+      "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4",
+      "provenance": "Original versioned package at accepted 3af92a893cce1a4db6850e1270be3d2c78244497"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+      "bytes": 36736,
+      "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6",
+      "provenance": "Original versioned package at accepted e32cfb16914ee1fe6e55519f5526494100a1fd0e"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+      "bytes": 19467,
+      "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+      "bytes": 20457,
+      "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+      "bytes": 21349,
+      "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+      "bytes": 24437,
+      "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+      "bytes": 26428,
+      "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+      "bytes": 26629,
+      "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+      "bytes": 28884,
+      "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+      "bytes": 30016,
+      "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+      "bytes": 31335,
+      "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/overclock_effect_readiness_checks.json",
+      "bytes": 22363,
+      "sha256": "79d360bcac42d66068c71507a32d6d984bd933bfd58da622f7b531f665a5592a",
+      "provenance": "Accepted independent researchf8aa2fe28bf71199e801fc94a447506aa41eb000; simulated probes are not engine evidence"
+    },
+    {
+      "path": "evidence/overclock_effect_readiness_research.md",
+      "bytes": 13698,
+      "sha256": "1c0667534ae924f90aa14fc6e08bbbeb4c8403dab3120469bed868a5d07512d5",
+      "provenance": "Accepted independent researchf8aa2fe28bf71199e801fc94a447506aa41eb000; simulated probes are not engine evidence"
+    },
+    {
+      "path": "evidence/v011_duration_write_verified.log",
+      "bytes": 5104,
+      "sha256": "220156804885f48c683d0aa437d7287a10e90d26814601a6e7ef2f989c7644ab",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v014_native_branches_and_layout.log",
+      "bytes": 65342,
+      "sha256": "9b34b4fc0fd2606f5b61d511ba3e3c6f77f4edc5e0dc98d84545f6842275ab55",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v015_skill_definitions_and_construct_api.log",
+      "bytes": 35062,
+      "sha256": "f3445f5e94b6f22b0fc34ed52c2c1ab39df666d55f228fe508638775746fa4d8",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v016_node_insertion_verified_but_NOT_VISIBLE.log",
+      "bytes": 4811,
+      "sha256": "739686b4f276645d9d5df34542b7b54c9a5d2c466f2a3a2fa269e9856fb9bba7",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v017_main_menu_assets_unavailable.log",
+      "bytes": 5678,
+      "sha256": "16c5ebc42cc3c6a9743a0b98dabb8372613b2a9d4c1bc07e8cfce02befa3fc65",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v018_assets_transient_playerskilltree_found.log",
+      "bytes": 37521,
+      "sha256": "6e72a5b2532bf711c86b39377c6dc0d6df24f6111a01b729c0980b3d209777d8",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v019_live_tree_and_init_trace.log",
+      "bytes": 323154,
+      "sha256": "505cc62b6c2b65cde9e24bda49b9c9b0cf6a4d80286f0633fb2ece2a6ffc8ca3",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v020_netmode_guard_aborted_no_insertion.log",
+      "bytes": 6255,
+      "sha256": "6161e9857a1ea3c7074cde07b4582676c004c77aac5690f49c994f4ee98ab5a5",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v021_native_node_visible_and_restored.log",
+      "bytes": 24783,
+      "sha256": "bb42d31110462749ad21f90885a911d9f92cb22a50a1cff74660b91eb68544ca",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v022_purchase_rank_metadata_and_restored.log",
+      "bytes": 96901,
+      "sha256": "78cfa63fd67c1f989e48c00d2da947a0fd75cbe6581970d436d7c1a8137b487a",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v022_repeat_rank_preview_clarification.log",
+      "bytes": 95766,
+      "sha256": "d684add928bc46cbf7a5a27356282a2df1b87bbdb9dca0724d49b6aed05c7482",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v023_upgrade_metadata_and_restored.log",
+      "bytes": 112794,
+      "sha256": "d0dc15edca2e0b9d737bcbabfa87104c1f4fa792bb01829ec5a9390b07f82e77",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v024_upgrade_observers_zero_calls_and_restored.log",
+      "bytes": 20349,
+      "sha256": "f4c0e99d17ac743339eabb5381d31d3f78be80bf0b9fc328ec32f57518058c8b",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v024_user_test.log",
+      "bytes": 16459,
+      "sha256": "05fd15067c53b0553d6b71ae99ced9bef413170abaeceb8897d6522f1a0b5bdc",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v025_user_test.log",
+      "bytes": 30099,
+      "sha256": "c476847b867b8919e97ca678d56032e09b7de4a717336969a1c389588d29ccef",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v026_user_test.log",
+      "bytes": 49774,
+      "sha256": "8509efded92cb6787964bbfe178821a5cd1ff2d1b3c4bccf7d2304e2cbc61281",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v027_user_test.log",
+      "bytes": 31364,
+      "sha256": "3024e4692fa28f0ea17ec39b3f6131ce5db1329991c4285aae5169b837195452",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v028_overclock_user_screenshot.png",
+      "bytes": 2937120,
+      "sha256": "d1855e515d1135f449d1b0d3b7ae4e464a452cfa4809194995c3fa2d43992d15",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v028_presentation_retry.log",
+      "bytes": 38263,
+      "sha256": "348d9ce354c6ec3853813de5eecba2c258d8fad72c8aab8280d26d4ec8a37229",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v028_user_test.log",
+      "bytes": 20009,
+      "sha256": "2f3670fa1c50ced4864daf5fd8db9585b6ef5c6af36b7bded9fe8d16341d326d",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v029_user_test.log",
+      "bytes": 94218,
+      "sha256": "9f73970ca42390bf96904b0af174ebaec93faf77b40db6baf5a9ab3979bb3279",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v030_user_test.log",
+      "bytes": 259457,
+      "sha256": "88a79e741abb6b217f8f8a23c42e14578c11c75f2686abcfecc13d2c74e294fb",
+      "provenance": "Original protected baseline; evidence/v031_preserved_baseline.json at accepted3af92a8"
+    },
+    {
+      "path": "evidence/v031_capture_manifest.json",
+      "bytes": 12950,
+      "sha256": "27bc11aa3f5fd18cd1afb55e99255f13f19b82ca3ec3e36cdfddf1193aa58d20",
+      "provenance": "Immutable owner capture88a904e83babc1d85566d47f382cc32dfda89a8b; reviewed manifest provides separate game/install/exit evidence"
+    },
+    {
+      "path": "evidence/v031_user_test.log",
+      "bytes": 93722,
+      "sha256": "7339178b278e7e4c63a8ec4272a692c199840c82c99017be2198901f1a1f3b00",
+      "provenance": "Immutable owner capture88a904e83babc1d85566d47f382cc32dfda89a8b; reviewed manifest provides separate game/install/exit evidence"
+    }
+  ],
+  "current_files": [
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 175943,
+      "sha256": "41fd2dd9e22bcfa64fbddfc19b881f6950362656e047b212b00eb86f33a01f73",
+      "provenance": "Recorded prepared build e32cfb16914ee1fe6e55519f5526494100a1fd0e; later intentional current drift is separate"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "bytes": 75,
+      "sha256": "fa8acf733ef82a19371fc89b6d0cfb37e690ce2aca704ec1479cf01a9efae40e",
+      "provenance": "Recorded prepared build e32cfb16914ee1fe6e55519f5526494100a1fd0e; later intentional current drift is separate"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+      "bytes": 2396,
+      "sha256": "5e0b3441243818c4bf161c889f643ec09132ae1e6acbf2addb5162b8b8edec7f",
+      "provenance": "Recorded prepared build e32cfb16914ee1fe6e55519f5526494100a1fd0e; later intentional current drift is separate"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+      "bytes": 36736,
+      "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6",
+      "provenance": "Recorded prepared build e32cfb16914ee1fe6e55519f5526494100a1fd0e; later intentional current drift is separate"
+    }
+  ],
+  "snapshot_relationships": [
+    {
+      "zip": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+      "entries_equal_files": {
+        "UltimateVaultHunterDeathtrapBoost/__init__.py": "archive/tested_runtime/v0.2.7/__init__.py",
+        "UltimateVaultHunterDeathtrapBoost/pyproject.toml": "archive/tested_runtime/v0.2.7/pyproject.toml",
+        "UltimateVaultHunterDeathtrapBoost/README.txt": "archive/tested_runtime/v0.2.7/README.txt"
+      }
+    },
+    {
+      "zip": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+      "entries_equal_files": {
+        "UltimateVaultHunterDeathtrapBoost/__init__.py": "archive/tested_runtime/v0.2.8/__init__.py",
+        "UltimateVaultHunterDeathtrapBoost/pyproject.toml": "archive/tested_runtime/v0.2.8/pyproject.toml",
+        "UltimateVaultHunterDeathtrapBoost/README.txt": "archive/tested_runtime/v0.2.8/README.txt"
+      }
+    },
+    {
+      "zip": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+      "entries_equal_files": {
+        "UltimateVaultHunterDeathtrapBoost/__init__.py": "archive/tested_runtime/v0.2.9/__init__.py",
+        "UltimateVaultHunterDeathtrapBoost/pyproject.toml": "archive/tested_runtime/v0.2.9/pyproject.toml",
+        "UltimateVaultHunterDeathtrapBoost/README.txt": "archive/tested_runtime/v0.2.9/README.txt"
+      }
+    },
+    {
+      "zip": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+      "entries_equal_files": {
+        "UltimateVaultHunterDeathtrapBoost/__init__.py": "archive/tested_runtime/v0.2.10/__init__.py",
+        "UltimateVaultHunterDeathtrapBoost/pyproject.toml": "archive/tested_runtime/v0.2.10/pyproject.toml",
+        "UltimateVaultHunterDeathtrapBoost/README.txt": "archive/tested_runtime/v0.2.10/README.txt"
+      }
+    },
+    {
+      "zip": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+      "entries_equal_files": {
+        "UltimateVaultHunterDeathtrapBoost/__init__.py": "archive/tested_runtime/v0.2.11/__init__.py",
+        "UltimateVaultHunterDeathtrapBoost/pyproject.toml": "archive/tested_runtime/v0.2.11/pyproject.toml",
+        "UltimateVaultHunterDeathtrapBoost/README.txt": "archive/tested_runtime/v0.2.11/README.txt"
+      }
+    }
+  ],
+  "current_relationships": [
+    {
+      "zip": "dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+      "entries_equal_files": {
+        "UltimateVaultHunterDeathtrapBoost/__init__.py": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+        "UltimateVaultHunterDeathtrapBoost/pyproject.toml": "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+        "UltimateVaultHunterDeathtrapBoost/README.txt": "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt"
+      }
+    }
+  ],
+  "evidence_limits": [
+    "Selected recorded fingerprints do not authenticate manifest origin or all repository content.",
+    "ZIP syntax is compiled in memory only; no packaged or SDK code executed.",
+    "Current runtime/package is preparedv0.2.12, last game-tested buildv0.2.11.",
+    "New/unlisted evidence is not assigned original hashes or accepted as a game result.",
+    "No private-backup/save/installed-game access, recovery or rebuild is performed."
+  ]
+}

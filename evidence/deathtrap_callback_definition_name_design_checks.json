@@ -1,0 +1,648 @@
+{
+  "schema_version": 1,
+  "task_id": "e1b6b549-2aa1-47f6-8ce4-820681e474e1",
+  "status": "PASS",
+  "decision": "READY_FOR_BOUNDED_NAME_DIAGNOSTIC_IMPLEMENTATION_REVIEW",
+  "native_effect_decision": "NOT_READY_FOR_NATIVE_EFFECT_DESIGN",
+  "accepted_base": "73704f2b00658764beef6d26853a544d39944068",
+  "accepted_assessment_PR": "https://github.com/Edge916/The-Ultimate-Borderlands/pull/35",
+  "accepted_runtime": "b51f91ff28ece47fc28ca91eef6f12cc305f8c8b",
+  "accepted_reviewer": "9f5646d8bd5f37661a94cb6d94a0f96660dc006c",
+  "accepted_capture": "27ca755086ef705a0ac0baa954213af394c9037e",
+  "branch": "codex/jake-v17-definition-name-design",
+  "exact_scope": [
+    "docs/deathtrap_callback_definition_name_design.md",
+    "evidence/deathtrap_callback_definition_name_design_checks.json"
+  ],
+  "prospective_version": "0.2.17",
+  "prospective_prefix": "[UVH-CALLBACK-NAME]",
+  "inputs": [
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 216082,
+      "sha256": "1d6524fa483705384951d60a6e48fc92209f21cfb62e5390c65db295924c2548"
+    },
+    {
+      "path": "evidence/deathtrap_callback_local_reader_user_test.log",
+      "bytes": 13802,
+      "sha256": "0c16ddf9dd0c46459fec53599b9685f4f2e3f6e5c263977be99cfaddb13b5fdc"
+    },
+    {
+      "path": "evidence/deathtrap_callback_local_reader_capture_manifest.json",
+      "bytes": 16076,
+      "sha256": "bbd9103698320971115682985acfaef7cb3c3cd7df45f83bd4217eb8bf63d76e"
+    },
+    {
+      "path": "scripts/review_deathtrap_callback_local_reader_log.py",
+      "bytes": 18534,
+      "sha256": "ae74b7aee95b07fe2a9327b4baed9ecbbdef35dd601cfb8f9927f9213e6036c5"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip",
+      "bytes": 44901,
+      "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85"
+    },
+    {
+      "path": "evidence/deathtrap_callback_local_reader_live_readiness_result.md",
+      "bytes": 11906,
+      "sha256": "37f005824bc146759dba9f2071ad36dd107daecbbe48aa1a42bceda95811e35c"
+    },
+    {
+      "path": "evidence/deathtrap_callback_local_reader_live_readiness_checks.json",
+      "bytes": 21710,
+      "sha256": "7281a1039fe4ac48c32f9b357d1040773ccc76e07701dc4a4a9c23d1da355ed9"
+    },
+    {
+      "path": "docs/deathtrap_callback_definition_name_design.md",
+      "bytes": 17689,
+      "sha256": "78c9d0048208cf42c5672f71e00e14583a32cfd24a899714fc902c8622508365"
+    }
+  ],
+  "observed_v16_event": "EVENT epoch=1 ordinal=1 attempt=1 schema=VALID controller=SAME_WRAPPER definition=OTHER_NAME ownership=UNESTABLISHED ops=196 stages=58,50,36,52",
+  "actual_other_definition_Name": "NOT_OBSERVED",
+  "v16_offline_report": {
+    "schema_version": 1,
+    "status": "COMPLETE_LOG_TEXT",
+    "log_text_acceptable": true,
+    "log_text_consistent": true,
+    "reader_sections_complete": true,
+    "input": {
+      "bytes": 13802,
+      "sha256": "0c16ddf9dd0c46459fec53599b9685f4f2e3f6e5c263977be99cfaddb13b5fdc"
+    },
+    "records": 11,
+    "sessions": [
+      {
+        "line": 24,
+        "epoch": 1,
+        "started": true,
+        "failed_start": null,
+        "orphan": false,
+        "attempts": 1,
+        "classified": 1,
+        "filtered": 1,
+        "nulls": 0,
+        "useful": 0,
+        "refusals": 0,
+        "errors": 0,
+        "cleanup_failures": 0,
+        "overlap_refusals": 1,
+        "limit": "NONE",
+        "terminal": true,
+        "removal_pending": false,
+        "awaiting_stop": false,
+        "stops": [
+          {
+            "line": 27,
+            "epoch": 1,
+            "remaining": 0,
+            "uncertain": 0,
+            "attempts": 1,
+            "classified": 1,
+            "filtered": 1,
+            "nulls": 0,
+            "refusals": 0,
+            "errors": 0,
+            "reentry": 0,
+            "cleanup_failures": 0,
+            "limit": "NONE",
+            "outcome": "OBSERVED_FILTERED"
+          },
+          {
+            "line": 29,
+            "epoch": 1,
+            "remaining": 0,
+            "uncertain": 0,
+            "attempts": 1,
+            "classified": 1,
+            "filtered": 1,
+            "nulls": 0,
+            "refusals": 0,
+            "errors": 0,
+            "reentry": 0,
+            "cleanup_failures": 0,
+            "limit": "NONE",
+            "outcome": "OBSERVED_FILTERED"
+          },
+          {
+            "line": 31,
+            "epoch": 1,
+            "remaining": 0,
+            "uncertain": 0,
+            "attempts": 1,
+            "classified": 1,
+            "filtered": 1,
+            "nulls": 0,
+            "refusals": 0,
+            "errors": 0,
+            "reentry": 0,
+            "cleanup_failures": 0,
+            "limit": "NONE",
+            "outcome": "OBSERVED_FILTERED"
+          },
+          {
+            "line": 56,
+            "epoch": 1,
+            "remaining": 0,
+            "uncertain": 0,
+            "attempts": 1,
+            "classified": 1,
+            "filtered": 1,
+            "nulls": 0,
+            "refusals": 0,
+            "errors": 0,
+            "reentry": 0,
+            "cleanup_failures": 0,
+            "limit": "NONE",
+            "outcome": "OBSERVED_FILTERED"
+          }
+        ],
+        "classifications": {
+          "SAME_WRAPPER/OTHER_NAME": 1
+        }
+      }
+    ],
+    "overlap_refusals": 1,
+    "issues": [],
+    "issue_count": 0,
+    "issues_truncated": false,
+    "cleanup": {
+      "reader_handles_resolved": true,
+      "prior_refusal_preserved": false,
+      "other_observers": "NOT_ESTABLISHED",
+      "arrays_or_manual_duration": "NOT_ESTABLISHED",
+      "process_exit": "NOT_ESTABLISHED"
+    },
+    "event_meaning": "PRE attempted entry; fixed primitive wrapper/name observations only",
+    "schema_evidence": "ASSERTED_IN_LOG_TEXT",
+    "native_ownership": "NOT_ESTABLISHED",
+    "summon_generation": "NOT_ESTABLISHED",
+    "native_clock": "NOT_ESTABLISHED",
+    "installation": "NOT_ESTABLISHED",
+    "owner_protocol": "NOT_ESTABLISHED",
+    "authenticity": "NOT_ESTABLISHED",
+    "engine_behavior": "NOT_ESTABLISHED",
+    "native_owned_lifecycle_ready": false,
+    "native_effect_ready": false,
+    "silence": "NOT_OBSERVED never proves absence, deactivation, ownership or lifespan"
+  },
+  "full_v16_report_equal_manifest": true,
+  "v16_CLI_exit": 0,
+  "SDK_header_intervals_seconds": {
+    "start_to_event": 64.64,
+    "start_to_first_stop": 76.07,
+    "start_to_final_stop": 84.229
+  },
+  "retained_limits": "OVERLAP trigger unknown; four resolved STOPs are not four manual clicks; owner natural-end report separate; header intervals not engine clock/lifespan/association",
+  "source_AST": {
+    "parameter_getters": [
+      [
+        "args",
+        "SkillInstigator"
+      ],
+      [
+        "args",
+        "Definition"
+      ]
+    ],
+    "definition_Name_getters": 1,
+    "actual_Name_exported_in_accepted_v16": false,
+    "current_matcher": "Exact Skill_DeathTrap, unchanged by proposed design",
+    "callback_freevars": [
+      "epoch"
+    ],
+    "exact_None_returns": true,
+    "payload_drop_assignments": 3,
+    "forbidden_field_reads": false,
+    "native_engine_calls": false,
+    "current_source_syntax_only": true,
+    "source_ranges": [
+      {
+        "name": "_CRRefusal",
+        "first_line": 3751,
+        "last_line": 3752,
+        "sha256": "392991f3e48d4c3f21fdffa6db3c1fa4accf6e3d304f0f299f8ce22c0523f82e"
+      },
+      {
+        "name": "_cr_emit",
+        "first_line": 3755,
+        "last_line": 3765,
+        "sha256": "fcd8e7c52f03d17b624f44f416c184141607d55af2889085d2836869bc32de74"
+      },
+      {
+        "name": "_cr_locked",
+        "first_line": 3768,
+        "last_line": 3770,
+        "sha256": "6c3d6db0a95f93f81cd85fab7733d11658e3ec0e065c31d99361dc3b2ad45c89"
+      },
+      {
+        "name": "_cr_overlap",
+        "first_line": 3773,
+        "last_line": 3780,
+        "sha256": "72216d630ac8215a0a90b1d565a767016a809768acf582b7847afb2dc1b57941"
+      },
+      {
+        "name": "_cr_clock",
+        "first_line": 3783,
+        "last_line": 3792,
+        "sha256": "12bcad28c78e6370220f3476ba9c9e8b78d412e26af4260ea7625acae1549808"
+      },
+      {
+        "name": "_CRBudget",
+        "first_line": 3795,
+        "last_line": 3834,
+        "sha256": "876f3a7d87773c997844d5779dee35f80945af5a9bfbcb1282e91259a356548d"
+      },
+      {
+        "name": "_cr_require",
+        "first_line": 3837,
+        "last_line": 3839,
+        "sha256": "cc5d2494c84f95fa6e03bbf95b9fbc200fb911a7c8580a43a01310b695df9a52"
+      },
+      {
+        "name": "_cr_integer",
+        "first_line": 3842,
+        "last_line": 3846,
+        "sha256": "85fde259e169abc14ea90c017e28ed72a237232a32bbb45fd57eea30450d6272"
+      },
+      {
+        "name": "_cr_loaded",
+        "first_line": 3849,
+        "last_line": 3854,
+        "sha256": "95362c61de73a38ac7870e72f989827198653013f0065285c9347b43dfab8a27"
+      },
+      {
+        "name": "_cr_link",
+        "first_line": 3857,
+        "last_line": 3869,
+        "sha256": "b71b88b79c3c07ae50e94b900cffe616809f38e0d12193eb04bfa57f7d5bc6ba"
+      },
+      {
+        "name": "_cr_prop",
+        "first_line": 3872,
+        "last_line": 3883,
+        "sha256": "7a3f527388aed85a38e105d52fe2bbefd82222f1cd3703c10dd099d3331b441f"
+      },
+      {
+        "name": "_cr_member",
+        "first_line": 3886,
+        "last_line": 3889,
+        "sha256": "0f9b5369dbb34abe819dce4de92ce40e0d9846a9aa9398100b5c36ed418affb2"
+      },
+      {
+        "name": "_cr_solo",
+        "first_line": 3892,
+        "last_line": 3923,
+        "sha256": "bc0bc12f6da8f23daabf3c68bfec1f29031ccaff0a157e85859b3def6067a474"
+      },
+      {
+        "name": "_cr_inspect",
+        "first_line": 3926,
+        "last_line": 4015,
+        "sha256": "73249e4d4345978e4b57cef5026f713b889f43adea3654ef943742702a3d3249"
+      },
+      {
+        "name": "_cr_option_gate",
+        "first_line": 4018,
+        "last_line": 4026,
+        "sha256": "4efc55d979b7c788c05ccc71c2f41df4e0de8dbe47dbe68f40cad19345a755f1"
+      },
+      {
+        "name": "stop_callback_local_reader",
+        "first_line": 4029,
+        "last_line": 4080,
+        "sha256": "16855bcbc1152c804207b67ca2acb61e9e186722edd6cee38af4aa1760c9dff0"
+      },
+      {
+        "name": "_cr_callback",
+        "first_line": 4083,
+        "last_line": 4148,
+        "sha256": "38d2980b95b4109df9e4219c250a858c9bf6d41617c3a41de1d5a61a059c7b65"
+      },
+      {
+        "name": "start_callback_local_reader",
+        "first_line": 4151,
+        "last_line": 4203,
+        "sha256": "32a829099e52a6ef3795e7802dcb3ee9cc471d54348653619f6b4ae0b0fc91b3"
+      },
+      {
+        "name": "cancel_init_node",
+        "first_line": 1379,
+        "last_line": 1393,
+        "sha256": "b21b9cda8ff1dad8d28a426c65c2a5b2315aa804c7f35c542db87cbef5ac64d4"
+      },
+      {
+        "name": "shutdown",
+        "first_line": 4206,
+        "last_line": 4208,
+        "sha256": "93c8f04d0f3ccdb3013d2d2d812c85380d14afb23253f1d511440645cdb0b55d"
+      },
+      {
+        "name": "find_live",
+        "first_line": 46,
+        "last_line": 79,
+        "sha256": "d57881adce3063dc1a2b9ef335b70cebf8c7c8f8339e3ea0cdd7e54a02bc50ef"
+      },
+      {
+        "name": "restore",
+        "first_line": 169,
+        "last_line": 197,
+        "sha256": "360587c8b135ab5ba0f04501194330bcb7229dde69a96d5a2ee3c34308a85647"
+      }
+    ]
+  },
+  "proposed_grammar_probe": {
+    "meaning": "Scratch normative grammar/size checks only, not a delivered or tested new runtime/reviewer",
+    "positive_event_cases": 37308,
+    "negative_event_cases": 38,
+    "negative_cases": [
+      "invalid_OTHER_NAME_0",
+      "invalid_OTHER_NAME_1",
+      "invalid_OTHER_NAME_2",
+      "invalid_OTHER_NAME_3",
+      "invalid_OTHER_NAME_4",
+      "invalid_OTHER_NAME_5",
+      "invalid_OTHER_NAME_6",
+      "invalid_OTHER_NAME_7",
+      "invalid_OTHER_NAME_8",
+      "invalid_OTHER_NAME_9",
+      "invalid_OTHER_NAME_10",
+      "invalid_OTHER_NAME_11",
+      "invalid_OTHER_NAME_12",
+      "invalid_OTHER_NAME_13",
+      "invalid_OTHER_NAME_14",
+      "invalid_OTHER_NAME_15",
+      "invalid_OTHER_NAME_16",
+      "invalid_OTHER_NAME_17",
+      "invalid_OTHER_NAME_18",
+      "invalid_OTHER_NAME_19",
+      "literal_contradiction",
+      "missing_name",
+      "duplicate_name",
+      "extra_field",
+      "truncated",
+      "wrong_order",
+      "noncanonical_integer",
+      "integer_overflow",
+      "zero_epoch",
+      "ordinal_bound",
+      "attempt_bound",
+      "budget_total",
+      "budget_stages",
+      "wrong_controller_definition",
+      "absence_requires_sentinel_NULL_INSTIGATOR/NOT_READ",
+      "absence_requires_sentinel_OTHER_CONTROLLER_CLASS/NOT_READ",
+      "absence_requires_sentinel_OTHER_WRAPPER/NOT_READ",
+      "absence_requires_sentinel_SAME_WRAPPER/NULL_DEFINITION"
+    ],
+    "event_size_maxima_bytes": {
+      "NULL_INSTIGATOR/NOT_READ": 192,
+      "OTHER_CONTROLLER_CLASS/NOT_READ": 199,
+      "OTHER_WRAPPER/NOT_READ": 190,
+      "SAME_WRAPPER/NULL_DEFINITION": 198,
+      "SAME_WRAPPER/OTHER_NAME": 320,
+      "SAME_WRAPPER/DEATHTRAP_NAME": 211
+    },
+    "max_EVENT_bytes": 320,
+    "max_STOP_bytes": 224,
+    "control_size_ceilings_bytes": {
+      "START": 133,
+      "REFUSED": 100,
+      "ERROR": 97,
+      "INTERNAL_ERROR": 70,
+      "CLOCK_ERROR": 50,
+      "LIMIT": 53,
+      "NOT_STARTED": 63,
+      "REMOVAL_ERROR": 57,
+      "STOP": 224,
+      "OUTCOME": 105
+    },
+    "encoded_record_limit_bytes": 384,
+    "absence_sentinel": "-",
+    "ASCII_identifier_length": [
+      1,
+      128
+    ],
+    "no_old_START_or_name_less_EVENT_accepted": true,
+    "old_v16_tail_regression_checks": [
+      {
+        "tail": "LIMIT reason=TIME",
+        "status": "PARTIAL_LOG_TEXT",
+        "complete": false
+      },
+      {
+        "tail": "ERROR reason=CLOCK",
+        "status": "PARTIAL_LOG_TEXT",
+        "complete": false
+      },
+      {
+        "tail": "REMOVAL_ERROR remaining=1",
+        "status": "PARTIAL_LOG_TEXT",
+        "complete": false
+      }
+    ],
+    "old_v16_unterminated_input_refused": true,
+    "new_native_getters": 0,
+    "new_engine_calls": 0,
+    "new_hooks_or_phases": 0,
+    "classification_literal_unchanged": true
+  },
+  "accepted_base_files_preserved": 210,
+  "preserved_aggregate_sha256": "5dc7e8d145b293287b89d3aa9d9b25078da8ba7740dddff484b7f62eaa6413a9",
+  "original_versioned_packages": [
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+      "bytes": 32742,
+      "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+      "bytes": 34433,
+      "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+      "bytes": 36736,
+      "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip",
+      "bytes": 44901,
+      "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+      "bytes": 19467,
+      "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+      "bytes": 20457,
+      "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+      "bytes": 21349,
+      "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+      "bytes": 24437,
+      "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+      "bytes": 26428,
+      "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+      "bytes": 26629,
+      "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+      "bytes": 28884,
+      "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+      "bytes": 30016,
+      "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2",
+      "CRC_layout": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+      "bytes": 31335,
+      "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160",
+      "CRC_layout": "PASS"
+    }
+  ],
+  "immutable_inventory": {
+    "verified_files": 53,
+    "verified_archives": 12,
+    "relationships": 5,
+    "errors": [],
+    "status": "PASS"
+  },
+  "frozen_full_reports": [
+    {
+      "log": "evidence/v032_user_test.log",
+      "status": "PARTIAL",
+      "exit_code": 1,
+      "full_report_equal_manifest": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_manager_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "full_report_equal_manifest": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "full_report_equal_manifest": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_passive_event_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "full_report_equal_manifest": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_callback_local_reader_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "full_report_equal_manifest": true,
+      "snapshot_originalZIP_equal": true
+    }
+  ],
+  "SDK_context": {
+    "issue_url": "https://github.com/bl-sdk/pyunrealsdk/issues/97",
+    "state": "closed",
+    "complete_comment_count": 1,
+    "reply": {
+      "url": "https://github.com/bl-sdk/pyunrealsdk/issues/97#issuecomment-6108546422",
+      "author": "apple1417",
+      "association": "CONTRIBUTOR",
+      "bytes": 310,
+      "sha256": "f55cc66e71f433351ee5adc4f04ef4c86c6b18e83f49138b8682b6c3b0fb2643"
+    },
+    "checked_at_utc": "2026-10-11T21:03:42.904557+00:00",
+    "wrapped_array": {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/wrapped_array.cpp",
+      "bytes": 16024,
+      "sha256": "08623d8d2e5a748ebecb4724eebfe77980f168e724662fbda7e7a86235da2291"
+    },
+    "access": "Read-only HTTP retrieval as inert text; no SDK execution or outgoing request"
+  },
+  "local_and_primary_links": [
+    "https://github.com/Edge916/The-Ultimate-Borderlands/pull/35",
+    "../evidence/deathtrap_callback_local_reader_live_readiness_result.md",
+    "../evidence/deathtrap_callback_local_reader_user_test.log",
+    "../evidence/deathtrap_callback_local_reader_capture_manifest.json",
+    "../sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+    "deathtrap_callback_local_reader_design.md",
+    "../scripts/review_deathtrap_callback_local_reader_log.py",
+    "../evidence/deathtrap_callback_definition_name_design_checks.json",
+    "https://github.com/bl-sdk/pyunrealsdk/issues/97#issuecomment-6108546422",
+    "overclock_identity_cleanup_contract.md"
+  ],
+  "privacy": "Only prospective validated simple game identifier; no paths/repr/pointer data. Identifier alphabet is not a universal privacy guarantee; exact future raw capture needs separate owner export review/approval.",
+  "remaining_gates": {
+    "Definition_summon_attribution": "NOT_ESTABLISHED",
+    "manager_ownership": "NOT_ESTABLISHED",
+    "unique_active_instance": "NOT_ESTABLISHED",
+    "native_generation": "NOT_ESTABLISHED",
+    "post_callback_liveness": "NOT_ESTABLISHED",
+    "engine_clock_Duration_consumption": "NOT_ESTABLISHED",
+    "rank_one_gate": "NOT_ESTABLISHED",
+    "safe_write_readback": "NOT_ESTABLISHED",
+    "exact_original_Duration_cleanup": "NOT_ESTABLISHED",
+    "native_binary_source_match": "NOT_ESTABLISHED"
+  },
+  "native_owned_lifecycle_ready": false,
+  "native_effect_ready": false,
+  "checks_not_run": [
+    "Accepted681-suite/hostedCI not repeated for unchanged code/two design files.",
+    "New v17 runtime, strict reviewer, inert implementation transcripts and unique package not implemented or run.",
+    "No SDK/stub import/execution/compilation/native engine invocation/flag or gameplay write.",
+    "No installation/game/save/private-backup/purchase/summon/effect/support/merge/release action.",
+    "No new name capture or owner protocol authorized; no repeatv16.",
+    "No public export before separate exact two-file design approval."
+  ]
+}
