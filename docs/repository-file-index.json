@@ -1,0 +1,1789 @@
+{
+  "schema_version": 1,
+  "repository": "Edge916/The-Ultimate-Borderlands",
+  "source_repository": "s4bkkvwhhg-ui/The-Ultimate-Borderlands",
+  "source_commit": "7a23c583a0d81507b7c01e1edc82171c7c50a97f",
+  "source_pull_request": "https://github.com/Edge916/The-Ultimate-Borderlands/pull/49",
+  "default_branch_state": "main contains only the starter README; reviewed development is still in published branches/PRs",
+  "file_count": 254,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "role": "project entry points",
+      "bytes": 64,
+      "sha256": "663327538b0d9f32d51886917d68eb6b78a5f342fa601664a5a8bcc736bbadb7",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/.gitattributes"
+    },
+    {
+      "path": ".github/workflows/offline-validation.yml",
+      "role": "CI workflow",
+      "bytes": 701,
+      "sha256": "2bf7881fa12fb629b4394617c97784f1ae44e997ee4a6996d4717227294221fc",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/.github/workflows/offline-validation.yml"
+    },
+    {
+      "path": ".gitignore",
+      "role": "project entry points",
+      "bytes": 69,
+      "sha256": "ef3e1cc8c91f9ee5690163cff2220621ce00a0c32673075547ad21ca7c89b44c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/.gitignore"
+    },
+    {
+      "path": "AGENTS.md",
+      "role": "project entry points",
+      "bytes": 40426,
+      "sha256": "191802c1586f880e49cd0dd5132e87effcfd181a0376533bc1d3a83713a374e0",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/AGENTS.md"
+    },
+    {
+      "path": "BORDERLANDS_ULTIMATE_COMPLETE_HANDOFF_2026-10-10_v0.2.11.md",
+      "role": "project entry points",
+      "bytes": 3348046,
+      "sha256": "65e31d555c38160463e53228be2a57a16f886279ec79fc5d0a43a80a5bff4937",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/BORDERLANDS_ULTIMATE_COMPLETE_HANDOFF_2026-10-10_v0.2.11.md"
+    },
+    {
+      "path": "README.md",
+      "role": "project entry points",
+      "bytes": 24901,
+      "sha256": "5b9b5f6106b305c12c0a077247b063c5aef3b81b099c9b5db01004f72061a53f",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/README.md"
+    },
+    {
+      "path": "START_IN_CODEX.md",
+      "role": "project entry points",
+      "bytes": 3597,
+      "sha256": "3369ba405d15048e77a89051d8de88317b6fe23d9186fd0a9527fd58f930dd14",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/START_IN_CODEX.md"
+    },
+    {
+      "path": "archive/early_design_source/FILE_MANIFEST.json",
+      "role": "historical archive",
+      "bytes": 1936,
+      "sha256": "40a091affa85c5136c322ddf2768fca8680ff319ba6e675193e5b18cfc334311",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/FILE_MANIFEST.json"
+    },
+    {
+      "path": "archive/early_design_source/LICENSE",
+      "role": "historical archive",
+      "bytes": 1089,
+      "sha256": "064f47a09eceb5c3c4957d17ed5b4e5d22eed6049ca60fd4e2eb87f1a5ef6f95",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/LICENSE"
+    },
+    {
+      "path": "archive/early_design_source/MODLOG.md",
+      "role": "historical archive",
+      "bytes": 982,
+      "sha256": "6c2a5baaa0ca1706726bc60f5c72dca1feac823177d85d81a8866347e243ce30",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/MODLOG.md"
+    },
+    {
+      "path": "archive/early_design_source/README.md",
+      "role": "historical archive",
+      "bytes": 2938,
+      "sha256": "77a07164d06bb4e553836f7dfa96d0bd357449ef557bd3b26822f9852a87beaa",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/README.md"
+    },
+    {
+      "path": "archive/early_design_source/adapters/bl2_sdk_probe/UltimateVaultHunterProbe/__init__.py",
+      "role": "historical archive",
+      "bytes": 1203,
+      "sha256": "97222509fb424c94e414f2b1b45f2dceda35b5c8ed71c9ce4516e22342f74c9d",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/adapters/bl2_sdk_probe/UltimateVaultHunterProbe/__init__.py"
+    },
+    {
+      "path": "archive/early_design_source/docs/RUNTIME_GATES.md",
+      "role": "historical archive",
+      "bytes": 1989,
+      "sha256": "945a02ea97859a7aab574abc0002f004a852c34477005bdac9f0c60da07a56f3",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/docs/RUNTIME_GATES.md"
+    },
+    {
+      "path": "archive/early_design_source/generated/__init__.py",
+      "role": "historical archive",
+      "bytes": 83,
+      "sha256": "5b1a42b0585812b13a9931ebeb30732592268f364e28f88056406633f7201bab",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/generated/__init__.py"
+    },
+    {
+      "path": "archive/early_design_source/generated/sheet_records.py",
+      "role": "historical archive",
+      "bytes": 40882,
+      "sha256": "c5ff919fd9299a2d6c679e4340144f6906cea9198129d27b2c2dab8f9580f270",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/generated/sheet_records.py"
+    },
+    {
+      "path": "archive/early_design_source/sheets/expanded_skills.json",
+      "role": "historical archive",
+      "bytes": 32847,
+      "sha256": "445a24679a2053bdc2062d7c565edf428a69266ddd4e3e1b1e8d4f9384e44a10",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/sheets/expanded_skills.json"
+    },
+    {
+      "path": "archive/early_design_source/sheets/games.json",
+      "role": "historical archive",
+      "bytes": 1849,
+      "sha256": "f3bca117e5238157efb099ca4d456028f77b8756f1c82b3ae300675d924492ab",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/sheets/games.json"
+    },
+    {
+      "path": "archive/early_design_source/sheets/systems.json",
+      "role": "historical archive",
+      "bytes": 1927,
+      "sha256": "938298c9e60910416e7b7fd700eac3da7411c151ea01edf7539f504ab4f17737",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/sheets/systems.json"
+    },
+    {
+      "path": "archive/early_design_source/sheets/vault_hunters.json",
+      "role": "historical archive",
+      "bytes": 11133,
+      "sha256": "4a45aa9988d6a7cb1433f027b601fcce6ad544de84855631c2a90f235d09ab54",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/sheets/vault_hunters.json"
+    },
+    {
+      "path": "archive/early_design_source/tests/test_sdk_adapter.py",
+      "role": "historical archive",
+      "bytes": 1584,
+      "sha256": "db2c5b8a56bd7f685f400a19fc626b1b48866587f3f0f5b3f969585ff470fc1c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/tests/test_sdk_adapter.py"
+    },
+    {
+      "path": "archive/early_design_source/tests/test_sheets.py",
+      "role": "historical archive",
+      "bytes": 3660,
+      "sha256": "837477eab1f444c4173b388be0a14d3dba6f2f44e832e96c407a93213de0759d",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/tests/test_sheets.py"
+    },
+    {
+      "path": "archive/early_design_source/ultimate_vh/__init__.py",
+      "role": "historical archive",
+      "bytes": 75,
+      "sha256": "2bf491d0e73c709ca5e5aea97c9dc6f6bca20fdb25f398ca00ccb3a62c57536c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/ultimate_vh/__init__.py"
+    },
+    {
+      "path": "archive/early_design_source/ultimate_vh/generate.py",
+      "role": "historical archive",
+      "bytes": 2263,
+      "sha256": "d28b53a53004adb8f1bbfc1f2d30e60ac91a2f20066bead0d33d62fa746317c7",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/ultimate_vh/generate.py"
+    },
+    {
+      "path": "archive/early_design_source/ultimate_vh/preflight.py",
+      "role": "historical archive",
+      "bytes": 4099,
+      "sha256": "8f0a68df9a12ff987e2795061a3d21e4970c2d0652dec8c2f64e5e666c39fcaf",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/ultimate_vh/preflight.py"
+    },
+    {
+      "path": "archive/early_design_source/ultimate_vh/progression.py",
+      "role": "historical archive",
+      "bytes": 3667,
+      "sha256": "2801303f85687a42ed9058c0a369ace23cbc64747af466de5cfbcb184af4c1fc",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/ultimate_vh/progression.py"
+    },
+    {
+      "path": "archive/early_design_source/ultimate_vh/save.py",
+      "role": "historical archive",
+      "bytes": 1722,
+      "sha256": "207aee84733ef457add1f7353597ff586840c38e3d78144ca36681baf3b0fc28",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/early_design_source/ultimate_vh/save.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.10/README.txt",
+      "role": "historical archive",
+      "bytes": 5201,
+      "sha256": "4b6fb1f42297f76f737e9ebf87a517019d4b23db47c33fe1fc348752cbe82fa5",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.10/README.txt"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.10/__init__.py",
+      "role": "historical archive",
+      "bytes": 149607,
+      "sha256": "4f34082483c0d14715f708c9c8c61d42bcfe9bb262c23445ce9808489bc7bdbb",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.10/__init__.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.10/pyproject.toml",
+      "role": "historical archive",
+      "bytes": 90,
+      "sha256": "cd8a2e28c91e15b30bd8d5188f64864ed7c26cea3d9017cd3483862df558ba5f",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.10/pyproject.toml"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.11/README.txt",
+      "role": "historical archive",
+      "bytes": 5241,
+      "sha256": "39bad5a23849bbe57bbd707135221f4e2959a702a8aab53be47cd85a446ffc91",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.11/README.txt"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.11/__init__.py",
+      "role": "historical archive",
+      "bytes": 157326,
+      "sha256": "59f99db241b3e7a1ebe117a3304988960a3b333ac051c487884e53091f83c1f8",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.11/__init__.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.11/pyproject.toml",
+      "role": "historical archive",
+      "bytes": 82,
+      "sha256": "759a68929c1baff4141bc4d40ba69c5a2669fd9b89cb807b3f3937c6a0b15dad",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.11/pyproject.toml"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.12/README.txt",
+      "role": "historical archive",
+      "bytes": 2396,
+      "sha256": "5e0b3441243818c4bf161c889f643ec09132ae1e6acbf2addb5162b8b8edec7f",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.12/README.txt"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.12/__init__.py",
+      "role": "historical archive",
+      "bytes": 175943,
+      "sha256": "41fd2dd9e22bcfa64fbddfc19b881f6950362656e047b212b00eb86f33a01f73",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.12/__init__.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.12/pyproject.toml",
+      "role": "historical archive",
+      "bytes": 75,
+      "sha256": "fa8acf733ef82a19371fc89b6d0cfb37e690ce2aca704ec1479cf01a9efae40e",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.12/pyproject.toml"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.13/README.txt",
+      "role": "historical archive",
+      "bytes": 2989,
+      "sha256": "d2c9931af9bed91ce3cada0bb3e45c7781373fa8ad69a1721b4955b61965ca7a",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.13/README.txt"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.13/__init__.py",
+      "role": "historical archive",
+      "bytes": 176080,
+      "sha256": "a457bb544814e627a5909bb5bea844a1f6643c64a1b2eef6f2a85ae3c96c4cf8",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.13/__init__.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.13/pyproject.toml",
+      "role": "historical archive",
+      "bytes": 83,
+      "sha256": "a33278a92682c061f7cfb6f0ec29318ae6123223116c784cb0def5772c6f8ae7",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.13/pyproject.toml"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.14/README.txt",
+      "role": "historical archive",
+      "bytes": 3523,
+      "sha256": "70e8efda8c1df265cc46e9d484e63b0b4b053257cc0db029ba92da3731994349",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.14/README.txt"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.14/__init__.py",
+      "role": "historical archive",
+      "bytes": 178655,
+      "sha256": "e752f31c6ace648c52536bcf3810630368ce26d3cc10379bb292b609b57455ba",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.14/__init__.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.14/pyproject.toml",
+      "role": "historical archive",
+      "bytes": 84,
+      "sha256": "614a06a15652a4b8865331a1d6a8e74443d48d29b1fbdc3bc855ccf45f190794",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.14/pyproject.toml"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.15/README.txt",
+      "role": "historical archive",
+      "bytes": 4221,
+      "sha256": "7effa43ee2f9928b5d844066ff7676fbd9bd4461b4d49d49ef4e27d2011da840",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.15/README.txt"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.15/__init__.py",
+      "role": "historical archive",
+      "bytes": 195214,
+      "sha256": "a1ef33d3571de36fe89e269fae632d96cb8029bfa08ed9ec728d1bf1bf4b27bf",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.15/__init__.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.15/pyproject.toml",
+      "role": "historical archive",
+      "bytes": 79,
+      "sha256": "4c4d9fc9178f629f791069017b93fcbf4876c1e39b9de1973b22fc06edaada82",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.15/pyproject.toml"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.16/README.txt",
+      "role": "historical archive",
+      "bytes": 3640,
+      "sha256": "f877406954886aef40270aca22a7bc08dc5939f0199bf31a67e3fd63e68c8972",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.16/README.txt"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.16/__init__.py",
+      "role": "historical archive",
+      "bytes": 216082,
+      "sha256": "1d6524fa483705384951d60a6e48fc92209f21cfb62e5390c65db295924c2548",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.16/__init__.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.16/pyproject.toml",
+      "role": "historical archive",
+      "bytes": 88,
+      "sha256": "53fea6e6677d86125c81aac2bc6d3cdbfb02f0e0f54aac08b9dcd58f32bfa674",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.16/pyproject.toml"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.17/README.txt",
+      "role": "historical archive",
+      "bytes": 3958,
+      "sha256": "a76d13de4fda82cf0a84174385110d769ccdc9808cd54c34621def1474f45c32",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.17/README.txt"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.17/__init__.py",
+      "role": "historical archive",
+      "bytes": 216295,
+      "sha256": "7e9c9d01df0d5631450cdf78d5838798d45846caf6a4526209ec723643dad160",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.17/__init__.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.17/pyproject.toml",
+      "role": "historical archive",
+      "bytes": 82,
+      "sha256": "0fcaf1dfc924f708fbffc11afa0cd77c01d8a4da80d12b9d4bc23cbc27f4ba4c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.17/pyproject.toml"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.18/README.txt",
+      "role": "historical archive",
+      "bytes": 5279,
+      "sha256": "e6fb605a4fb06055c35f445856bb345236a2805c785fe2742477558eab29152b",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.18/README.txt"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.18/__init__.py",
+      "role": "historical archive",
+      "bytes": 217340,
+      "sha256": "7663f81a14ba23d44d6af3ea4add0f4309bddbf7b075c9b341b36229e59afbe0",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.18/__init__.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.18/pyproject.toml",
+      "role": "historical archive",
+      "bytes": 83,
+      "sha256": "4275a50ddbeebc7c021edb444780e284572d9a5da63ffdb497e8697014e206bd",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.18/pyproject.toml"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.7/README.txt",
+      "role": "historical archive",
+      "bytes": 5527,
+      "sha256": "9a0476c7c3c4ca3293554bffbe5c7175e04421d16d0ab2d5c8945e733a2e5037",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.7/README.txt"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.7/__init__.py",
+      "role": "historical archive",
+      "bytes": 118343,
+      "sha256": "e8942b68dacbfe7fc841ff001ec1357eee7fea18a527c973fa4ea73ca829165e",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.7/__init__.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.7/pyproject.toml",
+      "role": "historical archive",
+      "bytes": 84,
+      "sha256": "fb0db55605a07a1e14e7abb89a3e91df558931a7bf69897f5c9b83492babff67",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.7/pyproject.toml"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.8/README.txt",
+      "role": "historical archive",
+      "bytes": 4296,
+      "sha256": "f33576f7ee07c57f0480a044a5d20db7154fdb516cdc123469f9846a98167811",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.8/README.txt"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.8/__init__.py",
+      "role": "historical archive",
+      "bytes": 126549,
+      "sha256": "4dae701cc263c3d4be1fb8b602f0f5d0987ad173b2cfd477bd784a7ddeb706a5",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.8/__init__.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.8/pyproject.toml",
+      "role": "historical archive",
+      "bytes": 86,
+      "sha256": "0393dfc7317910731465da0a19aa62f5bb5b4bf777b5c8e8c4b6315de8cd12b1",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.8/pyproject.toml"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.9/README.txt",
+      "role": "historical archive",
+      "bytes": 4346,
+      "sha256": "c88222fd33b4bb69cab713e2ef57d9a34e8106824524986b08c9b0f64463d098",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.9/README.txt"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.9/__init__.py",
+      "role": "historical archive",
+      "bytes": 138156,
+      "sha256": "ee65713694aef334de6f542ad2bfb90a2fe4793ae4a6ddc811a54d3c05d03897",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.9/__init__.py"
+    },
+    {
+      "path": "archive/tested_runtime/v0.2.9/pyproject.toml",
+      "role": "historical archive",
+      "bytes": 85,
+      "sha256": "f429391037fc73572314af319913c0b38f83a0a3e3c7cdecac3f09fb53c54b83",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/archive/tested_runtime/v0.2.9/pyproject.toml"
+    },
+    {
+      "path": "design/overclock_effect_contract_model.py",
+      "role": "offline design models",
+      "bytes": 9234,
+      "sha256": "fbe8e20524616cb5a9aaa608ca0780d03a141cdcc261643a1551c1a929ffbafc",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/design/overclock_effect_contract_model.py"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+      "role": "install packages",
+      "bytes": 50123,
+      "sha256": "26db2dad3e7ab2230a94d18e7451d63059521cd1de57b8cfc21f32389889b7e3",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+      "role": "install packages",
+      "bytes": 32742,
+      "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+      "role": "install packages",
+      "bytes": 34433,
+      "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+      "role": "install packages",
+      "bytes": 36736,
+      "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+      "role": "install packages",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+      "role": "install packages",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "role": "install packages",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip",
+      "role": "install packages",
+      "bytes": 44901,
+      "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.17_folder_install.zip",
+      "role": "install packages",
+      "bytes": 44658,
+      "sha256": "d46d8b3d91416920f9624161e90dfb06f685673b87afd0dbc9d70897da4a233d",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.17_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.18_folder_install.zip",
+      "role": "install packages",
+      "bytes": 45939,
+      "sha256": "1d7d2f24a45596e9a6faf36128474fd7184e524b692c8cb582bde4f5bf10c5ce",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.18_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.19_folder_install.zip",
+      "role": "install packages",
+      "bytes": 50123,
+      "sha256": "26db2dad3e7ab2230a94d18e7451d63059521cd1de57b8cfc21f32389889b7e3",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.19_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+      "role": "install packages",
+      "bytes": 19467,
+      "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+      "role": "install packages",
+      "bytes": 20457,
+      "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+      "role": "install packages",
+      "bytes": 21349,
+      "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+      "role": "install packages",
+      "bytes": 24437,
+      "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+      "role": "install packages",
+      "bytes": 26428,
+      "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+      "role": "install packages",
+      "bytes": 26629,
+      "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+      "role": "install packages",
+      "bytes": 28884,
+      "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+      "role": "install packages",
+      "bytes": 30016,
+      "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+      "role": "install packages",
+      "bytes": 31335,
+      "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip"
+    },
+    {
+      "path": "docs/ARTIFACT_PROVENANCE.md",
+      "role": "guides and designs",
+      "bytes": 3673,
+      "sha256": "fa004bbf7e4a1218d6b5acf5f16decee17b8cacb0e2496dccbf8497c37012625",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/ARTIFACT_PROVENANCE.md"
+    },
+    {
+      "path": "docs/NEXT_CODEX_TASK.md",
+      "role": "guides and designs",
+      "bytes": 5225,
+      "sha256": "7bfd7dbb2423d25bb20bcea319de57901dbb1a8d004a0569c229d102e8fd094b",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/NEXT_CODEX_TASK.md"
+    },
+    {
+      "path": "docs/OFFLINE_VALIDATION.md",
+      "role": "guides and designs",
+      "bytes": 4218,
+      "sha256": "8b98a80e321451b80ffe3aa4241ccb764ad9e90fc5e34270dbe93916483db8e7",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/OFFLINE_VALIDATION.md"
+    },
+    {
+      "path": "docs/STATE_AND_HISTORY.md",
+      "role": "guides and designs",
+      "bytes": 60529,
+      "sha256": "74df144cd6dfb9563f189f3b4bc651d9731d3054b3b1a69a844641485c0391f7",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/STATE_AND_HISTORY.md"
+    },
+    {
+      "path": "docs/WINDOWS_INSTALL.md",
+      "role": "guides and designs",
+      "bytes": 4845,
+      "sha256": "9006a12dcce439a78dec18132f6b19161ba1a04d427e0d0d6002aaae0722bc0c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/WINDOWS_INSTALL.md"
+    },
+    {
+      "path": "docs/deathtrap_activation_reader_design.md",
+      "role": "guides and designs",
+      "bytes": 21496,
+      "sha256": "8dd3ef562dde2ca4dfb1bf69e0faf4c310a5005c47044858fda83a8e0d028fb7",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_activation_reader_design.md"
+    },
+    {
+      "path": "docs/deathtrap_activation_reader_feasibility.md",
+      "role": "guides and designs",
+      "bytes": 11454,
+      "sha256": "274a9251ca7d3217e053806382a8559d693960b62f6fc3db678d9c7fe212e9a3",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_activation_reader_feasibility.md"
+    },
+    {
+      "path": "docs/deathtrap_activation_reader_instructions.md",
+      "role": "guides and designs",
+      "bytes": 9142,
+      "sha256": "ba11c3f8c1bd5f6415f2c11305f940b66b3ec77ed166482be917cbfb595aacb9",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_activation_reader_instructions.md"
+    },
+    {
+      "path": "docs/deathtrap_activation_reader_log_review.md",
+      "role": "guides and designs",
+      "bytes": 9406,
+      "sha256": "3e11500c44b56ad91e4a3bb125f617240fc2650bd531112e03cb0929237347a0",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_activation_reader_log_review.md"
+    },
+    {
+      "path": "docs/deathtrap_callback_access_feasibility.md",
+      "role": "guides and designs",
+      "bytes": 12762,
+      "sha256": "9ef4c1685d4805dfa9939af110311a9ddb924d059e623718b9b8f1d062fecd52",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_callback_access_feasibility.md"
+    },
+    {
+      "path": "docs/deathtrap_callback_definition_name_design.md",
+      "role": "guides and designs",
+      "bytes": 17689,
+      "sha256": "78c9d0048208cf42c5672f71e00e14583a32cfd24a899714fc902c8622508365",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_callback_definition_name_design.md"
+    },
+    {
+      "path": "docs/deathtrap_callback_definition_name_implementation.md",
+      "role": "guides and designs",
+      "bytes": 7999,
+      "sha256": "1647b405e1f917caad80c427ba0969a279f2aa45f9ef4438386f33bcd8e86435",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_callback_definition_name_implementation.md"
+    },
+    {
+      "path": "docs/deathtrap_callback_definition_name_log_review.md",
+      "role": "guides and designs",
+      "bytes": 7938,
+      "sha256": "15099968e1d96ba55669d6847778f0502e8269cf29eaa2634f02c39abd687ba6",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_callback_definition_name_log_review.md"
+    },
+    {
+      "path": "docs/deathtrap_callback_local_reader_design.md",
+      "role": "guides and designs",
+      "bytes": 16935,
+      "sha256": "874446ebd773a19123e06a5cf983aa358b781009723471589eb2dd3a26e8fb84",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_callback_local_reader_design.md"
+    },
+    {
+      "path": "docs/deathtrap_callback_local_reader_instructions.md",
+      "role": "guides and designs",
+      "bytes": 3959,
+      "sha256": "57bf2cbc26261cac3fd5733dfa651b21c0acee0f61dd08ce9534aa3131ac846c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_callback_local_reader_instructions.md"
+    },
+    {
+      "path": "docs/deathtrap_callback_local_reader_log_review.md",
+      "role": "guides and designs",
+      "bytes": 8839,
+      "sha256": "7ba341521abc3b3839275cc1dce8166ec8525f27d69111b3c52417f0098f8f13",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_callback_local_reader_log_review.md"
+    },
+    {
+      "path": "docs/deathtrap_manager_attribution_feasibility.md",
+      "role": "guides and designs",
+      "bytes": 14632,
+      "sha256": "12b1b47fa06d2d4050fba6a7bc4a619e334540ee34f63585be2103cc8b102d1d",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_manager_attribution_feasibility.md"
+    },
+    {
+      "path": "docs/deathtrap_manager_relationship_metadata_design.md",
+      "role": "guides and designs",
+      "bytes": 20399,
+      "sha256": "ac7d9f9d31cbfdb5f7c03a332375f9bbec11696cbeed36cd86a6a5bad1ecc0df",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_manager_relationship_metadata_design.md"
+    },
+    {
+      "path": "docs/deathtrap_manager_relationship_metadata_instructions.md",
+      "role": "guides and designs",
+      "bytes": 5147,
+      "sha256": "150a4775235d06fda986bfeda9bf321ce4848e30f1236b9afe97d5c33fd0b924",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_manager_relationship_metadata_instructions.md"
+    },
+    {
+      "path": "docs/deathtrap_parameter_metadata_design.md",
+      "role": "guides and designs",
+      "bytes": 12571,
+      "sha256": "726a60033de13ccf466e98b23f504a3a7c082bc0c9cd88da1754631d6497a0d5",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_parameter_metadata_design.md"
+    },
+    {
+      "path": "docs/deathtrap_passive_event_log_review.md",
+      "role": "guides and designs",
+      "bytes": 6918,
+      "sha256": "313a2d1ebb38f017ef8ef3153766d6af82f741d6597c046e268f5d7c09bcac63",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_passive_event_log_review.md"
+    },
+    {
+      "path": "docs/deathtrap_passive_event_observer_design.md",
+      "role": "guides and designs",
+      "bytes": 19412,
+      "sha256": "c18c4e0641500b9cf2e0fb93e3506dd30f28f80bcdf06769c90a32a6952b6dc1",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/deathtrap_passive_event_observer_design.md"
+    },
+    {
+      "path": "docs/overclock_identity_cleanup_contract.md",
+      "role": "guides and designs",
+      "bytes": 10711,
+      "sha256": "3abd5f388ec5bf9bf501790ed8798c688945a8ca8874333b2031340bfd198cdc",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/overclock_identity_cleanup_contract.md"
+    },
+    {
+      "path": "docs/v032_manual_test_protocol.md",
+      "role": "guides and designs",
+      "bytes": 7588,
+      "sha256": "440f9c8ee27cb15444a88ec2b7f3d7c62ea8cc5854e9ccd3b2388ea75dd16f10",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/docs/v032_manual_test_protocol.md"
+    },
+    {
+      "path": "evidence/deathtrap_activation_reader_capture_manifest.json",
+      "role": "evidence and checks",
+      "bytes": 15369,
+      "sha256": "7f8f0506e526f430c2d9b1df89d07873f62d8eac328a72260b62d9bb515921bf",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_activation_reader_capture_manifest.json"
+    },
+    {
+      "path": "evidence/deathtrap_activation_reader_design_checks.json",
+      "role": "evidence and checks",
+      "bytes": 29091,
+      "sha256": "3ddcc0a53c338c4f529133a7a4887d13843558d71d5d1954b1d01a125aa01711",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_activation_reader_design_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_activation_reader_feasibility_checks.json",
+      "role": "evidence and checks",
+      "bytes": 35057,
+      "sha256": "19de0ec2bdd87a36991386ab70d977ee03d1176912bf756544c1c6231bd49fbb",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_activation_reader_feasibility_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_activation_reader_implementation_checks.json",
+      "role": "evidence and checks",
+      "bytes": 13496,
+      "sha256": "b05bcfadf0979a818a7e09b9ee958da3e6dad0009e103b3100e5b1670b7f686f",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_activation_reader_implementation_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_activation_reader_live_readiness_checks.json",
+      "role": "evidence and checks",
+      "bytes": 29667,
+      "sha256": "29320addeb5bbcdd8fcc786494beb71ecec01b8482ce4d2f81adbdb785a1c88c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_activation_reader_live_readiness_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_activation_reader_live_readiness_result.md",
+      "role": "evidence and checks",
+      "bytes": 12610,
+      "sha256": "3ac34828fe71047b42a78c5339212eb5e77a265b0f5cb4ad36c06e7f90e825e8",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_activation_reader_live_readiness_result.md"
+    },
+    {
+      "path": "evidence/deathtrap_activation_reader_log_review_checks.json",
+      "role": "evidence and checks",
+      "bytes": 13944,
+      "sha256": "e2df9e042a183e5c526a8802726369c4b7593c1fb04cb0fa649c019fbe2f6a5c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_activation_reader_log_review_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_activation_reader_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 8847,
+      "sha256": "5e10b5e4c6687f3b6abad0175e0d6d5ff7348cac3c8a4ad225753e31838e3d2e",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_activation_reader_user_test.log"
+    },
+    {
+      "path": "evidence/deathtrap_callback_access_feasibility_checks.json",
+      "role": "evidence and checks",
+      "bytes": 32595,
+      "sha256": "304b6aec984527195f265537dc1283c1c20d144aef6b0647607a9f0af5e3492a",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_access_feasibility_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_callback_definition_name_capture_manifest.json",
+      "role": "evidence and checks",
+      "bytes": 19828,
+      "sha256": "5c0d95e70056af5026df0984d2bdf7911772523ceaeba0e0afb245c33bc4723b",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_definition_name_capture_manifest.json"
+    },
+    {
+      "path": "evidence/deathtrap_callback_definition_name_design_checks.json",
+      "role": "evidence and checks",
+      "bytes": 22211,
+      "sha256": "be63ebd26c2b9c72925c119898732c70a770a12c4b1de8c6012a8d05f51f4bcd",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_definition_name_design_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_callback_definition_name_implementation_checks.json",
+      "role": "evidence and checks",
+      "bytes": 15386,
+      "sha256": "483dbd1c341f41fb96679cb122b05ecb6967635184acf053e3b79abba8532275",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_definition_name_implementation_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_callback_definition_name_live_readiness_checks.json",
+      "role": "evidence and checks",
+      "bytes": 15789,
+      "sha256": "ff52fcade56bcc1320fa377f5e615240a5a6ed7219cce751554740aab620157d",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_definition_name_live_readiness_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_callback_definition_name_live_readiness_result.md",
+      "role": "evidence and checks",
+      "bytes": 11402,
+      "sha256": "068e4f6e8aa7646f8b0e62626cbb17d6befc3bbd755dcde1556cdd793d09e4c6",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_definition_name_live_readiness_result.md"
+    },
+    {
+      "path": "evidence/deathtrap_callback_definition_name_log_review_checks.json",
+      "role": "evidence and checks",
+      "bytes": 12991,
+      "sha256": "b0b33a714fae46dde6a5eefd0d1c3db6263a08eb84c06b3eb7ab6b7a3bc70000",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_definition_name_log_review_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_callback_definition_name_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 13666,
+      "sha256": "3f2017cc1b700574b99a442711163ea51e47f5921e645d66cf69b6ff79187efe",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_definition_name_user_test.log"
+    },
+    {
+      "path": "evidence/deathtrap_callback_local_reader_capture_manifest.json",
+      "role": "evidence and checks",
+      "bytes": 16076,
+      "sha256": "bbd9103698320971115682985acfaef7cb3c3cd7df45f83bd4217eb8bf63d76e",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_local_reader_capture_manifest.json"
+    },
+    {
+      "path": "evidence/deathtrap_callback_local_reader_design_checks.json",
+      "role": "evidence and checks",
+      "bytes": 45728,
+      "sha256": "c10552a07a320fde38a41775c2f36e9ca4fb0376056f4c33ffea1ac3bff5e3a8",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_local_reader_design_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_callback_local_reader_implementation_checks.json",
+      "role": "evidence and checks",
+      "bytes": 15118,
+      "sha256": "826a2a43a8dc11fbcb19116d40cb0ff1fd0e7780d22ec57f9b9e96bd533b1f99",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_local_reader_implementation_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_callback_local_reader_live_readiness_checks.json",
+      "role": "evidence and checks",
+      "bytes": 21710,
+      "sha256": "7281a1039fe4ac48c32f9b357d1040773ccc76e07701dc4a4a9c23d1da355ed9",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_local_reader_live_readiness_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_callback_local_reader_live_readiness_result.md",
+      "role": "evidence and checks",
+      "bytes": 11906,
+      "sha256": "37f005824bc146759dba9f2071ad36dd107daecbbe48aa1a42bceda95811e35c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_local_reader_live_readiness_result.md"
+    },
+    {
+      "path": "evidence/deathtrap_callback_local_reader_log_review_checks.json",
+      "role": "evidence and checks",
+      "bytes": 11161,
+      "sha256": "8eeb9c5a99437ba446981a39085149b90f455c5880e9b80a47cff1b7ddac8d2b",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_local_reader_log_review_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_callback_local_reader_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 13802,
+      "sha256": "0c16ddf9dd0c46459fec53599b9685f4f2e3f6e5c263977be99cfaddb13b5fdc",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_callback_local_reader_user_test.log"
+    },
+    {
+      "path": "evidence/deathtrap_lifecycle_design_checks.json",
+      "role": "evidence and checks",
+      "bytes": 8137,
+      "sha256": "5065c7a30d1d6896fc7c8eea3ade1713ef1a9572f7cd7040f952b21993c8198f",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_lifecycle_design_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_lifecycle_diagnostic_design.md",
+      "role": "evidence and checks",
+      "bytes": 15022,
+      "sha256": "6df2c3076b285d3fb2c7a5fd9223dfe333131c78fa47519b96ebf295c34db3be",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_lifecycle_diagnostic_design.md"
+    },
+    {
+      "path": "evidence/deathtrap_lifecycle_readiness_checks.json",
+      "role": "evidence and checks",
+      "bytes": 13485,
+      "sha256": "fb1d884c35c24ca77bbaf16942791d811e480a9ac43ed60aadc41cf7cdfd82c2",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_lifecycle_readiness_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_lifecycle_readiness_result.md",
+      "role": "evidence and checks",
+      "bytes": 8741,
+      "sha256": "6de7471eaa74b25f0d9f39c27984aaaf519a7a6c89509769998a55fe28b21042",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_lifecycle_readiness_result.md"
+    },
+    {
+      "path": "evidence/deathtrap_manager_attribution_feasibility_checks.json",
+      "role": "evidence and checks",
+      "bytes": 95426,
+      "sha256": "e4bcab91e825dd6166f71b4812f1efed709c1f7c0d61612b6de1586fe5a8c881",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_manager_attribution_feasibility_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_capture_manifest.json",
+      "role": "evidence and checks",
+      "bytes": 30373,
+      "sha256": "209284030560642501289e78a2d18cb22575634a05f232e299588522fa9b8617",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_manager_metadata_capture_manifest.json"
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_implementation_checks.json",
+      "role": "evidence and checks",
+      "bytes": 8374,
+      "sha256": "af637337097aa716bbe0da21bf40a2323686b78a7a9bba3d7c99c31e94d06c42",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_manager_metadata_implementation_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 35616,
+      "sha256": "f3a6397839fdb7aecb97b117e23e28bcad4d42c5e0c6bf8fe6c5c384c6dd8e95",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_manager_metadata_user_test.log"
+    },
+    {
+      "path": "evidence/deathtrap_manager_relationship_metadata_design_checks.json",
+      "role": "evidence and checks",
+      "bytes": 67183,
+      "sha256": "a54aedd86f3db91f08242ce8f97bd08088c54ade2116052f1ce9cbc0c8c2fdda",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_manager_relationship_metadata_design_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_manager_relationship_metadata_implementation_checks.json",
+      "role": "evidence and checks",
+      "bytes": 31484,
+      "sha256": "922bc534727720ca92eff178a9e3ba1fa35125fc623e0271b38ec3737176810b",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_manager_relationship_metadata_implementation_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_metadata_diagnostic_checks.json",
+      "role": "evidence and checks",
+      "bytes": 4978,
+      "sha256": "59a18d735f4d4289e87a935c7718a7c1ff38870b66ae5645f3b556b61c9b8742",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_metadata_diagnostic_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_metadata_diagnostic_plan.md",
+      "role": "evidence and checks",
+      "bytes": 6267,
+      "sha256": "8958c41d5f4381d16a068e7eb335a8e6cf168f6b300479e5bb310d8e91b16157",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_metadata_diagnostic_plan.md"
+    },
+    {
+      "path": "evidence/deathtrap_metadata_log_review_tool.md",
+      "role": "evidence and checks",
+      "bytes": 6138,
+      "sha256": "0c6fb33f42076d1aa58d6b1e02b7e9e5f2d76651833e871d5ba01ed6ac95bf97",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_metadata_log_review_tool.md"
+    },
+    {
+      "path": "evidence/deathtrap_native_adapter_evidence_checks.json",
+      "role": "evidence and checks",
+      "bytes": 21176,
+      "sha256": "290883012bdc2100c9d6cbc803ec92e2493f665fd7fb6269ac8f6a2f4125102a",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_native_adapter_evidence_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_native_adapter_evidence_research.md",
+      "role": "evidence and checks",
+      "bytes": 11993,
+      "sha256": "1a8567c7ce3578c4f2a86b4354457d79f8832c4b0b38fbb4e318895b3c5aebbb",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_native_adapter_evidence_research.md"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_capture_manifest.json",
+      "role": "evidence and checks",
+      "bytes": 33196,
+      "sha256": "44b6d4d21d960e4e3c3dc3785eb029c7afc6ea43bc34cf862ecb01e344ca597d",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_parameter_metadata_capture_manifest.json"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_design_checks.json",
+      "role": "evidence and checks",
+      "bytes": 8814,
+      "sha256": "e7b0cdb967fa632a5ee630d8c53cadf81272d5a035ab0614a812cf9ec7e165fd",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_parameter_metadata_design_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_implementation_checks.json",
+      "role": "evidence and checks",
+      "bytes": 14681,
+      "sha256": "69f8b686a6f171fed86be1d6017dc333cee322ec17d94ea5b638a00894e30c98",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_parameter_metadata_implementation_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 37500,
+      "sha256": "d147e79ece6e894a6bee6fa8bbb97c1c3f0885e1f2c7d9d165dde3b0565cd84c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_parameter_metadata_user_test.log"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_schema_readiness_checks.json",
+      "role": "evidence and checks",
+      "bytes": 21087,
+      "sha256": "5ef3da99adae19d048e15d6a0fde60bea6379e0487e22d3ae3dc4a51d41aa58b",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_parameter_schema_readiness_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_schema_readiness_result.md",
+      "role": "evidence and checks",
+      "bytes": 10589,
+      "sha256": "a0b03b3b2152c87dce59288f836add1e3b2fe17b6b9c6af7da36028df4d15406",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_parameter_schema_readiness_result.md"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_capture_manifest.json",
+      "role": "evidence and checks",
+      "bytes": 10865,
+      "sha256": "58a52b3250422420386864de58278b3ff8b086f0fae26d5656c15be8839f1dfc",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_passive_event_capture_manifest.json"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_implementation_checks.json",
+      "role": "evidence and checks",
+      "bytes": 17948,
+      "sha256": "c7b129936c755e4d460c8c57e22d0c305e515d8ac86ba4aa4b06ec67bd66d6d8",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_passive_event_implementation_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_live_readiness_checks.json",
+      "role": "evidence and checks",
+      "bytes": 14440,
+      "sha256": "e51f2360c209857a98edca3fba9802f6db615ed279f9ed0a982a61ffb62dcf64",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_passive_event_live_readiness_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_live_readiness_result.md",
+      "role": "evidence and checks",
+      "bytes": 10538,
+      "sha256": "79c97ba4b3344e2d73b22c9f160bb9ee5e027cb4a2119baaab30661eb0a211e0",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_passive_event_live_readiness_result.md"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_log_review_checks.json",
+      "role": "evidence and checks",
+      "bytes": 9216,
+      "sha256": "66736625acf83345363fb92f63f2d7ad580b78d6abeac7e23db1c9b377bb79c0",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_passive_event_log_review_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_observer_design_checks.json",
+      "role": "evidence and checks",
+      "bytes": 12682,
+      "sha256": "4f67c63e2eb8ece29d1e12626e73111dfe75b1875516c1666646021461a278d6",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_passive_event_observer_design_checks.json"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 17205,
+      "sha256": "3c1de714692827194df6881ebb01ecfcf3273a02e9cd825b420efc6210b3c402",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/deathtrap_passive_event_user_test.log"
+    },
+    {
+      "path": "evidence/overclock_effect_contract_model_checks.json",
+      "role": "evidence and checks",
+      "bytes": 3004,
+      "sha256": "5c66530ea0f56e10e57748c5f70a72a615e7f57a3e94bad343d91733eb1afed8",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/overclock_effect_contract_model_checks.json"
+    },
+    {
+      "path": "evidence/overclock_effect_readiness_checks.json",
+      "role": "evidence and checks",
+      "bytes": 22363,
+      "sha256": "79d360bcac42d66068c71507a32d6d984bd933bfd58da622f7b531f665a5592a",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/overclock_effect_readiness_checks.json"
+    },
+    {
+      "path": "evidence/overclock_effect_readiness_research.md",
+      "role": "evidence and checks",
+      "bytes": 13698,
+      "sha256": "1c0667534ae924f90aa14fc6e08bbbeb4c8403dab3120469bed868a5d07512d5",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/overclock_effect_readiness_research.md"
+    },
+    {
+      "path": "evidence/overclock_identity_cleanup_design_checks.json",
+      "role": "evidence and checks",
+      "bytes": 3824,
+      "sha256": "aab4314e1a1b7e86142597129557ed2838493883e0cda49862375d9ebaeca985",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/overclock_identity_cleanup_design_checks.json"
+    },
+    {
+      "path": "evidence/pair_baseline_checks.json",
+      "role": "evidence and checks",
+      "bytes": 2679,
+      "sha256": "48364ccdf33b913251baefeda77b2ae9ad21752341f8da1113ca729c10d680e1",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/pair_baseline_checks.json"
+    },
+    {
+      "path": "evidence/v011_duration_write_verified.log",
+      "role": "evidence and checks",
+      "bytes": 5104,
+      "sha256": "220156804885f48c683d0aa437d7287a10e90d26814601a6e7ef2f989c7644ab",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v011_duration_write_verified.log"
+    },
+    {
+      "path": "evidence/v014_native_branches_and_layout.log",
+      "role": "evidence and checks",
+      "bytes": 65342,
+      "sha256": "9b34b4fc0fd2606f5b61d511ba3e3c6f77f4edc5e0dc98d84545f6842275ab55",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v014_native_branches_and_layout.log"
+    },
+    {
+      "path": "evidence/v015_skill_definitions_and_construct_api.log",
+      "role": "evidence and checks",
+      "bytes": 35062,
+      "sha256": "f3445f5e94b6f22b0fc34ed52c2c1ab39df666d55f228fe508638775746fa4d8",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v015_skill_definitions_and_construct_api.log"
+    },
+    {
+      "path": "evidence/v016_node_insertion_verified_but_NOT_VISIBLE.log",
+      "role": "evidence and checks",
+      "bytes": 4811,
+      "sha256": "739686b4f276645d9d5df34542b7b54c9a5d2c466f2a3a2fa269e9856fb9bba7",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v016_node_insertion_verified_but_NOT_VISIBLE.log"
+    },
+    {
+      "path": "evidence/v017_main_menu_assets_unavailable.log",
+      "role": "evidence and checks",
+      "bytes": 5678,
+      "sha256": "16c5ebc42cc3c6a9743a0b98dabb8372613b2a9d4c1bc07e8cfce02befa3fc65",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v017_main_menu_assets_unavailable.log"
+    },
+    {
+      "path": "evidence/v018_assets_transient_playerskilltree_found.log",
+      "role": "evidence and checks",
+      "bytes": 37521,
+      "sha256": "6e72a5b2532bf711c86b39377c6dc0d6df24f6111a01b729c0980b3d209777d8",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v018_assets_transient_playerskilltree_found.log"
+    },
+    {
+      "path": "evidence/v019_live_tree_and_init_trace.log",
+      "role": "evidence and checks",
+      "bytes": 323154,
+      "sha256": "505cc62b6c2b65cde9e24bda49b9c9b0cf6a4d80286f0633fb2ece2a6ffc8ca3",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v019_live_tree_and_init_trace.log"
+    },
+    {
+      "path": "evidence/v020_netmode_guard_aborted_no_insertion.log",
+      "role": "evidence and checks",
+      "bytes": 6255,
+      "sha256": "6161e9857a1ea3c7074cde07b4582676c004c77aac5690f49c994f4ee98ab5a5",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v020_netmode_guard_aborted_no_insertion.log"
+    },
+    {
+      "path": "evidence/v021_native_node_visible_and_restored.log",
+      "role": "evidence and checks",
+      "bytes": 24783,
+      "sha256": "bb42d31110462749ad21f90885a911d9f92cb22a50a1cff74660b91eb68544ca",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v021_native_node_visible_and_restored.log"
+    },
+    {
+      "path": "evidence/v021_visibility_confirmation.md",
+      "role": "evidence and checks",
+      "bytes": 2708,
+      "sha256": "de2e8df893fc5c2939110dca287f51aea1d9d98f785983fe58ad8684f41f16ea",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v021_visibility_confirmation.md"
+    },
+    {
+      "path": "evidence/v022_purchase_diagnostic_result.md",
+      "role": "evidence and checks",
+      "bytes": 5372,
+      "sha256": "f4439882acaab2480e109ad48ce231b4f72a94a6d3a7462938cbf7e7969cb34e",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v022_purchase_diagnostic_result.md"
+    },
+    {
+      "path": "evidence/v022_purchase_rank_metadata_and_restored.log",
+      "role": "evidence and checks",
+      "bytes": 96901,
+      "sha256": "78cfa63fd67c1f989e48c00d2da947a0fd75cbe6581970d436d7c1a8137b487a",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v022_purchase_rank_metadata_and_restored.log"
+    },
+    {
+      "path": "evidence/v022_repeat_rank_preview_clarification.log",
+      "role": "evidence and checks",
+      "bytes": 95766,
+      "sha256": "d684add928bc46cbf7a5a27356282a2df1b87bbdb9dca0724d49b6aed05c7482",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v022_repeat_rank_preview_clarification.log"
+    },
+    {
+      "path": "evidence/v022_repeat_rank_preview_clarification.md",
+      "role": "evidence and checks",
+      "bytes": 2735,
+      "sha256": "67d75b72510b4ae07d47a00671969968a1e20f3156b9f0243c9d8bc2bdad03cc",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v022_repeat_rank_preview_clarification.md"
+    },
+    {
+      "path": "evidence/v023_diagnostic_plan.md",
+      "role": "evidence and checks",
+      "bytes": 3989,
+      "sha256": "4358718144a369cdf659f42ab8b37e62bcf7a8f593886ce841faf7389734f785",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v023_diagnostic_plan.md"
+    },
+    {
+      "path": "evidence/v023_live_diagnostic_result.md",
+      "role": "evidence and checks",
+      "bytes": 5075,
+      "sha256": "195687ea0b4891751167350c2b6ffac1a951b00083b4b1be6a3672e66ed52102",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v023_live_diagnostic_result.md"
+    },
+    {
+      "path": "evidence/v023_upgrade_metadata_and_restored.log",
+      "role": "evidence and checks",
+      "bytes": 112794,
+      "sha256": "d0dc15edca2e0b9d737bcbabfa87104c1f4fa792bb01829ec5a9390b07f82e77",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v023_upgrade_metadata_and_restored.log"
+    },
+    {
+      "path": "evidence/v024_live_observer_result.md",
+      "role": "evidence and checks",
+      "bytes": 5756,
+      "sha256": "1b200d4cad6349563586a0e70cdf05068362f41c1b0bf1d08075c44690bcc2fa",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v024_live_observer_result.md"
+    },
+    {
+      "path": "evidence/v024_observer_plan.md",
+      "role": "evidence and checks",
+      "bytes": 6247,
+      "sha256": "f8f912f4b3c0f19cd24dcf9970f3c6336b644340d1973572f69841343cebf9d5",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v024_observer_plan.md"
+    },
+    {
+      "path": "evidence/v024_upgrade_observers_zero_calls_and_restored.log",
+      "role": "evidence and checks",
+      "bytes": 20349,
+      "sha256": "f4c0e99d17ac743339eabb5381d31d3f78be80bf0b9fc328ec32f57518058c8b",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v024_upgrade_observers_zero_calls_and_restored.log"
+    },
+    {
+      "path": "evidence/v024_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 16459,
+      "sha256": "05fd15067c53b0553d6b71ae99ced9bef413170abaeceb8897d6522f1a0b5bdc",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v024_user_test.log"
+    },
+    {
+      "path": "evidence/v025_live_ui_trace_result.md",
+      "role": "evidence and checks",
+      "bytes": 6362,
+      "sha256": "e5be7fa55ee9f8996d88452e4b053e1c2d1c7c904cc9c02e40a5a34f966789ea",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v025_live_ui_trace_result.md"
+    },
+    {
+      "path": "evidence/v025_ui_trace_plan.md",
+      "role": "evidence and checks",
+      "bytes": 7121,
+      "sha256": "1bee671fe7c4cfc499f5b404c761d497fec316f32f5fa85309805ae9a251316f",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v025_ui_trace_plan.md"
+    },
+    {
+      "path": "evidence/v025_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 30099,
+      "sha256": "c476847b867b8919e97ca678d56032e09b7de4a717336969a1c389588d29ccef",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v025_user_test.log"
+    },
+    {
+      "path": "evidence/v026_core_ui_trace_plan.md",
+      "role": "evidence and checks",
+      "bytes": 6448,
+      "sha256": "4c98ffa6d1a7fc082ee1b91b85d91d6125ff1aa2cfc39ab96e8272c9093d13d6",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v026_core_ui_trace_plan.md"
+    },
+    {
+      "path": "evidence/v026_live_core_ui_result.md",
+      "role": "evidence and checks",
+      "bytes": 7821,
+      "sha256": "ba8788bcd9581a3401006dbc897d70a84de6e8012efd28c8ebccb08943b8e636",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v026_live_core_ui_result.md"
+    },
+    {
+      "path": "evidence/v026_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 49774,
+      "sha256": "8509efded92cb6787964bbfe178821a5cd1ff2d1b3c4bccf7d2304e2cbc61281",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v026_user_test.log"
+    },
+    {
+      "path": "evidence/v027_focused_state_plan.md",
+      "role": "evidence and checks",
+      "bytes": 10384,
+      "sha256": "bb6a3f2d5a0cc2375bdd610eaa713ea2ac6997a3a6ea726016e1e9bb0e4d6f09",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v027_focused_state_plan.md"
+    },
+    {
+      "path": "evidence/v027_live_focused_state_result.md",
+      "role": "evidence and checks",
+      "bytes": 7614,
+      "sha256": "1d92ccdc28d6a4153d6a31b46735dbd49602dcc869fbb0a52f0fa45f69a934ae",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v027_live_focused_state_result.md"
+    },
+    {
+      "path": "evidence/v027_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 31364,
+      "sha256": "3024e4692fa28f0ea17ec39b3f6131ce5db1329991c4285aae5169b837195452",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v027_user_test.log"
+    },
+    {
+      "path": "evidence/v028_live_presentation_result.md",
+      "role": "evidence and checks",
+      "bytes": 5430,
+      "sha256": "56433841585957eb927eca869a37704be9677e8573f5eeacc490991a41f53579",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v028_live_presentation_result.md"
+    },
+    {
+      "path": "evidence/v028_live_presentation_retry_result.md",
+      "role": "evidence and checks",
+      "bytes": 6608,
+      "sha256": "5fcd7dcb35535fc63cf06c1e3fb15077ac74bee5125c1829e58d6e8c1324cff4",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v028_live_presentation_retry_result.md"
+    },
+    {
+      "path": "evidence/v028_overclock_user_screenshot.png",
+      "role": "evidence and checks",
+      "bytes": 2937120,
+      "sha256": "d1855e515d1135f449d1b0d3b7ae4e464a452cfa4809194995c3fa2d43992d15",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v028_overclock_user_screenshot.png"
+    },
+    {
+      "path": "evidence/v028_presentation_retry.log",
+      "role": "evidence and checks",
+      "bytes": 38263,
+      "sha256": "348d9ce354c6ec3853813de5eecba2c258d8fad72c8aab8280d26d4ec8a37229",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v028_presentation_retry.log"
+    },
+    {
+      "path": "evidence/v028_presentation_snapshot_plan.md",
+      "role": "evidence and checks",
+      "bytes": 10819,
+      "sha256": "c21d74d4f8d9d8b27cfe606337eb7f34eeae83c31ad82ce0d789087597d0da0c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v028_presentation_snapshot_plan.md"
+    },
+    {
+      "path": "evidence/v028_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 20009,
+      "sha256": "2f3670fa1c50ced4864daf5fd8db9585b6ef5c6af36b7bded9fe8d16341d326d",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v028_user_test.log"
+    },
+    {
+      "path": "evidence/v029_live_presentation_text_result.md",
+      "role": "evidence and checks",
+      "bytes": 7185,
+      "sha256": "ce1e6bfbaddb69e21f8568db9eb43a9da53e6c1f5598af03c3de5bd5aaf537cd",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v029_live_presentation_text_result.md"
+    },
+    {
+      "path": "evidence/v029_presentation_text_plan.md",
+      "role": "evidence and checks",
+      "bytes": 8885,
+      "sha256": "d217bd3412c68c5e57a3c21f56a59503a7a5c0b9e6cc9c6f4c68d020401660b5",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v029_presentation_text_plan.md"
+    },
+    {
+      "path": "evidence/v029_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 94218,
+      "sha256": "9f73970ca42390bf96904b0af174ebaec93faf77b40db6baf5a9ab3979bb3279",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v029_user_test.log"
+    },
+    {
+      "path": "evidence/v030_live_presentation_display_result.md",
+      "role": "evidence and checks",
+      "bytes": 8453,
+      "sha256": "03654c86bbe4dbcca1d4ccce6b65e71431f6b14460987626f5ceab900d0895d7",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v030_live_presentation_display_result.md"
+    },
+    {
+      "path": "evidence/v030_presentation_display_plan.md",
+      "role": "evidence and checks",
+      "bytes": 9821,
+      "sha256": "a5e6848b2efd0de4fd18534714c925663f2e25b84243e0468d2dc2809c7a0c3a",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v030_presentation_display_plan.md"
+    },
+    {
+      "path": "evidence/v030_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 259457,
+      "sha256": "88a79e741abb6b217f8f8a23c42e14578c11c75f2686abcfecc13d2c74e294fb",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v030_user_test.log"
+    },
+    {
+      "path": "evidence/v031_ast_scope_proof.json",
+      "role": "evidence and checks",
+      "bytes": 3699,
+      "sha256": "e9d0d8858804590fe6148383a43e2fd2f80b8651d1d112065c3bfcb9a85a6643",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v031_ast_scope_proof.json"
+    },
+    {
+      "path": "evidence/v031_attribute_class_plan.md",
+      "role": "evidence and checks",
+      "bytes": 6194,
+      "sha256": "fabf63d50eb9b5a95e2dd961cbea3981f4d45506a8db1dd1df843c9550a8621f",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v031_attribute_class_plan.md"
+    },
+    {
+      "path": "evidence/v031_build_result.json",
+      "role": "evidence and checks",
+      "bytes": 857,
+      "sha256": "93303d04db5a661980ceee9a250bdcb3aea32c8bd271d6acb94a89bc26670ac8",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v031_build_result.json"
+    },
+    {
+      "path": "evidence/v031_capture_manifest.json",
+      "role": "evidence and checks",
+      "bytes": 12950,
+      "sha256": "27bc11aa3f5fd18cd1afb55e99255f13f19b82ca3ec3e36cdfddf1193aa58d20",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v031_capture_manifest.json"
+    },
+    {
+      "path": "evidence/v031_live_attribute_class_result.md",
+      "role": "evidence and checks",
+      "bytes": 9367,
+      "sha256": "71fececfd19b20d24299c899aebd24caf9d1478c322c3c1776078ba5a37cf70c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v031_live_attribute_class_result.md"
+    },
+    {
+      "path": "evidence/v031_log_review_tool.md",
+      "role": "evidence and checks",
+      "bytes": 6199,
+      "sha256": "7e1f3e9c88b600cbe7b7636275b3e40e1b8fcd035456f7d8325796e7cabc2cc9",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v031_log_review_tool.md"
+    },
+    {
+      "path": "evidence/v031_preserved_baseline.json",
+      "role": "evidence and checks",
+      "bytes": 5368,
+      "sha256": "103ba4384ac8a9ba94722ab6f9eb5dadb590cd4b7cd8955c0c02ba5baaecde39",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v031_preserved_baseline.json"
+    },
+    {
+      "path": "evidence/v031_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 93722,
+      "sha256": "7339178b278e7e4c63a8ec4272a692c199840c82c99017be2198901f1a1f3b00",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v031_user_test.log"
+    },
+    {
+      "path": "evidence/v032_capture_manifest.json",
+      "role": "evidence and checks",
+      "bytes": 25031,
+      "sha256": "6121c698c1beb85884c69468262c131d27017e885cb8729250c3c5344190db01",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v032_capture_manifest.json"
+    },
+    {
+      "path": "evidence/v032_live_deathtrap_metadata_result.md",
+      "role": "evidence and checks",
+      "bytes": 7062,
+      "sha256": "e1f5d0949d9bfaedfaabc76e5607d4962c7486f2404c42780f6ab1f8b18e1a9e",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v032_live_deathtrap_metadata_result.md"
+    },
+    {
+      "path": "evidence/v032_protocol_checks.json",
+      "role": "evidence and checks",
+      "bytes": 2569,
+      "sha256": "5e49d6d49764805acb74a7b5eab4106eef44c0cb4fc1d301db51d17795f7fffa",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v032_protocol_checks.json"
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "role": "evidence and checks",
+      "bytes": 32788,
+      "sha256": "8ddbb6aeae5d96be14879adf69fd21c6a7a1fcdbd3e55ec5f4199b2f943f520a",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/v032_user_test.log"
+    },
+    {
+      "path": "evidence/verified_artifact_inventory.json",
+      "role": "evidence and checks",
+      "bytes": 20772,
+      "sha256": "130d4bef085c48134c17974900938c837bdba4dd9cc2e37eee1938f590416205",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/evidence/verified_artifact_inventory.json"
+    },
+    {
+      "path": "scripts/package_mod.py",
+      "role": "verification tools",
+      "bytes": 670,
+      "sha256": "bd903806fd0974bd69114e7c001760043d155ead4796656ba8d692209c493d15",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/scripts/package_mod.py"
+    },
+    {
+      "path": "scripts/review_deathtrap_activation_reader_log.py",
+      "role": "verification tools",
+      "bytes": 20492,
+      "sha256": "a886f9fb275ee8eb9574afc98f00fa4f9567164fb9732563bc5771ee55d71aae",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/scripts/review_deathtrap_activation_reader_log.py"
+    },
+    {
+      "path": "scripts/review_deathtrap_callback_definition_name_log.py",
+      "role": "verification tools",
+      "bytes": 20018,
+      "sha256": "8c4653562b8e39b8744be6647e36b538d16faf84d03eb379fe4f92e89fe62f9e",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/scripts/review_deathtrap_callback_definition_name_log.py"
+    },
+    {
+      "path": "scripts/review_deathtrap_callback_local_reader_log.py",
+      "role": "verification tools",
+      "bytes": 18534,
+      "sha256": "ae74b7aee95b07fe2a9327b4baed9ecbbdef35dd601cfb8f9927f9213e6036c5",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/scripts/review_deathtrap_callback_local_reader_log.py"
+    },
+    {
+      "path": "scripts/review_deathtrap_metadata_log.py",
+      "role": "verification tools",
+      "bytes": 22820,
+      "sha256": "7cf38488f2604a6481504d5298262d03b73a709deae197a55d36416815f26c78",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/scripts/review_deathtrap_metadata_log.py"
+    },
+    {
+      "path": "scripts/review_deathtrap_passive_event_log.py",
+      "role": "verification tools",
+      "bytes": 15017,
+      "sha256": "db9e6a41dcb3b7c53c7edb5ef46da42aae76fd3ff357958545800cb1622692f8",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/scripts/review_deathtrap_passive_event_log.py"
+    },
+    {
+      "path": "scripts/review_v031_log.py",
+      "role": "verification tools",
+      "bytes": 16737,
+      "sha256": "e7f016dd7506a98c92a2759746f4b5bdd34d9b8269c9a39abcbe7fd0e86cb4da",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/scripts/review_v031_log.py"
+    },
+    {
+      "path": "scripts/run_offline_validation.py",
+      "role": "verification tools",
+      "bytes": 5638,
+      "sha256": "49730f9c81b22b7388a05d8385f8aa6e7b5e1314ae50184fc3191433f88985f1",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/scripts/run_offline_validation.py"
+    },
+    {
+      "path": "scripts/verify_artifact_inventory.py",
+      "role": "verification tools",
+      "bytes": 9605,
+      "sha256": "c7cbf7d611d7ef980153ccd09a3e3ddfa2e0247a3227b5253bdc48aa1f677e73",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/scripts/verify_artifact_inventory.py"
+    },
+    {
+      "path": "scripts/verify_package.py",
+      "role": "verification tools",
+      "bytes": 2963,
+      "sha256": "7af52a848ab71943fd8db8042a02a4e38f144a3bb4300c17e267a8b6497c9af2",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/scripts/verify_package.py"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+      "role": "current runtime",
+      "bytes": 4441,
+      "sha256": "7f4cd2e277c961d24ac09d1adccf0c7513d0d2c004656edfd90854988fc7ba40",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "role": "current runtime",
+      "bytes": 241561,
+      "sha256": "30fa017486034180626e072ac0639afd2fe9a8e6def184c37fc2218137be1262",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py"
+    },
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+      "role": "current runtime",
+      "bytes": 84,
+      "sha256": "4a03c1464148897203c1ac2400b905e82c190f73ccea46f18557240490d648ad",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml"
+    },
+    {
+      "path": "tests/test_artifact_inventory.py",
+      "role": "offline tests",
+      "bytes": 12042,
+      "sha256": "f6d7fe15e16f494c6e511771552bf8cbf551f9e15efaeb3e667b19ecf616d11b",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_artifact_inventory.py"
+    },
+    {
+      "path": "tests/test_attribute_class.py",
+      "role": "offline tests",
+      "bytes": 20703,
+      "sha256": "e1d251c25afd9b9b202da1359ef02b3901415e9999c5f9e8413ce7b752fc5c68",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_attribute_class.py"
+    },
+    {
+      "path": "tests/test_deathtrap_activation_reader.py",
+      "role": "offline tests",
+      "bytes": 45492,
+      "sha256": "e92b2a4b4417e89bd8897acaa21a813c7929ff2bd0af3cdbc9f3bad8a4c3e3fe",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_deathtrap_activation_reader.py"
+    },
+    {
+      "path": "tests/test_deathtrap_activation_reader_log_review.py",
+      "role": "offline tests",
+      "bytes": 45325,
+      "sha256": "be31f3602087199945fcc503916aa082167ae06b0b42094b2a41b497c8dbcde5",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_deathtrap_activation_reader_log_review.py"
+    },
+    {
+      "path": "tests/test_deathtrap_callback_definition_name_log_review.py",
+      "role": "offline tests",
+      "bytes": 38019,
+      "sha256": "10ae4a12e271cdf2af68f4ed0d2c264473203dd67edde769b61aae3a88e02a22",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_deathtrap_callback_definition_name_log_review.py"
+    },
+    {
+      "path": "tests/test_deathtrap_callback_definition_names.py",
+      "role": "offline tests",
+      "bytes": 15469,
+      "sha256": "83c0fb4ba56f924abcd76fb1c719b05f0c672f301cf5421ef990cc5d90730009",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_deathtrap_callback_definition_names.py"
+    },
+    {
+      "path": "tests/test_deathtrap_callback_local_reader.py",
+      "role": "offline tests",
+      "bytes": 31972,
+      "sha256": "65614b1c09a6dc78ad4e15d8be3dbe021992e08c8795cade34143c92d9b02a69",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_deathtrap_callback_local_reader.py"
+    },
+    {
+      "path": "tests/test_deathtrap_callback_local_reader_log_review.py",
+      "role": "offline tests",
+      "bytes": 25482,
+      "sha256": "cc7670c5dcbbb79adc9c18657e5ed10c55df2dc841bd950b8d6726896db99ba1",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_deathtrap_callback_local_reader_log_review.py"
+    },
+    {
+      "path": "tests/test_deathtrap_manager_relationship_metadata.py",
+      "role": "offline tests",
+      "bytes": 24428,
+      "sha256": "5ce6ceebb4f1df546de238b2ff00c6fcb879d5ba6828e2b8c63c3160a5a462d1",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_deathtrap_manager_relationship_metadata.py"
+    },
+    {
+      "path": "tests/test_deathtrap_metadata_log_review.py",
+      "role": "offline tests",
+      "bytes": 32611,
+      "sha256": "be124bc66e97925cf1c5eaa10c2cde759b1624b9980c0fdcaa9f8529f407dbbe",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_deathtrap_metadata_log_review.py"
+    },
+    {
+      "path": "tests/test_deathtrap_passive_event_log_review.py",
+      "role": "offline tests",
+      "bytes": 20066,
+      "sha256": "de6fbf4f721833ff4cd9de047b90614203180dc5101b4c562a82f2ae133fe78a",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_deathtrap_passive_event_log_review.py"
+    },
+    {
+      "path": "tests/test_deathtrap_passive_events.py",
+      "role": "offline tests",
+      "bytes": 25733,
+      "sha256": "61e2c9baddd0da7d0c690e28667c58cc832368d1ad0c2961b51cf4426cd5f356",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_deathtrap_passive_events.py"
+    },
+    {
+      "path": "tests/test_deathtrap_readiness.py",
+      "role": "offline tests",
+      "bytes": 32599,
+      "sha256": "ac1a58808a0e7c10c10b68fef10abb29a8c9a83be2b0b9d8a541f97074efd4a0",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_deathtrap_readiness.py"
+    },
+    {
+      "path": "tests/test_log_review.py",
+      "role": "offline tests",
+      "bytes": 19780,
+      "sha256": "896ac5d87c414d440da631d70f94634bfc93a53c92f114342ca9ab8faf598d71",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_log_review.py"
+    },
+    {
+      "path": "tests/test_offline_validation_runner.py",
+      "role": "offline tests",
+      "bytes": 7991,
+      "sha256": "8a6f8855fc00f062c0c923253445d2bbdd7d63e1e5923e39cfcebf8bd9e9ce13",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_offline_validation_runner.py"
+    },
+    {
+      "path": "tests/test_overclock_effect_contract_model.py",
+      "role": "offline tests",
+      "bytes": 14113,
+      "sha256": "9639ae7a2f76e21488cf6bffb2f50589c6b46be8fc9537ba8bee5366dd8c36af",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_overclock_effect_contract_model.py"
+    },
+    {
+      "path": "tests/test_presentation_display.py",
+      "role": "offline tests",
+      "bytes": 23023,
+      "sha256": "4208098d8bc224331e97176c6622e31418c3b5efc9a50ff7f28c0e0c70ec1c2c",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_presentation_display.py"
+    },
+    {
+      "path": "tests/test_presentation_text.py",
+      "role": "offline tests",
+      "bytes": 16166,
+      "sha256": "22d8a5ce661651a52f4ff08fc7e9df666499b1364b9ea143f53443fc1cf1be59",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_presentation_text.py"
+    },
+    {
+      "path": "tests/test_presentations.py",
+      "role": "offline tests",
+      "bytes": 18927,
+      "sha256": "9837481a6adcc86fcb7bbce5abf92434d641d645c93ab07603ff59e32d04e204",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_presentations.py"
+    },
+    {
+      "path": "tests/test_runtime_mock.py",
+      "role": "offline tests",
+      "bytes": 43784,
+      "sha256": "777449b3607822c86ace1203babdea6f3e55013350b2bbc95b30f76bd762e159",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_runtime_mock.py"
+    },
+    {
+      "path": "tests/test_skillstate_observer.py",
+      "role": "offline tests",
+      "bytes": 19384,
+      "sha256": "364a39054a66fd6f893b40881bc5f6a168fb82b3df517440c45193bd8e218062",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_skillstate_observer.py"
+    },
+    {
+      "path": "tests/test_ui_navigation.py",
+      "role": "offline tests",
+      "bytes": 17614,
+      "sha256": "97a6c4c01caa80ca8685e9b350e171e509a97af433d96294fbaa6f6439a4c79d",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_ui_navigation.py"
+    },
+    {
+      "path": "tests/test_upgrade_observers.py",
+      "role": "offline tests",
+      "bytes": 16115,
+      "sha256": "ac852d0d63bb306ea75c56f976125d2a509e3ce64f6136efac808525cba84732",
+      "url": "https://github.com/s4bkkvwhhg-ui/The-Ultimate-Borderlands/blob/7a23c583a0d81507b7c01e1edc82171c7c50a97f/tests/test_upgrade_observers.py"
+    }
+  ]
+}
