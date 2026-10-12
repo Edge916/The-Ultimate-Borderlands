@@ -1079,6 +1079,9 @@ def _trace_callback(path, phase):
 
 
 def start_tree_trace(_option=None):
+    if _rm_locked():
+        _rm_not_started('OVERLAP')
+        return False
     global _trace_events
     log('[UVH-TRACE] BEGIN explicit read-only initialization trace')
     if _skillstate_context is not None or _skillstate_hooks:
@@ -1345,6 +1348,9 @@ def _init_post(obj, args, ret, func):
 
 
 def arm_init_node(_option=None):
+    if _rm_locked():
+        _rm_not_started('OVERLAP')
+        return False
     global _init_armed
     log('[UVH-INITNODE] BEGIN arm ONE inert Gaige initialization experiment')
     try:
@@ -1805,6 +1811,9 @@ def _upgrade_callback(path):
 
 
 def start_upgrade_trace(_option=None):
+    if _rm_locked():
+        _rm_not_started('OVERLAP')
+        return False
     global _upgrade_context, _upgrade_results, _upgrade_hits, _upgrade_callbacks, _upgrade_skipped
     import unrealsdk
     import time
@@ -2040,6 +2049,9 @@ def _ui_callback(path, phase):
 
 
 def start_ui_trace(_option=None):
+    if _rm_locked():
+        _rm_not_started('OVERLAP')
+        return False
     global _ui_context, _ui_results, _ui_hits, _ui_callbacks, _ui_skipped
     import unrealsdk
     import time
@@ -2283,6 +2295,9 @@ def _skillstate_callback(path):
 
 
 def start_skillstate_trace(_option=None):
+    if _rm_locked():
+        _rm_not_started('OVERLAP')
+        return False
     global _skillstate_context, _skillstate_results, _skillstate_hits, _skillstate_counts
     global _skillstate_callbacks, _skillstate_skipped
     import unrealsdk
@@ -3648,6 +3663,9 @@ def _dt_event_callback(epoch):
 
 
 def start_deathtrap_events(_option=None):
+    if _rm_locked():
+        _rm_not_started('OVERLAP')
+        return False
     global _dt_event_context, _dt_event_epoch, _dt_event_stats, _dt_event_stop_requested
     global _dt_event_starting
     if _dt_event_locked():
@@ -4168,6 +4186,9 @@ def _cr_callback(epoch):
 
 
 def start_callback_local_reader(_option=None):
+    if _rm_locked():
+        _rm_not_started('OVERLAP')
+        return False
     global _cr_epoch, _cr_starting, _cr_accepting, _cr_stats, _cr_pending, _cr_owned
     global _cr_stop_requested
     if _cr_locked() or _cr_overlap():
@@ -4222,43 +4243,559 @@ def start_callback_local_reader(_option=None):
     return False
 
 
+# Separate one-attempt class-descriptor catalog. No instance-field values.
+_RM_PATH = 'WillowGame.SkillEffectManager:ActivateSkill'
+_RM_IDENT = 'UVH_RELATION_METADATA_V19_PRE'
+_RM_CAPS = (112, 96, 14000, 14000)
+_RM_CLASS_PATHS = (
+    'WillowGame.SkillEffectManager', 'WillowGame.WillowPlayerController',
+    'GearboxFramework.GearboxPlayerController', 'GameFramework.GamePlayerController',
+    'Engine.PlayerController', 'Engine.Controller', 'Engine.Actor', 'Core.Object')
+_RM_CLASS_TOKENS = ('MGR', 'CTRL', 'GEARBOX_PC', 'GAME_PC', 'ENGINE_PC', 'CONTROLLER', 'ACTOR', 'OBJECT')
+_RM_CHAINS = ((0, 6, 7), (1, 2, 3, 4, 5, 6, 7))
+_rm_epoch = 0
+_rm_accepting = False
+_rm_starting = False
+_rm_busy = False
+_rm_stop_requested = False
+_rm_pending = None
+_rm_owned = False
+_rm_stats = None
+_rm_idle_controls = 0
+
+
+class _RMRefusal(Exception):
+    pass
+
+
+def _rm_reason(exc):
+    if len(exc.args) == 1 and type(exc.args[0]) is str and exc.args[0] in (
+            'SCHEMA', 'TYPE', 'OWNER', 'LINK', 'CYCLE', 'DUPLICATE', 'RANGE', 'ABI',
+            'BUDGET', 'CLOCK', 'TIME', 'STOPPED', 'REENTRY', 'INTERNAL', 'LOGGING'):
+        return exc.args[0]
+    return 'INTERNAL'
+
+
+def _rm_locked():
+    return (_rm_accepting or _rm_starting or _rm_busy or _rm_stop_requested
+            or _rm_pending is not None or (_rm_stats is not None and _rm_stats['truncated']))
+
+
+def _rm_overlap():
+    return (_cr_locked() or _init_armed or bool(_init_hooks) or _uvh_node_state is not None
+            or _record is not None or bool(_trace_hooks) or _trace_busy
+            or bool(_upgrade_hooks) or _upgrade_context is not None or _upgrade_busy
+            or bool(_ui_hooks) or _ui_context is not None or _ui_busy
+            or bool(_skillstate_hooks) or _skillstate_context is not None or _skillstate_busy
+            or _dt_event_locked())
+
+
+def _rm_require(ok, reason='SCHEMA'):
+    if not ok:
+        raise _RMRefusal(reason)
+
+
+def _rm_int(value, low=0, high=1048576):
+    _rm_require(type(value) is int and low <= value <= high, 'RANGE')
+    return value
+
+
+def _rm_name(value):
+    _rm_require(type(value) is str and 1 <= len(value) <= 128, 'SCHEMA')
+    _rm_require(all(c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_' for c in value), 'SCHEMA')
+    return value
+
+
+def _rm_clock():
+    import time
+    now = time.monotonic()
+    _rm_require(type(now) is float and math.isfinite(now) and now >= 0, 'CLOCK')
+    if _rm_stats is not None:
+        _rm_require(now >= _rm_stats['last'] and now >= _rm_stats['started'], 'CLOCK')
+        _rm_stats['last'] = now
+    return now
+
+
+def _rm_bump(key):
+    if _rm_stats is not None:
+        _rm_stats[key] = min(256, _rm_stats[key] + 1)
+
+
+def _rm_record(record, group='data'):
+    global _rm_idle_controls, _rm_accepting
+    import json
+    stats = _rm_stats
+    if group == 'control':
+        try:
+            now = _rm_clock()
+            if stats is not None and now - stats['started'] >= 120.0:
+                _rm_accepting = False
+        except Exception:
+            _rm_accepting = False
+            _rm_bump('errors')
+    if stats is None:
+        if group != 'control' or _rm_idle_controls >= 64:
+            return False
+        _rm_idle_controls += 1
+    else:
+        if stats['records'] >= 205 or (group == 'control' and stats['controls'] >= 64) or (group == 'fault' and stats['faults'] >= 8):
+            stats['truncated'] = True
+            _rm_accepting = False
+            return False
+        stats['records'] += 1
+        if group == 'control': stats['controls'] += 1
+        if group == 'fault': stats['faults'] += 1
+    try:
+        if stats is not None and group == 'data':
+            _rm_require(_rm_clock() - stats['started'] < 120.0, 'TIME')
+        if type(record) is not dict or not all(type(k) is str and type(v) in (str, int, bool) for k, v in record.items()):
+            raise ValueError()
+        message = '[UVH-REL-META] ' + json.dumps(record, sort_keys=True, separators=(',', ':'), ensure_ascii=True)
+        if len((TAG + ' ' + message).encode('ascii')) > 512:
+            raise ValueError()
+        log(message)
+        return True
+    except Exception:
+        _rm_bump('errors')
+        if stats is not None: stats['truncated'] = True
+        _rm_accepting = False
+        return False
+
+
+def _rm_fault(kind, scope, reason):
+    _rm_bump('errors' if kind == 'ERROR' else 'refusals')
+    _rm_record(dict(event='FAULT', epoch=_rm_epoch, kind=kind, scope=scope, reason=reason), 'fault')
+
+
+def _rm_not_started(reason):
+    epoch = _rm_epoch if type(_rm_epoch) is int and 0 <= _rm_epoch <= 2147483647 else 0
+    _rm_record(dict(event='NOT_STARTED', epoch=epoch, reason=reason,
+        remaining=int(_rm_pending is not None), uncertain=int(_rm_pending is not None and not _rm_owned)), 'control')
+
+
+class _RMBudget:
+    def __init__(self, epoch):
+        self.epoch, self.stage, self.counts = epoch, 0, [0, 0, 0, 0]
+
+    def tick(self):
+        _rm_require(_rm_busy and _rm_epoch == self.epoch and not _rm_stop_requested, 'STOPPED')
+        _rm_require(not _rm_stats['reentry'], 'REENTRY')
+        now = _rm_clock()
+        _rm_require(now - _rm_stats['started'] < 120.0 and now - _rm_stats['collector_started'] < 2.0, 'TIME')
+        _rm_require(self.counts[self.stage] < _RM_CAPS[self.stage] and sum(self.counts) < 28208, 'BUDGET')
+        self.counts[self.stage] += 1
+
+    def get(self, obj, field):
+        self.tick()
+        return getattr(obj, field)
+
+    def lookup(self, lookup, label):
+        self.tick()
+        return lookup(label)
+
+    def call(self, obj, method, *values):
+        bound = self.get(obj, method)
+        self.tick()
+        return bound(*values)
+
+    def next(self, iterator):
+        self.tick()
+        return next(iterator, None)
+
+
+def _rm_schema_gate(budget, sdk, unreal, obj, args, func):
+    _cr_require(type(obj) is sdk.UObject and type(args) is sdk.WrappedStruct and type(func) is sdk.BoundFunction)
+    manager = _cr_loaded(budget, sdk, unreal.find_class, 'WillowGame.SkillEffectManager', 'SkillEffectManager')
+    controller = _cr_loaded(budget, sdk, unreal.find_class, 'WillowGame.WillowPlayerController', 'WillowPlayerController')
+    declared = _cr_loaded(budget, sdk, unreal.find_class, 'Engine.Controller', 'Controller')
+    definition = _cr_loaded(budget, sdk, unreal.find_class, 'WillowGame.SkillDefinition', 'SkillDefinition')
+    core = _cr_loaded(budget, sdk, unreal.find_class, 'Core.Object', 'Object')
+    _cr_require(budget.get(obj, 'Class') is manager)
+    function = budget.call(manager, '_find', 'ActivateSkill')
+    _cr_require(type(function) is sdk.UFunction)
+    retprop = _cr_link(budget, sdk, obj, args, func, manager, function)
+    _cr_integer(budget.get(function, 'PropertySize'), low=32)
+    specs = (('SkillInstigator', sdk.ZObjectProperty, 128, 0, 4, declared),
+        ('Definition', sdk.ZObjectProperty, 128, 4, 4, definition),
+        ('AdditionalSkillTarget', sdk.ZObjectProperty, 144, 8, 4, core),
+        ('SkillGrade', sdk.ZIntProperty, 144, 12, 4, None),
+        ('StateChangeDelegate', sdk.ZDelegateProperty, 4194448, 16, 12, None),
+        ('ReturnValue', sdk.ZBoolProperty, 1408, 28, 4, None))
+    properties = budget.call(function, '_properties')
+    for spec in specs:
+        prop = budget.next(properties)
+        _cr_prop(budget, sdk, function, prop, *spec)
+        if spec[0] == 'ReturnValue': _cr_require(prop is retprop)
+    _cr_require(budget.next(properties) is None)
+    _cr_require(budget.call(function, '_find_return_param') is retprop)
+
+
+def _rm_classes(budget, sdk, unreal):
+    classes = []
+    for path in _RM_CLASS_PATHS:
+        cls = budget.lookup(unreal.find_class, path)
+        _rm_require(type(cls) is sdk.UClass, 'TYPE')
+        classes.append(cls)
+    headers = []
+    for index, cls in enumerate(classes):
+        label = budget.get(cls, 'Name')
+        parent = budget.get(cls, 'SuperField')
+        size = _rm_int(budget.get(cls, 'PropertySize'))
+        _rm_require(type(label) is str and label == _RM_CLASS_PATHS[index].rsplit('.', 1)[-1])
+        expected = (6, 2, 3, 4, 5, 6, 7, None)[index]
+        _rm_require(parent is (None if expected is None else classes[expected]), 'LINK')
+        headers.append((label, size))
+    _rm_require(headers[0][1] >= 420, 'RANGE')
+    for chain in _RM_CHAINS:
+        for child, parent in zip(chain, chain[1:]):
+            _rm_require(headers[child][1] >= headers[parent][1], 'RANGE')
+    heads = [budget.get(classes[i], 'PropertyLink') for i in (0, 1)]
+    return classes, headers, heads
+
+
+def _rm_header(budget, prop):
+    return tuple(budget.get(prop, field) for field in
+        ('Name', 'Outer', 'PropertyFlags', 'Offset_Internal', 'ArrayDim', 'ElementSize', 'PropertyLinkNext'))
+
+
+def _rm_header_same(first, second):
+    return (first[1] is second[1] and first[6] is second[6]
+        and all(type(a) is type(b) and a == b for a, b in zip(
+            (first[0], *first[2:6]), (second[0], *second[2:6]))))
+
+
+def _rm_catalog(budget, sdk, classes, headers, head, root_index):
+    token = ('MGR', 'CTRL')[root_index]
+    chain = _RM_CHAINS[root_index]
+    root = classes[chain[0]]
+    current, previous, visited = head, root, []
+    rows, names = [], set()
+    counts = dict(visited=0, objects=0, other=0, unsupported=0, rows=0, rechecked=0)
+    coverage, reason = 'COMPLETE_LINK', 'NONE'
+    try:
+        while current is not None:
+            if len(visited) >= 512:
+                coverage, reason = 'PARTIAL', 'PROPERTY_LIMIT'
+                break
+            _rm_require(isinstance(current, sdk.ZProperty), 'TYPE')
+            _rm_require(not any(current is entry[0] for entry in visited), 'CYCLE')
+            edge = 'PropertyLink' if not visited else 'PropertyLinkNext'
+            _rm_require(budget.get(previous, edge) is current, 'LINK')
+            first = _rm_header(budget, current)
+            name = _rm_name(first[0])
+            owner = next((i for i, index in enumerate(chain) if first[1] is classes[index]), None)
+            _rm_require(owner is not None, 'OWNER')
+            flags = _rm_int(first[2], high=18446744073709551615)
+            offset, dimension, size = _rm_int(first[3]), _rm_int(first[4], 1, 1024), _rm_int(first[5], 1)
+            _rm_require(offset + dimension * size <= min(headers[chain[owner]][1], headers[chain[0]][1]), 'RANGE')
+            _rm_require((owner, name) not in names, 'DUPLICATE')
+            exact_object = type(current) is sdk.ZObjectProperty
+            declared = None
+            if exact_object:
+                _rm_require(size == 4, 'ABI')
+                declared = budget.get(current, 'PropertyClass')
+                _rm_require(type(declared) is sdk.UClass, 'TYPE')
+            second = _rm_header(budget, current)
+            if exact_object: _rm_require(budget.get(current, 'PropertyClass') is declared, 'LINK')
+            _rm_require(budget.get(previous, edge) is current and _rm_header_same(first, second), 'LINK')
+            names.add((owner, name))
+            visited.append((current, previous, edge, first, exact_object, declared))
+            counts['visited'] += 1
+            if exact_object:
+                counts['objects'] += 1
+                declared_index = next((i for i, cls in enumerate(classes) if declared is cls), None)
+                if declared_index is None:
+                    counts['other'] += 1
+                elif len(rows) >= 64:
+                    coverage, reason = 'PARTIAL', 'ROW_LIMIT'
+                    break
+                else:
+                    rows.append(dict(event='ROW', epoch=_rm_epoch, root=token, ordinal=len(rows) + 1,
+                        name=name, owner=owner, kind='SCALAR' if dimension == 1 else 'NON_SCALAR',
+                        flags=flags, offset=offset, dim=dimension, size=size, decl=_RM_CLASS_TOKENS[declared_index]))
+            elif isinstance(current, sdk.ZObjectProperty):
+                counts['unsupported'] += 1
+            previous, current = current, first[6]
+        for prop, predecessor, edge, first, exact_object, declared in visited:
+            _rm_require(budget.get(predecessor, edge) is prop, 'LINK')
+            final = _rm_header(budget, prop)
+            if exact_object: _rm_require(budget.get(prop, 'PropertyClass') is declared, 'LINK')
+            _rm_require(_rm_header_same(first, final), 'LINK')
+            counts['rechecked'] += 1
+        counts['rows'] = len(rows)
+    except _RMRefusal as exc:
+        reason = _rm_reason(exc)
+        coverage, rows = 'REFUSED', []
+    except Exception:
+        coverage, reason, rows = 'REFUSED', 'INTERNAL', []
+    summary = dict(event='ROOT', epoch=_rm_epoch, root=token, coverage=coverage, reason=reason,
+        **counts, ops=budget.counts[budget.stage])
+    return rows, summary
+
+
+def _rm_collect(epoch, obj, args, func):
+    budget = _RMBudget(epoch)
+    rows, summaries = [], []
+    fault = None
+    try:
+        import unrealsdk
+        sdk = unrealsdk.unreal
+        _rm_schema_gate(budget, sdk, unrealsdk, obj, args, func)
+        _rm_require(issubclass(sdk.ZProperty, sdk.UField), 'TYPE')
+        budget.stage = 1
+        classes, headers, heads = _rm_classes(budget, sdk, unrealsdk)
+        for root_index in (0, 1):
+            budget.stage = root_index + 2
+            found, summary = _rm_catalog(budget, sdk, classes, headers, heads[root_index], root_index)
+            rows.extend(found)
+            summaries.append(summary)
+            if summary['coverage'] == 'REFUSED':
+                fault = ('REFUSED', ('MGR', 'CTRL')[root_index], summary['reason'])
+                break
+        budget.stage = 1
+        final_classes, final_headers, final_heads = _rm_classes(budget, sdk, unrealsdk)
+        _rm_require(all(a is b for a, b in zip(classes, final_classes)) and headers == final_headers
+            and all(a is b for a, b in zip(heads, final_heads)), 'LINK')
+    except (_RMRefusal, _CRRefusal) as exc:
+        reason = _rm_reason(exc)
+        fault = ('REFUSED', ('GATE', 'ROOTS', 'MGR', 'CTRL')[budget.stage], reason)
+        rows = []
+        for summary in summaries:
+            summary.update(coverage='REFUSED', reason=reason, rows=0)
+    except Exception:
+        fault, rows = ('ERROR', ('GATE', 'ROOTS', 'MGR', 'CTRL')[budget.stage], 'INTERNAL'), []
+        for summary in summaries:
+            summary.update(coverage='REFUSED', reason='INTERNAL', rows=0)
+    return rows, summaries, tuple(budget.counts), fault
+
+
+def _rm_callback(epoch):
+    def observe(obj, args, ret, func):
+        global _rm_busy, _rm_accepting
+        stats = _rm_stats
+        if stats is None or epoch != _rm_epoch:
+            obj = args = ret = func = None
+            return None
+        if _rm_busy:
+            stats['reentry_saturated'] |= stats['reentry'] >= 64
+            stats['reentry'] = min(64, stats['reentry'] + 1)
+            _rm_accepting = False
+            obj = args = ret = func = None
+            return None
+        if not _rm_accepting or stats['attempts']:
+            stats['ignored_saturated'] |= stats['ignored'] >= 64
+            stats['ignored'] = min(64, stats['ignored'] + 1)
+            obj = args = ret = func = None
+            return None
+        _rm_busy, _rm_accepting = True, False
+        stats['attempts'] = 1
+        rows, summaries, counts, fault = [], [], (0, 0, 0, 0), None
+        try:
+            stats['collector_started'] = _rm_clock()
+            rows, summaries, counts, fault = _rm_collect(epoch, obj, args, func)
+            obj = args = ret = func = None
+            now = _rm_clock()
+            _rm_require(now - stats['started'] < 120.0 and now - stats['collector_started'] < 2.0, 'TIME')
+            if stats['reentry'] or _rm_stop_requested:
+                reason = 'REENTRY' if stats['reentry'] else 'STOPPED'
+                fault, rows = ('REFUSED', 'SESSION', reason), []
+                for summary in summaries: summary.update(coverage='REFUSED', reason=reason, rows=0)
+        except _RMRefusal as exc:
+            reason = _rm_reason(exc)
+            fault = ('REFUSED', 'SESSION', reason)
+            rows = []
+            for summary in summaries: summary.update(coverage='REFUSED', reason=reason, rows=0)
+        except Exception:
+            fault = ('ERROR', 'SESSION', 'INTERNAL')
+        finally:
+            obj = args = ret = func = None
+            _rm_busy = False
+        stats['counts'] = counts
+        stats['rows'] = len(rows)
+        stats['outcome'] = ('REFUSED' if fault is not None else 'PARTIAL_METADATA'
+            if any(s['coverage'] == 'PARTIAL' for s in summaries) else 'COMPLETE_SCOPED_METADATA')
+        if not _rm_record(dict(event='BEGIN', epoch=epoch, attempt=1)):
+            return None
+        for root in ('MGR', 'CTRL'):
+            for row in rows:
+                if row['root'] == root and not _rm_record(row): return None
+            for summary in summaries:
+                if summary['root'] == root and not _rm_record(summary): return None
+        if fault is not None: _rm_fault(*fault)
+        _rm_record(dict(event='END', epoch=epoch, outcome=stats['outcome'], attempts=1,
+            gate_ops=counts[0], root_ops=counts[1], mgr_ops=counts[2], ctrl_ops=counts[3], total_ops=sum(counts),
+            rows=stats['rows'], errors=stats['errors'], refusals=stats['refusals'],
+            reentry=stats['reentry'], reentry_saturated=stats['reentry_saturated']))
+        return None
+    return observe
+
+
+def stop_relationship_metadata(_option=None):
+    global _rm_accepting, _rm_stop_requested, _rm_pending, _rm_owned
+    _rm_accepting = False
+    if _rm_stats is None:
+        return True
+    stats = _rm_stats
+    try:
+        if _rm_clock() - stats['started'] >= 120.0 and not stats.get('expired', False):
+            stats['expired'] = True
+            _rm_fault('REFUSED', 'SESSION', 'TIME')
+    except Exception:
+        if not stats.get('clock_failed', False):
+            stats['clock_failed'] = True
+            _rm_fault('ERROR', 'SESSION', 'CLOCK')
+    if _rm_busy or _rm_starting:
+        _rm_stop_requested = True
+        deferred = True
+    else:
+        deferred = False
+        _rm_stop_requested = False
+        for _ in range(4):
+            if _rm_pending is None or stats['removal_attempts'] >= 256: break
+            stats['removal_attempts'] += 1
+            try:
+                import unrealsdk
+                phase = unrealsdk.hooks.Type.PRE
+                if _rm_owned:
+                    removed = unrealsdk.hooks.remove_hook(_RM_PATH, phase, _RM_IDENT)
+                    present = unrealsdk.hooks.has_hook(_RM_PATH, phase, _RM_IDENT)
+                    if type(removed) is not bool or type(present) is not bool or present: raise ValueError()
+                else:
+                    present = unrealsdk.hooks.has_hook(_RM_PATH, phase, _RM_IDENT)
+                    if type(present) is not bool or present: raise ValueError()
+                _rm_pending, _rm_owned = None, False
+            except Exception:
+                _rm_bump('cleanup_failures')
+    if not stats['attempts'] and not stats['end_recorded']:
+        stats['end_recorded'] = True
+        _rm_record(dict(event='END', epoch=_rm_epoch, outcome='NOT_OBSERVED', attempts=0,
+            gate_ops=0, root_ops=0, mgr_ops=0, ctrl_ops=0, total_ops=0, rows=0,
+            errors=stats['errors'], refusals=stats['refusals'], reentry=stats['reentry'], reentry_saturated=stats['reentry_saturated']))
+    outcome = ('REFUSED' if stats['errors'] or stats['refusals'] or stats['cleanup_failures'] or _rm_pending is not None
+        else stats['outcome'])
+    result = _rm_record(dict(event='STOP', epoch=_rm_epoch, remaining=int(_rm_pending is not None),
+        uncertain=int(_rm_pending is not None and not _rm_owned), attempts=stats['attempts'],
+        cleanup_failures=stats['cleanup_failures'], removal_attempts=stats['removal_attempts'], deferred=deferred,
+        errors=stats['errors'], refusals=stats['refusals'], reentry=stats['reentry'], reentry_saturated=stats['reentry_saturated'],
+        ignored=stats['ignored'], ignored_saturated=stats['ignored_saturated'], outcome=outcome), 'control')
+    return result and _rm_pending is None and not deferred
+
+
+def start_relationship_metadata(_option=None):
+    global _rm_epoch, _rm_stats, _rm_starting, _rm_stop_requested, _rm_pending, _rm_owned, _rm_accepting
+    if _rm_locked() or _rm_overlap():
+        _rm_not_started('OVERLAP')
+        return False
+    if type(_rm_epoch) is not int or not 0 <= _rm_epoch < 2147483647:
+        _rm_not_started('EPOCH')
+        return False
+    _rm_stats = None
+    try: started = _rm_clock()
+    except Exception:
+        _rm_not_started('CLOCK')
+        return False
+    _rm_epoch += 1
+    _rm_stats = dict(started=started, last=started, collector_started=started, attempts=0,
+        counts=(0, 0, 0, 0), rows=0, errors=0, refusals=0, reentry=0, reentry_saturated=False,
+        ignored=0, ignored_saturated=False, cleanup_failures=0, removal_attempts=0,
+        records=0, controls=0, faults=0, truncated=False, end_recorded=False, outcome='NOT_OBSERVED')
+    _rm_starting, _rm_stop_requested = True, False
+    reason = 'REGISTRATION'
+    try:
+        import unrealsdk
+        phase = unrealsdk.hooks.Type.PRE
+        present = unrealsdk.hooks.has_hook(_RM_PATH, phase, _RM_IDENT)
+        if type(present) is not bool or present:
+            reason = 'IDENTIFIER'
+            raise ValueError()
+        _rm_pending = (_RM_PATH, _RM_IDENT)
+        added = unrealsdk.hooks.add_hook(_RM_PATH, phase, _RM_IDENT, _rm_callback(_rm_epoch))
+        if type(added) is not bool or not added: raise ValueError()
+        _rm_owned = True
+        present = unrealsdk.hooks.has_hook(_RM_PATH, phase, _RM_IDENT)
+        if type(present) is not bool or not present or _rm_stop_requested or _rm_overlap(): raise ValueError()
+        _rm_require(_rm_clock() - started < 120.0, 'CLOCK')
+        if not _rm_record(dict(event='START', epoch=_rm_epoch, version='0.2.19', target='ActivateSkill',
+                phase='PRE', hooks=1, mode='STANDALONE_METADATA')): raise ValueError()
+        _rm_accepting, _rm_starting = True, False
+        return True
+    except Exception:
+        _rm_bump('refusals')
+    _rm_starting = False
+    _rm_not_started(reason)
+    stop_relationship_metadata()
+    return False
+
+
+def _rm_option_gate(handler):
+    from functools import wraps
+    @wraps(handler)
+    def dispatch(option=None):
+        if handler is cancel_init_node:
+            return handler(option)
+        if _rm_locked():
+            _rm_not_started('OVERLAP')
+            return False
+        return handler(option)
+    return dispatch
+
+
+def _rm_shutdown():
+    stop_relationship_metadata()
+    _rm_previous_shutdown()
+
+
+def _rm_cancel(option=None):
+    stop_relationship_metadata()
+    return _rm_previous_cancel(option)
+
+
+
 def shutdown():
     stop_tree_trace()
     cancel_init_node()
 
 
+from functools import wraps as _rm_wraps
+_rm_previous_shutdown = shutdown
+_rm_previous_cancel = cancel_init_node
+shutdown = _rm_wraps(_rm_previous_shutdown)(_rm_shutdown)
+cancel_init_node = _rm_wraps(_rm_previous_cancel)(_rm_cancel)
+
 build_mod(
-    name='UVH v0.2.18 - CALLBACK ACTIVATION READER',
+    name='UVH v0.2.19 - RELATIONSHIP CLASS METADATA',
     author='Borderlands Ultimate prototype',
-    description=('Standalone PRE reader; bounded definition names, ownership unestablished. '
-                 'Reader22/23 needs no ARM or node. V17 observed UpshotRobot; v18 is untested in game.'),
-    version='0.2.18',
+    description=('One callback-local class metadata catalog; no instance values or ownership proof. '
+                 'Metadata24/25 needs no ARM. V18 observed Skill_DeathTrap; v19 is untested in game.'),
+    version='0.2.19',
     supported_games=Game.BL2,
     coop_support=CoopSupport.ClientSide,
     options=[
-        ButtonOption('uvh_init_node_arm', display_name='1 - ARM ONE GAIGE INIT NODE TEST (SOLO / INERT)', on_press=_dt_event_option_gate(arm_init_node)),
-        ButtonOption('uvh_init_node_check', display_name='2 - CHECK INIT NODE RESULT (READ ONLY)', on_press=_dt_event_option_gate(inspect_init_node)),
+        ButtonOption('uvh_init_node_arm', display_name='1 - ARM ONE GAIGE INIT NODE TEST (SOLO / INERT)', on_press=_rm_option_gate(_dt_event_option_gate(arm_init_node))),
+        ButtonOption('uvh_init_node_check', display_name='2 - CHECK INIT NODE RESULT (READ ONLY)', on_press=_rm_option_gate(_dt_event_option_gate(inspect_init_node))),
         ButtonOption('uvh_init_node_cancel', display_name='3 - CANCEL / RESTORE NATIVE ARRAYS (THEN RESTART)', on_press=cancel_init_node),
-        ButtonOption('uvh_purchase_snapshot', display_name='4 - INSPECT DEATHTRAP PARAMETER CLASSES (READ ONLY)', on_press=_dt_event_option_gate(inspect_deathtrap_readiness)),
-        ButtonOption('uvh_upgrade_start', display_name='5 - START UPGRADE OBSERVERS (READ ONLY; DO NOT BUY)', on_press=_dt_event_option_gate(start_upgrade_trace)),
-        ButtonOption('uvh_upgrade_stop', display_name='6 - STOP / REPORT UPGRADE OBSERVERS', on_press=_dt_event_option_gate(stop_upgrade_trace)),
-        ButtonOption('uvh_ui_start', display_name='7 - START CORE SKILL UI TRACE (READ ONLY; DO NOT BUY)', on_press=_dt_event_option_gate(start_ui_trace)),
-        ButtonOption('uvh_ui_stop', display_name='8 - STOP / REPORT UI TRACE + SNAPSHOT (READ ONLY)', on_press=_dt_event_option_gate(stop_ui_trace)),
-        ButtonOption('uvh_state_start', display_name='9 - START FOCUSED STATE TRACE (READ ONLY; DO NOT BUY)', on_press=_dt_event_option_gate(start_skillstate_trace)),
-        ButtonOption('uvh_state_stop', display_name='10 - STOP / REPORT FOCUSED STATE TRACE', on_press=_dt_event_option_gate(stop_skillstate_trace)),
-        ButtonOption('uvh_loading_snapshot', display_name='Diagnostic - SNAPSHOT TREE LOADING (READ ONLY)', on_press=_dt_event_option_gate(inspect_tree_loading)),
-        ButtonOption('uvh_loading_trace_start', display_name='Diagnostic - START TREE INIT TRACE (READ ONLY)', on_press=_dt_event_option_gate(start_tree_trace)),
-        ButtonOption('uvh_loading_trace_stop', display_name='Diagnostic - STOP TREE INIT TRACE', on_press=_dt_event_option_gate(stop_tree_trace)),
-        ButtonOption('uvh_insert_node_early', display_name='Legacy - INSERT INERT NODE AT MAIN MENU', on_press=_dt_event_option_gate(add_overclock_node)),
-        ButtonOption('uvh_verify_node_early', display_name='Legacy - CHECK CURRENT NODE STATE (READ ONLY)', on_press=_dt_event_option_gate(check_overclock_preload)),
-        ButtonOption('uvh_remove_node_early', display_name='Legacy - REMOVE NODE (if not purchased)', on_press=_dt_event_option_gate(remove_overclock_node)),
-        ButtonOption('uvh_boost_inspect', display_name='Inspect live Deathtrap duration', on_press=_dt_event_option_gate(inspect)),
-        ButtonOption('uvh_boost_apply', display_name='Apply +15s (working manual prototype)', on_press=_dt_event_option_gate(apply)),
-        ButtonOption('uvh_boost_restore', display_name='Restore original duration', on_press=_dt_event_option_gate(restore)),
-        ButtonOption('uvh_dt_event_start', display_name='20 - START PASSIVE MANAGER ENTRY OBSERVER (READ ONLY)', on_press=_cr_option_gate(start_deathtrap_events)),
-        ButtonOption('uvh_dt_event_stop', display_name='21 - STOP / REPORT PASSIVE MANAGER ENTRY OBSERVER', on_press=_cr_option_gate(stop_deathtrap_events)),
-        ButtonOption('uvh_callback_read_start', display_name='22 - START CALLBACK ACTIVATION READER (NO ARM)', on_press=start_callback_local_reader),
-        ButtonOption('uvh_callback_read_stop', display_name='23 - STOP / REPORT CALLBACK ACTIVATION READER', on_press=stop_callback_local_reader),
+        ButtonOption('uvh_purchase_snapshot', display_name='4 - INSPECT DEATHTRAP PARAMETER CLASSES (READ ONLY)', on_press=_rm_option_gate(_dt_event_option_gate(inspect_deathtrap_readiness))),
+        ButtonOption('uvh_upgrade_start', display_name='5 - START UPGRADE OBSERVERS (READ ONLY; DO NOT BUY)', on_press=_rm_option_gate(_dt_event_option_gate(start_upgrade_trace))),
+        ButtonOption('uvh_upgrade_stop', display_name='6 - STOP / REPORT UPGRADE OBSERVERS', on_press=_rm_option_gate(_dt_event_option_gate(stop_upgrade_trace))),
+        ButtonOption('uvh_ui_start', display_name='7 - START CORE SKILL UI TRACE (READ ONLY; DO NOT BUY)', on_press=_rm_option_gate(_dt_event_option_gate(start_ui_trace))),
+        ButtonOption('uvh_ui_stop', display_name='8 - STOP / REPORT UI TRACE + SNAPSHOT (READ ONLY)', on_press=_rm_option_gate(_dt_event_option_gate(stop_ui_trace))),
+        ButtonOption('uvh_state_start', display_name='9 - START FOCUSED STATE TRACE (READ ONLY; DO NOT BUY)', on_press=_rm_option_gate(_dt_event_option_gate(start_skillstate_trace))),
+        ButtonOption('uvh_state_stop', display_name='10 - STOP / REPORT FOCUSED STATE TRACE', on_press=_rm_option_gate(_dt_event_option_gate(stop_skillstate_trace))),
+        ButtonOption('uvh_loading_snapshot', display_name='Diagnostic - SNAPSHOT TREE LOADING (READ ONLY)', on_press=_rm_option_gate(_dt_event_option_gate(inspect_tree_loading))),
+        ButtonOption('uvh_loading_trace_start', display_name='Diagnostic - START TREE INIT TRACE (READ ONLY)', on_press=_rm_option_gate(_dt_event_option_gate(start_tree_trace))),
+        ButtonOption('uvh_loading_trace_stop', display_name='Diagnostic - STOP TREE INIT TRACE', on_press=_rm_option_gate(_dt_event_option_gate(stop_tree_trace))),
+        ButtonOption('uvh_insert_node_early', display_name='Legacy - INSERT INERT NODE AT MAIN MENU', on_press=_rm_option_gate(_dt_event_option_gate(add_overclock_node))),
+        ButtonOption('uvh_verify_node_early', display_name='Legacy - CHECK CURRENT NODE STATE (READ ONLY)', on_press=_rm_option_gate(_dt_event_option_gate(check_overclock_preload))),
+        ButtonOption('uvh_remove_node_early', display_name='Legacy - REMOVE NODE (if not purchased)', on_press=_rm_option_gate(_dt_event_option_gate(remove_overclock_node))),
+        ButtonOption('uvh_boost_inspect', display_name='Inspect live Deathtrap duration', on_press=_rm_option_gate(_dt_event_option_gate(inspect))),
+        ButtonOption('uvh_boost_apply', display_name='Apply +15s (working manual prototype)', on_press=_rm_option_gate(_dt_event_option_gate(apply))),
+        ButtonOption('uvh_boost_restore', display_name='Restore original duration', on_press=_rm_option_gate(_dt_event_option_gate(restore))),
+        ButtonOption('uvh_dt_event_start', display_name='20 - START PASSIVE MANAGER ENTRY OBSERVER (READ ONLY)', on_press=_rm_option_gate(_cr_option_gate(start_deathtrap_events))),
+        ButtonOption('uvh_dt_event_stop', display_name='21 - STOP / REPORT PASSIVE MANAGER ENTRY OBSERVER', on_press=_rm_option_gate(_cr_option_gate(stop_deathtrap_events))),
+        ButtonOption('uvh_callback_read_start', display_name='22 - START CALLBACK ACTIVATION READER (NO ARM)', on_press=_rm_option_gate(start_callback_local_reader)),
+        ButtonOption('uvh_callback_read_stop', display_name='23 - STOP / REPORT CALLBACK ACTIVATION READER', on_press=_rm_option_gate(stop_callback_local_reader)),
+        ButtonOption('uvh_relationship_meta_start', display_name='24 - START RELATIONSHIP CLASS METADATA (NO ARM)', on_press=start_relationship_metadata),
+        ButtonOption('uvh_relationship_meta_stop', display_name='25 - STOP / REPORT RELATIONSHIP CLASS METADATA', on_press=stop_relationship_metadata),
     ],
     auto_enable=True,
     on_disable=shutdown,

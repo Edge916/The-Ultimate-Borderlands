@@ -1,4 +1,5 @@
 """Read-only presentation snapshots with SDK metadata mocks, not engine proof."""
+import inspect
 import types
 import unittest
 from unittest.mock import patch
@@ -82,9 +83,9 @@ class PresentationTests(unittest.TestCase):
     def test_factory_routes_button_four_to_focused_snapshot_and_keeps_nineteen_options(self):
         options = self.h.mod_options['options']
         option = next(option for option in options if option['display_name'].startswith('4 -'))
-        self.assertIs(option['on_press'].__wrapped__, self.h.scope['inspect_deathtrap_readiness'])
-        self.assertEqual(len(options), 23)
-        self.assertEqual(self.h.mod_options['version'], '0.2.18')
+        self.assertIs(inspect.unwrap(option['on_press']), self.h.scope['inspect_deathtrap_readiness'])
+        self.assertEqual(len(options), 25)
+        self.assertEqual(self.h.mod_options['version'], '0.2.19')
 
     def test_unverified_session_tree_rank_points_or_inertness_refuses_before_metadata(self):
         changes = [lambda: setattr(self.h.pc, 'PlayerSkillTree', Obj('ForeignTree')),

@@ -1,6 +1,7 @@
 """Inert manager-entry acceptance; no installed SDK/game behavior is tested."""
 import ast
 import gc
+import inspect
 import sys
 import types
 import unittest
@@ -117,7 +118,7 @@ class PassiveEventTests(unittest.TestCase):
     def test_import_is_inert_with_twenty_one_options(self):
         self.assertIsNone(self.h.scope['_dt_event_context'])
         self.assertEqual(self.h.scope['_dt_event_handles'],[])
-        self.assertEqual(len(self.h.mod_options['options']),23)
+        self.assertEqual(len(self.h.mod_options['options']),25)
         self.assertFalse(any(self.key()==k for k in self.h.hooks))
 
     def test_nominal_one_void_pre_target_and_no_callback_payload_reads(self):
@@ -477,9 +478,9 @@ class PassiveEventTests(unittest.TestCase):
         options=self.h.mod_options['options']
         self.assertIs(options[2]['on_press'],self.h.scope['cancel_init_node'])
         for index,option in enumerate(options[:19]):
-            if index!=2:self.assertIn(option['on_press'].__wrapped__,self.h.scope.values())
-        self.assertIs(options[19]['on_press'].__wrapped__,self.h.scope['start_deathtrap_events'])
-        self.assertIs(options[20]['on_press'].__wrapped__,self.h.scope['stop_deathtrap_events'])
+            if index!=2:self.assertIn(inspect.unwrap(option['on_press']),self.h.scope.values())
+        self.assertIs(inspect.unwrap(options[19]['on_press']),self.h.scope['start_deathtrap_events'])
+        self.assertIs(inspect.unwrap(options[20]['on_press']),self.h.scope['stop_deathtrap_events'])
         self.start();before=self.h.scope['_init_armed']
         self.h.scope['locked_arm']=options[0]['on_press']
         self.assertFalse(self.call('locked_arm'));self.assertEqual(self.h.scope['_init_armed'],before)

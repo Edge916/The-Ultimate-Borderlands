@@ -1,79 +1,71 @@
-Ultimate Vault Hunters v0.2.18 - CALLBACK ACTIVATION READER.
+Ultimate Vault Hunters v0.2.19 - RELATIONSHIP CLASS METADATA.
 
 PREPARED BUILD: OFFLINE VALIDATION ONLY; NOT TESTED IN GAME.
-The preserved v0.2.17 capture has one schema-valid SAME_WRAPPER/OTHER_NAME
-DeactivateSkill PRE event with name=UpshotRobot, OBSERVED_FILTERED, and no
-Skill_DeathTrap match. The owner separately reported a natural Deathtrap end
-and STOP23/CANCEL3/full exit. V16 intentionally omitted its event's Name;
-neither version establishes event attribution or successful deactivation.
-V18 changes the narrower observation to the observed ActivateSkill PRE schema.
-Activation coverage is NOT_OBSERVED until separately approved live evidence.
+The preserved v18 run observed Skill_DeathTrap and filtered UpshotRobot at
+ActivateSkill PRE. It does not connect the supplied manager to the player.
+V19 addresses that metadata gap by cataloguing selected class descriptors.
+Native manager ownership and the automatic +15-second effect remain NOT_READY.
 
-Controls22/23 start/stop a standalone read-only ActivateSkill PRE reader.
-NO ARM or node insertion is needed. START refuses armed/injected node,
-manual duration record, other active observers or uncertain cleanup. It reads
-no player objects or metadata from the mod-option handler. Fresh schema and
-sole-player Gaige facts are obtained only inside a natural callback.
+NEW CONTROLS:
+24 - START RELATIONSHIP CLASS METADATA (NO ARM)
+25 - STOP / REPORT RELATIONSHIP CLASS METADATA
+3 - CANCEL / RESTORE NATIVE ARRAYS (THEN RESTART)
 
-The callback validates five freshly loaded classes and all six ordered direct
-properties: SkillInstigator,Definition,AdditionalSkillTarget,SkillGrade,
-StateChangeDelegate,ReturnValue. Exact property bindings, flags, offsets,
-dimensions, element sizes and owners must match the captured v14 metadata.
-Complete fresh ReturnValue metadata and original descriptor identity are
-rechecked with function links before/after each of the two parameter getters.
-Ignored field values, delegate Signature and Boolean FieldMask are never read
-by the Python reader. Only SkillInstigator, then local Definition and one Name
-may be read. Foreign/null instigators leave Definition and Name unread.
+START installs one fixed ActivateSkill PRE observer, with no class/player read
+in the option handler. The first natural accepting callback validates the
+known function schema and catalogues only the two evidenced class PropertyLink
+scopes: SkillEffectManager and WillowPlayerController, including declared
+ancestors. The collector then becomes inert; explicit STOP is still required.
+No ARM, inserted node or purchase is needed. Other observers/manual boost and
+uncertain cleanup block START; older controls/start surfaces refuse overlap.
 
-[UVH-ACTIVATION] EVENT carries name=<identifier> for a validated non-null
-local definition, or name=- for null/foreign/unread branches. The sentinel is
-not an identifier. Names are exact ASCII strings,1..128 letters/digits/_;
-invalid values refuse, with no clipping, path/repr or exception output.
-Only exact Skill_DeathTrap matches DEATHTRAP_NAME; all other valid names remain
-OTHER_NAME. Names leave the inspection as primitives; SDK payload locals are
-dropped before logging and no name history is kept in reader state.
-The Python ret argument stays unread. Every callback returns exact None.
-PRE means attempted entry; another hook may block or override native execution.
-None adds no block or return override and preserves another hook's override.
-A name/wrapper match does not prove owned manager, unique active summon,
-native generation, successful activation, clock, rank-one or effect safety.
+Rows contain descriptor Name, declaring-owner index, flags, offset, dimension,
+size and one known declared-class token. OTHER declarations and unsupported
+object-property subtypes are counted without following their classes.
+No instigator/definition/ret/target/grade/delegate or manager/skill field value
+is read. No GetSkillManager, engine function/delegate invocation, ActiveSkills
+payload or flag/Duration/point/rank/save write. Callback returns exact None.
+Native references and exceptions remain callback-local and are dropped before
+bounded primitive JSON output with prefix [UVH-REL-META].
 
-Limits: one PRE hook,64 attempts,24 classified records,120 seconds checked on
-callbacks/controls; stage caps112,80,48,80 counted reader-issued operations,
-320 total;384 UTF8 bytes including the complete project prefix. Longest valid
-EVENT is317 bytes. No background timer. The explicit Python meter cannot bound
-SDK argument copying, conversions, metadata/helper internals or prior Boolean
-return conversion. ProcessEvent copies PARAM fields including ReturnValue;
-CallFunction steps input expressions before PRE. Native wrapping/downcast also
-precedes Python guards. Ignoring values cannot suppress that earlier SDK work.
-This reader assumes ordinary-valid SDK hook inputs; exceptions cannot contain
-native pointer faults. Hook-time VM/GC guidance and the calling-thread GIL do
-not prove game-thread affinity, installed binary/build/configuration identity,
-arbitrary destruction exclusion or native allocation generation/lifetime.
+COMPLETE_LINK means a null-terminated, rechecked property-link scope only.
+It does not prove all game fields, a relationship's semantics, actual manager
+ownership, successful activation/lifecycle, native generation/liveness,
+engine clock/Duration, purchased rank-one or exact-original effect cleanup.
+Partial/refused/silent results remain valid findings; do not repeat to force
+coverage. V17's UpshotRobot and V16's omitted Name remain unchanged.
 
-Other project controls refuse while the reader or cleanup is active. STOP23,
-CANCEL3 and disable remain available. Stop clears accepting before owned hook
-removal; busy removal is deferred. Failed owned removal retains an inert tuple
-for retry, and uncertain registration is never removed as owned. Failure
-history remains after retry. No new Duration, point, rank, save or flag write,
-native engine/BoundFunction/delegate call, extra hook phase or active-skill scan.
-Historical manual boost/restore stays separate from CANCEL/disable and blocked
-during the reader.
+Bounds: one attempt/session;512 descriptors and64 known-token rows/root;
+stage operation caps112/96/14000/14000,28208 total;2-second collector and
+120-second session checked on operations/callbacks/controls, no timer;
+512 ASCII bytes/message,128 rows and205 project records/session.
+The meter covers issued operations, not SDK copy/casts/getter/helper internals.
+A single native call may overrun a limit. Ordinary-valid SDK hook input is
+assumed; Python exceptions cannot contain native pointer faults. Prior return
+conversion and ProcessEvent argument copying/CallFunction expression steps
+occur before Python. GIL/VM-GC guidance does not establish game-thread,
+binary/configuration equivalence, arbitrary destruction or post-return leases.
+
+STOP/CANCEL/disable set the collector inert before owned hook cleanup. Busy
+STOP is deferred and needs another explicit STOP after collection ends.
+Failed cleanup stays visible after retry. Uncertain registration is never
+adopted or removed as owned; no automatic rearm. Logging/counter exhaustion
+blocks restart and never substitutes for a final resolved STOP record.
+Historical manual duration helpers stay separate; CANCEL/disable do not
+invoke manual Duration restore or prove point/save recovery.
 
 PACKAGE AND LATER OWNER TEST:
-Exactly one folder with __init__.py,pyproject.toml,README.txt;23 options.
-Import starts no new hook. This v18 build does not authorize a game test.
-First accept its implementation and separate strict activation reviewer,
-then obtain explicit owner approval for the exact ZIP and a location-specific
-protocol. No ARM. Future instructions must specify the main menu, fully loaded
-map, START22, any separately approved ordinary Deathtrap use, in-map
-STOP23/CANCEL3 and full exit to desktop before preservation. Do not run now.
-No buying, respec, travel, manual boost, forced native calls or other trace.
-Silence/refusal is preserved without retry to manufacture identifier coverage.
-Any future raw capture is reviewed and separately approved before public export.
-A simple identifier alphabet is not a universal privacy guarantee.
+Exactly one folder with __init__.py,pyproject.toml,README.txt;25 options.
+Import starts no hook or game lookup. This prepared build authorizes no test.
+First accept implementation and the separate strict offline reviewer, then
+obtain new approval of the exact ZIP/title/hash and detailed owner protocol.
+Future steps must clearly identify MAIN MENU Offline/Gaige/title/no ARM,
+Continue to fully loaded MAP, START24 once, any separately approved ordinary
+summon, in-map STOP25/CANCEL3 and full exit to DESKTOP before preservation.
+No buying/respec/travel/manual boost/item4/other trace or automatic retry.
+Do not install, launch or run that protocol before its separate approval.
+Public export of any future complete raw log requires its own review/approval.
 
-Preserve all raw logs/manifests/tested snapshots and17 original versioned ZIPs.
-The new v18 ZIP is immutable after packaging; never rebuild a versioned ZIP.
-Zero events remains NOT_OBSERVED. Native/effect gates remain NOT_READY.
-No automatic duration effect, co-op, save/private-backup action, merge or release.
+Preserve all frozen logs/manifests/tested snapshots and18 original versioned
+ZIPs. New original v19 ZIP is immutable once packaged; never rebuild originals.
+No co-op, automatic effect, save/private-backup action, merge or release.

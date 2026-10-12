@@ -302,11 +302,11 @@ class ActivationReaderTests(unittest.TestCase):
         self.assertNotIn('SkillInstigator', self.args.reads)
 
     def test_factory_activation_identity_and_start_has_no_native_access(self):
-        self.assertEqual(self.h.mod_options['name'], 'UVH v0.2.18 - CALLBACK ACTIVATION READER')
-        self.assertEqual(self.h.mod_options['version'], '0.2.18')
+        self.assertEqual(self.h.mod_options['name'], 'UVH v0.2.19 - RELATIONSHIP CLASS METADATA')
+        self.assertEqual(self.h.mod_options['version'], '0.2.19')
         self.assertEqual(self.h.scope['_CR_PATH'], 'WillowGame.SkillEffectManager:ActivateSkill')
         self.assertEqual(self.h.scope['_CR_IDENT'], 'UVH_ACTIVATION_READER_V18_PRE')
-        self.assertEqual(len(self.h.mod_options['options']), 23)
+        self.assertEqual(len(self.h.mod_options['options']), 25)
         self.assertIn('22', self.h.mod_options['options'][21]['display_name'])
         self.assertIn('ACTIVATION', self.h.mod_options['options'][21]['display_name'])
         self.assertIn('23', self.h.mod_options['options'][22]['display_name'])

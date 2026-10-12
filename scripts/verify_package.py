@@ -25,18 +25,23 @@ registered = []
 base.build_mod = lambda **kwargs: registered.append(kwargs)
 sdk = types.ModuleType('unrealsdk')
 sdk.logging = types.SimpleNamespace(info=forbidden)
-sdk.find_object = sdk.find_all = sdk.find_enum = sdk.load_package = sdk.construct_object = forbidden
+sdk.find_object = sdk.find_all = sdk.find_enum = sdk.find_class = sdk.load_package = sdk.construct_object = forbidden
 sys.modules['mods_base'] = base
 sys.modules['unrealsdk'] = sdk
 scope = runpy.run_path(sys.argv[1])
 assert len(registered) == 1
 assert registered[0]['version'] == sys.argv[2]
 assert registered[0]['on_disable'].__name__ == 'shutdown'
-assert len(registered[0]['options']) == 23
-assert registered[0]['name'] == 'UVH v0.2.18 - CALLBACK ACTIVATION READER'
+assert len(registered[0]['options']) == 25
+assert registered[0]['name'] == 'UVH v0.2.19 - RELATIONSHIP CLASS METADATA'
 assert scope['_CR_PATH'] == 'WillowGame.SkillEffectManager:ActivateSkill'
 assert scope['_CR_IDENT'] == 'UVH_ACTIVATION_READER_V18_PRE'
 assert '[UVH-ACTIVATION] ' in scope['_cr_emit'].__code__.co_consts
+assert scope['_RM_PATH'] == 'WillowGame.SkillEffectManager:ActivateSkill'
+assert scope['_RM_IDENT'] == 'UVH_RELATION_METADATA_V19_PRE'
+assert '[UVH-REL-META] ' in scope['_rm_record'].__code__.co_consts
+assert scope['_RM_CAPS'] == (112, 96, 14000, 14000)
+assert not scope['_rm_accepting'] and scope['_rm_pending'] is None
 print('PASS: isolated packaged runtime import; no game access or scaffolding')
 '''
 
