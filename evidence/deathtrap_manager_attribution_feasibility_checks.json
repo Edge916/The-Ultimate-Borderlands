@@ -1,0 +1,3012 @@
+{
+  "schema_version": 1,
+  "task_id": "8000d82d-657c-4295-ae86-7e17b44fe98c",
+  "status": "PASS",
+  "accepted_assessment": "132f3c628b0560d75f4aeff81ae1062d3f7a1255",
+  "parent_PR": "https://github.com/Edge916/The-Ultimate-Borderlands/pull/46",
+  "branch": "codex/jake-manager-attribution-audit",
+  "scope": [
+    "docs/deathtrap_manager_attribution_feasibility.md",
+    "evidence/deathtrap_manager_attribution_feasibility_checks.json"
+  ],
+  "decision": "METADATA_GAP; no verified controller-to-manager field route in inspected evidence; native effect NOT_READY",
+  "manager_attribution_ready": false,
+  "native_owned_lifecycle_ready": false,
+  "native_effect_ready": false,
+  "next_bounded_work": "Separate metadata-only discovery design for known class descriptors; no new field/value read, invocation or game test authorized",
+  "input_fingerprints": [
+    {
+      "path": "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+      "bytes": 217340,
+      "sha256": "7663f81a14ba23d44d6af3ea4add0f4309bddbf7b075c9b341b36229e59afbe0"
+    },
+    {
+      "path": "evidence/deathtrap_activation_reader_user_test.log",
+      "bytes": 8847,
+      "sha256": "5e10b5e4c6687f3b6abad0175e0d6d5ff7348cac3c8a4ad225753e31838e3d2e"
+    },
+    {
+      "path": "evidence/deathtrap_activation_reader_capture_manifest.json",
+      "bytes": 15369,
+      "sha256": "7f8f0506e526f430c2d9b1df89d07873f62d8eac328a72260b62d9bb515921bf"
+    },
+    {
+      "path": "scripts/review_deathtrap_activation_reader_log.py",
+      "bytes": 20492,
+      "sha256": "a886f9fb275ee8eb9574afc98f00fa4f9567164fb9732563bc5771ee55d71aae"
+    },
+    {
+      "path": "evidence/deathtrap_activation_reader_live_readiness_result.md",
+      "bytes": 12610,
+      "sha256": "3ac34828fe71047b42a78c5339212eb5e77a265b0f5cb4ad36c06e7f90e825e8"
+    },
+    {
+      "path": "evidence/deathtrap_activation_reader_live_readiness_checks.json",
+      "bytes": 29667,
+      "sha256": "29320addeb5bbcdd8fcc786494beb71ecec01b8482ce4d2f81adbdb785a1c88c"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "bytes": 37500,
+      "sha256": "d147e79ece6e894a6bee6fa8bbb97c1c3f0885e1f2c7d9d165dde3b0565cd84c"
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "bytes": 35616,
+      "sha256": "f3a6397839fdb7aecb97b117e23e28bcad4d42c5e0c6bf8fe6c5c384c6dd8e95"
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "bytes": 32788,
+      "sha256": "8ddbb6aeae5d96be14879adf69fd21c6a7a1fcdbd3e55ec5f4199b2f943f520a"
+    },
+    {
+      "path": "docs/deathtrap_activation_reader_feasibility.md",
+      "bytes": 11454,
+      "sha256": "274a9251ca7d3217e053806382a8559d693960b62f6fc3db678d9c7fe212e9a3"
+    },
+    {
+      "path": "docs/deathtrap_activation_reader_design.md",
+      "bytes": 21496,
+      "sha256": "8dd3ef562dde2ca4dfb1bf69e0faf4c310a5005c47044858fda83a8e0d028fb7"
+    },
+    {
+      "path": "docs/overclock_identity_cleanup_contract.md",
+      "bytes": 10711,
+      "sha256": "3abd5f388ec5bf9bf501790ed8798c688945a8ca8874333b2031340bfd198cdc"
+    }
+  ],
+  "full_fresh_v18_offline_review": {
+    "schema_version": 1,
+    "reader_version": "0.2.18",
+    "status": "COMPLETE_LOG_TEXT",
+    "log_text_acceptable": true,
+    "log_text_consistent": true,
+    "reader_sections_complete": true,
+    "input": {
+      "bytes": 8847,
+      "sha256": "5e10b5e4c6687f3b6abad0175e0d6d5ff7348cac3c8a4ad225753e31838e3d2e"
+    },
+    "records": 7,
+    "sessions": [
+      {
+        "line": 24,
+        "epoch": 1,
+        "started": true,
+        "failed_start": null,
+        "orphan": false,
+        "attempts": 2,
+        "classified": 2,
+        "filtered": 1,
+        "nulls": 0,
+        "useful": 1,
+        "refusals": 0,
+        "errors": 0,
+        "cleanup_failures": 0,
+        "overlap_refusals": 0,
+        "limit": "NONE",
+        "terminal": true,
+        "removal_pending": false,
+        "awaiting_stop": false,
+        "stops": [
+          {
+            "line": 27,
+            "epoch": 1,
+            "remaining": 0,
+            "uncertain": 0,
+            "attempts": 2,
+            "classified": 2,
+            "filtered": 1,
+            "nulls": 0,
+            "refusals": 0,
+            "errors": 0,
+            "reentry": 0,
+            "cleanup_failures": 0,
+            "limit": "NONE",
+            "outcome": "OBSERVED_PRIMITIVE"
+          },
+          {
+            "line": 29,
+            "epoch": 1,
+            "remaining": 0,
+            "uncertain": 0,
+            "attempts": 2,
+            "classified": 2,
+            "filtered": 1,
+            "nulls": 0,
+            "refusals": 0,
+            "errors": 0,
+            "reentry": 0,
+            "cleanup_failures": 0,
+            "limit": "NONE",
+            "outcome": "OBSERVED_PRIMITIVE"
+          }
+        ],
+        "classifications": {
+          "SAME_WRAPPER/DEATHTRAP_NAME": 1,
+          "SAME_WRAPPER/OTHER_NAME": 1
+        },
+        "events": [
+          {
+            "line": 25,
+            "epoch": 1,
+            "ordinal": 1,
+            "attempt": 1,
+            "controller": "SAME_WRAPPER",
+            "definition": "DEATHTRAP_NAME",
+            "name": "Skill_DeathTrap"
+          },
+          {
+            "line": 26,
+            "epoch": 1,
+            "ordinal": 2,
+            "attempt": 2,
+            "controller": "SAME_WRAPPER",
+            "definition": "OTHER_NAME",
+            "name": "UpshotRobot"
+          }
+        ]
+      }
+    ],
+    "overlap_refusals": 0,
+    "issues": [],
+    "issue_count": 0,
+    "issues_truncated": false,
+    "cleanup": {
+      "reader_handles_resolved": true,
+      "prior_refusal_preserved": false,
+      "other_observers": "NOT_ESTABLISHED",
+      "arrays_or_manual_duration": "NOT_ESTABLISHED",
+      "process_exit": "NOT_ESTABLISHED"
+    },
+    "event_meaning": "PRE attempted entry; validated primitive definition name only; no association or lifespan",
+    "schema_evidence": "ASSERTED_IN_LOG_TEXT",
+    "native_ownership": "NOT_ESTABLISHED",
+    "summon_generation": "NOT_ESTABLISHED",
+    "native_clock": "NOT_ESTABLISHED",
+    "installation": "NOT_ESTABLISHED",
+    "owner_protocol": "NOT_ESTABLISHED",
+    "authenticity": "NOT_ESTABLISHED",
+    "engine_behavior": "NOT_ESTABLISHED",
+    "native_owned_lifecycle_ready": false,
+    "native_effect_ready": false,
+    "silence": "NOT_OBSERVED never proves absence, activation, ownership or lifespan"
+  },
+  "entire_manifest_report_equal": true,
+  "offline_review_cli_exit": 0,
+  "owner_report": "Deathtrap ended naturally, confirm **STOP 23 / CANCEL 3 / full exit**",
+  "owner_report_scope": "Natural end and STOP23/CANCEL3/full exit; UI, START, summon count, wait not independently observed",
+  "preserved_log_inventory": [
+    {
+      "path": "evidence/deathtrap_activation_reader_user_test.log",
+      "bytes": 8847,
+      "sha256": "5e10b5e4c6687f3b6abad0175e0d6d5ff7348cac3c8a4ad225753e31838e3d2e"
+    },
+    {
+      "path": "evidence/deathtrap_callback_definition_name_user_test.log",
+      "bytes": 13666,
+      "sha256": "3f2017cc1b700574b99a442711163ea51e47f5921e645d66cf69b6ff79187efe"
+    },
+    {
+      "path": "evidence/deathtrap_callback_local_reader_user_test.log",
+      "bytes": 13802,
+      "sha256": "0c16ddf9dd0c46459fec53599b9685f4f2e3f6e5c263977be99cfaddb13b5fdc"
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "bytes": 35616,
+      "sha256": "f3a6397839fdb7aecb97b117e23e28bcad4d42c5e0c6bf8fe6c5c384c6dd8e95"
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "bytes": 37500,
+      "sha256": "d147e79ece6e894a6bee6fa8bbb97c1c3f0885e1f2c7d9d165dde3b0565cd84c"
+    },
+    {
+      "path": "evidence/deathtrap_passive_event_user_test.log",
+      "bytes": 17205,
+      "sha256": "3c1de714692827194df6881ebb01ecfcf3273a02e9cd825b420efc6210b3c402"
+    },
+    {
+      "path": "evidence/v011_duration_write_verified.log",
+      "bytes": 5104,
+      "sha256": "220156804885f48c683d0aa437d7287a10e90d26814601a6e7ef2f989c7644ab"
+    },
+    {
+      "path": "evidence/v014_native_branches_and_layout.log",
+      "bytes": 65342,
+      "sha256": "9b34b4fc0fd2606f5b61d511ba3e3c6f77f4edc5e0dc98d84545f6842275ab55"
+    },
+    {
+      "path": "evidence/v015_skill_definitions_and_construct_api.log",
+      "bytes": 35062,
+      "sha256": "f3445f5e94b6f22b0fc34ed52c2c1ab39df666d55f228fe508638775746fa4d8"
+    },
+    {
+      "path": "evidence/v016_node_insertion_verified_but_NOT_VISIBLE.log",
+      "bytes": 4811,
+      "sha256": "739686b4f276645d9d5df34542b7b54c9a5d2c466f2a3a2fa269e9856fb9bba7"
+    },
+    {
+      "path": "evidence/v017_main_menu_assets_unavailable.log",
+      "bytes": 5678,
+      "sha256": "16c5ebc42cc3c6a9743a0b98dabb8372613b2a9d4c1bc07e8cfce02befa3fc65"
+    },
+    {
+      "path": "evidence/v018_assets_transient_playerskilltree_found.log",
+      "bytes": 37521,
+      "sha256": "6e72a5b2532bf711c86b39377c6dc0d6df24f6111a01b729c0980b3d209777d8"
+    },
+    {
+      "path": "evidence/v019_live_tree_and_init_trace.log",
+      "bytes": 323154,
+      "sha256": "505cc62b6c2b65cde9e24bda49b9c9b0cf6a4d80286f0633fb2ece2a6ffc8ca3"
+    },
+    {
+      "path": "evidence/v020_netmode_guard_aborted_no_insertion.log",
+      "bytes": 6255,
+      "sha256": "6161e9857a1ea3c7074cde07b4582676c004c77aac5690f49c994f4ee98ab5a5"
+    },
+    {
+      "path": "evidence/v021_native_node_visible_and_restored.log",
+      "bytes": 24783,
+      "sha256": "bb42d31110462749ad21f90885a911d9f92cb22a50a1cff74660b91eb68544ca"
+    },
+    {
+      "path": "evidence/v022_purchase_rank_metadata_and_restored.log",
+      "bytes": 96901,
+      "sha256": "78cfa63fd67c1f989e48c00d2da947a0fd75cbe6581970d436d7c1a8137b487a"
+    },
+    {
+      "path": "evidence/v022_repeat_rank_preview_clarification.log",
+      "bytes": 95766,
+      "sha256": "d684add928bc46cbf7a5a27356282a2df1b87bbdb9dca0724d49b6aed05c7482"
+    },
+    {
+      "path": "evidence/v023_upgrade_metadata_and_restored.log",
+      "bytes": 112794,
+      "sha256": "d0dc15edca2e0b9d737bcbabfa87104c1f4fa792bb01829ec5a9390b07f82e77"
+    },
+    {
+      "path": "evidence/v024_upgrade_observers_zero_calls_and_restored.log",
+      "bytes": 20349,
+      "sha256": "f4c0e99d17ac743339eabb5381d31d3f78be80bf0b9fc328ec32f57518058c8b"
+    },
+    {
+      "path": "evidence/v024_user_test.log",
+      "bytes": 16459,
+      "sha256": "05fd15067c53b0553d6b71ae99ced9bef413170abaeceb8897d6522f1a0b5bdc"
+    },
+    {
+      "path": "evidence/v025_user_test.log",
+      "bytes": 30099,
+      "sha256": "c476847b867b8919e97ca678d56032e09b7de4a717336969a1c389588d29ccef"
+    },
+    {
+      "path": "evidence/v026_user_test.log",
+      "bytes": 49774,
+      "sha256": "8509efded92cb6787964bbfe178821a5cd1ff2d1b3c4bccf7d2304e2cbc61281"
+    },
+    {
+      "path": "evidence/v027_user_test.log",
+      "bytes": 31364,
+      "sha256": "3024e4692fa28f0ea17ec39b3f6131ce5db1329991c4285aae5169b837195452"
+    },
+    {
+      "path": "evidence/v028_presentation_retry.log",
+      "bytes": 38263,
+      "sha256": "348d9ce354c6ec3853813de5eecba2c258d8fad72c8aab8280d26d4ec8a37229"
+    },
+    {
+      "path": "evidence/v028_user_test.log",
+      "bytes": 20009,
+      "sha256": "2f3670fa1c50ced4864daf5fd8db9585b6ef5c6af36b7bded9fe8d16341d326d"
+    },
+    {
+      "path": "evidence/v029_user_test.log",
+      "bytes": 94218,
+      "sha256": "9f73970ca42390bf96904b0af174ebaec93faf77b40db6baf5a9ab3979bb3279"
+    },
+    {
+      "path": "evidence/v030_user_test.log",
+      "bytes": 259457,
+      "sha256": "88a79e741abb6b217f8f8a23c42e14578c11c75f2686abcfecc13d2c74e294fb"
+    },
+    {
+      "path": "evidence/v031_user_test.log",
+      "bytes": 93722,
+      "sha256": "7339178b278e7e4c63a8ec4272a692c199840c82c99017be2198901f1a1f3b00"
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "bytes": 32788,
+      "sha256": "8ddbb6aeae5d96be14879adf69fd21c6a7a1fcdbd3e55ec5f4199b2f943f520a"
+    }
+  ],
+  "relevant_metadata_rows": [
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 66,
+      "descriptor": {
+        "ancestry": [
+          {
+            "name": "WillowPlayerController",
+            "path": "WillowGame.WillowPlayerController"
+          },
+          {
+            "name": "GearboxPlayerController",
+            "path": "GearboxFramework.GearboxPlayerController"
+          },
+          {
+            "name": "GamePlayerController",
+            "path": "GameFramework.GamePlayerController"
+          },
+          {
+            "name": "PlayerController",
+            "path": "Engine.PlayerController"
+          },
+          {
+            "name": "Controller",
+            "path": "Engine.Controller"
+          },
+          {
+            "name": "Actor",
+            "path": "Engine.Actor"
+          },
+          {
+            "name": "Object",
+            "path": "Core.Object"
+          }
+        ],
+        "coverage": "COMPLETE",
+        "kind": "CLASS",
+        "path": "WillowGame.WillowPlayerController",
+        "target": "controller"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 67,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 132097,
+        "kind": "FUNCTION",
+        "name": "GetSkillManager",
+        "num_params": 1,
+        "params_size": 4,
+        "path": "WillowGame.WillowPlayerController:GetSkillManager",
+        "properties": [
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 1408,
+            "name": "ReturnValue",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          }
+        ],
+        "return_offset": 0,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 68,
+      "descriptor": {
+        "ancestry": [
+          {
+            "name": "SkillEffectManager",
+            "path": "WillowGame.SkillEffectManager"
+          },
+          {
+            "name": "Actor",
+            "path": "Engine.Actor"
+          },
+          {
+            "name": "Object",
+            "path": "Core.Object"
+          }
+        ],
+        "coverage": "COMPLETE",
+        "kind": "CLASS",
+        "path": "WillowGame.SkillEffectManager",
+        "target": "manager"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 70,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 149506,
+        "kind": "FUNCTION",
+        "name": "ActivateSkill",
+        "num_params": 6,
+        "params_size": 32,
+        "path": "WillowGame.SkillEffectManager:ActivateSkill",
+        "properties": [
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "SkillInstigator",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "Definition",
+            "offset": 4,
+            "type": "ZObjectProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 144,
+            "name": "AdditionalSkillTarget",
+            "offset": 8,
+            "type": "ZObjectProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 144,
+            "name": "SkillGrade",
+            "offset": 12,
+            "type": "ZIntProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 12,
+            "flags": 4194448,
+            "name": "StateChangeDelegate",
+            "offset": 16,
+            "type": "ZDelegateProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 1408,
+            "name": "ReturnValue",
+            "offset": 28,
+            "type": "ZBoolProperty"
+          }
+        ],
+        "return_offset": 28,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 71,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 149506,
+        "kind": "FUNCTION",
+        "name": "DeactivateSkill",
+        "num_params": 3,
+        "params_size": 12,
+        "path": "WillowGame.SkillEffectManager:DeactivateSkill",
+        "properties": [
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "SkillInstigator",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "Definition",
+            "offset": 4,
+            "type": "ZObjectProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 144,
+            "name": "bIgnoreSkillInstigator",
+            "offset": 8,
+            "type": "ZBoolProperty"
+          }
+        ],
+        "return_offset": 65535,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 73,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "dimension": 1,
+        "element_class": "WillowGame.Skill",
+        "element_size": 12,
+        "flags": 4194304,
+        "inner_type": "ZObjectProperty",
+        "kind": "FIELD",
+        "name": "ActiveSkills",
+        "offset": 408,
+        "owner": "WillowGame.SkillEffectManager",
+        "type": "ZArrayProperty"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 77,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "declared_class": "Engine.Controller",
+        "dimension": 1,
+        "element_size": 4,
+        "flags": 0,
+        "inner_type": "NOT_APPLICABLE",
+        "kind": "FIELD",
+        "name": "SkillInstigator",
+        "offset": 180,
+        "owner": "WillowGame.Skill",
+        "type": "ZObjectProperty"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 84,
+      "descriptor": {
+        "ancestry": [
+          {
+            "name": "WillowPlayerController",
+            "path": "WillowGame.WillowPlayerController"
+          },
+          {
+            "name": "GearboxPlayerController",
+            "path": "GearboxFramework.GearboxPlayerController"
+          },
+          {
+            "name": "GamePlayerController",
+            "path": "GameFramework.GamePlayerController"
+          },
+          {
+            "name": "PlayerController",
+            "path": "Engine.PlayerController"
+          },
+          {
+            "name": "Controller",
+            "path": "Engine.Controller"
+          },
+          {
+            "name": "Actor",
+            "path": "Engine.Actor"
+          },
+          {
+            "name": "Object",
+            "path": "Core.Object"
+          }
+        ],
+        "coverage": "COMPLETE",
+        "kind": "CLASS",
+        "path": "WillowGame.WillowPlayerController",
+        "target": "controller"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 85,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 132097,
+        "kind": "FUNCTION",
+        "name": "GetSkillManager",
+        "num_params": 1,
+        "params_size": 4,
+        "path": "WillowGame.WillowPlayerController:GetSkillManager",
+        "properties": [
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 1408,
+            "name": "ReturnValue",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          }
+        ],
+        "return_offset": 0,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 86,
+      "descriptor": {
+        "ancestry": [
+          {
+            "name": "SkillEffectManager",
+            "path": "WillowGame.SkillEffectManager"
+          },
+          {
+            "name": "Actor",
+            "path": "Engine.Actor"
+          },
+          {
+            "name": "Object",
+            "path": "Core.Object"
+          }
+        ],
+        "coverage": "COMPLETE",
+        "kind": "CLASS",
+        "path": "WillowGame.SkillEffectManager",
+        "target": "manager"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 88,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 149506,
+        "kind": "FUNCTION",
+        "name": "ActivateSkill",
+        "num_params": 6,
+        "params_size": 32,
+        "path": "WillowGame.SkillEffectManager:ActivateSkill",
+        "properties": [
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "SkillInstigator",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "Definition",
+            "offset": 4,
+            "type": "ZObjectProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 144,
+            "name": "AdditionalSkillTarget",
+            "offset": 8,
+            "type": "ZObjectProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 144,
+            "name": "SkillGrade",
+            "offset": 12,
+            "type": "ZIntProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 12,
+            "flags": 4194448,
+            "name": "StateChangeDelegate",
+            "offset": 16,
+            "type": "ZDelegateProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 1408,
+            "name": "ReturnValue",
+            "offset": 28,
+            "type": "ZBoolProperty"
+          }
+        ],
+        "return_offset": 28,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 89,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 149506,
+        "kind": "FUNCTION",
+        "name": "DeactivateSkill",
+        "num_params": 3,
+        "params_size": 12,
+        "path": "WillowGame.SkillEffectManager:DeactivateSkill",
+        "properties": [
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "SkillInstigator",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "Definition",
+            "offset": 4,
+            "type": "ZObjectProperty"
+          },
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 144,
+            "name": "bIgnoreSkillInstigator",
+            "offset": 8,
+            "type": "ZBoolProperty"
+          }
+        ],
+        "return_offset": 65535,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 91,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "dimension": 1,
+        "element_class": "WillowGame.Skill",
+        "element_size": 12,
+        "flags": 4194304,
+        "inner_type": "ZObjectProperty",
+        "kind": "FIELD",
+        "name": "ActiveSkills",
+        "offset": 408,
+        "owner": "WillowGame.SkillEffectManager",
+        "type": "ZArrayProperty"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_manager_metadata_user_test.log",
+      "line": 95,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "declared_class": "Engine.Controller",
+        "dimension": 1,
+        "element_size": 4,
+        "flags": 0,
+        "inner_type": "NOT_APPLICABLE",
+        "kind": "FIELD",
+        "name": "SkillInstigator",
+        "offset": 180,
+        "owner": "WillowGame.Skill",
+        "type": "ZObjectProperty"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 66,
+      "descriptor": {
+        "ancestry": [
+          {
+            "name": "WillowPlayerController",
+            "path": "WillowGame.WillowPlayerController"
+          },
+          {
+            "name": "GearboxPlayerController",
+            "path": "GearboxFramework.GearboxPlayerController"
+          },
+          {
+            "name": "GamePlayerController",
+            "path": "GameFramework.GamePlayerController"
+          },
+          {
+            "name": "PlayerController",
+            "path": "Engine.PlayerController"
+          },
+          {
+            "name": "Controller",
+            "path": "Engine.Controller"
+          },
+          {
+            "name": "Actor",
+            "path": "Engine.Actor"
+          },
+          {
+            "name": "Object",
+            "path": "Core.Object"
+          }
+        ],
+        "coverage": "COMPLETE",
+        "kind": "CLASS",
+        "path": "WillowGame.WillowPlayerController",
+        "target": "controller"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 67,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 132097,
+        "kind": "FUNCTION",
+        "name": "GetSkillManager",
+        "num_params": 1,
+        "parameter_classes_coverage": "COMPLETE",
+        "params_size": 4,
+        "path": "WillowGame.WillowPlayerController:GetSkillManager",
+        "properties": [
+          {
+            "declared_class": "WillowGame.SkillEffectManager",
+            "declared_class_coverage": "COMPLETE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 1408,
+            "name": "ReturnValue",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          }
+        ],
+        "return_offset": 0,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 68,
+      "descriptor": {
+        "ancestry": [
+          {
+            "name": "SkillEffectManager",
+            "path": "WillowGame.SkillEffectManager"
+          },
+          {
+            "name": "Actor",
+            "path": "Engine.Actor"
+          },
+          {
+            "name": "Object",
+            "path": "Core.Object"
+          }
+        ],
+        "coverage": "COMPLETE",
+        "kind": "CLASS",
+        "path": "WillowGame.SkillEffectManager",
+        "target": "manager"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 70,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 149506,
+        "kind": "FUNCTION",
+        "name": "ActivateSkill",
+        "num_params": 6,
+        "parameter_classes_coverage": "COMPLETE",
+        "params_size": 32,
+        "path": "WillowGame.SkillEffectManager:ActivateSkill",
+        "properties": [
+          {
+            "declared_class": "Engine.Controller",
+            "declared_class_coverage": "COMPLETE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "SkillInstigator",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          },
+          {
+            "declared_class": "WillowGame.SkillDefinition",
+            "declared_class_coverage": "COMPLETE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "Definition",
+            "offset": 4,
+            "type": "ZObjectProperty"
+          },
+          {
+            "declared_class": "Core.Object",
+            "declared_class_coverage": "COMPLETE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 144,
+            "name": "AdditionalSkillTarget",
+            "offset": 8,
+            "type": "ZObjectProperty"
+          },
+          {
+            "declared_class": "NOT_APPLICABLE",
+            "declared_class_coverage": "NOT_APPLICABLE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 144,
+            "name": "SkillGrade",
+            "offset": 12,
+            "type": "ZIntProperty"
+          },
+          {
+            "declared_class": "NOT_APPLICABLE",
+            "declared_class_coverage": "NOT_APPLICABLE",
+            "dimension": 1,
+            "element_size": 12,
+            "flags": 4194448,
+            "name": "StateChangeDelegate",
+            "offset": 16,
+            "type": "ZDelegateProperty"
+          },
+          {
+            "declared_class": "NOT_APPLICABLE",
+            "declared_class_coverage": "NOT_APPLICABLE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 1408,
+            "name": "ReturnValue",
+            "offset": 28,
+            "type": "ZBoolProperty"
+          }
+        ],
+        "return_offset": 28,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 71,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 149506,
+        "kind": "FUNCTION",
+        "name": "DeactivateSkill",
+        "num_params": 3,
+        "parameter_classes_coverage": "COMPLETE",
+        "params_size": 12,
+        "path": "WillowGame.SkillEffectManager:DeactivateSkill",
+        "properties": [
+          {
+            "declared_class": "Engine.Controller",
+            "declared_class_coverage": "COMPLETE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "SkillInstigator",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          },
+          {
+            "declared_class": "WillowGame.SkillDefinition",
+            "declared_class_coverage": "COMPLETE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "Definition",
+            "offset": 4,
+            "type": "ZObjectProperty"
+          },
+          {
+            "declared_class": "NOT_APPLICABLE",
+            "declared_class_coverage": "NOT_APPLICABLE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 144,
+            "name": "bIgnoreSkillInstigator",
+            "offset": 8,
+            "type": "ZBoolProperty"
+          }
+        ],
+        "return_offset": 65535,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 73,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "dimension": 1,
+        "element_class": "WillowGame.Skill",
+        "element_size": 12,
+        "flags": 4194304,
+        "inner_type": "ZObjectProperty",
+        "kind": "FIELD",
+        "name": "ActiveSkills",
+        "offset": 408,
+        "owner": "WillowGame.SkillEffectManager",
+        "type": "ZArrayProperty"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 77,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "declared_class": "Engine.Controller",
+        "dimension": 1,
+        "element_size": 4,
+        "flags": 0,
+        "inner_type": "NOT_APPLICABLE",
+        "kind": "FIELD",
+        "name": "SkillInstigator",
+        "offset": 180,
+        "owner": "WillowGame.Skill",
+        "type": "ZObjectProperty"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 84,
+      "descriptor": {
+        "ancestry": [
+          {
+            "name": "WillowPlayerController",
+            "path": "WillowGame.WillowPlayerController"
+          },
+          {
+            "name": "GearboxPlayerController",
+            "path": "GearboxFramework.GearboxPlayerController"
+          },
+          {
+            "name": "GamePlayerController",
+            "path": "GameFramework.GamePlayerController"
+          },
+          {
+            "name": "PlayerController",
+            "path": "Engine.PlayerController"
+          },
+          {
+            "name": "Controller",
+            "path": "Engine.Controller"
+          },
+          {
+            "name": "Actor",
+            "path": "Engine.Actor"
+          },
+          {
+            "name": "Object",
+            "path": "Core.Object"
+          }
+        ],
+        "coverage": "COMPLETE",
+        "kind": "CLASS",
+        "path": "WillowGame.WillowPlayerController",
+        "target": "controller"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 85,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 132097,
+        "kind": "FUNCTION",
+        "name": "GetSkillManager",
+        "num_params": 1,
+        "parameter_classes_coverage": "COMPLETE",
+        "params_size": 4,
+        "path": "WillowGame.WillowPlayerController:GetSkillManager",
+        "properties": [
+          {
+            "declared_class": "WillowGame.SkillEffectManager",
+            "declared_class_coverage": "COMPLETE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 1408,
+            "name": "ReturnValue",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          }
+        ],
+        "return_offset": 0,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 86,
+      "descriptor": {
+        "ancestry": [
+          {
+            "name": "SkillEffectManager",
+            "path": "WillowGame.SkillEffectManager"
+          },
+          {
+            "name": "Actor",
+            "path": "Engine.Actor"
+          },
+          {
+            "name": "Object",
+            "path": "Core.Object"
+          }
+        ],
+        "coverage": "COMPLETE",
+        "kind": "CLASS",
+        "path": "WillowGame.SkillEffectManager",
+        "target": "manager"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 88,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 149506,
+        "kind": "FUNCTION",
+        "name": "ActivateSkill",
+        "num_params": 6,
+        "parameter_classes_coverage": "COMPLETE",
+        "params_size": 32,
+        "path": "WillowGame.SkillEffectManager:ActivateSkill",
+        "properties": [
+          {
+            "declared_class": "Engine.Controller",
+            "declared_class_coverage": "COMPLETE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "SkillInstigator",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          },
+          {
+            "declared_class": "WillowGame.SkillDefinition",
+            "declared_class_coverage": "COMPLETE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "Definition",
+            "offset": 4,
+            "type": "ZObjectProperty"
+          },
+          {
+            "declared_class": "Core.Object",
+            "declared_class_coverage": "COMPLETE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 144,
+            "name": "AdditionalSkillTarget",
+            "offset": 8,
+            "type": "ZObjectProperty"
+          },
+          {
+            "declared_class": "NOT_APPLICABLE",
+            "declared_class_coverage": "NOT_APPLICABLE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 144,
+            "name": "SkillGrade",
+            "offset": 12,
+            "type": "ZIntProperty"
+          },
+          {
+            "declared_class": "NOT_APPLICABLE",
+            "declared_class_coverage": "NOT_APPLICABLE",
+            "dimension": 1,
+            "element_size": 12,
+            "flags": 4194448,
+            "name": "StateChangeDelegate",
+            "offset": 16,
+            "type": "ZDelegateProperty"
+          },
+          {
+            "declared_class": "NOT_APPLICABLE",
+            "declared_class_coverage": "NOT_APPLICABLE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 1408,
+            "name": "ReturnValue",
+            "offset": 28,
+            "type": "ZBoolProperty"
+          }
+        ],
+        "return_offset": 28,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 89,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 149506,
+        "kind": "FUNCTION",
+        "name": "DeactivateSkill",
+        "num_params": 3,
+        "parameter_classes_coverage": "COMPLETE",
+        "params_size": 12,
+        "path": "WillowGame.SkillEffectManager:DeactivateSkill",
+        "properties": [
+          {
+            "declared_class": "Engine.Controller",
+            "declared_class_coverage": "COMPLETE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "SkillInstigator",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          },
+          {
+            "declared_class": "WillowGame.SkillDefinition",
+            "declared_class_coverage": "COMPLETE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 128,
+            "name": "Definition",
+            "offset": 4,
+            "type": "ZObjectProperty"
+          },
+          {
+            "declared_class": "NOT_APPLICABLE",
+            "declared_class_coverage": "NOT_APPLICABLE",
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 144,
+            "name": "bIgnoreSkillInstigator",
+            "offset": 8,
+            "type": "ZBoolProperty"
+          }
+        ],
+        "return_offset": 65535,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 91,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "dimension": 1,
+        "element_class": "WillowGame.Skill",
+        "element_size": 12,
+        "flags": 4194304,
+        "inner_type": "ZObjectProperty",
+        "kind": "FIELD",
+        "name": "ActiveSkills",
+        "offset": 408,
+        "owner": "WillowGame.SkillEffectManager",
+        "type": "ZArrayProperty"
+      }
+    },
+    {
+      "path": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "line": 95,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "declared_class": "Engine.Controller",
+        "dimension": 1,
+        "element_size": 4,
+        "flags": 0,
+        "inner_type": "NOT_APPLICABLE",
+        "kind": "FIELD",
+        "name": "SkillInstigator",
+        "offset": 180,
+        "owner": "WillowGame.Skill",
+        "type": "ZObjectProperty"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 66,
+      "descriptor": {
+        "ancestry": [
+          {
+            "name": "WillowPlayerController",
+            "path": "WillowGame.WillowPlayerController"
+          },
+          {
+            "name": "GearboxPlayerController",
+            "path": "GearboxFramework.GearboxPlayerController"
+          },
+          {
+            "name": "GamePlayerController",
+            "path": "GameFramework.GamePlayerController"
+          },
+          {
+            "name": "PlayerController",
+            "path": "Engine.PlayerController"
+          },
+          {
+            "name": "Controller",
+            "path": "Engine.Controller"
+          },
+          {
+            "name": "Actor",
+            "path": "Engine.Actor"
+          },
+          {
+            "name": "Object",
+            "path": "Core.Object"
+          }
+        ],
+        "coverage": "COMPLETE",
+        "kind": "CLASS",
+        "path": "WillowGame.WillowPlayerController",
+        "target": "controller"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 67,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 132097,
+        "kind": "FUNCTION",
+        "name": "GetSkillManager",
+        "num_params": 1,
+        "params_size": 4,
+        "path": "WillowGame.WillowPlayerController:GetSkillManager",
+        "properties": [
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 1408,
+            "name": "ReturnValue",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          }
+        ],
+        "return_offset": 0,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 68,
+      "descriptor": {
+        "coverage": "UNAVAILABLE",
+        "kind": "FUNCTION",
+        "name": "ActivateSkill"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 69,
+      "descriptor": {
+        "coverage": "UNAVAILABLE",
+        "kind": "FUNCTION",
+        "name": "DeactivateSkill"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 70,
+      "descriptor": {
+        "ancestry": [
+          {
+            "name": "SkillEffectManager",
+            "path": "WillowGame.SkillEffectManager"
+          },
+          {
+            "name": "Actor",
+            "path": "Engine.Actor"
+          },
+          {
+            "name": "Object",
+            "path": "Core.Object"
+          }
+        ],
+        "coverage": "COMPLETE",
+        "kind": "CLASS",
+        "path": "WillowGame.SkillEffectManager",
+        "target": "manager"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 73,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "dimension": 1,
+        "element_class": "WillowGame.Skill",
+        "element_size": 12,
+        "flags": 4194304,
+        "inner_type": "ZObjectProperty",
+        "kind": "FIELD",
+        "name": "ActiveSkills",
+        "offset": 408,
+        "owner": "WillowGame.SkillEffectManager",
+        "type": "ZArrayProperty"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 77,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "declared_class": "Engine.Controller",
+        "dimension": 1,
+        "element_size": 4,
+        "flags": 0,
+        "inner_type": "NOT_APPLICABLE",
+        "kind": "FIELD",
+        "name": "SkillInstigator",
+        "offset": 180,
+        "owner": "WillowGame.Skill",
+        "type": "ZObjectProperty"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 84,
+      "descriptor": {
+        "ancestry": [
+          {
+            "name": "WillowPlayerController",
+            "path": "WillowGame.WillowPlayerController"
+          },
+          {
+            "name": "GearboxPlayerController",
+            "path": "GearboxFramework.GearboxPlayerController"
+          },
+          {
+            "name": "GamePlayerController",
+            "path": "GameFramework.GamePlayerController"
+          },
+          {
+            "name": "PlayerController",
+            "path": "Engine.PlayerController"
+          },
+          {
+            "name": "Controller",
+            "path": "Engine.Controller"
+          },
+          {
+            "name": "Actor",
+            "path": "Engine.Actor"
+          },
+          {
+            "name": "Object",
+            "path": "Core.Object"
+          }
+        ],
+        "coverage": "COMPLETE",
+        "kind": "CLASS",
+        "path": "WillowGame.WillowPlayerController",
+        "target": "controller"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 85,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "flags": 132097,
+        "kind": "FUNCTION",
+        "name": "GetSkillManager",
+        "num_params": 1,
+        "params_size": 4,
+        "path": "WillowGame.WillowPlayerController:GetSkillManager",
+        "properties": [
+          {
+            "dimension": 1,
+            "element_size": 4,
+            "flags": 1408,
+            "name": "ReturnValue",
+            "offset": 0,
+            "type": "ZObjectProperty"
+          }
+        ],
+        "return_offset": 0,
+        "signature": "NOT_ESTABLISHED"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 86,
+      "descriptor": {
+        "coverage": "UNAVAILABLE",
+        "kind": "FUNCTION",
+        "name": "ActivateSkill"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 87,
+      "descriptor": {
+        "coverage": "UNAVAILABLE",
+        "kind": "FUNCTION",
+        "name": "DeactivateSkill"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 88,
+      "descriptor": {
+        "ancestry": [
+          {
+            "name": "SkillEffectManager",
+            "path": "WillowGame.SkillEffectManager"
+          },
+          {
+            "name": "Actor",
+            "path": "Engine.Actor"
+          },
+          {
+            "name": "Object",
+            "path": "Core.Object"
+          }
+        ],
+        "coverage": "COMPLETE",
+        "kind": "CLASS",
+        "path": "WillowGame.SkillEffectManager",
+        "target": "manager"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 91,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "dimension": 1,
+        "element_class": "WillowGame.Skill",
+        "element_size": 12,
+        "flags": 4194304,
+        "inner_type": "ZObjectProperty",
+        "kind": "FIELD",
+        "name": "ActiveSkills",
+        "offset": 408,
+        "owner": "WillowGame.SkillEffectManager",
+        "type": "ZArrayProperty"
+      }
+    },
+    {
+      "path": "evidence/v032_user_test.log",
+      "line": 95,
+      "descriptor": {
+        "coverage": "COMPLETE",
+        "declared_class": "Engine.Controller",
+        "dimension": 1,
+        "element_size": 4,
+        "flags": 0,
+        "inner_type": "NOT_APPLICABLE",
+        "kind": "FIELD",
+        "name": "SkillInstigator",
+        "offset": 180,
+        "owner": "WillowGame.Skill",
+        "type": "ZObjectProperty"
+      }
+    }
+  ],
+  "metadata_route": {
+    "relevant_rows": 42,
+    "controller_manager_or_actor_field_route_found": false,
+    "manager_fields": [
+      "ActiveSkills"
+    ],
+    "inherited_fields_exhaustively_sampled": false,
+    "GetSkillManager_kind": "FUNCTION",
+    "GetSkillManager_invoked": false,
+    "skill_instigator_field_owner": "WillowGame.Skill",
+    "other_name_only_mentions": [
+      {
+        "path": "evidence/v019_live_tree_and_init_trace.log",
+        "line": 313,
+        "line_sha256": "59d7cb08ac7c38a0ed3bd4fc8df363335ec3c4ba4d2b5660246e13815490c5e4",
+        "terms": [
+          "GetSkillManager",
+          "SkillManager"
+        ]
+      },
+      {
+        "path": "evidence/v019_live_tree_and_init_trace.log",
+        "line": 513,
+        "line_sha256": "fefee02b17c2c1844f268e5f3c2d41435319481c567429fffac5db4b04e4fc5c",
+        "terms": [
+          "GetSkillManager",
+          "SkillManager"
+        ]
+      },
+      {
+        "path": "evidence/v019_live_tree_and_init_trace.log",
+        "line": 1061,
+        "line_sha256": "8ca1da1a090986195f128386690b08c32293c29ebcd2346615a80f13bb1eea8e",
+        "terms": [
+          "GetSkillManager",
+          "SkillManager"
+        ]
+      },
+      {
+        "path": "evidence/v019_live_tree_and_init_trace.log",
+        "line": 1261,
+        "line_sha256": "4a5a4593232af8aa85d17fdbd6cdbd54a3a77621967b16f782a21c6c2f133bdb",
+        "terms": [
+          "GetSkillManager",
+          "SkillManager"
+        ]
+      }
+    ],
+    "name_listings_declare_field_route": false
+  },
+  "installed_text": {
+    "stub_files": [
+      {
+        "path": ".stubs/pyunrealsdk/__init__.pyi",
+        "bytes": 282,
+        "sha256": "f06c67799a516538913e712296a1684665b17b42c624f357776fa7c468ce4dda",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/__init__.pyi",
+        "bytes": 4029,
+        "sha256": "bb9b5b3ce51426d9f230bb4d12ca82c400be6923105183dea1dc3bbe3442196d",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/commands/__init__.pyi",
+        "bytes": 2145,
+        "sha256": "321a941aa1ab69d2753d183fd77ba70428ff18441ecc49b767a0bcac3e5ee27d",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/hooks/__init__.pyi",
+        "bytes": 6284,
+        "sha256": "21589d306dc34fe61ce5f7b0b47b62167a6e8f767d3c84283c4757fc27312ab7",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/logging/__init__.pyi",
+        "bytes": 3949,
+        "sha256": "e23dc517428b1707412a85cc4ac11c804f3bbae35122e79863e9a0a4e9a51895",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/unreal/__init__.pyi",
+        "bytes": 4643,
+        "sha256": "e5695ad50c14b0cf6f79fa1a74eb8ffd7d0630321f2b53e9f31ac64088c856ed",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/unreal/_bound_function.pyi",
+        "bytes": 1635,
+        "sha256": "aede5345048c0b32b7e0bc0ccd57fca5fa29c1227113f0a4ee7f30d469d64546",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/unreal/_experimental.pyi",
+        "bytes": 7965,
+        "sha256": "1f1fb96773e851a3f27e59caa3acc940e95219ffbffe0830dc43125a99f8ba2d",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/unreal/_uenum.pyi",
+        "bytes": 1242,
+        "sha256": "3eb834d2e1cc50b50a246e1898d8a40eed7006482c6fe095e5acc069fc074736",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/unreal/_uobject.pyi",
+        "bytes": 4546,
+        "sha256": "a73e55d17aa605ee20540d542a68b817d84614aaeb4c47aa5804e435f58b12b3",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/unreal/_uobject_children.pyi",
+        "bytes": 9904,
+        "sha256": "c868cda153981b5d779d7873572db131edc3990696d719c8646f114cd56f1887",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/unreal/_uobject_children_deprecated.pyi",
+        "bytes": 6327,
+        "sha256": "9738d979fcebcb4a785ceed1d82c88bd143c97bc751d78fcdca17a97ba7e8dd8",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/unreal/_weak_pointer.pyi",
+        "bytes": 1925,
+        "sha256": "c62b7163d66d6b571cfbea0c2c66a0b32e6ebb7e4b3981e1409ce719872e2b9c",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/unreal/_wrapped_array.pyi",
+        "bytes": 8118,
+        "sha256": "978bd8d9e3af88834e283f52a5d1f57e821645ba26271ee97becd3e3fd638a5f",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/unreal/_wrapped_multicast_delegate.pyi",
+        "bytes": 2798,
+        "sha256": "5430597e7d4e28c734080fb4a72f9a7b1e418575245f353c6ad37a738dce0993",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": ".stubs/unrealsdk/unreal/_wrapped_struct.pyi",
+        "bytes": 3742,
+        "sha256": "0e3e36ee151d8c656df37a082bd3797faf6f68c35664b0819304924a6eee7718",
+        "game_terms": {
+          "SkillEffectManager": 0,
+          "WillowPlayerController": 0,
+          "SkillInstigator": 0,
+          "GetSkillManager": 0,
+          "ActiveSkills": 0
+        },
+        "executed": false,
+        "compiled": false
+      }
+    ],
+    "SDK_archives": [
+      {
+        "path": "console_mod_menu.sdkmod",
+        "bytes": 15163,
+        "sha256": "3646ec4e4d96d4ca2d0a5d46c8b38c9576789e1e6751e046683dd17524d6418e",
+        "text_members": 11,
+        "text_bytes": 35048,
+        "member_fingerprints_sha256": "14eab618892ac4779a044884d666ff928c492a6bc8e3ecfc40f8bd3e20d267c5",
+        "unrelated_controller_mentions": [],
+        "game_manager_route_found": false,
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": "keybinds.sdkmod",
+        "bytes": 3974,
+        "sha256": "fd2dddd1c3083a88e80491244ce74e28f9c57524770e827b9dd7a14393f23046",
+        "text_members": 2,
+        "text_bytes": 2358,
+        "member_fingerprints_sha256": "3b1ca91415f7d1eed4a07e33a8fb86e022d55dc8ff1640af847ffd030a0d712a",
+        "unrelated_controller_mentions": [],
+        "game_manager_route_found": false,
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": "legacy_compat.sdkmod",
+        "bytes": 33317,
+        "sha256": "1ac2f700f386bb087f13af9e717248d3bed4ccfafa30692dd38ba80cb7d7b4f2",
+        "text_members": 12,
+        "text_bytes": 103419,
+        "member_fingerprints_sha256": "af04941c72f0b4f822a2e789b3e2c1a2c8201bc94ba115855da8d87070f9a404",
+        "unrelated_controller_mentions": [
+          {
+            "member": "legacy_compat/ModMenu/NetworkManager.py",
+            "line": 190
+          },
+          {
+            "member": "legacy_compat/ModMenu/NetworkManager.py",
+            "line": 196
+          },
+          {
+            "member": "legacy_compat/ModMenu/NetworkManager.py",
+            "line": 382
+          }
+        ],
+        "game_manager_route_found": false,
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": "mods_base.sdkmod",
+        "bytes": 35841,
+        "sha256": "d673fcdc3acd19609cf2d48eb621c31af833378eb9901a616e3ba275700ff8f6",
+        "text_members": 12,
+        "text_bytes": 118264,
+        "member_fingerprints_sha256": "9f73775fce5f4142feae0d2e9c81c975bb1905b908f298e5760811e258c5efa0",
+        "unrelated_controller_mentions": [],
+        "game_manager_route_found": false,
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": "networking.sdkmod",
+        "bytes": 14287,
+        "sha256": "fcbd53fd5c387f1eab34aa5a098589055ebd0697bb16e73e66693ab3021f10f1",
+        "text_members": 6,
+        "text_bytes": 33738,
+        "member_fingerprints_sha256": "20e0398a3f213630c635088191a50e3a6f0cdbf5113638814cee3c3ef1ad7cfc",
+        "unrelated_controller_mentions": [
+          {
+            "member": "networking/transmission.py",
+            "line": 51
+          },
+          {
+            "member": "networking/transmission.py",
+            "line": 198
+          }
+        ],
+        "game_manager_route_found": false,
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": "save_options.sdkmod",
+        "bytes": 12414,
+        "sha256": "34b50be2d9206f5919a02b989b5a2c4a83ab5ce9cdcf0cdd7a96f9b4f2ca24bc",
+        "text_members": 4,
+        "text_bytes": 30438,
+        "member_fingerprints_sha256": "3a9e140eb2685040a678a860bd4d28094719b02e55e3dbf428fe23a3cc525447",
+        "unrelated_controller_mentions": [
+          {
+            "member": "save_options/hooks.py",
+            "line": 125
+          },
+          {
+            "member": "save_options/hooks.py",
+            "line": 164
+          }
+        ],
+        "game_manager_route_found": false,
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": "ui_utils.sdkmod",
+        "bytes": 16164,
+        "sha256": "363eb026cf73df6295e7bfc7c245d5c56865db0679882e24b42ae0b08b757993",
+        "text_members": 8,
+        "text_bytes": 45967,
+        "member_fingerprints_sha256": "4a0ea5426857953a35cf4c19baf8d1531320eafd858fd9ac8ada422a44f29aa0",
+        "unrelated_controller_mentions": [],
+        "game_manager_route_found": false,
+        "executed": false,
+        "compiled": false
+      },
+      {
+        "path": "willow2_mod_menu.sdkmod",
+        "bytes": 20141,
+        "sha256": "e888c4d7b8ae6d58c17064559129a800abe28e2405db6544514a785217576ccb",
+        "text_members": 9,
+        "text_bytes": 56423,
+        "member_fingerprints_sha256": "b5180efcb3d05340eac5702a6917afb70673a6fbafe7f64bc62f4da62ae201cf",
+        "unrelated_controller_mentions": [],
+        "game_manager_route_found": false,
+        "executed": false,
+        "compiled": false
+      }
+    ],
+    "launcher": {
+      "path": "__main__.py",
+      "bytes": 25481,
+      "sha256": "137f78389b7c8b8e73334856666a3e1d8b044dc92efa35a61292c1f138af4b47",
+      "game_terms": {
+        "SkillEffectManager": 0,
+        "WillowPlayerController": 0,
+        "SkillInstigator": 0,
+        "GetSkillManager": 0,
+        "ActiveSkills": 0
+      }
+    },
+    "generic_stubs_game_terms": 0,
+    "manager_route_found": false,
+    "SDK_stub_import_execution_compilation": "NONE",
+    "limits": {
+      "stub_files": 64,
+      "stub_bytes_each": 262144,
+      "SDK_archive_bytes_each": 1048576,
+      "archive_members_each": 256,
+      "archive_text_bytes_each": 4194304,
+      "text_member_bytes_each": 1048576,
+      "preserved_log_bytes_each": 4194304
+    },
+    "installed_native_binary_build_config_match": "NOT_ESTABLISHED",
+    "settings_saves_private_backups_binaries_live_logs_access": "NONE"
+  },
+  "verified_primary_source_fingerprints": [
+    {
+      "role": "python_hook",
+      "repo": "pyunrealsdk",
+      "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/hook.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp",
+      "bytes": 14513,
+      "sha256": "77d60d79d8845b9914284963fd5a049300b91e96cbd0bcf0430e477a47e4a48b",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "hook_header",
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/hook_manager.h",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.h",
+      "bytes": 6473,
+      "sha256": "6290b5012a492504b14c987527a93e4d08350297cd81fed1a2c49315b91b570e",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "hook_manager",
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/hook_manager.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/hook_manager.cpp",
+      "bytes": 22627,
+      "sha256": "3204496e219e056ad3cf11cc825e9c2f8dbaa39555aee00efc1fdc9628adec75",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "bl2_hooks",
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/game/bl2/hooks.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/game/bl2/hooks.cpp",
+      "bytes": 10356,
+      "sha256": "635bd794c67aef5fe8a9451742521ded4895a88ed3f7d565a840d4a443ffc20f",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "argument_frame",
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/structs/fframe.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/structs/fframe.cpp",
+      "bytes": 1317,
+      "sha256": "3299bb9f797dec3da24d41aafe4b47ffc52768fb2eaec37b1ea6eebf5003ee77",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "argument_copy",
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/wrappers/wrapped_struct.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/wrapped_struct.cpp",
+      "bytes": 3752,
+      "sha256": "8d050a4e971e55fb9b05fcc64259ccd12ec5b74ec5e7369ac5c5b5aad6bb1469",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "property_proxy",
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/wrappers/property_proxy.h",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/property_proxy.h",
+      "bytes": 3554,
+      "sha256": "1e7516e361699ba1f641e227424dffc97d707d1b644ac10b20254e2c1248723a",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "property_proxy_impl",
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/wrappers/property_proxy.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/wrappers/property_proxy.cpp",
+      "bytes": 2344,
+      "sha256": "86a84541166ad66a1780521c8e98aab7ca948a60cd8bbe290a141d62168d428f",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "bool_header",
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/properties/zboolproperty.h",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zboolproperty.h",
+      "bytes": 1554,
+      "sha256": "b09fcd9d2bd4f2f0510d17deefe304b5147eb1780831282c2fd50bb41d172479",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "bool_property",
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/properties/zboolproperty.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zboolproperty.cpp",
+      "bytes": 992,
+      "sha256": "5e34e8f9ec2740152885fa0df0778cb361b0c28e5eaa2c768a75e12ce8ee5a52",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "property_header",
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/properties/zproperty.h",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zproperty.h",
+      "bytes": 1726,
+      "sha256": "27e077e44ee1616df2f6b6f0afa352fbc3b0aef153a656e3590b4e7ceca78210",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "property_access",
+      "repo": "pyunrealsdk",
+      "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/unreal_bindings/property_access.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/property_access.cpp",
+      "bytes": 12689,
+      "sha256": "811fc1101dc87f4bd4e2528d848682be1dd94e9aeb64a6d15d8e9b1e4a31540d",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "type_casters",
+      "repo": "pyunrealsdk",
+      "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/type_casters.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/type_casters.cpp",
+      "bytes": 3556,
+      "sha256": "de8bebd7eb95c4d6275c23c5e7ee4644e5abbba3cc51e7de5531d8870127a223",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "type_caster_header",
+      "repo": "pyunrealsdk",
+      "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/type_casters.h",
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/type_casters.h",
+      "bytes": 3734,
+      "sha256": "9a96ffe9c77cb6e1f184e56db057965e18360cedb0d479f87309c10574723b16",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "function_lock",
+      "repo": "unrealsdk",
+      "commit": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/locks.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/locks.cpp",
+      "bytes": 597,
+      "sha256": "059641b9c85c9a72bd8fc66cad614a7104207f221339da0566d63c20c46a0d16",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "bound_function",
+      "repo": "pyunrealsdk",
+      "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+      "bytes": 10594,
+      "sha256": "219bc8470aebf4e839f51686eb839a301911da6cac6bb7ec58d0a3ca7afd4142",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "bindings.cpp",
+      "repo": "pyunrealsdk",
+      "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/unreal_bindings/bindings.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bindings.cpp",
+      "bytes": 1597,
+      "sha256": "fc08da977aa4f5e79e6c83752f05f981f441fd82159a13444f381a20ac6e1207",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "role": "uobject_children.cpp",
+      "repo": "pyunrealsdk",
+      "commit": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/unreal_bindings/uobject_children.cpp",
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/uobject_children.cpp",
+      "bytes": 27186,
+      "sha256": "28624b87860aec2b37af221ea5a54bf63eb1ca0d2e91d11d06a2f5c00d7a5ac1",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/unrealsdk",
+      "revision": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/classes/uobject.cpp",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/classes/uobject.cpp",
+      "cache_file": "unrealsdk_uobject.cpp",
+      "bytes": 4462,
+      "sha256": "41c2d82cac266a652f4070f4ccedd100f8425a157e94b46d0eb89b7b101f214f",
+      "git_blob": "d985c2ef8c3e79535fa2c0ad5df6043be5e68617",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/unrealsdk",
+      "revision": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/classes/ustruct.cpp",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/classes/ustruct.cpp",
+      "cache_file": "unrealsdk_ustruct.cpp",
+      "bytes": 8641,
+      "sha256": "3cb821c692f821485ecfb81027a10a52db8cb0a858662a2370b398da94b415c5",
+      "git_blob": "efdb4a28f27e78f6c267422218be1f193ecb48dc",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/unrealsdk",
+      "revision": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/classes/ustruct.h",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/classes/ustruct.h",
+      "cache_file": "unrealsdk_ustruct.h",
+      "bytes": 6596,
+      "sha256": "ab46cb19ed6098204bb916ad94449e62e7febaa21727660e8556fbde3351091b",
+      "git_blob": "3e9ce6e9ee5c5397f53017ecccdf111a0da95db2",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/unrealsdk",
+      "revision": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/prop_traits.h",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/prop_traits.h",
+      "cache_file": "unrealsdk_prop_traits.h",
+      "bytes": 4150,
+      "sha256": "c1152935b29bdf35abdbcaf28715a7b0d66e68fdfaa5de8535e292143210c042",
+      "git_blob": "34e067ac74bed7100e12b0767d324a5b0dfcc5b6",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/unrealsdk",
+      "revision": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/properties/zobjectproperty.cpp",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zobjectproperty.cpp",
+      "cache_file": "unrealsdk_zobjectproperty.cpp",
+      "bytes": 1168,
+      "sha256": "0f96d441ab7b5a797474e1a87db5d75b879e7eb0e879bd08498900d9b37b95d5",
+      "git_blob": "adc7aaa5ce5fefa58494f65386d73a096e43b4b2",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/unrealsdk",
+      "revision": "b1852aa440277afcce8a13566b5487aeae5a7ae9",
+      "path": "src/unrealsdk/unreal/properties/zobjectproperty.h",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zobjectproperty.h",
+      "cache_file": "unrealsdk_zobjectproperty.h",
+      "bytes": 1594,
+      "sha256": "6941447e19bc971c503099c1d5c1bd7a81b0bccecc2925d50a2917ee0b50c7ca",
+      "git_blob": "b0356dcae20145f0a8804e6c47199272047b7feb",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/pyunrealsdk",
+      "revision": "c72c5558473bfa1f1cbc9c9113efb2a02251e656",
+      "path": "src/pyunrealsdk/unreal_bindings/uobject.cpp",
+      "url": "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/uobject.cpp",
+      "cache_file": "pyunrealsdk_uobject.cpp",
+      "bytes": 13426,
+      "sha256": "21cf273fb1a9286b38916bf1bd48e268ec247b6083891de3862daf1f8cc9ea2f",
+      "git_blob": "2d44ef2e68024f45292eb56c8221abaa00f9c161",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    }
+  ],
+  "new_primary_source_anchors": [
+    {
+      "path": "src/unrealsdk/unreal/classes/uobject.cpp",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/classes/uobject.cpp",
+      "anchors": [
+        {
+          "anchor": "this->Class()->inherits(cls)",
+          "lines": [
+            64
+          ],
+          "line_sha256": [
+            "2442f5788ec2984bd64a127f97b253d07fe2b8aa21dbb34dc6653485a3083f31"
+          ]
+        },
+        {
+          "anchor": "return {.func = mutable_func, .object = mutable_obj}",
+          "lines": [
+            87
+          ],
+          "line_sha256": [
+            "05f82a9b6f7811e06b3b44dd920297ce44a8c182870156c355193f5877cc34ab"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/unrealsdk/unreal/classes/ustruct.cpp",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/classes/ustruct.cpp",
+      "anchors": [
+        {
+          "anchor": "UStruct::find_prop",
+          "lines": [
+            247
+          ],
+          "line_sha256": [
+            "3a7681d741f402ec8171cafa6dfd5efb6517eeb1491fd7aac4b228c1b504b5e7"
+          ]
+        },
+        {
+          "anchor": "for (auto prop : this->properties())",
+          "lines": [
+            222,
+            248
+          ],
+          "line_sha256": [
+            "efc6a8facd85bb39ff56caef0f33532412dea2ec45a072a227eca875f42507c5",
+            "efc6a8facd85bb39ff56caef0f33532412dea2ec45a072a227eca875f42507c5"
+          ]
+        },
+        {
+          "anchor": "this->this_struct = this->this_struct->SuperField()",
+          "lines": [
+            36,
+            99,
+            189
+          ],
+          "line_sha256": [
+            "c64d7acb8102363bd8a9ccc1f2adceefc734808477a2b299b3fba61a0117b894",
+            "c64d7acb8102363bd8a9ccc1f2adceefc734808477a2b299b3fba61a0117b894",
+            "31ebb3090768f2182c98aa774b9344022740610d420974fc9d4ddb60a8e2af07"
+          ]
+        },
+        {
+          "anchor": "prop = prop->PropertyLinkNext()",
+          "lines": [
+            152
+          ],
+          "line_sha256": [
+            "883a0d6876170843055234c3430683841c910bb9155cef14d80e3aea763ae212"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/unrealsdk/unreal/classes/ustruct.h",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/classes/ustruct.h",
+      "anchors": [
+        {
+          "anchor": "find_prop",
+          "lines": [
+            184,
+            195
+          ],
+          "line_sha256": [
+            "8b23335fe1753cc882fd7454f470cf9738d63209814c92c444b8e04ed820d8d9",
+            "3a59e8a0e838a043a572fa2c01d229cae75c3289f35f18bcf80f9444d2ed074f"
+          ]
+        },
+        {
+          "anchor": "properties(void)",
+          "lines": [
+            153
+          ],
+          "line_sha256": [
+            "ca646565a6e1a787709c8af257bec68d0d752552cbf6b184af1865a89fec9512"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/unrealsdk/unreal/prop_traits.h",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/prop_traits.h",
+      "anchors": [
+        {
+          "anchor": "idx >= (size_t)prop->ArrayDim()",
+          "lines": [
+            70,
+            91,
+            108
+          ],
+          "line_sha256": [
+            "7554cc287fd1320866229906bb763eb9c7ed0abd51e44a117a77df7e981e332c",
+            "7554cc287fd1320866229906bb763eb9c7ed0abd51e44a117a77df7e981e332c",
+            "7554cc287fd1320866229906bb763eb9c7ed0abd51e44a117a77df7e981e332c"
+          ]
+        },
+        {
+          "anchor": "base_addr + prop->Offset_Internal() + (idx * prop->ElementSize())",
+          "lines": [
+            74,
+            95,
+            112
+          ],
+          "line_sha256": [
+            "7043ace44be03bb482c4431d0e48aa2aa5fcbc198bb7919c5a6c653955768ab8",
+            "e2143b414b297ca6063c5115f91b69fab04726f75d4a9976ee55789f08acf261",
+            "8fc079ea22b22401e3f99f52dbb0c2faf91ea3b3108c967e5ce52cb88f4cada9"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/unrealsdk/unreal/properties/zobjectproperty.cpp",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zobjectproperty.cpp",
+      "anchors": [
+        {
+          "anchor": "return *reinterpret_cast<Value*>(addr)",
+          "lines": [
+            18
+          ],
+          "line_sha256": [
+            "f0093f1b3ea03785770e2cf2c96a29928ee34aa38c54d6c71b264b5d1aba0e2e"
+          ]
+        },
+        {
+          "anchor": "if (!value->is_instance(prop_cls))",
+          "lines": [
+            27
+          ],
+          "line_sha256": [
+            "d95536482bb2955543078a0a9da7eadd06bdb7302ff6b1757c01f1f24206bb82"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/unrealsdk/unreal/properties/zobjectproperty.h",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zobjectproperty.h",
+      "anchors": [
+        {
+          "anchor": "X(UClass*, PropertyClass)",
+          "lines": [
+            27
+          ],
+          "line_sha256": [
+            "03a52ceb5ee72c31a345e75c0456641e163457a2004f347a4859634e3db13048"
+          ]
+        },
+        {
+          "anchor": "using Value = UObject*",
+          "lines": [
+            34
+          ],
+          "line_sha256": [
+            "5095280fbe033266ff219e57a7546b7c289f6a10138b531414be83e2243db99c"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/pyunrealsdk/unreal_bindings/uobject.cpp",
+      "url": "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/uobject.cpp",
+      "anchors": [
+        {
+          "anchor": "PYUNREALSDK_STUBGEN_METHOD(\"__getattr__\"",
+          "lines": [
+            88
+          ],
+          "line_sha256": [
+            "d914924341fe49a5bd010dedf3d5dab73f772bac334e1743ded1644679ff0701"
+          ]
+        },
+        {
+          "anchor": "return py_getattr(py_find_field",
+          "lines": [
+            90
+          ],
+          "line_sha256": [
+            "4a2c024a220cddc328f6b08b53d124c070eb8d5f067c0171c3df092d594b1500"
+          ]
+        },
+        {
+          "anchor": "PYUNREALSDK_STUBGEN_METHOD(\"_get_field\"",
+          "lines": [
+            103
+          ],
+          "line_sha256": [
+            "510d09f33a820565543f3ed78a8612a32333e336e04e28ea7d9149cd21c49827"
+          ]
+        },
+        {
+          "anchor": "This does not get validated",
+          "lines": [
+            116,
+            188
+          ],
+          "line_sha256": [
+            "6f7e39227d572c212b70b7c47807f3b7152078c6e53e585cf70bedb489b5108f",
+            "6f7e39227d572c212b70b7c47807f3b7152078c6e53e585cf70bedb489b5108f"
+          ]
+        }
+      ]
+    }
+  ],
+  "current_full_SDK97": {
+    "read_at_utc": "2026-10-12T16:55:39.614071+00:00",
+    "url": "https://github.com/bl-sdk/pyunrealsdk/issues/97",
+    "state": "closed",
+    "state_reason": "completed",
+    "comments": 1,
+    "all_pages_read": true,
+    "replies": [
+      {
+        "url": "https://github.com/bl-sdk/pyunrealsdk/issues/97#issuecomment-6108546422",
+        "author": "apple1417",
+        "association": "CONTRIBUTOR",
+        "bytes": 310,
+        "sha256": "f55cc66e71f433351ee5adc4f04ef4c86c6b18e83f49138b8682b6c3b0fb2643"
+      }
+    ],
+    "outgoing_message": "NONE",
+    "SDK_import_execution_compilation": "NONE"
+  },
+  "source_AST": {
+    "project_syntax_only": true,
+    "reader_getters": [
+      {
+        "function": "_cr_loaded",
+        "object": "cls",
+        "field": "Name",
+        "line": 3852
+      },
+      {
+        "function": "_cr_link",
+        "object": "function",
+        "field": "Name",
+        "line": 3863
+      },
+      {
+        "function": "_cr_link",
+        "object": "func",
+        "field": "object",
+        "line": 3858
+      },
+      {
+        "function": "_cr_link",
+        "object": "func",
+        "field": "func",
+        "line": 3859
+      },
+      {
+        "function": "_cr_link",
+        "object": "args",
+        "field": "_type",
+        "line": 3860
+      },
+      {
+        "function": "_cr_link",
+        "object": "function",
+        "field": "Outer",
+        "line": 3862
+      },
+      {
+        "function": "_cr_link",
+        "object": "function",
+        "field": "SuperField",
+        "line": 3868
+      },
+      {
+        "function": "_cr_prop",
+        "object": "prop",
+        "field": "Name",
+        "line": 3880
+      },
+      {
+        "function": "_cr_prop",
+        "object": "prop",
+        "field": "Outer",
+        "line": 3879
+      },
+      {
+        "function": "_cr_prop",
+        "object": "prop",
+        "field": "PropertyClass",
+        "line": 3887
+      },
+      {
+        "function": "_cr_member",
+        "object": "function",
+        "field": "PropertySize",
+        "line": 3895
+      },
+      {
+        "function": "_cr_solo",
+        "object": "pc",
+        "field": "Pawn",
+        "line": 3901
+      },
+      {
+        "function": "_cr_solo",
+        "object": "pc",
+        "field": "PlayerClass",
+        "line": 3902
+      },
+      {
+        "function": "_cr_solo",
+        "object": "pc",
+        "field": "WorldInfo",
+        "line": 3903
+      },
+      {
+        "function": "_cr_solo",
+        "object": "pc",
+        "field": "PlayerReplicationInfo",
+        "line": 3904
+      },
+      {
+        "function": "_cr_solo",
+        "object": "player_class",
+        "field": "Name",
+        "line": 3907
+      },
+      {
+        "function": "_cr_solo",
+        "object": "world",
+        "field": "NetMode",
+        "line": 3909
+      },
+      {
+        "function": "_cr_solo",
+        "object": "engine",
+        "field": "GamePlayers",
+        "line": 3917
+      },
+      {
+        "function": "_cr_solo",
+        "object": "world",
+        "field": "GRI",
+        "line": 3918
+      },
+      {
+        "function": "_cr_solo",
+        "object": "gri",
+        "field": "PRIArray",
+        "line": 3920
+      },
+      {
+        "function": "_cr_solo",
+        "object": "pc",
+        "field": "Class",
+        "line": 3900
+      },
+      {
+        "function": "_cr_solo",
+        "object": "local",
+        "field": "Actor",
+        "line": 3925
+      },
+      {
+        "function": "_cr_solo",
+        "object": "pri",
+        "field": "Owner",
+        "line": 3926
+      },
+      {
+        "function": "_cr_inspect",
+        "object": "args",
+        "field": "SkillInstigator",
+        "line": 3975
+      },
+      {
+        "function": "_cr_inspect",
+        "object": "instigator",
+        "field": "Class",
+        "line": 3980
+      },
+      {
+        "function": "_cr_inspect",
+        "object": "args",
+        "field": "Definition",
+        "line": 3995
+      },
+      {
+        "function": "_cr_inspect",
+        "object": "function",
+        "field": "PropertySize",
+        "line": 3955
+      },
+      {
+        "function": "_cr_inspect",
+        "object": "definition",
+        "field": "Name",
+        "line": 4003
+      },
+      {
+        "function": "_cr_inspect",
+        "object": "obj",
+        "field": "Class",
+        "line": 3951
+      },
+      {
+        "function": "_cr_inspect",
+        "object": "obj",
+        "field": "Class",
+        "line": 4009
+      },
+      {
+        "function": "_cr_inspect",
+        "object": "definition",
+        "field": "Class",
+        "line": 4002
+      }
+    ],
+    "manager_instance_getters": [
+      "Class"
+    ],
+    "Owner_getter_object": "pri",
+    "two_parameter_getters": true,
+    "one_Name_getter": true,
+    "exact_literal": "Skill_DeathTrap",
+    "exact_None": true,
+    "ret_unread": true,
+    "callback_freevars": [
+      "epoch"
+    ],
+    "callback_payload_drop_assignments": 3,
+    "unchanged_historical_manual_grade_zero_cleanup": [
+      "signature",
+      "find_live",
+      "inspect",
+      "apply",
+      "restore",
+      "_upgrade_state",
+      "cancel_init_node",
+      "shutdown",
+      "_cr_callback",
+      "_cr_solo",
+      "stop_callback_local_reader"
+    ],
+    "no_new_engine_calls_writes_or_retained_payload": true
+  },
+  "source_boundary_findings": {
+    "generic_property_access_is_game_schema": false,
+    "descriptor_owner_is_player_ownership": false,
+    "UFunction_getter_produces_BoundFunction": true,
+    "BoundFunction_call_invokes_engine": true,
+    "direct_get_field_validates_membership": false,
+    "ZObjectProperty_get_validates_declared_class": false,
+    "SDK_prior_copy_return_override_argument_expression_helper_work_bounded_by_Python": false,
+    "GIL_establishes_game_thread": false,
+    "input_lifetime_generation_and_post_return_lease_established": false
+  },
+  "syntax": {
+    "status": "PASS",
+    "project_files": 34,
+    "SDK_stubs_compiled": 0,
+    "errors": []
+  },
+  "original_versioned_ZIPs": [
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+      "bytes": 32742,
+      "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+      "bytes": 34433,
+      "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+      "bytes": 36736,
+      "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip",
+      "bytes": 44901,
+      "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.17_folder_install.zip",
+      "bytes": 44658,
+      "sha256": "d46d8b3d91416920f9624161e90dfb06f685673b87afd0dbc9d70897da4a233d",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.18_folder_install.zip",
+      "bytes": 45939,
+      "sha256": "1d7d2f24a45596e9a6faf36128474fd7184e524b692c8cb582bde4f5bf10c5ce",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+      "bytes": 19467,
+      "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+      "bytes": 20457,
+      "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+      "bytes": 21349,
+      "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+      "bytes": 24437,
+      "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+      "bytes": 26428,
+      "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+      "bytes": 26629,
+      "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+      "bytes": 28884,
+      "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+      "bytes": 30016,
+      "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+      "bytes": 31335,
+      "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160",
+      "CRC": "PASS"
+    }
+  ],
+  "frozen_full_reports": [
+    {
+      "log": "v032_user_test.log",
+      "status": "PARTIAL",
+      "exit_code": 1,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_manager_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_parameter_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_passive_event_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_callback_local_reader_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_callback_definition_name_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_activation_reader_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    }
+  ],
+  "immutable_inventory": {
+    "verified_files": 53,
+    "verified_archives": 12,
+    "relationships": 5,
+    "errors": [],
+    "status": "PASS"
+  },
+  "preserved_base_files": 246,
+  "preserved_aggregate_sha256": "d2f4234b6b1046459c40bc9c1ac0e546dbf0392a77058428697484fb00e65f6e",
+  "links": [
+    "https://github.com/Edge916/The-Ultimate-Borderlands/pull/46",
+    "../evidence/deathtrap_activation_reader_live_readiness_result.md",
+    "../evidence/deathtrap_activation_reader_capture_manifest.json",
+    "../evidence/deathtrap_activation_reader_user_test.log",
+    "../archive/tested_runtime/v0.2.18/__init__.py",
+    "../dist/UltimateVaultHunterDeathtrapBoost_v0.2.18_folder_install.zip",
+    "../evidence/deathtrap_manager_attribution_feasibility_checks.json",
+    "../evidence/deathtrap_parameter_metadata_user_test.log",
+    "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/uobject.cpp",
+    "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/property_access.cpp",
+    "https://github.com/bl-sdk/pyunrealsdk/blob/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+    "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/classes/ustruct.cpp",
+    "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/prop_traits.h",
+    "https://github.com/bl-sdk/unrealsdk/blob/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zobjectproperty.cpp",
+    "deathtrap_activation_reader_feasibility.md",
+    "deathtrap_activation_reader_design.md",
+    "https://github.com/bl-sdk/pyunrealsdk/issues/97",
+    "https://github.com/bl-sdk/pyunrealsdk/issues/97#issuecomment-6108546422",
+    "overclock_identity_cleanup_contract.md"
+  ],
+  "publication": "Prepared exact two-file payload requires new scoped owner approval, public full-byte verification and deliberate review",
+  "checks_not_run": [
+    "Unchanged accepted877 offline tests and hostedCI not rerun for static audit",
+    "SDK/stub import/execution/compilation, C++ build or native binding simulation",
+    "New hook or field-value read, GetSkillManager/UFunction/BoundFunction/delegate invocation, ActiveSkills traversal or broad engine enumeration",
+    "Live game log, settings/save/private backup/native binaries; installation, game, purchase/summon, writes/effect",
+    "Owned manager, unique active allocation/generation/liveness, clock/Duration/rank-one/exact-original cleanup proof",
+    "Outgoing support message, merge or release"
+  ]
+}

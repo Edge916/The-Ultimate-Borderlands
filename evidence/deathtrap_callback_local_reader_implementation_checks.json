@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "task_id": "87840183-e942-4188-8517-19e2b744ea09",
+  "accepted_base": "088335da1fda00343e3b80ec3e618af14b92f5c1",
+  "branch": "codex/jake-v16-callback-local-reader",
+  "status": "PASS",
+  "build": "0.2.16 - CALLBACK-LOCAL DEATHTRAP READER",
+  "decision": "READY_FOR_OFFLINE_REVIEWER_IMPLEMENTATION_REVIEW",
+  "game_tested": false,
+  "ownership_reader_ready": false,
+  "native_adapter_ready": false,
+  "native_effect_ready": false,
+  "exact_file_scope": [
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py",
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/pyproject.toml",
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/README.txt",
+    "tests/test_deathtrap_callback_local_reader.py",
+    "tests/test_runtime_mock.py",
+    "tests/test_presentations.py",
+    "tests/test_deathtrap_readiness.py",
+    "tests/test_deathtrap_passive_events.py",
+    "scripts/verify_package.py",
+    "docs/deathtrap_callback_local_reader_instructions.md",
+    "evidence/deathtrap_callback_local_reader_implementation_checks.json",
+    "dist/UltimateVaultHunterDeathtrapBoost_folder_install.zip",
+    "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip"
+  ],
+  "preserved_base_files": 186,
+  "base_files": 195,
+  "preserved_aggregate_sha256": "5fe6c28684d90e27a596fe130c06ee77ea8fbd716875f30a99dd1fc654f8a93f",
+  "runtime": {
+    "bytes": 216082,
+    "sha256": "1d6524fa483705384951d60a6e48fc92209f21cfb62e5390c65db295924c2548"
+  },
+  "runtime_AST": {
+    "existing_functions": 107,
+    "unchanged_functions": 105,
+    "focused_changes": [
+      "cancel_init_node",
+      "_dt_event_option_gate"
+    ],
+    "new_functions": [
+      "_cr_callback",
+      "_cr_clock",
+      "_cr_emit",
+      "_cr_inspect",
+      "_cr_integer",
+      "_cr_link",
+      "_cr_loaded",
+      "_cr_locked",
+      "_cr_member",
+      "_cr_option_gate",
+      "_cr_overlap",
+      "_cr_prop",
+      "_cr_require",
+      "_cr_solo",
+      "start_callback_local_reader",
+      "stop_callback_local_reader"
+    ],
+    "all_old_classes_unchanged": true,
+    "expected_two_control_insertions_only": true,
+    "manual_gradezero_insertion_and_shutdown_unchanged": true,
+    "new_callback_ret_unused_exactNone": true,
+    "no_new_native_engine_call_or_setter": true
+  },
+  "offline_validation": {
+    "schema_version": 1,
+    "python": "3.12.14",
+    "scope": "offline repository checks",
+    "engine_behavior": "NOT_ESTABLISHED",
+    "hosted_CI": "NOT_CHECKED",
+    "syntax": {
+      "compiled_files": 26,
+      "errors": [],
+      "status": "PASS"
+    },
+    "tests": {
+      "status": "PASS",
+      "unique_tests": 639,
+      "tests_run": 639,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "unexpected_successes": 0,
+      "expected_failures": 0,
+      "all_discovered_run": true
+    },
+    "package": {
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "PASS: isolated packaged runtime import; no game access or scaffolding\nPASS: ZIP integrity, exact single-folder layout and source match\n",
+      "stderr": ""
+    },
+    "status": "PASS"
+  },
+  "new_adversarial_tests": 43,
+  "nominal_inert_event": {
+    "operations": 196,
+    "stages": [
+      58,
+      50,
+      36,
+      52
+    ],
+    "independent_mock_operations_equal_budget": true,
+    "classification": "SAME_WRAPPER/DEATHTRAP_NAME",
+    "closure_only_epoch": true,
+    "SDK_internals_counted": false,
+    "native_behavior_proof": false
+  },
+  "versioned_packages": [
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+      "bytes": 32742,
+      "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+      "bytes": 34433,
+      "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+      "bytes": 36736,
+      "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip",
+      "bytes": 44901,
+      "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": false
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+      "bytes": 19467,
+      "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+      "bytes": 20457,
+      "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+      "bytes": 21349,
+      "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+      "bytes": 24437,
+      "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+      "bytes": 26428,
+      "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+      "bytes": 26629,
+      "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+      "bytes": 28884,
+      "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+      "bytes": 30016,
+      "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+      "bytes": 31335,
+      "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160",
+      "CRC_layout_syntax": "PASS",
+      "original_preserved": true
+    }
+  ],
+  "current_default_source_equal": true,
+  "original_ZIP_count_preserved": 15,
+  "immutable_inventory": {
+    "verified_files": 53,
+    "verified_archives": 12,
+    "relationships": 5,
+    "errors": [],
+    "status": "PASS"
+  },
+  "historical_current_pins_intentionally_unchanged": true,
+  "frozen_full_reports": [
+    {
+      "log": "evidence/v032_user_test.log",
+      "status": "PARTIAL",
+      "exit": 1,
+      "full_manifest_equal": true,
+      "snapshot_original_ZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_manager_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit": 0,
+      "full_manifest_equal": true,
+      "snapshot_original_ZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_parameter_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit": 0,
+      "full_manifest_equal": true,
+      "snapshot_original_ZIP_equal": true
+    },
+    {
+      "log": "evidence/deathtrap_passive_event_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit": 0,
+      "full_manifest_equal": true,
+      "snapshot_original_ZIP_equal": true
+    }
+  ],
+  "primary_sources_inert": [
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/game/bl2/hooks.cpp",
+      "bytes": 10356,
+      "sha256": "635bd794c67aef5fe8a9451742521ded4895a88ed3f7d565a840d4a443ffc20f",
+      "accepted_pin_equal": true,
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/unrealsdk/b1852aa440277afcce8a13566b5487aeae5a7ae9/src/unrealsdk/unreal/properties/zobjectproperty.cpp",
+      "bytes": 1168,
+      "sha256": "0f96d441ab7b5a797474e1a87db5d75b879e7eb0e879bd08498900d9b37b95d5",
+      "accepted_pin_equal": true,
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/hook.cpp",
+      "bytes": 14513,
+      "sha256": "77d60d79d8845b9914284963fd5a049300b91e96cbd0bcf0430e477a47e4a48b",
+      "accepted_pin_equal": true,
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/wrapped_struct.cpp",
+      "bytes": 13873,
+      "sha256": "dcd5fdbcdba560ecfd419bd7448e7b66a130726a448440885d24ccdaf7e997ef",
+      "accepted_pin_equal": true,
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/property_access.cpp",
+      "bytes": 12689,
+      "sha256": "811fc1101dc87f4bd4e2528d848682be1dd94e9aeb64a6d15d8e9b1e4a31540d",
+      "accepted_pin_equal": true,
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/uobject.cpp",
+      "bytes": 13426,
+      "sha256": "21cf273fb1a9286b38916bf1bd48e268ec247b6083891de3862daf1f8cc9ea2f",
+      "accepted_pin_equal": true,
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bindings.h",
+      "bytes": 1980,
+      "sha256": "5728a9e05b9ccb27c629158efac681e920e83c3bed0d7ee2630176b50ef83fc3",
+      "accepted_pin_equal": true,
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/type_casters.h",
+      "bytes": 3734,
+      "sha256": "9a96ffe9c77cb6e1f184e56db057965e18360cedb0d479f87309c10574723b16",
+      "accepted_pin_equal": true,
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/type_casters.cpp",
+      "bytes": 3556,
+      "sha256": "de8bebd7eb95c4d6275c23c5e7ee4644e5abbba3cc51e7de5531d8870127a223",
+      "accepted_pin_equal": true,
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pybind/pybind11/f5fbe867d2d26e4a0a9177a51f6e568868ad3dc8/include/pybind11/detail/type_caster_base.h",
+      "bytes": 66193,
+      "sha256": "23d13917c155ef3bdca2f24cd7d4f6f2b207768a8c9615363ed4a1231103c207",
+      "accepted_pin_equal": true,
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/bound_function.cpp",
+      "bytes": 10594,
+      "sha256": "219bc8470aebf4e839f51686eb839a301911da6cac6bb7ec58d0a3ca7afd4142",
+      "accepted_pin_equal": true,
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/mods_base/a8c0e36ec902e6e5841c8cf3d4845aa5da352ae6/__init__.py",
+      "bytes": 6342,
+      "sha256": "910e7ba4209d1f307ba9c4ccb5c644a67bbb98ee6760339d884ad295fd0c458e",
+      "accepted_pin_equal": true,
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bl-sdk/pyunrealsdk/c72c5558473bfa1f1cbc9c9113efb2a02251e656/src/pyunrealsdk/unreal_bindings/wrapped_array.cpp",
+      "bytes": 16024,
+      "sha256": "08623d8d2e5a748ebecb4724eebfe77980f168e724662fbda7e7a86235da2291"
+    }
+  ],
+  "current_full_SDK97": {
+    "url": "https://github.com/bl-sdk/pyunrealsdk/issues/97#issuecomment-6108546422",
+    "author": "apple1417",
+    "association": "CONTRIBUTOR",
+    "sha256": "f55cc66e71f433351ee5adc4f04ef4c86c6b18e83f49138b8682b6c3b0fb2643",
+    "bytes": 310
+  },
+  "full_discussion_comments": 1,
+  "local_links": [
+    "deathtrap_callback_local_reader_design.md",
+    "../evidence/deathtrap_callback_local_reader_implementation_checks.json",
+    "../sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py"
+  ],
+  "UTF8_JSON_whitespace_scope_known_secret_privatepath": "PASS",
+  "repairs_before_acceptance": [
+    "Corrected temporary fixture location by using repository runner after direct discovery sandbox errors",
+    "Adjusted test world-change fixture to supply valid replacement fields; missing-field errors remain distinct",
+    "Fresh roster array views use validated one-entry membership, not value-wrapper identity",
+    "Recheck SuperField/return descriptor before and after parameter reads",
+    "Malformed internal refusal stays inside inspection frame; nonstring log input refuses without conversion"
+  ],
+  "not_run": [
+    "hosted CI",
+    "real SDK import/execution/stub compilation",
+    "native binary/build match",
+    "actual game install/test/summon/callback",
+    "save/private-backup/gameplay writes",
+    "strict new log reviewer (separate task)"
+  ],
+  "publication": "Prepared local implementation; exact public payload requires scoped owner approval",
+  "outside_task_actions": "No SDK-source copy in Git, new raw game log, support message, game action, merge or release"
+}
