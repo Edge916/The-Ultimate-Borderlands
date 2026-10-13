@@ -1,0 +1,569 @@
+{
+  "schema_version": 1,
+  "task_id": "ef375ecb-dc50-4f33-a47e-581bb150f1cf",
+  "status": "PASS",
+  "base": "afb46581e0274b0a5bacc61c351a4db02f3c8b24",
+  "branch": "codex/jake-bl4-host-prep-ef375ecb",
+  "scope": [
+    "scripts/prepare_bl4_sdk_host_probe.py",
+    "tests/test_bl4_sdk_host_probe_preparation.py",
+    "docs/bl4_sdk_host_probe_preparation.md",
+    "evidence/bl4_sdk_host_probe_preparation_checks.json"
+  ],
+  "decision": "OFFLINE_PREPARATION_PASS; PRODUCTION_INSTALLER_NOT_IMPLEMENTED; NATIVE_COMPATIBILITY_NOT_TESTED",
+  "official_manifest": {
+    "schema": 1,
+    "kind": "OFFLINE_PREPARATION_ONLY",
+    "release": "v0.3",
+    "archive_sha256": "602675446abed184169fa158be3c8bc81777a71203581e4a248eca8a3d00b5c7",
+    "archive_bytes": 14752091,
+    "expected_steam_build": "25372571",
+    "loader": "OakGame/Binaries/Win64/dsound.dll",
+    "files": [
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_asyncio.pyd",
+        "bytes": 78048,
+        "sha256": "dc6db118862ab3298e55e0f7c44c2c0dae4af9e810d2578271280202d6aa098a"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_bz2.pyd",
+        "bytes": 87776,
+        "sha256": "d28c3dd1c22bfb8a6e8a6a9c2359842b797d08e878ecb7805f60e86a45589d11"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_ctypes.pyd",
+        "bytes": 142560,
+        "sha256": "25d9b0be550d428fecc697ca20450343a7c3ce77c9f5283e9aecfd188d609250"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_decimal.pyd",
+        "bytes": 290528,
+        "sha256": "8d41a84db20a9b985e98c802ad6833cf9625c744ad35478dd346f54f81488706"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_elementtree.pyd",
+        "bytes": 138464,
+        "sha256": "16f4d30a50fc25950762a8bbef9dd6c5750729345539c224d489be33e6d6f340"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_hashlib.pyd",
+        "bytes": 69344,
+        "sha256": "36ce760b9fac53fe51755f30a68d86f5fde89bf1b66c65c19e04aa3afa404ac2"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_lzma.pyd",
+        "bytes": 160992,
+        "sha256": "5f7003f9f0256e36351ca2810b3485db28579b08e4d1d65f6f211fcd1136f395"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_multiprocessing.pyd",
+        "bytes": 38624,
+        "sha256": "9e87ce081fbcf0b6596fcba98e121379ad72a33d68e6b2af7a8bcc5b900229ba"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_overlapped.pyd",
+        "bytes": 58080,
+        "sha256": "ac877f3da413c1523c07b6a0dd1f7e0d7ceb3e8590a5e9e20a78eb1bcb700793"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_queue.pyd",
+        "bytes": 36576,
+        "sha256": "bb53357b4e91ac23ed4061f15ff3e5e91a5b3be1cbb0c6cf294521ae5b4efa1c"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_remote_debugging.pyd",
+        "bytes": 84704,
+        "sha256": "38f30e6188450374a993e8fc07e7d41a90842c19290f5c6b46ca10b93c831587"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_socket.pyd",
+        "bytes": 87776,
+        "sha256": "25ac83cac32ed0d67b2cc9672ce64cb53f0a29a75b14c276e901023ff43da5f9"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_sqlite3.pyd",
+        "bytes": 132832,
+        "sha256": "b0c4edff6d60f300373ec929ab915f95ee601bf167e04d28e4e9e28a8e536fe0"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_ssl.pyd",
+        "bytes": 190688,
+        "sha256": "5c07572df2913618cfb851b608cb5f74d740fcce5c3f2e63dc0a2ba39ab35dad"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_tkinter.pyd",
+        "bytes": 69344,
+        "sha256": "a49520e94f19d025a6be6ac7bbb73a7b32442838c62b68c162d44f81d92838ec"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_uuid.pyd",
+        "bytes": 28384,
+        "sha256": "a09308efd309732e3745e70b4456235579c450cac32bed616dfb3913b56f6637"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_wmi.pyd",
+        "bytes": 40160,
+        "sha256": "0ab1fbcf18c95d70343012feb1aad61e1ba95aaed5b4a08e57fc5990e8a9a452"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_zoneinfo.pyd",
+        "bytes": 51936,
+        "sha256": "c471587b0741aa0b795dcda76667a69e40aeb881b54ea3601a26e050cb27dc8a"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/_zstd.pyd",
+        "bytes": 503520,
+        "sha256": "262aea62a994920daf152a10bdc0ca83a8b1c0874e71db23734862431de182c6"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/libcrypto-3.dll",
+        "bytes": 6242552,
+        "sha256": "53c529145339fb042a3dcd3a09c2d7753204f8b4fc79d99e0d31e69a33985958"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/libffi-8.dll",
+        "bytes": 39696,
+        "sha256": "eff52743773eb550fcc6ce3efc37c85724502233b6b002a35496d828bd7b280a"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/libssl-3.dll",
+        "bytes": 1329912,
+        "sha256": "b17a87979862d19241edc4318f967e24c3ec356ed6c2368f561179fab2311001"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/pyexpat.pyd",
+        "bytes": 222944,
+        "sha256": "133942bde91fe43289076a0b50a01b265df4ead078617cca6f6604a4166e1260"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/select.pyd",
+        "bytes": 33504,
+        "sha256": "fab1b4cee101359d82d72061b83cff1855337b3677b9fe01cd69f7548f4c496e"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/sqlite3.dll",
+        "bytes": 1584864,
+        "sha256": "2940bee51c4a00c7e8f2a8a1be857d4c4ad23b2657fbf7fdf18e3a3fd20066c6"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/tcl86t.dll",
+        "bytes": 1841888,
+        "sha256": "224f7121c7d7b963f4767154dd185f62c49c442bf8916d6d4c1c567702ccc7fa"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/tk86t.dll",
+        "bytes": 1591520,
+        "sha256": "39773640fc235b30d1b2a05f7b5eeba6fa9771e10f33f4ccc1649a9d99ff95e8"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/unicodedata.pyd",
+        "bytes": 759008,
+        "sha256": "0d4f124b2d6622d276d777f7106972219f9b310edb5df8149c253da7c013d6d8"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/winsound.pyd",
+        "bytes": 32992,
+        "sha256": "38eccf01b663abfad0bc40444043410fecc5af895be3a1efbc9bd1cfe787f5a6"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/DLLs/zlib1.dll",
+        "bytes": 148192,
+        "sha256": "6e39f7a67e52aec08b2382ab03c4e20857139a86a55d24b3deeb4d63f7d02e47"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/python3.dll",
+        "bytes": 73952,
+        "sha256": "22c6e46d8bd563cdb072650901461ef68be2ea6cb1e80af859559d9395a27e39"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/python314._pth",
+        "bytes": 19,
+        "sha256": "352965caa51c6d24dc9efadd76b359a7012879b23d2c1e65b614b4eb5b580d7c"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/python314.dll",
+        "bytes": 6778592,
+        "sha256": "fde89cdb5c2d08ae65de7ef4abca1876c93ba3796002f5ac0bf7e4d4f5a94da0"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/python314.zip",
+        "bytes": 4125572,
+        "sha256": "7ebe42c40b84305e02d4a6964d5c278f6d8becb56b02cfb4da52b89d7b2e324c"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/pyunrealsdk.dll",
+        "bytes": 1384960,
+        "sha256": "a12534c6b8b411a176c62ed9d7226031b0039727112dce175bcc71c691761a54"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/unrealsdk.dll",
+        "bytes": 804352,
+        "sha256": "d9936cbe3da434743a93e0dadc2f6a5cc82102936c1c249db014a3081fdb4433"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/Plugins/unrealsdk.toml",
+        "bytes": 211,
+        "sha256": "e778adcb4e8dafbfe8b6b3857e6d56ec4b02cf6bc11040f9eb8d23fa9cbc0b99"
+      },
+      {
+        "path": "OakGame/Binaries/Win64/dsound.dll",
+        "bytes": 66560,
+        "sha256": "73752421bcee7158282304e6195a357fd65512d0c45bf5e98e6a270c24dbee8a"
+      },
+      {
+        "path": "sdk_mods/.stubs/LICENSE",
+        "bytes": 7817,
+        "sha256": "7d3a95e5e06978064ed3f8e2b7c8f845e7fd8a405294727cc708f94cb83b8059"
+      },
+      {
+        "path": "sdk_mods/.stubs/pyunrealsdk/__init__.pyi",
+        "bytes": 282,
+        "sha256": "f06c67799a516538913e712296a1684665b17b42c624f357776fa7c468ce4dda"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/__init__.pyi",
+        "bytes": 4029,
+        "sha256": "bb9b5b3ce51426d9f230bb4d12ca82c400be6923105183dea1dc3bbe3442196d"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/commands/__init__.pyi",
+        "bytes": 2145,
+        "sha256": "321a941aa1ab69d2753d183fd77ba70428ff18441ecc49b767a0bcac3e5ee27d"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/hooks/__init__.pyi",
+        "bytes": 6284,
+        "sha256": "21589d306dc34fe61ce5f7b0b47b62167a6e8f767d3c84283c4757fc27312ab7"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/logging/__init__.pyi",
+        "bytes": 3949,
+        "sha256": "e23dc517428b1707412a85cc4ac11c804f3bbae35122e79863e9a0a4e9a51895"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/unreal/__init__.pyi",
+        "bytes": 4643,
+        "sha256": "e5695ad50c14b0cf6f79fa1a74eb8ffd7d0630321f2b53e9f31ac64088c856ed"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/unreal/_bound_function.pyi",
+        "bytes": 1600,
+        "sha256": "9ca38f69c5ec6738b40ee4e06f7ab2123eb2bda4606d9bdcd1b8556999745aee"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/unreal/_experimental.pyi",
+        "bytes": 8024,
+        "sha256": "a7a8e3424b5c4cce428301dda94475d3ba61c188db19f4b403d0c7e441b88a34"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/unreal/_uenum.pyi",
+        "bytes": 1242,
+        "sha256": "3eb834d2e1cc50b50a246e1898d8a40eed7006482c6fe095e5acc069fc074736"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/unreal/_uobject.pyi",
+        "bytes": 4570,
+        "sha256": "801816dd921c60d7031c40ae5877a98e4d1a9bc844d88f3475b223e693ce4247"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/unreal/_uobject_children.pyi",
+        "bytes": 9963,
+        "sha256": "f63ebdfa29ea467382b626ad121245fb72ef71cbeef5812b34014d4d83771bd1"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/unreal/_uobject_children_deprecated.pyi",
+        "bytes": 6327,
+        "sha256": "a6160ee0973d4f52a4155fae542c15e4018a35a5ad49fc79b0ee3ffba8cd79db"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/unreal/_weak_pointer.pyi",
+        "bytes": 1620,
+        "sha256": "796cda9509c60b603c49225ca0ec1eec5b9ca4a3972241f477a8a144f7c34021"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/unreal/_wrapped_array.pyi",
+        "bytes": 8118,
+        "sha256": "978bd8d9e3af88834e283f52a5d1f57e821645ba26271ee97becd3e3fd638a5f"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/unreal/_wrapped_multicast_delegate.pyi",
+        "bytes": 2798,
+        "sha256": "5430597e7d4e28c734080fb4a72f9a7b1e418575245f353c6ad37a738dce0993"
+      },
+      {
+        "path": "sdk_mods/.stubs/unrealsdk/unreal/_wrapped_struct.pyi",
+        "bytes": 3777,
+        "sha256": "f7dd3e47c6b3f914a1a752ef7c00debed28d603a3ddbaad8a318e4e46e5ff8e2"
+      },
+      {
+        "path": "sdk_mods/__main__.py",
+        "bytes": 18635,
+        "sha256": "7dafca4a1f021ad4a40e860a27d4926ce3a807bbefb1bf1e6938647b193d342d"
+      },
+      {
+        "path": "sdk_mods/console_mod_menu.sdkmod",
+        "bytes": 15163,
+        "sha256": "145bec5ace3e884058435472973759c6c29dfce69adc22176c9ae10968d17eb5"
+      },
+      {
+        "path": "sdk_mods/keybinds/LICENSE",
+        "bytes": 7817,
+        "sha256": "7d3a95e5e06978064ed3f8e2b7c8f845e7fd8a405294727cc708f94cb83b8059"
+      },
+      {
+        "path": "sdk_mods/keybinds/__init__.py",
+        "bytes": 2162,
+        "sha256": "edd7eec2e23eac1fa1e4646fa68e126fa476d61b7c572580a4c05f4ea299d475"
+      },
+      {
+        "path": "sdk_mods/keybinds/keybinds.pyd",
+        "bytes": 435712,
+        "sha256": "3ee8787ba0eed557ba935a2c4fa1b5b972572002d5963e240d753acbbc71ef64"
+      },
+      {
+        "path": "sdk_mods/keybinds/keybinds.pyi",
+        "bytes": 2192,
+        "sha256": "749f1743f475d1b95535538593a35688afa21f4291ebd3bfde894276eb9b8a7b"
+      },
+      {
+        "path": "sdk_mods/mods_base.sdkmod",
+        "bytes": 35841,
+        "sha256": "16d8cd0da9870af849eae3831922507df3eab66ede2e9420933067000f42c2e8"
+      },
+      {
+        "path": "sdk_mods/settings/.gitignore",
+        "bytes": 16,
+        "sha256": "4bb38be6d6d9ef0d2f9bcc339850ff48d821eccfa739369402b354c9ba946ea2"
+      }
+    ],
+    "prospective_directories": [
+      "OakGame",
+      "sdk_mods",
+      "OakGame/Binaries",
+      "sdk_mods/.stubs",
+      "sdk_mods/keybinds",
+      "sdk_mods/settings",
+      "OakGame/Binaries/Win64",
+      "sdk_mods/.stubs/pyunrealsdk",
+      "sdk_mods/.stubs/unrealsdk",
+      "OakGame/Binaries/Win64/Plugins",
+      "sdk_mods/.stubs/unrealsdk/commands",
+      "sdk_mods/.stubs/unrealsdk/hooks",
+      "sdk_mods/.stubs/unrealsdk/logging",
+      "sdk_mods/.stubs/unrealsdk/unreal",
+      "OakGame/Binaries/Win64/Plugins/DLLs"
+    ],
+    "introduced_directories": "UNDETERMINED_UNTIL_APPROVED_TARGET_PREFLIGHT",
+    "native_compatibility": "NOT_TESTED",
+    "installation_authorized": false
+  },
+  "project_syntax": {
+    "status": "PASS",
+    "files": 37,
+    "SDK_code_compiled": 0
+  },
+  "full_offline_tests": {
+    "status": "PASS",
+    "unique_tests": 965,
+    "tests_run": 965,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "unexpected_successes": 0,
+    "expected_failures": 0,
+    "all_discovered_run": true
+  },
+  "focused_new_tests": {
+    "tests": 51,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "test_environment": "Windows host permissions; owned temporary workspace fixtures only",
+  "actual_junction": "Created and rejected under owned temporary root; target also under same temporary root; link removed",
+  "initial_attempts": [
+    "Sandbox default temp refused writes; moved test temp under workspace",
+    "Sandbox refused junction creation; actual Windows host fixture test passed"
+  ],
+  "semantic_checks": [
+    "Exact SHA/size/63rows plus CRC, prepared manifest equal",
+    "Synthetic-only marker/payload; executable and unknown SDK directory refusal",
+    "Exclusive copy and journal; loader last in stage and first in rollback",
+    "Interruption receipt recovery; partial data and independent edits preserved/refused",
+    "Unknown children, existing files/scaffolding, case/path/device/ADS/reparse checks",
+    "Nonempty/overlapping quarantine refused; empty introduced directories only"
+  ],
+  "package": "PASS",
+  "originals": [
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+      "bytes": 32742,
+      "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+      "bytes": 34433,
+      "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+      "bytes": 36736,
+      "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip",
+      "bytes": 44901,
+      "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.17_folder_install.zip",
+      "bytes": 44658,
+      "sha256": "d46d8b3d91416920f9624161e90dfb06f685673b87afd0dbc9d70897da4a233d"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.18_folder_install.zip",
+      "bytes": 45939,
+      "sha256": "1d7d2f24a45596e9a6faf36128474fd7184e524b692c8cb582bde4f5bf10c5ce"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.19_folder_install.zip",
+      "bytes": 50123,
+      "sha256": "26db2dad3e7ab2230a94d18e7451d63059521cd1de57b8cfc21f32389889b7e3"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+      "bytes": 19467,
+      "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+      "bytes": 20457,
+      "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+      "bytes": 21349,
+      "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+      "bytes": 24437,
+      "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+      "bytes": 26428,
+      "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+      "bytes": 26629,
+      "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+      "bytes": 28884,
+      "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+      "bytes": 30016,
+      "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+      "bytes": 31335,
+      "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160"
+    }
+  ],
+  "frozen_reports": [
+    {
+      "log": "v032_user_test.log",
+      "status": "PARTIAL",
+      "exit_code": 1,
+      "complete_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_manager_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "complete_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_parameter_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "complete_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_passive_event_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "complete_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_callback_local_reader_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "complete_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_callback_definition_name_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "complete_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_activation_reader_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "complete_report_equal": true,
+      "snapshot_originalZIP_equal": true
+    }
+  ],
+  "immutable_inventory": {
+    "verified_files": 53,
+    "verified_archives": 12,
+    "relationships": 5,
+    "errors": [],
+    "status": "PASS"
+  },
+  "preserved_base_files": 258,
+  "preserved_aggregate_sha256": "d27d4cff21c202743d24ad6892b89525cc681358fe53b3692f136566fdd9ea4e",
+  "links": [
+    "bl4_host_probe_design.md",
+    "../evidence/bl4_sdk_host_probe_preparation_checks.json",
+    "https://github.com/bl-sdk/oak2-mod-manager/releases/tag/v0.3",
+    "../tests/test_bl4_sdk_host_probe_preparation.py"
+  ],
+  "checks_not_run": [
+    "Hosted CI",
+    "Production installation/rollback and live preflight",
+    "SDK import/execution/native loading/stub compilation/game launch",
+    "SDK-generated config/log handling, power-loss durability or hostile concurrent junction replacement",
+    "Save/profile/private-backup access, game assets or proprietary archive extraction",
+    "Map/campaign/character/movement/co-op/effect behavior"
+  ],
+  "no_SDK_copies_game_assets_rawlogs_private_paths": true
+}

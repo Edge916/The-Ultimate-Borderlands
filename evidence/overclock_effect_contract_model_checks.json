@@ -1,0 +1,72 @@
+{
+  "task_id": "ad500a8e-3a10-4cb4-bc37-5e0f8462350f",
+  "base_commit": "3fbc0bd6c19b73c3dc44b8e26d23d4d607529f29",
+  "accepted_contract": "docs/overclock_identity_cleanup_contract.md",
+  "outcomes": "SIMULATED_ONLY",
+  "native_readiness": "NOT_READY",
+  "validation": {
+    "schema_version": 1,
+    "python": "3.12.14",
+    "interpreter": "C:\\Users\\jakec\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "scope": "offline repository checks",
+    "engine_behavior": "NOT_ESTABLISHED",
+    "hosted_CI": "NOT_CHECKED",
+    "syntax": {
+      "compiled_files": 20,
+      "errors": [],
+      "status": "PASS"
+    },
+    "tests": {
+      "status": "PASS",
+      "unique_tests": 355,
+      "tests_run": 355,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "unexpected_successes": 0,
+      "expected_failures": 0,
+      "all_discovered_run": true
+    },
+    "package": {
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "PASS: isolated packaged runtime import; no game access or scaffolding\nPASS: ZIP integrity, exact single-folder layout and source match\n",
+      "stderr": ""
+    },
+    "seconds": 24.86,
+    "status": "PASS"
+  },
+  "new_model_tests": 36,
+  "baseline_files_unchanged": 139,
+  "imports": [
+    "dataclasses",
+    "math"
+  ],
+  "runtime_integration": "NONE",
+  "source_hashes": {
+    "design/overclock_effect_contract_model.py": "fbe8e20524616cb5a9aaa608ca0780d03a141cdcc261643a1551c1a929ffbafc",
+    "tests/test_overclock_effect_contract_model.py": "9639ae7a2f76e21488cf6bffb2f50589c6b46be8fc9537ba8bee5366dd8c36af",
+    "docs/overclock_identity_cleanup_contract.md": "3abd5f388ec5bf9bf501790ed8798c688945a8ca8874333b2031340bfd198cdc",
+    "sdk_mods/UltimateVaultHunterDeathtrapBoost/__init__.py": "41fd2dd9e22bcfa64fbddfc19b881f6950362656e047b212b00eb86f33a01f73"
+  },
+  "corrected_attempts": [
+    "initial test discovery failed because repository root was absent from sys.path; scoped explicit module loading/registration fixed it",
+    "near-default float assertion failed (75.03999999999999 vs75.04); corrected assertion tolerance, not policy",
+    "finite huge integers now refuse on OverflowError; natural-end proof has explicit exact-token/generation/quiescence checks"
+  ],
+  "unverified_engine_assumptions": [
+    "opaque token native comparison/lifetime/reference reuse semantics",
+    "fresh exact owner/world/session/definition and unique active membership proof",
+    "monotonic summon generation from verified natural lifecycle, not names/time",
+    "write interval quiescence and fresh readback/cleanup timing",
+    "actual hook removal and native-array cleanup independent of Duration",
+    "rank-one purchased node and longer gameplay lifespan"
+  ],
+  "checks_not_run": [
+    "game or native SDK execution",
+    "install/purchase/summon/effect test",
+    "save/private backup access",
+    "native adapter",
+    "merge/release"
+  ]
+}
