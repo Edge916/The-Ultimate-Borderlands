@@ -1,0 +1,27 @@
+{
+  "release": "0.1.0-dev-source-only",
+  "playable": false,
+  "gameplay_screenshot": false,
+  "melty_uploaded": false,
+  "tests": "unit tests only",
+  "files": {
+    "LICENSE": "064f47a09eceb5c3c4957d17ed5b4e5d22eed6049ca60fd4e2eb87f1a5ef6f95",
+    "MODLOG.md": "6c2a5baaa0ca1706726bc60f5c72dca1feac823177d85d81a8866347e243ce30",
+    "README.md": "77a07164d06bb4e553836f7dfa96d0bd357449ef557bd3b26822f9852a87beaa",
+    "adapters/bl2_sdk_probe/UltimateVaultHunterProbe/__init__.py": "97222509fb424c94e414f2b1b45f2dceda35b5c8ed71c9ce4516e22342f74c9d",
+    "docs/RUNTIME_GATES.md": "945a02ea97859a7aab574abc0002f004a852c34477005bdac9f0c60da07a56f3",
+    "generated/__init__.py": "5b1a42b0585812b13a9931ebeb30732592268f364e28f88056406633f7201bab",
+    "generated/sheet_records.py": "c5ff919fd9299a2d6c679e4340144f6906cea9198129d27b2c2dab8f9580f270",
+    "sheets/expanded_skills.json": "445a24679a2053bdc2062d7c565edf428a69266ddd4e3e1b1e8d4f9384e44a10",
+    "sheets/games.json": "f3bca117e5238157efb099ca4d456028f77b8756f1c82b3ae300675d924492ab",
+    "sheets/systems.json": "938298c9e60910416e7b7fd700eac3da7411c151ea01edf7539f504ab4f17737",
+    "sheets/vault_hunters.json": "4a45aa9988d6a7cb1433f027b601fcce6ad544de84855631c2a90f235d09ab54",
+    "tests/test_sdk_adapter.py": "db2c5b8a56bd7f685f400a19fc626b1b48866587f3f0f5b3f969585ff470fc1c",
+    "tests/test_sheets.py": "837477eab1f444c4173b388be0a14d3dba6f2f44e832e96c407a93213de0759d",
+    "ultimate_vh/__init__.py": "2bf491d0e73c709ca5e5aea97c9dc6f6bca20fdb25f398ca00ccb3a62c57536c",
+    "ultimate_vh/generate.py": "d28b53a53004adb8f1bbfc1f2d30e60ac91a2f20066bead0d33d62fa746317c7",
+    "ultimate_vh/preflight.py": "8f0a68df9a12ff987e2795061a3d21e4970c2d0652dec8c2f64e5e666c39fcaf",
+    "ultimate_vh/progression.py": "2801303f85687a42ed9058c0a369ace23cbc64747af466de5cfbcb184af4c1fc",
+    "ultimate_vh/save.py": "207aee84733ef457add1f7353597ff586840c38e3d78144ca36681baf3b0fc28"
+  }
+}

@@ -1,0 +1,663 @@
+{
+  "schema_version": 1,
+  "task_id": "988f3818-4b57-4ff4-9dfd-94a17afe1288",
+  "status": "PASS",
+  "base": "7a23c583a0d81507b7c01e1edc82171c7c50a97f",
+  "branch": "codex/jake-bl4-feasibility-988f3818",
+  "scope": [
+    "docs/bl4_unified_collection_feasibility.md",
+    "evidence/bl4_unified_collection_feasibility_checks.json"
+  ],
+  "confirmed_collection": {
+    "host": "Borderlands4",
+    "games": [
+      "Borderlands1",
+      "Borderlands2",
+      "The Pre-Sequel",
+      "Borderlands3",
+      "Borderlands4"
+    ],
+    "campaign_DLC": true,
+    "DLC_Vault_Hunters": true,
+    "all_hunters_across_all_campaigns": true,
+    "Wonderlands": false
+  },
+  "decision": "READY_FOR_BOUNDED_TOOLING_RESEARCH; NOT_READY_FOR_CAMPAIGN_OR_LEGACY_CHARACTER_IMPLEMENTATION",
+  "local_installation": {
+    "status": "PASS",
+    "read_at_utc": "2026-10-12T23:02:03.2474444Z",
+    "local_installation_confirmed": true,
+    "store": "Steam",
+    "manifest_fields": {
+      "appid": "1285190",
+      "name": "Borderlands\u00ae 4",
+      "StateFlags": "4",
+      "installdir": "Borderlands 4",
+      "buildid": "25372571",
+      "TargetBuildID": "25372571",
+      "UpdateResult": "0"
+    },
+    "manifest_sha256": "b9d87fa028e40d9f4ea1c2472cffdcf4abfb18de1d5791698cc37bf0c6f5225e",
+    "relative_probes": [
+      {
+        "relative_path": "OakGame\\Binaries\\Win64\\Borderlands4.exe",
+        "exists": true
+      },
+      {
+        "relative_path": "OakGame\\Binaries\\Win64\\Plugins",
+        "exists": false
+      },
+      {
+        "relative_path": "OakGame\\Binaries\\Win64\\dsound.dll",
+        "exists": false
+      },
+      {
+        "relative_path": "OakGame\\Binaries\\Win64\\sdk_mods",
+        "exists": false
+      },
+      {
+        "relative_path": "sdk_mods",
+        "exists": false
+      },
+      {
+        "relative_path": "OakGame.uproject",
+        "exists": false
+      },
+      {
+        "relative_path": "OakGame\\OakGame.uproject",
+        "exists": false
+      },
+      {
+        "relative_path": "Engine\\Build\\Build.version",
+        "exists": false
+      },
+      {
+        "relative_path": "OakGame\\Content\\Paks",
+        "exists": true
+      }
+    ],
+    "executable": {
+      "bytes": 827364632,
+      "product_version": "",
+      "file_version": ""
+    },
+    "container_extensions": [
+      {
+        "extension": ".pak",
+        "files": 345,
+        "total_bytes": 77866390490.0
+      },
+      {
+        "extension": ".ucas",
+        "files": 346,
+        "total_bytes": 108650639328.0
+      },
+      {
+        "extension": ".utoc",
+        "files": 346,
+        "total_bytes": 103613330.0
+      }
+    ],
+    "tools_at_bounded_locations": [],
+    "editor_registry_versions": [
+      "4.0"
+    ],
+    "game_SDK_tools_executed": false,
+    "game_assets_read_or_extracted": false,
+    "private_manifest_fields_exported": false,
+    "scope": "Known Steam install plus selected tool-root top-level names only; absence is not a whole-machine search"
+  },
+  "public_repository_pins": [
+    {
+      "repo": "bl-sdk/oak2-mod-manager",
+      "commit": "d606e796733eced318e2a44e51b871a7becae55e",
+      "tree_files": 44,
+      "tree_truncated": false
+    },
+    {
+      "repo": "bl-sdk/unrealsdk",
+      "commit": "ac31716b2b462e78f0a841b6d352aa2fa56c7f92",
+      "tree_files": 239,
+      "tree_truncated": false
+    },
+    {
+      "repo": "Squ1ggs/Bl4SDKmods",
+      "commit": "54d81c030378d1fcd12585cd679ee00d14132aa5",
+      "tree_files": 30,
+      "tree_truncated": false
+    },
+    {
+      "repo": "4sval/FModel",
+      "commit": "d61549776a0ca9411903804640c7a61de721c4e6",
+      "tree_files": 411,
+      "tree_truncated": false
+    },
+    {
+      "repo": "atenfyr/UAssetGUI",
+      "commit": "6b9dcf3daa128cd84a29006ccb29aec72b191939",
+      "tree_files": 68,
+      "tree_truncated": false
+    },
+    {
+      "repo": "trumank/retoc",
+      "commit": "885a8dae740cb1ce1e41ff2e74f67f9f0c118237",
+      "tree_files": 109,
+      "tree_truncated": false
+    },
+    {
+      "repo": "zuhuHix/BL2_ReBased",
+      "commit": "664b5fddf6ed0e5fe8150b32b2945e4431a23bce",
+      "tree_files": 421,
+      "tree_truncated": false
+    }
+  ],
+  "verified_primary_source_fingerprints": [
+    {
+      "repo": "bl-sdk/oak2-mod-manager",
+      "commit": "d606e796733eced318e2a44e51b871a7becae55e",
+      "path": "Readme.md",
+      "url": "https://github.com/bl-sdk/oak2-mod-manager/blob/d606e796733eced318e2a44e51b871a7becae55e/Readme.md",
+      "git_blob": "2ab7a45465289c51277aa297ff4eb35cd2de391b",
+      "bytes": 2843,
+      "sha256": "b94e4fafed7ac72c8012965c5e2cd3d00867346cdd031f2ebedc473047af9f23"
+    },
+    {
+      "repo": "bl-sdk/unrealsdk",
+      "commit": "ac31716b2b462e78f0a841b6d352aa2fa56c7f92",
+      "path": "README.md",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/ac31716b2b462e78f0a841b6d352aa2fa56c7f92/README.md",
+      "git_blob": "c922f1256279cdd8afdb21bb62dc687ca35d317b",
+      "bytes": 9418,
+      "sha256": "33312c879540cf993bdf62b73b2b050f0068115da2a5e3c8258f15d17437781f"
+    },
+    {
+      "repo": "Squ1ggs/Bl4SDKmods",
+      "commit": "54d81c030378d1fcd12585cd679ee00d14132aa5",
+      "path": "README.md",
+      "url": "https://github.com/Squ1ggs/Bl4SDKmods/blob/54d81c030378d1fcd12585cd679ee00d14132aa5/README.md",
+      "git_blob": "f805f6cfb45f3311f4a9eb8bbf26cfbea8e14429",
+      "bytes": 2229,
+      "sha256": "dc38c10389023b50151164617c5de35eb7d771bccb10e82e17b2bb94eb18643e"
+    },
+    {
+      "repo": "4sval/FModel",
+      "commit": "d61549776a0ca9411903804640c7a61de721c4e6",
+      "path": "README.md",
+      "url": "https://github.com/4sval/FModel/blob/d61549776a0ca9411903804640c7a61de721c4e6/README.md",
+      "git_blob": "70003c9212bda3b9d1be25e1c089df10c56fbea9",
+      "bytes": 1943,
+      "sha256": "c67674382511a07e2a9a50e09d43f647a3b283a08c26b7bea39e213e2412cf4a"
+    },
+    {
+      "repo": "atenfyr/UAssetGUI",
+      "commit": "6b9dcf3daa128cd84a29006ccb29aec72b191939",
+      "path": "README.md",
+      "url": "https://github.com/atenfyr/UAssetGUI/blob/6b9dcf3daa128cd84a29006ccb29aec72b191939/README.md",
+      "git_blob": "f024641fa56c36838f82e5c47fe7af419b4fcdc1",
+      "bytes": 6898,
+      "sha256": "0b32d78ae1ff1cdb1ab88d4d7f5064aa6e4aff27f6f91ce0667df280d07fa78b"
+    },
+    {
+      "repo": "trumank/retoc",
+      "commit": "885a8dae740cb1ce1e41ff2e74f67f9f0c118237",
+      "path": "README.md",
+      "url": "https://github.com/trumank/retoc/blob/885a8dae740cb1ce1e41ff2e74f67f9f0c118237/README.md",
+      "git_blob": "1d72b975ea1db872289538b50bc43c46ce025a85",
+      "bytes": 4495,
+      "sha256": "a99d2460610f0ae75a736faac293c437ea3e53d627951585c7b09d09fcf6f4cb"
+    },
+    {
+      "repo": "zuhuHix/BL2_ReBased",
+      "commit": "664b5fddf6ed0e5fe8150b32b2945e4431a23bce",
+      "path": "README.md",
+      "url": "https://github.com/zuhuHix/BL2_ReBased/blob/664b5fddf6ed0e5fe8150b32b2945e4431a23bce/README.md",
+      "git_blob": "b8ce045f80b050146a1bc087fb5ef3c3876786f3",
+      "bytes": 30180,
+      "sha256": "9a1c6dbd1216ef7dfae7d4fc1f18c7110988edee3e80808dd5d5956403028867"
+    },
+    {
+      "repo": "bl-sdk/oak2-mod-manager",
+      "commit": "d606e796733eced318e2a44e51b871a7becae55e",
+      "path": "changelog.md",
+      "bytes": 1679,
+      "sha256": "2a3d7ccb0c8922959d44322f0666178522b3f6697ae6e40f6f23e2078b0de383",
+      "git_blob": "7b288e54c3bde14b43ed4d0137b6172d6fefdb22",
+      "url": "https://github.com/bl-sdk/oak2-mod-manager/blob/d606e796733eced318e2a44e51b871a7becae55e/changelog.md",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/oak2-mod-manager",
+      "commit": "d606e796733eced318e2a44e51b871a7becae55e",
+      "path": "manager_pyproject.toml",
+      "bytes": 578,
+      "sha256": "87f1e82e17a01c1960e949d24946000bf73628e7f259e03e29016fb0368d6bf0",
+      "git_blob": "0e108a7f78b153c48e33e76dce725783ce07b7dd",
+      "url": "https://github.com/bl-sdk/oak2-mod-manager/blob/d606e796733eced318e2a44e51b871a7becae55e/manager_pyproject.toml",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/oak2-mod-manager",
+      "commit": "d606e796733eced318e2a44e51b871a7becae55e",
+      "path": "src/__main__.py",
+      "bytes": 18159,
+      "sha256": "a1c95a72d4da45925d7f0bbfade3b91abf75173e59c6c093555f1aa1afd2deeb",
+      "git_blob": "8baef6f13e234b80b69574df7d2c5241cd23a973",
+      "url": "https://github.com/bl-sdk/oak2-mod-manager/blob/d606e796733eced318e2a44e51b871a7becae55e/src/__main__.py",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/unrealsdk",
+      "commit": "ac31716b2b462e78f0a841b6d352aa2fa56c7f92",
+      "path": "src/unrealsdk/game/bl4/bl4.h",
+      "bytes": 7771,
+      "sha256": "a3c2922f2cef9dabf34577a44e1e285d09147227bd01ef8dfbabdaa5486f3765",
+      "git_blob": "b3b6f5aab4c5951d6d030af40f8ba9bc21b9f256",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/ac31716b2b462e78f0a841b6d352aa2fa56c7f92/src/unrealsdk/game/bl4/bl4.h",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/unrealsdk",
+      "commit": "ac31716b2b462e78f0a841b6d352aa2fa56c7f92",
+      "path": "src/unrealsdk/game/bl4/object.cpp",
+      "bytes": 13510,
+      "sha256": "3ea5cd17256c17092d10d26796d0d47256178f768a07f5640af8b474ec4f8672",
+      "git_blob": "91ac13f5b3c00f441de40979c548da118599ae9d",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/ac31716b2b462e78f0a841b6d352aa2fa56c7f92/src/unrealsdk/game/bl4/object.cpp",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/unrealsdk",
+      "commit": "ac31716b2b462e78f0a841b6d352aa2fa56c7f92",
+      "path": "src/unrealsdk/game/bl4/hooks.cpp",
+      "bytes": 8625,
+      "sha256": "5ed491dddc79ffac32bbf02f5bf510a122e691a0c3f3ae188be478fedfa1d54e",
+      "git_blob": "a0c7e19b4e8d218af022d0ac61e91d26deb42e08",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/ac31716b2b462e78f0a841b6d352aa2fa56c7f92/src/unrealsdk/game/bl4/hooks.cpp",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "bl-sdk/unrealsdk",
+      "commit": "ac31716b2b462e78f0a841b6d352aa2fa56c7f92",
+      "path": "src/unrealsdk/game/selector.cpp",
+      "bytes": 2270,
+      "sha256": "19e090f06f2bcfba5d4336c34128ea6546901c6c3a8fe33e0c7431eb70a8a2ab",
+      "git_blob": "218073f3a0ab43fca174a52ca84e0267fb67bc39",
+      "url": "https://github.com/bl-sdk/unrealsdk/blob/ac31716b2b462e78f0a841b6d352aa2fa56c7f92/src/unrealsdk/game/selector.cpp",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "Squ1ggs/Bl4SDKmods",
+      "commit": "54d81c030378d1fcd12585cd679ee00d14132aa5",
+      "path": "bl4_player_movement/__init__.py",
+      "bytes": 27857,
+      "sha256": "32a8967c6c206b3d1487d6f9fb23b48a60abacfb2a6b53f0e051a8ae366c881b",
+      "git_blob": "94513e1c4f7eb7e3d3f42f833203d551cd307458",
+      "url": "https://github.com/Squ1ggs/Bl4SDKmods/blob/54d81c030378d1fcd12585cd679ee00d14132aa5/bl4_player_movement/__init__.py",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "Squ1ggs/Bl4SDKmods",
+      "commit": "54d81c030378d1fcd12585cd679ee00d14132aa5",
+      "path": "bl4_player_movement/README.md",
+      "bytes": 430,
+      "sha256": "f2a5a550452617f1a1efd0662b1d4593fe64ec057940f5156da46cd69d734321",
+      "git_blob": "5b2d56497fa9fdeb657210d3f952d8279cd79794",
+      "url": "https://github.com/Squ1ggs/Bl4SDKmods/blob/54d81c030378d1fcd12585cd679ee00d14132aa5/bl4_player_movement/README.md",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "Squ1ggs/Bl4SDKmods",
+      "commit": "54d81c030378d1fcd12585cd679ee00d14132aa5",
+      "path": "world_travel/README.md",
+      "bytes": 692,
+      "sha256": "4ea5611ee2e3c8db4436459893303b4cf08840cc67169562a89021a51e476dc8",
+      "git_blob": "1c1039983cb573af6e2d9847457833ea11e83e38",
+      "url": "https://github.com/Squ1ggs/Bl4SDKmods/blob/54d81c030378d1fcd12585cd679ee00d14132aa5/world_travel/README.md",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "4sval/FModel",
+      "commit": "d61549776a0ca9411903804640c7a61de721c4e6",
+      "path": "FModel/ViewModels/ExportSessionViewModel.cs",
+      "bytes": 15426,
+      "sha256": "4e14ec1a5e56646fc81355f70b7a06b60790b5fff2dc524307424a38988d42e8",
+      "git_blob": "d877fd40786890c5988f44601d55c07bb58d2c42",
+      "url": "https://github.com/4sval/FModel/blob/d61549776a0ca9411903804640c7a61de721c4e6/FModel/ViewModels/ExportSessionViewModel.cs",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "trumank/retoc",
+      "commit": "885a8dae740cb1ce1e41ff2e74f67f9f0c118237",
+      "path": "retoc_cli/src/main.rs",
+      "bytes": 41148,
+      "sha256": "3a2896178afc29a906b9dfdd677816f6e56b327f6bac78b71cf05d40781eafea",
+      "git_blob": "df93f46885005afcb9936658741cf179a1194766",
+      "url": "https://github.com/trumank/retoc/blob/885a8dae740cb1ce1e41ff2e74f67f9f0c118237/retoc_cli/src/main.rs",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "zuhuHix/BL2_ReBased",
+      "commit": "664b5fddf6ed0e5fe8150b32b2945e4431a23bce",
+      "path": "host/ue5/OpenWillow/OpenWillow.uproject",
+      "bytes": 360,
+      "sha256": "77ff3f4e4e94a36e2b99ee33a66d9bd80a10d8cdd90d6633bffabeda999d6ef6",
+      "git_blob": "375f9ee6f8533a781dafba97aa5e3a9242842428",
+      "url": "https://github.com/zuhuHix/BL2_ReBased/blob/664b5fddf6ed0e5fe8150b32b2945e4431a23bce/host/ue5/OpenWillow/OpenWillow.uproject",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "zuhuHix/BL2_ReBased",
+      "commit": "664b5fddf6ed0e5fe8150b32b2945e4431a23bce",
+      "path": "host/ue5/OpenWillow/Source/OpenWillow/OpenWillow.Build.cs",
+      "bytes": 1189,
+      "sha256": "95f6af0a94436c0da49914761e487589117bfb9b0d999a043a8865a7ad43253e",
+      "git_blob": "492ed1fddd27c80ff7acfdc297787c680113a393",
+      "url": "https://github.com/zuhuHix/BL2_ReBased/blob/664b5fddf6ed0e5fe8150b32b2945e4431a23bce/host/ue5/OpenWillow/Source/OpenWillow/OpenWillow.Build.cs",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "zuhuHix/BL2_ReBased",
+      "commit": "664b5fddf6ed0e5fe8150b32b2945e4431a23bce",
+      "path": "host/ue5/import_level.py",
+      "bytes": 45815,
+      "sha256": "d2dff6ad21c45576121b6924e2a0deea0433c0e939ae8ed6da645907509080dc",
+      "git_blob": "b445c528278f5687295f034f91285fd80f54f82d",
+      "url": "https://github.com/zuhuHix/BL2_ReBased/blob/664b5fddf6ed0e5fe8150b32b2945e4431a23bce/host/ue5/import_level.py",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    },
+    {
+      "repo": "zuhuHix/BL2_ReBased",
+      "commit": "664b5fddf6ed0e5fe8150b32b2945e4431a23bce",
+      "path": "docs/TOOLING.md",
+      "bytes": 87305,
+      "sha256": "d32efe92f62938a445242593b2b37d6fc8f2b8624a09298b9b2ca498715b3386",
+      "git_blob": "1865bf252220ef43cbb29b2c7a732e420bb89e2a",
+      "url": "https://github.com/zuhuHix/BL2_ReBased/blob/664b5fddf6ed0e5fe8150b32b2945e4431a23bce/docs/TOOLING.md",
+      "access": "inert UTF-8 text only",
+      "executed": false,
+      "compiled": false
+    }
+  ],
+  "source_files_verified": 23,
+  "source_access": "inert UTF-8 text only; no downloaded SDK/tool code imported/executed/compiled",
+  "official_docs": [
+    {
+      "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/working-with-cooked-content-in-the-unreal-engine?application_version=5.5",
+      "version_query": "5.5",
+      "access": "primary documentation read through web tool",
+      "raw_HTML_hash": "NOT_CAPTURED",
+      "BL4_build_compatibility": "NOT_ESTABLISHED"
+    },
+    {
+      "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/build-operations-cooking-packaging-deploying-and-running-projects-in-unreal-engine?application_version=5.5",
+      "version_query": "5.5",
+      "access": "primary documentation read through web tool",
+      "raw_HTML_hash": "NOT_CAPTURED",
+      "BL4_build_compatibility": "NOT_ESTABLISHED"
+    }
+  ],
+  "search_coverage": "Bounded primary repository/documentation searches and seven complete nontruncated repository path inventories; absence is not an exhaustive ecosystem result",
+  "blockers": [
+    "SDK not found in checked installed-game locations; build-matched startup untested",
+    "Compatible editor/cooker and game custom-type/package assumptions unconfirmed",
+    "No accessible BL4 editable project or verified tiny-map template/loading proof",
+    "Legacy selectable-character/skill/UI/mission/save interfaces not established"
+  ],
+  "related_UE5_project": "BL2_ReBased OpenWillow own-project/editor architecture; author claims are not reproduced and do not establish BL4-hosted compatibility",
+  "legacy_SDK_context": {
+    "read_at_utc": "2026-10-12T23:03:35.340542+00:00",
+    "url": "https://github.com/bl-sdk/pyunrealsdk/issues/97",
+    "state": "closed",
+    "state_reason": "completed",
+    "comments": 1,
+    "all_pages_read": true,
+    "replies": [
+      {
+        "url": "https://github.com/bl-sdk/pyunrealsdk/issues/97#issuecomment-6108546422",
+        "author": "apple1417",
+        "association": "CONTRIBUTOR",
+        "bytes": 310,
+        "sha256": "f55cc66e71f433351ee5adc4f04ef4c86c6b18e83f49138b8682b6c3b0fb2643"
+      }
+    ],
+    "outgoing_message": "NONE",
+    "SDK_import_execution_compilation": "NONE"
+  },
+  "project_syntax": {
+    "status": "PASS",
+    "files": 35,
+    "SDK_tool_stubs_compiled": 0
+  },
+  "originals": [
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.10_folder_install.zip",
+      "bytes": 32742,
+      "sha256": "962d5c11041b2d1db727d8ca130197a2a06e0fe3464b29cc64ac178ba0dc10fa",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.11_folder_install.zip",
+      "bytes": 34433,
+      "sha256": "d304e2c327b7d3fe0fca92a90f8223bba1c4ed6b7ae3787b78ea4847f2a755e4",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.12_folder_install.zip",
+      "bytes": 36736,
+      "sha256": "4f49bad17d0e7d3e97b24f1dfdcb7f396eef2f8a8c6d93464054edf512aaefc6",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.13_folder_install.zip",
+      "bytes": 37087,
+      "sha256": "7c9d97d4e215ac11e004d04dedb3d4e4185833b42dcb72e8cbf65fd5068a26f8",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.14_folder_install.zip",
+      "bytes": 37809,
+      "sha256": "e2f4ec94cbac8c0a1f3b9b29e64786b4a3af4fc7afc5846c2c55bcd4e726e823",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.15_folder_install.zip",
+      "bytes": 41032,
+      "sha256": "6c05fe183c274fe989f3bd5ad267fc1dadd4049befbffb4a9fda1c192e86a42b",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.16_folder_install.zip",
+      "bytes": 44901,
+      "sha256": "f80114f0b395edc6b5a35edbfa000c5573337359fe44a477be20b88f83a29d85",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.17_folder_install.zip",
+      "bytes": 44658,
+      "sha256": "d46d8b3d91416920f9624161e90dfb06f685673b87afd0dbc9d70897da4a233d",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.18_folder_install.zip",
+      "bytes": 45939,
+      "sha256": "1d7d2f24a45596e9a6faf36128474fd7184e524b692c8cb582bde4f5bf10c5ce",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.19_folder_install.zip",
+      "bytes": 50123,
+      "sha256": "26db2dad3e7ab2230a94d18e7451d63059521cd1de57b8cfc21f32389889b7e3",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.1_folder_install.zip",
+      "bytes": 19467,
+      "sha256": "e04c6f4ab6ab5f472fe984996b0dcd375c671fd944aa0891663f2ab601b2f455",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.2_folder_install.zip",
+      "bytes": 20457,
+      "sha256": "a07442dfa33cfc1f2265f1618edd8cefe7f987a789f6cbf3f042d7075255a2cb",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.3_folder_install.zip",
+      "bytes": 21349,
+      "sha256": "4573834f5bfad6f8eb4bc8c34051c3edfa4e893ba22e358ce5761431d1e17de6",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.4_folder_install.zip",
+      "bytes": 24437,
+      "sha256": "d1aa246adcca296cefb359d1ffc5c1a22fd46685eeaf77accca4468a6f85ca42",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.5_folder_install.zip",
+      "bytes": 26428,
+      "sha256": "6d592c187efe3c04ce9de7ba957a3a1b72489e02ce1cea7fb7cd797d4ae71ab3",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.6_folder_install.zip",
+      "bytes": 26629,
+      "sha256": "cf09a3f4fbfb0847409f4fcd78595d4e97be0548bd743350c7322990d525e2b5",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.7_folder_install.zip",
+      "bytes": 28884,
+      "sha256": "70687df8825949c07c550dda64e4ad101c4947a374c0dc6ceb9d69870192de87",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.8_folder_install.zip",
+      "bytes": 30016,
+      "sha256": "93b2ae7f8cae8412d3af6637d1c6e0739cadf7b6b0cc07b3961c5758674940c2",
+      "CRC": "PASS"
+    },
+    {
+      "path": "dist/UltimateVaultHunterDeathtrapBoost_v0.2.9_folder_install.zip",
+      "bytes": 31335,
+      "sha256": "dee868f606efd0535443b516948a919bd054875d432a6bea6ee7fbfbb594a160",
+      "CRC": "PASS"
+    }
+  ],
+  "frozen_reports": [
+    {
+      "log": "v032_user_test.log",
+      "status": "PARTIAL",
+      "exit_code": 1,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_manager_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_parameter_metadata_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_passive_event_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_callback_local_reader_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_callback_definition_name_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    },
+    {
+      "log": "deathtrap_activation_reader_user_test.log",
+      "status": "COMPLETE_LOG_TEXT",
+      "exit_code": 0,
+      "entire_manifest_equal": true,
+      "snapshot_originalZIP_equal": true
+    }
+  ],
+  "immutable_inventory": {
+    "verified_files": 53,
+    "verified_archives": 12,
+    "relationships": 5,
+    "errors": [],
+    "status": "PASS"
+  },
+  "preserved_base_files": 254,
+  "preserved_aggregate_sha256": "e1332abdcb71cf726e84422d84aa6e6876b6c831cbc49fc4579cbf0cc227e808",
+  "links": [
+    "../evidence/bl4_unified_collection_feasibility_checks.json",
+    "https://github.com/bl-sdk/oak2-mod-manager/blob/d606e796733eced318e2a44e51b871a7becae55e/Readme.md",
+    "https://github.com/bl-sdk/unrealsdk/blob/ac31716b2b462e78f0a841b6d352aa2fa56c7f92/src/unrealsdk/game/selector.cpp",
+    "https://github.com/bl-sdk/unrealsdk/blob/ac31716b2b462e78f0a841b6d352aa2fa56c7f92/src/unrealsdk/game/bl4/bl4.h",
+    "https://github.com/Squ1ggs/Bl4SDKmods/blob/54d81c030378d1fcd12585cd679ee00d14132aa5/bl4_player_movement/__init__.py",
+    "https://github.com/Squ1ggs/Bl4SDKmods/blob/54d81c030378d1fcd12585cd679ee00d14132aa5/world_travel/README.md",
+    "https://github.com/4sval/FModel/blob/d61549776a0ca9411903804640c7a61de721c4e6/README.md",
+    "https://github.com/atenfyr/UAssetGUI/blob/6b9dcf3daa128cd84a29006ccb29aec72b191939/README.md",
+    "https://github.com/trumank/retoc/blob/885a8dae740cb1ce1e41ff2e74f67f9f0c118237/README.md",
+    "https://github.com/trumank/retoc/blob/885a8dae740cb1ce1e41ff2e74f67f9f0c118237/retoc_cli/src/main.rs",
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/working-with-cooked-content-in-the-unreal-engine?application_version=5.5",
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/build-operations-cooking-packaging-deploying-and-running-projects-in-unreal-engine?application_version=5.5",
+    "https://github.com/zuhuHix/BL2_ReBased/blob/664b5fddf6ed0e5fe8150b32b2945e4431a23bce/README.md",
+    "https://github.com/zuhuHix/BL2_ReBased/blob/664b5fddf6ed0e5fe8150b32b2945e4431a23bce/host/ue5/OpenWillow/OpenWillow.uproject",
+    "https://github.com/zuhuHix/BL2_ReBased/blob/664b5fddf6ed0e5fe8150b32b2945e4431a23bce/host/ue5/import_level.py"
+  ],
+  "checks_not_run": [
+    "Existing914 unique tests and hostedCI, unchanged static audit only",
+    "Game/SDK/editor/packaging/importer/native execution or binding simulation",
+    "Asset reads/extraction/decryption/conversion/cook/mount",
+    "Custom map/legacy-character/mission/skill/combat/progression/save/co-op proof",
+    "Game install/save/private-backup modifications or full-machine tool search",
+    "Actual native binary/engine minor version/SDK release compatibility",
+    "Public export of the new two-file audit, merge or release"
+  ]
+}

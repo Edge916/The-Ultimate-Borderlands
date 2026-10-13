@@ -1,0 +1,53 @@
+date       time          thread                                           location@line    v|
+2026-10-12 08:01:22.450Z   d878                                    unrealsdk::init@59   INFO| unrealsdk v3.2.0 (b1852aa4)
+2026-10-12 08:01:22.450Z   d878                                    unrealsdk::init@60   INFO| ===========================
+2026-10-12 08:01:22.450Z   d878   ~ game::`anonymous-namespace'::find_correct_hook@51   INFO| Using Borderlands 2 hook
+2026-10-12 08:01:22.710Z   d878                   unrealsdk::memory::get_exe_range@34   MISC| Executable memory range: 00a80000-025b6000
+2026-10-12 08:01:22.835Z   d878                          unrealsdk::memory::detour@107  MISC| Detoured ProcessEvent at 0xc12bd0
+2026-10-12 08:01:22.951Z   d878                          unrealsdk::memory::detour@107  MISC| Detoured CallFunction at 0xc126e0
+2026-10-12 08:01:22.952Z   d878            unrealsdk::game::BL2Hook::find_gobjects@31   MISC| GObjects: 0x2102bd0
+2026-10-12 08:01:22.953Z   d878              unrealsdk::game::BL2Hook::find_gnames@53   MISC| GNames: 0x20c07f4
+2026-10-12 08:01:22.953Z   d878          unrealsdk::game::BL2Hook::find_fname_init@68   MISC| FName::Init: 0xb10b70
+2026-10-12 08:01:22.954Z   d878         unrealsdk::game::BL2Hook::find_fframe_step@100  MISC| FFrame::Step: 0xc03770
+2026-10-12 08:01:22.954Z   d878             unrealsdk::game::BL2Hook::find_gmalloc@49   MISC| GMalloc: 0x5607ac0
+2026-10-12 08:01:22.955Z   d878    unrealsdk::game::BL2Hook::find_construct_object@61   MISC| StaticConstructObject: 0xb4a5f0
+2026-10-12 08:01:22.956Z   d878       unrealsdk::game::BL2Hook::find_get_path_name@115  MISC| GetPathName: 0xb2da80
+2026-10-12 08:01:22.956Z   d878  unrealsdk::game::BL2Hook::find_static_find_object@165  MISC| StaticFindObject: 0xb37500
+2026-10-12 08:01:22.957Z   d878        unrealsdk::game::BL2Hook::find_load_package@205  MISC| LoadPackage: 0xb4d190
+2026-10-12 08:01:22.971Z   d878      unrealsdk::game::BL2Hook::hexedit_set_command@47   MISC| Set Command: 0xeb0181
+2026-10-12 08:01:22.972Z   d878      unrealsdk::game::BL2Hook::hexedit_array_limit@62   MISC| Array Limit: 0xb49ab4
+2026-10-12 08:01:22.973Z   d878       ~ game::BL2Hook::hexedit_array_limit_message@76   MISC| Array Limit Message: 0xb49b6f
+2026-10-12 08:01:22.974Z   d840                                  pyunrealsdk::init@63   INFO| pyunrealsdk v1.10.0 (c72c5558) loaded
+2026-10-12 08:07:59.733Z   d9dc ~ game::`anonymous-namespace'::inject_console_hook@280  MISC| Set console key to 'Tilde'
+2026-10-12 08:08:00.826Z   d840                     ~ console_mod_menu\__init__.py@28   INFO| Console Mod Menu loaded. Type 'mods' to get started.
+2026-10-12 08:08:28.587Z   d9dc                                    _py_warnings.py@147  DWRN| C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\sdk_mods\legacy_compat.sdkmod\legacy_compat\unrealsdk\__init__.py:210: DeprecationWarning: Using deprecated legacy import compatibility.
+2026-10-12 08:10:41.925Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-ACTIVATION] START version=0.2.18 epoch=1 target=ActivateSkill phase=PRE hooks=1 mode=STANDALONE_READER
+2026-10-12 08:10:47.098Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-ACTIVATION] EVENT epoch=1 ordinal=1 attempt=1 schema=VALID controller=SAME_WRAPPER definition=DEATHTRAP_NAME name=Skill_DeathTrap ownership=UNESTABLISHED ops=268 stages=98,66,36,68
+2026-10-12 08:10:47.102Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-ACTIVATION] EVENT epoch=1 ordinal=2 attempt=2 schema=VALID controller=SAME_WRAPPER definition=OTHER_NAME name=UpshotRobot ownership=UNESTABLISHED ops=268 stages=98,66,36,68
+2026-10-12 08:11:58.671Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-ACTIVATION] STOP epoch=1 remaining=0 uncertain=0 attempts=2 classified=2 filtered=1 nulls=0 refusals=0 errors=0 reentry=0 cleanup_failures=0 limit=NONE
+2026-10-12 08:11:58.671Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-ACTIVATION] OUTCOME epoch=1 value=OBSERVED_PRIMITIVE ownership=UNESTABLISHED
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-ACTIVATION] STOP epoch=1 remaining=0 uncertain=0 attempts=2 classified=2 filtered=1 nulls=0 refusals=0 errors=0 reentry=0 cleanup_failures=0 limit=NONE
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-ACTIVATION] OUTCOME epoch=1 value=OBSERVED_PRIMITIVE ownership=UNESTABLISHED
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-STATE] STOP remaining=0 captured=0 callbacks=0 skipped=0
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-STATE] SUMMARY GetSkillState skill=UVH_DeathtrapOverclock captures=0 NOT OBSERVED
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-STATE] SUMMARY GetSkillState skill=MorePep captures=0 NOT OBSERVED
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-STATE] SUMMARY GetSkillState skill=Myelin captures=0 NOT OBSERVED
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-STATE] SUMMARY GetSkillDescriptionForGrade skill=UVH_DeathtrapOverclock captures=0 NOT OBSERVED
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-STATE] SUMMARY GetSkillDescriptionForGrade skill=MorePep captures=0 NOT OBSERVED
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-STATE] SUMMARY GetSkillDescriptionForGrade skill=Myelin captures=0 NOT OBSERVED
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-STATE] SUMMARY UpdateInfoBox skill=UVH_DeathtrapOverclock captures=0 NOT OBSERVED
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-STATE] SUMMARY UpdateInfoBox skill=MorePep captures=0 NOT OBSERVED
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-STATE] SUMMARY UpdateInfoBox skill=Myelin captures=0 NOT OBSERVED
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-STATE] Query Boolean is not eligibility. OutSkillState/locals were NOT read. DO NOT BUY; cancel/restart.
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-UI] STOP remaining=0 captured=0 callbacks=0 skipped=0
+2026-10-12 08:12:04.093Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-UI] Selection snapshots/events are not eligibility or cost. DO NOT BUY; cancel and restart.
+2026-10-12 08:12:04.094Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-UPGRADE] STOP remaining=0 captured=0 callbacks=0 skipped=0
+2026-10-12 08:12:04.094Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-UPGRADE] SUMMARY CanUpgradeSkill UVH_DeathtrapOverclock results=[]
+2026-10-12 08:12:04.094Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-UPGRADE] SUMMARY CanUpgradeSkill MorePep results=[]
+2026-10-12 08:12:04.094Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-UPGRADE] SUMMARY CanUpgradeSkill Myelin results=[]
+2026-10-12 08:12:04.094Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-UPGRADE] SUMMARY GetSkillUpgradeCost UVH_DeathtrapOverclock results=[]
+2026-10-12 08:12:04.094Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-UPGRADE] SUMMARY GetSkillUpgradeCost MorePep results=[]
+2026-10-12 08:12:04.094Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-UPGRADE] SUMMARY GetSkillUpgradeCost Myelin results=[]
+2026-10-12 08:12:04.094Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-UPGRADE] Missing results mean NOT OBSERVED; no purchase/effect/persistence conclusion. Cancel and restart.
+2026-10-12 08:12:04.094Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] Observers remaining=0
+2026-10-12 08:12:04.094Z   d9dc    ~ UltimateVaultHunterDeathtrapBoost\__init__.py@19   INFO| [UVH-BOOST] [UVH-INITNODE] DISARMED; no initialization patch to restore.
